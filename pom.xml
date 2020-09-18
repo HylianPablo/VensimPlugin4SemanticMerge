@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>mvnbazaco</groupId>
-  <artifactId>mvnbazaco</artifactId>
+  <groupId>mvntfg</groupId>
+  <artifactId>mvntfg</artifactId>
   <version>1.0</version>
 
-  <name>mvnbazaco</name>
+  <name>mvntfg</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -79,11 +79,11 @@
           <artifactId>antlr4-maven-plugin</artifactId>
           <version>4.8</version>
           <configuration>
-                <sourceDirectory>${basedir}/src/main/antlr4/es/uva/inf/grammar/bazaco/</sourceDirectory>
-                <outputDirectory>src/main/java/es/uva/inf/grammar/bazaco/</outputDirectory>
+                <sourceDirectory>${basedir}/src/main/antlr4/es/uva/inf/grammar/</sourceDirectory>
+                <outputDirectory>src/main/java/es/uva/inf/grammar/</outputDirectory>
                 <arguments>
                   <argument>-package</argument>
-                  <argument>es.uva.inf.grammar.bazaco</argument>
+                  <argument>es.uva.inf.grammar</argument>
                   <argument>-no-listener</argument>
                   <argument>-visitor</argument>
                 </arguments>
