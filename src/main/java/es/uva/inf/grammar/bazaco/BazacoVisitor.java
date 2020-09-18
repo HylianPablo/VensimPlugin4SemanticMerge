@@ -304,6 +304,12 @@ public interface BazacoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitViewNumber(BazacoParser.ViewNumberContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link BazacoParser#viewSettings}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewSettings(BazacoParser.ViewSettingsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link BazacoParser#viewX}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

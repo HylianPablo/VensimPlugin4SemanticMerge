@@ -105,13 +105,12 @@ numberList: (integerConst | floatingConst) (',' ( integerConst | floatingConst))
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
 viewNumber: '*View' DigitSeq;
-//viewSettings : '$'(DigitSeq'-'DigitSeq'-'DigitSeq|'0')','DigitSeq','Ex'|'DigitSeq'|'Ex?'|'(DigitSeq'-'DigitSeq'-'DigitSeq|'-1--1--1')'|'DigitSeq'-'DigitSeq'-'DigitSeq'|'DigitSeq'-'DigitSeq'-'DigitSeq'|'(DigitSeq'-'DigitSeq'-'DigitSeq|'-1--1--1')'|'(DigitSeq'-'DigitSeq'-'DigitSeq|'-1--1--1')','DigitSeq','DigitSeq','DigitSeq','('0'|'1'|'3');
-//viewSettings: '$' Ex ',' Ex ',' Ex '|' Ex '|' Ex '|' Ex '|' Ex '|' Ex '|' Ex '|' Ex '|' Ex ',' Ex ',' Ex ',' FinDollar '\n';
+viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)*;
 //objectList: (objectParam (',')?)+;
-//objectParam: DigitSeq | Ex | points;
+//objectParam: DigitSeq | Id | points | '-';
 //points: DigitSeq ('|''('DigitSeq','DigitSeq')')+'|';
-//viewX: viewSettings objectList*;
-viewX: .*? ;
+viewX: viewSettings .*?;
+//quince: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)*;
 viewInfo:   sketchInfo versionCode viewNumber viewX;
 sketches: viewInfo*;
 
@@ -144,8 +143,6 @@ NotEqual : '<>' ;
 Exclamation : '!' ;
 DataEquationOp: ':=';
 StringAssignOp: ':IS:';
-//FinDollar: ([0-1]|[3]);
-
 
 subscriptId : Id  Exclamation?;
 Id: ( ( Nondigit IdChar*  ) | ( Nondigit ( IdChar | ' ' )* IdChar ) | StringLiteral );
