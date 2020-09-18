@@ -99,6 +99,21 @@ constList : constantLine ((';' constantLine)* ';')?;
 
 numberList: (integerConst | floatingConst) (',' ( integerConst | floatingConst))*;
     
+graphs: graph title xaxis? yaxis? xmin? xmax? nolegend? scale graphvar*;
+graph: ':GRAPH' Id;
+title: ':TITLE' Id;
+xaxis: ':X-AXIS' Id;
+yaxis: ':Y-AXIS' Id;
+xmin: ':X-MIN' DigitSeq;
+xmax: ':X-MAX' DigitSeq;
+nolegend: ':NO-LEGEND' ('0'|'1');
+scale: ':SCALE';
+graphvar: gvar ymin* ymax* linewidthgraph*;
+gvar: ':VAR' Id;
+ymin: ':Y-MIN' .*?;
+ymax: ':Y-MAX' .*?;
+linewidthgraph: ':LINE-WIDTH' .*?;
+metadata: ':L<%^E!@' .*?;
     
 // Backslash tokens are ignored, so this rule doesn't take them into account.
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
@@ -113,10 +128,6 @@ points: DigitSeq ('|''('DigitSeq','DigitSeq')')+'|';
 viewX: .*?;
 viewInfo:   sketchInfo versionCode viewNumber viewX;
 sketches: viewInfo*;
-
-
-graphs: ':GRAPH' .*?;
-metadata: ':L<%^E!@' .*?;
 
 
 Star : '*' ;
@@ -201,6 +212,7 @@ StringConst
 Keyword
     :   ':'[a-zA-Z ]*':'
     ;
+
 
 Whitespace : [ \t\n\r]+ -> skip ;
 // Backslashes are used as line continuators, so they can be ignored.

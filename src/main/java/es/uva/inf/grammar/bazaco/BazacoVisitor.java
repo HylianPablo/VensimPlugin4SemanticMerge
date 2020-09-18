@@ -286,6 +286,96 @@ public interface BazacoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNumberList(BazacoParser.NumberListContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link BazacoParser#graphs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGraphs(BazacoParser.GraphsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#graph}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGraph(BazacoParser.GraphContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#title}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTitle(BazacoParser.TitleContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#xaxis}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitXaxis(BazacoParser.XaxisContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#yaxis}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitYaxis(BazacoParser.YaxisContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#xmin}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitXmin(BazacoParser.XminContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#xmax}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitXmax(BazacoParser.XmaxContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#nolegend}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNolegend(BazacoParser.NolegendContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#scale}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitScale(BazacoParser.ScaleContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#graphvar}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGraphvar(BazacoParser.GraphvarContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#gvar}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGvar(BazacoParser.GvarContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#ymin}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitYmin(BazacoParser.YminContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#ymax}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitYmax(BazacoParser.YmaxContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#linewidthgraph}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLinewidthgraph(BazacoParser.LinewidthgraphContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#metadata}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMetadata(BazacoParser.MetadataContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link BazacoParser#sketchInfo}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -345,18 +435,6 @@ public interface BazacoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSketches(BazacoParser.SketchesContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#graphs}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitGraphs(BazacoParser.GraphsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#metadata}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMetadata(BazacoParser.MetadataContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BazacoParser#subscriptId}.
 	 * @param ctx the parse tree
