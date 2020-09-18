@@ -286,6 +286,42 @@ public interface BazacoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNumberList(BazacoParser.NumberListContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link BazacoParser#sketchInfo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSketchInfo(BazacoParser.SketchInfoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#versionCode}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVersionCode(BazacoParser.VersionCodeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#viewNumber}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewNumber(BazacoParser.ViewNumberContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#viewX}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewX(BazacoParser.ViewXContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#viewInfo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewInfo(BazacoParser.ViewInfoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#sketches}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSketches(BazacoParser.SketchesContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link BazacoParser#graphs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -375,66 +411,6 @@ public interface BazacoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMetadata(BazacoParser.MetadataContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#sketchInfo}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSketchInfo(BazacoParser.SketchInfoContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#versionCode}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVersionCode(BazacoParser.VersionCodeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#viewNumber}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewNumber(BazacoParser.ViewNumberContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#viewSettings}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewSettings(BazacoParser.ViewSettingsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#objectList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitObjectList(BazacoParser.ObjectListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#objectParam}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitObjectParam(BazacoParser.ObjectParamContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#points}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPoints(BazacoParser.PointsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#viewX}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewX(BazacoParser.ViewXContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#viewInfo}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewInfo(BazacoParser.ViewInfoContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BazacoParser#sketches}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSketches(BazacoParser.SketchesContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BazacoParser#subscriptId}.
 	 * @param ctx the parse tree

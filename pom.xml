@@ -80,7 +80,7 @@
           <version>4.8</version>
           <configuration>
                 <sourceDirectory>${basedir}/src/main/antlr4/es/uva/inf/grammar/bazaco/</sourceDirectory>
-                <outputDirectory>src/main/antlr4/es/uva/inf/grammar/bazaco/</outputDirectory>
+                <outputDirectory>src/main/java/es/uva/inf/grammar/bazaco/</outputDirectory>
                 <arguments>
                   <argument>-package</argument>
                   <argument>es.uva.inf.grammar.bazaco</argument>

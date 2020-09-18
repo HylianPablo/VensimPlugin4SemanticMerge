@@ -99,6 +99,23 @@ constList : constantLine ((';' constantLine)* ';')?;
 
 numberList: (integerConst | floatingConst) (',' ( integerConst | floatingConst))*;
     
+
+  
+// Backslash tokens are ignored, so this rule doesn't take them into account.
+sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
+versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
+viewNumber: '*View' DigitSeq;
+//viewSettings : '$'(DigitSeq'-'DigitSeq'-'DigitSeq|'0')','DigitSeq','Ex'|'DigitSeq'|'Ex?'|'(DigitSeq'-'DigitSeq'-'DigitSeq|'-1--1--1')'|'DigitSeq'-'DigitSeq'-'DigitSeq'|'DigitSeq'-'DigitSeq'-'DigitSeq'|'(DigitSeq'-'DigitSeq'-'DigitSeq|'-1--1--1')'|'(DigitSeq'-'DigitSeq'-'DigitSeq|'-1--1--1')','DigitSeq','DigitSeq','DigitSeq','('0'|'1'|'3');
+//viewSettings: '$' Ex ',' Ex ',' Ex '|' Ex '|' Ex '|' Ex '|' Ex '|' Ex '|' Ex '|' Ex '|' Ex ',' Ex ',' Ex ',' FinDollar '\n';
+//objectList: (objectParam (',')?)+;
+//objectParam: DigitSeq | Ex | points;
+//points: DigitSeq ('|''('DigitSeq','DigitSeq')')+'|';
+//viewX: viewSettings objectList*;
+viewX: .*? ;
+viewInfo:   sketchInfo versionCode viewNumber viewX;
+sketches: viewInfo*;
+
+
 graphs: graph title xaxis? yaxis? xmin? xmax? nolegend? scale graphvar*;
 graph: ':GRAPH' Id;
 title: ':TITLE' Id;
@@ -106,7 +123,7 @@ xaxis: ':X-AXIS' Id;
 yaxis: ':Y-AXIS' Id;
 xmin: ':X-MIN' DigitSeq;
 xmax: ':X-MAX' DigitSeq;
-nolegend: ':NO-LEGEND' ('0'|'1');
+nolegend: ':NO-LEGEND' DigitSeq;
 scale: ':SCALE';
 graphvar: gvar ymin* ymax* linewidthgraph*;
 gvar: ':VAR' Id;
@@ -114,21 +131,6 @@ ymin: ':Y-MIN' .*?;
 ymax: ':Y-MAX' .*?;
 linewidthgraph: ':LINE-WIDTH' .*?;
 metadata: ':L<%^E!@' .*?;
-    
-// Backslash tokens are ignored, so this rule doesn't take them into account.
-sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
-versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
-viewNumber: '*View' DigitSeq;
-//viewSettings : '$'(DigitSeq'-'DigitSeq'-'DigitSeq|'0')','DigitSeq','Ex'|'DigitSeq'|'Ex?'|'(DigitSeq'-'DigitSeq'-'DigitSeq|'-1--1--1')'|'DigitSeq'-'DigitSeq'-'DigitSeq'|'DigitSeq'-'DigitSeq'-'DigitSeq'|'(DigitSeq'-'DigitSeq'-'DigitSeq|'-1--1--1')'|'(DigitSeq'-'DigitSeq'-'DigitSeq|'-1--1--1')','DigitSeq','DigitSeq','DigitSeq','('0'|'1'|'3');
-viewSettings: '$';
-objectList: (objectParam (',')?)+;
-objectParam: DigitSeq | Ex | points;
-points: DigitSeq ('|''('DigitSeq','DigitSeq')')+'|';
-//viewX: viewSettings objectList*;
-viewX: .*?;
-viewInfo:   sketchInfo versionCode viewNumber viewX;
-sketches: viewInfo*;
-
 
 Star : '*' ;
 Div : '/' ;
@@ -142,11 +144,12 @@ NotEqual : '<>' ;
 Exclamation : '!' ;
 DataEquationOp: ':=';
 StringAssignOp: ':IS:';
+//FinDollar: ([0-1]|[3]);
 
 
 subscriptId : Id  Exclamation?;
 Id: ( ( Nondigit IdChar*  ) | ( Nondigit ( IdChar | ' ' )* IdChar ) | StringLiteral );
-Ex: Nondigit;
+//Ex: (Nondigit|DigitSeq|'-')*;
 
 fragment
 IdChar : [a-zA-Z0-9_$'&%\u00A1-\u00ff\u0100-\u017f\u0180-\u024f\u1e02-\u1ef3] ;
