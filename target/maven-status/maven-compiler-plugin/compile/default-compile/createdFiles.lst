@@ -5,8 +5,10 @@ es\uva\inf\grammar\bazaco\BazacoParser$SubscriptMappingListContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$DataEquationContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$ConstantLineContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$SubscriptCopyContext.class
+es\uva\inf\grammar\bazaco\BazacoParser$GraphDelimiterContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$ConstContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$LookupArgContext.class
+es\uva\inf\grammar\bazaco\BazacoParser$PointsContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$NumberListContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$SignExprContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$LhsContext.class
@@ -24,12 +26,14 @@ es\uva\inf\grammar\bazaco\BazacoParser$MacroHeaderContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$SubscriptIdContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$GvarContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$ConstraintContext.class
+es\uva\inf\grammar\bazaco\BazacoParser$ObjectVariableContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$ViewSettingsContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$SketchInfoContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$FileContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$YminContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$LinewidthgraphContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$ViewInfoContext.class
+es\uva\inf\grammar\bazaco\BazacoParser$QuinceContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$LookupDefinitionContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$ConstListContext.class
 es\uva\inf\grammar\bazaco\BazacoParser$ModelContext.class

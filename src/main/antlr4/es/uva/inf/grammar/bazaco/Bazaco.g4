@@ -6,7 +6,7 @@ grammar Bazaco;
 // A Vensim model is a sequence of equations and subscript ranges.
 
 file: model EOF;
-model: ( symbolWithDoc | macroDefinition)* sketches graphs* metadata;
+model: ( symbolWithDoc | macroDefinition)* sketches graphDelimiter graphs* metadata;
 
 
 symbolWithDoc: symbolWithDocDefinition unitsDoc;
@@ -108,14 +108,21 @@ viewNumber: '*View' DigitSeq;
 viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)*;
 //objectList: (objectParam (',')?)+;
 //objectParam: DigitSeq | Id | points | '-';
-//points: DigitSeq ('|''('DigitSeq','DigitSeq')')+'|';
-viewX: viewSettings .*?;
-//quince: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)*;
+points: DigitSeq ('|''('DigitSeq','DigitSeq')')+'|';
+viewX: viewSettings (objectVariable|quince|Id)*;
+quince: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
+    (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
+    (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points)*;
+objectVariable: (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
+    (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
+    (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
+    (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst);
 viewInfo:   sketchInfo versionCode viewNumber viewX;
 sketches: viewInfo*;
 
 
 graphs: graph title xaxis? yaxis? xmin? xmax? nolegend? scale graphvar*;
+graphDelimiter: '///---';
 graph: ':GRAPH' Id;
 title: ':TITLE' Id;
 xaxis: ':X-AXIS' Id;

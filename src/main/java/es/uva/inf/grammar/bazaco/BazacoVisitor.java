@@ -310,11 +310,29 @@ public interface BazacoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitViewSettings(BazacoParser.ViewSettingsContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link BazacoParser#points}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPoints(BazacoParser.PointsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link BazacoParser#viewX}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitViewX(BazacoParser.ViewXContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#quince}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitQuince(BazacoParser.QuinceContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#objectVariable}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitObjectVariable(BazacoParser.ObjectVariableContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BazacoParser#viewInfo}.
 	 * @param ctx the parse tree
@@ -333,6 +351,12 @@ public interface BazacoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitGraphs(BazacoParser.GraphsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BazacoParser#graphDelimiter}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGraphDelimiter(BazacoParser.GraphDelimiterContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BazacoParser#graph}.
 	 * @param ctx the parse tree
