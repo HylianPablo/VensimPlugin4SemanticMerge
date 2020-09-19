@@ -101,15 +101,16 @@ numberList: (integerConst | floatingConst) (',' ( integerConst | floatingConst))
   
 // Backslash tokens are ignored, so this rule doesn't take them into account.
 sketches: viewInfo*;
-viewInfo:   sketchInfo versionCode viewNumber viewX;
+viewInfo:   sketchInfo versionCode viewName viewX;
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
-viewNumber: ('*View' DigitSeq| (Id|Star|Div|'+'|'-')*); //Views can have its name changed
+viewName: .*?;
 viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
-    (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq);
+    (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq); //The settings of each view always will have 2 commas separating
+                                                                                                            //fields, then 8 '|' and then again 3 commas
 points: DigitSeq ('|''('integerConst','integerConst')')+'|';
-viewX: viewSettings (shadowVariable|objectPoints|Id|objectVariable|textVariable|viewComment|viewPlainText)*;
+viewX: viewSettings (shadowVariable|objectPoints|Id|objectVariable|textVariable|viewComment)*;
 shadowVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastShadowPart*;
 lastShadowPart: ',' '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
 textVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastTextVarPart;
@@ -117,15 +118,16 @@ lastTextVarPart: '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-
 objectVariable: (Id|integerConst|floatingConst) (','(Id|integerConst|floatingConst))*;
 objectPoints: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
-    (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points)*;
-viewComment: (Id|'+'|'-'|Less|Greater|Star|Div|LeftArrow|RightArrow|'('|')')+;
-viewPlainText: (Id|'.'|'+'|'-'|Star|Div)+;
+    (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points)*;  //Objects always will have 13 fields and a last field that contains 
+                                                                                                        //the number of points of the object and where they are located
+//viewComment: (Id|'+'|'-'|Less|Greater|Star|Div|LeftArrow|RightArrow|'('|')'|'.')+;
+viewComment: .+?;
 
 
 graphs: graph title xaxis? xlabel? xdiv? yaxis? ylabel? ydiv? xmin? xmax? nolegend? scale graphvar*;
 graphDelimiter: '///---';
 graph: ':GRAPH' Id;
-title: ':TITLE' (Id|Star|Div|'+'|'-'|'('|')')*;
+title: ':TITLE' .*?;
 xaxis: ':X-AXIS' Id;
 xlabel: ':X-LABEL' Id;
 xdiv: ':X-DIV' DigitSeq;

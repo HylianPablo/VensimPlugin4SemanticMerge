@@ -310,11 +310,11 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitVersionCode(GrammarParser.VersionCodeContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#viewNumber}.
+	 * Visit a parse tree produced by {@link GrammarParser#viewName}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitViewNumber(GrammarParser.ViewNumberContext ctx);
+	T visitViewName(GrammarParser.ViewNameContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#viewSettings}.
 	 * @param ctx the parse tree
@@ -375,12 +375,6 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitViewComment(GrammarParser.ViewCommentContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#viewPlainText}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewPlainText(GrammarParser.ViewPlainTextContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#graphs}.
 	 * @param ctx the parse tree
