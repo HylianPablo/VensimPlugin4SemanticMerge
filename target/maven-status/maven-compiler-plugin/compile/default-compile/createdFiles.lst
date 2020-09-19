@@ -19,10 +19,12 @@ es\uva\inf\grammar\GrammarParser$EquationContext.class
 es\uva\inf\grammar\GrammarParser$ExprAllowSignContext.class
 es\uva\inf\grammar\GrammarParser$XminContext.class
 es\uva\inf\grammar\GrammarParser$KeywordContext.class
+es\uva\inf\grammar\GrammarParser$LastTextVarPartContext.class
 es\uva\inf\grammar\GrammarParser$MacroArgumentsContext.class
 es\uva\inf\grammar\GrammarParser$SubscriptMappingContext.class
 es\uva\inf\grammar\GrammarParser$NumberListContext.class
 es\uva\inf\grammar\GrammarParser$TabbedArrayContext.class
+es\uva\inf\grammar\GrammarParser$TextVariableContext.class
 es\uva\inf\grammar\GrammarParser$TitleContext.class
 es\uva\inf\grammar\GrammarParser$WildCardContext.class
 es\uva\inf\grammar\GrammarParser$ViewNumberContext.class

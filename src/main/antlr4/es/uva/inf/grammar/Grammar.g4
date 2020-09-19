@@ -100,24 +100,24 @@ numberList: (integerConst | floatingConst) (',' ( integerConst | floatingConst))
 
   
 // Backslash tokens are ignored, so this rule doesn't take them into account.
+sketches: viewInfo*;
+viewInfo:   sketchInfo versionCode viewNumber viewX;
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
 viewNumber: '*View' DigitSeq;
-viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)*;
+viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
+    (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
+    (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq);
 points: DigitSeq ('|''('DigitSeq','DigitSeq')')+'|';
-viewX: viewSettings (objectVariable|objectPoints|Id|shadowVariable)*;
+viewX: viewSettings (shadowVariable|objectPoints|Id|objectVariable|textVariable)*;
+shadowVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastShadowPart*;
+lastShadowPart: ',' '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
+textVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastTextVarPart;
+lastTextVarPart: '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
+objectVariable: (Id|integerConst) (','(Id|integerConst))*;
 objectPoints: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points)*;
-//objectVariable: (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
-  //  (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
-  //  (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
-  //  (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst);
-objectVariable: (Id|integerConst) (','(Id|integerConst))*;
-shadowVariable: (Id|integerConst|'-')+ (','(Id|integerConst|'-')*)* lastShadowPart*;
-lastShadowPart: ',' '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
-viewInfo:   sketchInfo versionCode viewNumber viewX;
-sketches: viewInfo*;
 
 
 graphs: graph title xaxis? yaxis? xmin? xmax? nolegend? scale graphvar*;
