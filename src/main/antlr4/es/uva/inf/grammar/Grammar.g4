@@ -105,14 +105,17 @@ versionCode: 'V300  Do not put anything below this section - it will be ignored'
 viewNumber: '*View' DigitSeq;
 viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)*;
 points: DigitSeq ('|''('DigitSeq','DigitSeq')')+'|';
-viewX: viewSettings (objectVariable|objectPoints|Id)*;
+viewX: viewSettings (objectVariable|objectPoints|Id|shadowVariable)*;
 objectPoints: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points)*;
-objectVariable: (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
-    (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
-    (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
-    (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst);
+//objectVariable: (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
+  //  (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
+  //  (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst)','
+  //  (Id|integerConst)','(Id|integerConst)','(Id|integerConst)','(Id|integerConst);
+objectVariable: (Id|integerConst) (','(Id|integerConst))*;
+shadowVariable: (Id|integerConst|'-')+ (','(Id|integerConst|'-')*)* lastShadowPart*;
+lastShadowPart: ',' '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
 viewInfo:   sketchInfo versionCode viewNumber viewX;
 sketches: viewInfo*;
 
@@ -120,7 +123,7 @@ sketches: viewInfo*;
 graphs: graph title xaxis? yaxis? xmin? xmax? nolegend? scale graphvar*;
 graphDelimiter: '///---';
 graph: ':GRAPH' Id;
-title: ':TITLE' Id;
+title: ':TITLE' (Id|Star|Div|'+'|'-'|'('|')')*;
 xaxis: ':X-AXIS' Id;
 yaxis: ':Y-AXIS' Id;
 xmin: ':X-MIN' DigitSeq;

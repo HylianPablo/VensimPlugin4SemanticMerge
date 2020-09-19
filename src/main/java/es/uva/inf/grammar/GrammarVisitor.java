@@ -322,17 +322,29 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitViewX(GrammarParser.ViewXContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#quince}.
+	 * Visit a parse tree produced by {@link GrammarParser#objectPoints}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitQuince(GrammarParser.QuinceContext ctx);
+	T visitObjectPoints(GrammarParser.ObjectPointsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#objectVariable}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitObjectVariable(GrammarParser.ObjectVariableContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#shadowVariable}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitShadowVariable(GrammarParser.ShadowVariableContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#lastShadowPart}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLastShadowPart(GrammarParser.LastShadowPartContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#viewInfo}.
 	 * @param ctx the parse tree
