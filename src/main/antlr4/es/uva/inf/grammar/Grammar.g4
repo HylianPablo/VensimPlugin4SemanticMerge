@@ -104,28 +104,34 @@ sketches: viewInfo*;
 viewInfo:   sketchInfo versionCode viewNumber viewX;
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
-viewNumber: '*View' DigitSeq;
+viewNumber: ('*View' DigitSeq| (Id|Star|Div|'+'|'-')*); //Views can have its name changed
 viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq);
-points: DigitSeq ('|''('DigitSeq','DigitSeq')')+'|';
-viewX: viewSettings (shadowVariable|objectPoints|Id|objectVariable|textVariable)*;
+points: DigitSeq ('|''('integerConst','integerConst')')+'|';
+viewX: viewSettings (shadowVariable|objectPoints|Id|objectVariable|textVariable|viewComment|viewPlainText)*;
 shadowVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastShadowPart*;
 lastShadowPart: ',' '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
 textVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastTextVarPart;
 lastTextVarPart: '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
-objectVariable: (Id|integerConst) (','(Id|integerConst))*;
+objectVariable: (Id|integerConst|floatingConst) (','(Id|integerConst|floatingConst))*;
 objectPoints: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points)*;
+viewComment: (Id|'+'|'-'|Less|Greater|Star|Div|LeftArrow|RightArrow|'('|')')+;
+viewPlainText: (Id|'.'|'+'|'-'|Star|Div)+;
 
 
-graphs: graph title xaxis? yaxis? xmin? xmax? nolegend? scale graphvar*;
+graphs: graph title xaxis? xlabel? xdiv? yaxis? ylabel? ydiv? xmin? xmax? nolegend? scale graphvar*;
 graphDelimiter: '///---';
 graph: ':GRAPH' Id;
 title: ':TITLE' (Id|Star|Div|'+'|'-'|'('|')')*;
 xaxis: ':X-AXIS' Id;
+xlabel: ':X-LABEL' Id;
+xdiv: ':X-DIV' DigitSeq;
 yaxis: ':Y-AXIS' Id;
+ylabel: ':Y-LABEL' Id;
+ydiv: ':Y-DIV' DigitSeq;
 xmin: ':X-MIN' DigitSeq;
 xmax: ':X-MAX' DigitSeq;
 nolegend: ':NO-LEGEND' DigitSeq;
@@ -149,6 +155,8 @@ NotEqual : '<>' ;
 Exclamation : '!' ;
 DataEquationOp: ':=';
 StringAssignOp: ':IS:';
+LeftArrow: '->';
+RightArrow: '<-';
 
 subscriptId : Id  Exclamation?;
 Id: ( ( Nondigit IdChar*  ) | ( Nondigit ( IdChar | ' ' )* IdChar ) | StringLiteral );

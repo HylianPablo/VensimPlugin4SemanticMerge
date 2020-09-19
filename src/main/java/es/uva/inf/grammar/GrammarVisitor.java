@@ -370,6 +370,18 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitObjectPoints(GrammarParser.ObjectPointsContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link GrammarParser#viewComment}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewComment(GrammarParser.ViewCommentContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#viewPlainText}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewPlainText(GrammarParser.ViewPlainTextContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link GrammarParser#graphs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -400,11 +412,35 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitXaxis(GrammarParser.XaxisContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link GrammarParser#xlabel}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitXlabel(GrammarParser.XlabelContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#xdiv}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitXdiv(GrammarParser.XdivContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link GrammarParser#yaxis}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitYaxis(GrammarParser.YaxisContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#ylabel}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitYlabel(GrammarParser.YlabelContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#ydiv}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitYdiv(GrammarParser.YdivContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#xmin}.
 	 * @param ctx the parse tree

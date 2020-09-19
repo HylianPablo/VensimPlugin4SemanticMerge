@@ -1,5 +1,4 @@
-// Generated from Grammar.g4 by ANTLR 4.8
-package es.uva.inf.grammar;
+// Generated from c:\Users\Propietario\Documents\DOCUMENTOS-TFG\MVN-Bazaco\mvnbazaco\src\main\antlr4\es\u005Cuva\inf\grammar\Grammar.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
