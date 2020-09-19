@@ -1,0 +1,8 @@
+*/target/
+.vscode
+.settings
+*/.vscode
+*.class
+.project
+.classpath
+*/.antlr

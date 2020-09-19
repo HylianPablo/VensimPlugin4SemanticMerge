@@ -1,4 +1,4 @@
-package es.uva.inf.grammar.bazaco;
+package es.uva.inf.grammar;
 
 import static org.junit.Assert.assertTrue;
 
