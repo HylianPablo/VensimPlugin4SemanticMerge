@@ -107,7 +107,15 @@ second order flow=
 	k2*A3*B3
 	~	
 	~		|
-
+max unconv gas growth extraction EJ[scenarios]=
+	IF THEN ELSE(check gas delayed 1yr[scenarios]<-0.01, (1+"constrain gas exogenous growth? delayed 1yr"\
+		[scenarios])*extraction unconv gas delayed[scenarios],
+	extraction unconv gas delayed[scenarios]*max unconv gas growth extraction[scenarios]\
+		)
+	~	EJ/Year
+	~	Constrained unconventional gas extraction growth (EJ/Year), i.e. maximum \
+		annual growth compatible with the constraint selected in the scenario.
+	|
 ********************************************************
 	.Control
 ********************************************************~

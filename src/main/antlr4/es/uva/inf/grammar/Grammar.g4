@@ -4,7 +4,7 @@ grammar Grammar;
 // A Vensim model is a sequence of equations and subscript ranges.
 
 file: model EOF;
-model: ( symbolWithDoc | macroDefinition)* sketches graphDelimiter graphs* metadata;
+model: ( symbolWithDoc | macroDefinition)* sketches graphDelimiter? graphs* metadata?;
 
 
 symbolWithDoc: symbolWithDocDefinition unitsDoc;
@@ -157,8 +157,6 @@ NotEqual : '<>' ;
 Exclamation : '!' ;
 DataEquationOp: ':=';
 StringAssignOp: ':IS:';
-LeftArrow: '->';
-RightArrow: '<-';
 
 subscriptId : Id  Exclamation?;
 Id: ( ( Nondigit IdChar*  ) | ( Nondigit ( IdChar | ' ' )* IdChar ) | StringLiteral );

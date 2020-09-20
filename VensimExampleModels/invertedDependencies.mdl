@@ -1,0 +1,13 @@
+before = 9 + extraSymbol	~
+           	~		|
+
+
+
+variable = after - before 	~
+                 	~		|
+
+after = Time  	~
+      	~		|
+
+
+extraSymbol = 5   	~	~	|
