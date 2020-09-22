@@ -120,7 +120,6 @@ objectPoints: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points)*;  //Objects always will have 13 fields and a last field that contains 
                                                                                                         //the number of points of the object and where they are located
-//viewComment: (Id|'+'|'-'|Less|Greater|Star|Div|LeftArrow|RightArrow|'('|')'|'.')+;
 viewComment: .+?;
 
 
@@ -237,3 +236,4 @@ OtherCaracter: .;
 
 
  unitsDoc: units=INFO_UNIT comment=INFO_UNIT supplementary=INFO_UNIT?'|';
+ //test
