@@ -4,9 +4,9 @@ grammar Grammar;
 // A Vensim model is a sequence of equations and subscript ranges.
 
 file: model EOF;
-model: ( symbolWithDoc | macroDefinition)* sketches graphDelimiter? graphs* metadata?;
-
-
+model: ( symbolWithDoc | macroDefinition)* sketchesGraphsAndMetadata?;
+sketchesGraphsAndMetadata: sketches graphs* metadata; //Separating equations and sketches&graphs allows to test sample files with just a few lines.
+                                                                      //For example, a problematic equation.
 symbolWithDoc: symbolWithDocDefinition unitsDoc;
 
 symbolWithDocDefinition: ( lookupDefinition | subscriptRange | equation |constraint  | unchangeableConstant |
@@ -97,34 +97,7 @@ constList : constantLine ((';' constantLine)* ';')?;
 
 numberList: (integerConst | floatingConst) (',' ( integerConst | floatingConst))*;
     
-
-  
-// Backslash tokens are ignored, so this rule doesn't take them into account.
-sketches: viewInfo*;
-viewInfo:   sketchInfo versionCode viewName viewX;
-sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
-versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
-viewName: .*?;
-viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
-    (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
-    (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq); //The settings of each view always will have 2 commas separating
-                                                                                                            //fields, then 8 '|' and then again 3 commas
-points: DigitSeq ('|''('integerConst','integerConst')')+'|';
-viewX: viewSettings (shadowVariable|objectPoints|Id|objectVariable|textVariable|viewComment)*;
-shadowVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastShadowPart*;
-lastShadowPart: ',' '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
-textVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastTextVarPart;
-lastTextVarPart: '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
-objectVariable: (Id|integerConst|floatingConst) (','(Id|integerConst|floatingConst))*;
-objectPoints: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
-    (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
-    (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points)*;  //Objects always will have 13 fields and a last field that contains 
-                                                                                                        //the number of points of the object and where they are located
-viewComment: .+?;
-
-
 graphs: graph title xaxis? xlabel? xdiv? yaxis? ylabel? ydiv? xmin? xmax? nolegend? scale graphvar*;
-graphDelimiter: '///---';
 graph: ':GRAPH' Id;
 title: ':TITLE' .*?;
 xaxis: ':X-AXIS' Id;
@@ -143,6 +116,37 @@ ymin: ':Y-MIN' .*?;
 ymax: ':Y-MAX' .*?;
 linewidthgraph: ':LINE-WIDTH' .*?;
 metadata: ':L<%^E!@' .*?;
+  
+// Backslash tokens are ignored, so this rule doesn't take them into account.
+sketches: viewInfo* viewDelimiter;
+viewDelimiter: '///---';
+viewInfo:   sketchInfo versionCode viewName viewVariables;
+sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
+versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
+viewName: .*?;
+viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
+    (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
+    (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq); //The settings of each view always will have 2 commas separating
+                                                                                                            //fields, then 8 '|' and then again 3 commas
+viewVariables: viewSettings (arrow|shadowVariable|textVariable|problematic|Id|objectVariable)*;
+
+
+shadowVariable: (Id|integerConst) (','(Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)))* lastShadowPart;
+lastShadowPart: ',' '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
+
+textVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastTextVarPart;
+lastTextVarPart: '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
+
+objectVariable: (Id|integerConst|floatingConst) (','(Id|integerConst|floatingConst))*; //Variables, Valves, Comments, Bitmaps and Metafiles will have an undetermined
+                                                                                       //set of fields, always separated by commas.
+arrow: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
+    (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
+    (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points);  //Arrows always will have 13 fields and a last field that contains 
+points: DigitSeq ('|''('integerConst','integerConst')')+'|';
+                                                                                                        //the number of points of the object and where they are located
+problematic: ('.')+;
+
+
 
 Star : '*' ;
 Div : '/' ;
@@ -225,7 +229,6 @@ Keyword
     :   ':'[a-zA-Z ]*':'
     ;
 
-
 Whitespace : [ \t\n\r]+ -> skip ;
 // Backslashes are used as line continuators, so they can be ignored.
 Backslash: [\\] -> skip;
@@ -236,4 +239,3 @@ OtherCaracter: .;
 
 
  unitsDoc: units=INFO_UNIT comment=INFO_UNIT supplementary=INFO_UNIT?'|';
- //test

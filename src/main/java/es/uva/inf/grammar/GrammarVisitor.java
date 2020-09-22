@@ -23,6 +23,12 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitModel(GrammarParser.ModelContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link GrammarParser#sketchesGraphsAndMetadata}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSketchesGraphsAndMetadata(GrammarParser.SketchesGraphsAndMetadataContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link GrammarParser#symbolWithDoc}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -286,107 +292,11 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNumberList(GrammarParser.NumberListContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#sketches}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSketches(GrammarParser.SketchesContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#viewInfo}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewInfo(GrammarParser.ViewInfoContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#sketchInfo}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSketchInfo(GrammarParser.SketchInfoContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#versionCode}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVersionCode(GrammarParser.VersionCodeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#viewName}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewName(GrammarParser.ViewNameContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#viewSettings}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewSettings(GrammarParser.ViewSettingsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#points}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPoints(GrammarParser.PointsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#viewX}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewX(GrammarParser.ViewXContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#shadowVariable}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitShadowVariable(GrammarParser.ShadowVariableContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#lastShadowPart}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLastShadowPart(GrammarParser.LastShadowPartContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#textVariable}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTextVariable(GrammarParser.TextVariableContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#lastTextVarPart}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLastTextVarPart(GrammarParser.LastTextVarPartContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#objectVariable}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitObjectVariable(GrammarParser.ObjectVariableContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#objectPoints}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitObjectPoints(GrammarParser.ObjectPointsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#viewComment}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewComment(GrammarParser.ViewCommentContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link GrammarParser#graphs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitGraphs(GrammarParser.GraphsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#graphDelimiter}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitGraphDelimiter(GrammarParser.GraphDelimiterContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#graph}.
 	 * @param ctx the parse tree
@@ -495,6 +405,102 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMetadata(GrammarParser.MetadataContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#sketches}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSketches(GrammarParser.SketchesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#viewDelimiter}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewDelimiter(GrammarParser.ViewDelimiterContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#viewInfo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewInfo(GrammarParser.ViewInfoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#sketchInfo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSketchInfo(GrammarParser.SketchInfoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#versionCode}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVersionCode(GrammarParser.VersionCodeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#viewName}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewName(GrammarParser.ViewNameContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#viewSettings}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewSettings(GrammarParser.ViewSettingsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#viewVariables}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitViewVariables(GrammarParser.ViewVariablesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#shadowVariable}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitShadowVariable(GrammarParser.ShadowVariableContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#lastShadowPart}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLastShadowPart(GrammarParser.LastShadowPartContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#textVariable}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTextVariable(GrammarParser.TextVariableContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#lastTextVarPart}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLastTextVarPart(GrammarParser.LastTextVarPartContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#objectVariable}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitObjectVariable(GrammarParser.ObjectVariableContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#arrow}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrow(GrammarParser.ArrowContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#points}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPoints(GrammarParser.PointsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#problematic}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProblematic(GrammarParser.ProblematicContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#subscriptId}.
 	 * @param ctx the parse tree

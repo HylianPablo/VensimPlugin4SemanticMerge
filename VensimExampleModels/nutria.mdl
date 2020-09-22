@@ -87,7 +87,6 @@ This is a model of nutria that I used as an example for a class.
 :Y-MAX 10000
 :LINE-WIDTH 2
 :L<%^E!@
-1:/Applications/Current.vdf
 9:Current
 22:$,Dollar,Dollars,$s
 22:Hour,Hours
@@ -102,6 +101,9 @@ This is a model of nutria that I used as an example for a class.
 19:100,0
 27:2,
 34:0,
+42:0
+72:0
+73:0
 4:Time
 5:death from competition
 35:Date
@@ -111,6 +113,14 @@ This is a model of nutria that I used as an example for a class.
 39:1
 40:2
 41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
 24:0
 25:24
 26:24
+75:
+43:
