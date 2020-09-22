@@ -78,14 +78,1245 @@ This is a model of nutria that I used as an example for a class.
 1,21,20,19,1,0,0,0,0,64,0,-1--1--1,,1|(523,154)|
 1,22,1,19,1,0,0,0,0,64,0,-1--1--1,,1|(397,136)|
 ///---\\\
-:GRAPH nutria_population
-:TITLE nutria population
-:X-AXIS Time
+:GRAPH Population
+:TITLE Population
 :SCALE
-:VAR nutria
+:VAR population[REGIONS I]
+:Y-MAX 1.2e+10
+
+:GRAPH TPES_intensity
+:TITLE TPES intensity
+:SCALE
+:VAR TPES intensity EJ T$[scenarios]
 :Y-MIN 0
-:Y-MAX 10000
+
+:GRAPH Real_PED_intensity_of_Industry&Buildings
+:TITLE real PED intensity of Industry&Buildings
+:SCALE
+:VAR real PED intensity IB[scenarios]
+:Y-MIN 0
+
+:GRAPH real_PED_intensity_of_Electricity
+:TITLE real PED intensity of Electricity
+:SCALE
+:VAR real PED intensity of Electricity[scenarios]
+:Y-MIN 0
+
+:GRAPH Annual_CO2_emissions
+:TITLE Annual CO2 emissions
+:SCALE
+:VAR Total CO2 emissions GtCO2[scenarios]
+
+:GRAPH Electricity_demand
+:TITLE Electricity demand
+:SCALE
+:VAR Total FE Elec demand TWh[scenarios]
+:Y-MIN 0
+
+:GRAPH Abundance_electricity
+:TITLE Abundance electricity
+:SCALE
+:VAR Abundance electricity[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Cumulated_total_investment_RES_for_Electricity
+:TITLE Cumulated total investment RES for Electricity
+:SCALE
+:VAR Cumulated total monet invest RES for Elec[scenarios]
+
+:GRAPH Proportion_of_var_electr
+:TITLE Proportion of var electric gen vs total
+:SCALE
+:VAR "proportion E var-base percent"[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Share_of_GDP_of_investments_for_RES_for_Elec
+:TITLE Share of GDP of investments for RES for Elec
+:SCALE
+:VAR share tot monet invest Elec RES vs GDP[scenarios]
+
+:GRAPH Biomass_land_compet_occupation
+:TITLE Biomass land-use (in arable lands)
+:SCALE
+:VAR Land compet required dedicated crops for biofuels[scenarios]
+:VAR Global arable land
+:VAR urban surface 2008
+
+:GRAPH Renewables_land_occupati
+:TITLE Renewables land-use
+:SCALE
+:VAR Total land requirements renew Mha[scenarios]
+:VAR urban surface 2008
+
+:GRAPH Transport_final_energy_demand
+:TITLE Transport final energy demand
+:SCALE
+:VAR Transport TFED[scenarios]
+
+:GRAPH Abundance_PE_for_transportation
+:TITLE Abundance PE for transportation
+:SCALE
+:VAR abundance transport[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH IB_PE_demand
+:TITLE IB PE demand
+:SCALE
+:VAR PE demand for IB after RES EJ[scenarios]
+:Y-MAX 1500
+
+:GRAPH Abundance_PE_for_IB
+:TITLE Abundance PE for IB
+:SCALE
+:VAR abundance IB[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Total_renewable_extracti
+:TITLE Total renewable extraction (primary energy)
+:SCALE
+:VAR Total Renw Prim E EJ[scenarios]
+:VAR WEO2012 renew 450 Scen EJ
+:VAR WEO2012 renew current policies EJ
+
+:GRAPH Total_primary_energy_demand
+:TITLE Total primary energy demand
+:SCALE
+:VAR TPED by fuel[scenarios]
+
+:GRAPH Abundance_total_energy
+:TITLE Abundance total energy
+:SCALE
+:VAR abundance TPE[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Total_Primary_Energy_supply
+:TITLE Total primary energy supply
+:SCALE
+:VAR TPES EJ[scenarios]
+
+:GRAPH Coal_demand
+:TITLE Coal demand
+:SCALE
+:VAR PED coal EJ[scenarios]
+
+:GRAPH Abundance_coal
+:TITLE Abundance coal
+:SCALE
+:VAR abundance coal[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Total_gas_demand
+:TITLE Total gas demand
+:SCALE
+:VAR "PED nat. gas EJ"[scenarios]
+
+:GRAPH abundance_gases
+:TITLE abundance gases
+:SCALE
+:VAR abundance gases[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Oil_demand
+:TITLE Oil demand
+:SCALE
+:VAR Total demand convOIL EJ[scenarios]
+:VAR WEO2012 oil 450 Scen EJ
+:VAR WEO2012 oil current policies EJ
+
+:GRAPH Abundance_liquids
+:TITLE Abundance liquids
+:SCALE
+:VAR abundance liquids[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Abundance_uranium
+:TITLE Abundance uranium
+:SCALE
+:VAR abundance uranium[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Coal_extraction
+:TITLE Coal extraction
+:SCALE
+:VAR extraction coal EJ[scenarios]
+
+:GRAPH Total_gas_extraction
+:TITLE Total gas extraction
+:SCALE
+:VAR "PES nat. gas"[scenarios]
+
+:GRAPH Liquids_extraction
+:TITLE Liquids extraction
+:SCALE
+:VAR PES Liquids EJ[scenarios]
+
+:GRAPH GRAPH
+:TITLE GRAPH
+:SCALE
+:VAR solar TWe[BAU]
+:VAR wear solar[BAU]
+:VAR max solarTWe[BAU]
+
+:GRAPH Share_variable_vs_total_Electricity_generation
+:TITLE Share variable vs total Electricity generation
+:SCALE
+:VAR Share variable RES elec generation vs total elec generation[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH TFED_intensity_of_Transport
+:TITLE TFED intensity of Transport
+:SCALE
+:VAR Transport TFED energy intensity[scenarios]
+:Y-MIN 0
+
+:GRAPH Total_electricity_generation
+:TITLE Total electricity generation
+:SCALE
+:VAR Total FE Elec generation TWh[scenarios]
+
+:GRAPH Transport_PE_supply
+:TITLE Transport PE supply
+:SCALE
+:VAR PES for Transp EJ[scenarios]
+
+:GRAPH IB_PE_supply
+:TITLE IB PE supply
+:SCALE
+:VAR PES for IB EJ[scenarios]
+
+:GRAPH Conventional_oil_extraction
+:TITLE Conventional_oil_extraction
+:SCALE
+:VAR real extraction conv oil EJ[scenarios]
+:Y-MIN 0
+
+:GRAPH Unconventional_oil_extraction
+:TITLE Unconventional oil extraction
+:SCALE
+:VAR real extraction unconv oil EJ[scenarios]
+
+:GRAPH Conventional_gas_extraction
+:TITLE Conventional gas extraction
+:SCALE
+:VAR real extraction conv gas EJ[scenarios]
+
+:GRAPH Unconventional_gas_extraction
+:TITLE Unconventional gas extraction
+:SCALE
+:VAR real extraction unconv gas EJ[scenarios]
+
+:GRAPH Total_demand_liquids
+:TITLE Total demand liquids
+:SCALE
+:VAR PED liquids EJ[scenarios]
+
+:GRAPH CTL_production
+:TITLE CTL production
+:SCALE
+:VAR CTL production[scenarios]
+
+:GRAPH GTL_production
+:TITLE GTL production
+:SCALE
+:VAR GTL production[scenarios]
+
+:GRAPH Electricity_generation_from_nuclear
+:TITLE Electricity generation from nuclear
+:SCALE
+:VAR real generation nuclear elec TWh[scenarios]
+
+:GRAPH Electricity_generation_from_fossil_fuels
+:TITLE Electricity generation from fossil fuels
+:SCALE
+:VAR FE Elec generation from fossil fuels TWh[scenarios]
+
+:GRAPH Uranium_extraction
+:TITLE Uranium extraction
+:SCALE
+:VAR extraction uranium EJ[scenarios]
+
+:GRAPH Uranium_demand
+:TITLE Uranium demand
+:SCALE
+:VAR PE demand uranium EJ[scenarios]
+
+:GRAPH Abundance_total_oil
+:TITLE Abundance total oil
+:SCALE
+:VAR abundance total oil[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Total_demand_oil
+:TITLE Total demand oil
+:SCALE
+:VAR PED total oil EJ[scenarios]
+
+:GRAPH Total_extraction_oil
+:TITLE Total extraction oil
+:SCALE
+:VAR PES oil EJ[scenarios]
+
+:GRAPH Land_for_dedicated_crops_for_biofuels
+:TITLE Land for dedicated crops for biofuels
+:SCALE
+:VAR Land compet biofuels 2gen Mha
+:Y-MIN 0
+:VAR Land compet biofuels 3gen Mha
+:Y-MIN 0
+
+:GRAPH Total_radiative_forcing
+:TITLE Total radiative forcing
+:SCALE
+:VAR Total Radiative Forcing[scenarios]
+
+:GRAPH PES_from_RES_non-electric_(without_trad._biomass)
+:TITLE PES from RES non-electric (without trad. biomass)
+:SCALE
+:VAR "PE supply from RES non-elec without trad bioE EJ"[scenarios]
+:VAR "Max potential non-electric RES"[scenarios]
+
+:GRAPH Share_of_RES_vs_TPES
+:TITLE Share of RES vs TPES
+:SCALE
+:VAR share RES vs TPES[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Share_RES_for_Elec_vs._TPE_RES
+:TITLE Share RES for Elec vs. TPE RES
+:SCALE
+:VAR share RES for Elec vs TPE RES[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH TPE_from_RES
+:TITLE TPE from RES
+:SCALE
+:VAR TPE from RES EJ[scenarios]
+
+:GRAPH Electricity_generation_(PE)_by_RES
+:TITLE Electricity generation (PE) by RES
+:SCALE
+:VAR PE Elec generation from RES EJ[scenarios]
+
+:GRAPH Share_RES+efficiency_for_Ind
+:TITLE Share RES+efficiency for Ind
+:SCALE
+:VAR "share RES+efficiency for Ind"[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Share_RES+efficiency_for_Buildings
+:TITLE Share RES+efficiency for Buildings
+:SCALE
+:VAR "share RES+efficiency for Build"[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Cumulative_carbon_emissions
+:TITLE Cumulative carbon emissions
+:SCALE
+:VAR Total cumulative C emissions GtC[scenarios]
+:VAR carbon budget
+
+:GRAPH PE_traditional_biomass
+:TITLE PE traditional biomass
+:SCALE
+:VAR PE traditional biomass consum EJ[scenarios]
+
+:GRAPH check_TPED_by_sector
+:TITLE check TPED by sector
+:SCALE
+:VAR check TPED by sector[scenarios]
+
+:GRAPH check_transport
+:TITLE check transport
+:SCALE
+:VAR check transport[scenarios]
+
+:GRAPH Check_emissions_vs_historic
+:TITLE Check emissions vs historic
+:X-MIN 1995
+:X-MAX 2014
+:SCALE
+:VAR check hist emissions
+
+:GRAPH Check_TPES_vs_historic
+:TITLE Check TPES vs historic
+:X-MIN 1995
+:X-MAX 2014
+:SCALE
+:VAR check hist TPES
+
+:GRAPH check_hist_fossil_fuels_&_RES
+:TITLE check historic fossil fuels & RES
+:X-MIN 1995
+:X-MAX 2014
+:SCALE
+:VAR check hist coal
+:VAR check hist liquids
+:VAR check hist natural gas
+:VAR check hist RES
+:VAR check hist Elec
+:VAR check hist crude oil
+
+:GRAPH RES_supply_for_heat
+:TITLE RES supply for heat
+:SCALE
+:VAR RES supply for heat[scenarios]
+
+:GRAPH Electricity_generation_from_solar_PV
+:TITLE Electricity generation from solar PV
+:SCALE
+:VAR max potential RES elec after intermitt TWh[solar PV,SCEN2]
+:VAR real generation RES elec TWh[solar PV,SCEN2]
+:VAR wear RES elec[solar PV,SCEN2]
+
+:GRAPH Capacity_solar_PV
+:TITLE Capacity solar PV
+:SCALE
+:VAR installed capacity RES elec TW[solar PV,SCEN2]
+:Y-MIN 0
+:VAR wear RES elec[solar PV,SCEN2]
+:Y-MIN 0
+:VAR replacement RES elec[solar PV,SCEN2]
+:Y-MIN 0
+
+:GRAPH Remaining_potential_RES_for_electricity
+:TITLE Share remaining potential RES for electricity
+:SCALE
+:VAR share available remaining potential RES elec[RES elec,scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Remaining_potential_RES_for_heat
+:TITLE Remaining potential RES for heat
+:SCALE
+:VAR remaining potential tot RES heat[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Average_TPES_per_capita
+:TITLE Average TPES per capita
+:SCALE
+:VAR Average TPES per capita[scenarios]
+
+:GRAPH Average_electricity_consumption_per_capita
+:TITLE Average electricity consumption per capita
+:SCALE
+:VAR Average elec consumption per capita[scenarios]
+
+:GRAPH Share_PE_RES_for_Industry
+:TITLE Share PE RES for Industry
+:SCALE
+:VAR share PE RES for Industry[scenarios]
+:Y-MIN 0
+
+:GRAPH Share_PE_RES_for_Buildings
+:TITLE Share PE RES for Buildings
+:SCALE
+:VAR share PE RES for Buildings[scenarios]
+:Y-MIN 0
+
+:GRAPH Population_dependent_on_traditional_biomass
+:TITLE Population dependent on traditional biomass
+:SCALE
+:VAR Population dependent on trad biomass[scenarios]
+
+:GRAPH Nuclear_generation
+:TITLE Nuclear generation
+:SCALE
+:VAR demand Nuclear TWh[SCEN1]
+:VAR Elec gen nuclear capacity available TWh[SCEN1]
+:VAR FE nuclear Elec generation TWh[SCEN1]
+
+:GRAPH Carbon_footprint
+:TITLE Carbon footprint
+:SCALE
+:VAR "Carbon footprint tCO2/person"[scenarios]
+
+:GRAPH Average_TPESpc_(without_trad_biomass)
+:TITLE Average TPESpc (without trad biomass)
+:SCALE
+:VAR "Average TPESpc (without trad biomass)"[scenarios]
+:VAR TPEFpc threshold high development
+:VAR TPEDpc acceptable standard living
+
+:GRAPH Share_Electricity_covered_by_RES
+:TITLE Share Electricity covered by RES
+:SCALE
+:VAR share RES electricity generation[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH New_capacity_installed_RES_elec_solar_PV
+:TITLE New capacity installed RES elec solar PV
+:SCALE
+:VAR new capacity installed RES elec TW[solar PV,SCEN2]
+:Y-MIN 0
+
+:GRAPH GDP
+:TITLE GDP
+:SCALE
+:VAR GDP[scenarios]
+
+:GRAPH GDPpc
+:TITLE GDPpc
+:SCALE
+:VAR GDPpc[scenarios]
+
+:GRAPH Electricity_generation_from_RES_by_source
+:TITLE Electricity generation from RES by source
+:SCALE
+:VAR real generation RES elec TWh[RES elec,scenarios]
+
+:GRAPH RES_elec_installed_capacity_by_source
+:TITLE RES elec installed capacity by source
+:SCALE
+:VAR installed capacity RES elec TW[RES elec,scenarios]
+
+:GRAPH Solar_PV_electricity_generation
+:TITLE Solar PV electricity generation
+:SCALE
+:VAR real generation RES elec TWh[solar PV,SCEN2]
+
+:GRAPH Electricity_generation_from_RES
+:TITLE Electricity generation from RES
+:SCALE
+:VAR FE real tot generation RES elec TWh[scenarios]
+
+:GRAPH RES_heat-com_installed_capacity_by_source
+:TITLE RES heat-com installed capacity by source
+:SCALE
+:VAR "installed capacity RES heat-com TW"[RES heat,scenarios]
+
+:GRAPH Total_energy_for_total_material_consumption_for_alt_techn
+:TITLE Total energy for total material consumption for alt techn
+:SCALE
+:VAR TFE required for total material consumption for alt techn[scenarios]
+
+:GRAPH Share_energy_for_material_consumption_for_alt_techn_vs_TFEC
+:TITLE Share energy for material consumption for alt techn vs TFEC
+:SCALE
+:VAR share energy for material consumption for alt techn vs TFEC[scenarios]
+
+:GRAPH Dynamic_EROI_solar_PV
+:TITLE Dynamic EROI solar PV
+:SCALE
+:VAR dynamic EROI RES elec[RES elec,scenarios]
+:Y-MIN 0
+:Y-MAX 10
+:VAR "EROI=1"
+
+:GRAPH EROIst_system
+:TITLE EROIst system
+:SCALE
+:VAR EROIst system[scenarios]
+:Y-MIN 0
+:VAR "minimum EROI (Hall et al, 2009)"
+:VAR "minimum EROI (Brandt, 2017)"
+:VAR "EROI=1"
+
+:GRAPH Dynamic_EROI_RES_elec_variables
+:TITLE Dynamic EROI RES elec variables
+:SCALE
+:VAR dynEROIst RES elec[RES elec,regions]
+:Y-MIN 0
+:Y-MAX 20
+
+:GRAPH EROI_RES_elec
+:TITLE EROI RES elec
+:SCALE
+:VAR EROI RES elec[RES elec,scenarios]
+
+:GRAPH Check_electricity_plants
+:TITLE Elec plants
+:Y-DIV 12
+:X-MIN 1995
+:X-MAX 2015
+:SCALE
+:VAR check primary coal Elec plants[scenarios]
+:VAR check primary gas Elec gas[scenarios]
+:VAR check primary liquids Elec plants[scenarios]
+
+:GRAPH Check_heat_plants
+:TITLE Heat plants
+:X-MIN 1995
+:X-MAX 2015
+:SCALE
+:VAR check primary coal for Heat plants[scenarios]
+:VAR check primary gases Heat plants[scenarios]
+:VAR check primary liquids Heat plants[scenarios]
+
+:GRAPH Check_CHP_plants
+:TITLE CHP plants
+:X-MIN 1995
+:X-MAX 2015
+:SCALE
+:VAR check coal primary CHP plants[scenarios]
+:VAR check gas primary CHP plants[scenarios]
+:VAR check liquids CHP plants[scenarios]
+
+:GRAPH Primary_energy_for_Elec_
+:TITLE Primary energy for Elec, Heat and CHP plants
+:Y-DIV 10
+:X-MIN 1995
+:X-MAX 2015
+:SCALE
+:VAR "check primary coal for Elec, Heat and CHP plants"[scenarios]
+:VAR "check primary gas for Elec, Heat and CHP plants"[scenarios]
+:VAR "check primary liquids for Elec, Heat and CHP plants"[scenarios]
+
+:GRAPH share_FE_Elec
+:TITLE check share FE Elec
+:X-MIN 1995
+:X-MAX 2015
+:SCALE
+:VAR share coal Elec check[scenarios]
+:VAR share fossil fuel CHP Elec check[scenarios]
+:VAR share gases Elec check[scenarios]
+:VAR share liquids Elec check[scenarios]
+:VAR share Renewables Elec check[scenarios]
+:VAR share Nuclear Elec check[scenarios]
+
+:GRAPH check_TPES
+:TITLE check TPES
+:X-MIN 1995
+:X-MAX 2015
+:SCALE
+:VAR check TPES[scenarios]
+
+:GRAPH Total_EROI_of_RES_for_electricity
+:TITLE Total EROI of RES for electricity
+:SCALE
+:VAR total EROIst RES elec[regions]
+
+:GRAPH ratio_EROI_per_techn_vs_EROItot
+:TITLE ratio EROI per techn vs EROItot
+:SCALE
+:VAR EROI allocation rule per RES elec[RES elec,scenarios]
+
+:GRAPH Share_cum_mat_demand_vs_resources_for_RES_elec
+:TITLE Share cum mat demand vs resources for RES elec
+:SCALE
+:VAR share materials cum demand to extract vs resources for RES elec[materials,scenarios]
+
+:GRAPH Share_cum_mat_demand_vs_reserves_for_RES_elec
+:TITLE Share cum mat demand vs reserves for RES elec
+:SCALE
+:VAR share materials cum demand to extract vs reserves for RES elec[materials,scenarios]
+
+:GRAPH Total_natural_gas_extraction
+:TITLE Total natural gas extraction
+:SCALE
+:VAR "PES nat. gas"[scenarios]
+
+:GRAPH Heat_demand
+:TITLE Heat demand
+:SCALE
+:VAR Total FED Heat EJ[scenarios]
+
+:GRAPH PES_waste
+:TITLE PES waste
+:SCALE
+:VAR PES waste EJ[scenarios]
+
+:GRAPH Share_tot_cum_dem_materials_vs_resources
+:TITLE Share tot cum dem materials vs resources
+:SCALE
+:VAR share tot cum dem vs resources materials[materials,scenarios]
+
+:GRAPH Share_tot_cum_dem_materials_vs_reserves
+:TITLE Share tot cum dem materials vs reserves
+:SCALE
+:VAR share tot cum dem vs reserves materials[materials,scenarios]
+
+:GRAPH Share_other_cum_mat_demand_vs_reserves
+:TITLE Share other cum mat demand vs reserves
+:SCALE
+:VAR share other cumulative demand to extract vs reserves materials[materials,scenarios]
+
+:GRAPH Share_other_cum_mat_demand_vs_resources
+:TITLE Share other cum mat demand vs resources
+:SCALE
+:VAR share other cumulative demand to extract vs resources materials[materials,scenarios]
+
+:GRAPH share_cum_dem_materials_to_extract_alt_techn_vs_total
+:TITLE share cum dem materials to extract alternative techn vs total
+:SCALE
+:VAR share cum dem materials to extract alt techn vs total[materials,scenarios]
+
+:GRAPH Recycling_rates_minerals_alternative_techn
+:TITLE Recycling rates minerals alternative techn
+:SCALE
+:VAR recycling rates minerals alt techn[materials,scenarios]
+
+:GRAPH Recycling_rates_minerals_Rest
+:TITLE Recycling rates minerals Rest
+:SCALE
+:VAR recycling rates minerals Rest[materials,scenarios]
+
+:GRAPH Biogas_PES
+:TITLE Biogas PES
+:SCALE
+:VAR PES Biogas EJ[scenarios]
+
+:GRAPH Abundance_heat
+:TITLE Abundance heat
+:SCALE
+:VAR Abundance heat
+
+:GRAPH Share_heat_covered_by_RES
+:TITLE Share heat covered by RES
+:SCALE
+:VAR share RES heat generation[scenarios]
+
+:GRAPH Total_FE_heat_generation
+:TITLE Total FE heat generation
+:SCALE
+:VAR Total FE Heat generation EJ[scenarios]
+
+:GRAPH Heat-com_generation_from_RES_by_source
+:TITLE Heat-com generation from RES by source
+:SCALE
+:VAR "FE real generation RES heat-com EJ"[RES heat,scenarios]
+:Y-MIN 0
+:VAR FES elec from biogas EJ[scenarios]
+:Y-MIN 0
+
+:GRAPH Available_solid_bioE_for_heat/elec
+:TITLE Available solid bioE for heat/elec
+:SCALE
+:VAR available max PE solid bioE for heat EJ[scenarios]
+:VAR available max PE solid bioE for elec EJ[scenarios]
+
+:GRAPH EROIst_tot_elec
+:TITLE EROIst tot elec
+:SCALE
+:VAR EROIst tot elec[scenarios]
+
+:GRAPH Overdemand_elec_EROI
+:TITLE Overdemand elec EROI
+:SCALE
+:VAR overdemand elec EROI[scenarios]
+
+:GRAPH check_TPE
+:TITLE check TPE
+:SCALE
+:VAR check TPE[scenarios]
+
+:GRAPH Labor_share
+:TITLE Labor share
+:SCALE
+:VAR labour share[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH Expected_annual_GDP_growth_rate
+:TITLE Expected annual GDP growth rate
+:SCALE
+:VAR expected annual GDP growth rate[scenarios]
+
+:GRAPH Household_enconomic_dema
+:TITLE Household enconomic demand
+:SCALE
+:VAR Household demand total[scenarios]
+
+:GRAPH Total_Demand
+:TITLE Total Demand
+:SCALE
+:VAR total FD adjusted[scenarios]
+
+:GRAPH Ratio_variation_CF_of_RES_due_to_intermittency
+:TITLE Ratio variation CF of RES due to intermittency
+:SCALE
+:VAR Ratio CF variation RES intermittency RES elec[RES elec,scenarios]
+
+:GRAPH Total_jobs_RES_elec
+:TITLE Total jobs RES elec
+:SCALE
+:VAR Total jobs RES elec[scenarios]
+
+:GRAPH Total_jobs_RES_heat
+:TITLE Total jobs RES heat
+:SCALE
+:VAR Total jobs RES heat[scenarios]
+
+:GRAPH Total_jobs_RES
+:TITLE Total jobs RES
+:SCALE
+:VAR Total jobs RES[scenarios]
+
+:GRAPH TFES_intensity
+:TITLE TFES intensity
+:SCALE
+:VAR TFES intensity EJ T$[scenarios]
+
+:GRAPH Annual_GDP_growth_rate
+:TITLE Annual GDP growth rate
+:SCALE
+:VAR Annual GDP variation rate[REGIONS I]
+
+:GRAPH Share_final_energy_vs_TFES
+:TITLE Share final energy vs TFES
+:SCALE
+:VAR share electricity vs TFES[scenarios]
+:Y-MIN 0
+:VAR share heat vs TFES[scenarios]
+:VAR share liquids vs TFES[scenarios]
+:VAR share gases vs TFES[scenarios]
+:VAR share solids vs TFES[scenarios]
+
+:GRAPH Final_energy_consumption_by_final_energy
+:TITLE Final energy consumption by final energy
+:SCALE
+:VAR FEC electricity[regions]
+:Y-MIN 0
+:VAR FEC heat[regions]
+:VAR FEC liquids[regions]
+:VAR FEC gases[regions]
+:VAR FEC solids[regions]
+
+:GRAPH Total_final_energy_consumption
+:TITLE Total final energy consumption
+:SCALE
+:VAR TFEC[regions]
+
+:GRAPH Share_RES_heat-com_vs_RES_heat_tot
+:TITLE Share RES heat-com vs RES heat tot
+:SCALE
+:VAR "Share RES heat-com vs RES heat tot"[RES heat,scenarios]
+:Y-MIN 0
+:VAR Max share[scenarios]
+
+:GRAPH Final_energy_intensity_H
+:TITLE Final energy intensity Households
+:SCALE
+:VAR Evol final energy intensity H[scenarios,final sources]
+
+:GRAPH Households_energy_demand
+:TITLE Households energy demand
+:SCALE
+:VAR Households final energy demand[scenarios,final sources]
+
+:GRAPH Share_RES_vs_TFEC
+:TITLE Share RES vs TFEC
+:SCALE
+:VAR share RES vs TFEC[scenarios]
+
+:GRAPH Average_FEC_per_capita
+:TITLE Average FEC per capita
+:SCALE
+:VAR TFEC per capita[scenarios]
+
+:GRAPH Installed_capacity_electricity_storage
+:TITLE Installed capacity electricity storage
+:SCALE
+:VAR Total capacity elec storage TW[scenarios]
+
+:GRAPH check_GDP
+:TITLE check GDP
+:X-MIN 1995
+:X-MAX 2009
+:SCALE
+:VAR check GDP[scenarios]
+
+:GRAPH Potential_HDI_given_energy_availability
+:TITLE Potential HDI given energy availability
+:SCALE
+:VAR Potential max HDI[scenarios]
+:Y-MIN 0
+:Y-MAX 1
+
+:GRAPH RES_heat-nc_installed_capacity_by_source
+:TITLE RES heat-nc installed capacity by source
+:SCALE
+:VAR "installed capacity RES heat-nc TW"[RES heat,scenarios]
+
+:GRAPH Heat-nc_generation_from_RES_by_source
+:TITLE Heat-nc generation from RES by source
+:SCALE
+:VAR "FE real generation RES heat-nc EJ"[RES heat,scenarios]
+
+:GRAPH Non-energy_use_demand_by_fuel
+:TITLE Non-energy use demand by fuel
+:SCALE
+:VAR "Non-energy use demand by final energy EJ"[scenarios,final energies]
+
+:GRAPH Annual_TFEC_RES_growth_rate
+:TITLE Annual TFEC RES growth rate
+:SCALE
+:VAR Annual TFEC RES growth rate[scenarios]
+
+:GRAPH Annual_TPES_RES_growth_rate
+:TITLE Annual TPES RES growth rate
+:SCALE
+:VAR Annual TPES RES growth rate[scenarios]
+
+:GRAPH Total_biofuel_production
+:TITLE Total biofuel production
+:SCALE
+:VAR FES total biofuels production EJ[scenarios]
+
+:GRAPH Share_minerals_consumption_alt_techn_vs_total
+:TITLE Share minerals consumption alt techn vs total
+:SCALE
+:VAR share minerals consumption alt techn vs total economy[materials,scenarios]
+
+:GRAPH Share_FEH_over_FED_by_final_fuel
+:TITLE Share FEH over FED by final fuel
+:SCALE
+:VAR share FEH over FED by final energy[final energies,scenarios]
+
+:GRAPH H_alternative_vehicles__4w_
+:TITLE Households alternative vehicles 4w
+:SCALE
+:VAR Number vehicles H[scenarios,hib 4wheels]
+:VAR Number vehicles H[scenarios,elec 4wheels]
+:VAR Number vehicles H[scenarios,gas 4wheels]
+
+:GRAPH Heat_generation_from_NRE
+:TITLE Heat generation from NRE
+:SCALE
+:VAR FES NRE for heat[scenarios]
+
+:GRAPH Heat_generation_from_RES
+:TITLE Heat generation from RES
+:SCALE
+:VAR FES RES for heat EJ[scenarios]
+
+:GRAPH FE_consumption_liquids
+:TITLE FE consumption liquids
+:SCALE
+:VAR real FE consumption liquids EJ[scenarios]
+
+:GRAPH FE_consumption_gases
+:TITLE FE consumption gases
+:SCALE
+:VAR real FE consumption gases EJ[scenarios]
+
+:GRAPH FE_consumption_solids
+:TITLE FE consumption solids
+:SCALE
+:VAR real FE consumption solids EJ[scenarios]
+
+:GRAPH CO2_emissions_per_value_added
+:TITLE CO2 emissions per value added
+:SCALE
+:VAR CO2 emissions per value added[scenarios]
+
+:GRAPH abundance_natural_gas
+:TITLE abundance natural gas
+:SCALE
+:VAR "abundance total nat. gas"[scenarios]
+
+:GRAPH Share_demand_by_final_energy_in_transport
+:TITLE Share demand by final energy in transport
+:SCALE
+:VAR Share demand by final energy in transport[scenarios,final energies]
+
+:GRAPH Number_of_electric_ligth
+:TITLE Number of electric ligth duty vehicles
+:SCALE
+:VAR total number elec light vehicles
+
+:GRAPH Share_of_electric_ligth_
+:TITLE Share of electric ligth duty vehicles
+:SCALE
+:VAR share of electric light vehicles
+
+:GRAPH Energy_demand_households_transp
+:TITLE Energy demand households transp
+:SCALE
+:VAR Transport households final energy demand[scenarios,final energies]
+
+:GRAPH Total_standard_electric_batteries
+:TITLE Total standard electric batteries
+:SCALE
+:VAR "batteries EV+hyb+2wE"[scenarios]
+
+:GRAPH Transport_energy_demand_IOT_sectors
+:TITLE Transport energy demand IOT sectors
+:SCALE
+:VAR Required final energy transport IOT sectors[scenarios,final sources]
+
+:GRAPH Total_LD_vehicles
+:TITLE Total Light Duty vehicles
+:SCALE
+:VAR total number light vehicles
+
+:GRAPH Total_dynFEnUst_RES
+:TITLE Total dynFEnUst RES
+:SCALE
+:VAR "Total dynFEnUst RES+storage"[regions]
+
+:GRAPH share_dynFEnUst_RES_vs_TFEC
+:TITLE share dynFEnUst RES vs TFEC
+:SCALE
+:VAR "share dynFEnUst RES+storage vs TFEC"[regions]
+
+:GRAPH ESOI_elec_storage
+:TITLE ESOI elec storage
+:SCALE
+:VAR ESOIst elec storage[regions]
+
+:GRAPH TFEC
+:TITLE TFEC
+:SCALE
+:VAR Real TFEC[scenarios]
+
+:GRAPH Annual_GHG_emissions
+:TITLE Annual GHG emissions
+:SCALE
+:VAR Total GHG emissions GtCO2e[scenarios]
+
+:GRAPH Average_FEC_per_capita_COMP
+:TITLE Average FEC per capita COMP
+:SCALE
+:VAR TFEC per capita[scenarios]
+:VAR Dynamic low range FEC good standard of living[scenarios]
 :LINE-WIDTH 2
+:VAR Dynamic high range FEC good standard of living[scenarios]
+:LINE-WIDTH 2
+:VAR Dynamic threshold 'high development'[scenarios]
+:LINE-WIDTH 2
+
+:GRAPH Cumulative_TFEC_intensity_change_from_2009
+:TITLE Cumulative TFEC intensity change from 2009
+:SCALE
+:VAR Cumulative TFEC intensity change from 2009[scenarios]
+
+:GRAPH Cumulative_TPES_intensity_change_from_2009
+:TITLE Cumulative TPES intensity change from 2009
+:SCALE
+:VAR Cumulative TPES intensity change from 2009[scenarios]
+
+:GRAPH Annual_growth_rate_electricity_generation_RES
+:TITLE Annual growth rate electricity generation RES
+:SCALE
+:VAR Annual growth rate electricity generation RES elec tot[scenarios]
+
+:GRAPH Annual_growth_rate_RES_for_heat
+:TITLE Annual growth rate RES for heat
+:SCALE
+:VAR Annual growth rate RES for heat[scenarios]
+
+:GRAPH EROI_feedback_factor
+:TITLE EROI feedback factor
+:SCALE
+:VAR EROI FC system from 2015[scenarios]
+:VAR "ratio = 1"
+
+:GRAPH Agricultural_Land
+:TITLE Agricultural Land
+:SCALE
+:VAR agricultural land conventional
+:VAR agricultural land conversion
+:VAR agricultural land conservation
+:VAR agricultural land conservation saturated
+:VAR agricultural land for food
+
+:GRAPH Land
+:TITLE Land
+:SCALE
+:VAR agricultural land for food
+:VAR primary forest
+:VAR forest available
+:VAR degraded land
+:VAR land for solar and hydro RES
+:VAR urban land
+
+:GRAPH Total_water_use
+:TITLE Total water use
+:SCALE
+:VAR Total water use[scenarios]
+
+:GRAPH Temperature_change
+:TITLE Temperature change
+:SCALE
+:VAR Temperature change[scenarios]
+:VAR HadCRUT4 Temperature
+:VAR GISS NASA Temperature
+
+:GRAPH CO2_concentrations
+:TITLE CO2 concentrations
+:SCALE
+:VAR CO2 ppm concentrations[scenarios]
+:VAR CO2 Mauna Loa
+:LINE-WIDTH 2
+:VAR pre industrial value ppm
+
+:GRAPH Potential_vs_demand_biomass_for_energy_non_trad
+:TITLE Potential vs demand biomass for energy non trad
+:SCALE
+:VAR max E forest energy non trad[scenarios]
+:VAR consum forest energy non traditional EJ[scenarios]
+
+:GRAPH Total_water_use_per_capita
+:TITLE Total water use per capita
+:SCALE
+:VAR Total water use per capita[scenarios]
+
+:GRAPH Share_blue_water_use_vs_resources
+:TITLE Share blue water use vs resources
+:SCALE
+:VAR share blue water use vs renewable water resources[scenarios]
+
+:GRAPH Remaining_potential_all_RES
+:TITLE Remaining potential all RES
+:SCALE
+:VAR remaining potential tot RES[scenarios]
+
+:GRAPH Share_total_final_energy_vs_TPES
+:TITLE Share total final energy vs TPES
+:SCALE
+:VAR share total final energy vs TPES[scenarios]
+
+:GRAPH Share_total_net_energy_vs_TPES
+:TITLE Share total net energy vs TPES
+:SCALE
+:VAR share total net energy vs TPES[scenarios]
+
+:GRAPH RES_potential_FE_per_capita
+:TITLE RES potential FE per capita
+:SCALE
+:VAR RES potential FE per capita[scenarios]
+
+:GRAPH Physical_energy_intensity_TPES_vs_net
+:TITLE Physical energy intensity TPES vs net
+:SCALE
+:VAR Physical energy intensity TPES vs net[scenarios]
+
+:GRAPH pH_ocean
+:TITLE pH ocean
+:SCALE
+:VAR pH ocean
+:VAR Oceanic pH threshold
+
+:GRAPH Sea_level_rise
+:TITLE Sea level rise
+:SCALE
+:VAR Sea Level Rise[scenarios]
+
+:GRAPH Gross_fixed_capital_form
+:TITLE Gross fixed capital formation
+:SCALE
+:VAR GFCF total[scenarios]
+
+:GRAPH CC_damages_by_sector
+:TITLE CC damages by sector
+:SCALE
+:VAR CC damages by sector from 2015[scenarios,sectors]
+
+:GRAPH FE_by_unified_sector
+:TITLE Final energy by unified sector
+:SCALE
+:VAR Final energy consumption by unified sector[scenarios,unified sectors]
+
+:GRAPH GHG_emissions_by_sector
+:TITLE GHG emissions by sector
+:SCALE
+:VAR GHG total emissions by unified sectors[scenarios,unified sectors]
+
+:GRAPH ratio_GHG_emissions_by_FE
+:TITLE ratio GHG emissions by final energy
+:SCALE
+:VAR ratio GHG by FE emissions[scenarios,final sources]
+
+:GRAPH CO2_emissions_by_FE
+:TITLE CO2 emissions by final energy
+:SCALE
+:VAR Total_per_FE_CO2_emissions[REGIONS I,final energies]
+
+:GRAPH ratio_CO2_emissions_by_FE
+:TITLE ratio CO2 emissions by final energy
+:SCALE
+:VAR ratio_CO2_emissions_by_FE[REGIONS I,final energies]
+
+:GRAPH ratio_CH4_emissions_by_FE
+:TITLE ratio CH4 emissions by final energy
+:SCALE
+:VAR ratio CH4 emissions by FE[scenarios,final sources]
+
+:GRAPH CH4_emissions_by_FE
+:TITLE CH4 emisions by final energy
+:SCALE
+:VAR Total per FE CH4 emissions[scenarios,final sources]
+
+:GRAPH GHG_emissions_by_FE
+:TITLE GHG emissions by final energy
+:SCALE
+:VAR endogenous GHG emissions FF[scenarios,final sources]
+
+:GRAPH DF(incrT)
+:TITLE DF(incrT)
+:X-AXIS Temperature change[BAU]
+:SCALE
+:VAR DF level comp[REGIONS I]
+
+:GRAPH Limits_to_Growth
+:TITLE Limits to Growth
+:SCALE
+:VAR share GDP not covered CCimpacts[scenarios]
+:Y-MIN 0
+:VAR share GDP not covered E limit[scenarios]
+:Y-MIN 0
+
+:GRAPH Remaining_potential_RES_elec_by_technology
+:TITLE Remaining potential RES elec by technology
+:SCALE
+:VAR remaining potential RES elec[RES elec,scenarios]
+
+:GRAPH Share_remaining_potential_total_RES_elec
+:TITLE Share remaining potential total RES elec
+:SCALE
+:VAR share remaining potential tot RES elec[scenarios]
+
+:GRAPH Share_remaining_potential_RES_for_heat
+:TITLE Share remaining potential RES for heat
+:SCALE
+:VAR share remaining potential RES for heat[RES heat,scenarios]
+
+:GRAPH Expected_GDPpc
+:TITLE Expected GDPpc
+:SCALE
+:VAR expected GDPpc[scenarios]
+
+:GRAPH Capital_vs_labour_share
+:TITLE Capital vs labour share
+:SCALE
+:VAR capital vs labour share[scenarios]
+
+:GRAPH Energy_Intensity_of_Hous
+:TITLE Energy Intensity of Households Transport
+:SCALE
+:VAR Energy intensity of households transport[scenarios,final energies]
+
+:GRAPH Number_inland_transport_
+:TITLE Number inland transport vehicles
+:SCALE
+:VAR number inland vehicles[scenarios,vehicleT]
+
+:GRAPH Inland_transport_final_energy_demand
+:TITLE Inland transport final energy demand
+:SCALE
+:VAR Inland transport sector final energy demand[scenarios,final energies]
+
+:GRAPH Transport_Household_Fina
+:TITLE Transport Household Final Energy Demand
+:SCALE
+:VAR Transport households final energy demand[scenarios,final energies]
 :L<%^E!@
 9:Current
 22:$,Dollar,Dollars,$s

@@ -98,54 +98,59 @@ constList : constantLine ((';' constantLine)* ';')?;
 numberList: (integerConst | floatingConst) (',' ( integerConst | floatingConst))*;
     
 graphs: graph title xaxis? xlabel? xdiv? yaxis? ylabel? ydiv? xmin? xmax? nolegend? scale graphvar*;
-graph: ':GRAPH' Id;
+graph: ':GRAPH' .*?;
 title: ':TITLE' .*?;
-xaxis: ':X-AXIS' Id;
+xaxis: ':X-AXIS' .*?;
 xlabel: ':X-LABEL' Id;
 xdiv: ':X-DIV' DigitSeq;
-yaxis: ':Y-AXIS' Id;
+yaxis: ':Y-AXIS' .*?;
 ylabel: ':Y-LABEL' Id;
 ydiv: ':Y-DIV' DigitSeq;
-xmin: ':X-MIN' DigitSeq;
-xmax: ':X-MAX' DigitSeq;
+xmin: ':X-MIN' .*?;
+xmax: ':X-MAX' .*?;
 nolegend: ':NO-LEGEND' DigitSeq;
 scale: ':SCALE';
 graphvar: gvar ymin* ymax* linewidthgraph*;
-gvar: ':VAR' Id;
+gvar: ':VAR' .*?;
 ymin: ':Y-MIN' .*?;
 ymax: ':Y-MAX' .*?;
 linewidthgraph: ':LINE-WIDTH' .*?;
 metadata: ':L<%^E!@' .*?;
   
 // Backslash tokens are ignored, so this rule doesn't take them into account.
-sketches: viewInfo* viewDelimiter;
-viewDelimiter: '///---';
-viewInfo:   sketchInfo versionCode viewName viewVariables;
+sketches: viewInfo* sketchesDelimiter;
+sketchesDelimiter: '///---';
+viewInfo:   sketchInfo versionCode viewVariables; //FALTA VIEWNAME
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
-viewName: .*?;
+//viewName: .*?;
+//viewName: '*View' DigitSeq;   //Used for debugging
+//viewName: '*' .*?; 
+//viewName: '*economy.sectoral_climate_damages';
 viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq); //The settings of each view always will have 2 commas separating
                                                                                                             //fields, then 8 '|' and then again 3 commas
-viewVariables: viewSettings (arrow|shadowVariable|textVariable|problematic|Id|objectVariable)*;
+viewVariables: viewSettings (arrow|shadowVariable|textVariable|problematic|(Id)+|objectVariable)*;
 
 
 shadowVariable: (Id|integerConst) (','(Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)))* lastShadowPart;
 lastShadowPart: ',' '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
 
-textVariable: (Id|integerConst) (','(Id|integerConst|'-')*)* lastTextVarPart;
+textVariable: (Id|integerConst) (','(Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)))* lastTextVarPart; //Object variables that its format has been modified(font, color...)
 lastTextVarPart: '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
 
 objectVariable: (Id|integerConst|floatingConst) (','(Id|integerConst|floatingConst))*; //Variables, Valves, Comments, Bitmaps and Metafiles will have an undetermined
                                                                                        //set of fields, always separated by commas.
-arrow: (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
+arrow: DigitSeq ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points);  //Arrows always will have 13 fields and a last field that contains 
-points: DigitSeq ('|''('integerConst','integerConst')')+'|';
                                                                                                         //the number of points of the object and where they are located
-problematic: ('.')+;
-
+points: DigitSeq ('|''('integerConst','integerConst')')+'|';
+problematic: (Id|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|':'|';'|','|link|singleQuoted|'['|']'|'"')+;  //Symbols that may affect the grammar. Those are contained in comments or variable names. They must be controlled. [WIP]
+//link: ('http://'|'https://'|': https://'| ': http://') .*?;
+link: ': https://www.nature.com/articles/nclimate3411).';
+singleQuoted: ('\'a\''|'\'b\'');
 
 
 Star : '*' ;

@@ -412,11 +412,11 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSketches(GrammarParser.SketchesContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#viewDelimiter}.
+	 * Visit a parse tree produced by {@link GrammarParser#sketchesDelimiter}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitViewDelimiter(GrammarParser.ViewDelimiterContext ctx);
+	T visitSketchesDelimiter(GrammarParser.SketchesDelimiterContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#viewInfo}.
 	 * @param ctx the parse tree
@@ -435,12 +435,6 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitVersionCode(GrammarParser.VersionCodeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#viewName}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitViewName(GrammarParser.ViewNameContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#viewSettings}.
 	 * @param ctx the parse tree
@@ -501,6 +495,18 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitProblematic(GrammarParser.ProblematicContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#link}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLink(GrammarParser.LinkContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#singleQuoted}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleQuoted(GrammarParser.SingleQuotedContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#subscriptId}.
 	 * @param ctx the parse tree
