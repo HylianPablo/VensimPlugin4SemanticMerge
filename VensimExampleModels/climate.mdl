@@ -31271,7 +31271,6 @@ Merit-order-effect in the allocation of electricity technologies: (1) biogas & w
 1,51,2,49,1,0,0,0,0,0,0,-1--1--1,,1|(960,612)|
 1,52,41,49,0,0,0,0,0,128,0,-1--1--1,,1|(995,708)|
 12,53,0,1431,748,177,47,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||128-0-128
-Be aware that in extreme scenarios where the electricity demand may approach W, the exogenous trend of biogas and waste may generate inconsistent results (they are generated but without being demanded). This makes in turn that "Sha
 10,54,MATRIX UNIT PREFIXES,1194,519,53,26,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 1,55,54,1,0,0,0,0,0,64,0,-1--1--1,,1|(1133,533)|
 10,56,J PER Wh,1110,470,46,16,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128

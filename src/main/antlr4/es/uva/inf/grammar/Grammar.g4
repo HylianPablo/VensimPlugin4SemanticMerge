@@ -120,38 +120,37 @@ metadata: ':L<%^E!@' .*?;
 // Backslash tokens are ignored, so this rule doesn't take them into account.
 sketches: viewInfo* sketchesDelimiter;
 sketchesDelimiter: '///---';
-viewInfo:   sketchInfo versionCode viewVariables; //FALTA VIEWNAME
+viewInfo:   sketchInfo versionCode viewName viewVariables; 
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
-//viewName: .*?;
-//viewName: '*View' DigitSeq;   //Used for debugging
-//viewName: '*' .*?; 
-//viewName: '*economy.sectoral_climate_damages';
+viewName: '*' .*?; 
 viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq); //The settings of each view always will have 2 commas separating
-                                                                                                            //fields, then 8 '|' and then again 3 commas
+                                                                                                            //fields, then 8 '|' and then again 3 commas.
 viewVariables: viewSettings (arrow|shadowVariable|textVariable|rawText|objectVariable)*;
 
 
-shadowVariable: (Id|integerConst) (','(rawText|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastShadowPart;
+shadowVariable: (integerConst) (','(rawText|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastShadowPart;
+                                 //Variables that do not belong to any view and do not depend on any other variables. Besides, other variables can depend on shadow variables.
 lastShadowPart: ',' '|'(integerConst|floatingConst)'|'(DigitSeq)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
-textVariable: (Id|integerConst) (','(rawText|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastTextVarPart; //Object variables that its format has been modified(font, color...)
+textVariable: (integerConst) (','(rawText|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastTextVarPart; 
+                                                                                                //Object variables that its format has been modified(font, color...)
 lastTextVarPart: '|'(integerConst|floatingConst)'|'(DigitSeq)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
-objectVariable: (Id|integerConst|floatingConst) (','(Id|integerConst|floatingConst))*; //Variables, Valves, Comments, Bitmaps and Metafiles will have an undetermined
+objectVariable: (integerConst) (','(integerConst|floatingConst|rawTextObjects))*; //Variables, Valves, Comments, Bitmaps and Metafiles will have an undetermined
                                                                                        //set of fields, always separated by commas.
 arrow: DigitSeq ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points);  //Arrows always will have 13 fields and a last field that contains 
-                                                                                                        //the number of points of the object and where they are located
+                                                                                                        //the number of points of the object and where they are located.
 points: DigitSeq ('|''('integerConst','integerConst')')+'|';
-rawText: ('"'|Id|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|':'|';'|','|'['|']'|link)+;  //Symbols that may affect the grammar. Those are contained in comments or variable names. They must be controlled. [WIP]
-//rawText: .+?;
+rawText: (Id|StringConst|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|'@'|':'|';'|','|'['|']'|link)+; 
+ //Symbols that may affect the grammar. Those are contained in comments or variable names. They must be controlled.
+rawTextObjects: (Id|StringConst|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|'@'|':'|';'|'['|']'|link)+; 
+ //Symbols that may affect the grammar. Those are contained in objects. It cannot contain any commas. They must be controlled.
 link: ('http://'|'https://'|': https://'| ': http://') .*?;
-//link: ': https://www.nature.com/articles/nclimate3411).';
-//singleQuoted: ('\'a\''|'\'b\'');
 
 
 Star : '*' ;
