@@ -244,4 +244,3 @@ OtherCaracter: .;
 
 
  unitsDoc: units=INFO_UNIT comment=INFO_UNIT supplementary=INFO_UNIT?'|';
- //algo
