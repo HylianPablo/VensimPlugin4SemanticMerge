@@ -490,23 +490,17 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPoints(GrammarParser.PointsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#problematic}.
+	 * Visit a parse tree produced by {@link GrammarParser#rawText}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitProblematic(GrammarParser.ProblematicContext ctx);
+	T visitRawText(GrammarParser.RawTextContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#link}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitLink(GrammarParser.LinkContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#singleQuoted}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSingleQuoted(GrammarParser.SingleQuotedContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#subscriptId}.
 	 * @param ctx the parse tree

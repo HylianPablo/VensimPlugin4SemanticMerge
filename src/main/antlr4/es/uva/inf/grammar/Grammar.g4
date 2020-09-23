@@ -131,14 +131,14 @@ viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq); //The settings of each view always will have 2 commas separating
                                                                                                             //fields, then 8 '|' and then again 3 commas
-viewVariables: viewSettings (arrow|shadowVariable|textVariable|problematic|(Id)+|objectVariable)*;
+viewVariables: viewSettings (arrow|shadowVariable|textVariable|rawText|objectVariable)*;
 
 
-shadowVariable: (Id|integerConst) (','(Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)))* lastShadowPart;
-lastShadowPart: ',' '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
+shadowVariable: (Id|integerConst) (','(rawText|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastShadowPart;
+lastShadowPart: ',' '|'(integerConst|floatingConst)'|'(DigitSeq)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
-textVariable: (Id|integerConst) (','(Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)))* lastTextVarPart; //Object variables that its format has been modified(font, color...)
-lastTextVarPart: '|'(integerConst|'-')*'|'(integerConst|'-')*'|'(integerConst|'-')*;
+textVariable: (Id|integerConst) (','(rawText|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastTextVarPart; //Object variables that its format has been modified(font, color...)
+lastTextVarPart: '|'(integerConst|floatingConst)'|'(DigitSeq)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
 objectVariable: (Id|integerConst|floatingConst) (','(Id|integerConst|floatingConst))*; //Variables, Valves, Comments, Bitmaps and Metafiles will have an undetermined
                                                                                        //set of fields, always separated by commas.
@@ -147,10 +147,11 @@ arrow: DigitSeq ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points);  //Arrows always will have 13 fields and a last field that contains 
                                                                                                         //the number of points of the object and where they are located
 points: DigitSeq ('|''('integerConst','integerConst')')+'|';
-problematic: (Id|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|':'|';'|','|link|singleQuoted|'['|']'|'"')+;  //Symbols that may affect the grammar. Those are contained in comments or variable names. They must be controlled. [WIP]
-//link: ('http://'|'https://'|': https://'| ': http://') .*?;
-link: ': https://www.nature.com/articles/nclimate3411).';
-singleQuoted: ('\'a\''|'\'b\'');
+rawText: ('"'|Id|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|':'|';'|','|'['|']'|link)+;  //Symbols that may affect the grammar. Those are contained in comments or variable names. They must be controlled. [WIP]
+//rawText: .+?;
+link: ('http://'|'https://'|': https://'| ': http://') .*?;
+//link: ': https://www.nature.com/articles/nclimate3411).';
+//singleQuoted: ('\'a\''|'\'b\'');
 
 
 Star : '*' ;

@@ -27504,6 +27504,7 @@ URR_unconv_oil[REGIONS_I]=
 
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*Intro
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,928,357,182,44,3,135,0,10,-1,0,0,0,-1--1--1,0-0-0,|20||255-0-0
 WILIAM 0.1
@@ -27554,9 +27555,11 @@ red: output variable for a module which are inputs for another module
 12,25,0,476,421,193,109,3,131,0,0,-1,0,0,0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*---- HISTORICAL AND EXOGENOUS INPUTS ----
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*constants
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,92,0
 12,1,0,704,28,92,23,3,135,0,0,-1,0,0,0
 UNIT CONVERSION
@@ -27587,6 +27590,7 @@ Constants and units conversion
 10,25,INITIAL SIMULATION YEAR,385,446,82,26,8,131,0,0,0,0,0,0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*demography.exogenous_inputs
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 10,1,HISTORIC POPULATION LT,968,374,110,16,8,131,0,2,-1,0,0,0,0-0-0,0-0-0,|12||255-128-0
 10,2,INITIAL POPULATION,965,425,126,16,8,131,0,0,-1,0,0,0
@@ -27601,6 +27605,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,11,9,3,0,0,0,0,0,128,0,-1--1--1,,1|(1120,420)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.exogenous_inputs
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,90,0
 10,1,initial labour share 1995,511,398,82,13,8,131,0,0,-1,0,0,0
 10,2,BETA 0 LABOUR HH DEMAND REGRESSION,26,153,89,19,8,131,0,0,-1,0,0,0
@@ -27683,12 +27688,15 @@ Investment energy
 (ECO) Historic data
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*finance.exogenous_inputs
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*intermodule_consistency.exogenous_inputs
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,90,0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*society.exogenous_inputs
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 12,1,0,1207,239,130,19,3,135,0,0,-1,0,0,0
 (SOC) ENE INT - INTENSITIES AGG
@@ -27706,6 +27714,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,13,12,9,0,0,0,0,0,0,0,-1--1--1,,1|(677,549)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*land_and_water.exogenous_inputs
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 10,1,Arable land,482,218,57,11,8,3,0,0,-1,0,0,0
 10,2,Afforestation program 2020,502,248,86,15,8,131,0,0,-1,0,0,0
@@ -27779,6 +27788,7 @@ WATER
 1,68,35,62,0,0,0,0,0,128,0,-1--1--1,,1|(1138,233)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.exogenous_inputs
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,80,0
 10,1,Energy initial inland transport,431,-1069,110,20,8,131,0,0,-1,0,0,0
 12,2,0,439,-1117,133,22,3,135,0,0,-1,0,0,0
@@ -28277,6 +28287,7 @@ magic number
 10,452,Historic TPES,2498,934,48,11,8,3,0,0,-1,0,0,0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*materials.exogenous_inputs
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 10,1,Share energy requirements for decom EV batteries,504,168,75,28,8,3,0,0,-1,0,0,0
 10,2,"self-electricity consumption RES elec",493,226,72,19,8,3,0,0,-1,0,0,0
@@ -28329,6 +28340,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,45,38,21,0,0,0,0,0,128,0,-1--1--1,,1|(1459,359)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*climate.exogenous_inputs
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,72,0
 10,1,Cumulative CO2 emissions to 2005,1805,-121,118,20,8,131,0,0,-1,0,0,0
 12,2,0,1803,-179,101,24,3,135,0,0,-1,0,0,0
@@ -28505,6 +28517,7 @@ Noelia should revise the Climate module to (1) apply nomenclature rules, and (2)
 10,161,Total GHG Emissions Including Land Use Change and Forestry,219,0,126,19,8,3,0,0,-1,0,0,0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*scenario_parameters
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,70,0
 10,1,POLICY CONSTANT ANNUAL POPULATION VARIATION RATE SP,-804,357,99,27,8,131,0,0,-1,0,0,0
 10,2,STARTING YEAR FOR POPULATION VARIATION POLICY SP,-809,79,97,26,8,131,0,0,-1,0,0,0
@@ -29253,11 +29266,13 @@ same RCP scenario for rest of GHG for all regions
 ENERGY INTENSITY
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*---- STRUCTURE ----
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,917,423,147,18,8,135,0,24,-1,3,0,0,-1--1--1,0-0-0,|16|I|0-0-0
 (View intentionally left blank)
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*demography.population_change
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,population,978,514,45,22,3,131,0,2,0,0,0,0,-1--1--1,0-0-0,|12||255-0-0
 12,2,48,714,513,10,8,0,3,0,0,-1,0,0,0
@@ -29324,6 +29339,7 @@ Exogenous evolution of global population
 1,61,41,6,0,0,0,0,0,128,0,-1--1--1,,1|(800,450)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.expected_GDPpc
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,59,2
 12,1,48,727,598,10,8,0,3,0,0,-1,0,0,0
 1,2,4,6,4,0,0,22,0,0,0,-1--1--1,,1|(907,598)|
@@ -29413,6 +29429,7 @@ Expected_annual_GDP_growth_rate
 1,84,43,5,0,0,0,0,0,128,0,-1--1--1,,1|(862,548)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.labour_and_capital_compensation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,70,2
 10,1,demand,917,715,51,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,capital share,803,555,40,11,8,3,0,0,0,0,0,0
@@ -29473,6 +29490,7 @@ Labor_share
 1,56,55,8,0,0,0,0,0,128,1,-1--1--1,,1|(1035,422)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.HH_demand
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Gross fixed capital formation,735,293,48,25,3,131,0,0,0,0,0,0
 12,2,48,387,300,10,8,0,3,0,0,-1,0,0,0
@@ -29549,6 +29567,7 @@ Gross_fixed_capital_form
 1,71,70,11,1,0,0,0,0,64,0,-1--1--1,,1|(1087,492)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.GFCF_demand
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 10,1,variation historic demand,515,583,52,19,8,3,0,0,-1,0,0,0
 10,2,HISTORIC HH DEMAND,392,681,57,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -29603,6 +29622,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 Household_enconomic_dema
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.investments_energy
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,85,2
 10,1,total investment RES elec,801,325,68,16,8,131,0,0,0,0,0,0
 10,2,share tot monet invest Elec RES vs GDP,1207,280,67,18,8,131,0,0,0,0,0,0
@@ -29680,6 +29700,7 @@ In LOCOMOTION, an investment matrix is going to be built in order to feedback th
 1,71,70,34,0,0,0,0,0,64,0,-1--1--1,,1|(850,778)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.total_final_demand
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,FD by sector,814,399,40,20,3,3,0,0,0,0,0,0
 12,2,48,474,403,10,8,0,3,0,0,-1,0,0,0
@@ -29754,6 +29775,7 @@ Total_Demand
 1,70,69,6,1,0,0,0,0,64,0,-1--1--1,,1|(514,335)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.total_final_demand_after_policies
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 10,1,FD by sector adjusted,508,403,62,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,economic percent reduction by vehicle change,585,219,64,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||255-0-0
@@ -29809,6 +29831,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,52,51,28,0,0,0,0,0,64,0,-1--1--1,,1|(1406,306)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.structural_change
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,A Matrix,880,591,30,11,8,131,0,0,0,0,0,0
 10,2,IA Matrix,991,702,42,19,8,131,0,0,0,0,0,0
@@ -29883,6 +29906,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,71,65,27,1,0,0,0,0,128,0,-1--1--1,,1|(427,341)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy│labour.RES_employment
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,725,43,114,21,8,135,0,8,-1,0,0,0,-1--1--1,0-0-0,|15||0-0-0
 Jobs in RES for electricity
@@ -29965,6 +29989,7 @@ Total_jobs_RES_heat
 Total_jobs_RES
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.sectoral_climate_damages
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,SWITCH ACTIVATION CC IMPACTS SP,1949,243,71,46,8,130,0,2,0,0,0,0,-1--1--1,0-0-0,|12||64-160-98
 10,2,Selection shape sector uniform CC damages,1272,226,60,28,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||0-128-0
@@ -30078,6 +30103,7 @@ The modelling of economic climate change damages is going to be developed in Tas
 (2) Damages to GDP are performed assuming uniform damages to all sectors. However, the modelling allows for considering different DF per sector. On the other hand, it would make more sense to calibrate the damages to the output tha
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*economy.indicators
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 10,1,DF level comp,1311,483,74,30,8,131,0,0,-1,0,0,0
 10,2,diff GDP expected feasible,1136,535,82,19,8,131,0,0,-1,0,0,0
@@ -30157,9 +30183,11 @@ Annual_GDP_growth_rate
 DF(incrT)
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*finance.finance
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*intermodule_consistency.confrontation_demand_vs_l
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,90,2
 10,1,FEC by final energy,1547,836,67,19,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||255-0-0
 10,2,expected final energy by sector and final energy,975,495,77,19,8,3,0,2,0,0,0,0,-1--1--1,0-0-0,|12||255-0-0
@@ -30284,6 +30312,7 @@ Feasible GDPpc vs expected GDPpc
 10,113,annual expected GDPpc growth rate after policies,206,947,83,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*society.development_indicators
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 10,1,Dynamic low range FEC good standard of living,1038,393,79,19,8,3,0,0,-1,0,0,0
 10,2,Dynamic high range FEC good standard of living,1047,478,80,19,8,3,0,0,-1,0,0,0
@@ -30344,6 +30373,7 @@ Potential_HDI_given_energy_availability
 1,55,5,50,0,0,0,0,0,128,0,-1--1--1,,1|(558,330)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*society.indicators
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,79,2
 10,1,"Carbon footprint tonnesC/person",630,285,67,27,8,131,0,0,0,0,0,0
 10,2,"Carbon footprint tCO2/person",580,379,73,21,8,131,0,0,-1,0,0,0
@@ -30401,6 +30431,7 @@ Total_water_use_per_capita
 10,51,ratio GHG emissions by FE,828,846,60,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||255-0-0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy|final_energy_intensities.sectors
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Evol final energy intensity by sector and final energy,1161,524,106,60,3,131,0,2,0,0,0,0,-1--1--1,0-0-0,|12||255-0-0
 12,2,48,818,539,10,8,0,3,0,0,-1,0,0,0
@@ -30599,6 +30630,7 @@ Warning: in the case ofrecession of abandonment of growth-paradigm the exogenous
 Need to model the joint evolution of sectoral final energy intensities and the evolution of the coefficients of the A matrix.
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy|final_energy_intensities.households
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Household demand total,1774,236,46,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||255-0-0
 10,2,Households final energy demand,1615,321,53,19,8,3,0,0,0,0,0,0
@@ -30799,6 +30831,7 @@ Households_energy_demand
 1,195,194,7,0,0,0,0,0,64,0,-1--1--1,,1|(693,649)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy|final_energy_intensities.total
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,TPES intensity EJ T$,664,332,47,19,8,3,0,0,-1,0,0,0
 10,2,TPES intensity EJ T$ delayed 1yr,894,301,68,19,8,3,0,0,-1,0,0,0
@@ -30881,6 +30914,7 @@ Cumulative_TFEC_intensity_change_from_2009
 10,75,historic primary energy intensity by sector and source,216,185,77,28,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.perception_FE_scarcity
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Abundance final fuels,490,170,52,19,8,3,0,0,0,0,0,0
 10,2,Abundance electricity,601,23,42,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -31004,6 +31038,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 10,120,SWITCH SCARCITY FEEDBACK FINAL FUEL REPLACEMENT SP,152,903,101,47,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||0-128-0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.perception_PE_scarcity
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,2
 10,1,abundance coal,312,186,58,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,"abundance total nat. gas",480,163,55,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -31039,6 +31074,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 10,32,"switch scarcity-PS elec substit",272,777,64,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||0-128-0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│heat.heat_demand
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,"FED coal for heat-nc",841,330,42,19,8,131,0,0,-1,0,0,0
 10,2,"FED nat. gas for heat-nc",462,329,53,19,8,131,0,0,-1,0,0,0
@@ -31117,6 +31153,7 @@ Share_FEH_over_FED_by_final_fuel
 1,73,67,72,0,0,0,0,0,0,0,-1--1--1,,1|(808,791)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.demand_for_non_energy_uses
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 10,1,"initial non-energy use",975,115,54,19,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,"Total non-energy use consumption EJ",707,270,68,19,8,3,0,0,0,0,0,0
@@ -31144,6 +31181,7 @@ Please be aware that these regressions may not be valid in extreme scenariso whe
 1,21,6,17,1,0,0,0,0,0,0,-1--1--1,,1|(1076,352)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.TFEC_by_final_energy
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,FEC by final energy,418,475,65,27,8,131,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-0-0
 10,2,share liquids vs TFES,606,489,48,19,8,3,0,0,0,0,0,0
@@ -31176,6 +31214,7 @@ Total_final_energy_consumption
 Final_energy_consumption_by_final_energy
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electriciy.demand
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Total FE Elec demand EJ,1045,557,68,20,8,131,0,0,0,0,0,0
 10,2,Total FE Elec demand TWh,817,486,45,19,8,3,0,0,0,0,0,0
@@ -31245,6 +31284,7 @@ Be aware that in extreme scenarios where the electricity demand may approach W, 
 1,63,56,1,0,0,0,0,0,128,0,-1--1--1,,1|(1083,505)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity.FF_demand
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,demand Elec plants fossil fuels TWh,997,359,75,20,8,131,0,0,0,0,0,0
 10,2,PE demand oil Elec plants EJ,693,562,59,19,8,131,0,0,0,0,0,0
@@ -31429,6 +31469,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,181,169,7,0,0,0,0,0,128,0,-1--1--1,,1|(916,622)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity.nuclear_generation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,life time nuclear,1656,536,58,11,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,Historic nuclear generation TWh,1198,302,56,19,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -31586,6 +31627,7 @@ Electricity_generation_from_nuclear
 1,151,150,30,0,0,0,0,0,128,0,-1--1--1,,1|(1302,327)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity│ELEC RES.solar_potential_u
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,"power density solar PV on land TWe/Mha",520,406,75,19,8,3,0,0,-1,0,0,0
 10,2,f1 solar PV,698,598,37,11,8,3,0,0,-1,0,0,0
@@ -31647,6 +31689,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,58,57,36,0,0,0,0,0,64,0,-1--1--1,,1|(607,256)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity│ELEC RES.potentials
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,max RES elec TWe,1197,375,59,19,8,131,0,0,0,0,0,0
 10,2,MAX PE GEOTHERMAL ELECTRICITY SP,825,277,81,33,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -31810,6 +31853,7 @@ nomenclature: clarify the use of "max" and "potential"
 1,156,146,20,0,0,0,0,0,128,0,-1--1--1,,1|(1471,429)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity│ELEC RES.generation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,78,2
 12,1,48,439,570,10,8,0,3,0,0,-1,0,0,0
 1,2,4,7,4,0,0,22,0,0,0,-1--1--1,,1|(576,570)|
@@ -32031,6 +32075,7 @@ Electricity_generation_from_RES
 1,212,211,179,0,0,0,0,0,64,0,-1--1--1,,1|(284,243)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity│ELEC RES.generation_PE
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,PE total Elec generation from RES EJ,427,428,86,22,8,131,0,0,0,0,0,0
 12,2,0,502,154,145,20,8,135,0,24,-1,3,0,0,-1--1--1,0-0-0,|16|I|0-0-0
@@ -32062,6 +32107,7 @@ Primary energy RES ELEC
 1,27,4,1,0,0,0,0,0,128,0,-1--1--1,,1|(642,429)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity│ELEC RES.overcap_RES_varia
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Elec generation dispatch from RES TWh,564,387,92,30,8,131,0,0,0,0,0,0
 10,2,Elec generation variable from RES TWh,589,634,104,39,8,131,0,0,0,0,0,0
@@ -32108,6 +32154,7 @@ Ratio_variation_CF_of_RES_due_to_intermittency
 1,40,11,1,0,0,0,0,0,128,0,-1--1--1,,1|(444,361)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity│storage_demand_and_supply
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,64,2
 10,1,Demand elec storage capacity from RES TW,725,317,89,19,8,3,0,0,-1,0,0,0
 10,2,remaining potential elec storage by RES techn,1014,256,74,19,8,3,0,0,-1,0,0,0
@@ -32212,6 +32259,7 @@ Likely better to estimate the demand of energy storage rather than capacity stor
 1,96,95,36,0,0,0,0,0,64,0,-1--1--1,,1|(1537,220)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity│PHS_generation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,679,93,122,22,8,135,0,8,-1,0,0,0,-1--1--1,0-0-0,|14||0-0-0
 Pumped hydro storage (PHS)
@@ -32346,6 +32394,7 @@ FALTARÍA AJUSTAR PHS: al aumentar su potencial me cambian los resultados en ere
 1,129,121,92,0,0,0,0,0,128,0,-1--1--1,,1|(1328,367)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity│total_generation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,FE Elec generation from conv gas TWh,561,304,64,19,8,131,0,0,-1,0,0,0
 10,2,FE Elec generation from coal TWh,561,365,60,19,8,131,0,0,-1,0,0,0
@@ -32447,6 +32496,7 @@ Annual_growth_rate_electricity_generation_RES
 1,94,81,19,0,0,0,0,0,128,0,-1--1--1,,1|(659,242)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity.generation_losses
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Elec gen related losses EJ,857,317,51,20,8,131,0,0,0,0,0,0
 10,2,Electrical distribution losses EJ,814,580,71,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||92-92-92
@@ -32525,6 +32575,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 10,75,PE real generation RES elec,348,810,63,19,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│electricity.PE_electricity_generation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,PE Elec generation from oil,891,232,60,19,8,3,0,0,0,0,0,0
 10,2,PE Elec generation from gas,895,345,60,19,8,3,0,0,0,0,0,0
@@ -32597,6 +32648,7 @@ Primary energy consumption by type for electricity generation
 1,68,62,1,0,0,0,0,0,128,0,-1--1--1,,1|(661,237)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│RES_bioenergy.traditional_biomass
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,PE traditional biomass EJ delayed 1yr,993,413,72,18,8,131,0,0,0,0,0,0
 10,2,PEpc consumption people depending on trad biomass,695,616,103,26,8,131,0,0,0,0,0,0
@@ -32626,6 +32678,7 @@ Currently the demand of biomass of households, dominated by traditional biomass,
 1,24,23,1,1,0,0,0,0,128,1,-1--1--1,,1|(988,350)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│RES_bioenergy.potential_for_heat_and_ele
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,"PE bioE residues non-biofuels EJ",595,260,71,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,"Max potential NPP bioE conventional non-biofuels",648,480,90,30,8,131,0,0,-1,0,0,0
@@ -32669,6 +32722,7 @@ Available_solid_bioE_for_heat/elec
 1,38,36,18,0,0,0,0,0,128,0,-1--1--1,,1|(1439,216)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│RES_bioenergy.biocrops_land_competition
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,2
 10,1,Land compet biofuels 2gen Mha,911,375,65,27,3,131,0,2,0,0,0,0,-1--1--1,0-0-0,|12||255-0-0
 12,2,48,611,373,10,8,0,3,0,0,-1,0,0,0
@@ -32821,6 +32875,7 @@ Note: "biofuels" refer to bioliquids (no bioenergy which is burnt in solid state
 1,147,7,1,1,0,0,0,0,128,1,-1--1--1,,1|(736,417)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│RES_bioenergy.biocrops_marginal_land
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Potential PEavail biofuels land marg EJ,1205,366,80,26,3,131,0,0,0,0,0,0
 12,2,48,888,365,10,8,0,3,0,0,-1,0,0,0
@@ -32894,6 +32949,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,70,69,6,1,0,0,0,0,128,0,-1--1--1,,1|(955,292)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│RES_bioenergy.residues
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,"PE bioE residues non-biofuels EJ",994,209,65,24,3,131,0,0,0,0,0,0
 12,2,48,695,209,10,8,0,3,0,0,-1,0,0,0
@@ -32986,6 +33042,7 @@ The allocation in the final use of bioenergy should be endogenously determined i
 1,87,85,19,0,0,0,0,0,128,0,-1--1--1,,1|(1122,445)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│RES_bioenergy.biofuels
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Max PEavail biofuels potential,734,573,79,38,8,131,0,0,-1,0,0,0
 10,2,Max PEavail potential bioE residues for cellulosic biofuels,488,602,91,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -33044,6 +33101,7 @@ Total_biofuel_production
 1,54,53,21,0,0,0,0,0,64,0,-1--1--1,,1|(1252,225)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│RES_bioenergy.biogas
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Historic biogas PES,604,305,62,25,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,PES Biogas EJ,803,386,52,25,3,131,0,0,0,0,0,0
@@ -33156,6 +33214,7 @@ Biogas_PES
 1,108,87,7,1,0,0,0,0,128,0,-1--1--1,,1|(589,237)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.waste
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Historic PES waste EJ,303,286,58,25,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,PES waste EJ,686,318,54,20,3,131,0,0,0,0,0,0
@@ -33266,6 +33325,7 @@ PES_waste
 1,106,105,94,0,0,0,0,0,128,0,-1--1--1,,1|(484,186)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│PES_solids_bioenergy_and_waste
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,PES solids bioE EJ,1047,510,64,19,8,3,0,0,0,0,0,0
 10,2,PE traditional biomass EJ delayed 1yr,1340,534,96,30,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -33288,6 +33348,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,19,17,1,0,0,0,0,0,128,0,-1--1--1,,1|(890,534)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.FF_CHP plants_generation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Share heat com CHP plants NRE vs NRE tot heat com generation,1316,54,94,28,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,"FED heat-com by NRE CHP plants EJ",1123,84,83,27,8,131,0,0,0,0,0,0
@@ -33385,6 +33446,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,94,93,63,0,0,0,0,0,64,0,-1--1--1,,1|(1077,835)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│heat.demand
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,"FED Heat-com EJ",491,234,47,19,8,131,0,0,-1,0,0,0
 10,2,"Heat-com distribution losses",685,224,64,17,8,131,0,0,-1,0,0,0
@@ -33462,6 +33524,7 @@ Heat_demand
 1,73,72,16,0,0,0,0,0,0,0,-1--1--1,,1|(528,85)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│heat.FF_generation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,share liquids for heat plants,681,320,50,19,8,3,0,0,0,0,0,0
 10,2,"share gas/(coal+gas) for heat plants",907,445,66,19,8,3,0,0,0,0,0,0
@@ -33577,6 +33640,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,112,110,78,0,0,0,0,0,128,1,-1--1--1,,1|(1718,691)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│heat.RES_potential
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,share PES biogas for heat,713,162,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,MAX PE BIOGAS SP,665,230,50,17,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -33653,6 +33717,7 @@ The vector of RES heat should be expanded to include biogas
 1,70,69,12,0,0,0,0,0,64,0,-1--1--1,,1|(562,500)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│heat.commercial_generation_RES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,48,323,530,10,8,0,3,0,0,-1,0,0,0
 1,2,4,6,4,0,0,22,0,0,0,-1--1--1,,1|(646,530)|
@@ -33784,6 +33849,7 @@ Heat-com_generation_from_RES_by_source
 1,125,124,5,0,0,0,0,0,64,0,-1--1--1,,1|(489,576)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│heat.non_commercial_generation_RES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,48,212,526,10,8,0,3,0,0,-1,0,0,0
 1,2,4,6,4,0,0,22,0,0,0,-1--1--1,,1|(574,526)|
@@ -33896,6 +33962,7 @@ Heat-nc_generation_from_RES_by_source
 1,106,105,65,0,0,0,0,0,64,0,-1--1--1,,1|(1002,446)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│heat.total_FES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,"PES oil for Heat-com plants",634,429,57,17,8,131,0,0,-1,0,0,0
 10,2,"share oil dem for Heat-com",459,473,71,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -34003,6 +34070,7 @@ Annual_growth_rate_RES_for_heat
 1,98,22,67,0,0,0,0,0,128,0,-1--1--1,,1|(542,247)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│heat.total_PES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,PES NRE heat,1069,278,65,15,8,131,0,0,0,0,0,0
 10,2,"PES coal for Heat-com plants",733,218,76,26,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -34051,6 +34119,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,45,38,20,0,0,0,0,0,128,0,-1--1--1,,1|(1129,550)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│heat.PED_from_non_electric_RES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,PE traditional biomass EJ delayed 1yr,890,368,74,28,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,"PE supply from RES non-elec without trad bioE EJ",662,398,106,23,8,131,0,0,0,0,0,0
@@ -34074,6 +34143,7 @@ PES_from_RES_non-electric_(without_trad._biomass)
 1,19,18,2,0,0,0,0,0,128,0,-1--1--1,,1|(613,353)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.RES_PES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,share RES for Elec vs TPE RES,719,268,77,20,8,131,0,0,0,0,0,0
 10,2,TPE from RES Mtoe,705,535,48,19,8,3,0,0,0,0,0,0
@@ -34095,6 +34165,7 @@ Share_RES_for_Elec_vs._TPE_RES
 1,16,15,2,0,0,0,0,0,64,0,-1--1--1,,1|(676,590)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.RES_total_potential
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Percent remaining potential tot RES,866,387,57,19,8,3,0,0,-1,0,0,0
 10,2,remaining potential tot RES,871,305,59,19,8,3,0,0,-1,0,0,0
@@ -34134,6 +34205,7 @@ The potential in terms of final energy is ultimately dependent on the way the re
 1,34,29,6,1,0,0,0,0,128,0,-1--1--1,,1|(987,428)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.liquids_PED_PES_and_FES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Required FED by liquids EJ,592,185,57,19,8,3,0,0,-1,0,0,0
 10,2,share liquids for final energy,1047,441,75,27,8,131,0,0,-1,0,0,0
@@ -34230,6 +34302,7 @@ Comment: the next 3 views could be vectorized with the vector [final energy]
 1,90,89,6,0,0,0,0,0,64,0,-1--1--1,,1|(420,288)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.solids_PED_PES_and_FES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Required FED solids,821,187,44,19,8,3,0,0,-1,0,0,0
 10,2,PED solids,807,305,36,11,8,3,0,0,-1,0,0,0
@@ -34311,6 +34384,7 @@ Allocation mechanisms will be developed to properly allocate the primary sources
 1,77,76,3,0,0,0,0,0,64,0,-1--1--1,,1|(579,258)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.gases_PED_PES_and_FES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,PED gases,778,287,33,17,8,131,0,0,-1,0,0,0
 10,2,Other gases required,585,292,61,21,8,131,0,0,-1,0,0,0
@@ -34390,6 +34464,7 @@ Allocation mechanisms will be developed to properly allocate the primary sources
 1,74,73,2,0,0,0,0,0,64,0,-1--1--1,,1|(526,241)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│transport.energy_demand
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,expected final energy by sector and final energy,659,690,77,32,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||255-0-0
 10,2,Required final energy water transport,834,601,67,19,8,3,0,0,0,0,0,0
@@ -34437,6 +34512,7 @@ Share_demand_by_final_energy_in_transport
 1,40,39,32,1,0,0,0,0,128,0,-1--1--1,,1|(679,441)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│transport.households
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,saving ratios V,1346,652,56,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,percents H vehicles,1732,679,40,20,3,3,0,0,0,0,0,0
@@ -34648,6 +34724,7 @@ Transport_Household_Fina
 1,202,2,121,1,0,0,0,0,128,0,-1--1--1,,1|(1900,662)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│transport.inland_transport_sector
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,saving ratios V,1246,855,56,11,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,ratio N vehicles inland T output def,1541,1022,70,19,8,3,0,0,0,0,0,0
@@ -34804,6 +34881,7 @@ Inland_transport_final_energy_demand
 1,147,145,130,0,0,0,0,0,128,0,-1--1--1,,1|(361,658)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│transport.total_number_light_vehicles
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,2
 10,1,total number elec light vehicles,882,265,73,32,8,131,0,0,-1,0,0,0
 10,2,total number hybrid light vehicles,1070,267,87,29,8,131,0,0,-1,0,0,0
@@ -34845,6 +34923,7 @@ gas= natural gas + LPG vehicle   liq= gasoline and gasoil vehicles
 1,32,31,1,1,0,0,0,0,128,0,-1--1--1,,1|(769,157)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│transport.electric_vehicle_batteries
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,1096,41,40,20,8,3,0,0,-1,0,0,0
 10,2,kW per battery EV,1360,255,54,19,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -34918,6 +34997,7 @@ unit
 1,68,21,16,1,0,0,0,0,128,0,-1--1--1,,1|(1360,482)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.GTL_and_CTL_supply
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,CTL available production,768,227,46,21,3,131,0,0,0,0,0,0
 12,2,48,549,225,10,8,0,3,0,0,-1,0,0,0
@@ -35089,6 +35169,7 @@ GTL_production
 1,166,164,19,0,0,0,0,0,128,0,-1--1--1,,1|(474,540)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│NRE_extraction.oil
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,80,2
 10,1,RURR conv oil,815,-105,61,25,3,131,0,0,0,0,0,0
 10,2,cumulated conv oil extraction,1168,-100,69,28,3,131,0,0,0,0,0,0
@@ -35493,6 +35574,7 @@ The production of liquids from oil will be properly modelled in LOCOMOTION
 1,393,392,278,0,0,0,0,0,64,0,-1--1--1,,1|(2050,819)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│NRE_extraction.natural_gas
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,2
 10,1,"PED nat. gas for GTL EJ",1149,166,60,21,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,RURR conv gas,740,411,48,26,3,131,0,0,0,0,0,0
@@ -35885,6 +35967,7 @@ This should be better modelled with allocation functions in LOCOMOTION
 1,382,381,281,0,0,0,0,0,64,0,-1--1--1,,1|(1927,1409)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│NRE_extraction.coal
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,2
 10,1,PED coal for CTL EJ,1060,314,46,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,RURR coal,882,391,49,23,3,131,0,0,0,0,0,0
@@ -36011,6 +36094,7 @@ Coal_extraction
 1,122,121,86,0,0,0,0,0,64,0,-1--1--1,,1|(1243,626)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│NRE_extraction.uranium
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,RURR uranium,917,269,44,21,3,131,0,0,0,0,0,0
 10,2,Cumulated uranium extraction,1223,269,62,22,3,131,0,0,0,0,0,0
@@ -36078,6 +36162,7 @@ Uranium_extraction
 1,63,61,17,1,0,0,0,0,128,0,-1--1--1,,1|(862,382)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│Transformation_and_distribution_losses
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Energy distr losses FF EJ,648,363,47,27,8,131,0,0,-1,0,0,0
 10,2,Historic share of losses vs extraction,669,241,77,21,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -36140,6 +36225,7 @@ Energy transformation will be modelled within LOCOMOTION
 1,58,57,11,1,0,0,0,0,128,1,-1--1--1,,1|(598,482)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│share_RES_vs_TFEC
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,FE tot generation all RES elec TWh,376,501,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,FES RES for heat EJ,647,627,47,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -36168,6 +36254,7 @@ Share_RES_vs_TFEC
 1,24,23,9,0,0,0,0,0,64,0,-1--1--1,,1|(876,434)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│TPES_by_sector
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Final energy consumption by unified sector and final fuel,1368,646,85,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,PE traditional biomass EJ delayed 1yr,780,927,99,32,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -36277,6 +36364,7 @@ Primary Energy Consumption by unified sector
 1,105,71,103,0,0,0,0,0,128,0,-1--1--1,,1|(231,906)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│TPED_by_primary_energy
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,TPED by primary energy,794,432,57,19,8,3,0,0,0,0,0,0
 10,2,PE total Elec generation from RES EJ,554,580,82,31,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -36303,6 +36391,7 @@ Total_primary_energy_demand
 check_TPE
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│TPES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,TPES,812,337,40,11,8,131,0,2,0,0,0,0,-1--1--1,0-0-0,|12||255-0-0
 10,2,TPES Mtoe,872,404,47,19,8,3,0,0,0,0,0,0
@@ -36364,6 +36453,7 @@ TPES_intensity
 1,55,54,2,0,0,0,0,0,64,0,-1--1--1,,1|(928,416)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│EROI.PHS_ESOI
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,ESOIst initial PHS,553,374,44,21,8,131,0,0,-1,0,0,0
 10,2,CF hydro 2015,431,306,78,21,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -36412,6 +36502,7 @@ ESOI - Pumped hydro storage
 1,44,43,22,0,0,0,0,0,64,0,-1--1--1,,1|(1297,490)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│EROI.EV_batteries_ESOI
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,required embodied PE materials for EV batteries,597,759,104,27,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||255-0-0
 10,2,dynPEnUst intensity EV batteries,714,690,90,22,8,131,0,0,0,0,0,0
@@ -36489,6 +36580,7 @@ ESOI - Electric vehicle batteries
 1,73,72,55,0,0,0,0,0,64,0,-1--1--1,,1|(983,408)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│EROI.RES_elec
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,72,2
 10,1,dynEROIst RES elec,1442,243,48,19,8,131,0,0,0,0,0,0
 10,2,dynFEnUst RES elec,1208,238,44,18,8,131,0,0,0,0,0,0
@@ -36629,6 +36721,7 @@ EROI_RES_elec
 1,131,130,19,0,0,0,0,0,64,0,-1--1--1,,1|(1028,1052)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│EROI.water_demand_RES_elec
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,installed capacity RES elec TW,1014,548,79,33,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,"dynPEnU water O&M VRES elec",918,270,91,30,8,131,0,0,0,0,0,0
@@ -36674,6 +36767,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,42,22,2,0,0,0,0,0,128,0,-1--1--1,,1|(938,336)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│EROI.RES_elec_EROIgrid_allocation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,EROI allocation rule per RES elec,1162,633,57,19,8,3,0,0,-1,0,0,0
 10,2,Time,1007,636,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -36750,6 +36844,7 @@ Regulation of new RES elec capacities taking into account their relative EROIst 
 ESOI_elec_storage
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│EROI.total_dynamic_FEnUst
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,"Total dynFEnUst RES+storage",998,303,72,23,8,131,0,0,0,0,0,0
 12,2,0,736,181,54,11,8,7,0,8,-1,0,0,0,-1--1--1,0-0-0,|14||255-0-0
@@ -36781,6 +36876,7 @@ Total_dynFEnUst_RES
 share_dynFEnUst_RES_vs_TFEC
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│EROI.dynamic_EROI_system
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,970,24,239,21,8,135,0,8,-1,0,0,0,-1--1--1,0-0-0,|16||255-0-0
 Estimation of EROI of the system
@@ -36866,6 +36962,7 @@ If EROI<1:1 -> EROI FC tends to infinity and the system would crash. To be endog
 1,76,75,26,0,0,0,0,0,128,0,-1--1--1,,1|(257,97)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy.indicators
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,population,1033,252,43,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||255-0-0
 10,2,TPES,649,269,39,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -36995,6 +37092,7 @@ RES_potential_FE_per_capita
 1,116,115,110,0,0,0,0,0,0,0,-1--1--1,,1|(2761,459)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│GHG_emissions.total_emissions
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,76,2
 10,1,gCO2 per MJ coal,424,334,50,19,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,gCO2 per MJ conv gas,1118,756,50,19,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -37142,6 +37240,7 @@ Annual_GHG_emissions
 1,140,100,16,0,0,0,0,0,128,0,-1--1--1,,1|(733,516)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│GHG_emissions.CO2_emissions_by_FE
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,63,2
 10,1,PE demand oil Elec plants EJ,-377,71,67,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,PE demand coal Elec plants EJ,-69,155,71,38,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -37373,6 +37472,7 @@ ratio_CO2_emissions_by_FE
 Pending: obtain the same ratio for primary energies.
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│GHG_emissions.CH4_emissions_by_FE
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,68,2
 10,1,PE demand oil Elec plants EJ,-228,-71,67,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,PE demand coal Elec plants EJ,125,-53,72,34,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -37563,6 +37663,7 @@ ratio_CH4_emissions_by_FE
 1,180,179,33,0,0,0,0,0,64,0,-1--1--1,,1|(2150,288)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*energy│GHG_emissions.by_sector
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,70,2
 10,1,ratio GHG emissions by FE,1238,461,56,19,8,3,0,2,0,0,0,0,-1--1--1,0-0-0,|12||255-0-0
 10,2,GHG endogenous emissions by sector,1061,83,82,35,8,131,0,0,0,0,0,0
@@ -37725,6 +37826,7 @@ GHG_emissions_by_FE
 1,155,110,116,0,0,0,0,0,128,0,-1--1--1,,1|(809,-178)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*materials.recycling_rates_of_minerals
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,645,53,109,32,8,135,0,8,-1,0,0,0,-1--1--1,0-0-0,|18||0-0-0
 Materials recycling
@@ -37850,6 +37952,7 @@ Recycling_rates_minerals_alternative_techn
 1,119,117,88,1,0,0,0,0,128,0,-1--1--1,,1|(285,638)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*materials.demand_for_RES_elec
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,MATRIX UNIT PREFIXES,1044,681,76,35,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,materials required for new PV Mt,815,372,83,29,8,131,0,0,0,0,0,0
@@ -37962,6 +38065,7 @@ New capacity under construction
 1,107,106,37,0,0,0,0,0,64,0,-1--1--1,,1|(1232,1003)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*materials.demand_for_EV_batteries
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,materials required for EV batteries Mt,721,280,68,19,8,3,0,0,0,0,0,0
 10,2,MATRIX UNIT PREFIXES,774,142,68,30,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -38009,6 +38113,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,44,43,1,0,0,0,0,0,64,0,-1--1--1,,1|(840,225)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*materials.demand_rest_economy
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,88,2
 12,1,0,722,101,232,46,8,135,0,8,-1,0,0,0,-1--1--1,0-0-0,|18||0-0-0
 Materials demand of the rest of the economy (RoE) (all excepting RES elec & EV bateries)
@@ -38075,6 +38180,7 @@ Share_minerals_consumption_alt_techn_vs_total
 1,61,60,25,0,0,0,0,0,128,0,-1--1--1,,1|(626,261)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*materials.primary_demand_vs_availability
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,5310094,2232,287,304,287,3,188,0,0,1,0,0,0
 Share_tot_cum_dem_materials_vs_reserves
@@ -38150,6 +38256,7 @@ WARNING: Does cumulated extraction surpasses current reserves/resources? =1 whil
 1,66,63,7,0,0,0,0,0,128,0,-1--1--1,,1|(1601,185)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*materials.energy_use
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,MATRIX UNIT PREFIXES,849,175,65,23,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,required embodied PE materials for alt techn,1452,365,110,24,8,131,0,0,0,0,0,0
@@ -38208,6 +38315,7 @@ Share_energy_for_material_consumption_for_alt_techn_vs_TFEC
 1,53,52,12,0,0,0,0,0,64,0,-1--1--1,,1|(652,97)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*land_and_water│land.RES_land_requirements
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,surface onshore wind Mha,640,533,50,19,8,131,0,0,-1,0,0,0
 10,2,surface solar PV on land Mha,642,604,59,18,8,131,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-0-0
@@ -38262,6 +38370,7 @@ Renewables_land_occupati
 1,50,49,43,0,0,0,0,0,64,0,-1--1--1,,1|(710,361)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*land_and_water│land.forest
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,primary forest,893,705,40,20,3,3,0,0,0,0,0,0
 10,2,forest available,1213,709,40,20,3,3,0,0,0,0,0,0
@@ -38366,6 +38475,7 @@ The C sequestred by the afforestation programmed included in the climate module 
 1,98,60,91,0,0,0,0,0,128,0,-1--1--1,,1|(639,862)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*land_and_water│land.overview
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,88,2
 10,1,arable land for food,845,443,52,29,3,131,0,0,0,0,0,0
 10,2,percent land agrochem,1103,364,46,22,3,131,0,0,0,0,0,0
@@ -38575,6 +38685,7 @@ Energy savings from diet and from the agroecologic modele are not computed (dies
 1,199,198,194,0,0,0,0,0,64,0,-1--1--1,,1|(154,1164)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*land_and_water│water.demand_vs_availability
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Water intensity by sector,875,267,41,33,3,131,0,0,0,0,0,0
 12,2,48,504,262,10,8,0,3,0,0,-1,0,0,0
@@ -38675,6 +38786,7 @@ Share_blue_water_use_vs_resources
 1,94,92,20,1,0,0,0,0,128,0,-1--1--1,,1|(970,657)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*climate.carbon_cycle
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,938,25,103,28,3,135,0,0,-1,0,0,0
 C-ROADS subclimate model
@@ -38890,6 +39002,7 @@ CO2_concentrations
 1,209,208,202,0,0,0,0,0,128,0,-1--1--1,,1|(934,366)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*climate.other_GHG_cycles
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,81,2
 10,1,CH4 in Atm,345,271,52,33,3,131,0,0,0,0,0,0
 12,2,48,542,268,10,8,0,3,0,0,-1,0,0,0
@@ -39196,6 +39309,7 @@ HFCs cycle
 1,298,265,240,0,0,0,0,0,128,0,-1--1--1,,1|(766,181)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*climate.radiative_forcing
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,CH4 and N2O Radiative Forcing,243,411,73,33,8,130,0,2,-1,0,0,0,0-0-0,0-0-0,|12||128-128-128
 10,2,CO2 Radiative Forcing,586,239,60,19,8,131,0,0,-1,0,0,0
@@ -39333,6 +39447,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 1,134,128,130,0,0,0,0,0,128,0,-1--1--1,,1|(346,359)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*climate.total_GHG_emissions
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 10,1,Total GHG emissions GtCO2e,853,427,81,27,8,131,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-0-0
 10,2,CH4 anthro emissions,1233,173,51,28,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -39389,6 +39504,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5
 10,53,carbon budget,743,217,55,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*climate│impacts.temperature_change
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Atm and Upper Ocean Heat Cap,1423,375,61,27,8,131,0,0,0,0,0,0
 10,2,global surface area,1343,310,50,17,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -39511,6 +39627,7 @@ Temperature_change
 1,117,116,103,0,0,0,0,0,64,0,-1--1--1,,1|(453,685)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*climate│impacts.pH_ocean
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,pH in 2000,517,346,59,26,8,131,0,0,0,0,0,0
 10,2,pH ocean,649,456,38,16,8,131,0,0,-1,0,0,0
@@ -39545,6 +39662,7 @@ pH_ocean
 1,29,17,25,0,0,0,0,0,64,0,-1--1--1,,1|(905,570)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*climate│impacts.sea_level_rise
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Sea Level Rise,747,400,40,20,3,3,0,0,0,0,0,0
 12,2,48,567,395,10,8,0,3,0,0,-1,0,0,0
@@ -39599,6 +39717,7 @@ Sea_level_rise
 1,50,47,9,0,0,0,0,0,128,0,-1--1--1,,1|(952,407)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*climate.tipping_points
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,RANDOM UNIFORM FUNCTION MGIS,304,358,67,34,8,131,0,0,0,0,0,0
 10,2,NOISE SEED,1029,271,47,11,8,3,0,0,0,0,0,0
@@ -39664,6 +39783,7 @@ Is any tipping point being triggered during simulation time? (warning: functions
 1,60,26,45,0,0,0,0,0,128,0,-1--1--1,,1|(1273,647)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*INTERFACE- Sable control options
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,2
 10,1,Hypothesis 1,184,187,42,11,8,3,0,0,0,0,0,0
 10,2,Hypothesis 2,184,225,42,11,8,3,0,0,0,0,0,0
@@ -39696,6 +39816,7 @@ Sable model variables
 10,28,Temp ref user defined,196,412,68,37,8,131,0,0,-1,0,0,0
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*COMP - Historical data
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Historic TPES,267,801,57,11,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,Historic energy intensity,474,754,67,28,8,131,0,0,0,0,0,0
@@ -39792,6 +39913,7 @@ Error defined as "MEDEAS" - "Historic"
 Warning: historical data needs to be updated
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*COMP- Historical data II
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,77,2
 10,1,check primary coal Elec plants,489,359,61,19,8,3,0,2,-1,0,0,0,0-0-0,0-0-0,|12||0-192-192
 10,2,PE demand coal Elec plants EJ,296,365,71,42,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -39889,6 +40011,7 @@ Error defined as "MEDEAS" - "Historic"
 (WILIAM historical timeframe: 2005-2015)
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*COMP- Historical data Elec production
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,share Nuclear Elec IEA,407,364,81,19,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,share Renewables Elec IEA,423,499,86,19,8,130,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -39960,6 +40083,7 @@ Warning: historical data needs to be updated
 (WILIAM historical timeframe: 2005-2015)
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*COMP- Historical data Heat generation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,share nuclear Heat IEA EJ,592,377,85,19,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,share gases Heat IEA EJ,587,443,84,19,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -40031,6 +40155,7 @@ Error defined as "MEDEAS" - "Historic"
 (WILIAM historical timeframe: 2005-2015)
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*COMP - GDP
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 10,1,Historic GDP WIOD,565,554,82,9,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,2,GDP,905,547,27,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
@@ -40047,11 +40172,13 @@ Error defined as "MEDEAS" - "Historic"
 (WILIAM historical timeframe: 2005-2015)
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*---- CONTROL PANEL - RESULTS VISUALIZATION ----
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,930,428,147,18,8,135,0,24,-1,3,0,0,-1--1--1,0-0-0,|16|I|0-0-0
 (View intentionally left blank)
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - GPDpc & POPULATION
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,622,82,150,30,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 GDP and Population
@@ -40063,6 +40190,7 @@ GDP
 GDPpc
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - SECTORAL INTENSITIES EVOLUTION
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,660,309,193,197,3,188,0,0,1,0,0,0
 TPES_intensity
@@ -40082,6 +40210,7 @@ TFES net intensity!
 Cumulative_TFEC_intensity_change_from_2009
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - ELECTRICITY
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,248,153,120,30,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Electricity sector
@@ -40097,6 +40226,7 @@ Electricity_generation_from_RES
 Share_Electricity_covered_by_RES
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - RES INSTALLED CAPACITY & ELEC GENERATION
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,829,12,339,69,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 RES for elec: installed capacity & elec generation
@@ -40108,6 +40238,7 @@ Electricity_generation_from_RES_by_source
 RES_elec_installed_capacity_by_source
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - HEAT
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,542,300,150,150,3,44,0,0,1,0,0,0
 Total_FE_heat_generation
@@ -40121,6 +40252,7 @@ Heat_generation_from_NRE
 Heat_generation_from_RES
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - TRANSPORT
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,1011,153,131,23,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Transport sector
@@ -40138,6 +40270,7 @@ Transport_final_energy_demand
 Transport_energy_demand_IOT_sectors
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - TPES & TPED
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,730,244,204,24,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Total primary energy
@@ -40149,6 +40282,7 @@ Abundance_total_energy
 Total_Primary_Energy_supply
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - FINAL ENERGY SUPPLY BY FINAL FUEL
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,151,119,126,49,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Final energy supply by fuel
@@ -40166,6 +40300,7 @@ FE_consumption_solids
 Total_final_energy_consumption
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - LIQUIDS
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,798,327,179,150,3,188,0,0,1,0,0,0
 Liquids_extraction
@@ -40189,6 +40324,7 @@ Comment: if depletion curves includes conventional and unconventional oil aggreg
 Total_biofuel_production
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - OIL
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,2
 12,1,0,51,53,23,19,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Oil
@@ -40204,6 +40340,7 @@ Total_demand_oil
 Total_extraction_oil
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - GAS
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,122,135,75,18,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Natural gas
@@ -40219,6 +40356,7 @@ Conventional_gas_extraction
 abundance_natural_gas
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - COAL
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,763,335,178,172,3,188,0,0,1,0,0,0
 Coal_extraction
@@ -40230,6 +40368,7 @@ Abundance_coal
 Coal
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - URANIUM
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,610,240,57,19,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Uranium
@@ -40241,6 +40380,7 @@ Uranium_extraction
 Uranium_demand
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - ABUND NON-RENEW RESOURCES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,319,552,150,150,3,44,0,0,1,0,0,0
 Abundance_coal
@@ -40256,6 +40396,7 @@ NRE abundances
 abundance_gases
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - REMAINING POTENTIAL RES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,867,58,381,53,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Remaining potential aggregated RES by final use
@@ -40271,6 +40412,7 @@ Share_remaining_potential_total_RES_elec
 Share_remaining_potential_RES_for_heat
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - RES FOR ELEC
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,134,228,53,27,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|18||0-0-0
 RES for Electricity
@@ -40284,6 +40426,7 @@ Electricity_generation_from_RES
 Share_variable_vs_total_Electricity_generation
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - TOTAL RES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,678,203,98,27,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|18||0-0-0
 Non-Electric RES
@@ -40299,6 +40442,7 @@ Electricity_generation_(PE)_by_RES
 PES_from_RES_non-electric_(without_trad._biomass)
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - MATERIALS DEMAND VS RESERVES/RESOURCES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,1004,366,317,287,3,188,0,0,1,0,0,0
 Share_other_cum_mat_demand_vs_reserves
@@ -40314,6 +40458,7 @@ Share_tot_cum_dem_materials_vs_reserves
 Share_tot_cum_dem_materials_vs_resources
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - LAND-USE FOR RES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,740,95,59,19,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Land-use
@@ -40323,6 +40468,7 @@ Biomass_land_compet_occupation
 Renewables_land_occupati
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - EMISSIONS AND CLIMATE CHANGE
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,298,160,145,35,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Emissions and Climate Change
@@ -40338,6 +40484,7 @@ CO2_concentrations
 Annual_GHG_emissions
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - ENERGY INDICATORS (1)
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,840,269,150,150,3,44,0,0,1,0,0,0
 Average_TPES_per_capita
@@ -40355,6 +40502,7 @@ RES_potential_FE_per_capita
 Remaining_potential_all_RES
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - ENERGY INDICATORS (2)
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,899,105,90,36,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Energy indicators (2)
@@ -40370,6 +40518,7 @@ TFES_intensity
 EROIst_system
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - SOCIAL & ENVIRONMENTAL IMPACTS INDICATORS
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,362,271,178,173,3,188,0,0,1,0,0,0
 GDPpc
@@ -40391,6 +40540,7 @@ Total_water_use_per_capita
 Share_blue_water_use_vs_resources
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*2050-AIMS: RESULT COMPARISON
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,3476462,684,452,227,214,3,156,0,0,1,0,0,0
 Average_FEC_per_capita_COMP
@@ -40400,6 +40550,7 @@ RESULTS: COMPARISON WITH 2050-AIMS
 Temperature_change
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - REMAINING POTENTIAL RES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,867,58,381,53,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Remaining potential aggregated RES by final use
@@ -40415,6 +40566,7 @@ Share_remaining_potential_total_RES_elec
 Share_remaining_potential_RES_for_heat
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - RES FOR ELEC
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,134,228,53,27,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|18||0-0-0
 RES for Electricity
@@ -40428,6 +40580,7 @@ Electricity_generation_from_RES
 Share_variable_vs_total_Electricity_generation
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - TOTAL RES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,678,203,98,27,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|18||0-0-0
 Non-Electric RES
@@ -40443,6 +40596,7 @@ Electricity_generation_(PE)_by_RES
 PES_from_RES_non-electric_(without_trad._biomass)
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - MATERIALS DEMAND VS RESERVES/RESOURCES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,1004,366,317,287,3,188,0,0,1,0,0,0
 Share_other_cum_mat_demand_vs_reserves
@@ -40458,6 +40612,7 @@ Share_tot_cum_dem_materials_vs_reserves
 Share_tot_cum_dem_materials_vs_resources
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - LAND-USE FOR RES
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,740,95,59,19,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Land-use
@@ -40467,6 +40622,7 @@ Biomass_land_compet_occupation
 Renewables_land_occupati
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - EMISSIONS AND CLIMATE CHANGE
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,298,160,145,35,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Emissions and Climate Change
@@ -40482,6 +40638,7 @@ CO2_concentrations
 Annual_GHG_emissions
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - ENERGY INDICATORS (1)
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,840,269,150,150,3,44,0,0,1,0,0,0
 Average_TPES_per_capita
@@ -40499,6 +40656,7 @@ RES_potential_FE_per_capita
 Remaining_potential_all_RES
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - ENERGY INDICATORS (2)
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,899,105,90,36,8,135,0,8,-1,3,0,0,-1--1--1,0-0-0,|24||0-0-0
 Energy indicators (2)
@@ -40514,6 +40672,7 @@ TFES_intensity
 EROIst_system
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*CP - SOCIAL & ENVIRONMENTAL IMPACTS INDICATORS
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,0,362,271,178,173,3,188,0,0,1,0,0,0
 GDPpc
@@ -40535,6 +40694,7 @@ Total_water_use_per_capita
 Share_blue_water_use_vs_resources
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*2050-AIMS: RESULT COMPARISON
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
 12,1,3476462,684,452,227,214,3,156,0,0,1,0,0,0
 Average_FEC_per_capita_COMP
@@ -40544,6 +40704,7 @@ RESULTS: COMPARISON WITH 2050-AIMS
 Temperature_change
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
+*OUTPUTS FOR TEMPLATE
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,90,2
 10,1,PE CSP generation EJ,272,430,43,19,8,3,0,2,0,0,0,0,-1--1--1,0-0-0,|12||255-0-0
 10,2,PE wind Elec generation EJ,648,426,43,19,8,3,0,0,0,0,0,0
@@ -40613,6 +40774,7 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Proportion_of_var_electr
 :TITLE Proportion of var electric gen vs total
 :SCALE
+:VAR "proportion E var-base percent"[scenarios]
 :Y-MIN 0
 :Y-MAX 1
 
@@ -40698,6 +40860,7 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Total_gas_demand
 :TITLE Total gas demand
 :SCALE
+:VAR "PED nat. gas EJ"[scenarios]
 
 :GRAPH abundance_gases
 :TITLE abundance gases
@@ -40735,6 +40898,7 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Total_gas_extraction
 :TITLE Total gas extraction
 :SCALE
+:VAR "PES nat. gas"[scenarios]
 
 :GRAPH Liquids_extraction
 :TITLE Liquids extraction
@@ -40865,6 +41029,8 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH PES_from_RES_non-electric_(without_trad._biomass)
 :TITLE PES from RES non-electric (without trad. biomass)
 :SCALE
+:VAR "PE supply from RES non-elec without trad bioE EJ"[scenarios]
+:VAR "Max potential non-electric RES"[scenarios]
 
 :GRAPH Share_of_RES_vs_TPES
 :TITLE Share of RES vs TPES
@@ -40893,12 +41059,14 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Share_RES+efficiency_for_Ind
 :TITLE Share RES+efficiency for Ind
 :SCALE
+:VAR "share RES+efficiency for Ind"[scenarios]
 :Y-MIN 0
 :Y-MAX 1
 
 :GRAPH Share_RES+efficiency_for_Buildings
 :TITLE Share RES+efficiency for Buildings
 :SCALE
+:VAR "share RES+efficiency for Build"[scenarios]
 :Y-MIN 0
 :Y-MAX 1
 
@@ -41022,10 +41190,12 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Carbon_footprint
 :TITLE Carbon footprint
 :SCALE
+:VAR "Carbon footprint tCO2/person"[scenarios]
 
 :GRAPH Average_TPESpc_(without_trad_biomass)
 :TITLE Average TPESpc (without trad biomass)
 :SCALE
+:VAR "Average TPESpc (without trad biomass)"[scenarios]
 :VAR TPEFpc threshold high development
 :VAR TPEDpc acceptable standard living
 
@@ -41075,6 +41245,7 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH RES_heat-com_installed_capacity_by_source
 :TITLE RES heat-com installed capacity by source
 :SCALE
+:VAR "installed capacity RES heat-com TW"[RES heat,scenarios]
 
 :GRAPH Total_energy_for_total_material_consumption_for_alt_techn
 :TITLE Total energy for total material consumption for alt techn
@@ -41092,12 +41263,16 @@ pensar si eliminar esta pestaña completamente?
 :VAR dynamic EROI RES elec[RES elec,scenarios]
 :Y-MIN 0
 :Y-MAX 10
+:VAR "EROI=1"
 
 :GRAPH EROIst_system
 :TITLE EROIst system
 :SCALE
 :VAR EROIst system[scenarios]
 :Y-MIN 0
+:VAR "minimum EROI (Hall et al, 2009)"
+:VAR "minimum EROI (Brandt, 2017)"
+:VAR "EROI=1"
 
 :GRAPH Dynamic_EROI_RES_elec_variables
 :TITLE Dynamic EROI RES elec variables
@@ -41145,6 +41320,9 @@ pensar si eliminar esta pestaña completamente?
 :X-MIN 1995
 :X-MAX 2015
 :SCALE
+:VAR "check primary coal for Elec, Heat and CHP plants"[scenarios]
+:VAR "check primary gas for Elec, Heat and CHP plants"[scenarios]
+:VAR "check primary liquids for Elec, Heat and CHP plants"[scenarios]
 
 :GRAPH share_FE_Elec
 :TITLE check share FE Elec
@@ -41188,6 +41366,7 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Total_natural_gas_extraction
 :TITLE Total natural gas extraction
 :SCALE
+:VAR "PES nat. gas"[scenarios]
 
 :GRAPH Heat_demand
 :TITLE Heat demand
@@ -41257,6 +41436,7 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Heat-com_generation_from_RES_by_source
 :TITLE Heat-com generation from RES by source
 :SCALE
+:VAR "FE real generation RES heat-com EJ"[RES heat,scenarios]
 :Y-MIN 0
 :VAR FES elec from biogas EJ[scenarios]
 :Y-MIN 0
@@ -41362,6 +41542,7 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Share_RES_heat-com_vs_RES_heat_tot
 :TITLE Share RES heat-com vs RES heat tot
 :SCALE
+:VAR "Share RES heat-com vs RES heat tot"[RES heat,scenarios]
 :Y-MIN 0
 :VAR Max share[scenarios]
 
@@ -41407,14 +41588,17 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH RES_heat-nc_installed_capacity_by_source
 :TITLE RES heat-nc installed capacity by source
 :SCALE
+:VAR "installed capacity RES heat-nc TW"[RES heat,scenarios]
 
 :GRAPH Heat-nc_generation_from_RES_by_source
 :TITLE Heat-nc generation from RES by source
 :SCALE
+:VAR "FE real generation RES heat-nc EJ"[RES heat,scenarios]
 
 :GRAPH Non-energy_use_demand_by_fuel
 :TITLE Non-energy use demand by fuel
 :SCALE
+:VAR "Non-energy use demand by final energy EJ"[scenarios,final energies]
 
 :GRAPH Annual_TFEC_RES_growth_rate
 :TITLE Annual TFEC RES growth rate
@@ -41481,6 +41665,7 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH abundance_natural_gas
 :TITLE abundance natural gas
 :SCALE
+:VAR "abundance total nat. gas"[scenarios]
 
 :GRAPH Share_demand_by_final_energy_in_transport
 :TITLE Share demand by final energy in transport
@@ -41505,6 +41690,7 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Total_standard_electric_batteries
 :TITLE Total standard electric batteries
 :SCALE
+:VAR "batteries EV+hyb+2wE"[scenarios]
 
 :GRAPH Transport_energy_demand_IOT_sectors
 :TITLE Transport energy demand IOT sectors
@@ -41519,10 +41705,12 @@ pensar si eliminar esta pestaña completamente?
 :GRAPH Total_dynFEnUst_RES
 :TITLE Total dynFEnUst RES
 :SCALE
+:VAR "Total dynFEnUst RES+storage"[regions]
 
 :GRAPH share_dynFEnUst_RES_vs_TFEC
 :TITLE share dynFEnUst RES vs TFEC
 :SCALE
+:VAR "share dynFEnUst RES+storage vs TFEC"[regions]
 
 :GRAPH ESOI_elec_storage
 :TITLE ESOI elec storage
@@ -41574,6 +41762,7 @@ pensar si eliminar esta pestaña completamente?
 :TITLE EROI feedback factor
 :SCALE
 :VAR EROI FC system from 2015[scenarios]
+:VAR "ratio = 1"
 
 :GRAPH Agricultural_Land
 :TITLE Agricultural Land
