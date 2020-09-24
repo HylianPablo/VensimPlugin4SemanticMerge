@@ -57,12 +57,13 @@ V300  Do not put anything below this section - it will be ignored
 *View 1
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
 10,1,nutria,304,92,41,32,3,131,0,0,0,0,0,0
-'hola
-Ejemplo. Problematico++&
+'hola, hola
 12,2,48,32,90,10,8,0,3,0,0,-1,0,0,0
+,https://google.es
 1,4,6,1,4,0,0,22,0,0,0,-1--1--1,,1|(211,89)|
 1,5,6,2,100,0,0,22,0,0,0,-1--1--1,,1|(94,89)|
 11,6,0,153,89,6,8,34,3,0,0,1,0,0,0
+: VAR 'hola'
 10,7,change in nutria per time,153,111,41,14,40,3,0,0,-1,0,0,0
 10,8,birth fraction,66,184,34,8,8,3,0,0,0,0,0,0
 1,9,8,7,1,0,0,0,0,64,0,-1--1--1,,1|(94,134)|
@@ -91,48 +92,6 @@ This is a model of nutria that I used as an example for a class.
 :SCALE
 :VAR TPES intensity EJ T$[scenarios]
 :Y-MIN 0
-
-:GRAPH Real_PED_intensity_of_Industry&Buildings
-:TITLE real PED intensity of Industry&Buildings
-:SCALE
-:VAR real PED intensity IB[scenarios]
-:Y-MIN 0
-
-:GRAPH real_PED_intensity_of_Electricity
-:TITLE real PED intensity of Electricity
-:SCALE
-:VAR real PED intensity of Electricity[scenarios]
-:Y-MIN 0
-
-:GRAPH Annual_CO2_emissions
-:TITLE Annual CO2 emissions
-:SCALE
-:VAR Total CO2 emissions GtCO2[scenarios]
-
-:GRAPH Electricity_demand
-:TITLE Electricity demand
-:SCALE
-:VAR Total FE Elec demand TWh[scenarios]
-:Y-MIN 0
-
-:GRAPH Abundance_electricity
-:TITLE Abundance electricity
-:SCALE
-:VAR Abundance electricity[scenarios]
-:Y-MIN 0
-:Y-MAX 1
-
-:GRAPH Cumulated_total_investment_RES_for_Electricity
-:TITLE Cumulated total investment RES for Electricity
-:SCALE
-:VAR Cumulated total monet invest RES for Elec[scenarios]
-
-:GRAPH Proportion_of_var_electr
-:TITLE Proportion of var electric gen vs total
-:SCALE
-:VAR "proportion E var-base percent"[scenarios]
-:Y-MIN 0
-:Y-MAX 1
 :L<%^E!@
 9:Current
 22:$,Dollar,Dollars,$s

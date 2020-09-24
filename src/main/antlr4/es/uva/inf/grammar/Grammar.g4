@@ -123,8 +123,8 @@ sketchesDelimiter: '///---';
 viewInfo:   sketchInfo versionCode viewName viewVariables; 
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
-viewName: '*' .*?; 
-viewSettings: '$' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
+viewName: '*' .*?; //All view names are preceeded by an '*'
+viewSettings: '$' ('-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq); //The settings of each view always will have 2 commas separating
                                                                                                             //fields, then 8 '|' and then again 3 commas.
@@ -146,9 +146,9 @@ arrow: DigitSeq ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points);  //Arrows always will have 13 fields and a last field that contains 
                                                                                                         //the number of points of the object and where they are located.
 points: DigitSeq ('|''('integerConst','integerConst')')+'|';
-rawText: (Id|StringConst|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|'@'|':'|';'|','|'['|']'|link)+; 
+rawText: ('\''|'"'|Id|StringConst|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|'@'|':'|';'|','|'['|']'|link)+; 
  //Symbols that may affect the grammar. Those are contained in comments or variable names. They must be controlled.
-rawTextObjects: (Id|StringConst|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|'@'|':'|';'|'['|']'|link)+; 
+rawTextObjects: ('\''|Id|StringConst|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|'@'|':'|';'|'['|']'|link)+; 
  //Symbols that may affect the grammar. Those are contained in objects. It cannot contain any commas. They must be controlled.
 link: ('http://'|'https://'|': https://'| ': http://') .*?;
 
@@ -167,10 +167,10 @@ DataEquationOp: ':=';
 StringAssignOp: ':IS:';
 
 subscriptId : Id  Exclamation?;
-Id: ( ( Nondigit IdChar*  ) | ( Nondigit ( IdChar | ' ' )* IdChar ) | StringLiteral );
+Id: ( ( Nondigit IdChar*  ) | ( Nondigit ( IdChar | ' ' )* IdChar ) |StringLiteral);
 
 fragment
-IdChar : [a-zA-Z0-9_$'&%\u00A1-\u00ff\u0100-\u017f\u0180-\u024f\u1e02-\u1ef3] ;
+IdChar : [a-zA-Z0-9_$'"&%\u00A1-\u00ff\u0100-\u017f\u0180-\u024f\u1e02-\u1ef3] ;
 
 
 fragment
@@ -216,18 +216,17 @@ ExponentPart
     |   'E' [+-]? DigitSeq
     ;
 
-
-
 DigitSeq
     :   Digit+
     ;
 
 StringLiteral
-    :   ["](~["\\]|[\\].)*?["]
+    :   ["](~["\\]|[\\].)*?["\r\n]
     ;
 
+
 StringConst
-    :    ['](~['\\]|[\\].)*?[']
+    :    ['](~['\\]|[\\].)*?['\r\n]
     ;
 
 Keyword
