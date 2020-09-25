@@ -13,7 +13,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 public class EvalVisitor {
     public static void main(String[] args) throws Exception {
-        CharStream charstream = CharStreams.fromFileName("VensimExampleModels/medeas1.mdl");
+        CharStream charstream = CharStreams.fromFileName("VensimExampleModels/pan_water_cycle.mdl");
         GrammarLexer lexer = new GrammarLexer(charstream);
         GrammarParser parser = new GrammarParser(new CommonTokenStream(lexer));
         ParseTree tree = parser.file();
