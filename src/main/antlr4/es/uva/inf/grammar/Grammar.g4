@@ -110,7 +110,7 @@ xmin: ':X-MIN' .*?;
 xmax: ':X-MAX' .*?;
 nolegend: ':NO-LEGEND' DigitSeq;
 scale: ':SCALE';
-graphvar: gvar ymin* ymax* linewidthgraph*;
+graphvar: gvar ymin? ymax? linewidthgraph? scale?;
 gvar: ':VAR' .*?;
 ymin: ':Y-MIN' .*?;
 ymax: ':Y-MAX' .*?;
@@ -131,11 +131,11 @@ viewSettings: '$' ('-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* 
 viewVariables: viewSettings (arrow|shadowVariable|textVariable|rawText|objectVariable)*;
 
 
-shadowVariable: (integerConst) (','(rawText|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastShadowPart;
+shadowVariable: (integerConst) (','(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastShadowPart;
                                  //Variables that do not belong to any view and do not depend on any other variables. Besides, other variables can depend on shadow variables.
 lastShadowPart: ',' '|'(integerConst|floatingConst)'|'(DigitSeq)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
-textVariable: (integerConst) (','(rawText|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastTextVarPart; 
+textVariable: (integerConst) (','(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastTextVarPart; 
                                                                                                 //Object variables that its format has been modified(font, color...)
 lastTextVarPart: '|'(integerConst|floatingConst)'|'(DigitSeq)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
