@@ -115,7 +115,8 @@ gvar: ':VAR' .*?;
 ymin: ':Y-MIN' .*?;
 ymax: ':Y-MAX' .*?;
 linewidthgraph: ':LINE-WIDTH' .*?;
-metadata: ':L<%^E!@' .*?;
+metadata: ':L<%^E!@' metadataLine+;
+metadataLine:DigitSeq':'.*?;
   
 // Backslash tokens are ignored, so this rule doesn't take them into account.
 sketches: viewInfo* sketchesDelimiter;
