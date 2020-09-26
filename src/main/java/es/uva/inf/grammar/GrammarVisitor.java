@@ -406,6 +406,12 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMetadata(GrammarParser.MetadataContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link GrammarParser#metadataLine}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMetadataLine(GrammarParser.MetadataLineContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link GrammarParser#sketches}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
