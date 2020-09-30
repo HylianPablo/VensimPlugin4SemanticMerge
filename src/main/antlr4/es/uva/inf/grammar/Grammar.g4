@@ -121,15 +121,16 @@ metadataLine:DigitSeq':'.*?;
 // Backslash tokens are ignored, so this rule doesn't take them into account.
 sketches: viewInfo* sketchesDelimiter;
 sketchesDelimiter: '///---';
-viewInfo:   sketchInfo versionCode viewName viewVariables; //FALTA VIEWNAME
+viewInfo:   sketchInfo versionCode viewName viewVariables;
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: ('V300  Do not put anything below this section - it will be ignored'|'V364  Do not put anything below this section - it will be ignored'); 
 //Vensim versions 5,4 and 3 all use the same version code (300).
 viewName: '*' .*?; //All view names are preceeded by an '*'
 viewSettings: '$' ('-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' //REVISAR PARA CLARIFICARLO
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
-    ((Id|'-'|DigitSeq)* '|')? ((Id|'-'|DigitSeq)* ',')? ((Id|'-'|DigitSeq)* ',')? ((Id|'-'|DigitSeq)* ',')? (DigitSeq)?; //The settings of each view always will have 2 commas separating
+    ((Id|'-'|DigitSeq)* '|')? (DigitSeq ',')? (DigitSeq ',')? (DigitSeq ',')? (DigitSeq)?; //USUALLY, The settings of each view always will have 2 commas separating
                                                                                                             //fields, then 8 '|' and then again 3 commas.
+                                                                                                            //Sometimes, some fields are not necessary.
 viewVariables: viewSettings (arrow|shadowVariable|textVariable|rawText|objectVariable)*;
 
 
