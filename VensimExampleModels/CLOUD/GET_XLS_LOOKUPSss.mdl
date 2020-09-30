@@ -1,0 +1,156 @@
+{UTF-8}
+City:
+	Boston,New York
+	~	
+	~		|
+
+Fruit:
+	Apples,Bananas,Oranges
+	~	
+	~		|
+
+subscripted vertical lookup[City](
+	GET XLS LOOKUPS('subscriptedInputs.xlsx', 'ssData' , 'a', 'b3' ))
+	~	dmnl
+	~	Vensim will read each successive City of data from a new column
+	|
+
+"horizontal lookup(time) ss"[Fruit]=
+	subscripted horizontal lookup[Fruit](Time/one month)
+	~	dmnl
+	~		|
+
+"vertical lookup(time) ss"[City]=
+	subscripted vertical lookup[City](Time/one month)
+	~	dmnl
+	~		|
+
+subscripted horizontal lookup[Fruit]=
+	GET XLS LOOKUPS('subscriptedInputs.xlsx', 'ssData' , '1', 'g2' )
+	~	dmnl
+	~	Vensim will read each successive [Fruit] element of data from a new row
+	|
+
+one month=
+	1
+	~	Month
+	~		|
+
+"horizontal lookup(time)"=
+	horizontal lookup(Time/one month)
+	~	dmnl
+	~		|
+
+"vertical lookup(time)"=
+	vertical lookup(Time/one month)
+	~	dmnl
+	~		|
+
+horizontal lookup=
+	GET XLS LOOKUPS('subscriptedInputs.xlsx', 'data' , '1', 'e2' )
+	~	dmnl
+	~	Note that this references the same inputs as GET XLS DATA, which has the \
+		same layout.
+	|
+
+vertical lookup=
+	GET XLS LOOKUPS('subscriptedInputs.xlsx', 'data' , 'a', 'b2' )
+	~	dmnl
+	~	Note that this references the same inputs as GET XLS DATA, which has the \
+		same layout.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 12
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.5
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+12,1,0,140,75,83,28,8,135,0,18,-1,0,0,0,-1--1--1,0-0-0,|12|B|128-0-0
+GET XLS LOOKUPS - read lookup tables from Excel
+10,2,vertical lookup,145,155,52,11,8,3,0,16,0,0,0,0,0-0-0,0-0-0,|12|B|0-0-0
+10,3,horizontal lookup,340,155,59,11,8,3,0,16,0,0,0,0,0-0-0,0-0-0,|12|B|0-0-0
+10,4,"vertical lookup(time)",145,225,41,19,8,3,0,0,0,0,0,0
+10,5,"horizontal lookup(time)",340,225,41,19,8,3,0,0,0,0,0,0
+1,6,2,4,0,0,0,0,0,64,0,-1--1--1,,1|(145,179)|
+1,7,3,5,0,0,0,0,0,64,0,-1--1--1,,1|(340,179)|
+10,8,one month,427,317,34,11,8,3,0,0,-1,0,0,0
+1,9,8,4,0,0,0,0,0,64,0,-1--1--1,,1|(296,274)|
+10,10,Time,432,375,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,11,10,4,0,0,0,0,0,64,0,-1--1--1,,1|(302,307)|
+1,12,8,5,0,0,0,0,0,64,0,-1--1--1,,1|(391,280)|
+1,13,10,5,0,0,0,0,0,64,0,-1--1--1,,1|(392,309)|
+12,14,0,252,429,83,28,8,7,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0
+See GET XLS DATA[ss] example for other syntax examples.
+12,15,0,250,490,82,28,8,7,0,18,-1,0,253,253,-1--1--1,0-0-0,|12|U|0-0-255
+GET XLS DATA[ss].mdl|GET XLS DATA[ss].mdl
+10,16,subscripted vertical lookup,540,155,53,19,8,3,0,18,0,0,0,0,0-0-0,0-0-0,|12|B|0-0-255
+10,17,subscripted horizontal lookup,735,155,60,19,8,3,0,18,0,0,0,0,0-0-0,0-0-0,|12|B|0-0-255
+12,18,0,635,80,41,19,8,135,0,18,-1,0,0,0,-1--1--1,0-0-0,|12|B|128-0-0
+subscripted variants
+10,19,"vertical lookup(time) ss",541,228,49,19,8,3,0,0,0,0,0,0
+10,20,"horizontal lookup(time) ss",736,228,49,19,8,3,0,0,0,0,0,0
+1,22,10,19,0,0,0,0,0,64,0,-1--1--1,,1|(478,311)|
+1,23,10,20,0,0,0,0,0,64,0,-1--1--1,,1|(568,308)|
+1,24,16,19,0,0,0,0,0,64,0,-1--1--1,,1|(540,184)|
+1,25,17,20,0,0,0,0,0,64,0,-1--1--1,,1|(735,184)|
+1,26,8,19,0,0,0,0,0,64,0,-1--1--1,,1|(472,280)|
+1,27,8,20,0,0,0,0,0,64,0,-1--1--1,,1|(567,276)|
+///---\\\
+:L<%^E!@
+1:GET XLS LOOKUPS SS.vdf
+9:GET XLS LOOKUPS SS
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+30:?simpleInputs=simpleInputs.xlsx
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+4:Time
+5:"horizontal lookup(time) ss"[Fruit]
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+24:0
+25:12
+26:12
+6:Apples
+6:Bananas
+6:Boston
+6:New York

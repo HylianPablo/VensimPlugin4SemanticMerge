@@ -123,7 +123,8 @@ sketches: viewInfo* sketchesDelimiter;
 sketchesDelimiter: '///---';
 viewInfo:   sketchInfo versionCode viewName viewVariables; //FALTA VIEWNAME
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
-versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
+versionCode: ('V300  Do not put anything below this section - it will be ignored'|'V364  Do not put anything below this section - it will be ignored'); 
+//Vensim versions 5,4 and 3 all use the same version code (300).
 viewName: '*' .*?; //All view names are preceeded by an '*'
 viewSettings: '$' ('-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' //REVISAR PARA CLARIFICARLO
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 

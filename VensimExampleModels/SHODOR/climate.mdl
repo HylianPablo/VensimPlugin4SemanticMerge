@@ -41981,8 +41981,11 @@ pensar si eliminar esta pestaña completamente?
 19:5,37
 27:0,
 34:0,
+42:0
+72:0
+73:0
 4:Time
-5:'b'_demand_projection_minerals_Rest[materials]
+5:% PHS overcapacity vs potential
 35:Date
 36:YYYY-MM-DD
 37:1995
@@ -41990,86 +41993,14 @@ pensar si eliminar esta pestaña completamente?
 39:1
 40:0
 41:0
-42:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
 24:2005
 25:2100
 26:2100
-6:Adhesive
-6:Agriculture Hunting Forestry and Fishing
-6:Air Transport
-6:Aluminium
-6:BASE UNIT
-6:BAU
-6:blue water
-6:bus elec
-6:bus gas
-6:bus hyb
-6:bus liq
-6:centi
-6:CO2
-6:coal
-6:CSP
-6:deca
-6:deci
-6:DTime Step
-6:electricity
-6:EU27
-6:exa
-6:gases
-6:geot elec
-6:giga
-6:heat
-6:hecto
-6:HFC125
-6:HFC134a
-6:HFC143a
-6:HFC152a
-6:HFC227ea
-6:HFC23
-6:HFC245ca
-6:HFC32
-6:HFC4310mee
-6:HV gas
-6:HV hyb
-6:HV liq
-6:hydro
-6:Indium
-6:Inland Transport
-6:kilo
-6:Layer1
-6:Layer2
-6:Layer3
-6:Layer4
-6:liq 4wheels
-6:liquids
-6:LV elec
-6:LV gas
-6:LV hyb
-6:LV liq
-6:mega
-6:micro
-6:mili
-6:nano
-6:natural gas
-6:oceanic
-6:oil
-6:others
-6:peta
-6:pico
-6:RCP26
-6:solar heat
-6:solar PV
-6:solid bioE elec
-6:solids
-6:SSP1
-6:SSP2
-6:steel
-6:tera
-6:train elec
-6:train liq
-6:Transport
-6:wind offshore
-6:wind onshore
-6:year1995
-6:year2009
-6:zetta
+75:
+43:

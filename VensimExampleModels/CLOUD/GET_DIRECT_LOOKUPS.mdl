@@ -1,0 +1,110 @@
+{UTF-8}
+one month=
+	1
+	~	Month
+	~		|
+
+"horizontal lookup(time)"=
+	horizontal lookup(Time/one month)
+	~	dmnl
+	~		|
+
+"vertical lookup(time)"=
+	vertical lookup(Time/one month)
+	~	dmnl
+	~		|
+
+horizontal lookup=
+	GET DIRECT LOOKUPS('simpleInputs.xlsx', 'data' , '1', 'e2' )
+	~	dmnl
+	~	Note that this references the same inputs as GET XLS DATA, which has the \
+		same layout.
+	|
+
+vertical lookup=
+	GET DIRECT LOOKUPS('simpleInputs.xlsx', 'data' , 'a', 'b2' )
+	~	dmnl
+	~	Note that this references the same inputs as GET XLS DATA, which has the \
+		same layout.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 12
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.5
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+12,1,0,140,75,88,28,8,135,0,18,-1,0,0,0,-1--1--1,0-0-0,|12|B|128-0-0
+GET DIRECT LOOKUPS - read lookup tables from file
+10,2,vertical lookup,145,155,52,11,8,3,0,16,0,0,0,0,0-0-0,0-0-0,|12|B|0-0-0
+10,3,horizontal lookup,340,155,59,11,8,3,0,16,0,0,0,0,0-0-0,0-0-0,|12|B|0-0-0
+10,4,"vertical lookup(time)",145,225,41,19,8,3,0,0,0,0,0,0
+10,5,"horizontal lookup(time)",340,225,41,19,8,3,0,0,0,0,0,0
+1,6,2,4,0,0,0,0,0,64,0,-1--1--1,,1|(145,179)|
+1,7,3,5,0,0,0,0,0,64,0,-1--1--1,,1|(340,179)|
+10,8,one month,250,300,34,11,8,3,0,0,-1,0,0,0
+1,9,8,4,0,0,0,0,0,64,0,-1--1--1,,1|(208,270)|
+10,10,Time,255,350,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,11,10,4,0,0,0,0,0,64,0,-1--1--1,,1|(208,296)|
+1,12,8,5,0,0,0,0,0,64,0,-1--1--1,,1|(284,270)|
+1,13,10,5,0,0,0,0,0,64,0,-1--1--1,,1|(290,297)|
+12,14,0,252,429,108,28,8,7,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0
+See GET XLS DATA examples for other analogous syntax options and subscripted usage.
+12,15,0,250,490,70,28,8,7,0,18,-1,0,253,253,-1--1--1,0-0-0,|12|U|0-0-255
+GET XLS DATA.mdl|GET XLS DATA.mdl
+12,16,0,250,545,90,21,8,135,0,18,-1,0,253,253,-1--1--1,0-0-0,|12|U|0-0-255
+GET XLS DATA.mdl|GET XLS DATA[ss].mdl
+///---\\\
+:L<%^E!@
+1:GET DIRECT LOOKUPS.vdf
+9:GET DIRECT LOOKUPS
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+30:?simpleInputs=simpleInputs.xlsx
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+4:Time
+5:"horizontal lookup(time)"
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+24:0
+25:12
+26:12
