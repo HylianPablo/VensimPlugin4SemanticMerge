@@ -1,0 +1,173 @@
+********************************************************
+	.SIR-Model
+********************************************************~
+		
+		The SIR Model of Infectious Disease
+		John Sterman (1999) Business Dynamics.  Irwin/McGraw-Hill
+		Copyright (c) 1999 John Sterman
+		
+		This is the classic SIR (Susceptible-Infectious-Recovered) model of infectious \
+		disease.	Infectious individuals remain infectious for a constant average 
+		period, then recover.  Chapter 9.
+		
+		It is initialized with a population of 10000.
+	|
+
+Infectious Population I= INTEG (
+	Infection Rate-Recovery Rate,
+		Initial Infectious Population)
+	~	People
+	~	The infectious population accumulates the infection rate less the recovery \
+		rate.
+	|
+
+Initial Infectious Population=
+	1
+	~	People
+	~	The initial number of infectious people.
+	|
+
+Contact Rate c=
+	6
+	~	1/Day
+	~	People in the community interact at a certain rate (the Contact Rate, c, \
+		measured in people contacted per person per time period, or 1/time \
+		periods).
+	|
+
+Total Population N=
+	10000
+	~	People
+	~	The total population is constant
+	|
+
+Infection Rate=
+	Contact Rate c*Infectivity i*Susceptible Population S*Infectious Population I/Total Population N
+	~	People/Day
+	~	The infection rate is the total number of encounters Sc multiplied by the \
+		probability that any of those encounters is with an infectious individual \
+		I/N, and finally multiplied by the probability that an encounter with an \
+		infectious person results in infection i.
+	|
+
+Average Duration of Illness d=
+	2
+	~	Day
+	~	The average length of time that a person is infectious.
+	|
+
+Recovered Population R= INTEG (
+	Recovery Rate,
+		0)
+	~	People
+	~	The recovered population R accumulates the recovery rate
+	|
+
+Recovery Rate=
+	Infectious Population I/Average Duration of Illness d
+	~	People/Day
+	~	The rate at which the infected population recover and become immune.
+	|
+
+Infectivity i=
+	0.25
+	~	Dimensionless
+	~	The infectivity (i) of the disease is the probability that a person will \
+		become infected after exposure to someone with the disease.
+	|
+
+Susceptible Population S= INTEG (
+	-Infection Rate,
+		Total Population N - Infectious Population I -  Recovered Population R)
+	~	People
+	~	The susceptible population, as in the simple logistic epidemic model, is \
+		reduced by the infection rate.  The initial susceptible population is the \
+		total population less the initial number of infectives and any initially \
+		recovered individuals.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Paramaters
+	|
+
+FINAL TIME  = 30
+	~	Day
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Day
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Day
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Day
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1
+10,1,Susceptible Population S,75,296,50,25,67,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+10,2,Infectious Population I,408,294,50,25,3,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+1,3,5,2,4,0,0,22,0,0,0,-1--1--1,,1|(302,295)|
+1,4,5,1,100,0,0,22,0,0,0,-1--1--1,,1|(180,295)|
+11,5,220,241,295,6,8,34,3,0,0,1,0,0,0
+10,6,Infection Rate,241,334,34,31,40,3,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+1,7,1,6,1,0,43,0,8,64,0,-1--1--1,|10|B|0-0-0,1|(140,380)|
+1,8,2,6,1,0,43,0,8,64,0,-1--1--1,|10|B|0-0-0,1|(359,376)|
+10,9,Infectivity i,365,464,53,13,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+10,10,Contact Rate c,83,431,49,17,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+1,11,10,6,1,0,43,0,8,192,0,-1--1--1,|10|B|0-0-0,1|(209,394)|
+1,12,9,6,1,0,43,0,8,64,0,-1--1--1,|10|B|0-0-0,1|(264,391)|
+12,13,0,163,329,15,15,5,4,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+B
+12,14,0,329,326,15,15,4,4,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+R
+10,15,Recovered Population R,713,294,50,25,3,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+1,16,18,15,4,0,0,22,0,0,0,-1--1--1,,1|(614,294)|
+1,17,18,2,100,0,0,22,0,0,0,-1--1--1,,1|(506,294)|
+11,18,412,560,294,6,8,34,3,0,0,1,0,0,0
+10,19,Recovery Rate,560,333,33,23,40,3,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+1,20,2,19,1,0,43,0,8,192,0,-1--1--1,|10|B|0-0-0,1|(478,376)|
+10,21,Average Duration of Illness d,586,451,53,26,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+1,22,21,19,1,0,45,0,8,192,0,-1--1--1,|10|B|0-0-0,1|(614,386)|
+12,23,0,489,321,15,15,5,4,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+B
+10,24,Total Population N,194,463,53,19,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+1,25,24,6,1,0,45,0,8,192,0,-1--1--1,|10|B|0-0-0,1|(238,403)|
+12,26,0,160,354,39,9,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|8|B|0-0-0
+Depletion
+12,27,0,329,356,42,9,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|8|B|0-0-0
+Contagion
+12,28,0,493,350,42,6,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|8|B|0-0-0
+Recovery
+10,29,Initial Infectious Population,406,200,50,25,8,3,0,0,0,0,0,0
+///---\\\
+:GRAPH POPULATIONS
+:TITLE Populations
+:X-AXIS time
+:SCALE
+:VAR Susceptible Population S
+:VAR Infectious Population I
+:VAR Recovered Population R
+:GRAPH RATES
+:TITLE Rates
+:X-AXIS time
+:SCALE
+:VAR Infection Rate
+:VAR Recovery Rate
+:L<%^E!@
+9:current
+15:0,0,0,0
+19:100,0
+5:Infectious Population I

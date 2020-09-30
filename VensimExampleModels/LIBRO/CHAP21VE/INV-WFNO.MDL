@@ -1,0 +1,1153 @@
+********************************************************
+	.Inventory-Workforce
+********************************************************~
+		
+		Inventory-Workforce Model with Two Noise Inputs
+		John Sterman (1999) Business Dynamics.  Irwin/McGraw-Hill
+		Copyright (c) 1999 John Sterman
+		
+		This model includes a random variation in labor productivity
+		using pink noise.  The user can switch between different noise
+		inputs at any time in the simulation to see the effect of noise
+		on the predictability of system variables. See Model Testing
+		(Chapter 21)
+	|
+
+Adjustment for Labor=
+	(Desired Labor - Labor)/Labor Adjustment Time
+	~	People/Week
+	~	Adjusts the desired hiring rate to bring labor in line with the desired \
+		level.
+	|
+
+Adjustment for Vacancies=
+	(Desired Vacancies - Vacancies)/Vacancy Adjustment Time
+	~	People/Week
+	~	Adjusts vacancy creation so the firm has the desired number of vacancies.
+	|
+
+Maximum Layoff Rate=
+	Labor/Average Layoff Time
+	~	People/Week
+	~	The maximum layoff rate is determined by the number of workers and the \
+		layoff time.
+	|
+
+Average Duration of Employment=
+	100
+	~	Weeks
+	~	The average duration of employment is constant in this simple model, but \
+		in general depends on labor market and economic conditions, as well as \
+		employee satisfaction and other factors internal to the firm.
+	|
+
+Average Layoff Time=
+	8
+	~	Weeks
+	~	The average time required to lay off a worker.
+	|
+
+Labor Adjustment Time=
+	13
+	~	Weeks
+	~	The time period over which the firm seeks to bring the labor force in line \
+		with the desired level.
+	|
+
+Average Time to Fill Vacancies=
+	8
+	~	Weeks
+	~	The average time required to fill a vacancy and bring a new employee into \
+		the workforce.
+	|
+
+Vacancy Cancellation Rate=
+	 MIN(Desired Vacancy Cancellation Rate, Maximum Vacancy Cancellation Rate)
+	~	People/Week
+	~	The rate at which the firm cancels existing vacancies prior to filling \
+		them.
+	|
+
+Production Start Rate=
+	Switch for Labor in Production*Labor*Workweek*Productivity + (1-Switch for Labor in Production\
+		)*Desired Production Start Rate
+	~	Widgets/Week
+	~	The production start rate is determined by the labor force,  productivity, \
+		and the workweek.
+	|
+
+Desired Vacancy Cancellation Rate=
+	MAX(0, -Desired Vacancy Creation Rate)
+	~	People/Week
+	~	The desired rate of vacancy cancellation, given by the desired vacancy \
+		creation rate whenever that rate is negative.
+	|
+
+Labor= INTEG (
+	Hiring Rate - Quit Rate - Layoff Rate,
+		Desired Labor)
+	~	People
+	~	The labor force of the firm.
+	|
+
+Vacancies= INTEG (
+	Vacancy Creation Rate - Vacancy Closure Rate - Vacancy Cancellation Rate,
+		Desired Vacancies)
+	~	People
+	~	The number of open positions the firm seeks to fill.
+	|
+
+Desired Hiring Rate=
+	 Expected Attrition Rate + Adjustment for Labor
+	~	People/Week
+	~	The firm seeks to hire enough people to replace expected attrition and \
+		adjust the labor force to the desired level.
+	|
+
+Desired Lay Off Rate=
+	Willingness to Lay Off * MAX(0, -Desired Hiring Rate)
+	~	People/Week
+	~	The firm desires to lay people off whenever the desired hiring rate is \
+		negative, modified by their willingness to lay off.  Willingness to Lay \
+		Off = 0 implies a no layoff policy.
+	|
+
+Vacancy Cancellation Time=
+	2
+	~	Weeks
+	~	The average time required to cancel a vacancy.
+	|
+
+Desired Labor=
+	Desired Production Start Rate/(Standard Workweek*Expected Productivity)
+	~	People
+	~	Desired labor is given by the desired production start rate, expected \
+		productivity per hour, and the planned workweek.
+	|
+
+Desired Vacancy Creation Rate=
+	Desired Hiring Rate + Adjustment for Vacancies
+	~	People/Week
+	~	The firm seeks to create enough vacancies to yield the desired hiring \
+		rate, adjusted to bring the stock of vacancies in line with the desired \
+		stock.
+	|
+
+Desired Vacancies=
+	MAX(0,Expected Time to Fill Vacancies*Desired Hiring Rate)
+	~	People
+	~	The number of vacancies needed to generate the desired hiring rate, given \
+		the expected time required to fill a vacancy.
+	|
+
+Expected Attrition Rate=
+	Quit Rate
+	~	People/Week
+	~	In this simple model expected attrition is set to the actual voluntary \
+		quit rate.
+	|
+
+Hiring Rate=
+	Vacancies/Average Time to Fill Vacancies
+	~	People/Week
+	~	Hiring depends on the number of open vacancies and the average time \
+		required to fill a vacancy.
+	|
+
+Willingness to Lay Off=
+	1
+	~	Dimensionless
+	~	The willingness to layoff employees.  Zero = no layoff policy; 1 implies \
+		the firm is just as willing to layoff employees when there are too many as \
+		to hire when there are too few.
+	|
+
+Expected Time to Fill Vacancies=
+	Average Time to Fill Vacancies
+	~	Weeks
+	~	The expected time required to fill vacancies.  In this simple model, set \
+		to the actual time.  A better formulation would use an information delay \
+		to represent the delay in gathering information about hiring delays and \
+		changing procedures.
+	|
+
+Maximum Vacancy Cancellation Rate=
+	Vacancies/Vacancy Cancellation Time
+	~	People/Week
+	~	The maximum vacancy cancellation rate is determined by the numer of \
+		vacancies outstanding and the minimum cancellation time.
+	|
+
+Layoff Rate=
+	MIN(Desired Lay Off Rate, Maximum Layoff Rate)
+	~	People/Week
+	~	The layoff rate is the lesser of the desired or maximum rate.
+	|
+
+Vacancy Creation Rate=
+	MAX(0,Desired Vacancy Creation Rate)
+	~	People/Week
+	~	The rate at which the firm authorizes new positions and begins to recruit \
+		for them.
+	|
+
+Vacancy Closure Rate=
+	Hiring Rate
+	~	People/Week
+	~	Hiring a new employee fills a vacancy.
+	|
+
+Quit Rate=
+	Labor/Average Duration of Employment
+	~	People/Week
+	~	The rate at which employees voluntarily leave the firm.  Determined by the \
+		average duration of employment.
+	|
+
+Vacancy Adjustment Time=
+	4
+	~	Weeks
+	~	The average time over which the firm attempts to adjust the actual number \
+		of vacancies to the desired level.
+	|
+
+White Noise in Prody=
+	Mean for Random Effects on Productivity+ Standard Deviation in Random Effects on Productivity\
+		*((24*Noise Correlation Time for Productivity
+	/TIME STEP)^0.5*(RANDOM UNIFORM(-0.5, 0.5 , Random Seed for Productivity)
+	))
+	~	Dimensionless
+	~	White noise input to the pink noise process.
+	|
+
+White Noise in Prody 0=
+	Mean for Random Effects on Productivity+ Standard Deviation in Random Effects on Productivity\
+		*((24*Noise Correlation Time for Productivity 0
+	/TIME STEP)^0.5*(RANDOM UNIFORM(-0.5, 0.5 , Random Seed for Productivity)
+	))
+	~	Dimensionless
+	~	White noise input to the pink noise process.
+	|
+
+Pink Noise in Prody 0= INTEG (
+	Change in Pink Noise in Prody 0,
+		Mean for Random Effects on Productivity)
+	~	Dimensionless
+	~	Pink Noise is first-order autocorrelated noise.  Pink noise provides a realistic \
+		noise input to
+		        models in which the next random shock depends in part on the previous \
+		shocks.  The user
+		        can specify the correlation time.  The mean and standard deviation are \
+		specified
+		         by the user.
+	|
+
+Noise Correlation Time for Productivity 0 = 4
+	~	Week
+	~	The correlation time constant for Pink Noise.
+	|
+
+Random Effects on Productivity=
+	1+STEP(1,Start Time for Noise in Productivity)*(Switch for Pink Noise in Productivity\
+		*(Switch for Noise Streams*Pink Noise in Prody+(1-Switch for Noise Streams)*Pink Noise in Prody 0\
+		) + (1-Switch for Pink Noise in Productivity
+	)*Normally Distributed Noise-1)
+	~	Dimensionless
+	~	The random effects on productivity can be set either to normally \
+		distributed white noise or pink noise.  Noise begins at the noise start \
+		time.
+	|
+
+Switch for Noise Streams=
+	1-STEP(1,Time to Switch Noise Streams)
+	~	Dimensionless
+	~	Switch to select between two pink noise streams mid way through a \
+		simulation.
+	|
+
+Change in Pink Noise in Prody 0 = (White Noise in Prody 0 - Pink Noise in Prody 0)/Noise Correlation Time for Productivity 0
+	~	1/Week
+	~	Change in the pink noise value; Pink noise is a first order exponential smoothing \
+		delay of the white
+		         noise input.
+	|
+
+Time to Switch Noise Streams=
+	200
+	~	Weeks
+	~	Time at which the pink noise inputs are switched.
+	|
+
+Time to Form Expected Productivity=
+	13
+	~	Weeks
+	~	The average time required for managers to revise their estimates of labor \
+		productivity.
+	|
+
+Normally Distributed Noise=
+	1+STEP(1,Start Time for Noise in Productivity)*(RANDOM NORMAL(0, 4 , Mean for Random Effects on Productivity\
+		 , Standard Deviation in Random Effects on Productivity , Random Seed for Productivity
+	 )-1)
+	~	Dimensionless
+	~	A white noise signal, distributed normally, with a mean and standard \
+		deviation set by the modeler.  The distribution is truncated 0²Noise²4; \
+		the lower limit maintains nonnegativity of productivity; the upper limit \
+		is high relative to plausible standard deviations.  The noise seen can \
+		also be varied.
+	|
+
+Expected Productivity=
+	SMOOTH(Productivity,Time to Form Expected Productivity)
+	~	Widgets/(Hour*Person)
+	~	Expected productivity is the firm's belief about the productivity of the \
+		labor force, and adjusts to actual productivity with a delay.  First order \
+		smoothing is assumed.
+	|
+
+Start Time for Noise in Productivity=
+	1
+	~	Week
+	~	The time at which the random variations in productivity begin.
+	|
+
+Average Productivity=
+	0.25
+	~	Widgets/(Hour*Person)
+	~	The average productivity of the workforce
+	|
+
+Pink Noise in Prody= INTEG (
+	Change in Pink Noise in Prody,
+		Mean for Random Effects on Productivity)
+	~	Dimensionless
+	~	Pink Noise is first-order autocorrelated noise.  Pink noise provides a realistic \
+		noise input to
+		        models in which the next random shock depends in part on the previous \
+		shocks.  The user
+		        can specify the correlation time.  The mean and standard deviation are \
+		specified
+		         by the user.
+	|
+
+Mean for Random Effects on Productivity=
+	1
+	~	Dimensionless
+	~	The mean of the random effects.  Set to unity because the random effects \
+		multiply average productivity.
+	|
+
+Switch for Pink Noise in Productivity=
+	1
+	~	Dimensionless
+	~	Switch to choose between pink noise or normally distributed white noise \
+		for labor productivity
+	|
+
+Change in Pink Noise in Prody = (White Noise in Prody - Pink Noise in Prody)/Noise Correlation Time for Productivity
+	~	1/Week
+	~	Change in the pink noise value; Pink noise is a first order exponential smoothing \
+		delay of the white
+		         noise input.
+	|
+
+Productivity=
+	Average Productivity*Random Effects on Productivity
+	~	Widgets/Hour/Person
+	~	Productivity is average productivity perturbed by a random variable \
+		representing unmodeled sources of variation in output per person.
+	|
+
+Random Seed for Productivity=
+	1
+	~	Dimensionless
+	~	Changing the random number seed changes the sequence of values generated \
+		by the random process.
+	|
+
+Standard Deviation in Random Effects on Productivity=
+	0.05
+	~	Dimensionless
+	~	The standard deviation of the random variations in productivity.
+	|
+
+Noise Correlation Time for Productivity = 4
+	~	Week
+	~	The correlation time constant for Pink Noise.
+	|
+
+Switch for Labor in Production=
+	1
+	~	Dimensionless
+	~	Switch = 1 implies production starts are determined by the labor force.  \
+		When Switch = 0, production starts equal desired production starts.
+	|
+
+Standard Workweek=
+	40
+	~	Hours/Week
+	~	The firm's target for the workweek.
+	|
+
+Desired Production Start Rate=
+	 Desired Production + Adjustment for WIP
+	~	Widgets/Week
+	~	The desired rate of production starts, equal to the desired production rate adjusted \
+		by the adequacy
+		         of the WIP inventory.
+	|
+
+Workweek=
+	40
+	~	Hours/Week
+	~	The average workweek.
+	|
+
+Ratio of Maximum to Desired Shipments=
+	Maximum Shipment Rate/Desired Shipment Rate
+	~	Dimensionless
+	~	The ratio of the maximum to desired shipment rate.  Ratios less than one \
+		indicate shipments are constrained below the desired level.
+	|
+
+Order Fulfillment Ratio=
+	 Table for Order Fulfillment(Maximum Shipment Rate/Desired Shipment Rate)
+	~	Dimensionless
+	~	The Fraction of customer orders filled is determined by the ratio of the \
+		normal shipment rate to the desired rate.  The normal rate is the rate \
+		current inventory permits under normal circumstances.  Low inventory \
+		availability reduces shipments below customer orders.  Unfilled customer \
+		orders are lost.
+	|
+
+Shipment Rate=
+	Desired Shipment Rate*Order Fulfillment Ratio
+	~	Widgets/Week
+	~	The shipment rate is the desired shipment rate multiplied by the fraction \
+		of orders filled (the order fulfillment ratio.   Shipments fall below \
+		desired shipments when the feasible shipment rate falls below the desired \
+		rate, indicating that some products are unavailable.
+	|
+
+Desired Shipment Rate=
+	Customer Order Rate
+	~	Widgets/Week
+	~	The desired shipment rate equals the customer order rate.  In this model \
+		there is no backlog of unfilled orders:  unfilled orders are lost as \
+		customers seek alternate sources of supply.
+	|
+
+Inventory Coverage=
+	Inventory/Shipment Rate
+	~	Weeks
+	~	Inventory coverage is given by the ratio of inventory to shipments.
+	|
+
+Desired Inventory Coverage=
+	 Minimum Order Processing Time + Safety Stock Coverage
+	~	Weeks
+	~	Desired inventory coverage is the number of weeks of the demand forecast the plant \
+		seeks to maintain
+		        in inventory.  This inventory coverage is required to maintain delivery \
+		reliability by
+		         buffering the plant against unforeseen variations in demand or \
+		production.  It consists of the normal order processing time plus an \
+		additional term representing the coverage desired to maintain safety \
+		stocks.
+	|
+
+Maximum Shipment Rate=
+	Inventory/Minimum Order Processing Time
+	~	Widgets/Week
+	~	The maximum rate of shipments the firm can achieve given their current \
+		inventory level and the minimum order processing time.
+	|
+
+Minimum Order Processing Time=
+	2
+	~	Weeks
+	~	The minimum time required to process and ship an order.
+	|
+
+Safety Stock Coverage=
+	2
+	~	Weeks
+	~	Safety stock coverage is the number of weeks of the expected order rate \
+		the firm would like to maintain in inventory over and above the normal \
+		order processing time.  The safety stock provides a buffer against the \
+		possibility that unforeseen variations in demand will cause shipments to \
+		fall below orders.
+	|
+
+Inventory = INTEG(Production Rate-Shipment Rate,Desired Inventory)
+	~	Widgets
+	~	The level of finished goods inventory in the plant.  Increased by production and \
+		decreased by
+		         shipments.  Initially set to the desired inventory level.
+	|
+
+Table for Order Fulfillment(
+	[(0,0)-(2,1)],(0,0),(0.2,0.2),(0.4,0.4),(0.6,0.58),(0.8,0.73),(1,0.85),(1.2,0.93),(1.4\
+		,0.97),(1.6,0.99),(1.8,1),(2,1),(2,1))
+	~	Dimensionless
+	~	The ability to ship is constrained by inventory availability.  As the inventory \
+		level drops, the 
+		        fraction of customer orders that can be filled decreases.  When inventory is \
+		zero, shipments
+		         cease.  Unfilled customer orders are lost.\!\!\!
+	|
+
+Desired Inventory = Desired Inventory Coverage*Expected Order Rate
+	~	Widgets
+	~	The desired inventory level sought by the plant.  Experience suggests that to \
+		maintain customer
+		        service by providing full and reliable deliveries, the plant must maintain a \
+		certain
+		         coverage of throughput (demand), estimated by the demand forecast.
+	|
+
+Expected Order Rate = INTEG(Change in Exp Orders,Customer Order Rate)
+	~	Widgets/Week
+	~	The demand forecast is formed by adaptive expectations, using exponential smoothing, \
+		a common
+		         forecasting technique.  The initial forecast is equal to the \
+		initial customer order rate.
+	|
+
+Change in Exp Orders = (Customer Order Rate-Expected Order Rate)/
+Time to Average Order Rate
+	~	(Widgets/Week)/Week
+	~	The demand forecast adjusts to the actual order rate over a time period determined \
+		by the Time to
+		        Average Order Rate.  The demand forecast is formed by first-order \
+		exponential smoothing,
+		         a widely used forecasting technique.
+	|
+
+Time to Average Order Rate = 8
+	~	Weeks
+	~	The demand forecast adjusts to actual customer orders over this time \
+		period.
+	|
+
+Production Rate = DELAY3(Production Start Rate,Manufacturing Cycle Time)
+	~	Widgets/Week
+	~	Production is a third order delay of the production start rate, with the delay time \
+		determined by
+		         the manufacturing cycle time.
+	|
+
+Manufacturing Cycle Time=
+	8
+	~	Weeks
+	~	The average delay between the start and completion of production
+	|
+
+Adjustment for WIP = (Desired WIP - Work in Process Inventory)/WIP Adjustment Time
+	~	Widgets/Week
+	~	The adjustment to the production start rate from the adequacy of WIP \
+		inventory.
+	|
+
+WIP Adjustment Time=
+	6
+	~	Weeks
+	~	The time required to adjust the WIP inventory to the desired level.
+	|
+
+Work in Process Inventory = INTEG(Production Start Rate - Production Rate,Desired WIP\
+		)
+	~	Widgets
+	~	WIP inventory accumulates the difference between production starts and \
+		completions.
+	|
+
+Desired WIP = Manufacturing Cycle Time*Desired Production
+	~	Widgets
+	~	The desired quantity of work in process inventory.  Proportional to the \
+		manufacturing cycle time and
+		         the desired rate of production.
+	|
+
+Desired Production = MAX(0,Expected Order Rate+Production Adjustment from Inventory)
+	~	Widgets/Week
+	~	Desired Production is the demand forecast (Expected Order Rate) adjusted to bring \
+		the inventory
+		         position in line with the target inventory level.
+	|
+
+Production Adjustment from Inventory = (Desired Inventory - Inventory)/
+Inventory Adjustment Time
+	~	Widgets/Week
+	~	The desired production rate is adjusted above or below the forecast based on the \
+		inventory position
+		        of the plant.  When desired inventory > inventory, desired production is \
+		increased (and
+		         vice-versa).  Inventory gaps are corrected over the inv. adj. \
+		time.
+	|
+
+Inventory Adjustment Time=
+	12
+	~	Weeks
+	~	The inventory adjustment time is the time period over which the plant seeks to bring \
+		inventory in
+		         balance with the desired level.  Initially set to 12 weeks.
+	|
+
+Customer Order Rate = Initial Customer Order Rate*Input
+	~	Widgets/Week
+	~	Customer order rate is exogenous.  A variety of test inputs allow users to try \
+		different patterns,
+		         including a step, pulse, sine wave, and random noise.
+	|
+
+Initial Customer Order Rate = 10000
+	~	Widgets/Week
+	~	Initial value of customer orders, set to 10,000 widgets per week.
+	|
+
+Input=
+	1+STEP(Step Height,Step Time)+
+	(Pulse Quantity/TIME STEP)*PULSE(Pulse Time,TIME STEP)+
+	RAMP(Ramp Slope,Ramp Start Time,Ramp End Time)+
+	Sine Amplitude*SIN(2*3.14159*Time/Sine Period)+
+  	STEP(1,Noise Start Time)*Pink Noise
+	~	Dimensionless
+	~	Input is a dimensionless variable which provides a variety of test input patterns, \
+		including a step,
+		         pulse, sine wave, and random noise.
+	|
+
+Step Height=
+	0
+	~	Dimensionless
+	~	Height of step input to customer orders, as fraction of initial value.
+	|
+
+Step Time=5
+	~	Week
+	~	Time for the step input.
+	|
+
+Pulse Quantity=0
+	~	Dimensionless*Week
+	~	The quantity to be injected to customer orders, as a fraction of the base value of \
+		Input. 
+		        For example, to pulse in a quantity equal to 50% of the current value of \
+		input, set to
+		         .50.
+	|
+
+Pulse Time=5
+	~	Week
+	~	Time at which the pulse in Input occurs.
+	|
+
+Ramp Slope=0
+	~	1/Week
+	~	Slope of the ramp input, as a fraction of the base value (per week).
+	|
+
+Ramp Start Time=5
+	~	Week
+	~	Start time for the ramp input.
+	|
+
+Ramp End Time=1e+009
+	~	Week
+	~	End time for the ramp input.
+	|
+
+Sine Amplitude=0
+	~	Dimensionless
+	~	Amplitude of sine wave in customer orders (fraction of mean).
+	|
+
+Sine Period=50
+	~	Weeks
+	~	Period of sine wave in customer demand.  Set initially to 50 weeks (1 \
+		year).
+	|
+
+Noise Start Time = 5
+	~	Week
+	~	Start time for the random input.
+	|
+
+Pink Noise = INTEG(Change in Pink Noise,0)
+	~	Dimensionless
+	~	Pink Noise is first-order autocorrelated noise.  Pink noise provides a realistic \
+		noise input to
+		        models in which the next random shock depends in part on the previous \
+		shocks.  The user
+		        can specify the correlation time.  The mean is 0 and the standard deviation \
+		is specified
+		         by the user.
+	|
+
+Change in Pink Noise = (White Noise - Pink Noise)/Noise Correlation Time
+	~	1/Week
+	~	Change in the pink noise value; Pink noise is a first order exponential smoothing \
+		delay of the white
+		         noise input.
+	|
+
+Noise Correlation Time = 4
+	~	Week
+	~	The correlation time constant for Pink Noise.
+	|
+
+White Noise = Noise Standard Deviation*((24*Noise Correlation Time/TIME STEP)^0.5*(RANDOM 0 1\
+		() - 0.5
+))
+	~	Dimensionless
+	~	White noise input to the pink noise process.
+	|
+
+Noise Standard Deviation = 0
+	~	Dimensionless
+	~	The standard deviation of the pink noise process.
+	|
+
+Noise Seed = 1
+	~	Dimensionless
+	~	Random number generator seed.  Vary to generate a different sequence of \
+		random numbers.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Paramaters
+	|
+
+FINAL TIME  = 500
+	~	Week
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Week
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Week
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Week
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Customer Orders
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1
+10,1,Customer Order Rate,192,126,40,20,8,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,2,Input,99,111,26,9,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+10,3,Input,156,321,18,9,0,3,0,0,-1,0,0,0
+10,4,Pink Noise,486,265,40,20,3,3,0,0,0,0,0,0
+12,5,48,618,268,8,8,0,3,0,0,-1,0,0,0
+10,6,White Noise,513,368,40,20,8,3,0,0,0,0,0,0
+10,7,Initial Customer Order Rate,99,170,40,20,8,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,8,Noise Standard Deviation,406,396,40,20,8,3,0,0,0,0,0,0
+10,9,TIME STEP,420,328,45,9,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+10,10,Pink Noise,78,271,44,9,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+10,11,Noise Start Time,170,252,55,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,12,Pulse Quantity,245,282,48,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,13,Pulse Time,252,318,38,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,14,Ramp End Time,93,410,53,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,15,Ramp Slope,57,352,41,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,16,Ramp Start Time,55,382,56,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,17,Sine Amplitude,262,346,51,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,18,Sine Period,249,384,40,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,19,Step Height,162,425,39,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,20,Step Time,215,405,35,9,0,3,0,1,-1,0,0,0,128-128-128,0-0-0,|12|B|0-0-0
+10,21,Time,53,303,26,9,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+10,22,TIME STEP,53,328,45,9,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+11,23,156,576,269,6,8,34,3,0,0,1,0,0,0
+10,24,Change in Pink Noise,576,297,40,20,40,3,0,0,0,0,0,0
+10,25,Noise Correlation Time,643,349,40,20,8,3,0,0,0,0,0,0
+1,26,7,1,1,0,0,0,0,0,0,-1--1--1,,1|(158,165)|
+1,27,11,3,0,0,0,0,0,0,0,-1--1--1,,1|(164,279)|
+1,28,12,3,0,0,0,0,0,0,0,-1--1--1,,1|(205,299)|
+1,29,13,3,0,0,0,0,0,0,0,-1--1--1,,1|(200,319)|
+1,30,14,3,0,0,0,0,0,0,0,-1--1--1,,1|(119,371)|
+1,31,15,3,0,0,0,0,0,0,0,-1--1--1,,1|(104,336)|
+1,32,16,3,0,0,0,0,0,0,0,-1--1--1,,1|(98,355)|
+1,33,17,3,1,0,0,0,0,0,0,-1--1--1,,1|(192,332)|
+1,34,18,3,0,0,0,0,0,0,0,-1--1--1,,1|(208,356)|
+1,35,19,3,0,0,0,0,0,0,0,-1--1--1,,1|(159,379)|
+1,36,20,3,0,0,0,0,0,0,0,-1--1--1,,1|(189,368)|
+1,37,21,3,0,0,0,0,0,0,0,-1--1--1,,1|(101,310)|
+1,38,22,3,0,0,0,0,0,0,0,-1--1--1,,1|(111,324)|
+1,39,2,1,1,0,0,0,0,0,0,-1--1--1,,1|(140,98)|
+1,40,23,4,4,0,0,22,0,0,0,-1--1--1,,1|(548,269)|
+1,41,23,5,100,0,0,22,0,0,0,-1--1--1,,1|(596,269)|
+1,42,4,24,2,0,0,0,0,0,0,-1--1--1,,1|(535,320)|
+1,43,6,24,2,0,0,0,0,0,0,-1--1--1,,1|(573,335)|
+1,44,25,24,2,0,0,0,0,0,0,-1--1--1,,1|(629,301)|
+1,45,25,6,1,0,0,0,0,0,0,-1--1--1,,1|(573,386)|
+1,46,9,6,1,0,0,0,0,0,0,-1--1--1,,1|(456,356)|
+1,47,8,6,1,0,0,0,0,0,0,-1--1--1,,1|(473,385)|
+1,48,10,3,0,0,0,0,0,0,0,-1--1--1,,1|(110,292)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Production and Inventory
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1
+10,1,Inventory,822,244,40,20,3,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+12,2,48,314,245,8,8,0,3,0,0,-1,0,0,0
+11,3,48,672,243,6,8,34,3,0,0,1,0,0,0
+10,4,Production Rate,672,269,44,18,40,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+12,5,48,1226,246,8,8,0,3,0,50,-1,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+11,6,48,1026,245,6,8,34,3,0,0,1,0,0,0
+10,7,Shipment Rate,1026,271,36,18,40,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,8,Desired Production,529,616,39,15,8,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,9,Production Adjustment from Inventory,793,443,48,22,8,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,10,Desired Inventory,883,505,33,16,8,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,11,Expected Order Rate,882,597,40,20,3,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+12,12,48,1004,599,8,8,0,3,0,50,-1,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+11,13,48,969,599,6,8,34,3,0,0,1,0,0,0
+10,14,Change in Exp Orders,969,624,37,17,40,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,15,Inventory Adjustment Time,733,382,49,23,8,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,16,Desired Inventory Coverage,998,522,37,20,8,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,17,Time to Average Order Rate,941,688,61,14,8,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,18,Order Fulfillment Ratio,1018,355,36,20,8,3,0,0,0,0,0,0
+10,19,Table for Order Fulfillment,1087,438,46,22,8,3,0,0,0,0,0,0
+10,20,Work in Process Inventory,528,244,40,20,3,3,0,0,0,0,0,0
+11,21,1660,410,244,6,8,34,3,0,0,1,0,0,0
+10,22,Production Start Rate,410,272,40,20,40,3,0,0,0,0,0,0
+10,23,Manufacturing Cycle Time,634,349,48,15,8,3,0,0,0,0,0,0
+10,24,Adjustment for WIP,535,403,41,18,8,3,0,0,0,0,0,0
+10,25,Desired WIP,639,457,43,12,8,3,0,0,0,0,0,0
+10,26,Desired Production Start Rate,393,557,40,20,8,3,0,0,0,0,0,0
+10,27,WIP Adjustment Time,548,483,40,20,8,3,0,0,0,0,0,0
+10,28,Customer Order Rate,1216,444,42,24,8,3,0,0,0,0,0,0
+12,29,0,921,297,20,20,5,4,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+B
+12,30,0,923,334,39,13,8,4,0,8,0,0,0,0,0-0-0,0-0-0,|8|B|0-0-0
+Order Fulfillment
+12,31,0,753,299,20,20,4,4,0,0,0,0,0,0
+B
+12,32,0,755,336,39,13,8,4,0,58,0,0,0,0,-1--1--1,0-0-0,Helvetica|8|B|0-0-0
+Inventory Control
+12,33,0,440,370,20,20,4,4,0,0,0,0,0,0
+B
+12,34,0,442,407,39,13,8,4,0,58,0,0,0,0,-1--1--1,0-0-0,Helvetica|8|B|0-0-0
+WIP Control
+1,35,3,1,4,0,0,22,0,0,0,-1--1--1,,1|(730,243)|
+1,36,3,20,100,0,0,22,0,0,0,-1--1--1,,1|(617,243)|
+1,37,6,5,4,0,0,22,0,0,0,-1--1--1,,1|(1125,245)|
+1,38,6,1,100,0,0,22,0,0,0,-1--1--1,,1|(941,245)|
+1,39,13,11,4,0,0,22,0,0,0,-1--1--1,,1|(942,599)|
+1,40,13,12,100,0,0,22,0,0,0,-1--1--1,,1|(985,599)|
+1,41,15,9,2,0,45,0,0,192,0,-1--1--1,,1|(730,422)|
+1,42,1,9,2,0,45,0,0,192,0,-1--1--1,,1|(813,378)|
+1,43,10,9,2,0,43,0,0,192,0,-1--1--1,,1|(859,461)|
+1,44,16,10,2,0,43,0,0,0,0,-1--1--1,,1|(917,517)|
+1,45,11,10,2,0,43,0,0,192,0,-1--1--1,,1|(887,516)|
+1,46,9,8,2,0,43,0,0,192,0,-1--1--1,,1|(629,602)|
+1,47,11,8,2,0,43,0,0,192,0,-1--1--1,,1|(705,646)|
+1,48,11,14,2,0,45,0,0,192,0,-1--1--1,,1|(947,655)|
+1,49,17,14,1,0,45,0,0,192,0,-1--1--1,,1|(995,660)|
+1,50,18,7,2,0,43,0,0,192,0,-1--1--1,,1|(1033,296)|
+1,51,19,18,1,0,0,0,0,0,0,-1--1--1,,1|(1028,387)|
+1,52,28,14,2,0,43,0,0,128,0,-1--1--1,,1|(1024,629)|
+1,53,21,20,4,0,0,22,0,0,0,-1--1--1,,1|(452,244)|
+1,54,21,2,100,0,0,22,0,0,0,-1--1--1,,1|(363,244)|
+1,55,21,3,2,0,43,0,0,192,0,-1--1--1,,1|(615,208)|
+1,56,23,4,2,0,45,0,0,192,0,-1--1--1,,1|(648,280)|
+1,57,20,24,2,0,45,0,0,192,0,-1--1--1,,1|(556,344)|
+1,58,25,24,2,0,43,0,0,192,0,-1--1--1,,1|(571,403)|
+1,59,23,25,2,0,43,0,0,192,0,-1--1--1,,1|(658,410)|
+1,60,8,25,2,0,43,0,0,192,0,-1--1--1,,1|(633,488)|
+1,61,24,26,2,0,43,0,0,192,0,-1--1--1,,1|(482,494)|
+1,62,27,24,1,0,45,0,0,192,0,-1--1--1,,1|(555,432)|
+10,63,Desired Shipment Rate,1125,320,40,20,8,3,0,0,0,0,0,0
+1,64,28,63,1,0,43,0,0,192,0,-1--1--1,,1|(1141,330)|
+1,65,63,7,1,0,43,0,0,192,0,-1--1--1,,1|(1080,276)|
+10,66,Maximum Shipment Rate,870,381,40,20,8,3,0,0,0,0,0,0
+10,67,Minimum Order Processing Time,957,440,51,23,8,3,0,0,0,0,0,0
+1,68,1,66,1,0,43,0,0,192,0,-1--1--1,,1|(842,339)|
+1,69,66,18,1,0,43,0,0,192,0,-1--1--1,,1|(959,380)|
+1,70,63,18,1,0,45,0,0,192,0,-1--1--1,,1|(1072,361)|
+1,71,67,66,1,0,45,0,0,192,0,-1--1--1,,1|(888,429)|
+1,72,67,16,1,0,43,0,0,192,0,-1--1--1,,1|(1001,474)|
+10,73,Inventory Coverage,925,179,40,20,8,3,0,0,0,0,0,0
+1,74,1,73,1,0,43,0,0,192,0,-1--1--1,,1|(852,194)|
+1,75,6,73,1,0,45,0,0,192,0,-1--1--1,,1|(981,186)|
+10,76,Safety Stock Coverage,1110,506,40,20,8,3,0,0,0,0,0,0
+1,77,76,16,1,0,43,0,0,192,0,-1--1--1,,1|(1061,534)|
+10,78,Initial Customer Order Rate,1341,467,45,35,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+1,79,78,28,0,0,0,0,0,0,0,-1--1--1,,1|(1283,456)|
+10,80,Input,1341,569,40,20,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+1,81,80,28,0,0,0,0,0,0,0,-1--1--1,,1|(1285,513)|
+10,82,Productivity,151,307,40,20,8,3,0,0,0,0,0,0
+10,83,Workweek,242,474,40,20,8,3,0,0,0,0,0,0
+1,84,8,26,1,0,43,0,0,192,0,-1--1--1,,1|(473,610)|
+1,85,83,22,1,0,43,0,0,64,0,-1--1--1,,1|(291,376)|
+1,86,82,22,1,0,43,0,0,192,0,-1--1--1,,1|(247,270)|
+1,87,26,22,1,0,43,0,0,64,0,-1--1--1,,1|(357,475)|
+10,88,Switch for Labor in Production,205,150,40,20,8,3,0,0,0,0,0,0
+1,89,88,21,1,0,0,0,0,64,0,-1--1--1,,1|(331,176)|
+10,90,Average Productivity,151,224,50,20,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+1,91,90,82,0,0,0,0,0,0,0,-1--1--1,,1|(151,258)|
+10,92,Random Effects on Productivity,114,382,56,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+1,93,92,82,0,0,0,0,0,0,0,-1--1--1,,1|(128,351)|
+10,94,Labor,131,498,40,20,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+1,95,94,22,1,0,43,0,0,192,0,-1--1--1,,1|(241,346)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Labor
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1
+10,1,Desired Production Start Rate,1153,102,64,22,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+10,2,Productivity,752,37,54,16,8,3,0,0,-1,0,0,0
+10,3,Standard Workweek,1167,189,40,20,8,3,0,0,0,0,0,0
+10,4,Average Productivity,603,-3,53,16,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+1,5,4,2,0,0,0,0,0,0,0,-1--1--1,,1|(670,14)|
+10,6,Random Effects on Productivity,601,59,69,26,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+1,7,6,2,0,0,0,0,0,0,0,-1--1--1,,1|(677,47)|
+10,8,Time to Form Expected Productivity,1054,49,55,27,8,3,0,0,-1,0,0,0
+10,9,Expected Productivity,904,88,40,20,3,3,0,0,0,0,0,0
+1,10,2,9,1,0,43,0,0,192,0,-1--1--1,,1|(843,52)|
+1,11,8,9,1,0,0,0,0,64,0,-1--1--1,,1|(964,53)|
+10,12,Labor,739,254,40,20,3,3,0,0,0,0,0,0
+12,13,48,884,254,8,8,0,3,0,0,-1,0,0,0
+1,14,16,13,4,0,0,22,0,0,0,-1--1--1,,1|(852,253)|
+1,15,16,12,100,0,0,22,0,0,0,-1--1--1,,1|(798,253)|
+11,16,48,823,253,6,8,34,3,0,0,1,0,0,0
+10,17,Quit Rate,823,274,34,13,40,3,0,0,-1,0,0,0
+10,18,Adjustment for Labor,739,429,45,15,8,3,0,0,0,0,0,0
+10,19,Expected Attrition Rate,805,501,40,20,8,3,0,0,0,0,0,0
+10,20,Average Time to Fill Vacancies,660,355,40,20,8,3,0,0,0,0,0,0
+1,21,12,17,1,0,43,0,0,192,0,-1--1--1,,1|(777,294)|
+1,22,37,18,1,0,43,0,0,192,0,-1--1--1,,1|(929,399)|
+1,23,12,18,1,0,45,0,0,192,0,-1--1--1,,1|(756,387)|
+1,24,17,19,1,0,43,0,0,192,0,-1--1--1,,1|(848,416)|
+10,25,Desired Hiring Rate,634,591,40,20,8,3,0,0,0,0,0,0
+1,26,19,25,1,0,43,0,0,192,0,-1--1--1,,1|(672,582)|
+1,27,18,25,1,0,43,0,0,192,0,-1--1--1,,1|(685,536)|
+10,28,Labor Adjustment Time,607,422,40,20,8,3,0,0,0,0,0,0
+1,29,28,18,1,0,45,0,0,192,0,-1--1--1,,1|(696,418)|
+10,30,Average Duration of Employment,912,352,49,28,8,3,0,0,0,0,0,0
+12,31,48,612,254,8,8,0,3,0,0,-1,0,0,0
+1,32,34,12,4,0,0,22,0,0,0,-1--1--1,,1|(682,254)|
+1,33,34,31,100,0,0,22,0,0,0,-1--1--1,,1|(636,254)|
+11,34,48,659,254,6,8,34,3,0,0,1,0,0,0
+10,35,Hiring Rate,659,282,40,20,40,3,0,0,-1,0,0,0
+1,36,20,35,1,0,45,0,0,192,0,-1--1--1,,1|(639,299)|
+10,37,Desired Labor,1032,217,31,17,8,3,0,0,-1,0,0,0
+1,38,30,17,1,0,45,0,0,192,0,-1--1--1,,1|(868,302)|
+12,39,48,884,181,8,8,0,3,0,0,-1,0,0,0
+1,40,42,39,4,0,0,22,0,0,0,-1--1--1,,1|(851,182)|
+1,41,42,12,100,0,0,22,0,0,0,-1--1--1,,1|(739,182)|
+11,42,48,821,182,6,8,34,3,0,0,1,0,0,0
+10,43,Layoff Rate,821,205,47,15,40,3,0,0,-1,0,0,0
+10,44,Maximum Layoff Rate,648,135,40,20,8,3,0,0,0,0,0,0
+10,45,Average Layoff Time,523,141,40,20,8,3,0,0,0,0,0,0
+1,46,12,44,1,0,43,0,0,192,0,-1--1--1,,1|(647,182)|
+1,47,44,42,1,0,43,0,0,192,0,-1--1--1,,1|(764,130)|
+1,48,45,44,1,0,45,0,0,192,0,-1--1--1,,1|(587,118)|
+10,49,Desired Lay Off Rate,932,511,36,26,8,3,0,0,0,0,0,0
+1,50,25,49,1,0,43,0,0,192,0,-1--1--1,,1|(742,601)|
+1,51,49,43,1,0,43,0,0,192,0,-1--1--1,,1|(981,358)|
+10,52,Willingness to Lay Off,895,610,40,20,8,3,0,0,0,0,0,0
+1,53,52,49,1,0,43,0,0,192,0,-1--1--1,,1|(945,567)|
+10,54,Desired Vacancy Creation Rate,193,483,47,27,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+10,55,Adjustment for Vacancies,340,464,54,22,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+10,56,Desired Vacancies,482,481,45,19,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+1,57,55,54,1,0,43,0,32,64,0,-1--1--1,Helvetica|12|B|0-0-0,1|(271,491)|
+1,58,56,55,1,0,43,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(413,455)|
+12,59,0,242,380,20,20,4,4,0,32,-1,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+B
+12,60,0,243,413,40,20,8,4,0,40,-1,0,0,0,0-0-0,0-0-0,Helvetica|8|B|0-0-0
+Vacancy Creation
+1,61,25,54,1,0,43,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(291,573)|
+10,62,Vacancy Adjustment Time,376,552,43,21,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+1,63,62,55,1,0,45,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(389,481)|
+1,64,25,56,1,0,43,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(506,519)|
+10,65,Expected Time to Fill Vacancies,524,382,44,25,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+1,66,20,65,1,0,43,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(565,363)|
+1,67,65,56,1,0,43,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(494,426)|
+10,68,Vacancies,267,265,40,20,3,3,0,0,0,0,0,0
+12,69,48,135,276,8,8,0,3,0,32,-1,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+1,70,72,68,4,0,0,22,0,0,0,-1--1--1,,1|(209,276)|
+1,71,72,69,100,0,0,22,0,0,0,-1--1--1,,1|(161,276)|
+11,72,48,185,276,6,8,34,3,0,0,1,0,0,0
+10,73,Vacancy Creation Rate,185,313,39,29,40,3,0,32,-1,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+12,74,48,401,265,8,8,0,3,0,32,-1,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+1,75,77,74,4,0,0,22,0,0,0,-1--1--1,,1|(374,265)|
+1,76,77,68,100,0,0,22,0,0,0,-1--1--1,,1|(325,265)|
+11,77,48,350,265,6,8,34,3,0,0,1,0,0,0
+10,78,Vacancy Closure Rate,350,302,43,29,40,3,0,0,-1,0,0,0
+1,79,54,73,1,0,43,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(138,392)|
+1,80,68,55,1,0,45,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(340,368)|
+12,81,48,134,183,8,8,0,3,0,32,-1,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+1,82,84,81,4,0,0,22,0,0,0,-1--1--1,,1|(169,184)|
+1,83,84,68,100,0,0,22,0,0,0,-1--1--1,,1|(267,184)|
+11,84,48,202,184,6,8,34,3,0,0,1,0,0,0
+10,85,Vacancy Cancellation Rate,202,215,46,23,40,3,0,32,0,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+10,86,Maximum Vacancy Cancellation Rate,303,131,54,33,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+10,87,Vacancy Cancellation Time,167,101,49,23,8,3,0,32,0,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+1,88,68,86,1,0,43,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(321,159)|
+1,89,86,84,1,0,43,0,32,192,0,-1--1--1,Helvetica|12|B|0-0-0,1|(222,140)|
+10,90,Desired Vacancy Cancellation Rate,67,347,46,32,8,3,0,0,0,0,0,0
+1,91,54,90,1,0,43,0,0,192,0,-1--1--1,,1|(83,431)|
+1,92,90,85,1,0,43,0,0,192,0,-1--1--1,,1|(111,240)|
+1,93,68,34,1,0,43,0,0,192,0,-1--1--1,,1|(439,205)|
+1,94,35,78,1,0,43,0,0,192,0,-1--1--1,,1|(412,318)|
+12,95,0,597,486,20,20,4,4,0,32,-1,0,0,0,0-0-0,0-0-0,Helvetica|12|B|0-0-0
+B
+12,96,0,598,519,40,20,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|8||0-0-0
+Labor Adjustment
+1,97,87,86,0,0,0,0,0,0,0,-1--1--1,,1|(225,113)|
+1,98,9,37,1,0,45,0,0,192,0,-1--1--1,,1|(990,128)|
+1,99,1,37,1,0,43,0,0,192,0,-1--1--1,,1|(1092,165)|
+1,100,3,37,1,0,45,0,0,192,0,-1--1--1,,1|(1112,218)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Productivity
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1
+10,1,Productivity,414,25,40,20,8,3,0,0,-1,0,0,0
+10,2,Average Productivity,541,79,40,20,8,3,0,0,0,0,0,0
+10,3,Random Effects on Productivity,317,143,40,20,8,3,0,0,0,0,0,0
+1,4,2,1,1,0,43,0,0,192,0,-1--1--1,,1|(471,38)|
+1,5,3,1,1,0,43,0,0,192,0,-1--1--1,,1|(366,47)|
+10,6,Pink Noise in Prody,294,232,40,20,3,3,0,0,0,0,0,0
+12,7,48,426,235,8,8,0,3,0,0,-1,0,0,0
+10,8,White Noise in Prody,321,335,40,20,8,3,0,0,0,0,0,0
+10,9,TIME STEP,338,430,54,11,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+11,10,156,384,236,6,8,34,3,0,0,1,0,0,0
+10,11,Change in Pink Noise in Prody,384,264,40,20,40,3,0,0,0,0,0,0
+10,12,Noise Correlation Time for Productivity,479,316,69,28,8,3,0,0,0,0,0,0
+1,13,10,6,4,0,0,22,0,0,0,-1--1--1,,1|(356,236)|
+1,14,10,7,100,0,0,22,0,0,0,-1--1--1,,1|(404,236)|
+1,15,6,11,2,0,0,0,0,0,0,-1--1--1,,1|(343,287)|
+1,16,8,11,2,0,0,0,0,0,0,-1--1--1,,1|(381,302)|
+1,17,12,11,2,0,0,0,0,0,0,-1--1--1,,1|(437,268)|
+1,18,12,8,1,0,0,0,0,0,0,-1--1--1,,1|(394,365)|
+1,19,9,8,1,0,0,0,0,0,0,-1--1--1,,1|(341,387)|
+1,20,22,8,1,0,0,0,0,0,0,-1--1--1,,1|(295,349)|
+10,21,Normally Distributed Noise,69,236,40,20,8,3,0,0,0,0,0,0
+10,22,Standard Deviation in Random Effects on Productivity,122,375,68,31,8,3,0,0,0,0,0,0
+1,23,21,3,1,0,43,0,0,192,0,-1--1--1,,1|(186,191)|
+1,24,6,3,1,0,43,0,0,192,0,-1--1--1,,1|(358,180)|
+10,25,Switch for Pink Noise in Productivity,186,56,54,28,8,3,0,0,0,0,0,0
+1,26,25,3,1,0,0,0,0,64,0,-1--1--1,,1|(255,83)|
+1,27,22,21,1,0,0,0,0,64,0,-1--1--1,,1|(56,312)|
+10,28,Random Seed for Productivity,49,443,40,20,8,3,0,0,-1,0,0,0
+1,29,28,21,1,0,0,0,0,0,0,-1--1--1,,1|(5,340)|
+10,30,Mean for Random Effects on Productivity,167,313,59,30,8,3,0,0,-1,0,0,0
+1,31,30,21,1,0,0,0,0,64,0,-1--1--1,,1|(95,282)|
+1,32,30,8,1,0,0,0,0,64,0,-1--1--1,,1|(223,330)|
+10,33,Start Time for Noise in Productivity,131,145,40,20,8,3,0,0,0,0,0,0
+1,34,33,3,1,0,0,0,0,64,0,-1--1--1,,1|(233,118)|
+1,35,33,21,1,0,0,0,0,64,0,-1--1--1,,1|(75,184)|
+10,36,Pink Noise in Prody 0,692,225,40,20,3,3,0,0,0,0,0,0
+12,37,48,824,228,8,8,0,3,0,0,-1,0,0,0
+10,38,White Noise in Prody 0,719,328,40,20,8,3,0,0,0,0,0,0
+10,39,TIME STEP,828,439,54,11,0,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+11,40,156,782,229,6,8,34,3,0,0,1,0,0,0
+10,41,Change in Pink Noise in Prody 0,782,257,40,20,40,3,0,0,0,0,0,0
+10,42,Noise Correlation Time for Productivity 0,877,309,69,28,8,3,0,0,0,0,0,0
+1,43,40,36,4,0,0,22,0,0,0,-1--1--1,,1|(754,229)|
+1,44,40,37,100,0,0,22,0,0,0,-1--1--1,,1|(802,229)|
+1,45,36,41,2,0,0,0,0,0,0,-1--1--1,,1|(741,280)|
+1,46,38,41,2,0,0,0,0,0,0,-1--1--1,,1|(779,295)|
+1,47,42,41,2,0,0,0,0,0,0,-1--1--1,,1|(835,261)|
+1,48,42,38,1,0,0,0,0,0,0,-1--1--1,,1|(792,358)|
+1,49,39,38,1,0,0,0,0,0,0,-1--1--1,,1|(763,379)|
+1,50,36,3,1,0,43,0,0,192,0,-1--1--1,,1|(531,125)|
+10,51,Switch for Noise Streams,464,177,40,20,8,3,0,0,0,0,0,0
+10,52,Time to Switch Noise Streams,536,234,57,27,8,3,0,0,0,0,0,0
+1,53,52,51,1,0,0,0,0,64,0,-1--1--1,,1|(524,199)|
+1,54,51,3,1,0,0,0,0,64,0,-1--1--1,,1|(395,147)|
+10,55,Random Seed for Productivity,747,485,65,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+10,56,Standard Deviation in Random Effects on Productivity,617,456,56,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+10,57,Mean for Random Effects on Productivity,601,383,56,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+1,58,57,38,1,0,0,0,0,64,0,-1--1--1,,1|(689,363)|
+1,59,56,38,1,0,0,0,0,64,0,-1--1--1,,1|(686,414)|
+1,60,55,38,1,0,0,0,0,64,0,-1--1--1,,1|(749,424)|
+1,61,28,8,1,0,0,0,0,64,0,-1--1--1,,1|(202,435)|
+///---\\\
+:GRAPH EXPECTED_ORDERS
+:TITLE Expected Orders
+:X-AXIS time
+:SCALE
+:VAR Customer Order rate
+:VAR Expected order Rate
+:GRAPH PRODUCTION
+:TITLE Production
+:X-AXIS time
+:SCALE
+:VAR Customer Order Rate
+:VAR Expected Order Rate
+:VAR Desired production
+:VAR Production Rate
+:VAR Production Start Rate
+:GRAPH INVENTORY
+:TITLE Inventory
+:X-AXIS Time
+:SCALE
+:VAR Inventory
+:VAR Desired Inventory
+:GRAPH WIP
+:TITLE WIP
+:X-AXIS Time
+:SCALE
+:VAR Work in Process Inventory
+:VAR Desired WIP
+:GRAPH INVENTORY_COVERAGE
+:TITLE inventory coverage
+:X-AXIS time
+:SCALE
+:VAR inventory coverage
+:GRAPH CUSTOMER_SERVICE
+:TITLE Customer Service
+:X-AXIS time
+:SCALE
+:VAR order fulfillment ratio
+:Y-MIN 0
+:Y-MAX 1
+:GRAPH LABOR
+:TITLE Labor
+:X-AXIS time
+:SCALE
+:VAR Desired Labor
+:VAR Labor
+:GRAPH LABOR_FLOWS
+:TITLE Labor Flows
+:X-AXIS time
+:SCALE
+:VAR Hiring Rate
+:VAR Vacancy Creation Rate
+:VAR Quit Rate
+:VAR Layoff Rate
+:GRAPH DESIRED_AND_ACTUAL_PRODUCTION_STARTS
+:TITLE Desired and Actual Production Starts
+:X-AXIS time
+:SCALE
+:VAR Production Start Rate
+:VAR Desired Production Start Rate
+:GRAPH LABOR_VS._INVENTORY
+:TITLE Labor vs. Inventory
+:X-AXIS Inventory
+:SCALE
+:VAR Labor
+:GRAPH DESIRED_VS._ACTUAL_PRODUCTION_STARTS
+:TITLE Desired vs. Actual Production Starts
+:X-AXIS Production Start Rate
+:SCALE
+:VAR Desired Production Start Rate
+:L<%^E!@
+9:Noise Switch1
+22:Hour,Hours
+22:People,Person
+22:Week,Weeks
+15:0,0,0,0
+19:100,0
+5:Production Start Rate

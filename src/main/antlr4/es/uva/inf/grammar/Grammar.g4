@@ -121,24 +121,26 @@ metadataLine:DigitSeq':'.*?;
 // Backslash tokens are ignored, so this rule doesn't take them into account.
 sketches: viewInfo* sketchesDelimiter;
 sketchesDelimiter: '///---';
-viewInfo:   sketchInfo versionCode viewName viewVariables; 
+viewInfo:   sketchInfo versionCode viewName viewVariables;
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
-versionCode: 'V300  Do not put anything below this section - it will be ignored'; //Vensim versions 5,4 and 3 all use the same version code (300).
+versionCode: 'V300  Do not put anything below this section - it will be ignored'; 
+//Vensim versions 5,4 and 3 all use the same version code (300).
 viewName: '*' .*?; //All view names are preceeded by an '*'
-viewSettings: '$' ('-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
+viewSettings: '$' ('-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' //REVISAR PARA CLARIFICARLO
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
-    (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (DigitSeq); //The settings of each view always will have 2 commas separating
+    ((Id|'-'|DigitSeq)* '|')? (DigitSeq ',')? (DigitSeq ',')? (DigitSeq ',')? (DigitSeq)?; //USUALLY, The settings of each view always will have 2 commas separating
                                                                                                             //fields, then 8 '|' and then again 3 commas.
+                                                                                                            //Sometimes, some fields are not necessary.
 viewVariables: viewSettings (arrow|shadowVariable|textVariable|rawText|objectVariable)*;
 
 
 shadowVariable: (integerConst) (','(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastShadowPart;
                                  //Variables that do not belong to any view and do not depend on any other variables. Besides, other variables can depend on shadow variables.
-lastShadowPart: ',' '|'(integerConst|floatingConst)'|'(DigitSeq)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
+lastShadowPart: ',' '|'(integerConst|floatingConst)'|'(DigitSeq|Id)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
 textVariable: (integerConst) (','(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastTextVarPart; 
                                                                                                 //Object variables that its format has been modified(font, color...)
-lastTextVarPart: '|'(integerConst|floatingConst)'|'(DigitSeq)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
+lastTextVarPart: '|'(integerConst|floatingConst)'|'(DigitSeq|Id)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
 objectVariable: (integerConst) (','(integerConst|floatingConst|rawTextObjects))*; //Variables, Valves, Comments, Bitmaps and Metafiles will have an undetermined
                                                                                        //set of fields, always separated by commas.

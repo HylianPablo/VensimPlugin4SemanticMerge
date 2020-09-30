@@ -1,0 +1,93 @@
+Average Lifetime AL=
+	80
+	~	Year
+	~	Average Lifetime of the population
+	|
+
+Birth Rate B=
+	Population P*Fractional Birth Rate FBR
+	~	People/Year
+	~	Total births are determined by population and the fractional birth rate.
+	|
+
+Death Rate D=
+	Population P/Average Lifetime AL
+	~	People/Year
+	~	Deaths are formulated as a first-order process.
+	|
+
+Fractional Birth Rate FBR=
+	0.04
+	~	1/Years
+	~	The fractional birth rate.
+	|
+
+Population P= INTEG (
+	Birth Rate B-Death Rate D,
+		1e+006)
+	~	People
+	~	The initial population is one million.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Paramaters
+	|
+
+FINAL TIME  = 120
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Year
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.25
+	~	Year
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1|96,96
+10,1,Population P,338,118,40,20,3,3,0,0,0,0,0,0
+12,2,48,196,120,8,8,0,3,0,0,-1,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(277,120)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(224,120)|
+11,5,48,251,120,6,8,34,3,0,0,1,0,0,0
+10,6,Birth Rate B,251,146,35,18,40,3,0,0,-1,0,0,0
+12,7,48,494,118,8,8,0,3,0,0,-1,0,0,0
+1,8,10,7,4,0,0,22,0,0,0,-1--1--1,,1|(461,120)|
+1,9,10,1,100,0,0,22,0,0,0,-1--1--1,,1|(401,120)|
+11,10,48,430,120,6,8,34,3,0,0,1,0,0,0
+10,11,Death Rate D,430,149,41,21,40,3,0,0,-1,0,0,0
+10,12,Fractional Birth Rate FBR,192,220,44,32,8,3,0,0,0,0,0,0
+10,13,Average Lifetime AL,501,228,40,20,8,3,0,0,0,0,0,0
+1,14,1,6,1,0,43,0,0,192,0,-1--1--1,,1|(318,166)|
+1,15,1,11,1,0,43,0,0,192,0,-1--1--1,,1|(352,163)|
+1,16,12,6,1,0,43,0,0,192,0,-1--1--1,,1|(200,180)|
+1,17,13,11,1,0,45,0,0,192,0,-1--1--1,,1|(487,184)|
+///---\\\
+:L<%^E!@
+9:test
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+15:0,0,0,0
+19:100,0
+5:Population P

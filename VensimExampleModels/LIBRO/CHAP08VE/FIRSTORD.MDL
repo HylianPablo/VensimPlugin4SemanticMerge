@@ -1,0 +1,86 @@
+********************************************************
+	.FirstOrder
+********************************************************~
+		
+		Linear First-Order Negative Feedback System
+		John Sterman (1999) Business Dynamics.  Irwin/McGraw-Hill
+		Copyright (c) 1999 John Sterman
+		
+		This is the generic linear, first-order negativee feedback
+		system.  Chapter 8.
+	|
+
+S State of the System= INTEG (
+	-Net Outflow Rate,
+		Initial State of the System)
+	~	Units
+	~	The state of the system is reduced by the net outflow.
+	|
+
+Initial State of the System=
+	100
+	~	Units
+	~	The initial quantity in the stock.
+	|
+
+Net Outflow Rate=
+	d Fractional Decay Rate * S State of the System
+	~	Units/Period
+	~	The net outflow is proportional to the state of the system.
+	|
+
+d Fractional Decay Rate=
+	0.05
+	~	1/Period
+	~	The fractional decay rate for the system.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Paramaters
+	|
+
+FINAL TIME  = 100
+	~	Period
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Period
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Period
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Period
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1|96,96
+10,1,S State of the System,238,108,40,20,3,3,0,0,0,0,0,0
+10,2,d Fractional Decay Rate,443,209,38,32,8,3,0,0,0,0,0,0
+10,3,Initial State of the System,96,108,51,21,8,3,0,0,-1,0,0,0
+12,4,48,388,108,8,8,0,3,0,0,-1,0,0,0
+1,5,7,4,4,0,0,22,0,0,0,-1--1--1,,1|(357,108)|
+1,6,7,1,100,0,0,22,0,0,0,-1--1--1,,1|(300,108)|
+11,7,48,329,108,6,8,34,3,0,0,1,0,0,0
+10,8,Net Outflow Rate,329,136,40,20,40,3,0,0,-1,0,0,0
+1,9,1,8,1,0,43,0,0,192,0,-1--1--1,,1|(223,179)|
+1,10,2,8,1,0,45,0,0,192,0,-1--1--1,,1|(427,164)|
+12,11,0,273,165,20,20,5,4,0,0,-1,0,0,0
+B
+///---\\\
+:L<%^E!@
+9:Current
+15:0,0,0,0
+19:100,0
+5:Initial State of the System
