@@ -1,0 +1,127 @@
+********************************************************
+	.Pink
+********************************************************~
+		
+		Pink Noise (Normal)
+		John Sterman (1999) Business Dynamics.  Irwin/McGraw-Hill
+		Copyright (c) 1999 John Sterman
+		
+		Generates first-order serially correlated noise using
+		a normal distribution for the white noise input.
+		See Appendix B.
+	|
+
+Change in Pink Noise = (White Noise - Pink Noise)/Correlation Time
+	~	1/Period
+	~	Change in the pink noise value; Pink noise is a first order exponential smoothing \
+		delay of the white
+		         noise input.
+	|
+
+Correlation Time=
+	1
+	~	Periods
+	~	The correlation time constant for the pink noise.
+	|
+
+Mean=
+	0
+	~	Dimensionless
+	~	The mean of the pink noise process.
+	|
+
+Noise Seed=
+	1
+	~	Dimensionless
+	~	The noise seed determines which sequence of realizations for the random \
+		process are used.  Simulations with the same noise seed will yield the \
+		same sequence, so different simulations can be compared.  Changing the see \
+		changes the realizations.
+	|
+
+Standard Deviation = 0
+	~	Dimensionless
+	~	The standard deviation of the pink noise process.
+	|
+
+Pink Noise= INTEG (
+	Change in Pink Noise,
+		Mean)
+	~	Dimensionless
+	~	Pink Noise is first-order autocorrelated noise.  Pink noise provides a realistic \
+		noise input to
+		        models in which the next random shock depends in part on the previous \
+		shocks.  The user
+		        can specify the correlation time.  The mean and standard deviation are \
+		specified
+		         by the user.
+	|
+
+White Noise=
+	Mean + (((Standard Deviation^2)*(2-(TIME STEP/Correlation Time))/(TIME STEP/Correlation Time\
+		))^0.5)*RANDOM NORMAL(-10, 10, 0 , 1 , Noise Seed)
+	~	Dimensionless
+	~	White noise input to the pink noise process.  The user specifies the mean, \
+		standard deviation, and noise seed.  The white noise input is the standard \
+		normal distribution, scaled so that the standard deviation of the \
+		resulting pink noise is equal to the parameter specified by the user.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Paramaters
+	|
+
+FINAL TIME  = 100
+	~	Period
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Period
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Period
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Period
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1|96,96
+10,1,Pink Noise,345,188,40,20,3,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+12,2,48,477,191,8,8,0,3,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+10,3,White Noise,372,291,42,13,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+10,4,Standard Deviation,230,357,40,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+10,5,TIME STEP,202,303,37,9,0,3,0,8,-1,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+11,6,156,435,192,6,8,34,3,0,0,1,0,0,0
+10,7,Change in Pink Noise,435,220,40,20,40,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+10,8,Correlation Time,547,277,40,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+1,9,6,1,4,0,0,22,0,0,0,-1--1--1,,1|(407,192)|
+1,10,6,2,100,0,0,22,0,0,0,-1--1--1,,1|(455,192)|
+1,11,1,7,2,0,0,0,0,0,0,-1--1--1,,1|(394,243)|
+1,12,3,7,2,0,0,0,0,0,0,-1--1--1,,1|(432,258)|
+1,13,8,7,2,0,0,0,0,0,0,-1--1--1,,1|(488,224)|
+1,14,8,3,1,0,0,0,0,0,0,-1--1--1,,1|(444,305)|
+1,15,5,3,1,0,0,0,0,0,0,-1--1--1,,1|(275,313)|
+1,16,4,3,1,0,0,0,0,0,0,-1--1--1,,1|(317,341)|
+10,17,Mean,326,390,40,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+10,18,Noise Seed,434,388,40,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|10|B|0-0-0
+1,19,17,3,1,0,0,0,0,64,0,-1--1--1,,1|(366,348)|
+1,20,18,3,1,0,0,0,0,64,0,-1--1--1,,1|(412,337)|
+///---\\\
+:L<%^E!@
+9:Current1
+22:Period,Periods
+15:0,0,0,0
+19:100,0
+5:Standard Deviation

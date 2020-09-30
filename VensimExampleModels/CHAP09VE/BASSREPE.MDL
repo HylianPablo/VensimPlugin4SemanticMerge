@@ -1,0 +1,194 @@
+********************************************************
+	.Bass
+********************************************************~
+		
+		The Bass Innovation Diffusion Model with Repeat Purchases
+		John Sterman (1999) Business Dynamics.  Irwin/McGraw-Hill
+		Copyright (c) 1999 John Sterman
+		
+		This is the classic Bass innovation diffusion model, adapted
+		to separate initial and repeat purchases explicitly.  Adopters
+		purchase a certain quantity on initial adoption and then consume
+		and repurchase at another rate thereafter.
+		Chapter 9.
+	|
+
+Initial Purchase Rate=
+	Initial Sales per Adopter*Adoption Rate AR
+	~	Units/Year
+	~	Each adopter buys a quantity equal to Initial Sales per Adopter when they \
+		first purchase the product.
+	|
+
+Initial Sales per Adopter=
+	1
+	~	Units/Person
+	~	The number of units initially purchased, on average.
+	|
+
+Potential Adopters P= INTEG (
+	-Adoption Rate AR,
+		Total Population N - Adopters A)
+	~	People
+	~	The initial number of potential adopters is determined by the total \
+		population size and the current number of active adopters.  Adoption \
+		reduces the stock of potential adopters.
+	|
+
+Repeat Purchase Rate=
+	Average Consumption per Adopter*Adopters A
+	~	Units/Year
+	~	The number of units consumed and repurchased each period.
+	|
+
+Sales Rate=
+	Initial Purchase Rate+Repeat Purchase Rate
+	~	Units/Year
+	~	Total sales consist of initial and repeat purchases.
+	|
+
+Average Consumption per Adopter=
+	0.2
+	~	Units/Person/Year
+	~	Average per capita consumption of the product.
+	|
+
+Adoption Rate AR=
+	Adoption from Advertising + Adoption from Word of Mouth
+	~	People/Year
+	~	The rate at which a potential adopter becomes an active adopter. This is \
+		driven by advertising efforts and the word of mouth effect.
+	|
+
+Advertising Effectiveness a=
+	0.011
+	~	1/Year
+	~	Advertising results in adoption according the effectiveness of the \
+		advertising.
+	|
+
+Adoption from Advertising=
+	Advertising Effectiveness a*Potential Adopters P
+	~	People/Year
+	~	Adoption can result from advertising according to the effectiveness of the \
+		advertising effort with the pool of potential adopters.
+	|
+
+Total Population N=
+	1e+006
+	~	People
+	~	The size of the total population.
+	|
+
+Adoption from Word of Mouth=
+	Contact Rate c*Adoption Fraction i*Potential Adopters P*Adopters A/Total Population N
+	~	People/Year
+	~	Adoption by word of mouth is driven by the contact rate between potential \
+		adopters and active adopters and the fraction of times these interactions \
+		will result in adoption. The word of mouth effect is small if the number \
+		of active adopters relative to the total population size is small.
+	|
+
+Contact Rate c=
+	100
+	~	1/Year
+	~	The rate at which active adopters come into contact with potential \
+		adopters.
+	|
+
+Adopters A= INTEG (
+	Adoption Rate AR,
+		0)
+	~	People
+	~	The number of active adopters in the system.
+	|
+
+Adoption Fraction i=
+	0.015
+	~	Dimensionless
+	~	The fraction of times a contact between an active adopter and a potential \
+		adopter results in adoption.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Paramaters
+	|
+
+FINAL TIME  = 6
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Year
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.0625
+	~	Year
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1
+10,1,Potential Adopters P,82,207,40,20,3,3,0,0,0,0,0,0
+10,2,Adopters A,383,206,40,20,3,3,0,0,0,0,0,0
+1,3,5,2,4,0,0,22,0,0,0,-1--1--1,,1|(290,206)|
+1,4,5,1,100,0,0,22,0,0,0,-1--1--1,,1|(173,206)|
+11,5,348,231,206,6,8,34,3,0,0,1,0,0,0
+10,6,Adoption Rate AR,231,236,35,22,40,3,0,0,-1,0,0,0
+10,7,Adoption Fraction i,480,367,34,15,8,3,0,0,0,0,0,0
+10,8,Contact Rate c,450,415,31,19,8,3,0,0,0,0,0,0
+12,9,0,146,251,15,15,5,4,0,0,-1,0,0,0
+B
+12,10,0,325,253,15,15,4,4,0,0,-1,0,0,0
+R
+10,11,Total Population N,483,311,40,20,8,3,0,0,0,0,0,0
+10,12,Advertising Effectiveness a,167,382,47,22,8,3,0,0,0,0,0,0
+12,13,0,148,281,39,18,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|8|B|0-0-0
+Market Saturation
+12,14,0,324,280,28,13,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|8|B|0-0-0
+Word of Mouth
+10,15,Adoption from Advertising,123,325,40,20,8,3,0,0,0,0,0,0
+10,16,Adoption from Word of Mouth,343,325,40,20,8,3,0,0,0,0,0,0
+1,17,2,16,1,0,43,0,0,192,0,-1--1--1,,1|(411,263)|
+1,18,7,16,1,0,43,0,0,192,0,-1--1--1,,1|(406,356)|
+1,19,8,16,1,0,43,0,0,192,0,-1--1--1,,1|(378,380)|
+1,20,16,6,1,0,43,0,0,192,0,-1--1--1,,1|(262,286)|
+1,21,1,15,1,0,43,0,0,192,0,-1--1--1,,1|(65,283)|
+1,22,15,6,1,0,43,0,0,192,0,-1--1--1,,1|(180,310)|
+1,23,12,15,1,0,43,0,0,192,0,-1--1--1,,1|(114,356)|
+1,24,11,16,1,0,45,0,0,192,0,-1--1--1,,1|(436,329)|
+1,25,1,16,1,0,43,0,0,64,0,-1--1--1,,1|(47,280)|
+12,26,0,248,335,15,15,5,4,0,0,-1,0,0,0
+B
+12,27,0,250,365,39,18,8,4,0,8,-1,0,0,0,0-0-0,0-0-0,|9|B|0-0-0
+Market Saturation
+10,28,Average Consumption per Adopter,474,127,50,21,8,3,0,0,0,0,0,0
+10,29,Sales Rate,273,67,40,20,8,3,0,0,0,0,0,0
+10,30,Initial Sales per Adopter,89,128,47,16,8,3,0,0,0,0,0,0
+10,31,Initial Purchase Rate,207,124,40,20,8,3,0,0,0,0,0,0
+10,32,Repeat Purchase Rate,349,127,38,19,8,3,0,0,0,0,0,0
+1,33,5,31,1,0,43,0,0,192,0,-1--1--1,,1|(209,171)|
+1,34,31,29,1,0,43,0,0,192,0,-1--1--1,,1|(217,77)|
+1,35,32,29,1,0,43,0,0,192,0,-1--1--1,,1|(338,80)|
+1,36,28,32,1,0,43,0,0,192,0,-1--1--1,,1|(405,112)|
+1,37,2,32,1,0,43,0,0,192,0,-1--1--1,,1|(382,155)|
+1,38,30,31,1,0,43,0,0,192,0,-1--1--1,,1|(152,109)|
+///---\\\
+:L<%^E!@
+9:MultSens
+22:person,people
+15:0,0,0,0
+19:100,0
+5:Total Population N

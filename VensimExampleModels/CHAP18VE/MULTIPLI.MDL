@@ -1,0 +1,154 @@
+********************************************************
+	.Multiplier
+********************************************************~
+		
+		Simple Consumption Multiplier Model
+		John Sterman (1999) Business Dynamics.  Irwin/McGraw-Hill
+		Copyright (c) 1999 John Sterman
+		
+		This model is used in the challenge on simultaneous initial
+		conditions equations in chapter 18.1.
+		
+		The model represents the consumption multiplier in a simple
+		macroeconomic framework.  GDP adjusts to aggregate demand; 
+		aggregate demand depends on expectations of permanent income,
+		which in turn depend on GDP.
+	|
+
+Aggregate Demand=
+	Consumption + Investment + Government Expenditure
+	~	$/Year
+	~	Aggreate demand is the sum of consumption, private investment
+		and government expenditure.
+	|
+
+Change in Expected Income=
+	(GDP - Expected Income)/Expectation Formation Time
+	~	$/(Year*Year)
+	~	Expected income adjusts via first-order smoothing to actual income,
+		given by GDP.
+	|
+
+Change in GDP=
+	(Aggregate Demand - GDP)/Production Adjustment Time
+	~	$/Year/Year
+	~	GDP adjusts to aggregate demand via first-order smoothing.
+	|
+
+Consumption=
+	Marginal Propensity to Consume*Expected Income
+	~	$/Year
+	~	Consumers spend a fraction of their expected or permanent income.
+	|
+
+Expectation Formation Time=
+	2
+	~	Year
+	~	The time over which consumers form expectations of their permanent income.
+	|
+
+Expected Income= INTEG (
+	Change in Expected Income,
+		GDP)
+	~	$/Year
+	~	Consumers' expectations for permanent income.  Set initially to actual \
+		income (GDP).
+	|
+
+GDP= INTEG (
+	Change in GDP, Aggregate Demand)
+	~	$/Year
+	~	The total value of the flow of goods and services produced in the economy.  \
+		Set initially to aggregate demand..
+	|
+
+Government Expenditure=
+	90+step(10,1)
+	~	$/Year
+	~	Government expenditure in this illustrative model is exogenous.
+	|
+
+Investment=
+	10
+	~	$/Year
+	~	Private investment  in this illustrative model is exogenous.
+	|
+
+Marginal Propensity to Consume=
+	0.8
+	~	dimensionless
+	~	The fraction of expected income consumers spend.
+	|
+
+Production Adjustment Time=
+	1
+	~	Year
+	~	Output adjusts to aggregate demand by first-order smoothing with a one \
+		year time constant.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Paramaters
+	|
+
+FINAL TIME  = 10
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 1
+	~	Year
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.0625
+	~	Year
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1|96,96
+10,1,GDP,245,193,40,20,3,3,0,0,0,0,0,0
+12,2,48,113,193,8,8,0,3,0,0,-1,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(187,193)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(139,193)|
+11,5,48,163,193,6,8,34,3,0,0,1,0,0,0
+10,6,Change in GDP,163,221,40,20,40,3,0,0,-1,0,0,0
+10,7,Aggregate Demand,171,356,40,20,8,3,0,0,0,0,0,0
+10,8,Investment,237,458,40,20,8,3,0,0,0,0,0,0
+10,9,Government Expenditure,100,452,51,22,8,3,0,0,0,0,0,0
+10,10,Expected Income,469,325,40,20,3,3,0,0,0,0,0,0
+10,11,Consumption,350,419,57,15,8,3,0,0,0,0,0,0
+10,12,Marginal Propensity to Consume,468,464,43,32,8,3,0,0,0,0,0,0
+10,13,Production Adjustment Time,52,269,42,31,8,3,0,0,0,0,0,0
+10,14,Expectation Formation Time,632,330,43,26,8,3,0,0,0,0,0,0
+1,15,13,6,1,0,0,0,0,64,0,-1--1--1,,1|(104,233)|
+1,16,7,6,1,0,43,0,0,192,0,-1--1--1,,1|(152,309)|
+1,17,10,11,1,0,43,0,0,192,0,-1--1--1,,1|(465,355)|
+1,18,12,11,1,0,43,0,0,192,0,-1--1--1,,1|(405,464)|
+1,19,11,7,1,0,43,0,0,192,0,-1--1--1,,1|(205,398)|
+1,20,8,7,1,0,43,0,0,192,0,-1--1--1,,1|(171,412)|
+1,21,9,7,1,0,43,0,0,192,0,-1--1--1,,1|(119,384)|
+1,22,1,6,1,0,45,0,0,192,0,-1--1--1,,1|(236,248)|
+12,23,48,473,231,8,8,0,3,0,0,-1,0,0,0
+1,24,26,10,4,0,0,22,0,0,0,-1--1--1,,1|(468,291)|
+1,25,26,23,100,0,0,22,0,0,0,-1--1--1,,1|(468,252)|
+11,26,48,468,272,8,6,33,3,0,0,4,0,0,0
+10,27,Change in Expected Income,520,272,44,25,40,3,0,0,-1,0,0,0
+1,28,10,27,1,0,45,0,0,192,0,-1--1--1,,1|(531,301)|
+1,29,1,27,1,0,43,0,0,192,0,-1--1--1,,1|(400,162)|
+1,30,14,27,1,0,0,0,0,64,0,-1--1--1,,1|(589,285)|
+///---\\\
+:L<%^E!@
+15:0,0,0,0
+19:100,0
+5:Expected Income
