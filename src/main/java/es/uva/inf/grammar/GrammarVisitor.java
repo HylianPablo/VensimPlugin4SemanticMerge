@@ -466,6 +466,12 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitShadowVariable(GrammarParser.ShadowVariableContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link GrammarParser#nonTrivialShadowPart}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNonTrivialShadowPart(GrammarParser.NonTrivialShadowPartContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link GrammarParser#lastShadowPart}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -477,6 +483,12 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitTextVariable(GrammarParser.TextVariableContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#nonTrivialTextPart}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNonTrivialTextPart(GrammarParser.NonTrivialTextPartContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#lastTextVarPart}.
 	 * @param ctx the parse tree
@@ -490,11 +502,23 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitObjectVariable(GrammarParser.ObjectVariableContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link GrammarParser#nonTrivialObjectPart}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNonTrivialObjectPart(GrammarParser.NonTrivialObjectPartContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link GrammarParser#arrow}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitArrow(GrammarParser.ArrowContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#nonTrivialArrowPart}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNonTrivialArrowPart(GrammarParser.NonTrivialArrowPartContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#points}.
 	 * @param ctx the parse tree

@@ -125,7 +125,7 @@ viewInfo:   sketchInfo versionCode viewName viewVariables;
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored'; 
 //Vensim versions 5,4 and 3 all use the same version code (300).
-viewName: '*' .*?; //All view names are preceeded by an '*'
+viewName: '*View' DigitSeq; //All view names are preceeded by an '*'
 viewSettings: '$' ('-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' //REVISAR PARA CLARIFICARLO
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     ((Id|'-'|DigitSeq)* '|')? (DigitSeq ',')? (DigitSeq ',')? (DigitSeq ',')? (DigitSeq)?; //USUALLY, The settings of each view always will have 2 commas separating
@@ -134,20 +134,43 @@ viewSettings: '$' ('-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* 
 viewVariables: viewSettings (arrow|shadowVariable|textVariable|rawText|objectVariable)*;
 
 
-shadowVariable: (integerConst) (','(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastShadowPart;
+shadowVariable: nonTrivialShadowPart (','(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastShadowPart;
                                  //Variables that do not belong to any view and do not depend on any other variables. Besides, other variables can depend on shadow variables.
+nonTrivialShadowPart: integerConst ',' integerConst ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq));
+
 lastShadowPart: ',' '|'(integerConst|floatingConst)'|'(DigitSeq|Id)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
-textVariable: (integerConst) (','(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastTextVarPart; 
+textVariable: nonTrivialTextPart (','(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)))* lastTextVarPart; 
                                                                                                 //Object variables that its format has been modified(font, color...)
+nonTrivialTextPart: integerConst ',' integerConst ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq)) ','
+(rawTextObjects|Id|integerConst|floatingConst|(DigitSeq'-'DigitSeq'-'DigitSeq)|('-'DigitSeq'-''-'DigitSeq'-''-'DigitSeq));
+
 lastTextVarPart: '|'(integerConst|floatingConst)'|'(DigitSeq|Id)*'|'(DigitSeq'-'DigitSeq'-'DigitSeq);
 
-objectVariable: (integerConst) (','(integerConst|floatingConst|rawTextObjects))*; //Variables, Valves, Comments, Bitmaps and Metafiles will have an undetermined
+objectVariable: nonTrivialObjectPart (','(integerConst|floatingConst|rawTextObjects))*; //Variables, Valves, Comments, Bitmaps and Metafiles will have an undetermined
                                                                                        //set of fields, always separated by commas.
-arrow: DigitSeq ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
-    (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','
+nonTrivialObjectPart: integerConst ',' integerConst ',' (integerConst|floatingConst|rawTextObjects) ','
+    (integerConst|floatingConst|rawTextObjects) ','(integerConst|floatingConst|rawTextObjects) ','(integerConst|floatingConst|rawTextObjects) ','
+    (integerConst|floatingConst|rawTextObjects) ','(integerConst|floatingConst|rawTextObjects) ','(integerConst|floatingConst|rawTextObjects);
+
+arrow: nonTrivialArrowPart ',' (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ','
     (Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(Id|'-'|DigitSeq)* ','(points);  //Arrows always will have 13 fields and a last field that contains 
                                                                                                         //the number of points of the object and where they are located.
+nonTrivialArrowPart: DigitSeq ','DigitSeq ','DigitSeq ','DigitSeq ','
+    (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)*;
 points: DigitSeq ('|''('integerConst','integerConst')')+'|';
 rawText: ('\''|'"'|Id|StringConst|'.'|'-'|'+'|'='|Less|Greater|'('|')'|'->'|Star|Div|'?'|'!'|'|'|'&'|'%'|'$'|'@'|':'|';'|','|'['|']'|link)+; 
  //Symbols that may affect the grammar. Those are contained in comments or variable names. They must be controlled.
