@@ -1,0 +1,86 @@
+{UTF-8}
+ey  = A FUNCTION OF( )
+	~	
+	~		|
+
+AD  = A FUNCTION OF( )
+	~	
+	~		|
+
+ADIOS  = A FUNCTION OF( AD)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,90,Average Productivity,130,182,50,20,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
+10,100,Inventory,801,202,40,20,3,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
+10,1,ADIOS,311,182,26,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,AD,623,57,13,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,AD,643,165,22,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,4,3,1,0,0,0,0,0,64,0,-1--1--1,,1|(485,172)|
+1,5,2,1,0,0,0,0,0,64,0,-1--1--1,,1|(480,113)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,ey,265,113,9,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+///---\\\
+:L<%^E!@
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:100,1
+27:0,
+34:0,
+42:1
+72:0
+73:0
+5:FINAL TIME
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:0
+25:0
+26:0
+75:
+43:
