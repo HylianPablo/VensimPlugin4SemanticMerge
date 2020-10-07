@@ -125,7 +125,7 @@ viewInfo:   sketchInfo versionCode viewName viewVariables;
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored'; 
 //Vensim versions 5,4 and 3 all use the same version code (300).
-viewName: '*View' DigitSeq; //All view names are preceeded by an '*'
+viewName: '*' .*?; //All view names are preceeded by an '*'
 viewSettings: '$' ('-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* ',' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' //REVISAR PARA CLARIFICARLO
     (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' (Id|'-'|DigitSeq)* '|' 
     ((Id|'-'|DigitSeq)* '|')? (DigitSeq ',')? (DigitSeq ',')? (DigitSeq ',')? (DigitSeq)?; //USUALLY, The settings of each view always will have 2 commas separating
