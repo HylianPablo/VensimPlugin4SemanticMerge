@@ -1,4 +1,6 @@
-package es.uva.inf.grammar;
+package es.uva.inf.grammar.parser.visitors;
+
+import es.uva.inf.grammar.parser.*;
 
 import java.util.Arrays;
 
@@ -13,7 +15,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 public class EvalVisitor {
     public static void main(String[] args) throws Exception {
-        CharStream charstream = CharStreams.fromFileName("VensimExampleModels/SHODOR/sociology101_mod.mdl");
+        CharStream charstream = CharStreams.fromFileName("VensimExampleModels/SHODOR/FallingRockWithDrag.mdl");
         GrammarLexer lexer = new GrammarLexer(charstream);
         GrammarParser parser = new GrammarParser(new CommonTokenStream(lexer));
         ParseTree tree = parser.file();
