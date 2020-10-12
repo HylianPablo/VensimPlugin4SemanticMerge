@@ -97,25 +97,19 @@ public class Comment {
     }
 
     private static String modify(String equation, String viewName){
-        //System.out.println(equation);
         int position = StringUtils.ordinalIndexOf(equation, "~", 2);
         String appendix = viewName;
         return insertString(equation, appendix, position);
     }
 
-    // Function to insert string 
     public static String insertString( 
         String originalString, 
         String stringToBeInserted, 
         int index) 
     { 
-  
-        // Create a new string 
         String newString = originalString.substring(0, index + 1) 
                            + stringToBeInserted
                            + originalString.substring(index + 1); 
-  
-        // return the modified String 
         return newString; 
     } 
 }
