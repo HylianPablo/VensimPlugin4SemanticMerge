@@ -15,7 +15,7 @@ public class Comment {
    
     public static void main(String args[]){
         try{
-            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/SHODOR/FallingRockWithDrag.mdl")),StandardCharsets.UTF_8);
+            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/SHODOR/Education.mdl")),StandardCharsets.UTF_8);
             String viewsDelimiter = "aaa---///";
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] p1 = text.split(viewsDelimiter,2);
@@ -32,7 +32,6 @@ public class Comment {
                 String viewName = getViewName(separatedViews[i]);
                 viewNames.add(viewName);
             }
-
             String commentModified=modifyComment(p1[0],sets,viewNames);
             writeFile(commentModified.substring(0, commentModified.length()-2),viewsDelimiter,p1[1]);
 
@@ -51,7 +50,7 @@ public class Comment {
         Set<String> set = new HashSet<String>();
         for(int i=4;i<lines.length;i++){
             String[] positions = lines[i].split(",");
-            if(positions.length>1 && lines[i].indexOf("|")==-1){
+            if(positions.length>1){
                 set.add(positions[2]);
             }else{
                 set.add(positions[0]);
@@ -83,6 +82,7 @@ public class Comment {
         for(int i=0;i<eqNames.size();i++){
             for(int j=0;j<sets.size();j++){
                 if(sets.get(j).contains(eqNames.get(i))){
+                   sets.get(j).remove(eqNames.get(i));
                    String newEq = modify(equations[i],viewNames.get(j));
                    newEq+="|";
                    newEquations+=newEq; 
