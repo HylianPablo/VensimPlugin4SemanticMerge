@@ -15,7 +15,7 @@ public class Comment {
    
     public static void main(String args[]){
         try{
-            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/CLOUD/Locomini34.mdl")),StandardCharsets.UTF_8);
+            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/LIBRO/CHAP04VE/POPANDCA.MDL")),StandardCharsets.UTF_8);
             String viewsDelimiter = "aaa---///";
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] p1 = text.split(viewsDelimiter,2);
@@ -45,7 +45,7 @@ public class Comment {
         return lines[2].substring(1);
     }
 
-    private static Set<String> crearSets(String views) {  //is static necessary?
+    private static Set<String> crearSets(String views) {  
         String[] lines = views.split("\n");
         Set<String> set = new HashSet<String>();
         for(int i=4;i<lines.length;i++){
@@ -60,7 +60,7 @@ public class Comment {
     }
 
     private static String modifyComment(String equationsText, ArrayList<Set<String>> sets, ArrayList<String> viewNames){
-        String[] noControl = equationsText.split("\\*\\*\\*\\*\\*\\*\\*\\*\\*",2);
+        String[] noControl = equationsText.split("\t.Control",2); 
         String[] equations = noControl[0].split("\\|");
         ArrayList<String> eqNames = new ArrayList<>();
         for(int i=0;i<equations.length-1;i++){
@@ -74,6 +74,9 @@ public class Comment {
             int equalPos = equationName.indexOf("=");
             if(equalPos!=-1)
                 equationName = equationName.substring(0, equalPos);
+            int parenthesisPos = equationName.indexOf("(");
+            if(parenthesisPos!=-1)
+                equationName = equationName.substring(0, parenthesisPos);
             equationName = equationName.trim();
             eqNames.add(equationName);
         }
@@ -95,7 +98,7 @@ public class Comment {
                 newEquations+=commentEq;
             }
         }
-        return(newEquations+"\n\n"+"*********"+noControl[1]);
+        return(newEquations+"\n\n"+"********************************************************\n"+"\t.Control"+noControl[1]);
     }
 
     private static String modify(String equation, String viewName){
