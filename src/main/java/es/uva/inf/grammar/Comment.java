@@ -15,7 +15,7 @@ public class Comment {
    
     public static void main(String args[]){
         try{
-            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/SHODOR/Education.mdl")),StandardCharsets.UTF_8);
+            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/CLOUD/Locomini34.mdl")),StandardCharsets.UTF_8);
             String viewsDelimiter = "aaa---///";
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] p1 = text.split(viewsDelimiter,2);
@@ -50,7 +50,7 @@ public class Comment {
         Set<String> set = new HashSet<String>();
         for(int i=4;i<lines.length;i++){
             String[] positions = lines[i].split(",");
-            if(positions.length>1){
+            if(positions.length>2){
                 set.add(positions[2]);
             }else{
                 set.add(positions[0]);
@@ -80,13 +80,19 @@ public class Comment {
 
         String newEquations="";
         for(int i=0;i<eqNames.size();i++){
+            int flag = 0;
             for(int j=0;j<sets.size();j++){
                 if(sets.get(j).contains(eqNames.get(i))){
+                   flag = 1;
                    sets.get(j).remove(eqNames.get(i));
                    String newEq = modify(equations[i],viewNames.get(j));
                    newEq+="|";
-                   newEquations+=newEq; 
+                   newEquations+=newEq;
+                   break; 
                 }
+            }if(flag==0){
+                String commentEq = equations[i] + "|";
+                newEquations+=commentEq;
             }
         }
         return(newEquations+"\n\n"+"*********"+noControl[1]);
