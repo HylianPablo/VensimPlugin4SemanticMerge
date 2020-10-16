@@ -1,159 +1,122 @@
-********************************************************
-	.LinearPopulation
-********************************************************~
-		
-		Linear Population Growth Model
-		John Sterman (1999) Business Dynamics.  Irwin/McGraw-Hill
-		Copyright (c) 1999 John Sterman
-		
-		This is the generic linear, first-order population growth
-		model.  The fractional birth and death rates are constant.
-		Chapter 8.
-	|
+{UTF-8}
+birf rate=
+	0.5
+	~	 [0,1,0.001]
+	~View 1		|
 
-Fractional Birth Rate=
-	0.02
-	~	1/Year
-	~View 1	The fractional birth rate is constant.
-	|
+birf rate 0=
+	0.5
+	~	 [0,1,0.001]
+	~View 1		|
 
-Fractional Death Rate=
-	0.02
-	~	1/Year
-	~View 1	The fractional death rate is constant.
-	|
+bunnies ex = INTEG (
+	bunnification,
+		2)
+	~	
+	~View 1		|
 
-Initial Population=
-	2
-	~	People
-	~View 1	The initial population.
-	|
+bunnies 0= INTEG (
+	bunnification 0,
+		2)
+	~	
+	~View 1		|
 
-Birth Rate = Fractional Birth Rate*Population
-	~	People/Year
-	~View 1	Births are proportional to the population.
-	|
+bunnification=
+	birf rate*bunnies*(1-bunnies/carrying capacity)
+	~	
+	~View 1		|
 
-Death Rate = Fractional Death Rate*Population
-	~	People/Year
-	~View 1	Deaths are proportional to the population.
-	|
+bunnification 0=
+	birf rate 0*bunnies 0 - competition*bunnies 0*(bunnies 0-1)/2
+	~	
+	~View 1		|
 
-Net Birth Rate = Birth Rate-Death Rate
-	~	People/Year
-	~View 1	The net birth rate is births less deaths.
-	|
+carrying capacity=
+	1000
+	~	
+	~View 1		|
 
-Net Fractional Birth Rate = Fractional Birth Rate-Fractional Death Rate
-	~	1/Year
-	~View 1	The net fractional birth rate is fractional births less fractional deaths.
-	|
-
-Population= INTEG (
-	Birth Rate-Death Rate,
-		Initial Population)
-	~	People
-	~View 1	The population is increased by births and decreased by deaths.
-	|
+competition=
+	0.0002
+	~	 [0.0002,0.0003,1e-05]
+	~View 1		|
 
 ********************************************************
 	.Control
 ********************************************************~
-		Simulation Control Paramaters
+		Simulation Control Parameters
 	|
 
-FINAL TIME  = 100
-	~	Year
+FINAL TIME  = 30
+	~	Month
 	~	The final time for the simulation.
 	|
 
 INITIAL TIME  = 0
-	~	Year
+	~	Month
 	~	The initial time for the simulation.
 	|
 
 SAVEPER  = 
-        TIME STEP 
-	~	Year
+        TIME STEP
+	~	Month [0,?]
 	~	The frequency with which output is stored.
 	|
 
-TIME STEP  = 0.125
-	~	Year
+TIME STEP  = 0.25
+	~	Month [0,?]
 	~	The time step for the simulation.
 	|
 
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *View 1
-$0,0,Helvetica|10|B|0-0-0|0-0-0|0-0-0|-1--1--1|-1--1--1|0,0
-10,1,Population,313,60,40,20,3,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|14|B|0-0-0
-12,2,48,121,59,8,8,0,3,0,50,-1,0,0,0,-1--1--1,0-0-0,Helvetica|14|B|0-0-0
-11,3,48,188,59,6,8,34,3,0,0,1,0,0,0
-10,4,Birth Rate,188,87,40,20,40,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|14|B|0-0-0
-12,5,48,501,60,8,8,0,3,0,50,-1,0,0,0,-1--1--1,0-0-0,Helvetica|14|B|0-0-0
-11,6,48,422,61,6,8,34,3,0,0,1,0,0,0
-10,7,Death Rate,422,86,28,17,40,3,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|14|B|0-0-0
-12,8,0,360,99,14,14,5,4,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
-B
-12,9,0,262,98,14,14,4,4,0,50,0,0,0,0,-1--1--1,0-0-0,Helvetica|12|B|0-0-0
-R
-10,10,Fractional Birth Rate,164,194,40,20,8,3,0,0,0,0,0,0
-10,11,Fractional Death Rate,452,194,49,20,8,3,0,0,0,0,0,0
-10,12,Net Birth Rate,545,405,40,20,8,3,0,0,0,0,0,0
-10,13,Birth Rate,416,378,40,20,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|10|B|128-128-128
-10,14,Death Rate,417,444,40,20,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|10|B|128-128-128
-10,15,Net Fractional Birth Rate,130,408,40,20,8,3,0,0,0,0,0,0
-10,16,Fractional Birth Rate,270,377,49,21,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|10|B|128-128-128
-10,17,Fractional Death Rate,265,444,51,17,8,2,0,3,0,0,0,0,128-128-128,0-0-0,|10|B|128-128-128
-1,18,3,1,4,0,0,22,0,0,0,-1--1--1,,1|(233,59)|
-1,19,3,2,100,0,0,22,0,0,0,-1--1--1,,1|(155,59)|
-1,20,6,5,4,0,0,22,0,0,0,-1--1--1,,1|(460,61)|
-1,21,6,1,100,0,0,22,0,0,0,-1--1--1,,1|(384,61)|
-1,22,1,7,2,0,43,0,51,0,0,0-0-0,Helvetica|14|B|0-0-0,1|(403,116)|
-1,23,1,4,2,0,43,0,51,0,0,0-0-0,Helvetica|14|B|0-0-0,1|(212,121)|
-1,24,10,4,2,0,43,0,0,0,0,-1--1--1,,1|(147,115)|
-1,25,11,7,2,0,43,0,0,0,0,-1--1--1,,1|(463,94)|
-1,26,16,15,0,0,0,0,0,0,0,-1--1--1,,1|(202,391)|
-1,27,17,15,0,0,0,0,0,0,0,-1--1--1,,1|(198,426)|
-1,28,13,12,0,0,0,0,0,0,0,-1--1--1,,1|(473,389)|
-1,29,14,12,0,0,0,0,0,0,0,-1--1--1,,1|(474,426)|
-10,30,Initial Population,132,491,40,20,8,3,0,0,-1,0,0,0
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,150,0
+10,1,bunnies ex,9,-102,30,15,3,3,0,0,0,0,0,0
+12,2,48,-119,-100,10,8,0,3,0,0,-1,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(-41,-100)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(-90,-100)|
+11,5,48,-67,-100,5,6,34,3,0,0,1,0,0,0
+10,6,bunnification,-67,-86,54,8,40,131,0,0,-1,0,0,0
+10,7,birf rate,-98,3,20,8,8,3,0,0,0,0,0,0
+1,8,7,6,0,0,0,0,0,64,0,-1--1--1,,1|(-84,-34)|
+1,9,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(-17,-63)|
+12,10,0,166,-47,80,77,3,188,0,0,1,0,0,0
+Money
+10,11,carrying capacity,2,-12,57,15,8,131,0,0,0,0,0,0
+1,12,11,6,1,0,0,0,0,64,0,-1--1--1,,1|(-56,-43)|
+10,13,bunnies 0,16,38,30,15,3,3,0,0,0,0,0,0
+12,14,48,-113,40,10,8,0,3,0,0,-1,0,0,0
+1,15,17,13,4,0,0,22,0,0,0,-1--1--1,,1|(-34,40)|
+1,16,17,14,100,0,0,22,0,0,0,-1--1--1,,1|(-84,40)|
+11,17,48,-60,40,5,6,34,3,0,0,1,0,0,0
+10,18,bunnification 0,-60,54,56,8,40,131,0,0,-1,0,0,0
+10,19,birf rate 0,-91,143,24,8,8,3,0,0,0,0,0,0
+1,20,19,18,0,0,0,0,0,64,0,-1--1--1,,1|(-77,105)|
+1,21,13,18,1,0,0,0,0,64,0,-1--1--1,,1|(-11,77)|
+10,22,competition,10,124,62,11,8,131,0,0,0,0,0,0
+1,23,22,18,1,0,0,0,0,64,0,-1--1--1,,1|(-50,97)|
 ///---\\\
-:GRAPH POPULATION_AND_CARRYING_
-:TITLE Population
-:X-AXIS time
+:GRAPH Money
+:TITLE population
+:X-AXIS Time
 :SCALE
-:VAR Population
-:GRAPH NET_BIRTHS
-:TITLE Net Births
-:SCALE
-:VAR Birth Rate
-:VAR Death Rate
-:VAR Net birth rate
-:GRAPH FRACTIONAL_RATES
-:TITLE Fractional Rates
-:X-AXIS time
-:SCALE
-:VAR Fractional Birth Rate
-:VAR Fractional Death Rate
-:VAR Net Fractional Birth Rate
-:GRAPH PHASE_PLOT
-:TITLE Phase Plot
-:X-AXIS Population
-:SCALE
-:VAR Birth Rate
-:VAR Death Rate
-:VAR Net Birth Rate
-:GRAPH FRACTIONAL_PHASE_PLOT
-:TITLE Fractional Phase Plot
-:X-AXIS Population
-:SCALE
-:VAR Fractional Birth Rate
-:VAR Fractional Death Rate
-:VAR Net Fractional Birth Rate
+:VAR bunnies
+:Y-MIN 0
+:Y-MAX 10000
+:LINE-WIDTH 2
+:VAR bunnies 0
+:LINE-WIDTH 2
 :L<%^E!@
+1:Current.vdf
 9:Current
-15:0,0,0,0
-19:100,0
-5:Initial Population
+23:0
+15:0,0,0,0,0,0
+19:150,0
+27:2,
+34:0,
+4:Time
+5:carrying capacity
+24:0
+25:30
+26:30

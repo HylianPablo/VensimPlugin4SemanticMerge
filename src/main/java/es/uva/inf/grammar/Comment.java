@@ -15,7 +15,7 @@ public class Comment {
    
     public static void main(String args[]){
         try{
-            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/LIBRO/CHAP08VE/LINEARPO.MDL")));
+            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/SHODOR/Bunny.mdl")),StandardCharsets.UTF_8);
             String viewsDelimiter = "aaa---///";
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] p1 = text.split(viewsDelimiter,2);
