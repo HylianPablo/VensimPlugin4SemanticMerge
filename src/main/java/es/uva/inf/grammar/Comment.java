@@ -15,7 +15,7 @@ public class Comment {
    
     public static void main(String args[]){
         try{
-            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/SHODOR/Bunny.mdl")),StandardCharsets.UTF_8);
+            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/SHODOR/climate.mdl")),StandardCharsets.UTF_8);
             String viewsDelimiter = "aaa---///";
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] p1 = text.split(viewsDelimiter,2);
@@ -63,6 +63,7 @@ public class Comment {
         String[] noControl = equationsText.split("\t.Control",2); 
         String[] equations = noControl[0].split("\\|");
         ArrayList<String> eqNames = new ArrayList<>();
+        ArrayList<String> eqNamesNoUnderScores = new ArrayList<>();
         for(int i=0;i<equations.length-1;i++){
             String equationName;
             String[] lines = equations[i].split("\n");
@@ -77,8 +78,14 @@ public class Comment {
             int parenthesisPos = equationName.indexOf("(");
             if(parenthesisPos!=-1)
                 equationName = equationName.substring(0, parenthesisPos);
+            int bracketPos = equationName.indexOf("[");
+            if(bracketPos!=-1)
+                equationName = equationName.substring(0,bracketPos);
             equationName = equationName.trim();
+            String noUnderscore = equationName;
+            noUnderscore = noUnderscore.replaceAll("_", " ");
             eqNames.add(equationName);
+            eqNamesNoUnderScores.add(noUnderscore);
         }
 
         String newEquations="";
@@ -88,6 +95,13 @@ public class Comment {
                 if(sets.get(j).contains(eqNames.get(i))){
                    flag = 1;
                    sets.get(j).remove(eqNames.get(i));
+                   String newEq = modify(equations[i],viewNames.get(j));
+                   newEq+="|";
+                   newEquations+=newEq;
+                   break; 
+                }else if(sets.get(j).contains(eqNamesNoUnderScores.get(i))){
+                   flag = 1;
+                   sets.get(j).remove(eqNamesNoUnderScores.get(i));
                    String newEq = modify(equations[i],viewNames.get(j));
                    newEq+="|";
                    newEquations+=newEq;
