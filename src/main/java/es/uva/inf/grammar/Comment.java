@@ -15,7 +15,7 @@ public class Comment {
    
     public static void main(String args[]){
         try{
-            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/SHODOR/climate.mdl")),StandardCharsets.UTF_8);
+            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/SHODOR/Bunny.mdl")),StandardCharsets.UTF_8);
             String viewsDelimiter = "aaa---///";
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] p1 = text.split(viewsDelimiter,2);
@@ -118,6 +118,7 @@ public class Comment {
     private static String modify(String equation, String viewName){
         int position = StringUtils.ordinalIndexOf(equation, "~", 2);
         String appendix = viewName.trim();
+        appendix = "VIEW: "+appendix;
         return insertString(equation, appendix, position);
     }
 
@@ -127,7 +128,7 @@ public class Comment {
         int index) 
     { 
         String newString = originalString.substring(0, index + 1) 
-                           + stringToBeInserted
+                           + stringToBeInserted+" DESCRIPTION:"
                            + originalString.substring(index + 1); 
         return newString; 
     }
