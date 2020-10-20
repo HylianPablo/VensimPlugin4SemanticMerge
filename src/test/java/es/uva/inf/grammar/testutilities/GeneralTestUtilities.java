@@ -1,3 +1,4 @@
+/*
 package es.uva.inf.grammar.testutilities;
 
 
@@ -166,7 +167,7 @@ public class GeneralTestUtilities {
             throw new IllegalArgumentException("The type: '"+ type+"' isn't a rule.");
         return context.getIssues().stream().filter(issue -> issue.getCheck().getClass()==type).collect(Collectors.toList());
     }
-*/
+
 
     public static Symbol createSubscript(SymbolTable table,String subscriptName, String... values){
 
@@ -204,3 +205,4 @@ public class GeneralTestUtilities {
 
 }
 
+*/

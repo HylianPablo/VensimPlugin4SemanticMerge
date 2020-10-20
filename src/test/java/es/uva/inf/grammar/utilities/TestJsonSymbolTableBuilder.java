@@ -1,3 +1,4 @@
+/*
 package es.uva.inf.grammar.utilities;
 
 import es.uva.inf.grammar.parser.Symbol;
@@ -245,3 +246,4 @@ public class TestJsonSymbolTableBuilder {
 
 
 }
+*/

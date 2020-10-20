@@ -13,9 +13,9 @@ import org.apache.commons.lang.StringUtils;
 
 public class Comment {
    
-    public static void main(String args[]){
+    public static void main(String args[]) throws IOException {
         try{
-            String text = new String(Files.readAllBytes(Paths.get("VensimExampleModels/SHODOR/Bunny.mdl")),StandardCharsets.UTF_8);
+            String text = new String(Files.readAllBytes(Paths.get(args[0])),StandardCharsets.UTF_8);
             String viewsDelimiter = "aaa---///";
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] p1 = text.split(viewsDelimiter,2);
@@ -33,10 +33,16 @@ public class Comment {
                 viewNames.add(viewName);
             }
             String commentModified=modifyComment(p1[0],sets,viewNames);
-            writeFile(commentModified.substring(0, commentModified.length()-2),viewsDelimiter,p1[1]);
+            String outputFile;
+            if(args.length==1){
+                outputFile="out.mdl";
+            }else{
+                outputFile=args[1];
+            }
+            writeFile(commentModified.substring(0, commentModified.length()-2),viewsDelimiter,p1[1],outputFile);
 
         } catch (IOException ex) {
-            System.err.println("File couldn´t be read.");
+            throw new IOException("File couldn´t be read"); //REVISAR
         }
     }
 
@@ -133,9 +139,9 @@ public class Comment {
         return newString; 
     }
 
-    public static void writeFile(String commentModified, String viewDelimiter, String lastPart){
+    public static void writeFile(String commentModified, String viewDelimiter, String lastPart, String outputName){
         try{
-            FileWriter writer = new FileWriter("out.mdl");
+            FileWriter writer = new FileWriter(outputName);
             writer.write(commentModified);
             writer.write(viewDelimiter);
             writer.write(lastPart);

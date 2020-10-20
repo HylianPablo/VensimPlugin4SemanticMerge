@@ -1,3 +1,4 @@
+/*
 package es.uva.inf.grammar.utilities;
 
 import es.uva.inf.grammar.parser.*;
@@ -534,3 +535,4 @@ public class TestSymbolGenerator {
 
 
 }
+*/

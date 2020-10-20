@@ -1,3 +1,4 @@
+/*
 package es.uva.inf.grammar.parser.visitors;
 
 
@@ -372,3 +373,4 @@ public class TestCompoundNumberVisitor {
 
 
 }
+*/
