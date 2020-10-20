@@ -178,6 +178,36 @@ public class CommentTest {
     }
 
     @Test
+    public void lecturaCorrectaYaComentado() {
+        String[] args = new String[2];
+        args[0]="VensimExampleModels/SHODOR/alreadyCommented.mdl";
+        args[1]="test6.mdl";
+        BufferedReader reader;
+        try {
+            Comment.main(args);
+            reader = new BufferedReader(new FileReader("VensimExampleModels/SHODOR/alreadyCommented.mdl"));
+            int lines = 0;
+            while (reader.readLine() != null) lines++;
+            reader.close();
+            assertEquals(137,lines); //Last newline is not counted
+
+            reader = new BufferedReader(new FileReader("test6.mdl"));
+            Set<Integer> positions1 = new HashSet<Integer>();
+            positions1.addAll(Arrays.asList(new Integer[] {3, 8, 13, 19, 25, 30, 35, 40, 45})); 
+            for(int i=0;i<50;i++){
+                String line = reader.readLine();
+                if(positions1.contains(i)){
+                    String subline = line.substring(11);
+                    assertTrue(subline.indexOf("<[VIEW]>:")==-1);
+                }
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void lecturaIncorrecta(){
         String[] args = new String[2];
         args[0]="VensimExampleModels/SHODOR/jeokdfjf.mdl";

@@ -122,9 +122,12 @@ public class Comment {
     }
 
     private static String modify(String equation, String viewName){
+        if(equation.indexOf("<[VIEW]>:")!=-1){
+            return equation;
+        }
         int position = StringUtils.ordinalIndexOf(equation, "~", 2);
         String appendix = viewName.trim();
-        appendix = "VIEW: "+appendix;
+        appendix = "<[VIEW]>: "+appendix;
         return insertString(equation, appendix, position);
     }
 
@@ -134,7 +137,7 @@ public class Comment {
         int index) 
     { 
         String newString = originalString.substring(0, index + 1) 
-                           + stringToBeInserted+" DESCRIPTION:"
+                           + stringToBeInserted+" <[DESCRIPTION]>:"
                            + originalString.substring(index + 1); 
         return newString; 
     }

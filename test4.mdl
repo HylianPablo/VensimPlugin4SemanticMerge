@@ -3,49 +3,49 @@ Aggressive= INTEG (
 	feralization-pacification,
 		100)
 	~	
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 Passive= INTEG (
 	pacification-feralization,
 		100)
 	~	
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 Passive 0= INTEG (
 	pacification-feralization,
 		100)
 	~	
-	~VIEW: View 2 DESCRIPTION:		|
+	~<[VIEW]>: View 2 <[DESCRIPTION]>:		|
 
 DUMMY  = A FUNCTION OF( Passive 0)
 	~	
-	~VIEW: View 2 DESCRIPTION:		|
+	~<[VIEW]>: View 2 <[DESCRIPTION]>:		|
 
 calming influence=
 	RANDOM NORMAL( outlook-0.05 {min} , outlook+0.05{max} , outlook {mean} , 0.005{stdev}\
 		 , 1011{seed} )
 	~	 [0,0.005,1e-05]
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 coping factor=
 	0
 	~	uwu [0,1,0.01]
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 outlook=
 	0
 	~	 [-0.05,0.05,0.001]
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 provocation=
 	0
 	~	 [0,0.005,1e-06]
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 stewing=
 	0
 	~	 [0,1,0.01]
-	~VIEW: View 1 DESCRIPTION:	COMENTARIO
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:	COMENTARIO
 	|
 
 ********************************************************

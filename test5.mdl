@@ -1,49 +1,49 @@
 {UTF-8}
 bunnies  = A FUNCTION OF( )
 	~	
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 birf rate=
 	0.5
 	~	 [0,1,0.001]
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 birf rate 0=
 	0.5
 	~	 [0,1,0.001]
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 bunnies ex = INTEG (
 	bunnification,
 		2)
 	~	
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 bunnies 0= INTEG (
 	bunnification 0,
 		2)
 	~	
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 bunnification()=
 	birf rate*bunnies*(1-bunnies/carrying capacity)
 	~	
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 bunnification 0=
 	birf rate 0*bunnies 0 - competition mod*bunnies 0*(bunnies 0-1)/2
 	~	
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 carrying capacity[]=
 	1000
 	~	
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 competition_mod=
 	0.0002
 	~	 [0.0002,0.0003,1e-05]
-	~VIEW: View 1 DESCRIPTION:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 ********************************************************
 	.Control
