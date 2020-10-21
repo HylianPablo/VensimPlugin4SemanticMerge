@@ -122,16 +122,23 @@ public class Comment {
     }
 
     private static String modify(String equation, String viewName){
-        if(equation.indexOf("<[VIEW]>:")!=-1){
-            return equation;
-        }
         int position = StringUtils.ordinalIndexOf(equation, "~", 2);
         String appendix = viewName.trim();
-        appendix = "<[VIEW]>: "+appendix;
-        return insertString(equation, appendix, position);
+        if(equation.indexOf("<[VIEW]>:")==-1){
+            appendix = "<[VIEW]>: "+appendix;
+            return insertString(equation, appendix, position);
+        }else{
+            return updateViewName(equation, appendix, position);
+        }
     }
 
-    public static String insertString( 
+    private static String updateViewName(String equation, String appendix, int position){
+        String[] viewpart = equation.split("\\<\\[VIEW\\]\\>:");
+        String[] descriptionPart = viewpart[1].split("\\<\\[DESCRIPTION\\]\\>:");
+        return viewpart[0]+"<[VIEW]>: "+appendix+" <[DESCRIPTION]>:"+descriptionPart[1];
+    } 
+
+    private static String insertString( 
         String originalString, 
         String stringToBeInserted, 
         int index) 
