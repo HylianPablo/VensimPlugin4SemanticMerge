@@ -68,6 +68,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.write("    headerSpan : [0, 8]\n"); //Assuming file will always start with {UTF-8}, WILL BE CHANGED
             fw.write("    footerSpan : [" + equationsFooter + ", " + equationsFooter + "]\n");
             fw.write("    children :\n");
+            TEST
             */
 
             fw.close();
