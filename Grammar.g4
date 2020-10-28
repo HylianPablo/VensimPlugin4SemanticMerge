@@ -1,4 +1,4 @@
-grammar Model;
+grammar Grammar;
 
 // A Vensim model is a sequence of equations and subscript ranges.
 

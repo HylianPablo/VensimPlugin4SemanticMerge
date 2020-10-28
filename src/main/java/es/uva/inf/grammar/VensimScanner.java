@@ -1,15 +1,15 @@
 /*
-package es.uva.locomotion.plugin;
+package es.uva.inf.grammar.plugin;
 
-import es.uva.locomotion.parser.visitors.VensimVisitorContext;
-import es.uva.locomotion.service.ServiceController;
-import es.uva.locomotion.parser.*;
-import es.uva.locomotion.rules.VensimCheck;
+import es.uva.inf.grammar.parser.visitors.VensimVisitorContext;
+import es.uva.inf.grammar.service.ServiceController;
+import es.uva.inf.grammar.parser.*;
+import es.uva.inf.grammar.rules.VensimCheck;
 
 
-import es.uva.locomotion.utilities.JsonSymbolTableBuilder;
-import es.uva.locomotion.utilities.SymbolTableGenerator;
-import es.uva.locomotion.utilities.logs.VensimLogger;
+import es.uva.inf.grammar.utilities.JsonSymbolTableBuilder;
+import es.uva.inf.grammar.utilities.SymbolTableGenerator;
+import es.uva.inf.grammar.utilities.logs.VensimLogger;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.sonar.api.batch.fs.InputFile;

@@ -7,12 +7,12 @@ import java.util.List;
 
 public class VensimVisitorContext {
 
-    private GrammarParser.FileContext rootNode;
+    private ModelParser.FileContext rootNode;
     //private List<Issue> issues;
     private SymbolTable parsedTable;
     private SymbolTable dbTable;
 
-    public GrammarParser.FileContext getRootNode() {
+    public ModelParser.FileContext getRootNode() {
         return rootNode;
     }
 
@@ -22,7 +22,7 @@ public class VensimVisitorContext {
     }
     */
 
-    public VensimVisitorContext(GrammarParser.FileContext rootNode, SymbolTable parsedTable, SymbolTable dbTable){
+    public VensimVisitorContext(ModelParser.FileContext rootNode, SymbolTable parsedTable, SymbolTable dbTable){
         this.rootNode = rootNode;
         //issues = new ArrayList<>();
         this.parsedTable = parsedTable;

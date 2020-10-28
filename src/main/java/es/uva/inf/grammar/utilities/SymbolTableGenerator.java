@@ -1,6 +1,6 @@
 package es.uva.inf.grammar.utilities;
 
-import es.uva.inf.grammar.parser.GrammarParser;
+import es.uva.inf.grammar.parser.ModelParser;
 import es.uva.inf.grammar.parser.Symbol;
 import es.uva.inf.grammar.parser.SymbolTable;
 import es.uva.inf.grammar.parser.SymbolType;
@@ -19,7 +19,7 @@ public class SymbolTableGenerator {
     private static final List<String> lookupGeneratorFunctions  = Arrays.asList("GET DIRECT LOOKUPS", "GET XLS LOOKUPS");
 
 
-    public static SymbolTable getSymbolTable(GrammarParser.FileContext context){
+    public static SymbolTable getSymbolTable(ModelParser.FileContext context){
         RawSymbolTableVisitor generator = new RawSymbolTableVisitor();
         SymbolTable rawTable = generator.getSymbolTable(context);
 

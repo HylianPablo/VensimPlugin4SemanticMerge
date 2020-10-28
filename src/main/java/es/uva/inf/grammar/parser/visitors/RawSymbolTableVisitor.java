@@ -9,13 +9,13 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
+public class RawSymbolTableVisitor extends ModelBaseVisitor<Object> {
 
     private SymbolTable table;
     //protected static VensimLogger LOG = VensimLogger.getInstance();
     private static Pattern sequencePattern = Pattern.compile("(.*?)(\\d+)");
 
-    public SymbolTable getSymbolTable(GrammarParser.FileContext context){
+    public SymbolTable getSymbolTable(ModelParser.FileContext context){
         table = new SymbolTable();
         visit(context);
 
@@ -37,7 +37,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Symbol visitSubscriptRange(GrammarParser.SubscriptRangeContext ctx) {
+    public Symbol visitSubscriptRange(ModelParser.SubscriptRangeContext ctx) {
         Symbol subscript = getSymbolOrCreate(table,ctx.Id().getSymbol().getText());
         subscript.addDefinitionLine(getStartLine(ctx));
         subscript.setType(SymbolType.Subscript);
@@ -60,7 +60,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public Symbol visitEquation(GrammarParser.EquationContext ctx) {
+    public Symbol visitEquation(ModelParser.EquationContext ctx) {
         Symbol symbol = visitLhs(ctx.lhs());
         symbol.addDefinitionLine(getStartLine(ctx));
 
@@ -73,7 +73,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public Symbol visitConstraint(GrammarParser.ConstraintContext ctx) {
+    public Symbol visitConstraint(ModelParser.ConstraintContext ctx) {
         Symbol symbol = visitLhs(ctx.lhs());
         symbol.setType(SymbolType.Reality_Check);
         symbol.addDefinitionLine(getStartLine(ctx));
@@ -82,7 +82,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Object visitMacroDefinition(GrammarParser.MacroDefinitionContext ctx) {
+    public Object visitMacroDefinition(ModelParser.MacroDefinitionContext ctx) {
         Symbol symbol = getSymbolOrCreate(table,ctx.macroHeader().Id().getSymbol().getText());
         symbol.setType(SymbolType.Function);
         symbol.addDefinitionLine(getStartLine(ctx));
@@ -91,7 +91,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Symbol visitUnchangeableConstant(GrammarParser.UnchangeableConstantContext ctx) {
+    public Symbol visitUnchangeableConstant(ModelParser.UnchangeableConstantContext ctx) {
         Symbol symbol = visitLhs(ctx.lhs());
         symbol.setType(SymbolType.Constant);
         symbol.addDefinitionLine(getStartLine(ctx));
@@ -99,7 +99,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Symbol visitDataEquation(GrammarParser.DataEquationContext ctx) {
+    public Symbol visitDataEquation(ModelParser.DataEquationContext ctx) {
         Symbol symbol = visitLhs(ctx.lhs());
         symbol.addDefinitionLine(getStartLine(ctx));
 
@@ -110,7 +110,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Symbol visitLookupDefinition(GrammarParser.LookupDefinitionContext ctx) {
+    public Symbol visitLookupDefinition(ModelParser.LookupDefinitionContext ctx) {
         Symbol symbol = visitLhs(ctx.lhs());
         symbol.addDefinitionLine(getStartLine(ctx));
         symbol.setType(SymbolType.Lookup_Table);
@@ -125,7 +125,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Symbol visitStringAssign(GrammarParser.StringAssignContext ctx) {
+    public Symbol visitStringAssign(ModelParser.StringAssignContext ctx) {
         Symbol symbol = visitLhs(ctx.lhs());
         symbol.setType(SymbolType.Constant);
         symbol.addDefinitionLine(getStartLine(ctx));
@@ -135,7 +135,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public Symbol visitSubscriptCopy(GrammarParser.SubscriptCopyContext ctx) {
+    public Symbol visitSubscriptCopy(ModelParser.SubscriptCopyContext ctx) {
 
         Symbol copy = getSymbolOrCreate(table,ctx.copy.getText());
         copy.setType(SymbolType.Subscript);
@@ -148,7 +148,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Symbol visitRealityCheck(GrammarParser.RealityCheckContext ctx) {
+    public Symbol visitRealityCheck(ModelParser.RealityCheckContext ctx) {
         Symbol symbol = visitLhs(ctx.lhs());
         symbol.setType(SymbolType.Reality_Check);
         symbol.addDefinitionLine(getStartLine(ctx));
@@ -160,12 +160,12 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public Symbol visitSubscriptId(GrammarParser.SubscriptIdContext ctx) {
+    public Symbol visitSubscriptId(ModelParser.SubscriptIdContext ctx) {
         return getSymbolOrCreate(table,ctx.Id().getSymbol().getText());
     }
 
     @Override
-    public List<Symbol> visitSubscriptSequence(GrammarParser.SubscriptSequenceContext ctx) {
+    public List<Symbol> visitSubscriptSequence(ModelParser.SubscriptSequenceContext ctx) {
 
 
         try{
@@ -186,7 +186,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
     }
 
-    private List<Symbol> parseSubscriptSequence(GrammarParser.SubscriptSequenceContext ctx) {
+    private List<Symbol> parseSubscriptSequence(ModelParser.SubscriptSequenceContext ctx) {
         Matcher startMatcher = sequencePattern.matcher(ctx.start.getText().trim());
         Matcher endMatcher = sequencePattern.matcher(ctx.end.getText().trim());
 
@@ -226,7 +226,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public Object visitExprOperation(GrammarParser.ExprOperationContext ctx) {
+    public Object visitExprOperation(ModelParser.ExprOperationContext ctx) {
         List<Symbol> symbols = (List<Symbol>) visit(ctx.expr(0));
         symbols.addAll((List<Symbol>) visit(ctx.expr(1)));
 
@@ -236,7 +236,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public Object visitVar(GrammarParser.VarContext ctx) {
+    public Object visitVar(ModelParser.VarContext ctx) {
         Symbol id = getSymbolOrCreate(table,ctx.Id().getSymbol().getText());
 
         List<Symbol> symbols = new ArrayList<>();
@@ -246,12 +246,12 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Object visitConst(GrammarParser.ConstContext ctx) {
+    public Object visitConst(ModelParser.ConstContext ctx) {
         return new ArrayList<Symbol>();
     }
 
     @Override
-    public List<Symbol> visitKeyword(GrammarParser.KeywordContext ctx) {
+    public List<Symbol> visitKeyword(ModelParser.KeywordContext ctx) {
         if (ctx.expr()!=null)
             return (List<Symbol>) visit(ctx.expr());
         else
@@ -260,18 +260,18 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public Object visitParens(GrammarParser.ParensContext ctx) {
+    public Object visitParens(ModelParser.ParensContext ctx) {
         return visit(ctx.expr());
     }
 
     @Override
-    public Object visitWildCard(GrammarParser.WildCardContext ctx) {
+    public Object visitWildCard(ModelParser.WildCardContext ctx) {
         return new ArrayList<Symbol>();
     }
 
 
     @Override
-    public Object visitDelayPArg(GrammarParser.DelayPArgContext ctx) {
+    public Object visitDelayPArg(ModelParser.DelayPArgContext ctx) {
         List<Symbol> symbols = new ArrayList<>();
         Symbol delayP = getSymbolOrCreate(table,"DELAYP");
         List<Symbol> input = (List<Symbol>) visit(ctx.expr(0));
@@ -292,7 +292,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Object visitTabbedArray(GrammarParser.TabbedArrayContext ctx) {
+    public Object visitTabbedArray(ModelParser.TabbedArrayContext ctx) {
         List<Symbol> symbols = new ArrayList<>();
         Symbol tabbedFunc = getSymbolOrCreate(table,"TABBED ARRAY");
 
@@ -301,14 +301,14 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Object visitSignExpr(GrammarParser.SignExprContext ctx) {
+    public Object visitSignExpr(ModelParser.SignExprContext ctx) {
         return visit(ctx.exprAllowSign());
 
     }
 
 
     @Override
-    public List<Symbol> visitCall(GrammarParser.CallContext ctx) {
+    public List<Symbol> visitCall(ModelParser.CallContext ctx) {
         String token = ctx.Id().getSymbol().getText();
         Symbol call;
 
@@ -334,9 +334,9 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public Object visitExprList(GrammarParser.ExprListContext ctx) {
+    public Object visitExprList(ModelParser.ExprListContext ctx) {
         List<Symbol> symbols = new ArrayList<>();
-        for(GrammarParser.ExprContext expr: ctx.expr()){
+        for(ModelParser.ExprContext expr: ctx.expr()){
             symbols.addAll((List<Symbol>)visit(expr));
         }
         return symbols;
@@ -344,12 +344,12 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public List<Symbol> visitIndexList(GrammarParser.IndexListContext ctx) {
+    public List<Symbol> visitIndexList(ModelParser.IndexListContext ctx) {
         List<Symbol> symbols = new ArrayList<>();
 
 
         if(!ctx.subscriptId().isEmpty()){
-            for(GrammarParser.SubscriptIdContext subscript: ctx.subscriptId()){
+            for(ModelParser.SubscriptIdContext subscript: ctx.subscriptId()){
                 symbols.add( visitSubscriptId(subscript));
             }
         }
@@ -359,12 +359,12 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public List<Symbol> visitSubscriptValueList(GrammarParser.SubscriptValueListContext ctx) {
+    public List<Symbol> visitSubscriptValueList(ModelParser.SubscriptValueListContext ctx) {
         List<Symbol> symbols = new ArrayList<>();
 
 
         if(!ctx.subscriptId().isEmpty()){
-            for(GrammarParser.SubscriptIdContext value: ctx.subscriptId()){
+            for(ModelParser.SubscriptIdContext value: ctx.subscriptId()){
                 Symbol valueSymbol = visitSubscriptId(value);
                 valueSymbol.setType(SymbolType.Subscript_Value);
                 valueSymbol.addDefinitionLine(getStartLine(value));
@@ -374,7 +374,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
         }
 
         if(!ctx.subscriptSequence().isEmpty()){
-            for(GrammarParser.SubscriptSequenceContext sequence: ctx.subscriptSequence()){
+            for(ModelParser.SubscriptSequenceContext sequence: ctx.subscriptSequence()){
                 symbols.addAll(visitSubscriptSequence(sequence));
             }
         }
@@ -382,28 +382,28 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public List<Symbol> visitLookup(GrammarParser.LookupContext ctx) {
+    public List<Symbol> visitLookup(ModelParser.LookupContext ctx) {
         return new ArrayList<>();
     }
 
 
     @Override
-    public List<Symbol> visitLookupPoint(GrammarParser.LookupPointContext ctx) {
+    public List<Symbol> visitLookupPoint(ModelParser.LookupPointContext ctx) {
 
         return  new ArrayList<>();
     }
 
     @Override
-    public List<Symbol> visitConstList(GrammarParser.ConstListContext ctx) {
+    public List<Symbol> visitConstList(ModelParser.ConstListContext ctx) {
         return new ArrayList<>();
     }
 
     @Override
-    public List<Symbol> visitLookupPointList(GrammarParser.LookupPointListContext ctx) {
+    public List<Symbol> visitLookupPointList(ModelParser.LookupPointListContext ctx) {
         List<Symbol> symbols = new ArrayList<>();
 
 
-        for(GrammarParser.LookupPointContext point:ctx.lookupPoint()){
+        for(ModelParser.LookupPointContext point:ctx.lookupPoint()){
             symbols.addAll(visitLookupPoint(point));
         }
 
@@ -413,7 +413,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public List<Symbol> visitLookupRange(GrammarParser.LookupRangeContext ctx) {
+    public List<Symbol> visitLookupRange(ModelParser.LookupRangeContext ctx) {
         List<Symbol> symbols = new ArrayList<>();
 
         symbols.addAll(visitLookupPoint(ctx.lookupPoint(0)));
@@ -427,18 +427,18 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
 
 
     @Override
-    public List<Symbol> visitReferenceLine(GrammarParser.ReferenceLineContext ctx) {
+    public List<Symbol> visitReferenceLine(ModelParser.ReferenceLineContext ctx) {
         return visitLookupPointList(ctx.lookupPointList());
     }
 
     @Override
-    public List<Symbol> visitNumberList(GrammarParser.NumberListContext ctx) {
+    public List<Symbol> visitNumberList(ModelParser.NumberListContext ctx) {
         return new ArrayList<>();
     }
 
 
     @Override
-    public Symbol visitSymbolWithDoc(GrammarParser.SymbolWithDocContext ctx) {
+    public Symbol visitSymbolWithDoc(ModelParser.SymbolWithDocContext ctx) {
         Object symbolObj = visitSymbolWithDocDefinition(ctx.symbolWithDocDefinition());
         if(!(symbolObj instanceof Symbol))
             throw new IllegalStateException("The visitor returned an object that isn't of type Symbol. Actual object: "+ symbolObj);
@@ -459,7 +459,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public Symbol visitLhs(GrammarParser.LhsContext ctx) {
+    public Symbol visitLhs(ModelParser.LhsContext ctx) {
        Symbol id =  getSymbolOrCreate(table,ctx.Id().getText());
 
        if(ctx.indexes!=null) {
@@ -471,7 +471,7 @@ public class RawSymbolTableVisitor extends GrammarBaseVisitor<Object> {
     }
 
     @Override
-    public List<Symbol> visitSubscript(GrammarParser.SubscriptContext ctx) {
+    public List<Symbol> visitSubscript(ModelParser.SubscriptContext ctx) {
        return  visitIndexList(ctx.indexList());
     }
 
