@@ -1,0 +1,63 @@
+---
+type: file
+name: Bunny.mdl
+locationSpan : {start: [1,0], end: [122,7]}
+footerSpan : [0,-1]
+parsingErrorsDetected : false
+children:
+  - type : equations
+    locationSpan : {start: [1,0], end: [70,1]}
+    headerSpan : [0, 8]
+    footerSpan : [988, 988]
+    children :
+    - type : equation
+      name : birf rate
+      locationSpan : {start: [2,0], end: [6,2]}
+      span : [9, 52]
+    - type : equation
+      name : birf rate 0
+      locationSpan : {start: [7,0], end: [11,2]}
+      span : [53, 98]
+    - type : equation
+      name : bunnies ex
+      locationSpan : {start: [12,0], end: [17,2]}
+      span : [99, 157]
+    - type : equation
+      name : bunnies 0
+      locationSpan : {start: [18,0], end: [23,2]}
+      span : [158, 216]
+    - type : equation
+      name : bunnification
+      locationSpan : {start: [24,0], end: [28,2]}
+      span : [217, 296]
+    - type : equation
+      name : bunnification 0
+      locationSpan : {start: [29,0], end: [33,2]}
+      span : [297, 392]
+    - type : equation
+      name : carrying capacity
+      locationSpan : {start: [34,0], end: [38,2]}
+      span : [393, 433]
+    - type : equation
+      name : competition
+      locationSpan : {start: [39,0], end: [43,2]}
+      span : [434, 492]
+    - type : equation
+      name : FINAL TIME
+      locationSpan : {start: [50,0], end: [54,2]}
+      span : [659, 731]
+    - type : equation
+      name : INITIAL TIME
+      locationSpan : {start: [55,0], end: [59,2]}
+      span : [732, 807]
+    - type : equation
+      name : SAVEPER
+      locationSpan : {start: [60,0], end: [65,2]}
+      span : [808, 908]
+    - type : equation
+      name : TIME STEP
+      locationSpan : {start: [66,0], end: [70,2]}
+      span : [909, 987]
+  - type : sketches
+    locationSpan : {start: [71,0], end: [122,7]}
+    span : [989, 2590]
