@@ -31,8 +31,8 @@ import java.util.List;
 public class MainBazaco {
    public static void main(String args[]){
        try {
-            String content = new String(Files.readAllBytes(Paths.get("Bunny.mdl")),StandardCharsets.UTF_8);
-            String module = "Bunny.mdl";
+            String module = "VensimExampleModels/SHODOR/examples.mdl";
+            String content = new String(Files.readAllBytes(Paths.get(module)),StandardCharsets.UTF_8);
 
             JsonSymbolTableBuilder jsonBuilder = new JsonSymbolTableBuilder();
 
@@ -59,7 +59,7 @@ public class MainBazaco {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            //System.out.println(tree.toStringTree(parser)); USED TO DEBUG
+            //System.out.println(tree.toStringTree(parser));// USED TO DEBUG
 
             //GUI
             /*
@@ -76,7 +76,7 @@ public class MainBazaco {
             */
 
             EvalVisitor evalVisitor = new EvalVisitor();
-            evalVisitor.setInput("Bunny.mdl");
+            evalVisitor.setInput(module);
             evalVisitor.setOutput("YAML.yaml");
             evalVisitor.visit(tree);
 

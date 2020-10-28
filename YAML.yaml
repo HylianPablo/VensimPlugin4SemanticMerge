@@ -1,63 +1,115 @@
 ---
 type: file
-name: Bunny.mdl
-locationSpan : {start: [1,0], end: [122,7]}
+name: VensimExampleModels/SHODOR/examples.mdl
+locationSpan : {start: [1,0], end: [244,5]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
   - type : equations
-    locationSpan : {start: [1,0], end: [70,1]}
+    locationSpan : {start: [1,0], end: [146,2]}
     headerSpan : [0, 8]
-    footerSpan : [988, 988]
+    footerSpan : [1915, 1915]
     children :
     - type : equation
-      name : birf rate
+      name : "1. Have"
       locationSpan : {start: [2,0], end: [6,2]}
-      span : [9, 52]
+      span : [9, 51]
     - type : equation
-      name : birf rate 0
-      locationSpan : {start: [7,0], end: [11,2]}
-      span : [53, 98]
+      name : "2. Have"
+      locationSpan : {start: [7,0], end: [12,2]}
+      span : [52, 110]
     - type : equation
-      name : bunnies ex
-      locationSpan : {start: [12,0], end: [17,2]}
-      span : [99, 157]
+      name : "3. Have"
+      locationSpan : {start: [13,0], end: [18,2]}
+      span : [111, 167]
     - type : equation
-      name : bunnies 0
-      locationSpan : {start: [18,0], end: [23,2]}
-      span : [158, 216]
+      name : "4. Have"
+      locationSpan : {start: [19,0], end: [24,2]}
+      span : [168, 224]
     - type : equation
-      name : bunnification
-      locationSpan : {start: [24,0], end: [28,2]}
-      span : [217, 296]
+      name : A
+      locationSpan : {start: [25,0], end: [30,2]}
+      span : [225, 276]
     - type : equation
-      name : bunnification 0
-      locationSpan : {start: [29,0], end: [33,2]}
-      span : [297, 392]
+      name : A2
+      locationSpan : {start: [31,0], end: [36,2]}
+      span : [277, 332]
     - type : equation
-      name : carrying capacity
-      locationSpan : {start: [34,0], end: [38,2]}
-      span : [393, 433]
+      name : A3
+      locationSpan : {start: [37,0], end: [42,2]}
+      span : [333, 389]
     - type : equation
-      name : competition
-      locationSpan : {start: [39,0], end: [43,2]}
-      span : [434, 492]
+      name : B
+      locationSpan : {start: [43,0], end: [48,2]}
+      span : [390, 438]
+    - type : equation
+      name : B2
+      locationSpan : {start: [49,0], end: [54,2]}
+      span : [439, 491]
+    - type : equation
+      name : B3
+      locationSpan : {start: [55,0], end: [60,2]}
+      span : [492, 545]
+    - type : equation
+      name : change per dt
+      locationSpan : {start: [61,0], end: [65,2]}
+      span : [546, 590]
+    - type : equation
+      name : constant change
+      locationSpan : {start: [66,0], end: [70,2]}
+      span : [591, 634]
+    - type : equation
+      name : constant flow
+      locationSpan : {start: [71,0], end: [75,2]}
+      span : [635, 668]
+    - type : equation
+      name : first order flow
+      locationSpan : {start: [76,0], end: [80,2]}
+      span : [669, 709]
+    - type : equation
+      name : k
+      locationSpan : {start: [81,0], end: [85,2]}
+      span : [710, 742]
+    - type : equation
+      name : k0
+      locationSpan : {start: [86,0], end: [90,2]}
+      span : [743, 776]
+    - type : equation
+      name : k1
+      locationSpan : {start: [91,0], end: [95,2]}
+      span : [777, 812]
+    - type : equation
+      name : k2
+      locationSpan : {start: [96,0], end: [100,2]}
+      span : [813, 855]
+    - type : equation
+      name : linear Change
+      locationSpan : {start: [101,0], end: [105,2]}
+      span : [856, 897]
+    - type : equation
+      name : second order flow
+      locationSpan : {start: [106,0], end: [110,2]}
+      span : [898, 940]
+    - type : equation
+      name : max unconv gas growth extraction EJ
+      locationSpan : {start: [110,0], end: [119,2]}
+      span : [941, 1414]
     - type : equation
       name : FINAL TIME
-      locationSpan : {start: [50,0], end: [54,2]}
-      span : [659, 731]
+      locationSpan : {start: [125,0], end: [129,2]}
+      span : [1582, 1651]
     - type : equation
       name : INITIAL TIME
-      locationSpan : {start: [55,0], end: [59,2]}
-      span : [732, 807]
+      locationSpan : {start: [130,0], end: [134,2]}
+      span : [1652, 1724]
     - type : equation
       name : SAVEPER
-      locationSpan : {start: [60,0], end: [65,2]}
-      span : [808, 908]
+      locationSpan : {start: [135,0], end: [140,2]}
+      span : [1725, 1822]
     - type : equation
       name : TIME STEP
-      locationSpan : {start: [66,0], end: [70,2]}
-      span : [909, 987]
+      locationSpan : {start: [141,0], end: [146,2]}
+      span : [1823, 1911]
   - type : sketches
-    locationSpan : {start: [71,0], end: [122,7]}
-    span : [989, 2590]
+    locationSpan : {start: [147,0], end: [244,5]}
+    span : [1912, 5270]

@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.antlr.v4.runtime.misc.Interval;
@@ -44,6 +45,20 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             String viewsDelimiter = "aaa---///";
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] graphs = text.split(viewsDelimiter,2);
+
+            //String[] noControl = graphs[0].split("\t.Control",2); 
+            //String[] equationsLines = noControl[0].split("\\|");
+            ArrayList<Boolean> newLinesInEquation = checkForNewLines(input);
+            /*
+            for(int i=0;i<equationsLines.length;i++){
+                newLinesInEquation.add(equationsLines[i].split("\n").length);
+            }
+            */
+            /*
+            for(int i=0;i<newLinesInEquation.size();i++){
+                System.out.println(newLinesInEquation.get(i));
+            }
+            */
             
             equationsEndLine = graphs[0].split("\n").length;
 
@@ -71,7 +86,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.write("parsingErrorsDetected : false\n");
             fw.write("children:\n");
             fw.write("  - type : equations\n");
-            fw.write("    locationSpan : {start: [1,0], end: [" + (equationsEndLine-1) + ",1]}\n");
+            fw.write("    locationSpan : {start: [1,0], end: [" + (equationsEndLine-1) + ",2]}\n");
             fw.write("    headerSpan : [0, 8]\n"); //Assuming file will always start with {UTF-8}, WILL BE CHANGED
             fw.write("    footerSpan : [" + equationsFooter + ", " + equationsFooter + "]\n");
             fw.write("    children :\n");
@@ -86,19 +101,30 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 String equation = ctx.start.getInputStream().getText(interval);
                 if(equation.indexOf("FINAL TIME")!=-1){ //Control is reached
                     locationSpanStartEq+=6;
-                    initCharEq+=166;
+                    initCharEq+=167;
+                }
+                int endCharEq;
+                if(i<newLinesInEquation.size()){
+                    if(newLinesInEquation.get(i)){
+                        endCharEq = equation.length()+3; //\r \n + last \n that is not read by equation
+                    }else{
+                        endCharEq = equation.length()+1;
+                        locationSpanStartEq-=1;
+                    }
+                }else{
+                    endCharEq = equation.length()+3; //\r \n + last \n that is not read by equation
                 }
                 int equationNewLines = equation.split("\n").length; //One line for UTF-8 and other for \r\n
                 //System.out.println(equationNewLines);
                 fw.write("      locationSpan : {start: ["+locationSpanStartEq+",0], end: [" + (locationSpanStartEq+equationNewLines) + "," + "2" + "]}\n"); //It will always end in '\r \n'
                 locationSpanStartEq=locationSpanStartEq+equationNewLines+1;
-                int endCharEq = equation.length()+3; //\r \n + last \n that is not read by equation
+                
                 fw.write("      span : [" + initCharEq + ", " + (endCharEq+initCharEq) + "]\n");
                 initCharEq=initCharEq+endCharEq +1; //+1 to get into next line
             }
             fw.write("  - type : sketches\n");
             fw.write("    locationSpan : {start: ["+locationSpanStartEq+",0], end: [" + lastLine + ","+lastLineLength+"]}\n");
-            fw.write("    span : [" + (initCharEq+1) + ", " + (initCharEq+graphs[1].length()+9) + "]\n"); // 9 characters representing \\\---///, which was deleted in split()
+            fw.write("    span : [" + (initCharEq) + ", " + (initCharEq+graphs[1].length()+8) + "]\n"); // 9 characters representing \\\---///, which was deleted in split(), -1 because last char not readed
             
 
             fw.close();
@@ -134,6 +160,30 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             e.printStackTrace();
         }finally{
             return len;
+        }
+    }
+
+    private ArrayList<Boolean> checkForNewLines(String input){
+        ArrayList<Boolean> array = new ArrayList<>();
+        int len=0;
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader(input));
+            String line;
+            while (true){
+                line = reader.readLine();
+                if(line.indexOf("\t.Control")!=-1){
+                    break;
+                }else if(line.indexOf("|")!=-1){
+                    String nextLine = reader.readLine();
+                    array.add(nextLine.isBlank());
+                }
+            }
+
+            reader.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }finally{
+            return array;
         }
     }
 
