@@ -37,7 +37,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             int lastLineLength = lastLineLength(input, lastLine) + 2;
             
             int equationsEndLine=0;
-            int equationsHeader=0;
+            //int equationsHeader=0;
             int equationsFooter=9;
 
             String text = new String(Files.readAllBytes(Paths.get(input)),StandardCharsets.UTF_8);
@@ -62,7 +62,9 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             
             equationsEndLine = graphs[0].split("\n").length;
 
+
             List<ModelParser.SymbolWithDocContext> equations = ctx.model().symbolWithDoc();
+            /*
             for(int i=0;i<equations.size();i++){
                 int a = equations.get(i).start.getStartIndex();
                 int b = equations.get(i).stop.getStopIndex();
@@ -72,8 +74,10 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 equationsFooter+=2; //Posiblemente la última línea (sin contar la línea de \r\n no cuente el salto de línea)
                 equationsFooter+=2; // \r + \n
             }
+            */
             equationsFooter+=166; //Control**** characters APROX, MUST BE CHANGED
 
+            equationsFooter=graphs[0].length()-3;
 
             File outF = new File(output);
             FileWriter fw = new FileWriter(outF);
@@ -104,19 +108,22 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     initCharEq+=167;
                 }
                 int endCharEq;
+                int endColumnLocationSpan = 2;
+                int equationNewLines = equation.split("\n").length; //One line for UTF-8 and other for \r\n
                 if(i<newLinesInEquation.size()){
                     if(newLinesInEquation.get(i)){
                         endCharEq = equation.length()+3; //\r \n + last \n that is not read by equation
                     }else{
                         endCharEq = equation.length()+1;
-                        locationSpanStartEq-=1;
+                        //locationSpanStartEq-=1;
+                        endColumnLocationSpan = equation.split("\n")[equationNewLines-1].length() + 2; //\r \n
+                        equationNewLines--;
                     }
                 }else{
                     endCharEq = equation.length()+3; //\r \n + last \n that is not read by equation
                 }
-                int equationNewLines = equation.split("\n").length; //One line for UTF-8 and other for \r\n
                 //System.out.println(equationNewLines);
-                fw.write("      locationSpan : {start: ["+locationSpanStartEq+",0], end: [" + (locationSpanStartEq+equationNewLines) + "," + "2" + "]}\n"); //It will always end in '\r \n'
+                fw.write("      locationSpan : {start: ["+locationSpanStartEq+",0], end: [" + (locationSpanStartEq+equationNewLines) + "," + endColumnLocationSpan + "]}\n"); //It will always end in '\r \n'
                 locationSpanStartEq=locationSpanStartEq+equationNewLines+1;
                 
                 fw.write("      span : [" + initCharEq + ", " + (endCharEq+initCharEq) + "]\n");
@@ -165,7 +172,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
 
     private ArrayList<Boolean> checkForNewLines(String input){
         ArrayList<Boolean> array = new ArrayList<>();
-        int len=0;
+        //int len=0;
         try{
             BufferedReader reader = new BufferedReader(new FileReader(input));
             String line;

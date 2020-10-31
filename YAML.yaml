@@ -8,7 +8,7 @@ children:
   - type : equations
     locationSpan : {start: [1,0], end: [146,2]}
     headerSpan : [0, 8]
-    footerSpan : [1915, 1915]
+    footerSpan : [1911, 1911]
     children :
     - type : equation
       name : "1. Have"
@@ -88,11 +88,11 @@ children:
       span : [856, 897]
     - type : equation
       name : second order flow
-      locationSpan : {start: [106,0], end: [110,2]}
+      locationSpan : {start: [106,0], end: [109,7]}
       span : [898, 940]
     - type : equation
       name : max unconv gas growth extraction EJ
-      locationSpan : {start: [110,0], end: [119,2]}
+      locationSpan : {start: [110,0], end: [118,4]}
       span : [941, 1414]
     - type : equation
       name : FINAL TIME
