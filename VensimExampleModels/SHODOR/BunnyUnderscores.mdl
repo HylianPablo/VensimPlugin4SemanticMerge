@@ -25,7 +25,7 @@ bunnies 0= INTEG (
 	~	
 	~		|
 
-bunnification()=
+bunnification=
 	birf rate*bunnies*(1-bunnies/carrying capacity)
 	~	
 	~		|
@@ -35,7 +35,7 @@ bunnification 0=
 	~	
 	~		|
 
-carrying capacity[]=
+carrying capacity[example]=
 	1000
 	~	
 	~		|

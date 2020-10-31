@@ -9,7 +9,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.antlr.v4.runtime.misc.Interval;
 
@@ -96,14 +98,37 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.write("    children :\n");
             int locationSpanStartEq = 2; //Assuming there is always an encoding line {UTF-8}
             int initCharEq = 9; //Assuming there is always an encoding line {UTF-8}
+            BufferedReader reader = new BufferedReader(new FileReader(input));
+            reader.readLine();//UTF-8
             for(int i =0; i<equations.size();i++){
                 fw.write("    - type : equation\n");
-                fw.write("      name : "+equations.get(i).symbolWithDocDefinition().equation().lhs().Id().getText()+"\n");
+                String equationText;
+                if(equations.get(i).symbolWithDocDefinition().equation()!=null){
+                    equationText=equations.get(i).symbolWithDocDefinition().equation().lhs().Id().getText();
+                }else{
+                    equationText=equations.get(i).symbolWithDocDefinition().subscriptRange().Id().getText();
+                }
+                fw.write("      name : "+equationText+"\n");
                 int a = equations.get(i).start.getStartIndex();
                 int b = equations.get(i).stop.getStopIndex();
                 Interval interval = new Interval(a,b);
                 String equation = ctx.start.getInputStream().getText(interval);
-                if(equation.indexOf("FINAL TIME")!=-1){ //Control is reached
+                //System.out.println(equation);
+                //System.out.println(equation.split("\n").length);
+                for(int j=0;j<equation.split("\n").length;j++){
+                    reader.readLine();
+                }
+                Set<String> equationFollowingLines = new HashSet<String>();
+                reader.mark(400);
+                for(int j =0;j<3;j++){
+                    equationFollowingLines.add(reader.readLine());
+                }
+                reader.reset();
+                //System.out.println(actualLineRead);
+                //equationFollowingLines.forEach(System.out::println);
+                //System.out.println("NEXT");
+                if(equationFollowingLines.contains("\t.Control")){ //Control is reached MODIFICAR, NO ES NECESARIO LLEGAR A FINAL TIME
+                    System.out.println("LLEGA");
                     locationSpanStartEq+=6;
                     initCharEq+=167;
                 }
@@ -113,6 +138,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 if(i<newLinesInEquation.size()){
                     if(newLinesInEquation.get(i)){
                         endCharEq = equation.length()+3; //\r \n + last \n that is not read by equation
+                        reader.readLine();
                     }else{
                         endCharEq = equation.length()+1;
                         //locationSpanStartEq-=1;
@@ -129,9 +155,10 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 fw.write("      span : [" + initCharEq + ", " + (endCharEq+initCharEq) + "]\n");
                 initCharEq=initCharEq+endCharEq +1; //+1 to get into next line
             }
+            reader.close();
             fw.write("  - type : sketches\n");
             fw.write("    locationSpan : {start: ["+locationSpanStartEq+",0], end: [" + lastLine + ","+lastLineLength+"]}\n");
-            fw.write("    span : [" + (initCharEq) + ", " + (initCharEq+graphs[1].length()+8) + "]\n"); // 9 characters representing \\\---///, which was deleted in split(), -1 because last char not readed
+            fw.write("    span : [" + (initCharEq) + ", " + (initCharEq+graphs[1].length()+10) + "]\n"); // 9 characters representing \\\---///, which was deleted in split(), +1 because last char not readed
             
 
             fw.close();

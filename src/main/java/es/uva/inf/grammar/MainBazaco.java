@@ -31,7 +31,7 @@ import java.util.List;
 public class MainBazaco {
    public static void main(String args[]){
        try {
-            String module = "VensimExampleModels/SHODOR/examples.mdl";
+            String module = "VensimExampleModels/SHODOR/Bunny.mdl";
             String content = new String(Files.readAllBytes(Paths.get(module)),StandardCharsets.UTF_8);
 
             JsonSymbolTableBuilder jsonBuilder = new JsonSymbolTableBuilder();
@@ -75,11 +75,12 @@ public class MainBazaco {
             frame.setVisible(true);
             */
 
+            
             EvalVisitor evalVisitor = new EvalVisitor();
             evalVisitor.setInput(module);
             evalVisitor.setOutput("YAML.yaml");
             evalVisitor.visit(tree);
-
+            
 
         }catch (ParseCancellationException e){
             e.printStackTrace();
