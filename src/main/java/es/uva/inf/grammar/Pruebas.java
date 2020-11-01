@@ -7,6 +7,6 @@ public class Pruebas {
 "********************************************************~"+
 "		Simulation Control Parameters"+
 "	|";
-        System.out.println(test.length());
+        System.out.println("\\\\\\---///");
    } 
 }

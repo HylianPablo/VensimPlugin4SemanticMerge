@@ -27,7 +27,7 @@ public class CommentTest {
             int lines = 0;
             while (reader.readLine() != null) lines++;
             reader.close();
-            assertSame(122,lines); //Last newline is not counted
+            assertSame(127,lines); //Last newline is not counted
 
             reader = new BufferedReader(new FileReader("test1.mdl"));
             Set<Integer> positions = new HashSet<Integer>();
@@ -189,11 +189,11 @@ public class CommentTest {
             int lines = 0;
             while (reader.readLine() != null) lines++;
             reader.close();
-            assertEquals(137,lines); //Last newline is not counted
+            assertEquals(139,lines); //Last newline is not counted
 
             reader = new BufferedReader(new FileReader("test6.mdl"));
             Set<Integer> positions1 = new HashSet<Integer>();
-            positions1.addAll(Arrays.asList(new Integer[] {3, 8, 13, 19, 25, 30, 35, 40, 45})); 
+            positions1.addAll(Arrays.asList(new Integer[] {3, 7, 13, 19, 26, 33, 39, 45})); 
             for(int i=0;i<50;i++){
                 String line = reader.readLine();
                 if(positions1.contains(i)){

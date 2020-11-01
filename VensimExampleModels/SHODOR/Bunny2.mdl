@@ -2,44 +2,44 @@
 birf rate=
 	0.5
 	~	 [0,1,0.001]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 birf rate 0=
 	0.5
 	~	 [0,1,0.001]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 bunnies= INTEG (
 	bunnification,
 		2)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 bunnies 0= INTEG (
 	bunnification 0,
 		2)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 bunnification=
 	birf rate*bunnies*(1-bunnies/carrying capacity)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 bunnification 0=
 	birf rate 0*bunnies 0 - competition*bunnies 0*(bunnies 0-1)/2
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 carrying capacity=
-	1000
+	2000
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 competition=
 	0.0002
 	~	 [0.0002,0.0003,1e-05]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 pprofilePopulation:
 	ptypePop, ppriorityPop, pwidthPop, pextraPop
@@ -54,23 +54,23 @@ pprofilePopulation:
 
 FINAL TIME  = 30
 	~	Month
-	~	The final time for the simulation.
+	~	The final time for the simulationnnn.
 	|
 
 INITIAL TIME  = 0
 	~	Month
-	~	The initial time for the simulation.
+	~	The initial time for the simmmmulation.
 	|
 
 SAVEPER  = 
         TIME STEP
 	~	Month [0,?]
-	~	The frequency with which output is stored.
+	~	The frequency with which output is ssstored.
 	|
 
 TIME STEP  = 0.25
 	~	Month [0,?]
-	~	The time step for the simulation.
+	~	The time step for the siiiiimulation.
 	|
 
 \\\---/// Sketch information - do not modify anything except names

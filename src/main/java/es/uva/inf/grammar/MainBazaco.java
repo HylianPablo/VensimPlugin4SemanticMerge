@@ -21,76 +21,97 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class MainBazaco {
-   public static void main(String args[]){
-       try {
-            String module = "VensimExampleModels/SHODOR/Bunny.mdl";
-            String content = new String(Files.readAllBytes(Paths.get(module)),StandardCharsets.UTF_8);
+    public static void main(String args[]) {
+        try (PrintWriter out = new PrintWriter(args[1])) {
+            out.println("READY");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
+        Scanner scanner = new Scanner(System.in);
+
+        String firstFile = scanner.nextLine();
+        String firstEncoding = scanner.nextLine();
+        String firstFileOutput = scanner.nextLine();
+        parseFile(firstFile, firstFileOutput);
+        System.out.println("OK");
+
+        String secondFile = scanner.nextLine();
+        String secondEncoding = scanner.nextLine();
+        String secondFileOutput = scanner.nextLine();
+        parseFile(secondFile, secondFileOutput);
+        System.out.println("OK");
+
+        String end = scanner.nextLine();
+        scanner.close();
+        if (end.equals("end")) {
+            return;
+        }
+    }
+
+    private static void parseFile(String input, String output) {
+        try {
+            String module = input;
+            String content = new String(Files.readAllBytes(Paths.get(module)), StandardCharsets.UTF_8);
+
+            /*
             JsonSymbolTableBuilder jsonBuilder = new JsonSymbolTableBuilder();
 
             ModelParser.FileContext root = getParseTree(content);
 
-
             SymbolTable table = SymbolTableGenerator.getSymbolTable(root);
-            jsonBuilder.addSymbolTable(module,table);
+            jsonBuilder.addSymbolTable(module, table);
 
             SymbolTable dbTable = null;
 
             VensimVisitorContext visitorContext = new VensimVisitorContext(root, table, dbTable);
 
             generateJsonOutput(jsonBuilder);
-
-            /*
-            for(Symbol symbol:table.getSymbols()){
-                System.out.println(symbol);
-            }
             */
+            /*
+             * for(Symbol symbol:table.getSymbols()){ System.out.println(symbol); }
+             */
 
             CharStream charstream = CharStreams.fromFileName(module);
             ModelLexer lexer = new ModelLexer(charstream);
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            //System.out.println(tree.toStringTree(parser));// USED TO DEBUG
+            // System.out.println(tree.toStringTree(parser));// USED TO DEBUG
 
-            //GUI
+            // GUI
             /*
-            JFrame frame = new JFrame("Antlr AST");
-            JPanel panel = new JPanel();
-            TreeViewer viewer = new TreeViewer(Arrays.asList(
-                parser.getRuleNames()),tree);
-            viewer.setScale(0.5); // Scale a little
-            panel.add(viewer);
-            frame.add(panel);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setVisible(true);
-            */
+             * JFrame frame = new JFrame("Antlr AST"); JPanel panel = new JPanel();
+             * TreeViewer viewer = new TreeViewer(Arrays.asList(
+             * parser.getRuleNames()),tree); viewer.setScale(0.5); // Scale a little
+             * panel.add(viewer); frame.add(panel);
+             * frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); frame.pack();
+             * frame.setVisible(true);
+             */
 
-            
             EvalVisitor evalVisitor = new EvalVisitor();
             evalVisitor.setInput(module);
-            evalVisitor.setOutput("YAML.yaml");
+            evalVisitor.setOutput(output);
             evalVisitor.visit(tree);
-            
-
-        }catch (ParseCancellationException e){
+        } catch (ParseCancellationException e) {
             e.printStackTrace();
-        }catch(IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
-   }
+    }
 
-   protected static void generateJsonOutput(JsonSymbolTableBuilder jsonBuilder) {
-       JsonArray symbolTable =  jsonBuilder.build();
+    protected static void generateJsonOutput(JsonSymbolTableBuilder jsonBuilder) {
+        JsonArray symbolTable = jsonBuilder.build();
 
         try {
 
@@ -104,7 +125,7 @@ public class MainBazaco {
 
     }
 
-    protected static ModelParser.FileContext getParseTree(String file_content){
+    protected static ModelParser.FileContext getParseTree(String file_content) {
         ModelLexer lexer = new ModelLexer(CharStreams.fromString(file_content));
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);

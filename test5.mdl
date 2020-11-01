@@ -25,7 +25,7 @@ bunnies 0= INTEG (
 	~	
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
-bunnification()=
+bunnification=
 	birf rate*bunnies*(1-bunnies/carrying capacity)
 	~	
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
@@ -35,7 +35,7 @@ bunnification 0=
 	~	
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
-carrying capacity[]=
+carrying capacity[example]=
 	1000
 	~	
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
