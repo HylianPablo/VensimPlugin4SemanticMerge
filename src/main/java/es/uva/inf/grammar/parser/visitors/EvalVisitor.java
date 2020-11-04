@@ -59,6 +59,9 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
 
             File outF = new File(output);
             FileWriter fw = new FileWriter(outF);
+
+            int extraLocationSpan =0;
+            int extraCharsEq = 0;
             
             fw.write("---\n");
             fw.write("type: file\n");
@@ -100,8 +103,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 }
                 reader.reset();
                 if(equationFollowingLines.contains("\t.Control")){ //Control is reached MODIFICAR, NO ES NECESARIO LLEGAR A FINAL TIME
-                    locationSpanStartEq+=6;
-                    initCharEq+=167;    //Added in order to match Control Delimiter Characters
+                    extraLocationSpan=6;
+                    extraCharsEq=167;    //Added in order to match Control Delimiter Characters
                 }
                 int endCharEq;
                 int endColumnLocationSpan = 2;
@@ -123,11 +126,16 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     equationNewLines--;
                     endColumnLocationSpan = 4; //\r \n
                 }
-                fw.write("      locationSpan : {start: ["+locationSpanStartEq+", 0], end: [" + (locationSpanStartEq+equationNewLines) + ", " + endColumnLocationSpan + "]}\n"); //It will always end in '\r \n'
+                fw.write("      locationSpan : {start: ["+locationSpanStartEq+", 0], end: [" + (locationSpanStartEq+equationNewLines+extraLocationSpan) + ", " + endColumnLocationSpan + "]}\n"); //It will always end in '\r \n'
                 locationSpanStartEq=locationSpanStartEq+equationNewLines+1;
                 
-                fw.write("      span : [" + initCharEq + ", " + (endCharEq+initCharEq) + "]\n");
+                fw.write("      span : [" + initCharEq + ", " + (endCharEq+initCharEq+extraCharsEq) + "]\n");
                 initCharEq=initCharEq+endCharEq +1; //+1 to get into next line
+
+                locationSpanStartEq+=extraLocationSpan;
+                extraLocationSpan=0;
+                initCharEq+=extraCharsEq;
+                extraCharsEq=0;
             }
             reader.close();
             fw.write("  - type : sketches\n");

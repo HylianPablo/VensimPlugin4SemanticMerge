@@ -15,14 +15,14 @@ bunnies= INTEG (
 	~	
 	~		|
 
-bunnies 0= INTEG (
-	bunnification 0,
-		2)
+bunnification=
+	birf rate*bunnies*(1-bunnies/carrying capacity)
 	~	
 	~		|
 
-bunnification=
-	birf rate*bunnies*(1-bunnies/carrying capacity)
+bunnies 0= INTEG (
+	bunnification 0,
+		2)
 	~	
 	~		|
 

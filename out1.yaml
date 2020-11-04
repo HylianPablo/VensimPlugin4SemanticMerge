@@ -45,31 +45,31 @@ children:
       span : [430, 488]
     - type : equation
       name : pprofilePopulation
-      locationSpan : {start: [50, 0], end: [54, 2]}
-      span : [656, 737]
+      locationSpan : {start: [44, 0], end: [54, 2]}
+      span : [489, 737]
     - type : equation
       name : FINAL TIME
-      locationSpan : {start: [55, 0], end: [59, 2]}
-      span : [738, 810]
+      locationSpan : {start: [49, 0], end: [53, 2]}
+      span : [571, 643]
     - type : equation
       name : INITIAL TIME
-      locationSpan : {start: [60, 0], end: [64, 2]}
-      span : [811, 886]
+      locationSpan : {start: [54, 0], end: [58, 2]}
+      span : [644, 719]
     - type : equation
       name : SAVEPER
-      locationSpan : {start: [65, 0], end: [70, 2]}
-      span : [887, 987]
+      locationSpan : {start: [59, 0], end: [64, 2]}
+      span : [720, 820]
     - type : equation
       name : TIME STEP
-      locationSpan : {start: [71, 0], end: [74, 4]}
-      span : [988, 1064]
+      locationSpan : {start: [65, 0], end: [68, 4]}
+      span : [821, 897]
   - type : sketches
     name: \\\---/// Sketch information - do not modify anything except names
-    locationSpan : {start: [76, 0], end: [128, 2]}
-    headerSpan : [1067, 1134]
+    locationSpan : {start: [70, 0], end: [128, 2]}
+    headerSpan : [900, 967]
     footerSpan : [128, 2]
     children:
     - type : sketch
       name : V300  Do not put anything below this section - it will be ignored
-      locationSpan : {start: [77, 0], end: [127, 7]}
-      span : [1135, 2665]
+      locationSpan : {start: [71, 0], end: [127, 7]}
+      span : [968, 2498]
