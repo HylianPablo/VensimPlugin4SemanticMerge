@@ -5,7 +5,7 @@ locationSpan : {start: [1, 0], end: [128, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
-  - type : equations
+  - type : SymbolWithDocs
     name: {UTF-8}
     locationSpan : {start: [1, 0], end: [75, 2]}
     headerSpan : [0, 8]
@@ -43,7 +43,7 @@ children:
       name : competition
       locationSpan : {start: [39, 0], end: [43, 2]}
       span : [430, 488]
-    - type : equation
+    - type : subscriptRange
       name : pprofilePopulation
       locationSpan : {start: [44, 0], end: [54, 2]}
       span : [489, 737]

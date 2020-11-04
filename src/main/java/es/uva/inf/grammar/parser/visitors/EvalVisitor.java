@@ -70,7 +70,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.write("footerSpan : [0,-1]\n");
             fw.write("parsingErrorsDetected : false\n");
             fw.write("children:\n");
-            fw.write("  - type : equations\n");
+            fw.write("  - type : SymbolWithDocs\n");
             fw.write("    name: {UTF-8}\n");
             fw.write("    locationSpan : {start: [1, 0], end: [" + (equationsEndLine-1) + ", 2]}\n");
             fw.write("    headerSpan : [0, 8]\n"); //Assuming file will always start with {UTF-8}, WILL BE CHANGED
@@ -81,13 +81,19 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             BufferedReader reader = new BufferedReader(new FileReader(input));
             reader.readLine();//UTF-8
             for(int i =0; i<equations.size();i++){
-                fw.write("    - type : equation\n");
                 String equationText;  //Mostly all strcutures are equations, but it will be cases that there will be subscriptRanges or others
+                String typeName;
                 if(equations.get(i).symbolWithDocDefinition().equation()!=null){
                     equationText=equations.get(i).symbolWithDocDefinition().equation().lhs().Id().getText();
-                }else{
+                    typeName="equation";
+                }else if(equations.get(i).symbolWithDocDefinition().subscriptRange()!=null){
                     equationText=equations.get(i).symbolWithDocDefinition().subscriptRange().Id().getText();
+                    typeName="subscriptRange";
+                }else{
+                    equationText=equations.get(i).symbolWithDocDefinition().lookupDefinition().lhs().Id().getText();
+                    typeName="lookupDefinition";
                 }
+                fw.write("    - type : "+typeName+"\n");
                 fw.write("      name : "+equationText+"\n");
                 int a = equations.get(i).start.getStartIndex();
                 int b = equations.get(i).stop.getStopIndex();
@@ -117,11 +123,12 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         endCharEq = equation.length()+1;
                         endColumnLocationSpan = equation.split("\n")[equationNewLines-1].length() + 2; //\r \n
                         equationNewLines--;
+                        //locationSpanStartEq--;
                     }
                 }else{
                     endCharEq = equation.length()+3; //\r \n + last \n that is not read by equation
                 }
-                if(equationText.indexOf("TIME STEP")!=-1){
+                if(equationText.indexOf("TIME STEP")!=-1 || equationText.indexOf("TIME_STEP")!=-1){
                     endCharEq-=2;
                     equationNewLines--;
                     endColumnLocationSpan = 4; //\r \n
@@ -138,16 +145,17 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 extraCharsEq=0;
             }
             reader.close();
+            locationSpanStartEq++; //Because TIMESTEP ends one line earlier due to footerSpan
             fw.write("  - type : sketches\n");
             fw.write("    name: \\\\\\---/// Sketch information - do not modify anything except names\n");
-            fw.write("    locationSpan : {start: ["+(locationSpanStartEq+1)+", 0], end: [" + (lastLine+1) + ", "+2+"]}\n");
+            fw.write("    locationSpan : {start: ["+(locationSpanStartEq)+", 0], end: [" + (lastLine+1) + ", "+2+"]}\n");
             initCharEq+=2;
             fw.write("    headerSpan : ["+initCharEq+", "+(initCharEq+67)+"]\n"); //Sketch informations characters
             fw.write("    footerSpan : ["+(lastLine+1)+", 2]\n");
             fw.write("    children:\n");
             fw.write("    - type : sketch\n");
             fw.write("      name : V300  Do not put anything below this section - it will be ignored\n");
-            fw.write("      locationSpan : {start: ["+(locationSpanStartEq+2)+", 0], end: [" + (lastLine) + ", "+lastLineLength+"]}\n");
+            fw.write("      locationSpan : {start: ["+(locationSpanStartEq+1)+", 0], end: [" + (lastLine) + ", "+lastLineLength+"]}\n");
             //initCharEq+=67;
             fw.write("      span : [" + (initCharEq+68) + ", " + (initCharEq+graphs[1].length()+10-2) + "]\n"); // 9 characters representing \\\---///, which was deleted in split(), +1 because last char not readed
             

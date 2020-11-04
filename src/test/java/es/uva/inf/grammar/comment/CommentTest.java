@@ -19,7 +19,7 @@ public class CommentTest {
     public void lecturaCorrectaSimple() {
         String[] args = new String[2];
         args[0]="VensimExampleModels/SHODOR/Bunny.mdl";
-        args[1]="test1.mdl";
+        args[1]="outputs/comment/test1.mdl";
         BufferedReader reader;
         try {
             Comment.main(args);
@@ -29,7 +29,7 @@ public class CommentTest {
             reader.close();
             assertSame(127,lines); //Last newline is not counted
 
-            reader = new BufferedReader(new FileReader("test1.mdl"));
+            reader = new BufferedReader(new FileReader("outputs/comment/test1.mdl"));
             Set<Integer> positions = new HashSet<Integer>();
             positions.addAll(Arrays.asList(new Integer[] {4, 9, 15, 21, 26, 31, 36, 41})); 
             for(int i=0;i<43;i++){
@@ -48,7 +48,7 @@ public class CommentTest {
     public void lecturaCorrectaEcuacionDescriptiva() {
         String[] args = new String[2];
         args[0]="VensimExampleModels/SHODOR/examples.mdl";
-        args[1]="test2.mdl";
+        args[1]="outputs/comment/test2.mdl";
         BufferedReader reader;
         try {
             Comment.main(args);
@@ -58,7 +58,7 @@ public class CommentTest {
             reader.close();
             assertEquals(244,lines); //Last newline is not counted
 
-            reader = new BufferedReader(new FileReader("test2.mdl"));
+            reader = new BufferedReader(new FileReader("outputs/comment/test2.mdl"));
             Set<Integer> positions = new HashSet<Integer>();
             positions.addAll(Arrays.asList(new Integer[] {4, 10, 16, 22, 28, 34, 40, 46, 52, 58, 63, 68, 73, 78, 83, 88, 93, 98, 103, 108})); 
             for(int i=0;i<118;i++){
@@ -80,7 +80,7 @@ public class CommentTest {
     public void lecturaCorrectaConComentarios() {
         String[] args = new String[2];
         args[0]="VensimExampleModels/SHODOR/examplesComments.mdl";
-        args[1]="test3.mdl";
+        args[1]="outputs/comment/test3.mdl";
         BufferedReader reader;
         try {
             Comment.main(args);
@@ -90,7 +90,7 @@ public class CommentTest {
             reader.close();
             assertEquals(249,lines); //Last newline is not counted
 
-            reader = new BufferedReader(new FileReader("test3.mdl"));
+            reader = new BufferedReader(new FileReader("outputs/comment/test3.mdl"));
             Set<Integer> positions = new HashSet<Integer>();
             positions.addAll(Arrays.asList(new Integer[] {4, 10, 16, 22, 28, 34, 40, 46, 52, 58, 63, 68, 74, 80, 86, 91, 96, 101, 106, 111})); 
             for(int i=0;i<118;i++){
@@ -119,7 +119,7 @@ public class CommentTest {
     public void lecturaCorrectaVariasVistas() {
         String[] args = new String[2];
         args[0]="VensimExampleModels/SHODOR/sociology101_mod.mdl";
-        args[1]="test4.mdl";
+        args[1]="outputs/comment/test4.mdl";
         BufferedReader reader;
         try {
             Comment.main(args);
@@ -129,7 +129,7 @@ public class CommentTest {
             reader.close();
             assertEquals(145,lines); //Last newline is not counted
 
-            reader = new BufferedReader(new FileReader("test4.mdl"));
+            reader = new BufferedReader(new FileReader("outputs/comment/test4.mdl"));
             Set<Integer> positions1 = new HashSet<Integer>();
             positions1.addAll(Arrays.asList(new Integer[] {5, 11, 27, 32, 37, 42, 47})); 
             Set<Integer> positions2 = new HashSet<Integer>();
@@ -152,7 +152,7 @@ public class CommentTest {
     public void lecturaCorrectaCaracteresEspeciales() {
         String[] args = new String[2];
         args[0]="VensimExampleModels/SHODOR/BunnyUnderscores.mdl";
-        args[1]="test5.mdl";
+        args[1]="outputs/comment/test5.mdl";
         BufferedReader reader;
         try {
             Comment.main(args);
@@ -162,7 +162,7 @@ public class CommentTest {
             reader.close();
             assertEquals(137,lines); //Last newline is not counted
 
-            reader = new BufferedReader(new FileReader("test5.mdl"));
+            reader = new BufferedReader(new FileReader("outputs/comment/test5.mdl"));
             Set<Integer> positions1 = new HashSet<Integer>();
             positions1.addAll(Arrays.asList(new Integer[] {3, 8, 13, 19, 25, 30, 35, 40, 45})); 
             for(int i=0;i<50;i++){
@@ -181,7 +181,7 @@ public class CommentTest {
     public void lecturaCorrectaYaComentado() {
         String[] args = new String[2];
         args[0]="VensimExampleModels/SHODOR/alreadyCommented.mdl";
-        args[1]="test6.mdl";
+        args[1]="outputs/comment/test6.mdl";
         BufferedReader reader;
         try {
             Comment.main(args);
@@ -191,7 +191,7 @@ public class CommentTest {
             reader.close();
             assertEquals(139,lines); //Last newline is not counted
 
-            reader = new BufferedReader(new FileReader("test6.mdl"));
+            reader = new BufferedReader(new FileReader("outputs/comment/test6.mdl"));
             Set<Integer> positions1 = new HashSet<Integer>();
             positions1.addAll(Arrays.asList(new Integer[] {3, 7, 13, 19, 26, 33, 39, 45})); 
             for(int i=0;i<50;i++){
@@ -211,7 +211,7 @@ public class CommentTest {
     public void lecturaIncorrecta(){
         String[] args = new String[2];
         args[0]="VensimExampleModels/SHODOR/jeokdfjf.mdl";
-        args[1]="testFail.mdl";
+        args[1]="outputs/comment/testFail.mdl";
         assertThrows(IOException.class, () -> {
 			Comment.main(args);
 		});
