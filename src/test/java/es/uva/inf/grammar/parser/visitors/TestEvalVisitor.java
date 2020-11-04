@@ -237,5 +237,60 @@ public class TestEvalVisitor {
         }
 
     }
+
+        @Test
+    public void lecturaCorrectaMacros(){
+        try{
+            CharStream charstream = CharStreams.fromFileName("VensimExampleModels/SDXorg/test_macro_cross_reference.mdl");
+            ModelLexer lexer = new ModelLexer(charstream);
+            ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
+            ParseTree tree = parser.file();
+
+            EvalVisitor visitor = new EvalVisitor();
+            visitor.setInput("VensimExampleModels/SDXorg/test_macro_cross_reference.mdl");
+            visitor.setOutput("outputs/evalVisitor/test5EvalVisitor.yml");
+            visitor.visit(tree);
+
+            BufferedReader reader = new BufferedReader(new FileReader("outputs/evalVisitor/test5EvalVisitor.yml"));
+            String line=null;
+            for(int i = 0; i<4; i++){
+                line=reader.readLine();
+            }
+            assertEquals(line,"locationSpan : {start: [1, 0], end: [90, 2]}");
+            for(int i = 0; i<6; i++){
+                line=reader.readLine();
+            }
+            assertEquals(line,"    locationSpan : {start: [1, 0], end: [57, 2]}");
+            reader.readLine();
+            line = reader.readLine();
+            assertEquals(line,"    footerSpan : [987, 988]");
+            reader.readLine();
+            for(int i=0; i<(4*9)+1;i++){
+                line=reader.readLine();
+            }
+            assertEquals(line,"  - type : sketches");
+            reader.readLine();
+            line = reader.readLine();
+            assertEquals(line,"    locationSpan : {start: [58, 0], end: [90, 2]}");
+            line = reader.readLine();
+            assertEquals(line,"    headerSpan : [989, 1056]");
+            line = reader.readLine();
+            assertEquals(line,"    footerSpan : [90, 2]");
+            for(int i = 0; i<5; i++){
+                line=reader.readLine();
+            }
+            assertEquals(line,"      span : [1057, 1745]");
+            reader.close();
+            
+            
+            Process process = Runtime.getRuntime().exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"+  
+            " --source=VensimExampleModels/SDXorg/test_macro_cross_reference.mdl --destination=VensimExampleModels/SDXorg/test_macro_cross_reference.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""+
+            " --virtualmachine=\"C:\\Program Files\\Java\\jdk-11.0.8\\bin\\java.exe\"");
+            
+        }catch(IOException ex){
+            System.err.println("Error en la lectura del fichero: "+ex.getMessage());
+        }
+
+    }
     
 }
