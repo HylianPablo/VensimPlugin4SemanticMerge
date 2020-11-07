@@ -1,0 +1,42 @@
+image: maven:3.6.2-jdk-11
+
+variables:
+  MAVEN_CLI_OPTS: "--batch-mode"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+stages:
+  - build
+  - test
+  - deploy
+
+
+cache:
+  paths:
+    - .m2/repository
+    - target/
+
+build_job:
+  stage: build
+  script:
+    - mvn $MAVEN_CLI_OPTS  compile
+
+test_job:
+  stage: test
+  script:
+    - mvn $MAVEN_CLI_OPTS  test -P Unit
+
+deploy-master:
+  stage: deploy
+  script:
+    ##- scp  
+    - ssh usuario@virtual.lab.inf.uva.es -p 20012 "cd .\Appdata\Local\semanticmerge && .\script.bat && exit"
+  only:
+    - master
+
+deploy-develop:
+  stage: deploy
+  script:
+    ##- scp  
+    - ssh usuario@virtual.lab.inf.uva.es -p 20012 "cd .\Appdata\Local\semanticmerge && .\script.bat && exit"
+  only:
+    - develop

@@ -1,0 +1,75 @@
+---
+type: file
+name: VensimExampleModels/CLOUD/Locomini34.mdl
+locationSpan : {start: [1, 0], end: [4063, 2]}
+footerSpan : [0,-1]
+parsingErrorsDetected : false
+children:
+  - type : SymbolWithDocs
+    name: {UTF-8}
+    locationSpan : {start: [1, 0], end: [3074, 2]}
+    headerSpan : [0, 8]
+    footerSpan : [125594, 125595]
+    children :
+    - type : equation
+      name : birf rate
+      locationSpan : {start: [2, 0], end: [6, 2]}
+      span : [9, 52]
+    - type : equation
+      name : birf rate 0
+      locationSpan : {start: [7, 0], end: [11, 2]}
+      span : [53, 98]
+    - type : equation
+      name : bunnies
+      locationSpan : {start: [12, 0], end: [17, 2]}
+      span : [99, 153]
+    - type : equation
+      name : bunnies 0
+      locationSpan : {start: [18, 0], end: [23, 2]}
+      span : [154, 212]
+    - type : equation
+      name : bunnification
+      locationSpan : {start: [24, 0], end: [28, 2]}
+      span : [213, 292]
+    - type : equation
+      name : bunnification 0
+      locationSpan : {start: [29, 0], end: [33, 2]}
+      span : [293, 388]
+    - type : equation
+      name : carrying capacity
+      locationSpan : {start: [34, 0], end: [38, 2]}
+      span : [389, 429]
+    - type : equation
+      name : competition
+      locationSpan : {start: [39, 0], end: [43, 2]}
+      span : [430, 488]
+    - type : subscriptRange
+      name : pprofilePopulation
+      locationSpan : {start: [44, 0], end: [47, 7]}
+      span : [489, 568]
+    - type : equation
+      name : FINAL TIME
+      locationSpan : {start: [48, 0], end: [52, 2]}
+      span : [569, 641]
+    - type : equation
+      name : INITIAL TIME
+      locationSpan : {start: [53, 0], end: [57, 2]}
+      span : [642, 717]
+    - type : equation
+      name : SAVEPER
+      locationSpan : {start: [58, 0], end: [63, 2]}
+      span : [718, 818]
+    - type : equation
+      name : TIME STEP
+      locationSpan : {start: [64, 0], end: [67, 4]}
+      span : [819, 895]
+  - type : sketches
+    name: \\\---/// Sketch information - do not modify anything except names
+    locationSpan : {start: [69, 0], end: [4063, 2]}
+    headerSpan : [898, 965]
+    footerSpan : [4063, 2]
+    children:
+    - type : sketch
+      name : V300  Do not put anything below this section - it will be ignored
+      locationSpan : {start: [70, 0], end: [4062, 15]}
+      span : [966, 58401]

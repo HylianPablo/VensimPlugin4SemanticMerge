@@ -100,9 +100,27 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange() != null) {
                         equationText = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange().Id().getText();
                         typeName = "subscriptRange";
-                    } else {
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().lookupDefinition() != null) {
                         equationText = equations.get(indexOfEquations).symbolWithDocDefinition().lookupDefinition().lhs().Id().getText();
                         typeName = "lookupDefinition";
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation() != null){
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation().lhs().Id().getText();
+                        typeName = "dataEquation";
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().constraint() != null){
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().constraint().lhs().Id().getText();
+                        typeName = "constraint";
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().unchangeableConstant() != null){
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().unchangeableConstant().lhs().Id().getText();
+                        typeName = "unchangeableConstant";
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign() != null){
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign().lhs().Id().getText();
+                        typeName = "stringAssign";
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().subscriptCopy() != null){
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptCopy().copy.toString();
+                        typeName = "subscriptCopy";
+                    } else {
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().realityCheck().lhs().Id().getText();
+                        typeName = "realityCheck";
                     }
                     int a = equations.get(indexOfEquations).start.getStartIndex();
                     int b = equations.get(indexOfEquations).stop.getStopIndex();

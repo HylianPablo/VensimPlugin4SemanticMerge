@@ -19,8 +19,8 @@ public class Pruebas {
          ParseTree tree = parser.file();
 
          EvalVisitor visitor = new EvalVisitor();
-         visitor.setInput("VensimExampleModels/SHODOR/Bunny.mdl");
-         visitor.setOutput("outputs/evalVisitor/test1EvalVisitor.yml");
+         visitor.setInput("VensimExampleModels/CLOUD/Locomini34.mdl");
+         visitor.setOutput("outputs/evalVisitor/test0EvalVisitor.yml");
          visitor.visit(tree);
       } catch (IOException ex) {
 

@@ -10,13 +10,10 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import es.uva.inf.grammar.MainBazaco;
 import es.uva.inf.grammar.parser.ModelLexer;
 import es.uva.inf.grammar.parser.ModelParser;
-import es.uva.inf.grammar.parser.visitors.EvalVisitor;
 
 public class TestEvalVisitor {
 
@@ -38,30 +35,30 @@ public class TestEvalVisitor {
             for(int i = 0; i<4; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"locationSpan : {start: [1, 0], end: [128, 2]}");
+            assertEquals("locationSpan : {start: [1, 0], end: [128, 2]}",line);
             for(int i = 0; i<6; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"    locationSpan : {start: [1, 0], end: [75, 2]}");
+            assertEquals("    locationSpan : {start: [1, 0], end: [75, 2]}",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [1065, 1066]");
+            assertEquals("    footerSpan : [1065, 1066]",line);
             reader.readLine();
             for(int i=0; i<(4*13)+1;i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"  - type : sketches");
+            assertEquals("  - type : sketches",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    locationSpan : {start: [76, 0], end: [128, 2]}");
+            assertEquals("    locationSpan : {start: [76, 0], end: [128, 2]}",line);
             line = reader.readLine();
-            assertEquals(line,"    headerSpan : [1067, 1134]");
+            assertEquals("    headerSpan : [1067, 1134]",line);
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [128, 2]");
+            assertEquals("    footerSpan : [128, 2]",line);
             for(int i = 0; i<5; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"      span : [1135, 2665]");
+            assertEquals("      span : [1135, 2665]",line);
             reader.close();
             /*
             Process process = Runtime.getRuntime().exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"+  
@@ -93,30 +90,30 @@ public class TestEvalVisitor {
             for(int i = 0; i<4; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"locationSpan : {start: [1, 0], end: [245, 2]}");
+            assertEquals("locationSpan : {start: [1, 0], end: [245, 2]}",line);
             for(int i = 0; i<6; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"    locationSpan : {start: [1, 0], end: [146, 2]}");
+            assertEquals("    locationSpan : {start: [1, 0], end: [146, 2]}",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [1910, 1911]");
+            assertEquals("    footerSpan : [1910, 1911]",line);
             reader.readLine();
             for(int i=0; i<(4*25)+1;i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"  - type : sketches");
+            assertEquals("  - type : sketches",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    locationSpan : {start: [147, 0], end: [245, 2]}");
+            assertEquals("    locationSpan : {start: [147, 0], end: [245, 2]}",line);
             line = reader.readLine();
-            assertEquals(line,"    headerSpan : [1912, 1979]");
+            assertEquals("    headerSpan : [1912, 1979]",line);
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [245, 2]");
+            assertEquals("    footerSpan : [245, 2]",line);
             for(int i = 0; i<5; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"      span : [1980, 5270]");
+            assertEquals("      span : [1980, 5270]",line);
             reader.close();
             /*
             Process process = Runtime.getRuntime().exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"+  
@@ -146,30 +143,30 @@ public class TestEvalVisitor {
             for(int i = 0; i<4; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"locationSpan : {start: [1, 0], end: [115, 2]}");
+            assertEquals("locationSpan : {start: [1, 0], end: [115, 2]}",line);
             for(int i = 0; i<6; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"    locationSpan : {start: [1, 0], end: [62, 2]}");
+            assertEquals("    locationSpan : {start: [1, 0], end: [62, 2]}",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [1249, 1250]");
+            assertEquals("    footerSpan : [1249, 1250]",line);
             reader.readLine();
             for(int i=0; i<(4*13)+1;i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"  - type : sketches");
+            assertEquals("  - type : sketches",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    locationSpan : {start: [63, 0], end: [115, 2]}");
+            assertEquals("    locationSpan : {start: [63, 0], end: [115, 2]}",line);
             line = reader.readLine();
-            assertEquals(line,"    headerSpan : [1251, 1318]");
+            assertEquals("    headerSpan : [1251, 1318]",line);
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [115, 2]");
+            assertEquals("    footerSpan : [115, 2]",line);
             for(int i = 0; i<5; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"      span : [1319, 2515]");
+            assertEquals("      span : [1319, 2515]",line);
             reader.close();
             
             /*
@@ -201,30 +198,30 @@ public class TestEvalVisitor {
             for(int i = 0; i<4; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"locationSpan : {start: [1, 0], end: [119, 2]}");
+            assertEquals("locationSpan : {start: [1, 0], end: [119, 2]}",line);
             for(int i = 0; i<6; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"    locationSpan : {start: [1, 0], end: [67, 2]}");
+            assertEquals("    locationSpan : {start: [1, 0], end: [67, 2]}",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [1025, 1026]");
+            assertEquals("    footerSpan : [1025, 1026]",line);
             reader.readLine();
             for(int i=0; i<(4*11)+1;i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"  - type : sketches");
+            assertEquals("  - type : sketches",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    locationSpan : {start: [68, 0], end: [119, 2]}");
+            assertEquals("    locationSpan : {start: [68, 0], end: [119, 2]}",line);
             line = reader.readLine();
-            assertEquals(line,"    headerSpan : [1027, 1094]");
+            assertEquals("    headerSpan : [1027, 1094]",line);
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [119, 2]");
+            assertEquals("    footerSpan : [119, 2]",line);
             for(int i = 0; i<5; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"      span : [1095, 2440]");
+            assertEquals("      span : [1095, 2440]",line);
             reader.close();
             
             /*
@@ -256,37 +253,37 @@ public class TestEvalVisitor {
             for(int i = 0; i<4; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"locationSpan : {start: [1, 0], end: [90, 2]}");
+            assertEquals("locationSpan : {start: [1, 0], end: [90, 2]}",line);
             for(int i = 0; i<6; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"    locationSpan : {start: [1, 0], end: [57, 2]}");
+            assertEquals("    locationSpan : {start: [1, 0], end: [57, 2]}",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [987, 988]");
+            assertEquals("    footerSpan : [987, 988]",line);
             reader.readLine();
             for(int i=0; i<(4*9)+1;i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"  - type : sketches");
+            assertEquals("  - type : sketches",line);
             reader.readLine();
             line = reader.readLine();
-            assertEquals(line,"    locationSpan : {start: [58, 0], end: [90, 2]}");
+            assertEquals("    locationSpan : {start: [58, 0], end: [90, 2]}",line);
             line = reader.readLine();
-            assertEquals(line,"    headerSpan : [989, 1056]");
+            assertEquals("    headerSpan : [989, 1056]",line);
             line = reader.readLine();
-            assertEquals(line,"    footerSpan : [90, 2]");
+            assertEquals("    footerSpan : [90, 2]",line);
             for(int i = 0; i<5; i++){
                 line=reader.readLine();
             }
-            assertEquals(line,"      span : [1057, 1745]");
+            assertEquals("      span : [1057, 1745]",line);
             reader.close();
             
-            
+           /* 
             Process process = Runtime.getRuntime().exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"+  
             " --source=VensimExampleModels/SDXorg/test_macro_cross_reference.mdl --destination=VensimExampleModels/SDXorg/test_macro_cross_reference.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""+
             " --virtualmachine=\"C:\\Program Files\\Java\\jdk-11.0.8\\bin\\java.exe\"");
-            
+            */
         }catch(IOException ex){
             System.err.println("Error en la lectura del fichero: "+ex.getMessage());
         }
