@@ -18,7 +18,7 @@ cache:
 build_job:
   stage: build
   script:
-    - mvn $MAVEN_CLI_OPTS  clean compile
+    - mvn $MAVEN_CLI_OPTS  compile
 
 test_job:
   stage: test
