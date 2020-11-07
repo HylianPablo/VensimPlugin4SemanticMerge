@@ -18,12 +18,12 @@ cache:
 build_job:
   stage: build
   script:
-    - mvn $MAVEN_CLI_OPTS  compile
+    - mvn $MAVEN_CLI_OPTS  clean compile
 
 test_job:
   stage: test
   script:
-    - mvn test -P Unit
+    - mvn $MAVEN_CLI_OPTS  test -P Unit
 
 deploy-master:
   stage: deploy
