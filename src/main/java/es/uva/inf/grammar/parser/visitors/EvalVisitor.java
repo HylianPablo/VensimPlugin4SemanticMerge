@@ -82,7 +82,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.write("  - type : SymbolWithDocs\n");
             fw.write("    name: {UTF-8}\n");
             fw.write("    locationSpan : {start: [1, 0], end: [" + (equationsEndLine - 1) + ", 2]}\n");
-            fw.write("    headerSpan : [0, 8]\n"); // Assuming file will always start with {UTF-8}, WILL BE CHANGED
+            fw.write("    headerSpan : [0, 8]\n"); // Assuming file will always start with {UTF-8}
             fw.write("    footerSpan : [" + (equationsFooter - 1) + ", " + equationsFooter + "]\n");
             fw.write("    children :\n");
             int locationSpanStartEq = 2; // Assuming there is always an encoding line {UTF-8}
@@ -90,50 +90,63 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             BufferedReader reader = new BufferedReader(new FileReader(input));
             reader.readLine();// UTF-8
             for (int i = 0; i < (equations.size() + macrosListLen); i++) {
-                String equationText; // Mostly all strcutures are equations, but it will be cases that there will be subscriptRanges or others
+                String equationText; // Mostly all strcutures are equations, but it will be cases that there will be
+                                     // subscriptRanges or others
                 String typeName;
                 String equation;
                 if (!isMacroList.get(i)) {
                     if (equations.get(indexOfEquations).symbolWithDocDefinition().equation() != null) {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().equation().lhs().Id().getText();
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().equation().lhs().Id()
+                                .getText();
                         typeName = "equation";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange() != null) {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange().Id().getText();
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange().Id()
+                                .getText();
                         typeName = "subscriptRange";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().lookupDefinition() != null) {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().lookupDefinition().lhs().Id().getText();
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().lookupDefinition()
+                                .lhs().Id().getText();
                         typeName = "lookupDefinition";
-                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation() != null){
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation().lhs().Id().getText();
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation() != null) {
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation().lhs()
+                                .Id().getText();
                         typeName = "dataEquation";
-                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().constraint() != null){
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().constraint().lhs().Id().getText();
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().constraint() != null) {
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().constraint().lhs().Id()
+                                .getText();
                         typeName = "constraint";
-                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().unchangeableConstant() != null){
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().unchangeableConstant().lhs().Id().getText();
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition()
+                            .unchangeableConstant() != null) {
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().unchangeableConstant()
+                                .lhs().Id().getText();
                         typeName = "unchangeableConstant";
-                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign() != null){
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign().lhs().Id().getText();
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign() != null) {
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign().lhs()
+                                .Id().getText();
                         typeName = "stringAssign";
-                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().subscriptCopy() != null){
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptCopy().copy.toString();
+                    } else if (equations.get(indexOfEquations).symbolWithDocDefinition().subscriptCopy() != null) {
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptCopy().copy
+                                .toString();
                         typeName = "subscriptCopy";
                     } else {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().realityCheck().lhs().Id().getText();
+                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().realityCheck().lhs()
+                                .Id().getText();
                         typeName = "realityCheck";
                     }
                     int a = equations.get(indexOfEquations).start.getStartIndex();
                     int b = equations.get(indexOfEquations).stop.getStopIndex();
                     Interval interval = new Interval(a, b);
-                    equation = ctx.start.getInputStream().getText(interval); // Obtaining all text of equation without trimming
+                    equation = ctx.start.getInputStream().getText(interval); // Obtaining all text of equation without
+                                                                             // trimming
                     indexOfEquations++;
                 } else {
-                    typeName="macro";
-                    equationText=macros.get(indexOfMacros).macroHeader().Id().getText();
+                    typeName = "macro";
+                    equationText = macros.get(indexOfMacros).macroHeader().Id().getText();
                     int a = macros.get(indexOfMacros).start.getStartIndex();
                     int b = macros.get(indexOfMacros).stop.getStopIndex();
                     Interval interval = new Interval(a, b);
-                    equation = ctx.start.getInputStream().getText(interval); // Obtaining all text of equation without trimming
+                    equation = ctx.start.getInputStream().getText(interval); // Obtaining all text of equation without
+                                                                             // trimming
                     indexOfMacros++;
                 }
                 fw.write("    - type : " + typeName + "\n");
@@ -149,8 +162,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                                                                    // various newlines between equations
                 }
                 reader.reset();
-                if (equationFollowingLines.contains("\t.Control")) { // Control is reached MODIFICAR, NO ES NECESARIO
-                                                                     // LLEGAR A FINAL TIME
+                if (equationFollowingLines.contains("\t.Control")) {
+
                     extraLocationSpan = 6;
                     extraCharsEq = 167; // Added in order to match Control Delimiter Characters
                 }
@@ -170,13 +183,13 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 } else {
                     endCharEq = equation.length() + 3; // \r \n + last \n that is not read by equation
                 }
-                if (equationText.indexOf("TIME STEP") != -1 || equationText.indexOf("TIME_STEP") != -1) {
+                if (i == (equations.size() + macrosListLen) - 1) {
                     endCharEq -= 2;
                     equationNewLines--;
                     endColumnLocationSpan = 4; // \r \n
                 }
                 /* MACRO ADJUSTMENTS */
-                if(typeName.equals("macro")){
+                if (typeName.equals("macro")) {
                     equationNewLines--;
                     endColumnLocationSpan = equation.split("\n")[equationNewLines].length() + 2; // \r \n
                     endCharEq = equation.length() + 1;
@@ -212,7 +225,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     + lastLineLength + "]}\n");
             // initCharEq+=67;
             fw.write("      span : [" + (initCharEq + 68) + ", " + (initCharEq + graphs[1].length() + 10 - 2) + "]\n");
-             // 9 characters representing \\\---///, which was deleted in split(), +1 because last char not readed
+            // 9 characters representing \\\---///, which was deleted in split(), +1 because
+            // last char not readed
             fw.close();
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -283,7 +297,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             for (int i = 0; i < equations.length; i++) {
                 array.add(equations[i].indexOf(":MACRO:") != -1);
             }
-            for(int i=0;i<4;i++){ //TIME STEP equations
+            for (int i = 0; i < 4; i++) { // TIME STEP equations
                 array.add(false);
             }
         } catch (IOException ex) {

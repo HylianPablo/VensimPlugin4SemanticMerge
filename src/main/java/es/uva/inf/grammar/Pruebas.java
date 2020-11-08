@@ -13,13 +13,13 @@ import es.uva.inf.grammar.parser.visitors.EvalVisitor;
 public class Pruebas {
    public static void main(String args[]) {
       try {
-         CharStream charstream = CharStreams.fromFileName("VensimExampleModels/SHODOR/Bunny.mdl");
+         CharStream charstream = CharStreams.fromFileName("VensimExampleModels/SHODOR/notTimeStep.mdl");
          ModelLexer lexer = new ModelLexer(charstream);
          ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
          ParseTree tree = parser.file();
 
          EvalVisitor visitor = new EvalVisitor();
-         visitor.setInput("VensimExampleModels/CLOUD/Locomini34.mdl");
+         visitor.setInput("VensimExampleModels/SHODOR/notTimeStep.mdl");
          visitor.setOutput("outputs/evalVisitor/test0EvalVisitor.yml");
          visitor.visit(tree);
       } catch (IOException ex) {
