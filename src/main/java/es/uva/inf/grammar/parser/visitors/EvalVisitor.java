@@ -200,7 +200,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         + "]}\r\n"); // It will always end in '\r \n'
                 locationSpanStartEq = locationSpanStartEq + equationNewLines + 1;
 
-                fw.write("      span : [" + initCharEq + ", " + (endCharEq + initCharEq + extraCharsEq) + "]\n");
+                fw.write("      span : [" + initCharEq + ", " + (endCharEq + initCharEq + extraCharsEq) + "]\r\n");
                 initCharEq = initCharEq + endCharEq + 1; // +1 to get into next line
 
                 locationSpanStartEq += extraLocationSpan;
