@@ -2,7 +2,7 @@ image: maven:3.6.3-jdk-11
 
 variables:
   MAVEN_CLI_OPTS: "--batch-mode"
-  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Dline.separator=\r\n"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Dline.separator=$'\r\n'"
 
 stages:
   - build
