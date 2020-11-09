@@ -72,19 +72,19 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             int extraLocationSpan = 0;
             int extraCharsEq = 0;
 
-            fw.write("---\n");
-            fw.write("type: file\n");
-            fw.write("name: " + input + "\n");
-            fw.write("locationSpan : {start: [1, 0], end: [" + (lastLine + 1) + ", " + 2 + "]}\n");
-            fw.write("footerSpan : [0,-1]\n");
-            fw.write("parsingErrorsDetected : false\n");
-            fw.write("children:\n");
-            fw.write("  - type : SymbolWithDocs\n");
-            fw.write("    name: {UTF-8}\n");
-            fw.write("    locationSpan : {start: [1, 0], end: [" + (equationsEndLine - 1) + ", 2]}\n");
-            fw.write("    headerSpan : [0, 8]\n"); // Assuming file will always start with {UTF-8}
-            fw.write("    footerSpan : [" + (equationsFooter - 1) + ", " + equationsFooter + "]\n");
-            fw.write("    children :\n");
+            fw.write("---\r\n");
+            fw.write("type: file\r\n");
+            fw.write("name: " + input + "\r\n");
+            fw.write("locationSpan : {start: [1, 0], end: [" + (lastLine + 1) + ", " + 2 + "]}\r\n");
+            fw.write("footerSpan : [0,-1]\r\n");
+            fw.write("parsingErrorsDetected : false\r\n");
+            fw.write("children:\r\n");
+            fw.write("  - type : SymbolWithDocs\r\n");
+            fw.write("    name: {UTF-8}\r\n");
+            fw.write("    locationSpan : {start: [1, 0], end: [" + (equationsEndLine - 1) + ", 2]}\r\n");
+            fw.write("    headerSpan : [0, 8]\r\n"); // Assuming file will always start with {UTF-8}
+            fw.write("    footerSpan : [" + (equationsFooter - 1) + ", " + equationsFooter + "]\r\n");
+            fw.write("    children :\r\n");
             int locationSpanStartEq = 2; // Assuming there is always an encoding line {UTF-8}
             int initCharEq = 9; // Assuming there is always an encoding line {UTF-8}
             BufferedReader reader = new BufferedReader(new FileReader(input));
@@ -149,9 +149,9 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                                                                              // trimming
                     indexOfMacros++;
                 }
-                fw.write("    - type : " + typeName + "\n");
-                fw.write("      name : " + equationText + "\n");
-                for (int j = 0; j < equation.split("\n").length; j++) {
+                fw.write("    - type : " + typeName + "\r\n");
+                fw.write("      name : " + equationText + "\r\n");
+                for (int j = 0; j < equation.split("\r\n").length; j++) {
                     reader.readLine();
                 }
                 Set<String> equationFollowingLines = new HashSet<String>();
@@ -169,14 +169,14 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 }
                 int endCharEq;
                 int endColumnLocationSpan = 2;
-                int equationNewLines = equation.split("\n").length; // One line for UTF-8 and other for \r\n
+                int equationNewLines = equation.split("\r\n").length; // One line for UTF-8 and other for \r\n
                 if (i < newLinesInEquation.size()) { // It only checks until .Control delimiter
                     if (newLinesInEquation.get(i)) {
                         endCharEq = equation.length() + 3; // \r \n + last \n that is not read by equation
                         reader.readLine();
                     } else {
                         endCharEq = equation.length() + 1;
-                        endColumnLocationSpan = equation.split("\n")[equationNewLines - 1].length() + 2; // \r \n
+                        endColumnLocationSpan = equation.split("\r\n")[equationNewLines - 1].length() + 2; // \r \n
                         equationNewLines--;
                         // locationSpanStartEq--;
                     }
@@ -191,13 +191,13 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 /* MACRO ADJUSTMENTS */
                 if (typeName.equals("macro")) {
                     equationNewLines--;
-                    endColumnLocationSpan = equation.split("\n")[equationNewLines].length() + 2; // \r \n
+                    endColumnLocationSpan = equation.split("\r\n")[equationNewLines].length() + 2; // \r \n
                     endCharEq = equation.length() + 1;
                 }
 
                 fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                         + (locationSpanStartEq + equationNewLines + extraLocationSpan) + ", " + endColumnLocationSpan
-                        + "]}\n"); // It will always end in '\r \n'
+                        + "]}\r\n"); // It will always end in '\r \n'
                 locationSpanStartEq = locationSpanStartEq + equationNewLines + 1;
 
                 fw.write("      span : [" + initCharEq + ", " + (endCharEq + initCharEq + extraCharsEq) + "]\n");
@@ -210,21 +210,22 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             }
             reader.close();
             locationSpanStartEq++; // Because TIMESTEP ends one line earlier due to footerSpan
-            fw.write("  - type : sketches\n");
-            fw.write("    name: \\\\\\---/// Sketch information - do not modify anything except names\n");
+            fw.write("  - type : sketches\r\n");
+            fw.write("    name: \\\\\\---/// Sketch information - do not modify anything except names\r\n");
             fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (lastLine + 1) + ", " + 2
-                    + "]}\n");
+                    + "]}\r\n");
             initCharEq += 2;
-            fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 67) + "]\n"); // Sketch informations
-                                                                                            // characters
-            fw.write("    footerSpan : [" + (lastLine + 1) + ", 2]\n");
-            fw.write("    children:\n");
-            fw.write("    - type : sketch\n");
-            fw.write("      name : V300  Do not put anything below this section - it will be ignored\n");
+            fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 67) + "]\r\n"); // Sketch informations
+                                                                                              // characters
+            fw.write("    footerSpan : [" + (lastLine + 1) + ", 2]\r\n");
+            fw.write("    children:\r\n");
+            fw.write("    - type : sketch\r\n");
+            fw.write("      name : V300  Do not put anything below this section - it will be ignored\r\n");
             fw.write("      locationSpan : {start: [" + (locationSpanStartEq + 1) + ", 0], end: [" + (lastLine) + ", "
-                    + lastLineLength + "]}\n");
+                    + lastLineLength + "]}\r\n");
             // initCharEq+=67;
-            fw.write("      span : [" + (initCharEq + 68) + ", " + (initCharEq + graphs[1].length() + 10 - 2) + "]\n");
+            fw.write("      span : [" + (initCharEq + 68) + ", " + (initCharEq + graphs[1].length() + 10 - 2)
+                    + "]\r\n)");
             // 9 characters representing \\\---///, which was deleted in split(), +1 because
             // last char not readed
             fw.close();
