@@ -23,7 +23,7 @@ build_job:
 test_job:
   stage: test
   script:
-    - mvn $MAVEN_CLI_OPTS  test -P Unit
+    - mvn $MAVEN_CLI_OPTS  -Dline.separator=\r\n test -P Unit
 
 deploy-master:
   stage: deploy
