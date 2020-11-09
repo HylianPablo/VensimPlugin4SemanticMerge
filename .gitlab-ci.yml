@@ -2,7 +2,7 @@ image: maven:3.6.3-jdk-11
 
 variables:
   MAVEN_CLI_OPTS: "--batch-mode"
-  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Dline.separator=\r\n"
 
 stages:
   - build
@@ -23,7 +23,7 @@ build_job:
 test_job:
   stage: test
   script:
-    - mvn $MAVEN_CLI_OPTS  -Dline.separator=$'\r\n' test -P Unit
+    - mvn $MAVEN_CLI_OPTS test -P Unit
 
 deploy-master:
   stage: deploy
