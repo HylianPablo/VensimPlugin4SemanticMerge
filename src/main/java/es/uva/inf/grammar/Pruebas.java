@@ -27,9 +27,9 @@ public class Pruebas {
          visitor.setInput("VensimExampleModels/SHODOR/Bunny.mdl");
          visitor.setOutput("outputs/evalVisitor/test0EvalVisitor.yml");
          visitor.visit(tree);
+         // System.out.println(tree.toStringTree(parser));// USED TO DEBUG
 
          /*
-          * System.out.println(tree.toStringTree(parser));// USED TO DEBUG
           * 
           * JFrame frame = new JFrame("Antlr AST"); JPanel panel = new JPanel();
           * TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()),

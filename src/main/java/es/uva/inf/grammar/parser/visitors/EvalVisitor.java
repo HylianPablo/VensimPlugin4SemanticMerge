@@ -270,42 +270,54 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                                 + "]\r\n");
                         locationSpanStartEq++;
                         fw.write("        span : [" + initCharEq + ", "
-                                + (initCharEq + arrowsList.get(arrowsIndex).getText().length() + 2) + "]\r\n");
+                                + (initCharEq + arrowsList.get(arrowsIndex).getText().length() + 1) + "]\r\n");
                         initCharEq += arrowsList.get(arrowsIndex).getText().length();
                         initCharEq += 2;
                         arrowsIndex++;
                     } else {
+                        boolean nameNextLine = false;
                         fw.write("      - type : variable\r\n");
                         if (viewVariablesList.get(viewVariablesIndex).name != null) {
                             fw.write("        name : " + viewVariablesList.get(viewVariablesIndex).name.getText()
                                     + "\r\n");
                         } else {
-                            fw.write("        name : nextLine\r\n");
+                            if (!viewVariablesList.get(viewVariablesIndex).visualInfo().getText().equals("")) {
+                                fw.write("        name : "
+                                        + viewVariablesList.get(viewVariablesIndex).visualInfo().getText() + "\r\n");
+                                nameNextLine = true;
+                            } else {
+                                fw.write("        name : nextLine\r\n");
+                            }
                         }
-                        fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
-                                + locationSpanStartEq + ", "
-                                + (viewVariablesList.get(viewVariablesIndex).getText().length() + 2) + "]\r\n");
-                        locationSpanStartEq++;
-                        fw.write("        span : [" + initCharEq + ", "
-                                + (initCharEq + viewVariablesList.get(viewVariablesIndex).getText().length() + 2)
-                                + "]\r\n");
-                        initCharEq += viewVariablesList.get(viewVariablesIndex).getText().length();
-                        initCharEq += 2;
-                        // Comprobar casos en que el nombre esta en la siguiente linea
-                        viewVariablesIndex++;
+                        if (!nameNextLine) {
+                            fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
+                                    + locationSpanStartEq + ", "
+                                    + (viewVariablesList.get(viewVariablesIndex).getText().length() + 2) + "]\r\n");
+                            locationSpanStartEq++;
+                            fw.write("        span : [" + initCharEq + ", "
+                                    + (initCharEq + viewVariablesList.get(viewVariablesIndex).getText().length() + 1)
+                                    + "]\r\n");
+                            initCharEq += viewVariablesList.get(viewVariablesIndex).getText().length();
+                            initCharEq += 2;
+                            viewVariablesIndex++;
+                        } else {
+                            // Comprobar casos en que el nombre esta en la siguiente linea
+                            fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
+                                    + (locationSpanStartEq + 1) + ", "
+                                    + (viewVariablesList.get(viewVariablesIndex).visualInfo().getText().length() + 2)
+                                    + "]\r\n");
+                            locationSpanStartEq += 2;
+                            fw.write("        span : [" + initCharEq + ", "
+                                    + (initCharEq + viewVariablesList.get(viewVariablesIndex).getText().length() + 1)
+                                    + "]\r\n");
+                            initCharEq += viewVariablesList.get(viewVariablesIndex).getText().length();
+                            initCharEq += 2;
+                            viewVariablesIndex++;
+
+                        }
                     }
                 }
-
             }
-            // fw.write(" locationSpan : {start: [" + (locationSpanStartEq + 1) + ", 0],
-            // end: [" + (lastLine) + ", "
-            // + lastLineLength + "]}\r\n");
-            // initCharEq+=67;
-            // fw.write(" span : [" + (initCharEq + 68) + ", " + (initCharEq +
-            // graphs[1].length() + 10 - 2)
-            // + "]\r\n)");
-            // 9 characters representing \\\---///, which was deleted in split(), +1 because
-            // last char not readed
             fw.close();
         } catch (IOException ex) {
             ex.printStackTrace();

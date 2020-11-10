@@ -115,54 +115,54 @@ children:
         locationSpan : {start: [88, 0], end: [88, 47]
         span : [1661, 1708]
       - type : variable
-        name : nextLine
-        locationSpan : {start: [89, 0], end: [89, 46]
+        name : Money
+        locationSpan : {start: [89, 0], end: [90, 7]
         span : [1708, 1754]
       - type : variable
         name : carrying capacity
-        locationSpan : {start: [90, 0], end: [90, 55]
+        locationSpan : {start: [91, 0], end: [91, 55]
         span : [1754, 1809]
       - type : arrow
         name : arrow
-        locationSpan : {start: [91, 0], end: [91, 49]
+        locationSpan : {start: [92, 0], end: [92, 49]
         span : [1809, 1858]
       - type : variable
         name : bunnies 0
-        locationSpan : {start: [92, 0], end: [92, 45]
+        locationSpan : {start: [93, 0], end: [93, 45]
         span : [1858, 1903]
       - type : variable
         name : nextLine
-        locationSpan : {start: [93, 0], end: [93, 40]
+        locationSpan : {start: [94, 0], end: [94, 40]
         span : [1903, 1943]
       - type : arrow
         name : arrow
-        locationSpan : {start: [94, 0], end: [94, 49]
+        locationSpan : {start: [95, 0], end: [95, 49]
         span : [1943, 1992]
       - type : arrow
         name : arrow
-        locationSpan : {start: [95, 0], end: [95, 51]
+        locationSpan : {start: [96, 0], end: [96, 51]
         span : [1992, 2043]
       - type : variable
         name : nextLine
-        locationSpan : {start: [96, 0], end: [96, 38]
+        locationSpan : {start: [97, 0], end: [97, 38]
         span : [2043, 2081]
       - type : variable
         name : bunnification 0
-        locationSpan : {start: [97, 0], end: [97, 55]
+        locationSpan : {start: [98, 0], end: [98, 55]
         span : [2081, 2136]
       - type : variable
         name : birf rate 0
-        locationSpan : {start: [98, 0], end: [98, 48]
+        locationSpan : {start: [99, 0], end: [99, 48]
         span : [2136, 2184]
       - type : arrow
         name : arrow
-        locationSpan : {start: [99, 0], end: [99, 50]
+        locationSpan : {start: [100, 0], end: [100, 50]
         span : [2184, 2234]
       - type : arrow
         name : arrow
-        locationSpan : {start: [100, 0], end: [100, 49]
+        locationSpan : {start: [101, 0], end: [101, 49]
         span : [2234, 2283]
       - type : variable
         name : competition
-        locationSpan : {start: [101, 0], end: [101, 50]
+        locationSpan : {start: [102, 0], end: [102, 50]
         span : [2283, 2333]
