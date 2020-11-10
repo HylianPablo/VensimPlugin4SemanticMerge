@@ -1,0 +1,168 @@
+---
+type: file
+name: VensimExampleModels/SHODOR/Bunny.mdl
+locationSpan : {start: [1, 0], end: [128, 2]}
+footerSpan : [0,-1]
+parsingErrorsDetected : false
+children:
+  - type : SymbolWithDocs
+    name: {UTF-8}
+    locationSpan : {start: [1, 0], end: [75, 2]}
+    headerSpan : [0, 8]
+    footerSpan : [1065, 1066]
+    children :
+    - type : equation
+      name : birf rate
+      locationSpan : {start: [2, 0], end: [6, 2]}
+      span : [9, 52]
+    - type : equation
+      name : birf rate 0
+      locationSpan : {start: [7, 0], end: [11, 2]}
+      span : [53, 98]
+    - type : equation
+      name : bunnies
+      locationSpan : {start: [12, 0], end: [17, 2]}
+      span : [99, 153]
+    - type : equation
+      name : bunnies 0
+      locationSpan : {start: [18, 0], end: [23, 2]}
+      span : [154, 212]
+    - type : equation
+      name : bunnification
+      locationSpan : {start: [24, 0], end: [28, 2]}
+      span : [213, 292]
+    - type : equation
+      name : bunnification 0
+      locationSpan : {start: [29, 0], end: [33, 2]}
+      span : [293, 388]
+    - type : equation
+      name : carrying capacity
+      locationSpan : {start: [34, 0], end: [38, 2]}
+      span : [389, 429]
+    - type : equation
+      name : competition
+      locationSpan : {start: [39, 0], end: [43, 2]}
+      span : [430, 488]
+    - type : subscriptRange
+      name : pprofilePopulation
+      locationSpan : {start: [44, 0], end: [54, 2]}
+      span : [489, 737]
+    - type : equation
+      name : FINAL TIME
+      locationSpan : {start: [55, 0], end: [59, 2]}
+      span : [738, 810]
+    - type : equation
+      name : INITIAL TIME
+      locationSpan : {start: [60, 0], end: [64, 2]}
+      span : [811, 886]
+    - type : equation
+      name : SAVEPER
+      locationSpan : {start: [65, 0], end: [70, 2]}
+      span : [887, 987]
+    - type : equation
+      name : TIME STEP
+      locationSpan : {start: [71, 0], end: [74, 4]}
+      span : [988, 1064]
+  - type : sketches
+    name: sketches
+    locationSpan : {start: [76, 0], end: [104, 11]}
+    headerSpan : [1067, 1134]
+    footerSpan : [104, 11]
+    children:
+    - type : view
+      name : View 1
+      locationSpan : {start: [76, 0], end: [104, 11]}
+      span : [1135, 2394]
+      childen:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [76, 0], end: [79, 86]}
+        span : [1135, 1296]
+      - type : variable
+        name : bunnies
+        locationSpan : {start: [80, 0], end: [80, 43]
+        span : [1297, 1340]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [81, 0], end: [81, 41]
+        span : [1340, 1381]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [82, 0], end: [82, 48]
+        span : [1381, 1429]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [83, 0], end: [83, 50]
+        span : [1429, 1479]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [84, 0], end: [84, 39]
+        span : [1479, 1518]
+      - type : variable
+        name : bunnification
+        locationSpan : {start: [85, 0], end: [85, 53]
+        span : [1518, 1571]
+      - type : variable
+        name : birf rate
+        locationSpan : {start: [86, 0], end: [86, 43]
+        span : [1571, 1614]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [87, 0], end: [87, 47]
+        span : [1614, 1661]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [88, 0], end: [88, 47]
+        span : [1661, 1708]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [89, 0], end: [89, 46]
+        span : [1708, 1754]
+      - type : variable
+        name : carrying capacity
+        locationSpan : {start: [90, 0], end: [90, 55]
+        span : [1754, 1809]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [91, 0], end: [91, 49]
+        span : [1809, 1858]
+      - type : variable
+        name : bunnies 0
+        locationSpan : {start: [92, 0], end: [92, 45]
+        span : [1858, 1903]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [93, 0], end: [93, 40]
+        span : [1903, 1943]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [94, 0], end: [94, 49]
+        span : [1943, 1992]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [95, 0], end: [95, 51]
+        span : [1992, 2043]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [96, 0], end: [96, 38]
+        span : [2043, 2081]
+      - type : variable
+        name : bunnification 0
+        locationSpan : {start: [97, 0], end: [97, 55]
+        span : [2081, 2136]
+      - type : variable
+        name : birf rate 0
+        locationSpan : {start: [98, 0], end: [98, 48]
+        span : [2136, 2184]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [99, 0], end: [99, 50]
+        span : [2184, 2234]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [100, 0], end: [100, 49]
+        span : [2234, 2283]
+      - type : variable
+        name : competition
+        locationSpan : {start: [101, 0], end: [101, 50]
+        span : [2283, 2333]

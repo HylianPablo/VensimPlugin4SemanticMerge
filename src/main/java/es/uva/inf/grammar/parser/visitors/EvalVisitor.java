@@ -210,22 +210,100 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             }
             reader.close();
             locationSpanStartEq++; // Because TIMESTEP ends one line earlier due to footerSpan
+            List<ModelParser.ViewInfoContext> viewInfoList = ctx.model().sketchesGraphsAndMetadata().sketches()
+                    .viewInfo();
+            int graphsLastLine = linesUntilText(text, "///---\\\\\\");
             fw.write("  - type : sketches\r\n");
-            fw.write("    name: \\\\\\---/// Sketch information - do not modify anything except names\r\n");
-            fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (lastLine + 1) + ", " + 2
+            fw.write("    name: sketches\r\n");
+            fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (graphsLastLine) + ", "
+                    + 11 // 9 characters + \r\n
                     + "]}\r\n");
             initCharEq += 2;
             fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 67) + "]\r\n"); // Sketch informations
-                                                                                              // characters
-            fw.write("    footerSpan : [" + (lastLine + 1) + ", 2]\r\n");
+            initCharEq += 68; // characters
+            fw.write("    footerSpan : [" + (graphsLastLine) + ", 11]\r\n");
             fw.write("    children:\r\n");
-            fw.write("    - type : sketch\r\n");
-            fw.write("      name : V300  Do not put anything below this section - it will be ignored\r\n");
-            fw.write("      locationSpan : {start: [" + (locationSpanStartEq + 1) + ", 0], end: [" + (lastLine) + ", "
-                    + lastLineLength + "]}\r\n");
+            for (int i = 0; i < viewInfoList.size(); i++) {
+                int a = viewInfoList.get(i).start.getStartIndex();
+                int b = viewInfoList.get(i).stop.getStopIndex();
+                Interval interval = new Interval(a, b);
+                String viewText = ctx.start.getInputStream().getText(interval);
+                fw.write("    - type : view\r\n");
+                fw.write("      name : " + viewInfoList.get(i).viewName().getText().substring(1,
+                        viewInfoList.get(i).viewName().getText().length()) + "\r\n");
+                fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
+                        + (locationSpanStartEq + viewText.split("\n").length) + ", 11]}\r\n");
+                // locationSpanStartEq += viewText.split("\n").length;
+                fw.write("      span : [" + initCharEq + ", " + (initCharEq + viewText.length() + 2 - 67 + 1 + 11)
+                        + "]\r\n");
+                // initCharEq += 67; // V300
+                // initCharEq += viewInfoList.get(i).viewName().getText().length();
+                // initCharEq += 2;
+                int viewSettingsChars = 67 + viewInfoList.get(i).viewName().getText().length() + 2;
+                // La primera iteracion, se quita el header,
+                // luego se suma el \n final y luego los 11 caracteres de \\\---///
+                fw.write("      childen:\r\n");
+                fw.write("      - type : viewSettings\r\n");
+                fw.write("        name : viewSettings\r\n");
+                fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
+                        + (locationSpanStartEq + 3) + ", " + (viewText.split("\n")[3].length() + 1) + "]}\r\n");
+                locationSpanStartEq += 4;
+                fw.write("        span : [" + initCharEq + ", "
+                        + (initCharEq + viewText.split("\n")[3].length() + viewSettingsChars) + "]\r\n");
+                initCharEq += viewSettingsChars;
+                initCharEq += viewText.split("\n")[3].length();
+                initCharEq++;
+                // ESCRIBIR VIEWSETTINGS
+
+                List<ModelParser.ViewVariableContext> viewVariablesList = viewInfoList.get(i).viewVariables()
+                        .viewVariable();
+                List<ModelParser.ArrowContext> arrowsList = viewInfoList.get(i).viewVariables().arrow();
+                int arrowsIndex = 0;
+                int viewVariablesIndex = 0;
+                for (int j = 1; j < (viewVariablesList.size() + arrowsList.size()); j++) { // ViewSettings is ommited
+                    if (viewInfoList.get(i).viewVariables().getChild(j).getClass()
+                            .equals(arrowsList.get(i).getClass())) {
+                        fw.write("      - type : arrow\r\n");
+                        fw.write("        name : arrow\r\n"); // Indicar alguna clase de ID?
+                        fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
+                                + locationSpanStartEq + ", " + (arrowsList.get(arrowsIndex).getText().length() + 2)
+                                + "]\r\n");
+                        locationSpanStartEq++;
+                        fw.write("        span : [" + initCharEq + ", "
+                                + (initCharEq + arrowsList.get(arrowsIndex).getText().length() + 2) + "]\r\n");
+                        initCharEq += arrowsList.get(arrowsIndex).getText().length();
+                        initCharEq += 2;
+                        arrowsIndex++;
+                    } else {
+                        fw.write("      - type : variable\r\n");
+                        if (viewVariablesList.get(viewVariablesIndex).name != null) {
+                            fw.write("        name : " + viewVariablesList.get(viewVariablesIndex).name.getText()
+                                    + "\r\n");
+                        } else {
+                            fw.write("        name : nextLine\r\n");
+                        }
+                        fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
+                                + locationSpanStartEq + ", "
+                                + (viewVariablesList.get(viewVariablesIndex).getText().length() + 2) + "]\r\n");
+                        locationSpanStartEq++;
+                        fw.write("        span : [" + initCharEq + ", "
+                                + (initCharEq + viewVariablesList.get(viewVariablesIndex).getText().length() + 2)
+                                + "]\r\n");
+                        initCharEq += viewVariablesList.get(viewVariablesIndex).getText().length();
+                        initCharEq += 2;
+                        // Comprobar casos en que el nombre esta en la siguiente linea
+                        viewVariablesIndex++;
+                    }
+                }
+
+            }
+            // fw.write(" locationSpan : {start: [" + (locationSpanStartEq + 1) + ", 0],
+            // end: [" + (lastLine) + ", "
+            // + lastLineLength + "]}\r\n");
             // initCharEq+=67;
-            fw.write("      span : [" + (initCharEq + 68) + ", " + (initCharEq + graphs[1].length() + 10 - 2)
-                    + "]\r\n)");
+            // fw.write(" span : [" + (initCharEq + 68) + ", " + (initCharEq +
+            // graphs[1].length() + 10 - 2)
+            // + "]\r\n)");
             // 9 characters representing \\\---///, which was deleted in split(), +1 because
             // last char not readed
             fw.close();
@@ -305,6 +383,16 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             ex.printStackTrace();
         }
         return array;
+    }
+
+    private int linesUntilText(String text, String line) {
+        String[] lines = text.split("\n");
+        for (int i = 0; i < lines.length; i++) {
+            if (lines[i].contains(line)) {
+                return (i + 1);
+            }
+        }
+        return -1;
     }
 
 }

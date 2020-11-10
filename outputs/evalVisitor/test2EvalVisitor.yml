@@ -40,7 +40,7 @@ children:
       locationSpan : {start: [37, 0], end: [42, 2]}
       span : [333, 389]
     - type : equation
-      name : B
+      name : Z
       locationSpan : {start: [43, 0], end: [48, 2]}
       span : [390, 438]
     - type : equation
