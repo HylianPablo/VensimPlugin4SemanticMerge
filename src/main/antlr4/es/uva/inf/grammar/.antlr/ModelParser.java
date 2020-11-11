@@ -1,5 +1,4 @@
-// Generated from Model.g4 by ANTLR 4.8
-package es.uva.inf.grammar.parser;
+// Generated from c:\Users\Propietario\Documents\DOCUMENTOS-TFG\MVN\mvn\src\main\antlr4\es\u005Cuva\inf\grammar\Model.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -165,11 +164,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_file; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitFile(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final FileContext file() throws RecognitionException {
@@ -215,11 +209,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_model; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitModel(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ModelContext model() throws RecognitionException {
@@ -288,11 +277,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_sketchesGraphsAndMetadata; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSketchesGraphsAndMetadata(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SketchesGraphsAndMetadataContext sketchesGraphsAndMetadata() throws RecognitionException {
@@ -327,11 +311,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_symbolWithDoc; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSymbolWithDoc(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SymbolWithDocContext symbolWithDoc() throws RecognitionException {
@@ -389,11 +368,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_symbolWithDocDefinition; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSymbolWithDocDefinition(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SymbolWithDocDefinitionContext symbolWithDocDefinition() throws RecognitionException {
@@ -491,11 +465,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_subscriptRange; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSubscriptRange(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SubscriptRangeContext subscriptRange() throws RecognitionException {
@@ -565,11 +534,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_subscriptSequence; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSubscriptSequence(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SubscriptSequenceContext subscriptSequence() throws RecognitionException {
@@ -612,11 +576,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_subscriptMappingList; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSubscriptMappingList(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SubscriptMappingListContext subscriptMappingList() throws RecognitionException {
@@ -668,11 +627,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_subscriptMapping; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSubscriptMapping(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SubscriptMappingContext subscriptMapping() throws RecognitionException {
@@ -737,11 +691,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_equation; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitEquation(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final EquationContext equation() throws RecognitionException {
@@ -810,11 +759,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lhs; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitLhs(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LhsContext lhs() throws RecognitionException {
@@ -898,11 +842,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_subscriptCopy; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSubscriptCopy(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SubscriptCopyContext subscriptCopy() throws RecognitionException {
@@ -946,11 +885,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_unchangeableConstant; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitUnchangeableConstant(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final UnchangeableConstantContext unchangeableConstant() throws RecognitionException {
@@ -1022,11 +956,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_dataEquation; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitDataEquation(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final DataEquationContext dataEquation() throws RecognitionException {
@@ -1106,11 +1035,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lookupDefinition; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitLookupDefinition(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LookupDefinitionContext lookupDefinition() throws RecognitionException {
@@ -1189,11 +1113,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_constraint; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitConstraint(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ConstraintContext constraint() throws RecognitionException {
@@ -1245,11 +1164,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_realityCheck; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitRealityCheck(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final RealityCheckContext realityCheck() throws RecognitionException {
@@ -1290,11 +1204,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_stringAssign; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitStringAssign(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final StringAssignContext stringAssign() throws RecognitionException {
@@ -1349,11 +1258,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_macroDefinition; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitMacroDefinition(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final MacroDefinitionContext macroDefinition() throws RecognitionException {
@@ -1412,11 +1316,6 @@ public class ModelParser extends Parser {
 			return getRuleContext(ConstVensimContext.class,0);
 		}
 		public ConstContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitConst(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	public static class KeywordContext extends ExprContext {
 		public TerminalNode Keyword() { return getToken(ModelParser.Keyword, 0); }
@@ -1424,11 +1323,6 @@ public class ModelParser extends Parser {
 			return getRuleContext(ExprContext.class,0);
 		}
 		public KeywordContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitKeyword(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	public static class ExprOperationContext extends ExprContext {
 		public Token op;
@@ -1447,42 +1341,22 @@ public class ModelParser extends Parser {
 		public TerminalNode Equal() { return getToken(ModelParser.Equal, 0); }
 		public TerminalNode NotEqual() { return getToken(ModelParser.NotEqual, 0); }
 		public ExprOperationContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitExprOperation(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	public static class SignExprContext extends ExprContext {
 		public ExprAllowSignContext exprAllowSign() {
 			return getRuleContext(ExprAllowSignContext.class,0);
 		}
 		public SignExprContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSignExpr(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	public static class WildCardContext extends ExprContext {
 		public TerminalNode Star() { return getToken(ModelParser.Star, 0); }
 		public WildCardContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitWildCard(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	public static class LookupArgContext extends ExprContext {
 		public LookupContext lookup() {
 			return getRuleContext(LookupContext.class,0);
 		}
 		public LookupArgContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitLookupArg(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ExprContext expr() throws RecognitionException {
@@ -1650,11 +1524,6 @@ public class ModelParser extends Parser {
 		}
 		public TerminalNode Id() { return getToken(ModelParser.Id, 0); }
 		public DelayPArgContext(ExprAllowSignContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitDelayPArg(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	public static class TabbedArrayContext extends ExprAllowSignContext {
 		public List<ConstVensimContext> constVensim() {
@@ -1664,11 +1533,6 @@ public class ModelParser extends Parser {
 			return getRuleContext(ConstVensimContext.class,i);
 		}
 		public TabbedArrayContext(ExprAllowSignContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitTabbedArray(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	public static class VarContext extends ExprAllowSignContext {
 		public TerminalNode Id() { return getToken(ModelParser.Id, 0); }
@@ -1676,33 +1540,18 @@ public class ModelParser extends Parser {
 			return getRuleContext(SubscriptContext.class,0);
 		}
 		public VarContext(ExprAllowSignContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitVar(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	public static class ParensContext extends ExprAllowSignContext {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
 		public ParensContext(ExprAllowSignContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitParens(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	public static class CallExprContext extends ExprAllowSignContext {
 		public CallContext call() {
 			return getRuleContext(CallContext.class,0);
 		}
 		public CallExprContext(ExprAllowSignContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitCallExpr(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ExprAllowSignContext exprAllowSign() throws RecognitionException {
@@ -1820,11 +1669,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_call; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitCall(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final CallContext call() throws RecognitionException {
@@ -1882,11 +1726,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_macroHeader; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitMacroHeader(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final MacroHeaderContext macroHeader() throws RecognitionException {
@@ -1936,11 +1775,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_macroArguments; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitMacroArguments(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final MacroArgumentsContext macroArguments() throws RecognitionException {
@@ -1988,11 +1822,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_exprList; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitExprList(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ExprListContext exprList() throws RecognitionException {
@@ -2050,11 +1879,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_subscriptValueList; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSubscriptValueList(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SubscriptValueListContext subscriptValueList() throws RecognitionException {
@@ -2138,11 +1962,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_indexList; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitIndexList(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final IndexListContext indexList() throws RecognitionException {
@@ -2191,11 +2010,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_subscript; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSubscript(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SubscriptContext subscript() throws RecognitionException {
@@ -2234,11 +2048,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lookup; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitLookup(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LookupContext lookup() throws RecognitionException {
@@ -2293,11 +2102,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lookupRange; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitLookupRange(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LookupRangeContext lookupRange() throws RecognitionException {
@@ -2353,11 +2157,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lookupPointList; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitLookupPointList(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LookupPointListContext lookupPointList() throws RecognitionException {
@@ -2406,11 +2205,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_referenceLine; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitReferenceLine(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ReferenceLineContext referenceLine() throws RecognitionException {
@@ -2447,11 +2241,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lookupPoint; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitLookupPoint(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LookupPointContext lookupPoint() throws RecognitionException {
@@ -2494,11 +2283,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_constantLine; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitConstantLine(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ConstantLineContext constantLine() throws RecognitionException {
@@ -2552,11 +2336,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_constList; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitConstList(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ConstListContext constList() throws RecognitionException {
@@ -2627,11 +2406,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_numberList; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitNumberList(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final NumberListContext numberList() throws RecognitionException {
@@ -2711,11 +2485,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_graphsGroup; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitGraphsGroup(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final GraphsGroupContext graphsGroup() throws RecognitionException {
@@ -2799,11 +2568,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_graphs; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitGraphs(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final GraphsContext graphs() throws RecognitionException {
@@ -2941,11 +2705,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_graph; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitGraph(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final GraphContext graph() throws RecognitionException {
@@ -2991,11 +2750,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_title; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitTitle(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final TitleContext title() throws RecognitionException {
@@ -3041,11 +2795,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_xaxis; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitXaxis(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final XaxisContext xaxis() throws RecognitionException {
@@ -3092,11 +2841,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_xlabel; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitXlabel(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final XlabelContext xlabel() throws RecognitionException {
@@ -3128,11 +2872,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_xdiv; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitXdiv(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final XdivContext xdiv() throws RecognitionException {
@@ -3163,11 +2902,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_yaxis; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitYaxis(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final YaxisContext yaxis() throws RecognitionException {
@@ -3214,11 +2948,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ylabel; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitYlabel(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final YlabelContext ylabel() throws RecognitionException {
@@ -3250,11 +2979,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ydiv; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitYdiv(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final YdivContext ydiv() throws RecognitionException {
@@ -3285,11 +3009,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_xmin; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitXmin(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final XminContext xmin() throws RecognitionException {
@@ -3335,11 +3054,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_xmax; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitXmax(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final XmaxContext xmax() throws RecognitionException {
@@ -3386,11 +3100,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_nolegend; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitNolegend(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final NolegendContext nolegend() throws RecognitionException {
@@ -3421,11 +3130,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_scale; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitScale(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ScaleContext scale() throws RecognitionException {
@@ -3469,11 +3173,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_graphvar; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitGraphvar(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final GraphvarContext graphvar() throws RecognitionException {
@@ -3543,11 +3242,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_gvar; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitGvar(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final GvarContext gvar() throws RecognitionException {
@@ -3593,11 +3287,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ymin; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitYmin(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final YminContext ymin() throws RecognitionException {
@@ -3643,11 +3332,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ymax; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitYmax(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final YmaxContext ymax() throws RecognitionException {
@@ -3693,11 +3377,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_linewidthgraph; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitLinewidthgraph(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LinewidthgraphContext linewidthgraph() throws RecognitionException {
@@ -3749,11 +3428,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_metadataDivisor; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitMetadataDivisor(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final MetadataDivisorContext metadataDivisor() throws RecognitionException {
@@ -3798,11 +3472,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_metadataLine; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitMetadataLine(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final MetadataLineContext metadataLine() throws RecognitionException {
@@ -3859,11 +3528,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_sketches; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSketches(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SketchesContext sketches() throws RecognitionException {
@@ -3908,11 +3572,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_sketchesDelimiter; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSketchesDelimiter(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SketchesDelimiterContext sketchesDelimiter() throws RecognitionException {
@@ -3953,11 +3612,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_viewInfo; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitViewInfo(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ViewInfoContext viewInfo() throws RecognitionException {
@@ -3992,11 +3646,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_sketchInfo; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSketchInfo(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SketchInfoContext sketchInfo() throws RecognitionException {
@@ -4027,11 +3676,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_versionCode; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitVersionCode(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final VersionCodeContext versionCode() throws RecognitionException {
@@ -4061,11 +3705,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_viewName; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitViewName(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ViewNameContext viewName() throws RecognitionException {
@@ -4127,11 +3766,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_viewSettings; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitViewSettings(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ViewSettingsContext viewSettings() throws RecognitionException {
@@ -4199,11 +3833,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_viewVariables; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitViewVariables(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ViewVariablesContext viewVariables() throws RecognitionException {
@@ -4288,11 +3917,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arrow; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitArrow(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ArrowContext arrow() throws RecognitionException {
@@ -4406,11 +4030,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arrowCoordinates; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitArrowCoordinates(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ArrowCoordinatesContext arrowCoordinates() throws RecognitionException {
@@ -4483,11 +4102,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_viewVariable; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitViewVariable(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ViewVariableContext viewVariable() throws RecognitionException {
@@ -4644,11 +4258,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_visualInfo; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitVisualInfo(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final VisualInfoContext visualInfo() throws RecognitionException {
@@ -4713,11 +4322,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_typography; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitTypography(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final TypographyContext typography() throws RecognitionException {
@@ -4794,11 +4398,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_typographyName; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitTypographyName(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final TypographyNameContext typographyName() throws RecognitionException {
@@ -4838,11 +4437,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_textFormat; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitTextFormat(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final TextFormatContext textFormat() throws RecognitionException {
@@ -4936,11 +4530,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_color; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitColor(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ColorContext color() throws RecognitionException {
@@ -4988,11 +4577,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_rgbColor; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitRgbColor(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final RgbColorContext rgbColor() throws RecognitionException {
@@ -5032,11 +4616,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_singleColor; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSingleColor(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SingleColorContext singleColor() throws RecognitionException {
@@ -5067,11 +4646,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_subscriptId; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitSubscriptId(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SubscriptIdContext subscriptId() throws RecognitionException {
@@ -5118,11 +4692,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_constVensim; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitConstVensim(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ConstVensimContext constVensim() throws RecognitionException {
@@ -5172,11 +4741,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_integerConst; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitIntegerConst(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final IntegerConstContext integerConst() throws RecognitionException {
@@ -5229,11 +4793,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_floatingConst; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitFloatingConst(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final FloatingConstContext floatingConst() throws RecognitionException {
@@ -5292,11 +4851,6 @@ public class ModelParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_unitsDoc; }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ModelVisitor ) return ((ModelVisitor<? extends T>)visitor).visitUnitsDoc(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final UnitsDocContext unitsDoc() throws RecognitionException {
