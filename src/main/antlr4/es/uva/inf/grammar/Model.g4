@@ -4,8 +4,8 @@ grammar Model;
 
 file: model EOF;
 model: ( symbolWithDoc | macroDefinition)* sketchesGraphsAndMetadata?;
-//graphsgroup metadivisor
-sketchesGraphsAndMetadata: sketches; //Separating equations and sketches&graphs allows to test sample files with just a few lines.
+
+sketchesGraphsAndMetadata: sketches graphsGroup metadataDivisor; //Separating equations and sketches&graphs allows to test sample files with just a few lines.
                                                                       //For example, a problematic equation.
 symbolWithDoc: symbolWithDocDefinition unitsDoc;
 

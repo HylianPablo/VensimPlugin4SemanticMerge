@@ -1,7 +1,7 @@
 ---
 type: file
 name: VensimExampleModels/SHODOR/Bunny.mdl
-locationSpan : {start: [1, 0], end: [105, 2]}
+locationSpan : {start: [1, 0], end: [128, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
@@ -65,16 +65,16 @@ children:
       span : [988, 1064]
   - type : sketches
     name : sketches
-    locationSpan : {start: [76, 0], end: [105, 2]}
+    locationSpan : {start: [76, 0], end: [104, 11]}
     headerSpan : [1067, 1134]
-    footerSpan : [2395, 2396]
+    footerSpan : [2384, 2394]
     children:
     - type : view
       name : View 1
-      locationSpan : {start: [77, 0], end: [104, 11]}
+      locationSpan : {start: [77, 0], end: [103, 49]}
       headerSpan : [1135, 1201]
-      footerSpan : [2384, 2394]
-      childen:
+      footerSpan : [2335, 2383]
+      children:
       - type : viewSettings
         name : viewSettings
         locationSpan : {start: [78, 0], end: [79, 86]}
@@ -167,7 +167,67 @@ children:
         name : competition
         locationSpan : {start: [102, 0], end: [102, 50]}
         span : [2285, 2334]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [103, 0], end: [103, 49]}
-        span : [2335, 2383]
+  - type : graphs
+    name : graphs
+    locationSpan : {start: [105, 0], end: [114, 14]}
+    headerSpan : [2395, 2408]
+    footerSpan : [2519, 2533]
+    children:
+    - type : graph
+      name : population
+      locationSpan : {start: [106, 0], end: [113, 16]}
+      span : [2409, 2518]
+  - type : metadata
+    name : metadata
+    locationSpan : {start: [115, 0], end: [128, 2]}
+    headerSpan : [2534, 2544]
+    footerSpan : [2666, 2667]
+    children:
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [116, 0], end: [116, 15]}
+      span : [2545, 2559]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [117, 0], end: [117, 11]}
+      span : [2560, 2570]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [118, 0], end: [118, 6]}
+      span : [2571, 2576]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [119, 0], end: [119, 16]}
+      span : [2577, 2592]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [120, 0], end: [120, 10]}
+      span : [2593, 2602]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [121, 0], end: [121, 7]}
+      span : [2603, 2609]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [122, 0], end: [122, 7]}
+      span : [2610, 2616]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [123, 0], end: [123, 8]}
+      span : [2617, 2624]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [124, 0], end: [124, 21]}
+      span : [2625, 2645]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [125, 0], end: [125, 6]}
+      span : [2646, 2651]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [126, 0], end: [126, 7]}
+      span : [2652, 2658]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [127, 0], end: [127, 7]}
+      span : [2659, 2665]
