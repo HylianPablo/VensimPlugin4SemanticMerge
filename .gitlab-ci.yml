@@ -28,15 +28,17 @@ test_job:
 deploy-master:
   stage: deploy
   script:
-    ##- scp  
-    - ssh usuario@virtual.lab.inf.uva.es -p 20012 "cd .\Appdata\Local\semanticmerge && .\script.bat && exit"
+    - mvn assembly:assembly
+    - scp -P 20012 target/mvntfg-1.0-jar-with-dependencies.jar usuario@virtual.lab.inf.uva.es:C:\Users\Usuario\AppData\Local\semanticmerge 
+    - ssh usuario@virtual.lab.inf.uva.es -p 20012 "cd /cygdrive/c/Users/Usuario/AppData/Local/semanticmerge/ && .\script.bat && exit"
   only:
     - master
 
 deploy-develop:
   stage: deploy
   script:
-    ##- scp  
-    - ssh usuario@virtual.lab.inf.uva.es -p 20012 "cd .\Appdata\Local\semanticmerge && .\script.bat && exit"
+    - mvn assembly:assembly
+    - scp -P 20012 target/mvntfg-1.0-jar-with-dependencies.jar usuario@virtual.lab.inf.uva.es:C:\Users\Usuario\AppData\Local\semanticmerge 
+    - ssh usuario@virtual.lab.inf.uva.es -p 20012 "cd /cygdrive/c/Users/Usuario/AppData/Local/semanticmerge/ && .\script.bat && exit"
   only:
     - develop
