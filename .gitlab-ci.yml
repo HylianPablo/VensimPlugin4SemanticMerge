@@ -36,7 +36,7 @@ deploy-master:
     - sshpass -p "d34nwR4L" ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no usuario@virtual.lab.inf.uva.es -p 20012 "cd /cygdrive/c/Users/Usuario/AppData/Local/semanticmerge/ && ./script.bat && exit"
   only:
     - master
-
+##
 deploy-develop:
   stage: deploy
   script:
