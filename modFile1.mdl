@@ -13,7 +13,7 @@ bunnies= INTEG (
 	bunnification,
 		2)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~<[VIEW]>: CAMBIO <[DESCRIPTION]>:		|
 
 bunnies 0= INTEG (
 	bunnification 0,
@@ -42,7 +42,7 @@ competition=
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 pprofilePopulation:
-	ptypePop, ppriorityPop, pwidthPop, pextraPop
+	ptypePop, ppriorityPop, pwidthPoooop, pextraPop
 	~	
 	~		|
 
