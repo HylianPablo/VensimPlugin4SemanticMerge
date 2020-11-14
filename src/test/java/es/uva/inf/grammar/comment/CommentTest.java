@@ -15,22 +15,36 @@ import es.uva.inf.grammar.Comment;
 
 public class CommentTest {
 
-    /*
-     * @Test public void lecturaCorrectaSimple() { String[] args = new String[2];
-     * args[0]="VensimExampleModels/SHODOR/Bunny.mdl";
-     * args[1]="outputs/comment/test1.mdl"; BufferedReader reader; try {
-     * Comment.main(args); reader = new BufferedReader(new
-     * FileReader("VensimExampleModels/SHODOR/Bunny.mdl")); int lines = 0; while
-     * (reader.readLine() != null) lines++; reader.close(); assertSame(127,lines);
-     * //Last newline is not counted
-     * 
-     * reader = new BufferedReader(new FileReader("outputs/comment/test1.mdl"));
-     * Set<Integer> positions = new HashSet<Integer>();
-     * positions.addAll(Arrays.asList(new Integer[] {4, 9, 15, 21, 26, 31, 36,
-     * 41})); for(int i=0;i<43;i++){ String line = reader.readLine();
-     * if(positions.contains(i)){ assertTrue(line.indexOf("View 1")!=-1); } }
-     * reader.close(); } catch (Exception e) { e.printStackTrace(); } }
-     */
+    @Test
+    public void lecturaCorrectaSimple() {
+        String[] args = new String[2];
+        args[0] = "VensimExampleModels/SHODOR/Bunny.mdl";
+        args[1] = "outputs/comment/test1.mdl";
+        BufferedReader reader;
+        try {
+            Comment.main(args);
+            reader = new BufferedReader(new FileReader("VensimExampleModels/SHODOR/Bunny.mdl"));
+            int lines = 0;
+            while (reader.readLine() != null)
+                lines++;
+            reader.close();
+            assertSame(127, lines);
+            // Last newline is not counted
+
+            reader = new BufferedReader(new FileReader("outputs/comment/test1.mdl"));
+            Set<Integer> positions = new HashSet<Integer>();
+            positions.addAll(Arrays.asList(new Integer[] { 4, 9, 15, 21, 26, 31, 36, 41 }));
+            for (int i = 0; i < 43; i++) {
+                String line = reader.readLine();
+                if (positions.contains(i)) {
+                    assertTrue(line.indexOf("View 1") != -1);
+                }
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void lecturaCorrectaEcuacionDescriptiva() {

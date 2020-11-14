@@ -102,3 +102,26 @@ Money
 10,22,competition,10,124,62,11,8,131,0,0,0,0,0,0
 1,23,22,18,1,0,0,0,0,64,0,-1--1--1,,1|(-50,97)|
 ///---\\\
+:GRAPH Money
+:TITLE population
+:X-AXIS Time
+:SCALE
+:VAR bunnies
+:Y-MIN 0
+:Y-MAX 10000
+:LINE-WIDTH 2
+:VAR bunnies 0
+:LINE-WIDTH 2
+:L<%^E!@
+1:Current.vdf
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:150,0
+27:2,
+34:0,
+4:Time
+5:carrying capacity
+24:0
+25:30
+26:30

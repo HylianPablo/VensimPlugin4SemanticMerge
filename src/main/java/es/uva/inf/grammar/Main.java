@@ -30,7 +30,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class MainBazaco {
+public class Main {
     public static void main(String args[]) {
         try (PrintWriter out = new PrintWriter(args[1])) {
             out.println("READY");
@@ -43,13 +43,13 @@ public class MainBazaco {
         String firstFile = scanner.nextLine();
         String firstEncoding = scanner.nextLine();
         String firstFileOutput = scanner.nextLine();
-        parseFile(firstFile, firstFileOutput);
+        parseFile(firstFile, firstFileOutput, 1);
         System.out.println("OK");
 
         String secondFile = scanner.nextLine();
         String secondEncoding = scanner.nextLine();
         String secondFileOutput = scanner.nextLine();
-        parseFile(secondFile, secondFileOutput);
+        parseFile(secondFile, secondFileOutput, 2);
         System.out.println("OK");
 
         String end = scanner.nextLine();
@@ -59,25 +59,37 @@ public class MainBazaco {
         }
     }
 
-    private static void parseFile(String input, String output) {
+    private static void parseFile(String input, String output, int n) {
         try {
-            String module = input;
+
+            String commentFile;
+            if (n == 1) {
+                commentFile = "modFile1.mdl";
+            } else {
+                commentFile = "modFile2.mdl";
+            }
+            String[] argsComment = new String[2];
+            argsComment[0] = input;
+            argsComment[1] = commentFile;
+            Comment.main(argsComment);
+
+            String module = commentFile;
             String content = new String(Files.readAllBytes(Paths.get(module)), StandardCharsets.UTF_8);
-
             /*
-            JsonSymbolTableBuilder jsonBuilder = new JsonSymbolTableBuilder();
-
-            ModelParser.FileContext root = getParseTree(content);
-
-            SymbolTable table = SymbolTableGenerator.getSymbolTable(root);
-            jsonBuilder.addSymbolTable(module, table);
-
-            SymbolTable dbTable = null;
-
-            VensimVisitorContext visitorContext = new VensimVisitorContext(root, table, dbTable);
-
-            generateJsonOutput(jsonBuilder);
-            */
+             * JsonSymbolTableBuilder jsonBuilder = new JsonSymbolTableBuilder();
+             * 
+             * ModelParser.FileContext root = getParseTree(content);
+             * 
+             * SymbolTable table = SymbolTableGenerator.getSymbolTable(root);
+             * jsonBuilder.addSymbolTable(module, table);
+             * 
+             * SymbolTable dbTable = null;
+             * 
+             * VensimVisitorContext visitorContext = new VensimVisitorContext(root, table,
+             * dbTable);
+             * 
+             * generateJsonOutput(jsonBuilder);
+             */
             /*
              * for(Symbol symbol:table.getSymbols()){ System.out.println(symbol); }
              */

@@ -38,7 +38,6 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             int lastLineLength = lastLineLength(input, lastLine) + 2;
 
             int equationsEndLine = 0;
-            int equationsFooter = 9;
 
             String text = new String(Files.readAllBytes(Paths.get(input)), StandardCharsets.UTF_8);
 
@@ -62,9 +61,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             int indexOfMacros = 0;
             ArrayList<Boolean> isMacroList = checkForMacros(input);
 
-            equationsFooter += 166; // Control delimiter characters APROX, MUST BE CHANGED
-
-            equationsFooter = graphs[0].length() - 3;
+            int equationsFooter = graphs[0].length() - 3; // REVISAR, NO ESTA BIEN DEL TODO
 
             File outF = new File(output);
             FileWriter fw = new FileWriter(outF);
