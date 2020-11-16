@@ -73,7 +73,18 @@ public class Main {
             argsComment[1] = commentFile;
             Comment.main(argsComment);
 
-            String module = commentFile;
+            String delimitedFile;
+            if (n == 1) {
+                delimitedFile = "modDelFile1.mdl";
+            } else {
+                delimitedFile = "modDelFile2.mdl";
+            }
+            String[] argsDelimiter = new String[2];
+            argsDelimiter[0] = commentFile;
+            argsDelimiter[1] = delimitedFile;
+            Delimiter.main(argsDelimiter);
+
+            String module = delimitedFile;
             String content = new String(Files.readAllBytes(Paths.get(module)), StandardCharsets.UTF_8);
             /*
              * JsonSymbolTableBuilder jsonBuilder = new JsonSymbolTableBuilder();
