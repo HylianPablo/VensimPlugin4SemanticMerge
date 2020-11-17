@@ -79,7 +79,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>es.uva.inf.grammar.MainBazaco</mainClass>
+            <mainClass>es.uva.inf.grammar.Main</mainClass>
           </manifest>
         </archive>
       </configuration>
@@ -113,7 +113,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                       <manifest>
-                        <mainClass>es.uva.inf.grammar.MainBazaco</mainClass>
+                        <mainClass>es.uva.inf.grammar.Main</mainClass>
                       </manifest>
                     </archive>
 

@@ -45,6 +45,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] graphs = text.split(viewsDelimiter, 2);
 
+            // Check if equation has a newline after its definition
             ArrayList<Boolean> newLinesInEquation = checkForNewLines(input);
 
             equationsEndLine = graphs[0].split("\n").length;
@@ -61,7 +62,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             int indexOfMacros = 0;
             ArrayList<Boolean> isMacroList = checkForMacros(input);
 
-            int equationsFooter = graphs[0].length() - 3; // REVISAR, NO ESTA BIEN DEL TODO
+            String[] equationFooterChars = text.split("\\<\\[VIEW START\\]\\>", 2);
+            int equationsFooter = equationFooterChars[0].length() - 1;
 
             File outF = new File(output);
             FileWriter fw = new FileWriter(outF);
@@ -78,16 +80,16 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.write("children:\r\n");
             fw.write("  - type : SymbolWithDocs\r\n");
             fw.write("    name: {UTF-8}\r\n");
-            fw.write("    locationSpan : {start: [1, 0], end: [" + (equationsEndLine - 1) + ", 2]}\r\n");
+            fw.write("    locationSpan : {start: [1, 0], end: [" + (equationsEndLine - 2) + ", 2]}\r\n"); //estaba en eEndLine -2
             fw.write("    headerSpan : [0, 8]\r\n"); // Assuming file will always start with {UTF-8}
-            fw.write("    footerSpan : [" + (equationsFooter - 1) + ", " + equationsFooter + "]\r\n");
+            fw.write("    footerSpan : [" + (equationsFooter - 1) + ", " + (equationsFooter) + "]\r\n"); //antes +2+3
             fw.write("    children :\r\n");
             int locationSpanStartEq = 2; // Assuming there is always an encoding line {UTF-8}
             int initCharEq = 9; // Assuming there is always an encoding line {UTF-8}
             BufferedReader reader = new BufferedReader(new FileReader(input));
             reader.readLine();// UTF-8
             for (int i = 0; i < (equations.size() + macrosListLen); i++) {
-                String equationText; // Mostly all strcutures are equations, but it will be cases that there will be
+                String equationText; // Mostly all structures are equations, but it will be cases that there will be
                                      // subscriptRanges or others
                 String typeName;
                 String equation;
@@ -142,7 +144,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     int a = macros.get(indexOfMacros).start.getStartIndex();
                     int b = macros.get(indexOfMacros).stop.getStopIndex();
                     Interval interval = new Interval(a, b);
-                    equation = ctx.start.getInputStream().getText(interval); // Obtaining all text of equation without
+                    equation = ctx.start.getInputStream().getText(interval); // Obtaining all text of macro without
                                                                              // trimming
                     indexOfMacros++;
                 }
@@ -166,7 +168,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 }
                 int endCharEq;
                 int endColumnLocationSpan = 2;
-                int equationNewLines = equation.split("\r\n").length; // One line for UTF-8 and other for \n
+                int equationNewLines = equation.split("\n").length; // One line for UTF-8 and other for \n //Antes
+                                                                    // dividia en \r\n
                 if (i < newLinesInEquation.size()) { // It only checks until .Control delimiter
                     if (newLinesInEquation.get(i)) {
                         endCharEq = equation.length() + 3; // \r \n + last \n that is not read by equation
@@ -207,20 +210,21 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             }
             reader.close();
             locationSpanStartEq++; // Because TIMESTEP ends one line earlier due to footerSpan
+
             List<ModelParser.ViewInfoContext> viewInfoList = ctx.model().sketchesGraphsAndMetadata().sketches()
                     .viewInfo();
             int graphsLastLine = linesUntilText(text, "///---\\\\\\");
             fw.write("  - type : sketches\r\n");
             fw.write("    name : sketches\r\n");
-            fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (graphsLastLine) + ", "
-                    + 11 // 9 characters + \n
-                    + "]}\r\n");
+            fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (graphsLastLine + 1)
+                    + ", " + 14 + "]}\r\n");
             initCharEq += 2;
-            fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 67) + "]\r\n"); // Sketch informations
-            initCharEq += 68; // characters
-            String[] viewChars = text.split("///---", 2);
-            // fw.write(" footerSpan : [2395, 2396]\n");
-            fw.write("    footerSpan : [" + viewChars[0].length() + ", " + (viewChars[0].length() + 10) + "]\r\n");
+            fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 15) + "]\r\n"); // View start delimiter
+            initCharEq += 16;
+            // Divides text on graphs
+            String[] viewChars = text.split("\\<\\[VIEW END\\]\\>", 2);
+            fw.write(
+                    "    footerSpan : [" + (viewChars[0].length()) + ", " + (viewChars[0].length() + 11 + 2) + "]\r\n");
             fw.write("    children:\r\n");
             for (int i = 0; i < viewInfoList.size(); i++) {
                 int a = viewInfoList.get(i).start.getStartIndex();
@@ -231,50 +235,35 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 fw.write("      name : " + viewInfoList.get(i).viewName().getText().substring(1,
                         viewInfoList.get(i).viewName().getText().length()) + "\r\n");
                 fw.write("      locationSpan : {start: [" + (locationSpanStartEq + 1) + ", 0], end: ["
-                        + (locationSpanStartEq + viewText.split("\n").length - 1) + ", "
-                        + (viewText.split("\n")[viewText.split("\n").length - 1].length() + 2) + "]}\r\n");
-                fw.write("      headerSpan : [" + initCharEq + ", " + (initCharEq + 66) + "]\r\n");
-                initCharEq += 67;
+                        + (locationSpanStartEq + viewText.split("\n").length + 1) + ", " + (11) + "]}\r\n"); //It will end in \\\---/// PROVISIONAL PARA UNA VISTA
+                fw.write("      headerSpan : [" + initCharEq + ", " + (initCharEq + 67) + "]\r\n");
+                initCharEq += 68;
                 String[] viewCharsNewLines = viewChars[0].split("\n");
-                // fw.write(" footerSpan : [2384, 2394]\n");
-                fw.write("      footerSpan : ["
-                        + (viewChars[0].length() - viewCharsNewLines[viewCharsNewLines.length - 2].length()) + ", "
-                        + (viewChars[0].length() - 1) + "]\r\n");
-                // locationSpanStartEq += viewText.split("\n").length;
-                // fw.write(
-                // " span : [" + initCharEq + ", " + (initCharEq + viewText.length() + 2 - 67 +
-                // 1) + "]\n");
-                // initCharEq += 67; // V300
-                // initCharEq += viewInfoList.get(i).viewName().getText().length();
-                // initCharEq += 2;
-                int viewSettingsChars = viewInfoList.get(i).viewName().getText().length();
-                // La primera iteracion, se quita el header,
-                // luego se suma el \n final y luego los 11 caracteres de \\\---///
+                fw.write("      footerSpan : [" + (viewChars[0].length() - 11) + ", " + (viewChars[0].length() - 1)
+                        + "]\r\n");
+                int viewSettingsChars = viewInfoList.get(i).viewName().getText().length() + 2;
+                viewSettingsChars += viewInfoList.get(i).versionCode().getText().length() + 2;
+                viewSettingsChars += viewInfoList.get(i).viewVariables().viewSettings().getText().length() + 2;
+                locationSpanStartEq += 2;
                 fw.write("      children:\r\n");
                 fw.write("      - type : viewSettings\r\n");
                 fw.write("        name : viewSettings\r\n");
-                fw.write("        locationSpan : {start: [" + (locationSpanStartEq + 2) + ", 0], end: ["
-                        + (locationSpanStartEq + 3) + ", " + (viewText.split("\n")[3].length() + 1) + "]}\r\n");
-                locationSpanStartEq += 4;
-                fw.write("        span : [" + initCharEq + ", "
-                        + (initCharEq + viewText.split("\n")[3].length() + viewSettingsChars + 2) + "]\r\n");
+                fw.write("        locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: ["
+                        + (locationSpanStartEq + 2) + ", " + (viewText.split("\n")[3].length() + 1) + "]}\r\n");
+                locationSpanStartEq += 3;
+                fw.write("        span : [" + initCharEq + ", " + (initCharEq + viewSettingsChars - 1) + "]\r\n");
                 initCharEq += viewSettingsChars;
-                initCharEq += viewText.split("\n")[3].length();
-                initCharEq++;
-                initCharEq += 2;
-                // ESCRIBIR VIEWSETTINGS
 
                 List<ModelParser.ViewVariableContext> viewVariablesList = viewInfoList.get(i).viewVariables()
                         .viewVariable();
                 List<ModelParser.ArrowContext> arrowsList = viewInfoList.get(i).viewVariables().arrow();
                 int arrowsIndex = 0;
                 int viewVariablesIndex = 0;
-                for (int j = 1; j < (viewVariablesList.size() + arrowsList.size()); j++) { // ViewSettings is ommited
-                    // MENOR SIN IGUAL PARA QUE CUADRE, PERO SE SALTA UNA ARROW
+                for (int j = 1; j <= (viewVariablesList.size() + arrowsList.size()); j++) { // ViewSettings is ommited so it starts on 1
                     if (viewInfoList.get(i).viewVariables().getChild(j).getClass()
                             .equals(arrowsList.get(i).getClass())) {
                         fw.write("      - type : arrow\r\n");
-                        fw.write("        name : arrow\r\n"); // Indicar alguna clase de ID?
+                        fw.write("        name : arrow\r\n");
                         fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                                 + locationSpanStartEq + ", " + (arrowsList.get(arrowsIndex).getText().length() + 2)
                                 + "]}\r\n");
@@ -284,17 +273,22 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         initCharEq += arrowsList.get(arrowsIndex).getText().length();
                         initCharEq += 2;
                         arrowsIndex++;
-                    } else {
+                    } else { // Variable case SE DEBERIA COMPROBAR LAS SHADOWS Y MARCAR COMO RELEVANTES
+                             // CIERTOS CAMPOS
                         boolean nameNextLine = false;
                         fw.write("      - type : variable\r\n");
-                        if (viewVariablesList.get(viewVariablesIndex).name != null) {
+                        if (viewVariablesList.get(viewVariablesIndex).name != null) { // Third field of variable is not
+                                                                                      // null
                             fw.write("        name : " + viewVariablesList.get(viewVariablesIndex).name.getText()
                                     + "\r\n");
                         } else {
+                            // Third field equals zero so name is defined in the next line
                             if (!viewVariablesList.get(viewVariablesIndex).visualInfo().getText().equals("")) {
                                 fw.write("        name : "
                                         + viewVariablesList.get(viewVariablesIndex).visualInfo().getText() + "\r\n");
                                 nameNextLine = true;
+                                // It just has an irrelevant variable on third field. Name is trivial, must be
+                                // changed
                             } else {
                                 fw.write("        name : nextLine\r\n");
                             }
@@ -311,7 +305,6 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                             initCharEq += 2;
                             viewVariablesIndex++;
                         } else {
-                            // Comprobar casos en que el nombre esta en la siguiente linea
                             fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                                     + (locationSpanStartEq + 1) + ", "
                                     + (viewVariablesList.get(viewVariablesIndex).visualInfo().getText().length() + 2)
@@ -329,35 +322,34 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         }
                     }
                 }
-                initCharEq += ((viewChars[0].length() - 1)
-                        - (viewChars[0].length() - viewCharsNewLines[viewCharsNewLines.length - 2].length()));
-                initCharEq++;
-                locationSpanStartEq++;
             }
-            locationSpanStartEq++;
-            // initCharEq += 2;
-            initCharEq += 11;
+            locationSpanStartEq += 2;
+            initCharEq += 25;
+            //initCharEq += 11;
             if (!ctx.model().sketchesGraphsAndMetadata().graphsGroup().graphs().isEmpty()) {
                 int metadataLastLine = linesUntilText(text, ":L<%^E!@");
                 List<ModelParser.GraphsContext> graphsList = ctx.model().sketchesGraphsAndMetadata().graphsGroup()
                         .graphs();
+                // Divides text in metadata, and then gets number of newlines
                 String[] untilMetadataText = text.split(":L\\<%\\^E\\!@", 2)[0].split("\r\n");
                 fw.write("  - type : graphs\r\n");
                 fw.write("    name : graphs\r\n");
                 fw.write(
                         "    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (metadataLastLine - 1)
-                                + ", " + (untilMetadataText[untilMetadataText.length - 1].length() + 1) + "]}\r\n"); // \r
-                String[] viewsSeparatorText = text.split("///---", 2)[1].split("\r\n");
-                fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + viewsSeparatorText[1].length() + 1)
+                                + ", " + (untilMetadataText[untilMetadataText.length - 1].length() + 2) + "]}\r\n");
+                // New lines since graph section is started
+                // String[] viewsSeparatorText = text.split("///---", 2)[1].split("\r\n");
+                fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 16) // graphs start delimiter
                         + "]\r\n");
-                initCharEq += viewsSeparatorText[1].length();
-                initCharEq++;
+                // initCharEq += viewsSeparatorText[1].length();
+                initCharEq += 17;
+                // Divides text in metadata
                 String[] graphChars = text.split(":L\\<%\\^E\\!@", 2);
                 String[] graphCharsNewLines = graphChars[0].split("\n");
-                fw.write("    footerSpan : ["
-                        + (graphChars[0].length() - graphCharsNewLines[graphCharsNewLines.length - 1].length() - 1)
-                        + ", " + (graphChars[0].length() - 1) + "]\r\n"); // \r
+                fw.write("    footerSpan : [" + (graphChars[0].length() - 15) + ", " + (graphChars[0].length() - 1)
+                        + "]\r\n"); // \r
                 fw.write("    children:\r\n");
+                locationSpanStartEq++;
                 for (int i = 0; i < graphsList.size(); i++) {
                     fw.write("    - type : graph\r\n");
                     fw.write("      name : " + graphsList.get(i).title().getText().substring(6,
@@ -369,58 +361,41 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     int nChildren = graphText.split("\n").length - 1;
                     int nChildrenLen = graphText.split("\n")[graphText.split("\n").length - 1].length() + 2;
                     int extraGrapsSpan = 0;
-                    boolean justOneGraph = false;
-                    String[] graphLines = graphText.split("\n");
-                    if (i == 0) {
-                        locationSpanStartEq++;
-                        justOneGraph = true;
-
-                    }
-                    if (i == graphsList.size() - 1) {
-                        nChildren = graphText.split("\n").length - 2;
-                        nChildrenLen = graphText.split("\n")[graphText.split("\n").length - 2].length() + 1;
-                        if (justOneGraph)
-                            nChildren--;
-                        extraGrapsSpan = graphLines[graphLines.length - 1].length() + 2 + viewsSeparatorText[1].length()
-                                + 1;
-                    }
-                    justOneGraph = false;
+                    // PARA DELIMITAR GRAPHS, DEBERIA SER CAMBIADO
                     fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                             + (locationSpanStartEq + nChildren) + ", " + nChildrenLen + "]}\r\n");
                     locationSpanStartEq += nChildren;
-                    initCharEq++;
                     fw.write("      span : [" + initCharEq + ", "
-                            + (initCharEq + graphText.length() - extraGrapsSpan + "]\r\n"));
-                    initCharEq += graphText.length() + 1 - graphLines[graphLines.length - 1].length();
+                            + (initCharEq + graphText.length() - extraGrapsSpan + 1) + "]\r\n");
+                    initCharEq += graphText.length() + 2;
+                    initCharEq += 15; //GRAPH END
 
                 }
-                locationSpanStartEq += 2;
-                fw.write("  - type : metadata\r\n");
-                fw.write("    name : metadata\r\n");
-                fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (lastLine + 1) + ", "
-                        + (2) // 9 \n
-                        + "]}\r\n");
+            }
+
+            locationSpanStartEq += 2;
+            fw.write("  - type : metadata\r\n");
+            fw.write("    name : metadata\r\n");
+            fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (lastLine + 1) + ", "
+                    + (2) // 9 \n
+                    + "]}\r\n");
+            locationSpanStartEq++;
+            fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 10) + "]\r\n");
+            initCharEq += 11;
+            fw.write("    footerSpan : [" + (text.length()) + ", " + (text.length() + 1) + "]\r\n");
+            fw.write("    children:\r\n");
+            List<ModelParser.MetadataLineContext> metadataLines = ctx.model().sketchesGraphsAndMetadata()
+                    .metadataDivisor().metadataLine();
+            for (int i = 0; i < metadataLines.size(); i++) {
+                fw.write("    - type : metadataLine\r\n");
+                fw.write("      name : metadataLine\r\n");
+                fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: [" + locationSpanStartEq
+                        + ", " + (metadataLines.get(i).getText().length() + 2) + "]}\r\n");
                 locationSpanStartEq++;
-                fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 10) + "]\r\n");
-                initCharEq += 11;
-                fw.write("    footerSpan : [" + (text.length()) + ", " + (text.length() + 1) + "]\r\n");
-                fw.write("    children:\r\n");
-                List<ModelParser.MetadataLineContext> metadataLines = ctx.model().sketchesGraphsAndMetadata()
-                        .metadataDivisor().metadataLine();
-                for (int i = 0; i < metadataLines.size(); i++) {
-                    fw.write("    - type : metadataLine\r\n");
-                    fw.write("      name : metadataLine\r\n");
-                    fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
-                            + locationSpanStartEq + ", " + (metadataLines.get(i).getText().length() + 2) + "]}\r\n");
-                    locationSpanStartEq++;
-                    fw.write("      span : [" + initCharEq + ", "
-                            + (initCharEq + metadataLines.get(i).getText().length() + 1) + "]\r\n");
-                    initCharEq += metadataLines.get(i).getText().length();
-                    initCharEq += 2;
-                }
-            } else {
-                // VISTAS Y METADATOS SIN GRAFICOS
-                fw.write("EN PROCESO\r\n");
+                fw.write("      span : [" + initCharEq + ", "
+                        + (initCharEq + metadataLines.get(i).getText().length() + 1) + "]\r\n");
+                initCharEq += metadataLines.get(i).getText().length();
+                initCharEq += 2;
             }
 
             fw.close();
@@ -439,9 +414,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            return lines;
         }
+        return lines;
     }
 
     private int lastLineLength(String input, int lastLine) {
@@ -455,9 +429,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            return len;
         }
+        return len;
     }
 
     private ArrayList<Boolean> checkForNewLines(String input) {
@@ -479,9 +452,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            return array;
         }
+        return array;
     }
 
     private ArrayList<Boolean> checkForMacros(String input) {
