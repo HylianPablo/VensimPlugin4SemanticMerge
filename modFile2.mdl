@@ -15,14 +15,14 @@ bunnies= INTEG (
 	~	
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
-bunnification=
-	birf rate*bunnies*(1-bunnies/carrying capacity)
-	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
-
 bunnies 0= INTEG (
 	bunnification 0,
 		2)
+	~	
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+
+bunnification=
+	birf rate*bunnies*(1-bunnies/carrying capacity)
 	~	
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
@@ -32,7 +32,7 @@ bunnification 0=
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 carrying capacity=
-	2000
+	1000
 	~	
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
@@ -54,23 +54,23 @@ pprofilePopulation:
 
 FINAL TIME  = 30
 	~	Month
-	~	The final time for the simulationnnn.
+	~	The final time for the simulation.
 	|
 
 INITIAL TIME  = 0
 	~	Month
-	~	The initial time for the simmmmulation.
+	~	The initial time for the simulation.
 	|
 
 SAVEPER  = 
         TIME STEP
 	~	Month [0,?]
-	~	The frequency with which output is ssstored.
+	~	The frequency with which output is stored.
 	|
 
 TIME STEP  = 0.25
 	~	Month [0,?]
-	~	The time step for the siiiiimulation.
+	~	The time step for the simulation.
 	|
 
 \\\---/// Sketch information - do not modify anything except names

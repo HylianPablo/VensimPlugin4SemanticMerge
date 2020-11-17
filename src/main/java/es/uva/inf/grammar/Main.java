@@ -61,7 +61,7 @@ public class Main {
 
     private static void parseFile(String input, String output, int n) {
         try {
-
+            /*
             String commentFile;
             if (n == 1) {
                 commentFile = "modFile1.mdl";
@@ -72,7 +72,7 @@ public class Main {
             argsComment[0] = input;
             argsComment[1] = commentFile;
             Comment.main(argsComment);
-
+            
             String delimitedFile;
             if (n == 1) {
                 delimitedFile = "modDelFile1.mdl";
@@ -83,8 +83,10 @@ public class Main {
             argsDelimiter[0] = commentFile;
             argsDelimiter[1] = delimitedFile;
             Delimiter.main(argsDelimiter);
-
+            
             String module = delimitedFile;
+            */
+            String module = input;
             String content = new String(Files.readAllBytes(Paths.get(module)), StandardCharsets.UTF_8);
             /*
              * JsonSymbolTableBuilder jsonBuilder = new JsonSymbolTableBuilder();
