@@ -41,7 +41,7 @@ deploy-develop:
   stage: deploy
   script:
     - mvn assembly:assembly
-    - sshpass -p "PASSWORD" scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -P 20012 target/mvntfg-1.0-jar-with-dependencies.jar usuario@virtual.lab.inf.uva.es:C:\Users\Usuario\AppData\Local\semanticmerge 
-    - sshpass -p "PASSWORD" ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no usuario@virtual.lab.inf.uva.es -p 20012 "cd /cygdrive/c/Users/Usuario/AppData/Local/semanticmerge/ && ./script.bat && exit"
+    - sshpass -p "$password" scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -P 20012 target/mvntfg-1.0-jar-with-dependencies.jar usuario@virtual.lab.inf.uva.es:C:\Users\Usuario\AppData\Local\semanticmerge 
+    - sshpass -p "$password" ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no usuario@virtual.lab.inf.uva.es -p 20012 "cd /cygdrive/c/Users/Usuario/AppData/Local/semanticmerge/ && ./script.bat && exit"
   only:
     - develop
