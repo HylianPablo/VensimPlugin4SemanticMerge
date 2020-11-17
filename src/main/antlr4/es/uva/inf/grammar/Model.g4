@@ -5,7 +5,7 @@ grammar Model;
 file: model EOF;
 model: ( symbolWithDoc | macroDefinition)* sketchesGraphsAndMetadata?;
 
-sketchesGraphsAndMetadata: '<[VIEW START]>'? sketches'<[VIEW END]>'?;// '<[GRAPH START]>'? graphsGroup '<[GRAPH END]>'? metadataDivisor; //Separating equations and sketches&graphs allows to test sample files with just a few lines.
+sketchesGraphsAndMetadata: '<[VIEW START]>'? sketches'<[VIEW END]>'? '<[GRAPH START]>'? graphsGroup '<[GRAPH END]>'? metadataDivisor; //Separating equations and sketches&graphs allows to test sample files with just a few lines.
                                                                       //For example, a problematic equation.
 symbolWithDoc: symbolWithDocDefinition unitsDoc;
 

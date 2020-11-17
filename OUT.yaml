@@ -1,7 +1,7 @@
 ---
 type: file
 name: modDelFile2.mdl
-locationSpan : {start: [1, 0], end: [107, 2]}
+locationSpan : {start: [1, 0], end: [132, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
@@ -65,9 +65,9 @@ children:
       span : [1252, 1328]
   - type : sketches
     name : sketches
-    locationSpan : {start: [76, 0], end: [107, 2]}
+    locationSpan : {start: [76, 0], end: [106, 14]}
     headerSpan : [1331, 1346]
-    footerSpan : [2675, 2690]
+    footerSpan : [2675, 2688]
     children:
     - type : view
       name : View 1
@@ -171,3 +171,67 @@ children:
         name : arrow
         locationSpan : {start: [104, 0], end: [104, 49]}
         span : [2615, 2663]
+  - type : graphs
+    name : graphs
+    locationSpan : {start: [107, 0], end: [118, 15]}
+    headerSpan : [2689, 2705]
+    footerSpan : [2845, 2859]
+    children:
+    - type : graph
+      name : population
+      locationSpan : {start: [108, 0], end: [117, 15]}
+      span : [2706, 2844]
+  - type : metadata
+    name : metadata
+    locationSpan : {start: [119, 0], end: [132, 2]}
+    headerSpan : [2860, 2870]
+    footerSpan : [2992, 2993]
+    children:
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [120, 0], end: [120, 15]}
+      span : [2871, 2885]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [121, 0], end: [121, 11]}
+      span : [2886, 2896]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [122, 0], end: [122, 6]}
+      span : [2897, 2902]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [123, 0], end: [123, 16]}
+      span : [2903, 2918]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [124, 0], end: [124, 10]}
+      span : [2919, 2928]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [125, 0], end: [125, 7]}
+      span : [2929, 2935]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [126, 0], end: [126, 7]}
+      span : [2936, 2942]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [127, 0], end: [127, 8]}
+      span : [2943, 2950]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [128, 0], end: [128, 21]}
+      span : [2951, 2971]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [129, 0], end: [129, 6]}
+      span : [2972, 2977]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [130, 0], end: [130, 7]}
+      span : [2978, 2984]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [131, 0], end: [131, 7]}
+      span : [2985, 2991]

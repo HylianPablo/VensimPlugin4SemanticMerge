@@ -216,16 +216,16 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             int graphsLastLine = linesUntilText(text, "///---\\\\\\");
             fw.write("  - type : sketches\r\n");
             fw.write("    name : sketches\r\n");
-            fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (graphsLastLine + 1 + 1) //ultimo +1 sobra
-                    + ", " + 2 + "]}\r\n"); //antes +14
+            fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (graphsLastLine + 1) //ultimo +1 sobra
+                    + ", " + 14 + "]}\r\n"); //antes +14
             initCharEq += 2;
             fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 15) + "]\r\n"); // View start delimiter
             initCharEq += 16;
             // Divides text on graphs
             String[] viewChars = text.split("\\<\\[VIEW END\\]\\>", 2);
             // fw.write(" footerSpan : [2395, 2396]\n");
-            fw.write("    footerSpan : [" + (viewChars[0].length()) + ", " + (viewChars[0].length() + 11 + 2 + 2)
-                    + "]\r\n"); //ultimo mas dos testing
+            fw.write(
+                    "    footerSpan : [" + (viewChars[0].length()) + ", " + (viewChars[0].length() + 11 + 2) + "]\r\n"); //ultimo mas dos testing
             fw.write("    children:\r\n");
             for (int i = 0; i < viewInfoList.size(); i++) {
                 int a = viewInfoList.get(i).start.getStartIndex();
@@ -342,7 +342,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 //locationSpanStartEq++;
                 //
             }
-            /*
+
             locationSpanStartEq += 2;
             initCharEq += 25;
             //initCharEq += 11;
@@ -355,8 +355,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 fw.write("  - type : graphs\r\n");
                 fw.write("    name : graphs\r\n");
                 fw.write(
-                        "    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (metadataLastLine - 1)
-                                + ", " + (untilMetadataText[untilMetadataText.length - 1].length() + 2) + "]}\r\n"); // \r
+                        "    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (metadataLastLine - 1) //antes 
+                                + ", " + (untilMetadataText[untilMetadataText.length - 1].length() + 2) + "]}\r\n"); // antes 
                 // New lines since graph section is started
                 // String[] viewsSeparatorText = text.split("///---", 2)[1].split("\r\n");
                 fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 16) // graphs start delimiter
@@ -366,7 +366,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 // Divides text in metadata
                 String[] graphChars = text.split(":L\\<%\\^E\\!@", 2);
                 String[] graphCharsNewLines = graphChars[0].split("\n");
-                fw.write("    footerSpan : [" + (graphChars[0].length() - 12) + ", " + (graphChars[0].length() + 2)
+                fw.write("    footerSpan : [" + (graphChars[0].length() - 15) + ", " + (graphChars[0].length() - 1)
                         + "]\r\n"); // \r
                 fw.write("    children:\r\n");
                 locationSpanStartEq++;
@@ -384,15 +384,15 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     // PARA DELIMITAR GRAPHS, DEBERIA SER CAMBIADO
                     boolean justOneGraph = false;
                     String[] graphLines = graphText.split("\n");
-                    /*
-                     * if (i == 0) { locationSpanStartEq++; justOneGraph = true;
-                     * 
-                     * } if (i == graphsList.size() - 1) { nChildren = graphText.split("\n").length
-                     * - 2; nChildrenLen = graphText.split("\n")[graphText.split("\n").length -
-                     * 2].length() + 1; if (justOneGraph) nChildren--; extraGrapsSpan =
-                     * graphLines[graphLines.length - 1].length() + 2 +
-                     * viewsSeparatorText[1].length() + 1; } justOneGraph = false;
-                     //
+                    //
+                    // if (i == 0) { locationSpanStartEq++; justOneGraph = true;
+                    //
+                    // } if (i == graphsList.size() - 1) { nChildren = graphText.split("\n").length
+                    // - 2; nChildrenLen = graphText.split("\n")[graphText.split("\n").length -
+                    // 2].length() + 1; if (justOneGraph) nChildren--; extraGrapsSpan =
+                    // graphLines[graphLines.length - 1].length() + 2 +
+                    // viewsSeparatorText[1].length() + 1; } justOneGraph = false;
+                    //
                     fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                             + (locationSpanStartEq + nChildren) + ", " + nChildrenLen + "]}\r\n");
                     locationSpanStartEq += nChildren;
@@ -400,8 +400,9 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                             + (initCharEq + graphText.length() - extraGrapsSpan + 1) + "]\r\n");
                     initCharEq += graphText.length() + 2;
                     initCharEq += 15; //GRAPH END
-            
+
                 }
+
                 locationSpanStartEq += 2;
                 fw.write("  - type : metadata\r\n");
                 fw.write("    name : metadata\r\n");
@@ -411,7 +412,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 locationSpanStartEq++;
                 fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 10) + "]\r\n");
                 initCharEq += 11;
-                fw.write("    footerSpan : [" + (text.length() + 3) + ", " + (text.length() + 4) + "]\r\n");
+                fw.write("    footerSpan : [" + (text.length()) + ", " + (text.length() + 1) + "]\r\n");
                 fw.write("    children:\r\n");
                 List<ModelParser.MetadataLineContext> metadataLines = ctx.model().sketchesGraphsAndMetadata()
                         .metadataDivisor().metadataLine();
@@ -426,11 +427,11 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     initCharEq += metadataLines.get(i).getText().length();
                     initCharEq += 2;
                 }
+
             } else {
                 // VISTAS Y METADATOS SIN GRAFICOS
                 fw.write("EN PROCESO\r\n");
             }
-            */
 
             fw.close();
         } catch (IOException ex) {
