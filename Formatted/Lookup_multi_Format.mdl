@@ -1,0 +1,118 @@
+{UTF-8}
+column:
+	c1,c2,c3,c4,c5
+	~	
+	~		|
+
+flow_multi_lookups[row]=
+	Level_multi_lookups[row]*Read_multi_lookups[row](Time)
+	~	Dmnl
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+
+Level_multi_lookups[row]= INTEG (
+	flow_multi_lookups[row],
+		10)
+	~	Dmnl
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+
+Read_multi_lookups[r1]=
+	GET_XLS_LOOKUPS( 'inputs.xlsx' , 'lookups' , 'X_row' , 'Y_1' ) ~~<[VIEW]>: View 1 <[DESCRIPTION]>:|
+Read_multi_lookups[r2]=
+	GET_XLS_LOOKUPS( 'inputs.xlsx' , 'lookups' , 'X_row' , 'Y_2' ) ~~|
+Read_multi_lookups[r3]=
+	GET_XLS_LOOKUPS( 'inputs.xlsx' , 'lookups' , 'X_row' , 'Y_3' ) ~~|
+Read_multi_lookups[r4]=
+	GET_XLS_LOOKUPS( 'inputs.xlsx' , 'lookups' , 'X_row' , 'Y_4' ) ~~|
+Read_multi_lookups[r5]=
+	GET_XLS_LOOKUPS( 'inputs.xlsx' , 'lookups' , 'X_row' , 'Y_5' )
+	~	Dmnl
+	~		|
+
+row:
+	r1,r2,r3,r4,r5
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL_TIME  = 10
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL_TIME  = 1
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME_STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME_STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+<[VIEW START]>
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Read multi lookups,239,295,66,9,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Level multi lookups,552,341,52,31,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,3,48,332,344,26,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,4,6,2,4,0,0,22,0,0,0,-1--1--1,,1|(467,344)|
+1,5,6,3,100,0,0,22,0,0,0,-1--1--1,,1|(390,344)|
+11,6,48,429,344,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,7,flow multi lookups,429,363,62,9,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,2,7,1,0,0,0,0,128,0,-1--1--1,,1|(524,402)|
+1,9,1,7,1,0,0,0,0,128,0,-1--1--1,,1|(321,434)|
+10,10,Time,430,465,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,11,10,7,0,0,0,0,0,64,0,-1--1--1,,1|(429,419)|
+///---\\\
+<[VIEW END]>
+<[GRAPH START]>
+<[GRAPH END]>
+:L<%^E!@
+1:10years_saverper1_GETDIRECTCONSTANT_CSV_7decimales_v11.vdfx
+9:10years_saverper1_GETDIRECTCONSTANT_CSV_7decimales_v11
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+4:Time
+5:Level_multi_lookups[row]
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+42:1
+72:0
+73:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:1
+25:10
+26:10
+75:
+43:
+6:c1
+6:r1
+6:r2
+6:r3
+6:r4
+6:r5

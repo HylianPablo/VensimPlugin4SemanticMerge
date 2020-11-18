@@ -1,7 +1,7 @@
 ---
 type: file
-name: VensimExampleModels/SDXorg/test_lookups_funcnames.mdl
-locationSpan : {start: [1, 0], end: [119, 2]}
+name: Formatted/test_lookups_Format.mdl
+locationSpan : {start: [1, 0], end: [123, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
@@ -9,60 +9,251 @@ children:
     name: {UTF-8}
     locationSpan : {start: [1, 0], end: [67, 2]}
     headerSpan : [0, 8]
-    footerSpan : [1025, 1026]
+    footerSpan : [1256, 1257]
     children :
     - type : equation
       name : mod
       locationSpan : {start: [2, 0], end: [6, 2]}
-      span : [9, 32]
+      span : [9, 65]
     - type : equation
       name : using a modulo function
       locationSpan : {start: [7, 0], end: [12, 2]}
-      span : [33, 134]
+      span : [66, 200]
     - type : equation
       name : using the mod variable
       locationSpan : {start: [13, 0], end: [17, 2]}
-      span : [135, 179]
+      span : [201, 278]
     - type : equation
       name : lookup function call
       locationSpan : {start: [18, 0], end: [22, 2]}
-      span : [180, 238]
+      span : [279, 370]
     - type : equation
       name : rate
       locationSpan : {start: [23, 0], end: [27, 2]}
-      span : [239, 282]
+      span : [371, 447]
     - type : equation
       name : accumulation
       locationSpan : {start: [28, 0], end: [33, 2]}
-      span : [283, 333]
+      span : [448, 531]
     - type : lookupDefinition
       name : expname table
       locationSpan : {start: [34, 0], end: [46, 2]}
-      span : [334, 693]
+      span : [532, 924]
     - type : equation
       name : FINAL TIME
       locationSpan : {start: [47, 0], end: [51, 2]}
-      span : [694, 767]
+      span : [925, 998]
     - type : equation
       name : INITIAL TIME
       locationSpan : {start: [52, 0], end: [56, 2]}
-      span : [768, 844]
+      span : [999, 1075]
     - type : equation
       name : SAVEPER
       locationSpan : {start: [57, 0], end: [62, 2]}
-      span : [845, 946]
+      span : [1076, 1177]
     - type : equation
       name : TIME STEP
       locationSpan : {start: [63, 0], end: [66, 4]}
-      span : [947, 1024]
+      span : [1178, 1255]
   - type : sketches
-    name: \\\---/// Sketch information - do not modify anything except names
-    locationSpan : {start: [68, 0], end: [119, 2]}
-    headerSpan : [1027, 1094]
-    footerSpan : [119, 2]
+    name : sketches
+    locationSpan : {start: [68, 0], end: [90, 14]}
+    headerSpan : [1258, 1273]
+    footerSpan : [2316, 2329]
     children:
-    - type : sketch
-      name : V300  Do not put anything below this section - it will be ignored
-      locationSpan : {start: [69, 0], end: [118, 8]}
-      span : [1095, 2440]
-)
+    - type : view
+      name : View 1
+      locationSpan : {start: [69, 0], end: [89, 11]}
+      headerSpan : [1274, 1341]
+      footerSpan : [2305, 2315]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [70, 0], end: [72, 86]}
+        span : [1342, 1503]
+      - type : variable
+        name : expname table
+        locationSpan : {start: [73, 0], end: [73, 49]}
+        span : [1504, 1552]
+      - type : variable
+        name : lookup function call
+        locationSpan : {start: [74, 0], end: [74, 56]}
+        span : [1553, 1608]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [75, 0], end: [75, 47]}
+        span : [1609, 1655]
+      - type : variable
+        name : accumulation
+        locationSpan : {start: [76, 0], end: [76, 49]}
+        span : [1656, 1704]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [77, 0], end: [77, 39]}
+        span : [1705, 1743]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [78, 0], end: [78, 47]}
+        span : [1744, 1790]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [79, 0], end: [79, 49]}
+        span : [1791, 1839]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [80, 0], end: [80, 38]}
+        span : [1840, 1877]
+      - type : variable
+        name : rate
+        locationSpan : {start: [81, 0], end: [81, 42]}
+        span : [1878, 1919]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [82, 0], end: [82, 48]}
+        span : [1920, 1967]
+      - type : variable
+        name : Time
+        locationSpan : {start: [83, 0], end: [83, 77]}
+        span : [1968, 2044]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [84, 0], end: [84, 49]}
+        span : [2045, 2093]
+      - type : variable
+        name : mod
+        locationSpan : {start: [85, 0], end: [85, 40]}
+        span : [2094, 2133]
+      - type : variable
+        name : using the mod variable
+        locationSpan : {start: [86, 0], end: [86, 59]}
+        span : [2134, 2192]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [87, 0], end: [87, 51]}
+        span : [2193, 2243]
+      - type : variable
+        name : using a modulo function
+        locationSpan : {start: [88, 0], end: [88, 61]}
+        span : [2244, 2304]
+  - type : metadata
+    name : metadata
+    locationSpan : {start: [91, 0], end: [123, 2]}
+    headerSpan : [2330, 2372]
+    footerSpan : [2734, 2735]
+    children:
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [94, 0], end: [94, 15]}
+      span : [2373, 2387]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [95, 0], end: [95, 29]}
+      span : [2388, 2416]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [96, 0], end: [96, 11]}
+      span : [2417, 2427]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [97, 0], end: [97, 24]}
+      span : [2428, 2451]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [98, 0], end: [98, 15]}
+      span : [2452, 2466]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [99, 0], end: [99, 17]}
+      span : [2467, 2483]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [100, 0], end: [100, 26]}
+      span : [2484, 2509]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [101, 0], end: [101, 15]}
+      span : [2510, 2524]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [102, 0], end: [102, 15]}
+      span : [2525, 2539]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [103, 0], end: [103, 15]}
+      span : [2540, 2554]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [104, 0], end: [104, 13]}
+      span : [2555, 2567]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [105, 0], end: [105, 6]}
+      span : [2568, 2573]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [106, 0], end: [106, 16]}
+      span : [2574, 2589]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [107, 0], end: [107, 10]}
+      span : [2590, 2599]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [108, 0], end: [108, 7]}
+      span : [2600, 2606]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [109, 0], end: [109, 7]}
+      span : [2607, 2613]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [110, 0], end: [110, 8]}
+      span : [2614, 2621]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [111, 0], end: [111, 27]}
+      span : [2622, 2648]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [112, 0], end: [112, 9]}
+      span : [2649, 2657]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [113, 0], end: [113, 15]}
+      span : [2658, 2672]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [114, 0], end: [114, 9]}
+      span : [2673, 2681]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [115, 0], end: [115, 6]}
+      span : [2682, 2687]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [116, 0], end: [116, 6]}
+      span : [2688, 2693]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [117, 0], end: [117, 6]}
+      span : [2694, 2699]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [118, 0], end: [118, 6]}
+      span : [2700, 2705]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [119, 0], end: [119, 6]}
+      span : [2706, 2711]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [120, 0], end: [120, 6]}
+      span : [2712, 2717]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [121, 0], end: [121, 8]}
+      span : [2718, 2725]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [122, 0], end: [122, 8]}
+      span : [2726, 2733]

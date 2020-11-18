@@ -1,124 +1,487 @@
 ---
 type: file
-name: VensimExampleModels/SHODOR/examples.mdl
-locationSpan : {start: [1, 0], end: [245, 2]}
+name: Formatted/examplesFormat.mdl
+locationSpan : {start: [1, 0], end: [250, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
   - type : SymbolWithDocs
     name: {UTF-8}
-    locationSpan : {start: [1, 0], end: [146, 2]}
+    locationSpan : {start: [1, 0], end: [147, 2]}
     headerSpan : [0, 8]
-    footerSpan : [1910, 1911]
+    footerSpan : [2572, 2573]
     children :
     - type : equation
       name : "1. Have"
       locationSpan : {start: [2, 0], end: [6, 2]}
-      span : [9, 51]
+      span : [9, 84]
     - type : equation
       name : "2. Have"
       locationSpan : {start: [7, 0], end: [12, 2]}
-      span : [52, 110]
+      span : [85, 176]
     - type : equation
       name : "3. Have"
       locationSpan : {start: [13, 0], end: [18, 2]}
-      span : [111, 167]
+      span : [177, 266]
     - type : equation
       name : "4. Have"
       locationSpan : {start: [19, 0], end: [24, 2]}
-      span : [168, 224]
+      span : [267, 356]
     - type : equation
       name : A
       locationSpan : {start: [25, 0], end: [30, 2]}
-      span : [225, 276]
+      span : [357, 441]
     - type : equation
       name : A2
       locationSpan : {start: [31, 0], end: [36, 2]}
-      span : [277, 332]
+      span : [442, 530]
     - type : equation
       name : A3
       locationSpan : {start: [37, 0], end: [42, 2]}
-      span : [333, 389]
+      span : [531, 620]
     - type : equation
       name : Z
       locationSpan : {start: [43, 0], end: [48, 2]}
-      span : [390, 438]
+      span : [621, 702]
     - type : equation
       name : B2
       locationSpan : {start: [49, 0], end: [54, 2]}
-      span : [439, 491]
+      span : [703, 788]
     - type : equation
       name : B3
       locationSpan : {start: [55, 0], end: [60, 2]}
-      span : [492, 545]
+      span : [789, 875]
     - type : equation
       name : change per dt
       locationSpan : {start: [61, 0], end: [65, 2]}
-      span : [546, 590]
+      span : [876, 953]
     - type : equation
       name : constant change
       locationSpan : {start: [66, 0], end: [70, 2]}
-      span : [591, 634]
+      span : [954, 1030]
     - type : equation
       name : constant flow
       locationSpan : {start: [71, 0], end: [75, 2]}
-      span : [635, 668]
+      span : [1031, 1097]
     - type : equation
       name : first order flow
       locationSpan : {start: [76, 0], end: [80, 2]}
-      span : [669, 709]
+      span : [1098, 1171]
     - type : equation
       name : k
       locationSpan : {start: [81, 0], end: [85, 2]}
-      span : [710, 742]
+      span : [1172, 1237]
     - type : equation
       name : k0
       locationSpan : {start: [86, 0], end: [90, 2]}
-      span : [743, 776]
+      span : [1238, 1304]
     - type : equation
       name : k1
       locationSpan : {start: [91, 0], end: [95, 2]}
-      span : [777, 812]
+      span : [1305, 1373]
     - type : equation
       name : k2
       locationSpan : {start: [96, 0], end: [100, 2]}
-      span : [813, 855]
+      span : [1374, 1449]
     - type : equation
       name : linear Change
       locationSpan : {start: [101, 0], end: [105, 2]}
-      span : [856, 897]
+      span : [1450, 1524]
     - type : equation
       name : second order flow
-      locationSpan : {start: [106, 0], end: [109, 7]}
-      span : [898, 940]
+      locationSpan : {start: [106, 0], end: [109, 40]}
+      span : [1525, 1600]
     - type : equation
       name : max unconv gas growth extraction EJ
-      locationSpan : {start: [110, 0], end: [124, 4]}
-      span : [941, 1581]
+      locationSpan : {start: [110, 0], end: [125, 2]}
+      span : [1601, 2243]
     - type : equation
       name : FINAL TIME
-      locationSpan : {start: [125, 0], end: [129, 2]}
-      span : [1582, 1651]
+      locationSpan : {start: [126, 0], end: [130, 2]}
+      span : [2244, 2313]
     - type : equation
       name : INITIAL TIME
-      locationSpan : {start: [130, 0], end: [134, 2]}
-      span : [1652, 1724]
+      locationSpan : {start: [131, 0], end: [135, 2]}
+      span : [2314, 2386]
     - type : equation
       name : SAVEPER
-      locationSpan : {start: [135, 0], end: [140, 2]}
-      span : [1725, 1822]
+      locationSpan : {start: [136, 0], end: [141, 2]}
+      span : [2387, 2484]
     - type : equation
       name : TIME STEP
-      locationSpan : {start: [141, 0], end: [145, 4]}
-      span : [1823, 1909]
+      locationSpan : {start: [142, 0], end: [146, 4]}
+      span : [2485, 2571]
   - type : sketches
-    name: \\\---/// Sketch information - do not modify anything except names
-    locationSpan : {start: [147, 0], end: [245, 2]}
-    headerSpan : [1912, 1979]
-    footerSpan : [245, 2]
+    name : sketches
+    locationSpan : {start: [148, 0], end: [217, 14]}
+    headerSpan : [2574, 2589]
+    footerSpan : [5719, 5732]
     children:
-    - type : sketch
-      name : V300  Do not put anything below this section - it will be ignored
-      locationSpan : {start: [148, 0], end: [244, 5]}
-      span : [1980, 5270]
-)
+    - type : view
+      name : View 1
+      locationSpan : {start: [149, 0], end: [216, 11]}
+      headerSpan : [2590, 2657]
+      footerSpan : [5708, 5718]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [150, 0], end: [152, 86]}
+        span : [2658, 2819]
+      - type : variable
+        name : "1. Have"
+        locationSpan : {start: [153, 0], end: [153, 44]}
+        span : [2820, 2863]
+      - type : variable
+        name : "2. Have"
+        locationSpan : {start: [154, 0], end: [154, 46]}
+        span : [2864, 2909]
+      - type : variable
+        name : "3. Have"
+        locationSpan : {start: [155, 0], end: [155, 46]}
+        span : [2910, 2955]
+      - type : variable
+        name : This could represent "no change"
+        locationSpan : {start: [156, 0], end: [157, 34]}
+        span : [2956, 3027]
+      - type : variable
+        name : This could represent "constant Change"
+        locationSpan : {start: [158, 0], end: [159, 40]}
+        span : [3028, 3106]
+      - type : variable
+        name : This is one way to "see" linear change
+        locationSpan : {start: [160, 0], end: [161, 40]}
+        span : [3107, 3185]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [162, 0], end: [162, 37]}
+        span : [3186, 3222]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [163, 0], end: [163, 47]}
+        span : [3223, 3269]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [164, 0], end: [164, 49]}
+        span : [3270, 3318]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [165, 0], end: [165, 38]}
+        span : [3319, 3356]
+      - type : variable
+        name : constant change
+        locationSpan : {start: [166, 0], end: [166, 53]}
+        span : [3357, 3409]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [167, 0], end: [167, 38]}
+        span : [3410, 3447]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [168, 0], end: [168, 48]}
+        span : [3448, 3495]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [169, 0], end: [169, 51]}
+        span : [3496, 3546]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [170, 0], end: [170, 38]}
+        span : [3547, 3584]
+      - type : variable
+        name : linear Change
+        locationSpan : {start: [171, 0], end: [171, 51]}
+        span : [3585, 3635]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [172, 0], end: [172, 48]}
+        span : [3636, 3683]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [173, 0], end: [173, 47]}
+        span : [3684, 3730]
+      - type : variable
+        name : "4. Have"
+        locationSpan : {start: [174, 0], end: [174, 47]}
+        span : [3731, 3777]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [175, 0], end: [175, 38]}
+        span : [3778, 3815]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [176, 0], end: [176, 49]}
+        span : [3816, 3864]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [177, 0], end: [177, 51]}
+        span : [3865, 3915]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [178, 0], end: [178, 38]}
+        span : [3916, 3953]
+      - type : variable
+        name : change per dt
+        locationSpan : {start: [179, 0], end: [179, 51]}
+        span : [3954, 4004]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [180, 0], end: [180, 49]}
+        span : [4005, 4053]
+      - type : variable
+        name : This is what proportional change would show
+        locationSpan : {start: [181, 0], end: [182, 45]}
+        span : [4054, 4138]
+      - type : variable
+        name : A
+        locationSpan : {start: [183, 0], end: [183, 38]}
+        span : [4139, 4176]
+      - type : variable
+        name : Z
+        locationSpan : {start: [184, 0], end: [184, 38]}
+        span : [4177, 4214]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [185, 0], end: [185, 49]}
+        span : [4215, 4263]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [186, 0], end: [186, 51]}
+        span : [4264, 4314]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [187, 0], end: [187, 39]}
+        span : [4315, 4353]
+      - type : variable
+        name : constant flow
+        locationSpan : {start: [188, 0], end: [188, 51]}
+        span : [4354, 4404]
+      - type : variable
+        name : A2
+        locationSpan : {start: [189, 0], end: [189, 40]}
+        span : [4405, 4444]
+      - type : variable
+        name : B2
+        locationSpan : {start: [190, 0], end: [190, 40]}
+        span : [4445, 4484]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [191, 0], end: [191, 50]}
+        span : [4485, 4534]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [192, 0], end: [192, 52]}
+        span : [4535, 4586]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [193, 0], end: [193, 40]}
+        span : [4587, 4626]
+      - type : variable
+        name : first order flow
+        locationSpan : {start: [194, 0], end: [194, 55]}
+        span : [4627, 4681]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [195, 0], end: [195, 50]}
+        span : [4682, 4731]
+      - type : variable
+        name : A3
+        locationSpan : {start: [196, 0], end: [196, 40]}
+        span : [4732, 4771]
+      - type : variable
+        name : B3
+        locationSpan : {start: [197, 0], end: [197, 40]}
+        span : [4772, 4811]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [198, 0], end: [198, 50]}
+        span : [4812, 4861]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [199, 0], end: [199, 52]}
+        span : [4862, 4913]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [200, 0], end: [200, 40]}
+        span : [4914, 4953]
+      - type : variable
+        name : second order flow
+        locationSpan : {start: [201, 0], end: [201, 56]}
+        span : [4954, 5009]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [202, 0], end: [202, 50]}
+        span : [5010, 5059]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [203, 0], end: [203, 50]}
+        span : [5060, 5109]
+      - type : variable
+        name : k0
+        locationSpan : {start: [204, 0], end: [204, 37]}
+        span : [5110, 5146]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [205, 0], end: [205, 49]}
+        span : [5147, 5195]
+      - type : variable
+        name : k
+        locationSpan : {start: [206, 0], end: [206, 36]}
+        span : [5196, 5231]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [207, 0], end: [207, 49]}
+        span : [5232, 5280]
+      - type : variable
+        name : k1
+        locationSpan : {start: [208, 0], end: [208, 38]}
+        span : [5281, 5318]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [209, 0], end: [209, 50]}
+        span : [5319, 5368]
+      - type : variable
+        name : k2
+        locationSpan : {start: [210, 0], end: [210, 38]}
+        span : [5369, 5406]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [211, 0], end: [211, 50]}
+        span : [5407, 5456]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [212, 0], end: [212, 48]}
+        span : [5457, 5504]
+      - type : variable
+        name : k0
+        locationSpan : {start: [213, 0], end: [213, 73]}
+        span : [5505, 5577]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [214, 0], end: [214, 48]}
+        span : [5578, 5625]
+      - type : variable
+        name : TIME STEP
+        locationSpan : {start: [215, 0], end: [215, 82]}
+        span : [5626, 5707]
+  - type : metadata
+    name : metadata
+    locationSpan : {start: [218, 0], end: [250, 2]}
+    headerSpan : [5733, 5775]
+    footerSpan : [5995, 5996]
+    children:
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [221, 0], end: [221, 11]}
+      span : [5776, 5786]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [222, 0], end: [222, 6]}
+      span : [5787, 5792]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [223, 0], end: [223, 16]}
+      span : [5793, 5808]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [224, 0], end: [224, 10]}
+      span : [5809, 5818]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [225, 0], end: [225, 7]}
+      span : [5819, 5825]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [226, 0], end: [226, 7]}
+      span : [5826, 5832]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [227, 0], end: [227, 6]}
+      span : [5833, 5838]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [228, 0], end: [228, 6]}
+      span : [5839, 5844]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [229, 0], end: [229, 6]}
+      span : [5845, 5850]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [230, 0], end: [230, 8]}
+      span : [5851, 5858]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [231, 0], end: [231, 13]}
+      span : [5859, 5871]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [232, 0], end: [232, 9]}
+      span : [5872, 5880]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [233, 0], end: [233, 15]}
+      span : [5881, 5895]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [234, 0], end: [234, 9]}
+      span : [5896, 5904]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [235, 0], end: [235, 6]}
+      span : [5905, 5910]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [236, 0], end: [236, 6]}
+      span : [5911, 5916]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [237, 0], end: [237, 6]}
+      span : [5917, 5922]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [238, 0], end: [238, 6]}
+      span : [5923, 5928]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [239, 0], end: [239, 6]}
+      span : [5929, 5934]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [240, 0], end: [240, 6]}
+      span : [5935, 5940]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [241, 0], end: [241, 6]}
+      span : [5941, 5946]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [242, 0], end: [242, 6]}
+      span : [5947, 5952]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [243, 0], end: [243, 6]}
+      span : [5953, 5958]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [244, 0], end: [244, 6]}
+      span : [5959, 5964]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [245, 0], end: [245, 6]}
+      span : [5965, 5970]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [246, 0], end: [246, 7]}
+      span : [5971, 5977]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [247, 0], end: [247, 7]}
+      span : [5978, 5984]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [248, 0], end: [248, 5]}
+      span : [5985, 5989]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [249, 0], end: [249, 5]}
+      span : [5990, 5994]

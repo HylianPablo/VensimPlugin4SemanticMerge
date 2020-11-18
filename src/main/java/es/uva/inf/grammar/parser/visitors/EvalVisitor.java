@@ -325,8 +325,9 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             }
             locationSpanStartEq += 2;
             initCharEq += 25;
-            //initCharEq += 11;
+            boolean graphsExists = false;
             if (!ctx.model().sketchesGraphsAndMetadata().graphsGroup().graphs().isEmpty()) {
+                graphsExists = true;
                 int metadataLastLine = linesUntilText(text, ":L<%^E!@");
                 List<ModelParser.GraphsContext> graphsList = ctx.model().sketchesGraphsAndMetadata().graphsGroup()
                         .graphs();
@@ -372,6 +373,11 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
 
                 }
             }
+            int metadataHeaderPlus = 10;
+            if (!graphsExists) {
+                locationSpanStartEq -= 2;
+                metadataHeaderPlus = 42; //chars from graphs delimiter
+            }
 
             locationSpanStartEq += 2;
             fw.write("  - type : metadata\r\n");
@@ -380,10 +386,14 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     + (2) // 9 \n
                     + "]}\r\n");
             locationSpanStartEq++;
-            fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 10) + "]\r\n");
-            initCharEq += 11;
+            fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + metadataHeaderPlus) + "]\r\n");
+            initCharEq += metadataHeaderPlus;
+            initCharEq++;
             fw.write("    footerSpan : [" + (text.length()) + ", " + (text.length() + 1) + "]\r\n");
             fw.write("    children:\r\n");
+            if (!graphsExists) {
+                locationSpanStartEq += 2;
+            }
             List<ModelParser.MetadataLineContext> metadataLines = ctx.model().sketchesGraphsAndMetadata()
                     .metadataDivisor().metadataLine();
             for (int i = 0; i < metadataLines.size(); i++) {

@@ -1,7 +1,7 @@
 ---
 type: file
-name: VensimExampleModels/CLOUD/Lookup_multidimensional_model.mdl
-locationSpan : {start: [1, 0], end: [115, 2]}
+name: Formatted/Lookup_multi_Format.mdl
+locationSpan : {start: [1, 0], end: [119, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
@@ -9,7 +9,7 @@ children:
     name: {UTF-8}
     locationSpan : {start: [1, 0], end: [62, 2]}
     headerSpan : [0, 8]
-    footerSpan : [1249, 1250]
+    footerSpan : [1348, 1349]
     children :
     - type : subscriptRange
       name : column
@@ -18,59 +18,254 @@ children:
     - type : equation
       name : flow_multi_lookups
       locationSpan : {start: [7, 0], end: [11, 2]}
-      span : [49, 149]
+      span : [49, 182]
     - type : equation
       name : Level_multi_lookups
       locationSpan : {start: [12, 0], end: [17, 2]}
-      span : [150, 236]
+      span : [183, 302]
     - type : equation
       name : Read_multi_lookups
-      locationSpan : {start: [18, 0], end: [19, 69]}
-      span : [237, 330]
+      locationSpan : {start: [18, 0], end: [19, 102]}
+      span : [303, 429]
     - type : equation
       name : Read_multi_lookups
       locationSpan : {start: [20, 0], end: [21, 69]}
-      span : [331, 424]
+      span : [430, 523]
     - type : equation
       name : Read_multi_lookups
       locationSpan : {start: [22, 0], end: [23, 69]}
-      span : [425, 518]
+      span : [524, 617]
     - type : equation
       name : Read_multi_lookups
       locationSpan : {start: [24, 0], end: [25, 69]}
-      span : [519, 612]
+      span : [618, 711]
     - type : equation
       name : Read_multi_lookups
       locationSpan : {start: [26, 0], end: [30, 2]}
-      span : [613, 720]
+      span : [712, 819]
     - type : subscriptRange
       name : row
       locationSpan : {start: [31, 0], end: [41, 2]}
-      span : [721, 924]
+      span : [820, 1023]
     - type : equation
       name : FINAL_TIME
       locationSpan : {start: [42, 0], end: [46, 2]}
-      span : [925, 997]
+      span : [1024, 1096]
     - type : equation
       name : INITIAL_TIME
       locationSpan : {start: [47, 0], end: [51, 2]}
-      span : [998, 1073]
+      span : [1097, 1172]
     - type : equation
       name : SAVEPER
       locationSpan : {start: [52, 0], end: [57, 2]}
-      span : [1074, 1174]
+      span : [1173, 1273]
     - type : equation
       name : TIME_STEP
       locationSpan : {start: [58, 0], end: [61, 4]}
-      span : [1175, 1248]
+      span : [1274, 1347]
   - type : sketches
-    name: \\\---/// Sketch information - do not modify anything except names
-    locationSpan : {start: [63, 0], end: [115, 2]}
-    headerSpan : [1251, 1318]
-    footerSpan : [115, 2]
+    name : sketches
+    locationSpan : {start: [63, 0], end: [80, 14]}
+    headerSpan : [1350, 1365]
+    footerSpan : [2246, 2259]
     children:
-    - type : sketch
-      name : V300  Do not put anything below this section - it will be ignored
-      locationSpan : {start: [64, 0], end: [114, 6]}
-      span : [1319, 2515]
-)
+    - type : view
+      name : View 1
+      locationSpan : {start: [64, 0], end: [79, 11]}
+      headerSpan : [1366, 1433]
+      footerSpan : [2235, 2245]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [65, 0], end: [67, 86]}
+        span : [1434, 1595]
+      - type : variable
+        name : Read multi lookups
+        locationSpan : {start: [68, 0], end: [68, 68]}
+        span : [1596, 1663]
+      - type : variable
+        name : Level multi lookups
+        locationSpan : {start: [69, 0], end: [69, 70]}
+        span : [1664, 1733]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [70, 0], end: [70, 52]}
+        span : [1734, 1785]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [71, 0], end: [71, 47]}
+        span : [1786, 1832]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [72, 0], end: [72, 49]}
+        span : [1833, 1881]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [73, 0], end: [73, 50]}
+        span : [1882, 1931]
+      - type : variable
+        name : flow multi lookups
+        locationSpan : {start: [74, 0], end: [74, 68]}
+        span : [1932, 1999]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [75, 0], end: [75, 48]}
+        span : [2000, 2047]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [76, 0], end: [76, 48]}
+        span : [2048, 2095]
+      - type : variable
+        name : Time
+        locationSpan : {start: [77, 0], end: [77, 90]}
+        span : [2096, 2185]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [78, 0], end: [78, 49]}
+        span : [2186, 2234]
+  - type : metadata
+    name : metadata
+    locationSpan : {start: [81, 0], end: [119, 2]}
+    headerSpan : [2260, 2302]
+    footerSpan : [2677, 2678]
+    children:
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [84, 0], end: [84, 63]}
+      span : [2303, 2365]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [85, 0], end: [85, 58]}
+      span : [2366, 2423]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [86, 0], end: [86, 16]}
+      span : [2424, 2439]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [87, 0], end: [87, 10]}
+      span : [2440, 2449]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [88, 0], end: [88, 7]}
+      span : [2450, 2456]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [89, 0], end: [89, 7]}
+      span : [2457, 2463]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [90, 0], end: [90, 8]}
+      span : [2464, 2471]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [91, 0], end: [91, 28]}
+      span : [2472, 2499]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [92, 0], end: [92, 9]}
+      span : [2500, 2508]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [93, 0], end: [93, 15]}
+      span : [2509, 2523]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [94, 0], end: [94, 9]}
+      span : [2524, 2532]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [95, 0], end: [95, 6]}
+      span : [2533, 2538]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [96, 0], end: [96, 6]}
+      span : [2539, 2544]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [97, 0], end: [97, 6]}
+      span : [2545, 2550]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [98, 0], end: [98, 6]}
+      span : [2551, 2556]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [99, 0], end: [99, 6]}
+      span : [2557, 2562]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [100, 0], end: [100, 6]}
+      span : [2563, 2568]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [101, 0], end: [101, 6]}
+      span : [2569, 2574]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [102, 0], end: [102, 6]}
+      span : [2575, 2580]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [103, 0], end: [103, 6]}
+      span : [2581, 2586]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [104, 0], end: [104, 6]}
+      span : [2587, 2592]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [105, 0], end: [105, 6]}
+      span : [2593, 2598]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [106, 0], end: [106, 6]}
+      span : [2599, 2604]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [107, 0], end: [107, 6]}
+      span : [2605, 2610]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [108, 0], end: [108, 6]}
+      span : [2611, 2616]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [109, 0], end: [109, 7]}
+      span : [2617, 2623]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [110, 0], end: [110, 7]}
+      span : [2624, 2630]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [111, 0], end: [111, 5]}
+      span : [2631, 2635]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [112, 0], end: [112, 5]}
+      span : [2636, 2640]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [113, 0], end: [113, 6]}
+      span : [2641, 2646]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [114, 0], end: [114, 6]}
+      span : [2647, 2652]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [115, 0], end: [115, 6]}
+      span : [2653, 2658]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [116, 0], end: [116, 6]}
+      span : [2659, 2664]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [117, 0], end: [117, 6]}
+      span : [2665, 2670]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [118, 0], end: [118, 6]}
+      span : [2671, 2676]

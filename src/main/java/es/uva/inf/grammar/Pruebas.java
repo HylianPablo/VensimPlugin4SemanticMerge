@@ -17,21 +17,30 @@ import es.uva.inf.grammar.parser.visitors.EvalVisitor;
 
 public class Pruebas {
    public static void main(String args[]) {
-      /*
-      String[] arg = new String[2];
-      arg[0] = "VensimExampleModels/SHODOR/Bunny.mdl";
-      arg[1] = "outDelimiter.mdl";
-      Delimiter.main(arg);
-      */
+
+      try {
+         String[] arg1 = new String[2];
+         arg1[0] = "VensimExampleModels/SHODOR/dataEquation.mdl";
+         arg1[1] = "Formatted/dataEquationComment.mdl";
+         Comment.main(arg1);
+      } catch (IOException ex) {
+         System.err.println(ex.getMessage());
+      }
+
+      String[] arg2 = new String[2];
+      arg2[0] = "Formatted/dataEquationComment.mdl";
+      arg2[1] = "Formatted/dataEquationFormat.mdl";
+      Delimiter.main(arg2);
+
       try {
 
-         CharStream charstream = CharStreams.fromFileName("modDelFile2.mdl");
+         CharStream charstream = CharStreams.fromFileName("Formatted/dataEquationFormat.mdl");
          ModelLexer lexer = new ModelLexer(charstream);
          ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
          ParseTree tree = parser.file();
 
          EvalVisitor visitor = new EvalVisitor();
-         visitor.setInput("modDelFile2.mdl");
+         visitor.setInput("Formatted/dataEquationFormat.mdl");
          visitor.setOutput("OUT.yaml");
          visitor.visit(tree); // System.out.println(tree.toStringTree(parser));// USED TO DEBUG
 
