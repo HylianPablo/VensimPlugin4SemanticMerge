@@ -28,14 +28,29 @@ public class Delimiter {
 
     public static void writeFile(String equation, String viewDelimiter, String views, String graphDelimiter,
             String graphs, String metadata, String outputName) {
+
+        String viewsDelimiter = "aaa---///";
+        viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
+        String[] viewsSeparated = views.split(viewDelimiter);
+
         try {
             FileWriter writer = new FileWriter(outputName);
             writer.write(equation);
-            writer.write("<[VIEW START]>\r\n");
-            writer.write(viewDelimiter);
-            writer.write(views);
+            writer.write("<[VIEWS START]>\r\n");
+            //writer.write(viewDelimiter);
+            //writer.write(views);
+            for (int i = 0; i < viewsSeparated.length; i++) {
+                writer.write("<[VIEW START]>\r\n");
+                writer.write(viewDelimiter);
+                if (i != viewsSeparated.length - 1) {
+                    writer.write(viewsSeparated[i].substring(0, viewsSeparated[i].length() - 3));
+                } else {
+                    writer.write(viewsSeparated[i]);
+                }
+                writer.write("<[VIEW END]>\r\n");
+            }
             writer.write(graphDelimiter + "\\\\\\" + "\r\n");
-            writer.write("<[VIEW END]>\r\n");
+            writer.write("<[VIEWS END]>\r\n");
             writer.write("<[GRAPH START]>\r\n");
             writer.write(graphs);
             writer.write("<[GRAPH END]>\r\n");

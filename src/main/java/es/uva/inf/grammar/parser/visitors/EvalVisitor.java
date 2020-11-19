@@ -351,6 +351,10 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         + "]\r\n"); // \r
                 fw.write("    children:\r\n");
                 locationSpanStartEq++;
+                boolean justOneGraph = true;
+                if (graphsList.size() > 1) {
+                    justOneGraph = false;
+                }
                 for (int i = 0; i < graphsList.size(); i++) {
                     fw.write("    - type : graph\r\n");
                     fw.write("      name : " + graphsList.get(i).title().getText().substring(6,
@@ -362,14 +366,25 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     int nChildren = graphText.split("\n").length - 1;
                     int nChildrenLen = graphText.split("\n")[graphText.split("\n").length - 1].length() + 2;
                     int extraGrapsSpan = 0;
+                    if (!justOneGraph && i != graphsList.size() - 1) { //Graphs are always separated by \r\n
+                        nChildren++;
+                        nChildrenLen = 2;
+                        extraGrapsSpan = 2;
+                    }
                     // PARA DELIMITAR GRAPHS, DEBERIA SER CAMBIADO
                     fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                             + (locationSpanStartEq + nChildren) + ", " + nChildrenLen + "]}\r\n");
                     locationSpanStartEq += nChildren;
+                    if (!justOneGraph && i != graphsList.size() - 1) {
+                        locationSpanStartEq++;
+                    }
                     fw.write("      span : [" + initCharEq + ", "
-                            + (initCharEq + graphText.length() - extraGrapsSpan + 1) + "]\r\n");
+                            + (initCharEq + graphText.length() + extraGrapsSpan + 1) + "]\r\n");
                     initCharEq += graphText.length() + 2;
-                    initCharEq += 15; //GRAPH END
+                    initCharEq += extraGrapsSpan;
+                    if (i == graphsList.size() - 1) {
+                        initCharEq += 15; //GRAPH END
+                    }
 
                 }
             }

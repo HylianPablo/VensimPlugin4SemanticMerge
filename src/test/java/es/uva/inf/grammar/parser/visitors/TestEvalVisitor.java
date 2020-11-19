@@ -794,4 +794,113 @@ public class TestEvalVisitor {
 
     }
 
+    @Test
+    public void lecturaCorrectaMultiplesGraficos() {
+        try {
+            CharStream charstream = CharStreams.fromFileName("Formatted/fallingRockFormat.mdl");
+            ModelLexer lexer = new ModelLexer(charstream);
+            ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
+            ParseTree tree = parser.file();
+
+            EvalVisitor visitor = new EvalVisitor();
+            visitor.setInput("Formatted/fallingRockFormat.mdl");
+            visitor.setOutput("outputs/evalVisitor/test10EvalVisitor.yml");
+            visitor.visit(tree);
+
+            BufferedReader reader = new BufferedReader(new FileReader("outputs/evalVisitor/test10EvalVisitor.yml"));
+            String line = null;
+            for (int i = 0; i < 4; i++) {
+                line = reader.readLine();
+            }
+            assertEquals("locationSpan : {start: [1, 0], end: [173, 2]}", line);
+            for (int i = 0; i < 6; i++) {
+                line = reader.readLine();
+            }
+            assertEquals("    locationSpan : {start: [1, 0], end: [75, 2]}", line);
+            reader.readLine();
+            line = reader.readLine();
+            assertEquals("    footerSpan : [1206, 1207]", line);
+            reader.readLine();
+            for (int i = 0; i < (4 * 13) + 1; i++) {
+                line = reader.readLine();
+            }
+            //Sketches
+            assertEquals("  - type : sketches", line);
+            reader.readLine();
+            line = reader.readLine();
+            assertEquals("    locationSpan : {start: [76, 0], end: [114, 14]}", line);
+            line = reader.readLine();
+            assertEquals("    headerSpan : [1208, 1223]", line);
+            line = reader.readLine();
+            assertEquals("    footerSpan : [2817, 2830]", line);
+            for (int i = 0; i < 3; i++) {
+                line = reader.readLine();
+            }
+            assertEquals("      name : View 1", line);
+            line = reader.readLine();
+            assertEquals("      locationSpan : {start: [77, 0], end: [113, 11]}", line);
+            line = reader.readLine();
+            assertEquals("      headerSpan : [1224, 1291]", line);
+            line = reader.readLine();
+            assertEquals("      footerSpan : [2806, 2816]", line);
+
+            reader.readLine();
+            reader.readLine();
+            for (int i = 0; i < 4 * ((1 + 29)); i++) { //view settings + other variables
+                line = reader.readLine();
+            }
+            //Graphs
+            assertEquals("  - type : graphs", line);
+            reader.readLine();
+            line = reader.readLine();
+            assertEquals("    locationSpan : {start: [115, 0], end: [149, 15]}", line);
+            line = reader.readLine();
+            assertEquals("    headerSpan : [2831, 2847]", line);
+            line = reader.readLine();
+            assertEquals("    footerSpan : [3259, 3273]", line);
+            for (int i = 0; i < 4; i++) {
+                line = reader.readLine();
+            }
+            //G1
+            assertEquals("      locationSpan : {start: [116, 0], end: [127, 2]}", line);
+            line = reader.readLine();
+            assertEquals("      span : [2848, 2986]", line);
+            for (int i = 0; i < 3; i++) {
+                line = reader.readLine();
+            }
+            //G2
+            assertEquals("      locationSpan : {start: [128, 0], end: [137, 2]}", line);
+            line = reader.readLine();
+            assertEquals("      span : [2987, 3107]", line);
+            for (int i = 0; i < 3; i++) {
+                line = reader.readLine();
+            }
+            //G3
+            assertEquals("      locationSpan : {start: [138, 0], end: [148, 15]}", line);
+            line = reader.readLine();
+            assertEquals("      span : [3108, 3258]", line);
+
+            line = reader.readLine();
+            //Metadata
+            assertEquals("  - type : metadata", line);
+            line = reader.readLine();
+            line = reader.readLine();
+            assertEquals("    locationSpan : {start: [150, 0], end: [173, 2]}", line);
+            line = reader.readLine();
+            assertEquals("    headerSpan : [3274, 3284]", line);
+            line = reader.readLine();
+            assertEquals("    footerSpan : [3445, 3446]", line);
+            reader.close();
+
+            Process process = Runtime.getRuntime()
+                    .exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"
+                            + " --source=Formatted/fallingRockFormat.mdl --destination=Formatted/fallingRockFormat.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""
+                            + " --virtualmachine=\"C:\\Program Files\\Java\\jdk-11.0.8\\bin\\java.exe\"");
+
+        } catch (IOException ex) {
+            System.err.println("Error en la lectura del fichero: " + ex.getMessage());
+        }
+
+    }
+
 }
