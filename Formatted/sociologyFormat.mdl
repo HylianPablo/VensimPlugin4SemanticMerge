@@ -1,0 +1,153 @@
+{UTF-8}
+Aggressive= INTEG (
+	feralization-pacification,
+		100)
+	~	
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+
+Passive= INTEG (
+	pacification-feralization,
+		100)
+	~	
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+
+Passive 0= INTEG (
+	pacification-feralization,
+		100)
+	~	
+	~<[VIEW]>: View 2 <[DESCRIPTION]>:		|
+
+DUMMY  = A FUNCTION OF( Passive 0)
+	~	
+	~<[VIEW]>: View 2 <[DESCRIPTION]>:		|
+
+calming influence=
+	RANDOM NORMAL( outlook-0.05 {min} , outlook+0.05{max} , outlook {mean} , 0.005{stdev}\
+		 , 1011{seed} )
+	~	 [0,0.005,1e-05]
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+
+coping factor=
+	0
+	~	uwu [0,1,0.01]
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+
+outlook=
+	0
+	~	 [-0.05,0.05,0.001]
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+
+provocation=
+	0
+	~	 [0,0.005,1e-06]
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+
+stewing=
+	0
+	~	 [0,1,0.01]
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:	COMENTARIO
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 10
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+<[VIEWS START]>
+<[VIEW START]>
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Passive,119,284,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Aggressive,414,281,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+11,3,200,265,206,6,8,2,3,0,0,1,0,0,0,0,0,0,0,0,0
+11,4,0,273,362,6,8,2,3,0,0,3,0,0,0,0,0,0,0,0,0
+10,5,calming influence,386,117,53,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,coping factor,125,133,42,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,7,provocation,316,459,38,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,stewing,116,442,25,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,9,1,3,1,0,0,0,0,64,0,-1--1--1,,1|(188,236)|
+1,10,1,4,1,0,0,0,0,64,0,-1--1--1,,1|(227,344)|
+1,11,2,4,1,0,0,0,0,64,0,-1--1--1,,1|(350,331)|
+1,12,2,3,1,0,0,0,0,64,0,-1--1--1,,1|(318,224)|
+1,13,8,4,1,0,0,0,0,64,0,-1--1--1,,1|(235,397)|
+1,14,7,4,1,0,0,0,0,64,0,-1--1--1,,1|(311,393)|
+1,15,6,3,1,0,0,0,0,64,0,-1--1--1,,1|(235,169)|
+1,16,5,3,1,0,0,0,0,64,0,-1--1--1,,1|(298,139)|
+12,17,0,816,215,150,150,3,44,0,0,1,0,0,0,0,0,0,0,0,0
+Population
+10,18,outlook,327,53,25,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,19,18,5,1,0,0,0,0,64,0,-1--1--1,,1|(370,67)|
+10,20,Time,293,611,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
+<[VIEW END]>
+<[VIEW START]>
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Passive 0,187,282,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,DUMMY,429,315,33,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,3,1,2,0,0,0,0,0,64,0,-1--1--1,,1|(304,297)|
+<[VIEW END]>
+///---\\\
+<[VIEWS END]>
+<[GRAPH START]>
+:GRAPH Population
+:TITLE Population
+:X-AXIS Time
+:SCALE
+:VAR Passive
+:Y-MIN 0
+:Y-MAX 200
+:LINE-WIDTH 2
+:VAR Aggressive
+:Y-MIN 0
+:Y-MAX 200
+:LINE-WIDTH 2
+<[GRAPH END]>
+:L<%^E!@
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:2,
+34:0,
+42:0
+72:0
+73:0
+4:Time
+5:Aggressive
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:0
+25:10
+26:10
+75:
+43:

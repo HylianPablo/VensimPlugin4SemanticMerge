@@ -5,7 +5,7 @@ grammar Model;
 file: model EOF;
 model: ( symbolWithDoc | macroDefinition)* sketchesGraphsAndMetadata?;
 
-sketchesGraphsAndMetadata: '<[VIEW START]>'? sketches'<[VIEW END]>'? '<[GRAPH START]>'? graphsGroup '<[GRAPH END]>'? metadataDivisor; //Separating equations and sketches&graphs allows to test sample files with just a few lines.
+sketchesGraphsAndMetadata: '<[VIEWS START]>'? sketches'<[VIEWS END]>'? '<[GRAPH START]>'? graphsGroup '<[GRAPH END]>'? metadataDivisor; //Separating equations and sketches&graphs allows to test sample files with just a few lines.
                                                                       //For example, a problematic equation.
 symbolWithDoc: symbolWithDocDefinition unitsDoc;
 
@@ -111,7 +111,7 @@ metadataLine:DigitSeq':'.*?;
 // Backslash tokens are ignored, so this rule doesn't take them into account.
 sketches: viewInfo* sketchesDelimiter;
 sketchesDelimiter: SketchesDelimiter;
-viewInfo:   sketchInfo versionCode viewName viewVariables;
+viewInfo:   '<[VIEW START]>'? sketchInfo versionCode viewName viewVariables '<[VIEW END]>'?;
 sketchInfo: '---///' 'Sketch information - do not modify anything except names' ;
 versionCode: 'V300  Do not put anything below this section - it will be ignored';
 //Vensim versions 5,4 and 3 all use the same version code (300).

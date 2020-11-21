@@ -43,7 +43,7 @@ public class Delimiter {
                 writer.write("<[VIEW START]>\r\n");
                 writer.write(viewDelimiter);
                 if (i != viewsSeparated.length - 1) {
-                    writer.write(viewsSeparated[i].substring(0, viewsSeparated[i].length() - 3));
+                    writer.write(viewsSeparated[i].substring(0, viewsSeparated[i].length() - 2));
                 } else {
                     writer.write(viewsSeparated[i]);
                 }

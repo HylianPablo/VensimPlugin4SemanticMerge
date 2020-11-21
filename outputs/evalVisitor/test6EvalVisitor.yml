@@ -1,7 +1,7 @@
 ---
 type: file
 name: Formatted/notTimeStepFormat.mdl
-locationSpan : {start: [1, 0], end: [138, 2]}
+locationSpan : {start: [1, 0], end: [140, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
@@ -69,173 +69,173 @@ children:
       span : [1331, 1474]
   - type : sketches
     name : sketches
-    locationSpan : {start: [82, 0], end: [112, 14]}
-    headerSpan : [1477, 1492]
-    footerSpan : [2821, 2834]
+    locationSpan : {start: [82, 0], end: [114, 15]}
+    headerSpan : [1477, 1493]
+    footerSpan : [2841, 2866]
     children:
     - type : view
       name : View 1
-      locationSpan : {start: [83, 0], end: [111, 11]}
-      headerSpan : [1493, 1560]
-      footerSpan : [2810, 2820]
+      locationSpan : {start: [83, 0], end: [112, 14]}
+      headerSpan : [1494, 1577]
+      footerSpan : [2827, 2840]
       children:
       - type : viewSettings
         name : viewSettings
-        locationSpan : {start: [84, 0], end: [86, 86]}
-        span : [1561, 1722]
+        locationSpan : {start: [85, 0], end: [87, 9]}
+        span : [1578, 1739]
       - type : variable
         name : bunnies
-        locationSpan : {start: [87, 0], end: [87, 43]}
-        span : [1723, 1765]
+        locationSpan : {start: [88, 0], end: [88, 43]}
+        span : [1740, 1782]
       - type : variable
         name : nextLine
-        locationSpan : {start: [88, 0], end: [88, 41]}
-        span : [1766, 1806]
+        locationSpan : {start: [89, 0], end: [89, 41]}
+        span : [1783, 1823]
       - type : arrow
         name : arrow
-        locationSpan : {start: [89, 0], end: [89, 48]}
-        span : [1807, 1854]
+        locationSpan : {start: [90, 0], end: [90, 48]}
+        span : [1824, 1871]
       - type : arrow
         name : arrow
-        locationSpan : {start: [90, 0], end: [90, 50]}
-        span : [1855, 1904]
+        locationSpan : {start: [91, 0], end: [91, 50]}
+        span : [1872, 1921]
       - type : variable
         name : nextLine
-        locationSpan : {start: [91, 0], end: [91, 39]}
-        span : [1905, 1943]
+        locationSpan : {start: [92, 0], end: [92, 39]}
+        span : [1922, 1960]
       - type : variable
         name : bunnification
-        locationSpan : {start: [92, 0], end: [92, 53]}
-        span : [1944, 1996]
+        locationSpan : {start: [93, 0], end: [93, 53]}
+        span : [1961, 2013]
       - type : variable
         name : birf rate
-        locationSpan : {start: [93, 0], end: [93, 43]}
-        span : [1997, 2039]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [94, 0], end: [94, 47]}
-        span : [2040, 2086]
+        locationSpan : {start: [94, 0], end: [94, 43]}
+        span : [2014, 2056]
       - type : arrow
         name : arrow
         locationSpan : {start: [95, 0], end: [95, 47]}
-        span : [2087, 2133]
+        span : [2057, 2103]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [96, 0], end: [96, 47]}
+        span : [2104, 2150]
       - type : variable
         name : Money
-        locationSpan : {start: [96, 0], end: [97, 7]}
-        span : [2134, 2181]
+        locationSpan : {start: [97, 0], end: [98, 7]}
+        span : [2151, 2198]
       - type : variable
         name : carrying capacity
-        locationSpan : {start: [98, 0], end: [98, 55]}
-        span : [2182, 2236]
+        locationSpan : {start: [99, 0], end: [99, 55]}
+        span : [2199, 2253]
       - type : arrow
         name : arrow
-        locationSpan : {start: [99, 0], end: [99, 49]}
-        span : [2237, 2285]
+        locationSpan : {start: [100, 0], end: [100, 49]}
+        span : [2254, 2302]
       - type : variable
         name : bunnies 0
-        locationSpan : {start: [100, 0], end: [100, 45]}
-        span : [2286, 2330]
+        locationSpan : {start: [101, 0], end: [101, 45]}
+        span : [2303, 2347]
       - type : variable
         name : nextLine
-        locationSpan : {start: [101, 0], end: [101, 40]}
-        span : [2331, 2370]
+        locationSpan : {start: [102, 0], end: [102, 40]}
+        span : [2348, 2387]
       - type : arrow
         name : arrow
-        locationSpan : {start: [102, 0], end: [102, 49]}
-        span : [2371, 2419]
+        locationSpan : {start: [103, 0], end: [103, 49]}
+        span : [2388, 2436]
       - type : arrow
         name : arrow
-        locationSpan : {start: [103, 0], end: [103, 51]}
-        span : [2420, 2470]
+        locationSpan : {start: [104, 0], end: [104, 51]}
+        span : [2437, 2487]
       - type : variable
         name : nextLine
-        locationSpan : {start: [104, 0], end: [104, 38]}
-        span : [2471, 2508]
+        locationSpan : {start: [105, 0], end: [105, 38]}
+        span : [2488, 2525]
       - type : variable
         name : bunnification 0
-        locationSpan : {start: [105, 0], end: [105, 55]}
-        span : [2509, 2563]
+        locationSpan : {start: [106, 0], end: [106, 55]}
+        span : [2526, 2580]
       - type : variable
         name : birf rate 0
-        locationSpan : {start: [106, 0], end: [106, 48]}
-        span : [2564, 2611]
+        locationSpan : {start: [107, 0], end: [107, 48]}
+        span : [2581, 2628]
       - type : arrow
         name : arrow
-        locationSpan : {start: [107, 0], end: [107, 50]}
-        span : [2612, 2661]
+        locationSpan : {start: [108, 0], end: [108, 50]}
+        span : [2629, 2678]
       - type : arrow
         name : arrow
-        locationSpan : {start: [108, 0], end: [108, 49]}
-        span : [2662, 2710]
+        locationSpan : {start: [109, 0], end: [109, 49]}
+        span : [2679, 2727]
       - type : variable
         name : competition
-        locationSpan : {start: [109, 0], end: [109, 50]}
-        span : [2711, 2760]
+        locationSpan : {start: [110, 0], end: [110, 50]}
+        span : [2728, 2777]
       - type : arrow
         name : arrow
-        locationSpan : {start: [110, 0], end: [110, 49]}
-        span : [2761, 2809]
+        locationSpan : {start: [111, 0], end: [111, 49]}
+        span : [2778, 2826]
   - type : graphs
     name : graphs
-    locationSpan : {start: [113, 0], end: [124, 15]}
-    headerSpan : [2835, 2851]
-    footerSpan : [2991, 3005]
+    locationSpan : {start: [115, 0], end: [126, 15]}
+    headerSpan : [2867, 2883]
+    footerSpan : [3023, 3037]
     children:
     - type : graph
       name : population
-      locationSpan : {start: [114, 0], end: [123, 15]}
-      span : [2852, 2990]
+      locationSpan : {start: [116, 0], end: [125, 15]}
+      span : [2884, 3022]
   - type : metadata
     name : metadata
-    locationSpan : {start: [125, 0], end: [138, 2]}
-    headerSpan : [3006, 3016]
-    footerSpan : [3138, 3139]
+    locationSpan : {start: [127, 0], end: [140, 2]}
+    headerSpan : [3038, 3048]
+    footerSpan : [3170, 3171]
     children:
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [126, 0], end: [126, 15]}
-      span : [3017, 3031]
+      locationSpan : {start: [128, 0], end: [128, 15]}
+      span : [3049, 3063]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [127, 0], end: [127, 11]}
-      span : [3032, 3042]
+      locationSpan : {start: [129, 0], end: [129, 11]}
+      span : [3064, 3074]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [128, 0], end: [128, 6]}
-      span : [3043, 3048]
+      locationSpan : {start: [130, 0], end: [130, 6]}
+      span : [3075, 3080]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [129, 0], end: [129, 16]}
-      span : [3049, 3064]
+      locationSpan : {start: [131, 0], end: [131, 16]}
+      span : [3081, 3096]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [130, 0], end: [130, 10]}
-      span : [3065, 3074]
+      locationSpan : {start: [132, 0], end: [132, 10]}
+      span : [3097, 3106]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [131, 0], end: [131, 7]}
-      span : [3075, 3081]
+      locationSpan : {start: [133, 0], end: [133, 7]}
+      span : [3107, 3113]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [132, 0], end: [132, 7]}
-      span : [3082, 3088]
+      locationSpan : {start: [134, 0], end: [134, 7]}
+      span : [3114, 3120]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [133, 0], end: [133, 8]}
-      span : [3089, 3096]
+      locationSpan : {start: [135, 0], end: [135, 8]}
+      span : [3121, 3128]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [134, 0], end: [134, 21]}
-      span : [3097, 3117]
+      locationSpan : {start: [136, 0], end: [136, 21]}
+      span : [3129, 3149]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [135, 0], end: [135, 6]}
-      span : [3118, 3123]
+      locationSpan : {start: [137, 0], end: [137, 6]}
+      span : [3150, 3155]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [136, 0], end: [136, 7]}
-      span : [3124, 3130]
+      locationSpan : {start: [138, 0], end: [138, 7]}
+      span : [3156, 3162]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [137, 0], end: [137, 7]}
-      span : [3131, 3137]
+      locationSpan : {start: [139, 0], end: [139, 7]}
+      span : [3163, 3169]

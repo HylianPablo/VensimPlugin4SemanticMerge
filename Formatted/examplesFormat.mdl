@@ -145,6 +145,7 @@ TIME STEP=
 	~	The time step for the simulation.
 	|
 
+<[VIEWS START]>
 <[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
@@ -213,8 +214,9 @@ This is what proportional change would show
 10,57,k0,95,27,14,8,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 1,58,57,1,0,0,0,0,0,64,0,-1--1--1,,1|(111,34)|
 10,59,TIME STEP,302,300,38,8,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-///---\\\
 <[VIEW END]>
+///---\\\
+<[VIEWS END]>
 <[GRAPH START]>
 <[GRAPH END]>
 :L<%^E!@

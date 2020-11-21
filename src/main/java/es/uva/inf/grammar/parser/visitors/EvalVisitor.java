@@ -62,7 +62,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             int indexOfMacros = 0;
             ArrayList<Boolean> isMacroList = checkForMacros(input);
 
-            String[] equationFooterChars = text.split("\\<\\[VIEW START\\]\\>", 2);
+            String[] equationFooterChars = text.split("\\<\\[VIEWS START\\]\\>", 2);
             int equationsFooter = equationFooterChars[0].length() - 1;
 
             File outF = new File(output);
@@ -80,7 +80,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.write("children:\r\n");
             fw.write("  - type : SymbolWithDocs\r\n");
             fw.write("    name: {UTF-8}\r\n");
-            fw.write("    locationSpan : {start: [1, 0], end: [" + (equationsEndLine - 2) + ", 2]}\r\n"); //estaba en eEndLine -2
+            fw.write("    locationSpan : {start: [1, 0], end: [" + (equationsEndLine - 3) + ", 2]}\r\n"); //estaba en eEndLine -2
             fw.write("    headerSpan : [0, 8]\r\n"); // Assuming file will always start with {UTF-8}
             fw.write("    footerSpan : [" + (equationsFooter - 1) + ", " + (equationsFooter) + "]\r\n"); //antes +2+3
             fw.write("    children :\r\n");
@@ -217,14 +217,14 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.write("  - type : sketches\r\n");
             fw.write("    name : sketches\r\n");
             fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (graphsLastLine + 1)
-                    + ", " + 14 + "]}\r\n");
+                    + ", " + 15 + "]}\r\n");
             initCharEq += 2;
-            fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 15) + "]\r\n"); // View start delimiter
-            initCharEq += 16;
+            fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 16) + "]\r\n"); // Views start delimiter
+            initCharEq += 17;
             // Divides text on graphs
-            String[] viewChars = text.split("\\<\\[VIEW END\\]\\>", 2);
-            fw.write(
-                    "    footerSpan : [" + (viewChars[0].length()) + ", " + (viewChars[0].length() + 11 + 2) + "]\r\n");
+            String[] viewChars = text.split("\\<\\[VIEWS END\\]\\>", 2);
+            fw.write("    footerSpan : [" + (viewChars[0].length() - 11) + ", " + (viewChars[0].length() + 14)//+14+25
+                    + "]\r\n");
             fw.write("    children:\r\n");
             for (int i = 0; i < viewInfoList.size(); i++) {
                 int a = viewInfoList.get(i).start.getStartIndex();
@@ -235,16 +235,18 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 fw.write("      name : " + viewInfoList.get(i).viewName().getText().substring(1,
                         viewInfoList.get(i).viewName().getText().length()) + "\r\n");
                 fw.write("      locationSpan : {start: [" + (locationSpanStartEq + 1) + ", 0], end: ["
-                        + (locationSpanStartEq + viewText.split("\n").length + 1) + ", " + (11) + "]}\r\n"); //It will end in \\\---/// PROVISIONAL PARA UNA VISTA
-                fw.write("      headerSpan : [" + initCharEq + ", " + (initCharEq + 67) + "]\r\n");
+                        + (locationSpanStartEq + viewText.split("\n").length) + ", " + (14) + "]}\r\n"); //It will end in \\\---/// PROVISIONAL PARA UNA VISTA
+                fw.write("      headerSpan : [" + initCharEq + ", " + (initCharEq + 67 + 16) + "]\r\n");
+                initCharEq += 16;
                 initCharEq += 68;
                 String[] viewCharsNewLines = viewChars[0].split("\n");
-                fw.write("      footerSpan : [" + (viewChars[0].length() - 11) + ", " + (viewChars[0].length() - 1)
-                        + "]\r\n");
+                String[] singleViewChars = text.split("\\<\\[VIEW END\\]\\>", 2);
+                int indexViewEnd = ordinalIndexOf(text, "<[VIEW END]>", i);
+                fw.write("      footerSpan : [" + (indexViewEnd) + ", " + (indexViewEnd + 13) + "]\r\n");
                 int viewSettingsChars = viewInfoList.get(i).viewName().getText().length() + 2;
                 viewSettingsChars += viewInfoList.get(i).versionCode().getText().length() + 2;
                 viewSettingsChars += viewInfoList.get(i).viewVariables().viewSettings().getText().length() + 2;
-                locationSpanStartEq += 2;
+                locationSpanStartEq += 3;
                 fw.write("      children:\r\n");
                 fw.write("      - type : viewSettings\r\n");
                 fw.write("        name : viewSettings\r\n");
@@ -261,7 +263,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 int viewVariablesIndex = 0;
                 for (int j = 1; j <= (viewVariablesList.size() + arrowsList.size()); j++) { // ViewSettings is ommited so it starts on 1
                     if (viewInfoList.get(i).viewVariables().getChild(j).getClass()
-                            .equals(arrowsList.get(i).getClass())) {
+                            .equals(arrowsList.get(0).getClass())) {
                         fw.write("      - type : arrow\r\n");
                         fw.write("        name : arrow\r\n");
                         fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
@@ -322,8 +324,12 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         }
                     }
                 }
+                initCharEq += 15; //<[VIEW END]>
+                if (i != viewInfoList.size() - 1) {
+                    initCharEq--;
+                }
             }
-            locationSpanStartEq += 2;
+            locationSpanStartEq += 3;
             initCharEq += 25;
             boolean graphsExists = false;
             if (!ctx.model().sketchesGraphsAndMetadata().graphsGroup().graphs().isEmpty()) {
@@ -426,6 +432,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.close();
         } catch (IOException ex) {
             ex.printStackTrace();
+            System.err.println(ex.getMessage());
         }
         return null;
     }
@@ -507,6 +514,14 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             }
         }
         return -1;
+    }
+
+    public static int ordinalIndexOf(String str, String substr, int n) {
+        int pos = -1;
+        do {
+            pos = str.indexOf(substr, pos + 1);
+        } while (n-- > 0 && pos != -1);
+        return pos;
     }
 
 }
