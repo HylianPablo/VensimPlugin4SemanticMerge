@@ -278,7 +278,16 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     } else { // Variable case SE DEBERIA COMPROBAR LAS SHADOWS Y MARCAR COMO RELEVANTES
                              // CIERTOS CAMPOS
                         boolean nameNextLine = false;
-                        fw.write("      - type : variable\r\n");
+                        if (Integer.parseInt(viewVariablesList.get(viewVariablesIndex).bits.getText()) % 2 == 0) {
+                            if (Integer
+                                    .parseInt(viewVariablesList.get(viewVariablesIndex).internalId.getText()) == 10) {
+                                fw.write("      - type : shadow variable\r\n");
+                            } else {
+                                fw.write("      - type : graph variable\r\n");
+                            }
+                        } else {
+                            fw.write("      - type : variable\r\n");
+                        }
                         if (viewVariablesList.get(viewVariablesIndex).name != null) { // Third field of variable is not
                                                                                       // null
                             fw.write("        name : " + viewVariablesList.get(viewVariablesIndex).name.getText()

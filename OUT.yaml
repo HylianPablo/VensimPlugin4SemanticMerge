@@ -1,287 +1,309 @@
 ---
 type: file
-name: Formatted/sociologyFormat.mdl
-locationSpan : {start: [1, 0], end: [154, 2]}
+name: Formatted/fallingRockComment.mdl
+locationSpan : {start: [1, 0], end: [169, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
   - type : SymbolWithDocs
     name: {UTF-8}
-    locationSpan : {start: [1, 0], end: [77, 2]}
+    locationSpan : {start: [1, 0], end: [73, 2]}
     headerSpan : [0, 8]
-    footerSpan : [1415, 1416]
+    footerSpan : [3381, 3382]
     children :
     - type : equation
-      name : Aggressive
-      locationSpan : {start: [2, 0], end: [7, 2]}
-      span : [9, 113]
+      name : Net Force
+      locationSpan : {start: [2, 0], end: [6, 2]}
+      span : [9, 104]
     - type : equation
-      name : Passive
-      locationSpan : {start: [8, 0], end: [13, 2]}
-      span : [114, 215]
+      name : x
+      locationSpan : {start: [7, 0], end: [12, 2]}
+      span : [105, 186]
     - type : equation
-      name : Passive 0
-      locationSpan : {start: [14, 0], end: [19, 2]}
-      span : [216, 319]
+      name : init h
+      locationSpan : {start: [13, 0], end: [17, 2]}
+      span : [187, 246]
     - type : equation
-      name : DUMMY
-      locationSpan : {start: [20, 0], end: [23, 2]}
-      span : [320, 402]
+      name : drag
+      locationSpan : {start: [18, 0], end: [22, 2]}
+      span : [247, 315]
     - type : equation
-      name : calming influence
-      locationSpan : {start: [24, 0], end: [29, 2]}
-      span : [403, 593]
+      name : "dp/dt"
+      locationSpan : {start: [23, 0], end: [27, 2]}
+      span : [316, 404]
     - type : equation
-      name : coping factor
-      locationSpan : {start: [30, 0], end: [34, 2]}
-      span : [594, 674]
+      name : "dx/dt"
+      locationSpan : {start: [28, 0], end: [32, 2]}
+      span : [405, 475]
     - type : equation
-      name : outlook
-      locationSpan : {start: [35, 0], end: [39, 2]}
-      span : [675, 754]
+      name : g
+      locationSpan : {start: [33, 0], end: [37, 2]}
+      span : [476, 548]
     - type : equation
-      name : provocation
-      locationSpan : {start: [40, 0], end: [44, 2]}
-      span : [755, 835]
+      name : m
+      locationSpan : {start: [38, 0], end: [42, 2]}
+      span : [549, 605]
     - type : equation
-      name : stewing
-      locationSpan : {start: [45, 0], end: [56, 2]}
-      span : [836, 1086]
+      name : p
+      locationSpan : {start: [43, 0], end: [54, 2]}
+      span : [606, 859]
     - type : equation
       name : FINAL TIME
-      locationSpan : {start: [57, 0], end: [61, 2]}
-      span : [1087, 1159]
+      locationSpan : {start: [55, 0], end: [59, 2]}
+      span : [860, 933]
     - type : equation
       name : INITIAL TIME
-      locationSpan : {start: [62, 0], end: [66, 2]}
-      span : [1160, 1235]
+      locationSpan : {start: [60, 0], end: [64, 2]}
+      span : [934, 1010]
     - type : equation
       name : SAVEPER
-      locationSpan : {start: [67, 0], end: [72, 2]}
-      span : [1236, 1336]
+      locationSpan : {start: [65, 0], end: [70, 2]}
+      span : [1011, 1113]
     - type : equation
       name : TIME STEP
-      locationSpan : {start: [73, 0], end: [76, 4]}
-      span : [1337, 1414]
+      locationSpan : {start: [71, 0], end: [74, 4]}
+      span : [1114, 1205]
   - type : sketches
     name : sketches
-    locationSpan : {start: [78, 0], end: [116, 15]}
-    headerSpan : [1417, 1433]
-    footerSpan : [3212, 3237]
+    locationSpan : {start: [76, 0], end: [113, 15]}
+    headerSpan : [1208, 1224]
+    footerSpan : [3372, 3397]
     children:
     - type : view
       name : View 1
-      locationSpan : {start: [79, 0], end: [105, 14]}
-      headerSpan : [1434, 1517]
-      footerSpan : [2779, 2792]
+      locationSpan : {start: [77, 0], end: [112, 14]}
+      headerSpan : [1225, 1308]
+      footerSpan : [-1, 12]
       children:
       - type : viewSettings
         name : viewSettings
-        locationSpan : {start: [81, 0], end: [83, 9]}
-        span : [1518, 1679]
+        locationSpan : {start: [79, 0], end: [81, 84]}
+        span : [1309, 1468]
       - type : variable
-        name : Passive
-        locationSpan : {start: [84, 0], end: [84, 56]}
-        span : [1680, 1735]
-      - type : variable
-        name : Aggressive
-        locationSpan : {start: [85, 0], end: [85, 59]}
-        span : [1736, 1794]
+        name : x
+        locationSpan : {start: [82, 0], end: [82, 40]}
+        span : [1469, 1508]
       - type : variable
         name : nextLine
-        locationSpan : {start: [86, 0], end: [86, 50]}
-        span : [1795, 1844]
+        locationSpan : {start: [83, 0], end: [83, 39]}
+        span : [1509, 1547]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [84, 0], end: [84, 47]}
+        span : [1548, 1594]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [85, 0], end: [85, 49]}
+        span : [1595, 1643]
       - type : variable
         name : nextLine
-        locationSpan : {start: [87, 0], end: [87, 48]}
-        span : [1845, 1892]
+        locationSpan : {start: [86, 0], end: [86, 38]}
+        span : [1644, 1681]
       - type : variable
-        name : calming influence
-        locationSpan : {start: [88, 0], end: [88, 66]}
-        span : [1893, 1958]
+        name : "dx/dt"
+        locationSpan : {start: [87, 0], end: [87, 46]}
+        span : [1682, 1727]
       - type : variable
-        name : coping factor
-        locationSpan : {start: [89, 0], end: [89, 62]}
-        span : [1959, 2020]
+        name : p
+        locationSpan : {start: [88, 0], end: [88, 40]}
+        span : [1728, 1767]
       - type : variable
-        name : provocation
-        locationSpan : {start: [90, 0], end: [90, 60]}
-        span : [2021, 2080]
+        name : g
+        locationSpan : {start: [89, 0], end: [89, 40]}
+        span : [1768, 1807]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [90, 0], end: [90, 47]}
+        span : [1808, 1854]
+      - type : graph variable
+        name : G1
+        locationSpan : {start: [91, 0], end: [92, 4]}
+        span : [1855, 1899]
       - type : variable
-        name : stewing
-        locationSpan : {start: [91, 0], end: [91, 56]}
-        span : [2081, 2136]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [92, 0], end: [92, 47]}
-        span : [2137, 2183]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [93, 0], end: [93, 48]}
-        span : [2184, 2231]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [94, 0], end: [94, 48]}
-        span : [2232, 2279]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [95, 0], end: [95, 48]}
-        span : [2280, 2327]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [96, 0], end: [96, 48]}
-        span : [2328, 2375]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [97, 0], end: [97, 48]}
-        span : [2376, 2423]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [98, 0], end: [98, 48]}
-        span : [2424, 2471]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [99, 0], end: [99, 48]}
-        span : [2472, 2519]
+        name : m
+        locationSpan : {start: [93, 0], end: [93, 41]}
+        span : [1900, 1940]
       - type : variable
-        name : Population
-        locationSpan : {start: [100, 0], end: [101, 12]}
-        span : [2520, 2585]
-      - type : variable
-        name : outlook
-        locationSpan : {start: [102, 0], end: [102, 56]}
-        span : [2586, 2641]
+        name : Net Force
+        locationSpan : {start: [94, 0], end: [94, 47]}
+        span : [1941, 1987]
       - type : arrow
         name : arrow
-        locationSpan : {start: [103, 0], end: [103, 48]}
-        span : [2642, 2689]
-      - type : variable
-        name : Time
-        locationSpan : {start: [104, 0], end: [104, 89]}
-        span : [2690, 2778]
-    - type : view
-      name : View 2
-      locationSpan : {start: [106, 0], end: [114, 14]}
-      headerSpan : [2794, 2877]
-      footerSpan : [3198, 3211]
-      children:
-      - type : viewSettings
-        name : viewSettings
-        locationSpan : {start: [108, 0], end: [110, 9]}
-        span : [2878, 3039]
-      - type : variable
-        name : Passive 0
-        locationSpan : {start: [111, 0], end: [111, 58]}
-        span : [3040, 3097]
-      - type : variable
-        name : DUMMY
-        locationSpan : {start: [112, 0], end: [112, 54]}
-        span : [3098, 3151]
+        locationSpan : {start: [95, 0], end: [95, 50]}
+        span : [1988, 2037]
       - type : arrow
         name : arrow
-        locationSpan : {start: [113, 0], end: [113, 47]}
-        span : [3152, 3198]
+        locationSpan : {start: [96, 0], end: [96, 49]}
+        span : [2038, 2086]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [97, 0], end: [97, 40]}
+        span : [2087, 2126]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [98, 0], end: [98, 49]}
+        span : [2127, 2175]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [99, 0], end: [99, 52]}
+        span : [2176, 2227]
+      - type : variable
+        name : nextLine
+        locationSpan : {start: [100, 0], end: [100, 39]}
+        span : [2228, 2266]
+      - type : variable
+        name : "dp/dt"
+        locationSpan : {start: [101, 0], end: [101, 47]}
+        span : [2267, 2313]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [102, 0], end: [102, 50]}
+        span : [2314, 2363]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [103, 0], end: [103, 49]}
+        span : [2364, 2412]
+      - type : variable
+        name : drag
+        locationSpan : {start: [104, 0], end: [104, 44]}
+        span : [2413, 2456]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [105, 0], end: [105, 50]}
+        span : [2457, 2506]
+      - type : graph variable
+        name : G2
+        locationSpan : {start: [106, 0], end: [107, 4]}
+        span : [2507, 2551]
+      - type : graph variable
+        name : G3
+        locationSpan : {start: [108, 0], end: [109, 4]}
+        span : [2552, 2596]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [110, 0], end: [110, 49]}
+        span : [2597, 2645]
+      - type : shadow variable
+        name : TIME STEP
+        locationSpan : {start: [111, 0], end: [111, 85]}
+        span : [2646, 2730]
+      - type : variable
+        name : init h
+        locationSpan : {start: [112, 0], end: [112, 43]}
+        span : [2731, 2773]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [113, 0], end: [113, 49]}
+        span : [2774, 2822]
   - type : graphs
     name : graphs
-    locationSpan : {start: [117, 0], end: [130, 15]}
-    headerSpan : [3239, 3255]
-    footerSpan : [3420, 3434]
+    locationSpan : {start: [117, 0], end: [145, 15]}
+    headerSpan : [2863, 2879]
+    footerSpan : [3197, 3211]
     children:
     - type : graph
-      name : Population
-      locationSpan : {start: [118, 0], end: [129, 15]}
-      span : [3256, 3420]
+      name : Falling Body(m)
+      locationSpan : {start: [118, 0], end: [129, 2]}
+      span : [2880, 3018]
+    - type : graph
+      name : Momentum(kg*m/sec)
+      locationSpan : {start: [130, 0], end: [139, 2]}
+      span : [3019, 3139]
+    - type : graph
+      name : Force(kg*m/sec^2)
+      locationSpan : {start: [140, 0], end: [150, 15]}
+      span : [3140, 3290]
   - type : metadata
     name : metadata
-    locationSpan : {start: [131, 0], end: [154, 2]}
-    headerSpan : [3436, 3446]
-    footerSpan : [3609, 3610]
+    locationSpan : {start: [152, 0], end: [169, 2]}
+    headerSpan : [3306, 3316]
+    footerSpan : [3383, 3384]
     children:
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [132, 0], end: [132, 11]}
-      span : [3447, 3457]
+      locationSpan : {start: [153, 0], end: [153, 11]}
+      span : [3317, 3327]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [133, 0], end: [133, 6]}
-      span : [3458, 3463]
+      locationSpan : {start: [154, 0], end: [154, 6]}
+      span : [3328, 3333]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [134, 0], end: [134, 16]}
-      span : [3464, 3479]
+      locationSpan : {start: [155, 0], end: [155, 16]}
+      span : [3334, 3349]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [135, 0], end: [135, 10]}
-      span : [3480, 3489]
+      locationSpan : {start: [156, 0], end: [156, 8]}
+      span : [3350, 3357]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [136, 0], end: [136, 7]}
-      span : [3490, 3496]
+      locationSpan : {start: [157, 0], end: [157, 7]}
+      span : [3358, 3364]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [137, 0], end: [137, 7]}
-      span : [3497, 3503]
+      locationSpan : {start: [158, 0], end: [158, 7]}
+      span : [3365, 3371]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [138, 0], end: [138, 6]}
-      span : [3504, 3509]
+      locationSpan : {start: [159, 0], end: [159, 6]}
+      span : [3372, 3377]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [139, 0], end: [139, 6]}
-      span : [3510, 3515]
+      locationSpan : {start: [160, 0], end: [160, 6]}
+      span : [3378, 3383]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [140, 0], end: [140, 6]}
-      span : [3516, 3521]
+      locationSpan : {start: [161, 0], end: [161, 6]}
+      span : [3384, 3389]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [141, 0], end: [141, 8]}
-      span : [3522, 3529]
+      locationSpan : {start: [162, 0], end: [162, 8]}
+      span : [3390, 3397]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [142, 0], end: [142, 14]}
-      span : [3530, 3543]
+      locationSpan : {start: [163, 0], end: [163, 13]}
+      span : [3398, 3410]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [143, 0], end: [143, 6]}
-      span : [3544, 3549]
+      locationSpan : {start: [164, 0], end: [164, 6]}
+      span : [3411, 3416]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [144, 0], end: [144, 6]}
-      span : [3550, 3555]
+      locationSpan : {start: [165, 0], end: [165, 6]}
+      span : [3417, 3422]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [145, 0], end: [145, 6]}
-      span : [3556, 3561]
+      locationSpan : {start: [166, 0], end: [166, 6]}
+      span : [3423, 3428]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [146, 0], end: [146, 6]}
-      span : [3562, 3567]
+      locationSpan : {start: [167, 0], end: [167, 6]}
+      span : [3429, 3434]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [147, 0], end: [147, 6]}
-      span : [3568, 3573]
+      locationSpan : {start: [168, 0], end: [168, 6]}
+      span : [3435, 3440]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [148, 0], end: [148, 6]}
-      span : [3574, 3579]
+      locationSpan : {start: [169, 0], end: [169, 6]}
+      span : [3441, 3446]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [149, 0], end: [149, 6]}
-      span : [3580, 3585]
+      locationSpan : {start: [170, 0], end: [170, 6]}
+      span : [3447, 3452]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [150, 0], end: [150, 7]}
-      span : [3586, 3592]
+      locationSpan : {start: [171, 0], end: [171, 7]}
+      span : [3453, 3459]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [151, 0], end: [151, 7]}
-      span : [3593, 3599]
+      locationSpan : {start: [172, 0], end: [172, 7]}
+      span : [3460, 3466]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [152, 0], end: [152, 5]}
-      span : [3600, 3604]
+      locationSpan : {start: [173, 0], end: [173, 5]}
+      span : [3467, 3471]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [153, 0], end: [153, 5]}
-      span : [3605, 3609]
+      locationSpan : {start: [174, 0], end: [174, 5]}
+      span : [3472, 3476]

@@ -1001,7 +1001,7 @@ public class TestEvalVisitor {
 
             Process process = Runtime.getRuntime()
                     .exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"
-                            + " --source=Formatted/sociologyFormat.mdl --destination=Formatted/sociologyFormat.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""
+                            + " --source=Formatted/climateFormat.mdl --destination=Formatted/climateFormat.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""
                             + " --virtualmachine=\"C:\\Program Files\\Java\\jdk-11.0.8\\bin\\java.exe\"");
 
         } catch (IOException ex) {
