@@ -115,7 +115,7 @@ children:
         name : arrow
         locationSpan : {start: [90, 0], end: [90, 47]}
         span : [1808, 1854]
-      - type : variable
+      - type : graph variable
         name : G1
         locationSpan : {start: [91, 0], end: [92, 4]}
         span : [1855, 1899]
@@ -171,11 +171,11 @@ children:
         name : arrow
         locationSpan : {start: [105, 0], end: [105, 50]}
         span : [2457, 2506]
-      - type : variable
+      - type : graph variable
         name : G2
         locationSpan : {start: [106, 0], end: [107, 4]}
         span : [2507, 2551]
-      - type : variable
+      - type : graph variable
         name : G3
         locationSpan : {start: [108, 0], end: [109, 4]}
         span : [2552, 2596]
@@ -183,7 +183,7 @@ children:
         name : arrow
         locationSpan : {start: [110, 0], end: [110, 49]}
         span : [2597, 2645]
-      - type : variable
+      - type : shadow variable
         name : TIME STEP
         locationSpan : {start: [111, 0], end: [111, 85]}
         span : [2646, 2730]

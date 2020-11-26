@@ -111,7 +111,7 @@ children:
         name : arrow
         locationSpan : {start: [83, 0], end: [83, 48]}
         span : [1937, 1984]
-      - type : variable
+      - type : shadow variable
         name : Time
         locationSpan : {start: [84, 0], end: [84, 77]}
         span : [1985, 2061]

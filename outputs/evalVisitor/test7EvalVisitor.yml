@@ -115,7 +115,7 @@ children:
         name : arrow
         locationSpan : {start: [87, 0], end: [87, 47]}
         span : [1982, 2028]
-      - type : variable
+      - type : graph variable
         name : Money
         locationSpan : {start: [88, 0], end: [89, 7]}
         span : [2029, 2076]

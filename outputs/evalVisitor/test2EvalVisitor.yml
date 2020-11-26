@@ -351,7 +351,7 @@ children:
         name : arrow
         locationSpan : {start: [213, 0], end: [213, 48]}
         span : [5474, 5521]
-      - type : variable
+      - type : shadow variable
         name : k0
         locationSpan : {start: [214, 0], end: [214, 73]}
         span : [5522, 5594]
@@ -359,7 +359,7 @@ children:
         name : arrow
         locationSpan : {start: [215, 0], end: [215, 48]}
         span : [5595, 5642]
-      - type : variable
+      - type : shadow variable
         name : TIME STEP
         locationSpan : {start: [216, 0], end: [216, 82]}
         span : [5643, 5724]

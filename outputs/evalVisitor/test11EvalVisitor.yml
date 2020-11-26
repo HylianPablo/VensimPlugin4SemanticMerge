@@ -143,7 +143,7 @@ children:
         name : arrow
         locationSpan : {start: [99, 0], end: [99, 48]}
         span : [2472, 2519]
-      - type : variable
+      - type : graph variable
         name : Population
         locationSpan : {start: [100, 0], end: [101, 12]}
         span : [2520, 2585]
@@ -155,7 +155,7 @@ children:
         name : arrow
         locationSpan : {start: [103, 0], end: [103, 48]}
         span : [2642, 2689]
-      - type : variable
+      - type : shadow variable
         name : Time
         locationSpan : {start: [104, 0], end: [104, 89]}
         span : [2690, 2778]
