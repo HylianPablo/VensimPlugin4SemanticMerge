@@ -161,15 +161,16 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                                                                    // various newlines between equations
                 }
                 reader.reset();
+                boolean markBeforeControlParams = false;
                 if (equationFollowingLines.contains("\t.Control")) {
-
+                    markBeforeControlParams = true;
                     extraLocationSpan = 6;
                     extraCharsEq = 167; // Added in order to match Control Delimiter Characters
                 }
                 int endCharEq;
                 int endColumnLocationSpan = 2;
-                int equationNewLines = equation.split("\n").length; // One line for UTF-8 and other for \n //Antes
-                                                                    // dividia en \r\n
+                int equationNewLines = equation.split("\n").length; // One line for UTF-8 and other for \n //Antes dividia en \r\n
+                String[] equationLines = equation.split("\n");
                 if (i < newLinesInEquation.size()) { // It only checks until .Control delimiter
                     if (newLinesInEquation.get(i)) {
                         endCharEq = equation.length() + 3; // \r \n + last \n that is not read by equation
@@ -181,7 +182,15 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         // locationSpanStartEq--;
                     }
                 } else {
-                    endCharEq = equation.length() + 3; // \r \n + last \n that is not read by equation
+                    if ((equationLines[equationLines.length - 1].contains("~~|")
+                            || equationLines[equationLines.length - 1].contains("<[DESCRIPTION]>:|"))
+                            && !markBeforeControlParams) {
+                        equationNewLines--;
+                        endCharEq = equation.length() + 1;
+                        endColumnLocationSpan = equationLines[equationLines.length - 1].length() + 2; // \r\n
+                    } else {
+                        endCharEq = equation.length() + 3; // \r \n + last \n that is not read by equation
+                    }
                 }
                 if (i == (equations.size() + macrosListLen) - 1) {
                     endCharEq -= 2;
@@ -194,10 +203,19 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     endColumnLocationSpan = equation.split("\r\n")[equationNewLines].length() + 2; // \r \n
                     endCharEq = equation.length() + 1;
                 }
+                /*
+                if () {
+                }
+                */
 
                 fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                         + (locationSpanStartEq + equationNewLines + extraLocationSpan) + ", " + endColumnLocationSpan
                         + "]}\r\n"); // It will always end in '\r \n'
+                /*
+                if (equationLines[equationLines.length - 1].contains("~~|") && !markBeforeControlParams) {
+                    locationSpanStartEq++;
+                }
+                */
                 locationSpanStartEq = locationSpanStartEq + equationNewLines + 1;
 
                 fw.write("      span : [" + initCharEq + ", " + (endCharEq + initCharEq + extraCharsEq) + "]\r\n");
@@ -207,6 +225,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 extraLocationSpan = 0;
                 initCharEq += extraCharsEq;
                 extraCharsEq = 0;
+                markBeforeControlParams = false;
             }
             reader.close();
             locationSpanStartEq++; // Because TIMESTEP ends one line earlier due to footerSpan
@@ -301,7 +320,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                                 // It just has an irrelevant variable on third field. Name is trivial, must be
                                 // changed
                             } else {
-                                fw.write("        name : nextLine\r\n");
+                                fw.write("        name : Numeric\r\n");
                             }
                         }
                         if (!nameNextLine) {
@@ -316,18 +335,26 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                             initCharEq += 2;
                             viewVariablesIndex++;
                         } else {
+                            //System.out.println(viewVariablesList.get(viewVariablesIndex).visualInfo().getText()); //AAAAAAAAAAAAAAAA
+                            int commaCounter = contarCaracteres(
+                                    viewVariablesList.get(viewVariablesIndex).visualInfo().getText(), ',');
+                            if (commaCounter == -1) {
+                                commaCounter = 0;
+                            }
                             fw.write("        locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                                     + (locationSpanStartEq + 1) + ", "
-                                    + (viewVariablesList.get(viewVariablesIndex).visualInfo().getText().length() + 2)
+                                    + (viewVariablesList.get(viewVariablesIndex).visualInfo().getText().length() + 2
+                                            + commaCounter) //It trims space after comma, so it need to be added
                                     + "]}\r\n");
                             locationSpanStartEq += 2;
-                            fw.write("        span : ["
-                                    + initCharEq + ", " + (initCharEq
-                                            + viewVariablesList.get(viewVariablesIndex).getText().length() + 2 + 1)
+                            fw.write("        span : [" + initCharEq + ", "
+                                    + (initCharEq + viewVariablesList.get(viewVariablesIndex).getText().length() + 2 + 1
+                                            + commaCounter)
                                     + "]\r\n");
                             initCharEq += viewVariablesList.get(viewVariablesIndex).getText().length();
                             initCharEq += 2; // extra characters of second line
                             initCharEq += 2;
+                            initCharEq += commaCounter;
                             viewVariablesIndex++;
 
                         }
@@ -405,7 +432,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             }
             int metadataHeaderPlus = 10;
             if (!graphsExists) {
-                locationSpanStartEq -= 2;
+                //System.out.println("AAAAAAAA");
+                //locationSpanStartEq -= 2;
                 metadataHeaderPlus = 42; //chars from graphs delimiter
             }
 
@@ -501,7 +529,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
         ArrayList<Boolean> array = new ArrayList<>();
         try {
             String text = new String(Files.readAllBytes(Paths.get(input)), StandardCharsets.UTF_8);
-            String[] noControl = text.split("\t.Control", 2);
+            String[] noControl = text.split("\\\\\\---", 2);
             String[] equations = noControl[0].split("\\|");
             for (int i = 0; i < equations.length; i++) {
                 array.add(equations[i].indexOf(":MACRO:") != -1);
@@ -531,6 +559,19 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             pos = str.indexOf(substr, pos + 1);
         } while (n-- > 0 && pos != -1);
         return pos;
+    }
+
+    //método para calcular el número de veces que se repite un carácter en un String
+    public static int contarCaracteres(String cadena, char caracter) {
+        int posicion, contador = 0;
+        //se busca la primera vez que aparece
+        posicion = cadena.indexOf(caracter);
+        while (posicion != -1) { //mientras se encuentre el caracter
+            contador++; //se cuenta
+            //se sigue buscando a partir de la posición siguiente a la encontrada                                 
+            posicion = cadena.indexOf(caracter, posicion + 1);
+        }
+        return contador;
     }
 
 }

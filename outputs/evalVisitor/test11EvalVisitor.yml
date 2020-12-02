@@ -88,11 +88,11 @@ children:
         locationSpan : {start: [85, 0], end: [85, 59]}
         span : [1736, 1794]
       - type : variable
-        name : nextLine
+        name : Numeric
         locationSpan : {start: [86, 0], end: [86, 50]}
         span : [1795, 1844]
       - type : variable
-        name : nextLine
+        name : Numeric
         locationSpan : {start: [87, 0], end: [87, 48]}
         span : [1845, 1892]
       - type : variable

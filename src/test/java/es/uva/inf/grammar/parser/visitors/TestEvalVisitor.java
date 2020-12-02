@@ -171,7 +171,7 @@ public class TestEvalVisitor {
             assertEquals("  - type : metadata", line);
             line = reader.readLine();
             line = reader.readLine();
-            assertEquals("    locationSpan : {start: [220, 0], end: [252, 2]}", line);
+            assertEquals("    locationSpan : {start: [222, 0], end: [252, 2]}", line);
             line = reader.readLine();
             assertEquals("    headerSpan : [5765, 5807]", line);
             line = reader.readLine();
@@ -248,7 +248,7 @@ public class TestEvalVisitor {
             assertEquals("  - type : metadata", line);
             line = reader.readLine();
             line = reader.readLine();
-            assertEquals("    locationSpan : {start: [83, 0], end: [121, 2]}", line);
+            assertEquals("    locationSpan : {start: [85, 0], end: [121, 2]}", line);
             line = reader.readLine();
             assertEquals("    headerSpan : [2292, 2334]", line);
             line = reader.readLine();
@@ -325,7 +325,7 @@ public class TestEvalVisitor {
             assertEquals("  - type : metadata", line);
             line = reader.readLine();
             line = reader.readLine();
-            assertEquals("    locationSpan : {start: [93, 0], end: [125, 2]}", line);
+            assertEquals("    locationSpan : {start: [95, 0], end: [125, 2]}", line);
             line = reader.readLine();
             assertEquals("    headerSpan : [2362, 2404]", line);
             line = reader.readLine();
@@ -402,7 +402,7 @@ public class TestEvalVisitor {
             assertEquals("  - type : metadata", line);
             line = reader.readLine();
             line = reader.readLine();
-            assertEquals("    locationSpan : {start: [74, 0], end: [96, 2]}", line);
+            assertEquals("    locationSpan : {start: [76, 0], end: [96, 2]}", line);
             line = reader.readLine();
             assertEquals("    headerSpan : [1692, 1734]", line);
             line = reader.readLine();
@@ -1001,7 +1001,7 @@ public class TestEvalVisitor {
 
             Process process = Runtime.getRuntime()
                     .exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"
-                            + " --source=Formatted/climateFormat.mdl --destination=Formatted/climateFormat.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""
+                            + " --source=Formatted/locominiFormat.mdl --destination=Formatted/locominiFormat.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""
                             + " --virtualmachine=\"C:\\Program Files\\Java\\jdk-11.0.8\\bin\\java.exe\"");
 
         } catch (IOException ex) {

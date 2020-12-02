@@ -88,7 +88,7 @@ children:
         locationSpan : {start: [88, 0], end: [88, 43]}
         span : [1740, 1782]
       - type : variable
-        name : nextLine
+        name : Numeric
         locationSpan : {start: [89, 0], end: [89, 41]}
         span : [1783, 1823]
       - type : arrow
@@ -100,7 +100,7 @@ children:
         locationSpan : {start: [91, 0], end: [91, 50]}
         span : [1872, 1921]
       - type : variable
-        name : nextLine
+        name : Numeric
         locationSpan : {start: [92, 0], end: [92, 39]}
         span : [1922, 1960]
       - type : variable
@@ -136,7 +136,7 @@ children:
         locationSpan : {start: [101, 0], end: [101, 45]}
         span : [2303, 2347]
       - type : variable
-        name : nextLine
+        name : Numeric
         locationSpan : {start: [102, 0], end: [102, 40]}
         span : [2348, 2387]
       - type : arrow
@@ -148,7 +148,7 @@ children:
         locationSpan : {start: [104, 0], end: [104, 51]}
         span : [2437, 2487]
       - type : variable
-        name : nextLine
+        name : Numeric
         locationSpan : {start: [105, 0], end: [105, 38]}
         span : [2488, 2525]
       - type : variable

@@ -1,309 +1,4107 @@
 ---
 type: file
-name: Formatted/fallingRockComment.mdl
-locationSpan : {start: [1, 0], end: [169, 2]}
+name: Formatted/locominiFormat.mdl
+locationSpan : {start: [1, 0], end: [1337, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
   - type : SymbolWithDocs
     name: {UTF-8}
-    locationSpan : {start: [1, 0], end: [73, 2]}
+    locationSpan : {start: [1, 0], end: [322, 2]}
     headerSpan : [0, 8]
-    footerSpan : [3381, 3382]
+    footerSpan : [16029, 16030]
     children :
     - type : equation
-      name : Net Force
+      name : "income to food per person (R)"
       locationSpan : {start: [2, 0], end: [6, 2]}
-      span : [9, 104]
+      span : [9, 137]
     - type : equation
-      name : x
-      locationSpan : {start: [7, 0], end: [12, 2]}
-      span : [105, 186]
+      name : "Afroffod System matrix from imncome (R,d) 0"
+      locationSpan : {start: [7, 0], end: [24, 2]}
+      span : [138, 988]
     - type : equation
-      name : init h
-      locationSpan : {start: [13, 0], end: [17, 2]}
-      span : [187, 246]
+      name : "Diet from income(R,d)"
+      locationSpan : {start: [25, 0], end: [42, 2]}
+      span : [989, 1594]
     - type : equation
-      name : drag
-      locationSpan : {start: [18, 0], end: [22, 2]}
-      span : [247, 315]
+      name : vegetables to RES
+      locationSpan : {start: [43, 0], end: [53, 2]}
+      span : [1595, 1833]
     - type : equation
-      name : "dp/dt"
-      locationSpan : {start: [23, 0], end: [27, 2]}
-      span : [316, 404]
+      name : "final resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [54, 0], end: [55, 82]}
+      span : [1834, 1985]
     - type : equation
-      name : "dx/dt"
-      locationSpan : {start: [28, 0], end: [32, 2]}
-      span : [405, 475]
+      name : "final resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [56, 0], end: [58, 34]}
+      span : [1986, 2218]
     - type : equation
-      name : g
-      locationSpan : {start: [33, 0], end: [37, 2]}
-      span : [476, 548]
+      name : "final resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [59, 0], end: [62, 25]}
+      span : [2219, 2536]
     - type : equation
-      name : m
-      locationSpan : {start: [38, 0], end: [42, 2]}
-      span : [549, 605]
+      name : "final resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [63, 0], end: [67, 9]}
+      span : [2537, 2941]
     - type : equation
-      name : p
-      locationSpan : {start: [43, 0], end: [54, 2]}
-      span : [606, 859]
+      name : "final resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [68, 0], end: [72, 88]}
+      span : [2942, 3424]
+    - type : equation
+      name : "final resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [73, 0], end: [78, 41]}
+      span : [3425, 3999]
+    - type : equation
+      name : "final resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [79, 0], end: [88, 2]}
+      span : [4000, 4666]
+    - type : equation
+      name : "primary resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [89, 0], end: [90, 88]}
+      span : [4667, 4832]
+    - type : equation
+      name : "primary resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [91, 0], end: [93, 38]}
+      span : [4833, 5081]
+    - type : equation
+      name : "primary resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [94, 0], end: [97, 41]}
+      span : [5082, 5427]
+    - type : equation
+      name : "primary resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [98, 0], end: [102, 45]}
+      span : [5428, 5866]
+    - type : equation
+      name : "primary resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [103, 0], end: [108, 44]}
+      span : [5867, 6395]
+    - type : equation
+      name : "primary resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [109, 0], end: [115, 43]}
+      span : [6396, 7013]
+    - type : equation
+      name : "primary resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [116, 0], end: [123, 38]}
+      span : [7014, 7711]
+    - type : equation
+      name : "primary resources graph added for R1 (fr,pr)"
+      locationSpan : {start: [124, 0], end: [135, 2]}
+      span : [7712, 8502]
+    - type : equation
+      name : u 0
+      locationSpan : {start: [136, 0], end: [142, 2]}
+      span : [8503, 8776]
+    - type : equation
+      name : "final resources demanded to g m by R1(fr)"
+      locationSpan : {start: [143, 0], end: [147, 2]}
+      span : [8777, 8926]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [148, 0], end: [149, 58]}
+      span : [8927, 9062]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [150, 0], end: [151, 58]}
+      span : [9063, 9198]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [152, 0], end: [153, 8]}
+      span : [9199, 9291]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [154, 0], end: [155, 62]}
+      span : [9292, 9435]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [156, 0], end: [157, 61]}
+      span : [9436, 9577]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [158, 0], end: [159, 61]}
+      span : [9578, 9720]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [160, 0], end: [161, 62]}
+      span : [9721, 9864]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [162, 0], end: [163, 8]}
+      span : [9865, 9956]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [164, 0], end: [165, 8]}
+      span : [9957, 10046]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [166, 0], end: [168, 8]}
+      span : [10047, 10147]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [169, 0], end: [171, 8]}
+      span : [10148, 10249]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [172, 0], end: [174, 8]}
+      span : [10250, 10350]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [175, 0], end: [176, 8]}
+      span : [10351, 10440]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [177, 0], end: [178, 8]}
+      span : [10441, 10529]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [179, 0], end: [180, 58]}
+      span : [10530, 10665]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [181, 0], end: [182, 58]}
+      span : [10666, 10801]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [183, 0], end: [184, 62]}
+      span : [10802, 10945]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [185, 0], end: [186, 61]}
+      span : [10946, 11087]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [187, 0], end: [188, 62]}
+      span : [11088, 11231]
+    - type : equation
+      name : "resources consum matrix global market (R,fr,pr)"
+      locationSpan : {start: [189, 0], end: [193, 2]}
+      span : [11232, 11384]
+    - type : equation
+      name : "infrastructures of finals from primaries transformation (R,fr,pr)"
+      locationSpan : {start: [194, 0], end: [203, 49]}
+      span : [11385, 11861]
+    - type : equation
+      name : "infrastructures of finals from primaries transformation (R,fr,pr)"
+      locationSpan : {start: [204, 0], end: [216, 2]}
+      span : [11862, 12348]
+    - type : equation
+      name : AA
+      locationSpan : {start: [217, 0], end: [225, 2]}
+      span : [12349, 12616]
+    - type : equation
+      name : "Biomass Demanded to Global Market(R)"
+      locationSpan : {start: [226, 0], end: [236, 2]}
+      span : [12617, 13161]
+    - type : equation
+      name : "Cereals Demanded to Global Market(R)"
+      locationSpan : {start: [237, 0], end: [245, 2]}
+      span : [13162, 13561]
+    - type : equation
+      name : "Vegetables Demanded to Global Market(R)"
+      locationSpan : {start: [246, 0], end: [252, 2]}
+      span : [13562, 13813]
+    - type : equation
+      name : "Gas Demanded to Global Market(R)"
+      locationSpan : {start: [253, 0], end: [263, 2]}
+      span : [13814, 14340]
+    - type : equation
+      name : "Pulses Demanded to Global Market(R)"
+      locationSpan : {start: [264, 0], end: [272, 2]}
+      span : [14341, 14734]
+    - type : equation
+      name : "Oil Demanded to Global Market(R)"
+      locationSpan : {start: [273, 0], end: [283, 2]}
+      span : [14735, 15262]
+    - type : equation
+      name : "income of households to food (R)"
+      locationSpan : {start: [284, 0], end: [288, 2]}
+      span : [15263, 15404]
+    - type : equation
+      name : increase share rent of households to food
+      locationSpan : {start: [289, 0], end: [293, 2]}
+      span : [15405, 15475]
+    - type : equation
+      name : "share income of households to food (R)"
+      locationSpan : {start: [294, 0], end: [296, 12]}
+      span : [15476, 15591]
+    - type : equation
+      name : "share income of households to food (R)"
+      locationSpan : {start: [297, 0], end: [302, 2]}
+      span : [15592, 15717]
     - type : equation
       name : FINAL TIME
-      locationSpan : {start: [55, 0], end: [59, 2]}
-      span : [860, 933]
+      locationSpan : {start: [303, 0], end: [307, 2]}
+      span : [15718, 15790]
     - type : equation
       name : INITIAL TIME
-      locationSpan : {start: [60, 0], end: [64, 2]}
-      span : [934, 1010]
+      locationSpan : {start: [308, 0], end: [312, 2]}
+      span : [15791, 15865]
     - type : equation
       name : SAVEPER
-      locationSpan : {start: [65, 0], end: [70, 2]}
-      span : [1011, 1113]
+      locationSpan : {start: [313, 0], end: [317, 2]}
+      span : [15866, 15947]
     - type : equation
       name : TIME STEP
-      locationSpan : {start: [71, 0], end: [74, 4]}
-      span : [1114, 1205]
+      locationSpan : {start: [318, 0], end: [321, 4]}
+      span : [15948, 16028]
   - type : sketches
     name : sketches
-    locationSpan : {start: [76, 0], end: [113, 15]}
-    headerSpan : [1208, 1224]
-    footerSpan : [3372, 3397]
+    locationSpan : {start: [323, 0], end: [1279, 15]}
+    headerSpan : [16031, 16047]
+    footerSpan : [73181, 73206]
     children:
     - type : view
-      name : View 1
-      locationSpan : {start: [77, 0], end: [112, 14]}
-      headerSpan : [1225, 1308]
-      footerSpan : [-1, 12]
+      name : Population
+      locationSpan : {start: [324, 0], end: [365, 14]}
+      headerSpan : [16048, 16131]
+      footerSpan : [18184, 18197]
       children:
       - type : viewSettings
         name : viewSettings
-        locationSpan : {start: [79, 0], end: [81, 84]}
-        span : [1309, 1468]
+        locationSpan : {start: [326, 0], end: [328, 13]}
+        span : [16132, 16297]
       - type : variable
-        name : x
-        locationSpan : {start: [82, 0], end: [82, 40]}
-        span : [1469, 1508]
+        name : Population R1
+        locationSpan : {start: [329, 0], end: [329, 50]}
+        span : [16298, 16347]
       - type : variable
-        name : nextLine
-        locationSpan : {start: [83, 0], end: [83, 39]}
-        span : [1509, 1547]
+        name : Numeric
+        locationSpan : {start: [330, 0], end: [330, 39]}
+        span : [16348, 16386]
       - type : arrow
         name : arrow
-        locationSpan : {start: [84, 0], end: [84, 47]}
-        span : [1548, 1594]
+        locationSpan : {start: [331, 0], end: [331, 47]}
+        span : [16387, 16433]
       - type : arrow
         name : arrow
-        locationSpan : {start: [85, 0], end: [85, 49]}
-        span : [1595, 1643]
+        locationSpan : {start: [332, 0], end: [332, 49]}
+        span : [16434, 16482]
       - type : variable
-        name : nextLine
-        locationSpan : {start: [86, 0], end: [86, 38]}
-        span : [1644, 1681]
+        name : Numeric
+        locationSpan : {start: [333, 0], end: [333, 38]}
+        span : [16483, 16520]
       - type : variable
-        name : "dx/dt"
-        locationSpan : {start: [87, 0], end: [87, 46]}
-        span : [1682, 1727]
+        name : net growth Population R1
+        locationSpan : {start: [334, 0], end: [334, 63]}
+        span : [16521, 16583]
       - type : variable
-        name : p
-        locationSpan : {start: [88, 0], end: [88, 40]}
-        span : [1728, 1767]
-      - type : variable
-        name : g
-        locationSpan : {start: [89, 0], end: [89, 40]}
-        span : [1768, 1807]
+        name : birth rate R1
+        locationSpan : {start: [335, 0], end: [335, 49]}
+        span : [16584, 16632]
       - type : arrow
         name : arrow
-        locationSpan : {start: [90, 0], end: [90, 47]}
-        span : [1808, 1854]
-      - type : graph variable
-        name : G1
-        locationSpan : {start: [91, 0], end: [92, 4]}
-        span : [1855, 1899]
+        locationSpan : {start: [336, 0], end: [336, 47]}
+        span : [16633, 16679]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [337, 0], end: [337, 48]}
+        span : [16680, 16727]
       - type : variable
-        name : m
-        locationSpan : {start: [93, 0], end: [93, 41]}
-        span : [1900, 1940]
+        name : Population R2
+        locationSpan : {start: [338, 0], end: [338, 51]}
+        span : [16728, 16778]
       - type : variable
-        name : Net Force
-        locationSpan : {start: [94, 0], end: [94, 47]}
-        span : [1941, 1987]
+        name : Numeric
+        locationSpan : {start: [339, 0], end: [339, 40]}
+        span : [16779, 16818]
       - type : arrow
         name : arrow
-        locationSpan : {start: [95, 0], end: [95, 50]}
-        span : [1988, 2037]
+        locationSpan : {start: [340, 0], end: [340, 50]}
+        span : [16819, 16868]
       - type : arrow
         name : arrow
-        locationSpan : {start: [96, 0], end: [96, 49]}
-        span : [2038, 2086]
+        locationSpan : {start: [341, 0], end: [341, 52]}
+        span : [16869, 16920]
       - type : variable
-        name : nextLine
-        locationSpan : {start: [97, 0], end: [97, 40]}
-        span : [2087, 2126]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [98, 0], end: [98, 49]}
-        span : [2127, 2175]
-      - type : arrow
-        name : arrow
-        locationSpan : {start: [99, 0], end: [99, 52]}
-        span : [2176, 2227]
+        name : Numeric
+        locationSpan : {start: [342, 0], end: [342, 39]}
+        span : [16921, 16959]
       - type : variable
-        name : nextLine
-        locationSpan : {start: [100, 0], end: [100, 39]}
-        span : [2228, 2266]
+        name : net growth Population R2
+        locationSpan : {start: [343, 0], end: [343, 64]}
+        span : [16960, 17023]
       - type : variable
-        name : "dp/dt"
-        locationSpan : {start: [101, 0], end: [101, 47]}
-        span : [2267, 2313]
+        name : birth rate R2
+        locationSpan : {start: [344, 0], end: [344, 51]}
+        span : [17024, 17074]
       - type : arrow
         name : arrow
-        locationSpan : {start: [102, 0], end: [102, 50]}
-        span : [2314, 2363]
+        locationSpan : {start: [345, 0], end: [345, 51]}
+        span : [17075, 17125]
       - type : arrow
         name : arrow
-        locationSpan : {start: [103, 0], end: [103, 49]}
-        span : [2364, 2412]
+        locationSpan : {start: [346, 0], end: [346, 51]}
+        span : [17126, 17176]
       - type : variable
-        name : drag
-        locationSpan : {start: [104, 0], end: [104, 44]}
-        span : [2413, 2456]
+        name : "Population (R)"
+        locationSpan : {start: [347, 0], end: [347, 54]}
+        span : [17177, 17230]
       - type : arrow
         name : arrow
-        locationSpan : {start: [105, 0], end: [105, 50]}
-        span : [2457, 2506]
-      - type : graph variable
-        name : G2
-        locationSpan : {start: [106, 0], end: [107, 4]}
-        span : [2507, 2551]
-      - type : graph variable
-        name : G3
-        locationSpan : {start: [108, 0], end: [109, 4]}
-        span : [2552, 2596]
+        locationSpan : {start: [348, 0], end: [348, 50]}
+        span : [17231, 17280]
       - type : arrow
         name : arrow
-        locationSpan : {start: [110, 0], end: [110, 49]}
-        span : [2597, 2645]
+        locationSpan : {start: [349, 0], end: [349, 51]}
+        span : [17281, 17331]
+      - type : variable
+        name : Emigration Trends R2 to R1
+        locationSpan : {start: [350, 0], end: [350, 64]}
+        span : [17332, 17395]
+      - type : variable
+        name : Emigration intensification R2 to R1
+        locationSpan : {start: [351, 0], end: [351, 73]}
+        span : [17396, 17468]
+      - type : variable
+        name : Intensification of the emigration due to climate change and food shortage
+        locationSpan : {start: [352, 0], end: [353, 75]}
+        span : [17469, 17611]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [354, 0], end: [354, 50]}
+        span : [17612, 17661]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [355, 0], end: [355, 50]}
+        span : [17662, 17711]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [356, 0], end: [356, 51]}
+        span : [17712, 17762]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [357, 0], end: [357, 51]}
+        span : [17763, 17813]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [358, 0], end: [358, 51]}
+        span : [17814, 17864]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [359, 0], end: [359, 51]}
+        span : [17865, 17915]
+      - type : variable
+        name : Impacts Climate Change
+        locationSpan : {start: [360, 0], end: [360, 60]}
+        span : [17916, 17975]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [361, 0], end: [361, 51]}
+        span : [17976, 18026]
+      - type : variable
+        name : Population Initial
+        locationSpan : {start: [362, 0], end: [362, 56]}
+        span : [18027, 18082]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [363, 0], end: [363, 50]}
+        span : [18083, 18132]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [364, 0], end: [364, 51]}
+        span : [18133, 18183]
+    - type : view
+      name : Bio Resources and Human Diet
+      locationSpan : {start: [366, 0], end: [432, 14]}
+      headerSpan : [18198, 18281]
+      footerSpan : [22085, 22098]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [368, 0], end: [370, 31]}
+        span : [18282, 18465]
+      - type : variable
+        name : Diet 2
+        locationSpan : {start: [371, 0], end: [371, 45]}
+        span : [18466, 18510]
+      - type : variable
+        name : "Food Demand(R,d)"
+        locationSpan : {start: [372, 0], end: [372, 57]}
+        span : [18511, 18567]
       - type : shadow variable
-        name : TIME STEP
-        locationSpan : {start: [111, 0], end: [111, 85]}
-        span : [2646, 2730]
-      - type : variable
-        name : init h
-        locationSpan : {start: [112, 0], end: [112, 43]}
-        span : [2731, 2773]
+        name : "Population (R)"
+        locationSpan : {start: [373, 0], end: [373, 88]}
+        span : [18568, 18655]
       - type : arrow
         name : arrow
-        locationSpan : {start: [113, 0], end: [113, 49]}
-        span : [2774, 2822]
-  - type : graphs
-    name : graphs
-    locationSpan : {start: [117, 0], end: [145, 15]}
-    headerSpan : [2863, 2879]
-    footerSpan : [3197, 3211]
-    children:
-    - type : graph
-      name : Falling Body(m)
-      locationSpan : {start: [118, 0], end: [129, 2]}
-      span : [2880, 3018]
-    - type : graph
-      name : Momentum(kg*m/sec)
-      locationSpan : {start: [130, 0], end: [139, 2]}
-      span : [3019, 3139]
-    - type : graph
-      name : Force(kg*m/sec^2)
-      locationSpan : {start: [140, 0], end: [150, 15]}
-      span : [3140, 3290]
+        locationSpan : {start: [374, 0], end: [374, 48]}
+        span : [18656, 18703]
+      - type : variable
+        name : "Intensity of wood (R,fr)"
+        locationSpan : {start: [375, 0], end: [375, 64]}
+        span : [18704, 18767]
+      - type : variable
+        name : "Diet from income(R,d)"
+        locationSpan : {start: [376, 0], end: [376, 60]}
+        span : [18768, 18827]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [377, 0], end: [377, 48]}
+        span : [18828, 18875]
+      - type : shadow variable
+        name : "Econ Production expected (R,s)"
+        locationSpan : {start: [378, 0], end: [378, 106]}
+        span : [18876, 18981]
+      - type : variable
+        name : "Final Resources for Food and Fibers Demanded(R,fr)"
+        locationSpan : {start: [379, 0], end: [379, 90]}
+        span : [18982, 19071]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [380, 0], end: [380, 50]}
+        span : [19072, 19121]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [381, 0], end: [381, 50]}
+        span : [19122, 19171]
+      - type : variable
+        name : "Final Resources Demand for Food (R,fr)"
+        locationSpan : {start: [382, 0], end: [382, 79]}
+        span : [19172, 19250]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [383, 0], end: [383, 50]}
+        span : [19251, 19300]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [384, 0], end: [384, 51]}
+        span : [19301, 19351]
+      - type : variable
+        name : Diet 1
+        locationSpan : {start: [385, 0], end: [385, 46]}
+        span : [19352, 19397]
+      - type : variable
+        name : "Diet Policy(R,d)"
+        locationSpan : {start: [386, 0], end: [386, 58]}
+        span : [19398, 19455]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [387, 0], end: [387, 50]}
+        span : [19456, 19505]
+      - type : variable
+        name : Share of change to Policy diet
+        locationSpan : {start: [388, 0], end: [388, 70]}
+        span : [19506, 19575]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [389, 0], end: [389, 40]}
+        span : [19576, 19615]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [390, 0], end: [390, 50]}
+        span : [19616, 19665]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [391, 0], end: [391, 52]}
+        span : [19666, 19717]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [392, 0], end: [392, 39]}
+        span : [19718, 19756]
+      - type : variable
+        name : increase Share of Diet Change to Policy
+        locationSpan : {start: [393, 0], end: [393, 79]}
+        span : [19757, 19835]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [394, 0], end: [394, 51]}
+        span : [19836, 19886]
+      - type : variable
+        name : parameter Diet Policy
+        locationSpan : {start: [395, 0], end: [395, 61]}
+        span : [19887, 19947]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [396, 0], end: [396, 51]}
+        span : [19948, 19998]
+      - type : variable
+        name : initial Share Diet change
+        locationSpan : {start: [397, 0], end: [397, 65]}
+        span : [19999, 20063]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [398, 0], end: [398, 51]}
+        span : [20064, 20114]
+      - type : variable
+        name : "Agrofood System Matrix(R,fr,d)"
+        locationSpan : {start: [399, 0], end: [399, 70]}
+        span : [20115, 20184]
+      - type : variable
+        name : "Agrofood System Matrix 2 (R,fr,d)"
+        locationSpan : {start: [400, 0], end: [400, 73]}
+        span : [20185, 20257]
+      - type : variable
+        name : "Agrofood System Matrix 1 GDP(R,fr,d)"
+        locationSpan : {start: [401, 0], end: [401, 76]}
+        span : [20258, 20333]
+      - type : variable
+        name : "Agrofood System Matrix Policy(R,fr,d)"
+        locationSpan : {start: [402, 0], end: [402, 77]}
+        span : [20334, 20410]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [403, 0], end: [403, 51]}
+        span : [20411, 20461]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [404, 0], end: [404, 51]}
+        span : [20462, 20512]
+      - type : variable
+        name : "Food from Subsistence Agriculture(R)"
+        locationSpan : {start: [405, 0], end: [405, 75]}
+        span : [20513, 20587]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [406, 0], end: [406, 50]}
+        span : [20588, 20637]
+      - type : variable
+        name : "Fish from Sea Available (R,d)"
+        locationSpan : {start: [407, 0], end: [407, 69]}
+        span : [20638, 20706]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [408, 0], end: [408, 50]}
+        span : [20707, 20756]
+      - type : shadow variable
+        name : "income of households to food (R)"
+        locationSpan : {start: [409, 0], end: [409, 108]}
+        span : [20757, 20864]
+      - type : variable
+        name : Income diet1
+        locationSpan : {start: [410, 0], end: [410, 50]}
+        span : [20865, 20914]
+      - type : variable
+        name : Income diet 2
+        locationSpan : {start: [411, 0], end: [411, 51]}
+        span : [20915, 20965]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [412, 0], end: [412, 50]}
+        span : [20966, 21015]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [413, 0], end: [413, 50]}
+        span : [21016, 21065]
+      - type : variable
+        name : "Diet (R,d)"
+        locationSpan : {start: [414, 0], end: [414, 50]}
+        span : [21066, 21115]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [415, 0], end: [415, 51]}
+        span : [21116, 21166]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [416, 0], end: [416, 51]}
+        span : [21167, 21217]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [417, 0], end: [417, 50]}
+        span : [21218, 21267]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [418, 0], end: [418, 50]}
+        span : [21268, 21317]
+      - type : variable
+        name : "Afroffod System matrix from imncome (R,d) 0"
+        locationSpan : {start: [419, 0], end: [419, 83]}
+        span : [21318, 21400]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [420, 0], end: [420, 51]}
+        span : [21401, 21451]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [421, 0], end: [421, 51]}
+        span : [21452, 21502]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [422, 0], end: [422, 51]}
+        span : [21503, 21553]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [423, 0], end: [423, 51]}
+        span : [21554, 21604]
+      - type : shadow variable
+        name : "income of households to food (R)"
+        locationSpan : {start: [424, 0], end: [424, 108]}
+        span : [21605, 21712]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [425, 0], end: [425, 51]}
+        span : [21713, 21763]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [426, 0], end: [426, 51]}
+        span : [21764, 21814]
+      - type : variable
+        name : "income to food per person (R)"
+        locationSpan : {start: [427, 0], end: [427, 69]}
+        span : [21815, 21883]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [428, 0], end: [428, 51]}
+        span : [21884, 21934]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [429, 0], end: [429, 49]}
+        span : [21935, 21983]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [430, 0], end: [430, 50]}
+        span : [21984, 22033]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [431, 0], end: [431, 51]}
+        span : [22034, 22084]
+    - type : view
+      name : Economy and Intensities
+      locationSpan : {start: [433, 0], end: [509, 14]}
+      headerSpan : [22099, 22182]
+      footerSpan : [26868, 26881]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [435, 0], end: [437, 26]}
+        span : [22183, 22361]
+      - type : variable
+        name : "Econ Final Demand expected (R,s)"
+        locationSpan : {start: [438, 0], end: [438, 74]}
+        span : [22362, 22435]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [439, 0], end: [439, 39]}
+        span : [22436, 22474]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [440, 0], end: [440, 48]}
+        span : [22475, 22522]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [441, 0], end: [441, 50]}
+        span : [22523, 22572]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [442, 0], end: [442, 39]}
+        span : [22573, 22611]
+      - type : variable
+        name : "growth Econ Demand expected (R,s)"
+        locationSpan : {start: [443, 0], end: [443, 76]}
+        span : [22612, 22687]
+      - type : variable
+        name : "initial Intensities of Final Resources (R,s)"
+        locationSpan : {start: [444, 0], end: [444, 84]}
+        span : [22688, 22771]
+      - type : variable
+        name : "Intensities of Final Resources (R,s)"
+        locationSpan : {start: [445, 0], end: [445, 77]}
+        span : [22772, 22848]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [446, 0], end: [446, 48]}
+        span : [22849, 22896]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [447, 0], end: [447, 39]}
+        span : [22897, 22935]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [448, 0], end: [448, 49]}
+        span : [22936, 22984]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [449, 0], end: [449, 52]}
+        span : [22985, 23036]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [450, 0], end: [450, 39]}
+        span : [23037, 23075]
+      - type : variable
+        name : "growth Intensities Final Resources (R,s)"
+        locationSpan : {start: [451, 0], end: [451, 82]}
+        span : [23076, 23157]
+      - type : variable
+        name : "historical growth Intensities Final Resources(R,s)"
+        locationSpan : {start: [452, 0], end: [452, 89]}
+        span : [23158, 23246]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [453, 0], end: [453, 51]}
+        span : [23247, 23297]
+      - type : variable
+        name : "A matrix (R)"
+        locationSpan : {start: [454, 0], end: [454, 53]}
+        span : [23298, 23350]
+      - type : variable
+        name : "initial Final Demand (R,s)"
+        locationSpan : {start: [455, 0], end: [455, 68]}
+        span : [23351, 23418]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [456, 0], end: [456, 50]}
+        span : [23419, 23468]
+      - type : variable
+        name : I matrix
+        locationSpan : {start: [457, 0], end: [457, 47]}
+        span : [23469, 23515]
+      - type : variable
+        name : "I minus A matrix(R,s)"
+        locationSpan : {start: [458, 0], end: [458, 64]}
+        span : [23516, 23579]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [459, 0], end: [459, 52]}
+        span : [23580, 23631]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [460, 0], end: [460, 52]}
+        span : [23632, 23683]
+      - type : variable
+        name : "Leontief Matrix(R,s)"
+        locationSpan : {start: [461, 0], end: [461, 63]}
+        span : [23684, 23746]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [462, 0], end: [462, 52]}
+        span : [23747, 23798]
+      - type : variable
+        name : "Econ Production expected (R,s)"
+        locationSpan : {start: [463, 0], end: [463, 72]}
+        span : [23799, 23870]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [464, 0], end: [464, 52]}
+        span : [23871, 23922]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [465, 0], end: [465, 51]}
+        span : [23923, 23973]
+      - type : variable
+        name : "Intensity Final Resources (R,H)"
+        locationSpan : {start: [466, 0], end: [466, 73]}
+        span : [23974, 24046]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [467, 0], end: [467, 40]}
+        span : [24047, 24086]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [468, 0], end: [468, 50]}
+        span : [24087, 24136]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [469, 0], end: [469, 52]}
+        span : [24137, 24188]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [470, 0], end: [470, 39]}
+        span : [24189, 24227]
+      - type : variable
+        name : "growth Intensities Final Resources (R,H)"
+        locationSpan : {start: [471, 0], end: [471, 82]}
+        span : [24228, 24309]
+      - type : variable
+        name : "historical growth Intensities Final Resources (R,H)"
+        locationSpan : {start: [472, 0], end: [472, 91]}
+        span : [24310, 24400]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [473, 0], end: [473, 51]}
+        span : [24401, 24451]
+      - type : variable
+        name : "initial Intensity of Final Resources (R,H)"
+        locationSpan : {start: [474, 0], end: [474, 84]}
+        span : [24452, 24535]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [475, 0], end: [475, 51]}
+        span : [24536, 24586]
+      - type : variable
+        name : income of households
+        locationSpan : {start: [476, 0], end: [476, 58]}
+        span : [24587, 24644]
+      - type : shadow variable
+        name : "Econ Final Demand expected (R,s)"
+        locationSpan : {start: [477, 0], end: [477, 108]}
+        span : [24645, 24752]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [478, 0], end: [478, 51]}
+        span : [24753, 24803]
+      - type : variable
+        name : "Final Energy Demanded by Sectors (R,s,f)"
+        locationSpan : {start: [479, 0], end: [479, 79]}
+        span : [24804, 24882]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [480, 0], end: [480, 51]}
+        span : [24883, 24933]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [481, 0], end: [481, 50]}
+        span : [24934, 24983]
+      - type : variable
+        name : "Final Energy Demanded by Households (H,f)"
+        locationSpan : {start: [482, 0], end: [482, 81]}
+        span : [24984, 25064]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [483, 0], end: [483, 51]}
+        span : [25065, 25115]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [484, 0], end: [484, 51]}
+        span : [25116, 25166]
+      - type : variable
+        name : "Final Resources Demanded (R,f)"
+        locationSpan : {start: [485, 0], end: [485, 70]}
+        span : [25167, 25236]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [486, 0], end: [486, 51]}
+        span : [25237, 25287]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [487, 0], end: [487, 51]}
+        span : [25288, 25338]
+      - type : shadow variable
+        name : "Final Resources for Food and Fibers Demanded(R,fr)"
+        locationSpan : {start: [488, 0], end: [488, 126]}
+        span : [25339, 25464]
+      - type : shadow variable
+        name : "Final Resources for Food and Fibers Demanded(R,fr)"
+        locationSpan : {start: [489, 0], end: [489, 129]}
+        span : [25465, 25593]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [490, 0], end: [490, 51]}
+        span : [25594, 25644]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [491, 0], end: [491, 50]}
+        span : [25645, 25694]
+      - type : variable
+        name : "Final Energy Demanded by Sectors agregated by energy(R,s)"
+        locationSpan : {start: [492, 0], end: [492, 96]}
+        span : [25695, 25790]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [493, 0], end: [493, 50]}
+        span : [25791, 25840]
+      - type : variable
+        name : "Final Energy Demanded Households Energy Agregated(R)"
+        locationSpan : {start: [494, 0], end: [494, 92]}
+        span : [25841, 25932]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [495, 0], end: [495, 51]}
+        span : [25933, 25983]
+      - type : variable
+        name : "share income of households to food (R)"
+        locationSpan : {start: [496, 0], end: [496, 110]}
+        span : [25984, 26093]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [497, 0], end: [497, 41]}
+        span : [26094, 26134]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [498, 0], end: [498, 51]}
+        span : [26135, 26185]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [499, 0], end: [499, 53]}
+        span : [26186, 26238]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [500, 0], end: [500, 40]}
+        span : [26239, 26278]
+      - type : variable
+        name : increase share rent of households to food
+        locationSpan : {start: [501, 0], end: [501, 82]}
+        span : [26279, 26360]
+      - type : variable
+        name : "income of households to food (R)"
+        locationSpan : {start: [502, 0], end: [502, 73]}
+        span : [26361, 26433]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [503, 0], end: [503, 52]}
+        span : [26434, 26485]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [504, 0], end: [504, 52]}
+        span : [26486, 26537]
+      - type : variable
+        name : "added value of industrial sector expected(R)"
+        locationSpan : {start: [505, 0], end: [505, 113]}
+        span : [26538, 26650]
+      - type : variable
+        name : "added value of energy sectors expected (R)"
+        locationSpan : {start: [506, 0], end: [506, 110]}
+        span : [26651, 26760]
+      - type : variable
+        name : Labor compensation
+        locationSpan : {start: [507, 0], end: [507, 56]}
+        span : [26761, 26816]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [508, 0], end: [508, 51]}
+        span : [26817, 26867]
+    - type : view
+      name : Resources from Local Sources
+      locationSpan : {start: [510, 0], end: [561, 14]}
+      headerSpan : [26882, 26965]
+      footerSpan : [30233, 30246]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [512, 0], end: [514, 31]}
+        span : [26966, 27149]
+      - type : shadow variable
+        name : "Final Resources Demanded (R,f)"
+        locationSpan : {start: [515, 0], end: [515, 108]}
+        span : [27150, 27257]
+      - type : variable
+        name : "Final Resources from Local Sources (R,f)"
+        locationSpan : {start: [516, 0], end: [516, 79]}
+        span : [27258, 27336]
+      - type : variable
+        name : "Final Resources Demanded to Global Market (R,fr)"
+        locationSpan : {start: [517, 0], end: [517, 88]}
+        span : [27337, 27424]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [518, 0], end: [518, 48]}
+        span : [27425, 27472]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [519, 0], end: [519, 49]}
+        span : [27473, 27521]
+      - type : variable
+        name : "Infraestructures of Renewable Heat of Sectors(R,s)"
+        locationSpan : {start: [520, 0], end: [520, 91]}
+        span : [27522, 27612]
+      - type : variable
+        name : "Infrastructures of Renewable Electricity(R)"
+        locationSpan : {start: [521, 0], end: [521, 84]}
+        span : [27613, 27696]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [522, 0], end: [522, 39]}
+        span : [27697, 27735]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [523, 0], end: [523, 48]}
+        span : [27736, 27783]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [524, 0], end: [524, 51]}
+        span : [27784, 27834]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [525, 0], end: [525, 39]}
+        span : [27835, 27873]
+      - type : variable
+        name : increase Infraestructures of Renewable Electricity
+        locationSpan : {start: [526, 0], end: [526, 90]}
+        span : [27874, 27963]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [527, 0], end: [527, 50]}
+        span : [27964, 28013]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [528, 0], end: [528, 40]}
+        span : [28014, 28053]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [529, 0], end: [529, 49]}
+        span : [28054, 28102]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [530, 0], end: [530, 52]}
+        span : [28103, 28154]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [531, 0], end: [531, 39]}
+        span : [28155, 28193]
+      - type : variable
+        name : "increase of Infrastructures Renewable Heat of Sectors (R,s)"
+        locationSpan : {start: [532, 0], end: [532, 101]}
+        span : [28194, 28294]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [533, 0], end: [533, 50]}
+        span : [28295, 28344]
+      - type : variable
+        name : "Infrastructures of Renewable Heat of Households (R)"
+        locationSpan : {start: [534, 0], end: [534, 93]}
+        span : [28345, 28437]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [535, 0], end: [535, 39]}
+        span : [28438, 28476]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [536, 0], end: [536, 50]}
+        span : [28477, 28526]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [537, 0], end: [537, 52]}
+        span : [28527, 28578]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [538, 0], end: [538, 39]}
+        span : [28579, 28617]
+      - type : variable
+        name : "increase Infrastructures of Renewable Heat of Households (R)"
+        locationSpan : {start: [539, 0], end: [539, 102]}
+        span : [28618, 28719]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [540, 0], end: [540, 51]}
+        span : [28720, 28770]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [541, 0], end: [541, 49]}
+        span : [28771, 28819]
+      - type : variable
+        name : "Heat Renewable Maximum Share Sectors (R,s)"
+        locationSpan : {start: [542, 0], end: [542, 81]}
+        span : [28820, 28900]
+      - type : variable
+        name : "Heat Renewable Maximum Share Households(R)"
+        locationSpan : {start: [543, 0], end: [543, 81]}
+        span : [28901, 28981]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [544, 0], end: [544, 51]}
+        span : [28982, 29032]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [545, 0], end: [545, 51]}
+        span : [29033, 29083]
+      - type : shadow variable
+        name : "Final Energy Demanded by Households (H,f)"
+        locationSpan : {start: [546, 0], end: [546, 117]}
+        span : [29084, 29200]
+      - type : shadow variable
+        name : "Final Energy Demanded Households Energy Agregated(R)"
+        locationSpan : {start: [547, 0], end: [547, 128]}
+        span : [29201, 29328]
+      - type : shadow variable
+        name : "Final Energy Demanded by Sectors agregated by energy(R,s)"
+        locationSpan : {start: [548, 0], end: [548, 132]}
+        span : [29329, 29460]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [549, 0], end: [549, 51]}
+        span : [29461, 29511]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [550, 0], end: [550, 51]}
+        span : [29512, 29562]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [551, 0], end: [551, 50]}
+        span : [29563, 29612]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [552, 0], end: [552, 49]}
+        span : [29613, 29661]
+      - type : variable
+        name : "Heat Renewable Share Substitution Sectors(R,fr)"
+        locationSpan : {start: [553, 0], end: [553, 87]}
+        span : [29662, 29748]
+      - type : variable
+        name : "Heat Renewable Share Substitution Households(R,fr)"
+        locationSpan : {start: [554, 0], end: [554, 90]}
+        span : [29749, 29838]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [555, 0], end: [555, 50]}
+        span : [29839, 29888]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [556, 0], end: [556, 50]}
+        span : [29889, 29938]
+      - type : shadow variable
+        name : "Final Resources Demand for Food (R,fr)"
+        locationSpan : {start: [557, 0], end: [557, 113]}
+        span : [29939, 30051]
+      - type : variable
+        name : "Food Demand Share Protected from Market(R)"
+        locationSpan : {start: [558, 0], end: [558, 81]}
+        span : [30052, 30132]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [559, 0], end: [559, 50]}
+        span : [30133, 30182]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [560, 0], end: [560, 50]}
+        span : [30183, 30232]
+    - type : view
+      name : Resource allocation
+      locationSpan : {start: [562, 0], end: [800, 14]}
+      headerSpan : [30247, 30330]
+      footerSpan : [45618, 45631]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [564, 0], end: [566, 22]}
+        span : [30331, 30505]
+      - type : variable
+        name : "shares final from primary resources (R,pr,fr)"
+        locationSpan : {start: [567, 0], end: [567, 87]}
+        span : [30506, 30592]
+      - type : variable
+        name : "Primary Resources Available to Global Market(pr)"
+        locationSpan : {start: [568, 0], end: [568, 88]}
+        span : [30593, 30680]
+      - type : variable
+        name : "Priorities of Resource Allocation by country (R)"
+        locationSpan : {start: [569, 0], end: [569, 88]}
+        span : [30681, 30768]
+      - type : variable
+        name : "Oil Demanded to Global Market(R)"
+        locationSpan : {start: [570, 0], end: [570, 71]}
+        span : [30769, 30839]
+      - type : variable
+        name : "Gas Demanded to Global Market(R)"
+        locationSpan : {start: [571, 0], end: [571, 71]}
+        span : [30840, 30910]
+      - type : variable
+        name : "Cereals Demanded to Global Market(R)"
+        locationSpan : {start: [572, 0], end: [572, 75]}
+        span : [30911, 30985]
+      - type : variable
+        name : "Pulses Demanded to Global Market(R)"
+        locationSpan : {start: [573, 0], end: [573, 74]}
+        span : [30986, 31059]
+      - type : variable
+        name : "Vegetables Demanded to Global Market(R)"
+        locationSpan : {start: [574, 0], end: [574, 78]}
+        span : [31060, 31137]
+      - type : variable
+        name : "Biomass Demanded to Global Market(R)"
+        locationSpan : {start: [575, 0], end: [575, 75]}
+        span : [31138, 31212]
+      - type : variable
+        name : "Oil Allocated in Global Market(R)"
+        locationSpan : {start: [576, 0], end: [576, 74]}
+        span : [31213, 31286]
+      - type : variable
+        name : "Gas Allocated in Global Market(R)"
+        locationSpan : {start: [577, 0], end: [577, 74]}
+        span : [31287, 31360]
+      - type : variable
+        name : "Cereals Allocated in Global Market(R)"
+        locationSpan : {start: [578, 0], end: [578, 78]}
+        span : [31361, 31438]
+      - type : variable
+        name : "Pulses Allocated in Global Market(R)"
+        locationSpan : {start: [579, 0], end: [579, 77]}
+        span : [31439, 31515]
+      - type : variable
+        name : "Vegetables Allocated in Global Market(R)"
+        locationSpan : {start: [580, 0], end: [580, 81]}
+        span : [31516, 31596]
+      - type : variable
+        name : "Biomass Allocated in Global Market(R)"
+        locationSpan : {start: [581, 0], end: [581, 78]}
+        span : [31597, 31674]
+      - type : variable
+        name : "Primary Resources Allocated by country(R,pr)"
+        locationSpan : {start: [582, 0], end: [582, 84]}
+        span : [31675, 31758]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [583, 0], end: [583, 52]}
+        span : [31759, 31810]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [584, 0], end: [584, 62]}
+        span : [31811, 31872]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [585, 0], end: [585, 52]}
+        span : [31873, 31924]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [586, 0], end: [586, 52]}
+        span : [31925, 31976]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [587, 0], end: [587, 52]}
+        span : [31977, 32028]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [588, 0], end: [588, 52]}
+        span : [32029, 32080]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [589, 0], end: [589, 51]}
+        span : [32081, 32131]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [590, 0], end: [590, 51]}
+        span : [32132, 32182]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [591, 0], end: [591, 51]}
+        span : [32183, 32233]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [592, 0], end: [592, 51]}
+        span : [32234, 32284]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [593, 0], end: [593, 51]}
+        span : [32285, 32335]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [594, 0], end: [594, 51]}
+        span : [32336, 32386]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [595, 0], end: [595, 51]}
+        span : [32387, 32437]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [596, 0], end: [596, 51]}
+        span : [32438, 32488]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [597, 0], end: [597, 51]}
+        span : [32489, 32539]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [598, 0], end: [598, 51]}
+        span : [32540, 32590]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [599, 0], end: [599, 51]}
+        span : [32591, 32641]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [600, 0], end: [600, 51]}
+        span : [32642, 32692]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [601, 0], end: [601, 51]}
+        span : [32693, 32743]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [602, 0], end: [602, 51]}
+        span : [32744, 32794]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [603, 0], end: [603, 51]}
+        span : [32795, 32845]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [604, 0], end: [604, 51]}
+        span : [32846, 32896]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [605, 0], end: [605, 51]}
+        span : [32897, 32947]
+      - type : shadow variable
+        name : "Final Resources Demanded to Global Market (R,fr)"
+        locationSpan : {start: [606, 0], end: [606, 124]}
+        span : [32948, 33071]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [607, 0], end: [607, 50]}
+        span : [33072, 33121]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [608, 0], end: [608, 49]}
+        span : [33122, 33170]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [609, 0], end: [609, 49]}
+        span : [33171, 33219]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [610, 0], end: [610, 50]}
+        span : [33220, 33269]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [611, 0], end: [611, 50]}
+        span : [33270, 33319]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [612, 0], end: [612, 49]}
+        span : [33320, 33368]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [613, 0], end: [613, 50]}
+        span : [33369, 33418]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [614, 0], end: [614, 49]}
+        span : [33419, 33467]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [615, 0], end: [615, 50]}
+        span : [33468, 33517]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [616, 0], end: [616, 49]}
+        span : [33518, 33566]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [617, 0], end: [617, 50]}
+        span : [33567, 33616]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [618, 0], end: [618, 49]}
+        span : [33617, 33665]
+      - type : shadow variable
+        name : "added value of energy sectors expected (R)"
+        locationSpan : {start: [619, 0], end: [619, 118]}
+        span : [33666, 33783]
+      - type : shadow variable
+        name : "added value of industrial sector expected(R)"
+        locationSpan : {start: [620, 0], end: [620, 119]}
+        span : [33784, 33902]
+      - type : shadow variable
+        name : "income of households to food (R)"
+        locationSpan : {start: [621, 0], end: [621, 107]}
+        span : [33903, 34009]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [622, 0], end: [622, 50]}
+        span : [34010, 34059]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [623, 0], end: [623, 49]}
+        span : [34060, 34108]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [624, 0], end: [624, 50]}
+        span : [34109, 34158]
+      - type : variable
+        name : "primary resources allocated to R1 (pr)"
+        locationSpan : {start: [625, 0], end: [625, 78]}
+        span : [34159, 34236]
+      - type : variable
+        name : "primary resources allocated to R2 (pr)"
+        locationSpan : {start: [626, 0], end: [626, 79]}
+        span : [34237, 34315]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [627, 0], end: [627, 51]}
+        span : [34316, 34366]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [628, 0], end: [628, 52]}
+        span : [34367, 34418]
+      - type : variable
+        name : oil allocated to R1
+        locationSpan : {start: [629, 0], end: [629, 57]}
+        span : [34419, 34475]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [630, 0], end: [630, 51]}
+        span : [34476, 34526]
+      - type : variable
+        name : "oil consumed by final in R1 (fr)"
+        locationSpan : {start: [631, 0], end: [631, 72]}
+        span : [34527, 34598]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [632, 0], end: [632, 51]}
+        span : [34599, 34649]
+      - type : variable
+        name : "oil demanded by final in R1(fr)"
+        locationSpan : {start: [633, 0], end: [633, 71]}
+        span : [34650, 34720]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [634, 0], end: [634, 50]}
+        span : [34721, 34770]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [635, 0], end: [635, 51]}
+        span : [34771, 34821]
+      - type : variable
+        name : gas allocated to R1
+        locationSpan : {start: [636, 0], end: [636, 57]}
+        span : [34822, 34878]
+      - type : variable
+        name : cereals allocated to R1
+        locationSpan : {start: [637, 0], end: [637, 61]}
+        span : [34879, 34939]
+      - type : variable
+        name : pulses allocated to R1
+        locationSpan : {start: [638, 0], end: [638, 61]}
+        span : [34940, 35000]
+      - type : variable
+        name : biomass allocated to R1
+        locationSpan : {start: [639, 0], end: [639, 62]}
+        span : [35001, 35062]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [640, 0], end: [640, 51]}
+        span : [35063, 35113]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [641, 0], end: [641, 51]}
+        span : [35114, 35164]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [642, 0], end: [642, 51]}
+        span : [35165, 35215]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [643, 0], end: [643, 51]}
+        span : [35216, 35266]
+      - type : shadow variable
+        name : "Final Resources Demanded to Global Market (R,fr)"
+        locationSpan : {start: [644, 0], end: [644, 124]}
+        span : [35267, 35390]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [645, 0], end: [645, 51]}
+        span : [35391, 35441]
+      - type : variable
+        name : "gas consumed by final in R1 (fr)"
+        locationSpan : {start: [646, 0], end: [646, 72]}
+        span : [35442, 35513]
+      - type : variable
+        name : "cereals consumed by final in R1 (fr)"
+        locationSpan : {start: [647, 0], end: [647, 76]}
+        span : [35514, 35589]
+      - type : variable
+        name : "pulses consumed by final in R1 (fr)"
+        locationSpan : {start: [648, 0], end: [648, 76]}
+        span : [35590, 35665]
+      - type : variable
+        name : "biomass consumed by final in R1 (fr)"
+        locationSpan : {start: [649, 0], end: [649, 77]}
+        span : [35666, 35742]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [650, 0], end: [650, 51]}
+        span : [35743, 35793]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [651, 0], end: [651, 51]}
+        span : [35794, 35844]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [652, 0], end: [652, 52]}
+        span : [35845, 35896]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [653, 0], end: [653, 52]}
+        span : [35897, 35948]
+      - type : variable
+        name : "final resources consumed from global market in R1 (fr)"
+        locationSpan : {start: [654, 0], end: [654, 94]}
+        span : [35949, 36042]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [655, 0], end: [655, 51]}
+        span : [36043, 36093]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [656, 0], end: [656, 51]}
+        span : [36094, 36144]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [657, 0], end: [657, 51]}
+        span : [36145, 36195]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [658, 0], end: [658, 51]}
+        span : [36196, 36246]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [659, 0], end: [659, 52]}
+        span : [36247, 36298]
+      - type : variable
+        name : "final resources consumed in R1 (R,fr)"
+        locationSpan : {start: [660, 0], end: [660, 76]}
+        span : [36299, 36374]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [661, 0], end: [661, 50]}
+        span : [36375, 36424]
+      - type : shadow variable
+        name : "Final Resources from Local Sources (R,f)"
+        locationSpan : {start: [662, 0], end: [662, 116]}
+        span : [36425, 36540]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [663, 0], end: [663, 51]}
+        span : [36541, 36591]
+      - type : variable
+        name : primary resources demanded to global market
+        locationSpan : {start: [664, 0], end: [664, 81]}
+        span : [36592, 36672]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [665, 0], end: [665, 51]}
+        span : [36673, 36723]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [666, 0], end: [666, 51]}
+        span : [36724, 36774]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [667, 0], end: [667, 52]}
+        span : [36775, 36826]
+      - type : variable
+        name : allocate between regions
+        locationSpan : {start: [668, 0], end: [669, 26]}
+        span : [36827, 36924]
+      - type : variable
+        name : allocate of primaries between finals
+        locationSpan : {start: [670, 0], end: [671, 38]}
+        span : [36925, 37033]
+      - type : variable
+        name : "gas demanded by final in R1(fr)"
+        locationSpan : {start: [672, 0], end: [672, 72]}
+        span : [37034, 37105]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [673, 0], end: [673, 53]}
+        span : [37106, 37158]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [674, 0], end: [674, 52]}
+        span : [37159, 37210]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [675, 0], end: [675, 53]}
+        span : [37211, 37263]
+      - type : variable
+        name : "cereals demanded by final in R1 (fr)"
+        locationSpan : {start: [676, 0], end: [676, 77]}
+        span : [37264, 37340]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [677, 0], end: [677, 53]}
+        span : [37341, 37393]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [678, 0], end: [678, 52]}
+        span : [37394, 37445]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [679, 0], end: [679, 53]}
+        span : [37446, 37498]
+      - type : shadow variable
+        name : "shares final from primary resources (R,pr,fr)"
+        locationSpan : {start: [680, 0], end: [680, 123]}
+        span : [37499, 37621]
+      - type : variable
+        name : "pulses demanded by final in R1 (fr)"
+        locationSpan : {start: [681, 0], end: [681, 76]}
+        span : [37622, 37697]
+      - type : variable
+        name : "biomass demanded by final in R1(fr)"
+        locationSpan : {start: [682, 0], end: [682, 77]}
+        span : [37698, 37774]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [683, 0], end: [683, 55]}
+        span : [37775, 37829]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [684, 0], end: [684, 55]}
+        span : [37830, 37884]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [685, 0], end: [685, 53]}
+        span : [37885, 37937]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [686, 0], end: [686, 53]}
+        span : [37938, 37990]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [687, 0], end: [687, 54]}
+        span : [37991, 38044]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [688, 0], end: [688, 54]}
+        span : [38045, 38098]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [689, 0], end: [689, 53]}
+        span : [38099, 38151]
+      - type : variable
+        name : primary resources demanded to global market regions agregated
+        locationSpan : {start: [690, 0], end: [690, 100]}
+        span : [38152, 38251]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [691, 0], end: [691, 53]}
+        span : [38252, 38304]
+      - type : variable
+        name : oil demanded by R1 all finals
+        locationSpan : {start: [692, 0], end: [692, 68]}
+        span : [38305, 38372]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [693, 0], end: [693, 53]}
+        span : [38373, 38425]
+      - type : variable
+        name : "resources demand matrix g m (R,fr,pr)"
+        locationSpan : {start: [694, 0], end: [694, 78]}
+        span : [38426, 38503]
+      - type : shadow variable
+        name : "Final Resources Demanded to Global Market (R,fr)"
+        locationSpan : {start: [695, 0], end: [695, 125]}
+        span : [38504, 38628]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [696, 0], end: [696, 53]}
+        span : [38629, 38681]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [697, 0], end: [697, 51]}
+        span : [38682, 38732]
+      - type : variable
+        name : "resources consum matrix global market (R,fr,pr)"
+        locationSpan : {start: [698, 0], end: [698, 89]}
+        span : [38733, 38821]
+      - type : shadow variable
+        name : "oil consumed by final in R1 (fr)"
+        locationSpan : {start: [699, 0], end: [699, 109]}
+        span : [38822, 38930]
+      - type : shadow variable
+        name : "gas consumed by final in R1 (fr)"
+        locationSpan : {start: [700, 0], end: [700, 110]}
+        span : [38931, 39040]
+      - type : shadow variable
+        name : "cereals consumed by final in R1 (fr)"
+        locationSpan : {start: [701, 0], end: [701, 114]}
+        span : [39041, 39154]
+      - type : shadow variable
+        name : "pulses consumed by final in R1 (fr)"
+        locationSpan : {start: [702, 0], end: [702, 113]}
+        span : [39155, 39267]
+      - type : shadow variable
+        name : "biomass consumed by final in R1 (fr)"
+        locationSpan : {start: [703, 0], end: [703, 114]}
+        span : [39268, 39381]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [704, 0], end: [704, 55]}
+        span : [39382, 39436]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [705, 0], end: [705, 55]}
+        span : [39437, 39491]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [706, 0], end: [706, 55]}
+        span : [39492, 39546]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [707, 0], end: [707, 55]}
+        span : [39547, 39601]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [708, 0], end: [708, 56]}
+        span : [39602, 39657]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [709, 0], end: [709, 53]}
+        span : [39658, 39710]
+      - type : shadow variable
+        name : "perception of shortage final resources for R1(fr)"
+        locationSpan : {start: [710, 0], end: [710, 126]}
+        span : [39711, 39836]
+      - type : shadow variable
+        name : "priorities for finals (fr)"
+        locationSpan : {start: [711, 0], end: [711, 103]}
+        span : [39837, 39939]
+      - type : shadow variable
+        name : "priorities for finals (fr)"
+        locationSpan : {start: [712, 0], end: [712, 103]}
+        span : [39940, 40042]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [713, 0], end: [713, 53]}
+        span : [40043, 40095]
+      - type : variable
+        name : AA
+        locationSpan : {start: [714, 0], end: [714, 41]}
+        span : [40096, 40136]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [715, 0], end: [715, 52]}
+        span : [40137, 40188]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [716, 0], end: [716, 52]}
+        span : [40189, 40240]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [717, 0], end: [717, 52]}
+        span : [40241, 40292]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [718, 0], end: [718, 52]}
+        span : [40293, 40344]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [719, 0], end: [719, 52]}
+        span : [40345, 40396]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [720, 0], end: [720, 52]}
+        span : [40397, 40448]
+      - type : shadow variable
+        name : "abundance of primary resources(pr)"
+        locationSpan : {start: [721, 0], end: [721, 111]}
+        span : [40449, 40559]
+      - type : shadow variable
+        name : shares finals from p1oil in R1
+        locationSpan : {start: [722, 0], end: [722, 105]}
+        span : [40560, 40664]
+      - type : shadow variable
+        name : shares finals from p2gas in R1
+        locationSpan : {start: [723, 0], end: [723, 105]}
+        span : [40665, 40769]
+      - type : shadow variable
+        name : shares finals from p4cereals in R1
+        locationSpan : {start: [724, 0], end: [724, 109]}
+        span : [40770, 40878]
+      - type : shadow variable
+        name : shares finals from p5pulses in R1
+        locationSpan : {start: [725, 0], end: [725, 108]}
+        span : [40879, 40986]
+      - type : shadow variable
+        name : shares finals from p7biomass in R1
+        locationSpan : {start: [726, 0], end: [726, 109]}
+        span : [40987, 41095]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [727, 0], end: [727, 52]}
+        span : [41096, 41147]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [728, 0], end: [728, 52]}
+        span : [41148, 41199]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [729, 0], end: [729, 52]}
+        span : [41200, 41251]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [730, 0], end: [730, 52]}
+        span : [41252, 41303]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [731, 0], end: [731, 52]}
+        span : [41304, 41355]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [732, 0], end: [732, 52]}
+        span : [41356, 41407]
+      - type : shadow variable
+        name : "INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)"
+        locationSpan : {start: [733, 0], end: [733, 123]}
+        span : [41408, 41530]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [734, 0], end: [734, 52]}
+        span : [41531, 41582]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [735, 0], end: [735, 53]}
+        span : [41583, 41635]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [736, 0], end: [736, 53]}
+        span : [41636, 41688]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [737, 0], end: [737, 54]}
+        span : [41689, 41742]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [738, 0], end: [738, 54]}
+        span : [41743, 41796]
+      - type : variable
+        name : oil allocated to R2
+        locationSpan : {start: [739, 0], end: [739, 59]}
+        span : [41797, 41855]
+      - type : variable
+        name : gas allocated to R2
+        locationSpan : {start: [740, 0], end: [740, 59]}
+        span : [41856, 41914]
+      - type : variable
+        name : cereals allocated to R2
+        locationSpan : {start: [741, 0], end: [741, 63]}
+        span : [41915, 41977]
+      - type : variable
+        name : pulses allocated to R2
+        locationSpan : {start: [742, 0], end: [742, 63]}
+        span : [41978, 42040]
+      - type : variable
+        name : biomass allocated to R2
+        locationSpan : {start: [743, 0], end: [743, 64]}
+        span : [42041, 42104]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [744, 0], end: [744, 54]}
+        span : [42105, 42158]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [745, 0], end: [745, 54]}
+        span : [42159, 42212]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [746, 0], end: [746, 54]}
+        span : [42213, 42266]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [747, 0], end: [747, 54]}
+        span : [42267, 42320]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [748, 0], end: [748, 54]}
+        span : [42321, 42374]
+      - type : variable
+        name : "oil consumed by final in R2 (fr)"
+        locationSpan : {start: [749, 0], end: [749, 74]}
+        span : [42375, 42448]
+      - type : variable
+        name : "oil demanded by final in R2(fr)"
+        locationSpan : {start: [750, 0], end: [750, 73]}
+        span : [42449, 42521]
+      - type : shadow variable
+        name : "shares final from primary resources (R,pr,fr)"
+        locationSpan : {start: [751, 0], end: [751, 123]}
+        span : [42522, 42644]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [752, 0], end: [752, 55]}
+        span : [42645, 42699]
+      - type : shadow variable
+        name : "priorities for finals (fr)"
+        locationSpan : {start: [753, 0], end: [753, 104]}
+        span : [42700, 42803]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [754, 0], end: [754, 55]}
+        span : [42804, 42858]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [755, 0], end: [755, 55]}
+        span : [42859, 42913]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [756, 0], end: [756, 54]}
+        span : [42914, 42967]
+      - type : variable
+        name : "gas consumed by final in R2 (fr)"
+        locationSpan : {start: [757, 0], end: [757, 74]}
+        span : [42968, 43041]
+      - type : variable
+        name : "cereals consumed by final in R2 (fr)"
+        locationSpan : {start: [758, 0], end: [758, 78]}
+        span : [43042, 43119]
+      - type : variable
+        name : "pulses consumed by final in R2 (fr)"
+        locationSpan : {start: [759, 0], end: [759, 78]}
+        span : [43120, 43197]
+      - type : variable
+        name : "biomass consumed by final in R2 (fr)"
+        locationSpan : {start: [760, 0], end: [760, 79]}
+        span : [43198, 43276]
+      - type : variable
+        name : "gas demanded by final in R2(fr)"
+        locationSpan : {start: [761, 0], end: [761, 73]}
+        span : [43277, 43349]
+      - type : variable
+        name : "cereals demanded by final in R2 (fr)"
+        locationSpan : {start: [762, 0], end: [762, 78]}
+        span : [43350, 43427]
+      - type : variable
+        name : "pulses demanded by final in R2 (fr)"
+        locationSpan : {start: [763, 0], end: [763, 78]}
+        span : [43428, 43505]
+      - type : variable
+        name : "biomass demanded by final in R2(fr)"
+        locationSpan : {start: [764, 0], end: [764, 78]}
+        span : [43506, 43583]
+      - type : shadow variable
+        name : "Final Resources Demanded to Global Market (R,fr)"
+        locationSpan : {start: [765, 0], end: [765, 127]}
+        span : [43584, 43710]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [766, 0], end: [766, 55]}
+        span : [43711, 43765]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [767, 0], end: [767, 56]}
+        span : [43766, 43821]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [768, 0], end: [768, 56]}
+        span : [43822, 43877]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [769, 0], end: [769, 55]}
+        span : [43878, 43932]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [770, 0], end: [770, 55]}
+        span : [43933, 43987]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [771, 0], end: [771, 55]}
+        span : [43988, 44042]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [772, 0], end: [772, 55]}
+        span : [44043, 44097]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [773, 0], end: [773, 55]}
+        span : [44098, 44152]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [774, 0], end: [774, 55]}
+        span : [44153, 44207]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [775, 0], end: [775, 55]}
+        span : [44208, 44262]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [776, 0], end: [776, 55]}
+        span : [44263, 44317]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [777, 0], end: [777, 55]}
+        span : [44318, 44372]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [778, 0], end: [778, 55]}
+        span : [44373, 44427]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [779, 0], end: [779, 55]}
+        span : [44428, 44482]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [780, 0], end: [780, 55]}
+        span : [44483, 44537]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [781, 0], end: [781, 56]}
+        span : [44538, 44593]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [782, 0], end: [782, 56]}
+        span : [44594, 44649]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [783, 0], end: [783, 55]}
+        span : [44650, 44704]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [784, 0], end: [784, 55]}
+        span : [44705, 44759]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [785, 0], end: [785, 56]}
+        span : [44760, 44815]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [786, 0], end: [786, 56]}
+        span : [44816, 44871]
+      - type : variable
+        name : "final resources consumed from global market in R2 (fr)"
+        locationSpan : {start: [787, 0], end: [787, 96]}
+        span : [44872, 44967]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [788, 0], end: [788, 55]}
+        span : [44968, 45022]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [789, 0], end: [789, 54]}
+        span : [45023, 45076]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [790, 0], end: [790, 54]}
+        span : [45077, 45130]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [791, 0], end: [791, 54]}
+        span : [45131, 45184]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [792, 0], end: [792, 53]}
+        span : [45185, 45237]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [793, 0], end: [793, 55]}
+        span : [45238, 45292]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [794, 0], end: [794, 55]}
+        span : [45293, 45347]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [795, 0], end: [795, 54]}
+        span : [45348, 45401]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [796, 0], end: [796, 54]}
+        span : [45402, 45455]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [797, 0], end: [797, 53]}
+        span : [45456, 45508]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [798, 0], end: [798, 55]}
+        span : [45509, 45563]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [799, 0], end: [799, 54]}
+        span : [45564, 45617]
+    - type : view
+      name : Perception of shortage
+      locationSpan : {start: [801, 0], end: [916, 14]}
+      headerSpan : [45632, 45715]
+      footerSpan : [52775, 52788]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [803, 0], end: [805, 25]}
+        span : [45716, 45893]
+      - type : variable
+        name : "perception of shortage final resources for R1(fr)"
+        locationSpan : {start: [806, 0], end: [806, 90]}
+        span : [45894, 45983]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [807, 0], end: [807, 37]}
+        span : [45984, 46020]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [808, 0], end: [808, 46]}
+        span : [46021, 46066]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [809, 0], end: [809, 48]}
+        span : [46067, 46114]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [810, 0], end: [810, 37]}
+        span : [46115, 46151]
+      - type : variable
+        name : increment perception shortage final resources R1
+        locationSpan : {start: [811, 0], end: [811, 86]}
+        span : [46152, 46237]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [812, 0], end: [812, 38]}
+        span : [46238, 46275]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [813, 0], end: [813, 47]}
+        span : [46276, 46322]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [814, 0], end: [814, 49]}
+        span : [46323, 46371]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [815, 0], end: [815, 38]}
+        span : [46372, 46409]
+      - type : variable
+        name : decrement perception shortage fnal resources R1
+        locationSpan : {start: [816, 0], end: [816, 86]}
+        span : [46410, 46495]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [817, 0], end: [817, 49]}
+        span : [46496, 46544]
+      - type : variable
+        name : INITIAL PERCEPTION SHORTAGE FINALS
+        locationSpan : {start: [818, 0], end: [818, 72]}
+        span : [46545, 46616]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [819, 0], end: [819, 50]}
+        span : [46617, 46666]
+      - type : variable
+        name : "priorities for finals (fr)"
+        locationSpan : {start: [820, 0], end: [820, 66]}
+        span : [46667, 46732]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [821, 0], end: [821, 49]}
+        span : [46733, 46781]
+      - type : variable
+        name : "percention of shortage of primary resources for R1 (pr)"
+        locationSpan : {start: [822, 0], end: [822, 97]}
+        span : [46782, 46878]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [823, 0], end: [823, 39]}
+        span : [46879, 46917]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [824, 0], end: [824, 50]}
+        span : [46918, 46967]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [825, 0], end: [825, 51]}
+        span : [46968, 47018]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [826, 0], end: [826, 38]}
+        span : [47019, 47056]
+      - type : variable
+        name : increment perception shortage primaries
+        locationSpan : {start: [827, 0], end: [827, 78]}
+        span : [47057, 47134]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [828, 0], end: [828, 40]}
+        span : [47135, 47174]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [829, 0], end: [829, 50]}
+        span : [47175, 47224]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [830, 0], end: [830, 52]}
+        span : [47225, 47276]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [831, 0], end: [831, 39]}
+        span : [47277, 47315]
+      - type : variable
+        name : decrement perception shortage primaries
+        locationSpan : {start: [832, 0], end: [832, 79]}
+        span : [47316, 47394]
+      - type : variable
+        name : INITIAL PERCEPTION SHORTAGE PRIMARIES
+        locationSpan : {start: [833, 0], end: [833, 76]}
+        span : [47395, 47470]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [834, 0], end: [834, 52]}
+        span : [47471, 47522]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [835, 0], end: [835, 52]}
+        span : [47523, 47574]
+      - type : variable
+        name : coefp0
+        locationSpan : {start: [836, 0], end: [836, 45]}
+        span : [47575, 47619]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [837, 0], end: [837, 52]}
+        span : [47620, 47671]
+      - type : variable
+        name : "abundance of primary resources(pr)"
+        locationSpan : {start: [838, 0], end: [838, 75]}
+        span : [47672, 47746]
+      - type : shadow variable
+        name : "Primary Resources Available to Global Market(pr)"
+        locationSpan : {start: [839, 0], end: [839, 125]}
+        span : [47747, 47871]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [840, 0], end: [840, 51]}
+        span : [47872, 47922]
+      - type : shadow variable
+        name : primary resources demanded to global market regions agregated
+        locationSpan : {start: [841, 0], end: [841, 136]}
+        span : [47923, 48058]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [842, 0], end: [842, 51]}
+        span : [48059, 48109]
+      - type : variable
+        name : "shortage of primary resources by region (R,pr)"
+        locationSpan : {start: [843, 0], end: [843, 87]}
+        span : [48110, 48196]
+      - type : shadow variable
+        name : "primary resources allocated to R1 (pr)"
+        locationSpan : {start: [844, 0], end: [844, 114]}
+        span : [48197, 48310]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [845, 0], end: [845, 51]}
+        span : [48311, 48361]
+      - type : shadow variable
+        name : primary resources demanded to global market
+        locationSpan : {start: [846, 0], end: [846, 118]}
+        span : [48362, 48479]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [847, 0], end: [847, 52]}
+        span : [48480, 48531]
+      - type : variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [848, 0], end: [848, 74]}
+        span : [48532, 48605]
+      - type : variable
+        name : "infrastructures of finals from primaries transformation (R,fr,pr)"
+        locationSpan : {start: [849, 0], end: [849, 105]}
+        span : [48606, 48710]
+      - type : variable
+        name : "available infrastructure finals from primaries (R,pr,fr)"
+        locationSpan : {start: [850, 0], end: [850, 96]}
+        span : [48711, 48806]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [851, 0], end: [851, 51]}
+        span : [48807, 48857]
+      - type : variable
+        name : u
+        locationSpan : {start: [852, 0], end: [852, 39]}
+        span : [48858, 48896]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [853, 0], end: [853, 51]}
+        span : [48897, 48947]
+      - type : variable
+        name : y
+        locationSpan : {start: [854, 0], end: [854, 40]}
+        span : [48948, 48987]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [855, 0], end: [855, 40]}
+        span : [48988, 49027]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [856, 0], end: [856, 50]}
+        span : [49028, 49077]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [857, 0], end: [857, 52]}
+        span : [49078, 49129]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [858, 0], end: [858, 39]}
+        span : [49130, 49168]
+      - type : variable
+        name : dydt
+        locationSpan : {start: [859, 0], end: [859, 44]}
+        span : [49169, 49212]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [860, 0], end: [860, 51]}
+        span : [49213, 49263]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [861, 0], end: [861, 52]}
+        span : [49264, 49315]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [862, 0], end: [862, 51]}
+        span : [49316, 49366]
+      - type : variable
+        name : u 0
+        locationSpan : {start: [863, 0], end: [863, 41]}
+        span : [49367, 49407]
+      - type : variable
+        name : y 0
+        locationSpan : {start: [864, 0], end: [864, 41]}
+        span : [49408, 49448]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [865, 0], end: [865, 40]}
+        span : [49449, 49488]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [866, 0], end: [866, 50]}
+        span : [49489, 49538]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [867, 0], end: [867, 52]}
+        span : [49539, 49590]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [868, 0], end: [868, 39]}
+        span : [49591, 49629]
+      - type : variable
+        name : dydt 0
+        locationSpan : {start: [869, 0], end: [869, 46]}
+        span : [49630, 49675]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [870, 0], end: [870, 51]}
+        span : [49676, 49726]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [871, 0], end: [871, 51]}
+        span : [49727, 49777]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [872, 0], end: [872, 50]}
+        span : [49778, 49827]
+      - type : shadow variable
+        name : "resources consum matrix global market (R,fr,pr)"
+        locationSpan : {start: [873, 0], end: [873, 123]}
+        span : [49828, 49950]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [874, 0], end: [874, 50]}
+        span : [49951, 50000]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [875, 0], end: [875, 51]}
+        span : [50001, 50051]
+      - type : variable
+        name : priority of liquids
+        locationSpan : {start: [876, 0], end: [876, 58]}
+        span : [50052, 50109]
+      - type : variable
+        name : priority of gases
+        locationSpan : {start: [877, 0], end: [877, 56]}
+        span : [50110, 50165]
+      - type : variable
+        name : priority of electricity
+        locationSpan : {start: [878, 0], end: [878, 64]}
+        span : [50166, 50229]
+      - type : variable
+        name : priority of cereals food
+        locationSpan : {start: [879, 0], end: [879, 65]}
+        span : [50230, 50294]
+      - type : variable
+        name : priority of pulses food
+        locationSpan : {start: [880, 0], end: [880, 63]}
+        span : [50295, 50357]
+      - type : variable
+        name : priority of wood
+        locationSpan : {start: [881, 0], end: [881, 54]}
+        span : [50358, 50411]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [882, 0], end: [882, 52]}
+        span : [50412, 50463]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [883, 0], end: [883, 52]}
+        span : [50464, 50515]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [884, 0], end: [884, 52]}
+        span : [50516, 50567]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [885, 0], end: [885, 51]}
+        span : [50568, 50618]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [886, 0], end: [886, 51]}
+        span : [50619, 50669]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [887, 0], end: [887, 51]}
+        span : [50670, 50720]
+      - type : variable
+        name : "shortage of final resources in global market (R,fr)"
+        locationSpan : {start: [888, 0], end: [888, 91]}
+        span : [50721, 50811]
+      - type : shadow variable
+        name : "final resources consumed from global market in R2 (fr)"
+        locationSpan : {start: [889, 0], end: [889, 130]}
+        span : [50812, 50941]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [890, 0], end: [890, 51]}
+        span : [50942, 50992]
+      - type : variable
+        name : "final resources consumed from global market (R,fr)"
+        locationSpan : {start: [891, 0], end: [891, 90]}
+        span : [50993, 51082]
+      - type : variable
+        name : "final resources consumed (R,fr)"
+        locationSpan : {start: [892, 0], end: [892, 71]}
+        span : [51083, 51153]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [893, 0], end: [893, 51]}
+        span : [51154, 51204]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [894, 0], end: [894, 51]}
+        span : [51205, 51255]
+      - type : variable
+        name : "final resources consumed regions agregated (fr)"
+        locationSpan : {start: [895, 0], end: [895, 87]}
+        span : [51256, 51342]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [896, 0], end: [896, 51]}
+        span : [51343, 51393]
+      - type : shadow variable
+        name : "Final Resources Demanded (R,f)"
+        locationSpan : {start: [897, 0], end: [897, 106]}
+        span : [51394, 51499]
+      - type : variable
+        name : "final resources demanded regions agregated (fr)"
+        locationSpan : {start: [898, 0], end: [898, 87]}
+        span : [51500, 51586]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [899, 0], end: [899, 51]}
+        span : [51587, 51637]
+      - type : shadow variable
+        name : "Final Resources Demanded to Global Market (R,fr)"
+        locationSpan : {start: [900, 0], end: [900, 124]}
+        span : [51638, 51761]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [901, 0], end: [901, 50]}
+        span : [51762, 51811]
+      - type : shadow variable
+        name : "final resources consumed from global market in R1 (fr)"
+        locationSpan : {start: [902, 0], end: [902, 130]}
+        span : [51812, 51941]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [903, 0], end: [903, 50]}
+        span : [51942, 51991]
+      - type : shadow variable
+        name : "Final Resources from Local Sources (R,f)"
+        locationSpan : {start: [904, 0], end: [904, 116]}
+        span : [51992, 52107]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [905, 0], end: [905, 51]}
+        span : [52108, 52158]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [906, 0], end: [906, 52]}
+        span : [52159, 52210]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [907, 0], end: [907, 51]}
+        span : [52211, 52261]
+      - type : shadow variable
+        name : "primary resources allocated to R2 (pr)"
+        locationSpan : {start: [908, 0], end: [908, 115]}
+        span : [52262, 52376]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [909, 0], end: [909, 53]}
+        span : [52377, 52429]
+      - type : variable
+        name : "shortage of primary resources (pr)"
+        locationSpan : {start: [910, 0], end: [910, 76]}
+        span : [52430, 52505]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [911, 0], end: [911, 54]}
+        span : [52506, 52559]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [912, 0], end: [912, 53]}
+        span : [52560, 52612]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [913, 0], end: [913, 54]}
+        span : [52613, 52666]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [914, 0], end: [914, 54]}
+        span : [52667, 52720]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [915, 0], end: [915, 54]}
+        span : [52721, 52774]
+    - type : view
+      name : Increments of shares F from P in R1
+      locationSpan : {start: [917, 0], end: [1039, 14]}
+      headerSpan : [52789, 52872]
+      footerSpan : [59796, 59809]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [919, 0], end: [921, 38]}
+        span : [52873, 53062]
+      - type : variable
+        name : coeff share exchange R1
+        locationSpan : {start: [922, 0], end: [922, 60]}
+        span : [53063, 53122]
+      - type : variable
+        name : shares finals from p1oil in R1
+        locationSpan : {start: [923, 0], end: [923, 69]}
+        span : [53123, 53191]
+      - type : shadow variable
+        name : SUITABILITY OF FINAL TO PRIMARY RESOURCES
+        locationSpan : {start: [924, 0], end: [924, 114]}
+        span : [53192, 53305]
+      - type : variable
+        name : shares finals from p2gas in R1
+        locationSpan : {start: [925, 0], end: [925, 69]}
+        span : [53306, 53374]
+      - type : variable
+        name : shares finals from p4cereals in R1
+        locationSpan : {start: [926, 0], end: [926, 73]}
+        span : [53375, 53447]
+      - type : variable
+        name : shares finals from p5pulses in R1
+        locationSpan : {start: [927, 0], end: [927, 72]}
+        span : [53448, 53519]
+      - type : variable
+        name : shares finals from p7biomass in R1
+        locationSpan : {start: [928, 0], end: [928, 73]}
+        span : [53520, 53592]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [929, 0], end: [929, 48]}
+        span : [53593, 53640]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [930, 0], end: [930, 50]}
+        span : [53641, 53690]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [931, 0], end: [931, 41]}
+        span : [53691, 53731]
+      - type : variable
+        name : oil to gas shares R1
+        locationSpan : {start: [932, 0], end: [932, 60]}
+        span : [53732, 53791]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [933, 0], end: [933, 49]}
+        span : [53792, 53840]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [934, 0], end: [934, 51]}
+        span : [53841, 53891]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [935, 0], end: [935, 41]}
+        span : [53892, 53932]
+      - type : variable
+        name : oil to cereals shares R1
+        locationSpan : {start: [936, 0], end: [936, 64]}
+        span : [53933, 53996]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [937, 0], end: [937, 49]}
+        span : [53997, 54045]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [938, 0], end: [938, 51]}
+        span : [54046, 54096]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [939, 0], end: [939, 41]}
+        span : [54097, 54137]
+      - type : variable
+        name : oil to pulses shares R1
+        locationSpan : {start: [940, 0], end: [940, 64]}
+        span : [54138, 54201]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [941, 0], end: [941, 49]}
+        span : [54202, 54250]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [942, 0], end: [942, 51]}
+        span : [54251, 54301]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [943, 0], end: [943, 41]}
+        span : [54302, 54342]
+      - type : variable
+        name : oil to biomass shares R1
+        locationSpan : {start: [944, 0], end: [944, 64]}
+        span : [54343, 54406]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [945, 0], end: [945, 49]}
+        span : [54407, 54455]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [946, 0], end: [946, 51]}
+        span : [54456, 54506]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [947, 0], end: [947, 41]}
+        span : [54507, 54547]
+      - type : variable
+        name : gas to cereals shares R1
+        locationSpan : {start: [948, 0], end: [948, 64]}
+        span : [54548, 54611]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [949, 0], end: [949, 49]}
+        span : [54612, 54660]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [950, 0], end: [950, 51]}
+        span : [54661, 54711]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [951, 0], end: [951, 41]}
+        span : [54712, 54752]
+      - type : variable
+        name : gas to pulses shares R1
+        locationSpan : {start: [952, 0], end: [952, 63]}
+        span : [54753, 54815]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [953, 0], end: [953, 49]}
+        span : [54816, 54864]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [954, 0], end: [954, 51]}
+        span : [54865, 54915]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [955, 0], end: [955, 41]}
+        span : [54916, 54956]
+      - type : variable
+        name : gas to biomass shares R1
+        locationSpan : {start: [956, 0], end: [956, 64]}
+        span : [54957, 55020]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [957, 0], end: [957, 49]}
+        span : [55021, 55069]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [958, 0], end: [958, 51]}
+        span : [55070, 55120]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [959, 0], end: [959, 41]}
+        span : [55121, 55161]
+      - type : variable
+        name : cereals to biomass shares R1
+        locationSpan : {start: [960, 0], end: [960, 68]}
+        span : [55162, 55229]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [961, 0], end: [961, 49]}
+        span : [55230, 55278]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [962, 0], end: [962, 51]}
+        span : [55279, 55329]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [963, 0], end: [963, 41]}
+        span : [55330, 55370]
+      - type : variable
+        name : cereals to pulses shares R1
+        locationSpan : {start: [964, 0], end: [964, 67]}
+        span : [55371, 55437]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [965, 0], end: [965, 50]}
+        span : [55438, 55487]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [966, 0], end: [966, 50]}
+        span : [55488, 55537]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [967, 0], end: [967, 51]}
+        span : [55538, 55588]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [968, 0], end: [968, 50]}
+        span : [55589, 55638]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [969, 0], end: [969, 110]}
+        span : [55639, 55748]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [970, 0], end: [970, 51]}
+        span : [55749, 55799]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [971, 0], end: [971, 51]}
+        span : [55800, 55850]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [972, 0], end: [972, 51]}
+        span : [55851, 55901]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [973, 0], end: [973, 51]}
+        span : [55902, 55952]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [974, 0], end: [974, 50]}
+        span : [55953, 56002]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [975, 0], end: [975, 50]}
+        span : [56003, 56052]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [976, 0], end: [976, 50]}
+        span : [56053, 56102]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [977, 0], end: [977, 50]}
+        span : [56103, 56152]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [978, 0], end: [978, 50]}
+        span : [56153, 56202]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [979, 0], end: [979, 50]}
+        span : [56203, 56252]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [980, 0], end: [980, 50]}
+        span : [56253, 56302]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [981, 0], end: [981, 50]}
+        span : [56303, 56352]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [982, 0], end: [982, 50]}
+        span : [56353, 56402]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [983, 0], end: [983, 50]}
+        span : [56403, 56452]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [984, 0], end: [984, 50]}
+        span : [56453, 56502]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [985, 0], end: [985, 50]}
+        span : [56503, 56552]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [986, 0], end: [986, 51]}
+        span : [56553, 56603]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [987, 0], end: [987, 50]}
+        span : [56604, 56653]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [988, 0], end: [988, 50]}
+        span : [56654, 56703]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [989, 0], end: [989, 110]}
+        span : [56704, 56813]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [990, 0], end: [990, 50]}
+        span : [56814, 56863]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [991, 0], end: [991, 110]}
+        span : [56864, 56973]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [992, 0], end: [992, 50]}
+        span : [56974, 57023]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [993, 0], end: [993, 110]}
+        span : [57024, 57133]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [994, 0], end: [994, 50]}
+        span : [57134, 57183]
+      - type : shadow variable
+        name : "available infrastructure finals from primaries (R,pr,fr)"
+        locationSpan : {start: [995, 0], end: [995, 133]}
+        span : [57184, 57316]
+      - type : variable
+        name : "posibility of share exchange R1 (ex,fr)"
+        locationSpan : {start: [996, 0], end: [996, 80]}
+        span : [57317, 57396]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [997, 0], end: [997, 111]}
+        span : [57397, 57507]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [998, 0], end: [998, 52]}
+        span : [57508, 57559]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [999, 0], end: [999, 52]}
+        span : [57560, 57611]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1000, 0], end: [1000, 52]}
+        span : [57612, 57663]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1001, 0], end: [1001, 51]}
+        span : [57664, 57714]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1002, 0], end: [1002, 51]}
+        span : [57715, 57765]
+      - type : shadow variable
+        name : "posibility of share exchange R1 (ex,fr)"
+        locationSpan : {start: [1003, 0], end: [1003, 115]}
+        span : [57766, 57880]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1004, 0], end: [1004, 51]}
+        span : [57881, 57931]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1005, 0], end: [1005, 51]}
+        span : [57932, 57982]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1006, 0], end: [1006, 51]}
+        span : [57983, 58033]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1007, 0], end: [1007, 51]}
+        span : [58034, 58084]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1008, 0], end: [1008, 49]}
+        span : [58085, 58133]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1009, 0], end: [1009, 51]}
+        span : [58134, 58184]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1010, 0], end: [1010, 51]}
+        span : [58185, 58235]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1011, 0], end: [1011, 49]}
+        span : [58236, 58284]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1012, 0], end: [1012, 49]}
+        span : [58285, 58333]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1013, 0], end: [1013, 49]}
+        span : [58334, 58382]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1014, 0], end: [1014, 49]}
+        span : [58383, 58431]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1015, 0], end: [1015, 49]}
+        span : [58432, 58480]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1016, 0], end: [1016, 50]}
+        span : [58481, 58530]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1017, 0], end: [1017, 52]}
+        span : [58531, 58582]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1018, 0], end: [1018, 42]}
+        span : [58583, 58624]
+      - type : variable
+        name : pulses to biomass shares R1
+        locationSpan : {start: [1019, 0], end: [1019, 68]}
+        span : [58625, 58692]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1020, 0], end: [1020, 49]}
+        span : [58693, 58741]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1021, 0], end: [1021, 51]}
+        span : [58742, 58792]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1022, 0], end: [1022, 50]}
+        span : [58793, 58842]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1023, 0], end: [1023, 50]}
+        span : [58843, 58892]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [1024, 0], end: [1024, 112]}
+        span : [58893, 59004]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1025, 0], end: [1025, 53]}
+        span : [59005, 59057]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1026, 0], end: [1026, 52]}
+        span : [59058, 59109]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1027, 0], end: [1027, 51]}
+        span : [59110, 59160]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1028, 0], end: [1028, 51]}
+        span : [59161, 59211]
+      - type : variable
+        name : SUITABILITY OF FINAL TO PRIMARY RESOURCES
+        locationSpan : {start: [1029, 0], end: [1029, 81]}
+        span : [59212, 59292]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1030, 0], end: [1030, 54]}
+        span : [59293, 59346]
+      - type : variable
+        name : "INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)"
+        locationSpan : {start: [1031, 0], end: [1031, 86]}
+        span : [59347, 59432]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1032, 0], end: [1032, 52]}
+        span : [59433, 59484]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1033, 0], end: [1033, 52]}
+        span : [59485, 59536]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1034, 0], end: [1034, 52]}
+        span : [59537, 59588]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1035, 0], end: [1035, 52]}
+        span : [59589, 59640]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1036, 0], end: [1036, 52]}
+        span : [59641, 59692]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1037, 0], end: [1037, 52]}
+        span : [59693, 59744]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1038, 0], end: [1038, 51]}
+        span : [59745, 59795]
+    - type : view
+      name : Increments of shares F from P in R2
+      locationSpan : {start: [1040, 0], end: [1161, 14]}
+      headerSpan : [59810, 59893]
+      footerSpan : [66737, 66750]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [1042, 0], end: [1044, 38]}
+        span : [59894, 60084]
+      - type : variable
+        name : coeff share exchange R2
+        locationSpan : {start: [1045, 0], end: [1045, 60]}
+        span : [60085, 60144]
+      - type : variable
+        name : shares finals from p1oil in R2
+        locationSpan : {start: [1046, 0], end: [1046, 69]}
+        span : [60145, 60213]
+      - type : variable
+        name : shares finals from p2gas in R2
+        locationSpan : {start: [1047, 0], end: [1047, 69]}
+        span : [60214, 60282]
+      - type : variable
+        name : shares finals from p4cereals in R2
+        locationSpan : {start: [1048, 0], end: [1048, 73]}
+        span : [60283, 60355]
+      - type : variable
+        name : shares finals from p5pulses in R2
+        locationSpan : {start: [1049, 0], end: [1049, 72]}
+        span : [60356, 60427]
+      - type : variable
+        name : shares finals from p7biomass in R2
+        locationSpan : {start: [1050, 0], end: [1050, 73]}
+        span : [60428, 60500]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1051, 0], end: [1051, 47]}
+        span : [60501, 60547]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1052, 0], end: [1052, 49]}
+        span : [60548, 60596]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1053, 0], end: [1053, 40]}
+        span : [60597, 60636]
+      - type : variable
+        name : oil to gas shares R2
+        locationSpan : {start: [1054, 0], end: [1054, 60]}
+        span : [60637, 60696]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1055, 0], end: [1055, 49]}
+        span : [60697, 60745]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1056, 0], end: [1056, 51]}
+        span : [60746, 60796]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1057, 0], end: [1057, 41]}
+        span : [60797, 60837]
+      - type : variable
+        name : oil to cereals shares R2
+        locationSpan : {start: [1058, 0], end: [1058, 64]}
+        span : [60838, 60901]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1059, 0], end: [1059, 49]}
+        span : [60902, 60950]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1060, 0], end: [1060, 51]}
+        span : [60951, 61001]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1061, 0], end: [1061, 41]}
+        span : [61002, 61042]
+      - type : variable
+        name : oil to pulses shares R2
+        locationSpan : {start: [1062, 0], end: [1062, 64]}
+        span : [61043, 61106]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1063, 0], end: [1063, 49]}
+        span : [61107, 61155]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1064, 0], end: [1064, 51]}
+        span : [61156, 61206]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1065, 0], end: [1065, 41]}
+        span : [61207, 61247]
+      - type : variable
+        name : oil to biomass shares R2
+        locationSpan : {start: [1066, 0], end: [1066, 64]}
+        span : [61248, 61311]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1067, 0], end: [1067, 49]}
+        span : [61312, 61360]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1068, 0], end: [1068, 51]}
+        span : [61361, 61411]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1069, 0], end: [1069, 41]}
+        span : [61412, 61452]
+      - type : variable
+        name : gas to cereals shares R2
+        locationSpan : {start: [1070, 0], end: [1070, 64]}
+        span : [61453, 61516]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1071, 0], end: [1071, 49]}
+        span : [61517, 61565]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1072, 0], end: [1072, 51]}
+        span : [61566, 61616]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1073, 0], end: [1073, 41]}
+        span : [61617, 61657]
+      - type : variable
+        name : gas to pulses shares R2
+        locationSpan : {start: [1074, 0], end: [1074, 63]}
+        span : [61658, 61720]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1075, 0], end: [1075, 49]}
+        span : [61721, 61769]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1076, 0], end: [1076, 51]}
+        span : [61770, 61820]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1077, 0], end: [1077, 41]}
+        span : [61821, 61861]
+      - type : variable
+        name : gas to biomass hares R2
+        locationSpan : {start: [1078, 0], end: [1078, 63]}
+        span : [61862, 61924]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1079, 0], end: [1079, 49]}
+        span : [61925, 61973]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1080, 0], end: [1080, 51]}
+        span : [61974, 62024]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1081, 0], end: [1081, 41]}
+        span : [62025, 62065]
+      - type : variable
+        name : cereals to biomass shares R2
+        locationSpan : {start: [1082, 0], end: [1082, 68]}
+        span : [62066, 62133]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1083, 0], end: [1083, 49]}
+        span : [62134, 62182]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1084, 0], end: [1084, 51]}
+        span : [62183, 62233]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1085, 0], end: [1085, 41]}
+        span : [62234, 62274]
+      - type : variable
+        name : cereals to pulses shares R2
+        locationSpan : {start: [1086, 0], end: [1086, 67]}
+        span : [62275, 62341]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1087, 0], end: [1087, 50]}
+        span : [62342, 62391]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1088, 0], end: [1088, 50]}
+        span : [62392, 62441]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1089, 0], end: [1089, 51]}
+        span : [62442, 62492]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1090, 0], end: [1090, 50]}
+        span : [62493, 62542]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [1091, 0], end: [1091, 110]}
+        span : [62543, 62652]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1092, 0], end: [1092, 51]}
+        span : [62653, 62703]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1093, 0], end: [1093, 51]}
+        span : [62704, 62754]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1094, 0], end: [1094, 51]}
+        span : [62755, 62805]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1095, 0], end: [1095, 51]}
+        span : [62806, 62856]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1096, 0], end: [1096, 50]}
+        span : [62857, 62906]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1097, 0], end: [1097, 50]}
+        span : [62907, 62956]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1098, 0], end: [1098, 50]}
+        span : [62957, 63006]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1099, 0], end: [1099, 50]}
+        span : [63007, 63056]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1100, 0], end: [1100, 50]}
+        span : [63057, 63106]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1101, 0], end: [1101, 50]}
+        span : [63107, 63156]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1102, 0], end: [1102, 50]}
+        span : [63157, 63206]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1103, 0], end: [1103, 50]}
+        span : [63207, 63256]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1104, 0], end: [1104, 50]}
+        span : [63257, 63306]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1105, 0], end: [1105, 50]}
+        span : [63307, 63356]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1106, 0], end: [1106, 50]}
+        span : [63357, 63406]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1107, 0], end: [1107, 50]}
+        span : [63407, 63456]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1108, 0], end: [1108, 51]}
+        span : [63457, 63507]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1109, 0], end: [1109, 50]}
+        span : [63508, 63557]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1110, 0], end: [1110, 50]}
+        span : [63558, 63607]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [1111, 0], end: [1111, 110]}
+        span : [63608, 63717]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1112, 0], end: [1112, 50]}
+        span : [63718, 63767]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [1113, 0], end: [1113, 110]}
+        span : [63768, 63877]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1114, 0], end: [1114, 50]}
+        span : [63878, 63927]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [1115, 0], end: [1115, 110]}
+        span : [63928, 64037]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1116, 0], end: [1116, 50]}
+        span : [64038, 64087]
+      - type : shadow variable
+        name : "available infrastructure finals from primaries (R,pr,fr)"
+        locationSpan : {start: [1117, 0], end: [1117, 133]}
+        span : [64088, 64220]
+      - type : variable
+        name : "posibility of share exchange R2 (ex,fr)"
+        locationSpan : {start: [1118, 0], end: [1118, 80]}
+        span : [64221, 64300]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [1119, 0], end: [1119, 111]}
+        span : [64301, 64411]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1120, 0], end: [1120, 52]}
+        span : [64412, 64463]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1121, 0], end: [1121, 52]}
+        span : [64464, 64515]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1122, 0], end: [1122, 52]}
+        span : [64516, 64567]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1123, 0], end: [1123, 51]}
+        span : [64568, 64618]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1124, 0], end: [1124, 51]}
+        span : [64619, 64669]
+      - type : shadow variable
+        name : "posibility of share exchange R2 (ex,fr)"
+        locationSpan : {start: [1125, 0], end: [1125, 115]}
+        span : [64670, 64784]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1126, 0], end: [1126, 51]}
+        span : [64785, 64835]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1127, 0], end: [1127, 51]}
+        span : [64836, 64886]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1128, 0], end: [1128, 51]}
+        span : [64887, 64937]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1129, 0], end: [1129, 51]}
+        span : [64938, 64988]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1130, 0], end: [1130, 49]}
+        span : [64989, 65037]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1131, 0], end: [1131, 51]}
+        span : [65038, 65088]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1132, 0], end: [1132, 51]}
+        span : [65089, 65139]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1133, 0], end: [1133, 49]}
+        span : [65140, 65188]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1134, 0], end: [1134, 49]}
+        span : [65189, 65237]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1135, 0], end: [1135, 49]}
+        span : [65238, 65286]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1136, 0], end: [1136, 49]}
+        span : [65287, 65335]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1137, 0], end: [1137, 49]}
+        span : [65336, 65384]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1138, 0], end: [1138, 50]}
+        span : [65385, 65434]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1139, 0], end: [1139, 52]}
+        span : [65435, 65486]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1140, 0], end: [1140, 42]}
+        span : [65487, 65528]
+      - type : variable
+        name : pulses to biomass shares R2
+        locationSpan : {start: [1141, 0], end: [1141, 68]}
+        span : [65529, 65596]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1142, 0], end: [1142, 49]}
+        span : [65597, 65645]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1143, 0], end: [1143, 50]}
+        span : [65646, 65695]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1144, 0], end: [1144, 50]}
+        span : [65696, 65745]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1145, 0], end: [1145, 50]}
+        span : [65746, 65795]
+      - type : shadow variable
+        name : "excedent of primary resources (pr)"
+        locationSpan : {start: [1146, 0], end: [1146, 112]}
+        span : [65796, 65907]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1147, 0], end: [1147, 53]}
+        span : [65908, 65960]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1148, 0], end: [1148, 52]}
+        span : [65961, 66012]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1149, 0], end: [1149, 51]}
+        span : [66013, 66063]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1150, 0], end: [1150, 51]}
+        span : [66064, 66114]
+      - type : variable
+        name : "INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr) 0"
+        locationSpan : {start: [1151, 0], end: [1151, 88]}
+        span : [66115, 66202]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1152, 0], end: [1152, 52]}
+        span : [66203, 66254]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1153, 0], end: [1153, 52]}
+        span : [66255, 66306]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1154, 0], end: [1154, 52]}
+        span : [66307, 66358]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1155, 0], end: [1155, 52]}
+        span : [66359, 66410]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1156, 0], end: [1156, 52]}
+        span : [66411, 66462]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1157, 0], end: [1157, 52]}
+        span : [66463, 66514]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1158, 0], end: [1158, 51]}
+        span : [66515, 66565]
+      - type : shadow variable
+        name : SUITABILITY OF FINAL TO PRIMARY RESOURCES
+        locationSpan : {start: [1159, 0], end: [1159, 117]}
+        span : [66566, 66682]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1160, 0], end: [1160, 54]}
+        span : [66683, 66736]
+    - type : view
+      name : View allocate
+      locationSpan : {start: [1162, 0], end: [1185, 14]}
+      headerSpan : [66751, 66834]
+      footerSpan : [68439, 68452]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [1164, 0], end: [1166, 16]}
+        span : [66835, 67003]
+      - type : shadow variable
+        name : "resources consum matrix global market (R,fr,pr)"
+        locationSpan : {start: [1167, 0], end: [1167, 124]}
+        span : [67004, 67127]
+      - type : shadow variable
+        name : "primary resources allocated to R1 (pr)"
+        locationSpan : {start: [1168, 0], end: [1168, 113]}
+        span : [67128, 67240]
+      - type : shadow variable
+        name : "Final Resources Demanded to Global Market (R,fr)"
+        locationSpan : {start: [1169, 0], end: [1169, 122]}
+        span : [67241, 67362]
+      - type : variable
+        name : By primary,primarias que tiene R1 asignadas y como las distribuye por finales
+        locationSpan : {start: [1170, 0], end: [1171, 80]}
+        span : [67363, 67512]
+      - type : variable
+        name : graficos sumados unos sobre otros
+        locationSpan : {start: [1172, 0], end: [1173, 35]}
+        span : [67513, 67617]
+      - type : variable
+        name : "primary resources graph added for R1 (fr,pr)"
+        locationSpan : {start: [1174, 0], end: [1174, 83]}
+        span : [67618, 67700]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1175, 0], end: [1175, 48]}
+        span : [67701, 67748]
+      - type : variable
+        name : "final resources graph added for R1 (fr,pr)"
+        locationSpan : {start: [1176, 0], end: [1176, 81]}
+        span : [67749, 67829]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1177, 0], end: [1177, 48]}
+        span : [67830, 67877]
+      - type : variable
+        name : por finales,voy sumando las primarias
+        locationSpan : {start: [1178, 0], end: [1179, 40]}
+        span : [67878, 67985]
+      - type : variable
+        name : "final resources demanded to g m by R1(fr)"
+        locationSpan : {start: [1180, 0], end: [1180, 82]}
+        span : [67986, 68067]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1181, 0], end: [1181, 50]}
+        span : [68068, 68117]
+      - type : shadow variable
+        name : "shortage of final resources in global market (R,fr)"
+        locationSpan : {start: [1182, 0], end: [1182, 127]}
+        span : [68118, 68244]
+      - type : shadow variable
+        name : u
+        locationSpan : {start: [1183, 0], end: [1183, 75]}
+        span : [68245, 68319]
+      - type : shadow variable
+        name : "Primary Resources Allocated by country(R,pr)"
+        locationSpan : {start: [1184, 0], end: [1184, 119]}
+        span : [68320, 68438]
+    - type : view
+      name : Land allocation
+      locationSpan : {start: [1186, 0], end: [1233, 14]}
+      headerSpan : [68453, 68536]
+      footerSpan : [70875, 70888]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [1188, 0], end: [1190, 18]}
+        span : [68537, 68707]
+      - type : variable
+        name : "Land Forest (R)"
+        locationSpan : {start: [1191, 0], end: [1191, 54]}
+        span : [68708, 68761]
+      - type : variable
+        name : "Land Arable rainfed (R)"
+        locationSpan : {start: [1192, 0], end: [1192, 62]}
+        span : [68762, 68823]
+      - type : variable
+        name : "Land grassland (R)"
+        locationSpan : {start: [1193, 0], end: [1193, 57]}
+        span : [68824, 68880]
+      - type : variable
+        name : "Land Urban (R)"
+        locationSpan : {start: [1194, 0], end: [1194, 53]}
+        span : [68881, 68933]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1195, 0], end: [1195, 47]}
+        span : [68934, 68980]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1196, 0], end: [1196, 49]}
+        span : [68981, 69029]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1197, 0], end: [1197, 39]}
+        span : [69030, 69068]
+      - type : variable
+        name : Forest to Arable Land
+        locationSpan : {start: [1198, 0], end: [1198, 60]}
+        span : [69069, 69128]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1199, 0], end: [1199, 48]}
+        span : [69129, 69176]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1200, 0], end: [1200, 51]}
+        span : [69177, 69227]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1201, 0], end: [1201, 40]}
+        span : [69228, 69267]
+      - type : variable
+        name : Forest to Pastures Land
+        locationSpan : {start: [1202, 0], end: [1202, 63]}
+        span : [69268, 69330]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1203, 0], end: [1203, 49]}
+        span : [69331, 69379]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1204, 0], end: [1204, 51]}
+        span : [69380, 69430]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1205, 0], end: [1205, 40]}
+        span : [69431, 69470]
+      - type : variable
+        name : Arable to Urban Land
+        locationSpan : {start: [1206, 0], end: [1206, 60]}
+        span : [69471, 69530]
+      - type : variable
+        name : Share Arable to Cereals
+        locationSpan : {start: [1207, 0], end: [1207, 62]}
+        span : [69531, 69592]
+      - type : variable
+        name : Share Arable to Pulses
+        locationSpan : {start: [1208, 0], end: [1208, 60]}
+        span : [69593, 69652]
+      - type : variable
+        name : "Land arable irrigated (R)"
+        locationSpan : {start: [1209, 0], end: [1209, 65]}
+        span : [69653, 69717]
+      - type : variable
+        name : "Land degraded (R)"
+        locationSpan : {start: [1210, 0], end: [1210, 59]}
+        span : [69718, 69776]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1211, 0], end: [1211, 50]}
+        span : [69777, 69826]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1212, 0], end: [1212, 51]}
+        span : [69827, 69877]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1213, 0], end: [1213, 40]}
+        span : [69878, 69917]
+      - type : variable
+        name : arable to irrigated
+        locationSpan : {start: [1214, 0], end: [1214, 59]}
+        span : [69918, 69976]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1215, 0], end: [1215, 50]}
+        span : [69977, 70026]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1216, 0], end: [1216, 51]}
+        span : [70027, 70077]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1217, 0], end: [1217, 40]}
+        span : [70078, 70117]
+      - type : variable
+        name : arable to degraded
+        locationSpan : {start: [1218, 0], end: [1218, 58]}
+        span : [70118, 70175]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1219, 0], end: [1219, 49]}
+        span : [70176, 70224]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1220, 0], end: [1220, 51]}
+        span : [70225, 70275]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1221, 0], end: [1221, 39]}
+        span : [70276, 70314]
+      - type : variable
+        name : forest to degraded
+        locationSpan : {start: [1222, 0], end: [1222, 57]}
+        span : [70315, 70371]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1223, 0], end: [1223, 49]}
+        span : [70372, 70420]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1224, 0], end: [1224, 51]}
+        span : [70421, 70471]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1225, 0], end: [1225, 39]}
+        span : [70472, 70510]
+      - type : variable
+        name : grassland to degraded
+        locationSpan : {start: [1226, 0], end: [1226, 60]}
+        span : [70511, 70570]
+      - type : variable
+        name : quatity of lands
+        locationSpan : {start: [1227, 0], end: [1227, 54]}
+        span : [70571, 70624]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1228, 0], end: [1228, 40]}
+        span : [70625, 70664]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1229, 0], end: [1229, 50]}
+        span : [70665, 70714]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1230, 0], end: [1230, 52]}
+        span : [70715, 70766]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1231, 0], end: [1231, 39]}
+        span : [70767, 70805]
+      - type : variable
+        name : decrement of quality of lands
+        locationSpan : {start: [1232, 0], end: [1232, 69]}
+        span : [70806, 70874]
+    - type : view
+      name : View 11
+      locationSpan : {start: [1234, 0], end: [1277, 14]}
+      headerSpan : [70889, 70972]
+      footerSpan : [73167, 73180]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [1236, 0], end: [1238, 10]}
+        span : [70973, 71135]
+      - type : variable
+        name : USES OF ARABLE LAND
+        locationSpan : {start: [1239, 0], end: [1240, 21]}
+        span : [71136, 71226]
+      - type : variable
+        name : cereals percent on arable
+        locationSpan : {start: [1241, 0], end: [1241, 64]}
+        span : [71227, 71290]
+      - type : variable
+        name : pulses percent on arable
+        locationSpan : {start: [1242, 0], end: [1242, 63]}
+        span : [71291, 71353]
+      - type : variable
+        name : vegetables percent on arable
+        locationSpan : {start: [1243, 0], end: [1243, 67]}
+        span : [71354, 71420]
+      - type : variable
+        name : RES electric percent on arable
+        locationSpan : {start: [1244, 0], end: [1244, 69]}
+        span : [71421, 71489]
+      - type : variable
+        name : other percent on arable
+        locationSpan : {start: [1245, 0], end: [1245, 62]}
+        span : [71490, 71551]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1246, 0], end: [1246, 47]}
+        span : [71552, 71598]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1247, 0], end: [1247, 49]}
+        span : [71599, 71647]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1248, 0], end: [1248, 39]}
+        span : [71648, 71686]
+      - type : variable
+        name : cereals to pulses
+        locationSpan : {start: [1249, 0], end: [1249, 57]}
+        span : [71687, 71743]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1250, 0], end: [1250, 49]}
+        span : [71744, 71792]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1251, 0], end: [1251, 51]}
+        span : [71793, 71843]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1252, 0], end: [1252, 40]}
+        span : [71844, 71883]
+      - type : variable
+        name : cereals to vegetables
+        locationSpan : {start: [1253, 0], end: [1253, 61]}
+        span : [71884, 71944]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1254, 0], end: [1254, 49]}
+        span : [71945, 71993]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1255, 0], end: [1255, 51]}
+        span : [71994, 72044]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1256, 0], end: [1256, 40]}
+        span : [72045, 72084]
+      - type : variable
+        name : cereals to RES
+        locationSpan : {start: [1257, 0], end: [1257, 54]}
+        span : [72085, 72138]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1258, 0], end: [1258, 49]}
+        span : [72139, 72187]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1259, 0], end: [1259, 51]}
+        span : [72188, 72238]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1260, 0], end: [1260, 40]}
+        span : [72239, 72278]
+      - type : variable
+        name : pulses to RES
+        locationSpan : {start: [1261, 0], end: [1261, 53]}
+        span : [72279, 72331]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1262, 0], end: [1262, 49]}
+        span : [72332, 72380]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1263, 0], end: [1263, 51]}
+        span : [72381, 72431]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1264, 0], end: [1264, 40]}
+        span : [72432, 72471]
+      - type : variable
+        name : pulses to vegetables
+        locationSpan : {start: [1265, 0], end: [1265, 60]}
+        span : [72472, 72531]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1266, 0], end: [1266, 49]}
+        span : [72532, 72580]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [1267, 0], end: [1267, 51]}
+        span : [72581, 72631]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [1268, 0], end: [1268, 40]}
+        span : [72632, 72671]
+      - type : variable
+        name : vegetables to RES
+        locationSpan : {start: [1269, 0], end: [1269, 57]}
+        span : [72672, 72728]
+      - type : variable
+        name : max percent cereals on arable
+        locationSpan : {start: [1270, 0], end: [1270, 67]}
+        span : [72729, 72795]
+      - type : variable
+        name : max percent pulses on arable
+        locationSpan : {start: [1271, 0], end: [1271, 66]}
+        span : [72796, 72861]
+      - type : variable
+        name : max percent vegetables on arable
+        locationSpan : {start: [1272, 0], end: [1272, 70]}
+        span : [72862, 72931]
+      - type : variable
+        name : shortage of cereals
+        locationSpan : {start: [1273, 0], end: [1273, 56]}
+        span : [72932, 72987]
+      - type : variable
+        name : shortage of pulses
+        locationSpan : {start: [1274, 0], end: [1274, 55]}
+        span : [72988, 73042]
+      - type : variable
+        name : shortage of vegetables
+        locationSpan : {start: [1275, 0], end: [1275, 61]}
+        span : [73043, 73103]
+      - type : variable
+        name : shortage of electricity
+        locationSpan : {start: [1276, 0], end: [1276, 63]}
+        span : [73104, 73166]
   - type : metadata
     name : metadata
-    locationSpan : {start: [152, 0], end: [169, 2]}
-    headerSpan : [3306, 3316]
-    footerSpan : [3383, 3384]
+    locationSpan : {start: [1282, 0], end: [1337, 2]}
+    headerSpan : [73207, 73249]
+    footerSpan : [73929, 73930]
     children:
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [153, 0], end: [153, 11]}
-      span : [3317, 3327]
+      locationSpan : {start: [1285, 0], end: [1285, 15]}
+      span : [73250, 73264]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [154, 0], end: [154, 6]}
-      span : [3328, 3333]
+      locationSpan : {start: [1286, 0], end: [1286, 15]}
+      span : [73265, 73279]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [155, 0], end: [155, 16]}
-      span : [3334, 3349]
+      locationSpan : {start: [1287, 0], end: [1287, 11]}
+      span : [73280, 73290]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [156, 0], end: [156, 8]}
-      span : [3350, 3357]
+      locationSpan : {start: [1288, 0], end: [1288, 16]}
+      span : [73291, 73306]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [157, 0], end: [157, 7]}
-      span : [3358, 3364]
+      locationSpan : {start: [1289, 0], end: [1289, 10]}
+      span : [73307, 73316]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [158, 0], end: [158, 7]}
-      span : [3365, 3371]
+      locationSpan : {start: [1290, 0], end: [1290, 7]}
+      span : [73317, 73323]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [159, 0], end: [159, 6]}
-      span : [3372, 3377]
+      locationSpan : {start: [1291, 0], end: [1291, 7]}
+      span : [73324, 73330]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [160, 0], end: [160, 6]}
-      span : [3378, 3383]
+      locationSpan : {start: [1292, 0], end: [1292, 8]}
+      span : [73331, 73338]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [161, 0], end: [161, 6]}
-      span : [3384, 3389]
+      locationSpan : {start: [1293, 0], end: [1293, 39]}
+      span : [73339, 73377]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [162, 0], end: [162, 8]}
-      span : [3390, 3397]
+      locationSpan : {start: [1294, 0], end: [1294, 9]}
+      span : [73378, 73386]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [163, 0], end: [163, 13]}
-      span : [3398, 3410]
+      locationSpan : {start: [1295, 0], end: [1295, 15]}
+      span : [73387, 73401]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [164, 0], end: [164, 6]}
-      span : [3411, 3416]
+      locationSpan : {start: [1296, 0], end: [1296, 9]}
+      span : [73402, 73410]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [165, 0], end: [165, 6]}
-      span : [3417, 3422]
+      locationSpan : {start: [1297, 0], end: [1297, 6]}
+      span : [73411, 73416]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [166, 0], end: [166, 6]}
-      span : [3423, 3428]
+      locationSpan : {start: [1298, 0], end: [1298, 6]}
+      span : [73417, 73422]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [167, 0], end: [167, 6]}
-      span : [3429, 3434]
+      locationSpan : {start: [1299, 0], end: [1299, 6]}
+      span : [73423, 73428]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [168, 0], end: [168, 6]}
-      span : [3435, 3440]
+      locationSpan : {start: [1300, 0], end: [1300, 6]}
+      span : [73429, 73434]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [169, 0], end: [169, 6]}
-      span : [3441, 3446]
+      locationSpan : {start: [1301, 0], end: [1301, 6]}
+      span : [73435, 73440]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [170, 0], end: [170, 6]}
-      span : [3447, 3452]
+      locationSpan : {start: [1302, 0], end: [1302, 6]}
+      span : [73441, 73446]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [171, 0], end: [171, 7]}
-      span : [3453, 3459]
+      locationSpan : {start: [1303, 0], end: [1303, 8]}
+      span : [73447, 73454]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [172, 0], end: [172, 7]}
-      span : [3460, 3466]
+      locationSpan : {start: [1304, 0], end: [1304, 8]}
+      span : [73455, 73462]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [173, 0], end: [173, 5]}
-      span : [3467, 3471]
+      locationSpan : {start: [1305, 0], end: [1305, 19]}
+      span : [73463, 73481]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [174, 0], end: [174, 5]}
-      span : [3472, 3476]
+      locationSpan : {start: [1306, 0], end: [1306, 18]}
+      span : [73482, 73499]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1307, 0], end: [1307, 10]}
+      span : [73500, 73509]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1308, 0], end: [1308, 22]}
+      span : [73510, 73531]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1309, 0], end: [1309, 19]}
+      span : [73532, 73550]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1310, 0], end: [1310, 14]}
+      span : [73551, 73564]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1311, 0], end: [1311, 13]}
+      span : [73565, 73577]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1312, 0], end: [1312, 11]}
+      span : [73578, 73588]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1313, 0], end: [1313, 17]}
+      span : [73589, 73605]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1314, 0], end: [1314, 18]}
+      span : [73606, 73623]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1315, 0], end: [1315, 17]}
+      span : [73624, 73640]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1316, 0], end: [1316, 16]}
+      span : [73641, 73656]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1317, 0], end: [1317, 11]}
+      span : [73657, 73667]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1318, 0], end: [1318, 10]}
+      span : [73668, 73677]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1319, 0], end: [1319, 15]}
+      span : [73678, 73692]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1320, 0], end: [1320, 15]}
+      span : [73693, 73707]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1321, 0], end: [1321, 14]}
+      span : [73708, 73721]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1322, 0], end: [1322, 12]}
+      span : [73722, 73733]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1323, 0], end: [1323, 15]}
+      span : [73734, 73748]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1324, 0], end: [1324, 15]}
+      span : [73749, 73763]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1325, 0], end: [1325, 11]}
+      span : [73764, 73774]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1326, 0], end: [1326, 14]}
+      span : [73775, 73788]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1327, 0], end: [1327, 9]}
+      span : [73789, 73797]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1328, 0], end: [1328, 9]}
+      span : [73798, 73806]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1329, 0], end: [1329, 11]}
+      span : [73807, 73817]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1330, 0], end: [1330, 13]}
+      span : [73818, 73830]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1331, 0], end: [1331, 12]}
+      span : [73831, 73842]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1332, 0], end: [1332, 16]}
+      span : [73843, 73858]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1333, 0], end: [1333, 13]}
+      span : [73859, 73871]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1334, 0], end: [1334, 12]}
+      span : [73872, 73883]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1335, 0], end: [1335, 18]}
+      span : [73884, 73901]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1336, 0], end: [1336, 6]}
+      span : [73902, 73907]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1337, 0], end: [1337, 6]}
+      span : [73908, 73913]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1338, 0], end: [1338, 15]}
+      span : [73914, 73928]
