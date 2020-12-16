@@ -12,8 +12,8 @@ public class NoDelimiters {
         try {
             String text = new String(Files.readAllBytes(Paths.get(args[0])), StandardCharsets.UTF_8);
             String[] newlines = text.split("\r\n");
-            //String outputName = args[0];
-            String outputName = "out.txt";
+            String outputName = args[1];
+            //String outputName = "out.txt";
             FileWriter writer = new FileWriter(outputName);
             for (int i = 0; i < newlines.length; i++) {
                 if (!newlines[i].contains("<[VIEWS START]>") && !newlines[i].contains("<[VIEW START]>")

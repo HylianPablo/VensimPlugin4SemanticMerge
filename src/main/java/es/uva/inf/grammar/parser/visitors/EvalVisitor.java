@@ -35,7 +35,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
     public String visitFile(ModelParser.FileContext ctx) {
         try {
             int lastLine = countFileLines(input);
-            int lastLineLength = lastLineLength(input, lastLine) + 2;
+            //int lastLineLength = lastLineLength(input, lastLine) + 2;
 
             int equationsEndLine = 0;
 
@@ -203,19 +203,10 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     endColumnLocationSpan = equation.split("\r\n")[equationNewLines].length() + 2; // \r \n
                     endCharEq = equation.length() + 1;
                 }
-                /*
-                if () {
-                }
-                */
 
                 fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                         + (locationSpanStartEq + equationNewLines + extraLocationSpan) + ", " + endColumnLocationSpan
                         + "]}\r\n"); // It will always end in '\r \n'
-                /*
-                if (equationLines[equationLines.length - 1].contains("~~|") && !markBeforeControlParams) {
-                    locationSpanStartEq++;
-                }
-                */
                 locationSpanStartEq = locationSpanStartEq + equationNewLines + 1;
 
                 fw.write("      span : [" + initCharEq + ", " + (endCharEq + initCharEq + extraCharsEq) + "]\r\n");
@@ -294,8 +285,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         initCharEq += arrowsList.get(arrowsIndex).getText().length();
                         initCharEq += 2;
                         arrowsIndex++;
-                    } else { // Variable case SE DEBERIA COMPROBAR LAS SHADOWS Y MARCAR COMO RELEVANTES
-                             // CIERTOS CAMPOS
+                    } else {
                         boolean nameNextLine = false;
                         if (Integer.parseInt(viewVariablesList.get(viewVariablesIndex).bits.getText()) % 2 == 0) {
                             if (Integer
@@ -335,7 +325,6 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                             initCharEq += 2;
                             viewVariablesIndex++;
                         } else {
-                            //System.out.println(viewVariablesList.get(viewVariablesIndex).visualInfo().getText()); //AAAAAAAAAAAAAAAA
                             int commaCounter = contarCaracteres(
                                     viewVariablesList.get(viewVariablesIndex).visualInfo().getText(), ',');
                             if (commaCounter == -1) {
@@ -381,10 +370,8 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         "    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (metadataLastLine - 1)
                                 + ", " + (untilMetadataText[untilMetadataText.length - 1].length() + 2) + "]}\r\n");
                 // New lines since graph section is started
-                // String[] viewsSeparatorText = text.split("///---", 2)[1].split("\r\n");
                 fw.write("    headerSpan : [" + initCharEq + ", " + (initCharEq + 16) // graphs start delimiter
                         + "]\r\n");
-                // initCharEq += viewsSeparatorText[1].length();
                 initCharEq += 17;
                 // Divides text in metadata
                 String[] graphChars = text.split(":L\\<%\\^E\\!@", 2);
@@ -413,7 +400,6 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                         nChildrenLen = 2;
                         extraGrapsSpan = 2;
                     }
-                    // PARA DELIMITAR GRAPHS, DEBERIA SER CAMBIADO
                     fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                             + (locationSpanStartEq + nChildren) + ", " + nChildrenLen + "]}\r\n");
                     locationSpanStartEq += nChildren;
@@ -432,8 +418,6 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             }
             int metadataHeaderPlus = 10;
             if (!graphsExists) {
-                //System.out.println("AAAAAAAA");
-                //locationSpanStartEq -= 2;
                 metadataHeaderPlus = 42; //chars from graphs delimiter
             }
 
@@ -504,7 +488,6 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
 
     private ArrayList<Boolean> checkForNewLines(String input) {
         ArrayList<Boolean> array = new ArrayList<>();
-        // int len=0;
         try {
             BufferedReader reader = new BufferedReader(new FileReader(input));
             String line;

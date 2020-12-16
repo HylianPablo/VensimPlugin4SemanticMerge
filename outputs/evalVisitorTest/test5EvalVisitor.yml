@@ -1,0 +1,175 @@
+---
+type: file
+name: Formatted/test_macro_Format.mdl
+locationSpan : {start: [1, 0], end: [96, 2]}
+footerSpan : [0,-1]
+parsingErrorsDetected : false
+children:
+  - type : SymbolWithDocs
+    name: {UTF-8}
+    locationSpan : {start: [1, 0], end: [57, 2]}
+    headerSpan : [0, 8]
+    footerSpan : [1053, 1054]
+    children :
+    - type : macro
+      name : SECOND MACRO
+      locationSpan : {start: [2, 0], end: [8, 16]}
+      span : [9, 159]
+    - type : macro
+      name : EXPRESSION MACRO
+      locationSpan : {start: [9, 0], end: [15, 16]}
+      span : [160, 349]
+    - type : equation
+      name : macro input
+      locationSpan : {start: [16, 0], end: [20, 2]}
+      span : [350, 381]
+    - type : equation
+      name : macro output
+      locationSpan : {start: [21, 0], end: [25, 2]}
+      span : [382, 491]
+    - type : equation
+      name : macro parameter
+      locationSpan : {start: [26, 0], end: [36, 2]}
+      span : [492, 729]
+    - type : equation
+      name : FINAL TIME
+      locationSpan : {start: [37, 0], end: [41, 2]}
+      span : [730, 801]
+    - type : equation
+      name : INITIAL TIME
+      locationSpan : {start: [42, 0], end: [46, 2]}
+      span : [802, 877]
+    - type : equation
+      name : SAVEPER
+      locationSpan : {start: [47, 0], end: [52, 2]}
+      span : [878, 978]
+    - type : equation
+      name : TIME STEP
+      locationSpan : {start: [53, 0], end: [56, 4]}
+      span : [979, 1052]
+  - type : sketches
+    name : sketches
+    locationSpan : {start: [58, 0], end: [73, 15]}
+    headerSpan : [1055, 1071]
+    footerSpan : [1666, 1691]
+    children:
+    - type : view
+      name : View 1
+      locationSpan : {start: [59, 0], end: [71, 14]}
+      headerSpan : [1072, 1155]
+      footerSpan : [1652, 1665]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [61, 0], end: [63, 9]}
+        span : [1156, 1317]
+      - type : variable
+        name : macro input
+        locationSpan : {start: [64, 0], end: [64, 47]}
+        span : [1318, 1364]
+      - type : variable
+        name : macro output
+        locationSpan : {start: [65, 0], end: [65, 48]}
+        span : [1365, 1412]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [66, 0], end: [66, 48]}
+        span : [1413, 1460]
+      - type : variable
+        name : macro parameter
+        locationSpan : {start: [67, 0], end: [67, 50]}
+        span : [1461, 1510]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [68, 0], end: [68, 47]}
+        span : [1511, 1557]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [69, 0], end: [69, 47]}
+        span : [1558, 1604]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [70, 0], end: [70, 47]}
+        span : [1605, 1651]
+  - type : metadata
+    name : metadata
+    locationSpan : {start: [76, 0], end: [96, 2]}
+    headerSpan : [1692, 1734]
+    footerSpan : [1906, 1907]
+    children:
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [79, 0], end: [79, 15]}
+      span : [1735, 1749]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [80, 0], end: [80, 11]}
+      span : [1750, 1760]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [81, 0], end: [81, 16]}
+      span : [1761, 1776]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [82, 0], end: [82, 10]}
+      span : [1777, 1786]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [83, 0], end: [83, 7]}
+      span : [1787, 1793]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [84, 0], end: [84, 7]}
+      span : [1794, 1800]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [85, 0], end: [85, 8]}
+      span : [1801, 1808]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [86, 0], end: [86, 16]}
+      span : [1809, 1824]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [87, 0], end: [87, 9]}
+      span : [1825, 1833]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [88, 0], end: [88, 15]}
+      span : [1834, 1848]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [89, 0], end: [89, 9]}
+      span : [1849, 1857]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [90, 0], end: [90, 6]}
+      span : [1858, 1863]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [91, 0], end: [91, 6]}
+      span : [1864, 1869]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [92, 0], end: [92, 6]}
+      span : [1870, 1875]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [93, 0], end: [93, 6]}
+      span : [1876, 1881]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [94, 0], end: [94, 6]}
+      span : [1882, 1887]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [95, 0], end: [95, 6]}
+      span : [1888, 1893]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [96, 0], end: [96, 6]}
+      span : [1894, 1899]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [97, 0], end: [97, 6]}
+      span : [1900, 1905]

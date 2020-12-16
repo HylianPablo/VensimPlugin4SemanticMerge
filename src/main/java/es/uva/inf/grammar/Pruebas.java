@@ -22,27 +22,27 @@ public class Pruebas {
 
       try {
          String[] arg1 = new String[2];
-         arg1[0] = "VensimExampleModels/CLOUD/Locomini34.mdl";
-         arg1[1] = "Formatted/locominiComment.mdl";
+         arg1[0] = "VensimExampleModels/SHODOR/Bunny.mdl";
+         arg1[1] = "Formatted/BunnyComment.mdl";
          Comment.main(arg1);
       } catch (IOException ex) {
          System.err.println(ex.getMessage());
       }
 
       String[] arg2 = new String[2];
-      arg2[0] = "Formatted/locominiComment.mdl";
-      arg2[1] = "Formatted/locominiFormat.mdl";
+      arg2[0] = "Formatted/BunnyComment.mdl";
+      arg2[1] = "Formatted/BunnyFormat.mdl";
       Delimiter.main(arg2);
 
       try {
 
-         CharStream charstream = CharStreams.fromFileName("Formatted/locominiFormat.mdl", StandardCharsets.UTF_8);
+         CharStream charstream = CharStreams.fromFileName("Formatted/BunnyFormat.mdl", StandardCharsets.UTF_8);
          ModelLexer lexer = new ModelLexer(charstream);
          ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
          ParseTree tree = parser.file();
 
          EvalVisitor visitor = new EvalVisitor();
-         visitor.setInput("Formatted/locominiFormat.mdl");
+         visitor.setInput("Formatted/BunnyFormat.mdl");
          visitor.setOutput("OUT.yaml");
          visitor.visit(tree);
          //System.out.println(tree.toStringTree(parser));// USED TO DEBUG
@@ -61,6 +61,11 @@ public class Pruebas {
          ex.printStackTrace();
          System.err.println(ex.getMessage());
       }
+
+      String[] arg3 = new String[2];
+      arg3[0] = "Formatted/BunnyFormat.mdl";
+      arg3[1] = "Formatted/RestoredBunny.mdl";
+      NoDelimiters.main(arg3);
 
    }
 }
