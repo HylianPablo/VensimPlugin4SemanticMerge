@@ -7,8 +7,8 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import es.uva.inf.grammar.utilities.JsonSymbolTableBuilder;
-import es.uva.inf.grammar.utilities.SymbolTableGenerator;
+//import es.uva.inf.grammar.utilities.JsonSymbolTableBuilder;
+//import es.uva.inf.grammar.utilities.SymbolTableGenerator;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -134,12 +134,12 @@ public class Main {
             ex.printStackTrace();
         }
     }
-
+    /*
     protected static void generateJsonOutput(JsonSymbolTableBuilder jsonBuilder) {
         JsonArray symbolTable = jsonBuilder.build();
-
+    
         try {
-
+    
             File file = new File("symbolTable.json");
             JsonWriter writer = Json.createWriter(new FileOutputStream(file));
             writer.writeArray(symbolTable);
@@ -147,8 +147,8 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-    }
+    
+    }^*/
 
     protected static ModelParser.FileContext getParseTree(String file_content) {
         ModelLexer lexer = new ModelLexer(CharStreams.fromString(file_content));
