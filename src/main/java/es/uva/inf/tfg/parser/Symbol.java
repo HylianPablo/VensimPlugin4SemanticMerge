@@ -1,11 +1,9 @@
-package es.uva.inf.grammar.parser;
-
+package es.uva.inf.tfg.parser;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Symbol {
-
 
     private String token;
     private List<Integer> linesDefined;
@@ -17,30 +15,27 @@ public class Symbol {
     private SymbolType type;
     private String category;
 
-
     private boolean isValid;
 
-
-    public Symbol(String token){
+    public Symbol(String token) {
         this.token = token.strip();
         dependencies = new HashSet<>();
         type = SymbolType.UNDETERMINED;
         linesDefined = new ArrayList<>();
         modules = new ArrayList<>();
         units = "";
-        comment ="";
+        comment = "";
         category = "";
         indexes = new ArrayList<>();
         isValid = true;
     }
 
-
-    public Symbol(String token, SymbolType type){
-      this(token);
-      this.type = type;
+    public Symbol(String token, SymbolType type) {
+        this(token);
+        this.type = type;
     }
 
-    public void addDefinitionLine(int line){
+    public void addDefinitionLine(int line) {
         linesDefined.add(line);
     }
 
@@ -48,8 +43,7 @@ public class Symbol {
         this.type = type;
     }
 
-
-    public List<Integer> getDefinitionLines(){
+    public List<Integer> getDefinitionLines() {
         return linesDefined;
     }
 
@@ -65,91 +59,76 @@ public class Symbol {
         return type;
     }
 
-    public void addDependency(Symbol symbol){
+    public void addDependency(Symbol symbol) {
         dependencies.add(symbol);
 
     }
 
-    public void addDependencies(Collection<Symbol> symbols){
-        for(Symbol symb: symbols){
+    public void addDependencies(Collection<Symbol> symbols) {
+        for (Symbol symb : symbols) {
             addDependency(symb);
         }
     }
-
-
 
     public String getToken() {
         return token;
     }
 
-
-    public boolean hasType(){
-        return getType()!=SymbolType.UNDETERMINED;
+    public boolean hasType() {
+        return getType() != SymbolType.UNDETERMINED;
     }
 
-    public void addIndexLine(List<Symbol> indexLine){
+    public void addIndexLine(List<Symbol> indexLine) {
 
         int sizeDiff = indexLine.size() - indexes.size();
-        if(sizeDiff>0)
-            for(int i=0;i<sizeDiff;i++)
+        if (sizeDiff > 0)
+            for (int i = 0; i < sizeDiff; i++)
                 indexes.add(new ArrayList<>());
 
-
-        for(int i = 0; i<indexLine.size();i++){
+        for (int i = 0; i < indexLine.size(); i++) {
             Symbol index = indexLine.get(i);
             indexes.get(i).add(index);
         }
 
-
     }
 
-
-
-    public List<List<Symbol>> getIndexes(){
+    public List<List<Symbol>> getIndexes() {
         return indexes;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Symbol)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Symbol))
+            return false;
         Symbol symbol = (Symbol) o;
-        return getToken().equals(symbol.getToken()) &&
-                linesDefined.equals(symbol.linesDefined) &&
-                getIndexes().equals(symbol.getIndexes()) &&
-                getModules().equals(symbol.getModules()) &&
-                getUnits().equals(symbol.getUnits()) &&
-                getComment().equals(symbol.getComment()) &&
-                getDependencies().equals(symbol.getDependencies()) &&
-                getType() == symbol.getType() &&
-                getCategory().equals(symbol.getCategory());
+        return getToken().equals(symbol.getToken()) && linesDefined.equals(symbol.linesDefined)
+                && getIndexes().equals(symbol.getIndexes()) && getModules().equals(symbol.getModules())
+                && getUnits().equals(symbol.getUnits()) && getComment().equals(symbol.getComment())
+                && getDependencies().equals(symbol.getDependencies()) && getType() == symbol.getType()
+                && getCategory().equals(symbol.getCategory());
     }
 
     @Override
     public String toString() {
-        return "Symbol{" +
-                "token='" + token + '\'' +
-                ", linesDefined=" + linesDefined +
-                ", indexes=" + indexes+
-                ", modules=" + modules +
-                ", units='" + units + '\'' +
-                ", comment='" + comment + '\'' +
-                ", dependencies=" + dependencies.stream().map(Symbol::getToken).collect(Collectors.toList()) +
-                ", type=" + type +
-                ", category='" + category + '\'' +
-                '}';
+        return "Symbol{" + "token='" + token + '\'' + ", linesDefined=" + linesDefined + ", indexes=" + indexes
+                + ", modules=" + modules + ", units='" + units + '\'' + ", comment='" + comment + '\''
+                + ", dependencies=" + dependencies.stream().map(Symbol::getToken).collect(Collectors.toList())
+                + ", type=" + type + ", category='" + category + '\'' + '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getToken(), linesDefined, getIndexes(), getModules(), getUnits(), getComment(), getType(), getCategory());
+        return Objects.hash(getToken(), linesDefined, getIndexes(), getModules(), getUnits(), getComment(), getType(),
+                getCategory());
     }
 
     public void setUnits(String units) {
         this.units = units.strip();
     }
 
-    public void setComment(String comment){
+    public void setComment(String comment) {
         this.comment = comment.strip();
     }
 
@@ -165,7 +144,7 @@ public class Symbol {
         this.category = category;
     }
 
-    public String getCategory(){
+    public String getCategory() {
         return category;
     }
 
@@ -173,7 +152,7 @@ public class Symbol {
         return modules;
     }
 
-    public void addModule(String module){
+    public void addModule(String module) {
         modules.add(module.trim());
     }
 
@@ -185,7 +164,7 @@ public class Symbol {
         this.dependencies = dependencies;
     }
 
-    public void setAsInvalid(){
+    public void setAsInvalid() {
         isValid = false;
     }
 

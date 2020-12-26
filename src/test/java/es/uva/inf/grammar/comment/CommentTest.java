@@ -11,7 +11,7 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import es.uva.inf.grammar.Comment;
+import es.uva.inf.tfg.formatters.Comment;
 
 public class CommentTest {
 

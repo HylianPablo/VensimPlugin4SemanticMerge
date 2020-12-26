@@ -1,10 +1,9 @@
-package es.uva.inf.grammar.parser;
+package es.uva.inf.tfg.parser;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class SymbolTable {
-
 
     private Map<String, Symbol> table;
 
@@ -12,58 +11,54 @@ public class SymbolTable {
         this.table = new HashMap<>();
     }
 
-
-    public Symbol getSymbol(String token){
-        if(table.containsKey(token)) {
+    public Symbol getSymbol(String token) {
+        if (table.containsKey(token)) {
             return table.get(token);
-        }else
+        } else
             throw new IllegalArgumentException("Token " + token + " not found");
     }
 
-
-
-    public Collection<Symbol> getSymbols(){
-        List<Symbol> symbols =  new ArrayList<>(table.values());
+    public Collection<Symbol> getSymbols() {
+        List<Symbol> symbols = new ArrayList<>(table.values());
         symbols.sort(Comparator.comparing(Symbol::getToken));
         return symbols;
     }
 
-
-    public boolean hasSymbol(String token){
+    public boolean hasSymbol(String token) {
         return table.containsKey(token);
     }
-
 
     /**
      * @return Symbols that have type SymbolType.UNDETERMINED or SymbolType.UNDETERMINED_FUNCTION
      */
-    public Set<Symbol> getUndeterminedSymbols(){
+    public Set<Symbol> getUndeterminedSymbols() {
 
-        return getSymbols().stream().filter(symbol -> symbol.getType()==SymbolType.UNDETERMINED || symbol.getType()==SymbolType.UNDETERMINED_FUNCTION).collect(Collectors.toSet());
+        return getSymbols().stream().filter(symbol -> symbol.getType() == SymbolType.UNDETERMINED
+                || symbol.getType() == SymbolType.UNDETERMINED_FUNCTION).collect(Collectors.toSet());
     }
 
     public Symbol addSymbol(Symbol symbol) {
         String token = symbol.getToken().trim();
 
-        if(hasSymbol(token))
-            throw new IllegalArgumentException("The symbol:  "+ token+ " already exists.");
+        if (hasSymbol(token))
+            throw new IllegalArgumentException("The symbol:  " + token + " already exists.");
 
-        table.put(token,symbol);
+        table.put(token, symbol);
         return symbol;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof SymbolTable)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof SymbolTable))
+            return false;
         SymbolTable table1 = (SymbolTable) o;
         return table.equals(table1.table);
     }
 
     @Override
     public String toString() {
-        return "SymbolTable{" +
-                "table=" + table +
-                '}';
+        return "SymbolTable{" + "table=" + table + '}';
     }
 }

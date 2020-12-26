@@ -1,21 +1,18 @@
-package es.uva.inf.grammar.parser.visitors;
+package es.uva.inf.tfg.parser.visitors;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.antlr.v4.runtime.misc.Interval;
-
-import es.uva.inf.grammar.parser.ModelParser;
+import es.uva.inf.tfg.utils.UtilFunctions;
+import es.uva.inf.tfg.parser.ModelParser;
 
 public class EquationsVisitor {
 
@@ -58,8 +55,8 @@ public class EquationsVisitor {
             BufferedReader reader = new BufferedReader(new FileReader(input));
             reader.readLine();// UTF-8
 
-            ArrayList<Boolean> isMacroList = checkForMacros(input);
-            ArrayList<Boolean> newLinesInEquation = checkForNewLines(input);
+            ArrayList<Boolean> isMacroList = UtilFunctions.checkForMacros(input);
+            ArrayList<Boolean> newLinesInEquation = UtilFunctions.checkForNewLines(input);
 
             int indexOfEquations = 0;
             int indexOfMacros = 0;
@@ -200,48 +197,9 @@ public class EquationsVisitor {
             fw.close();
             reader.close();
             locationSpanStartEq++; // Because TIMESTEP ends one line earlier due to footerSpan
-        } catch (Exception ex) {
-            System.err.println("Error en el visitor de las ecuaciones");
-        }
-    }
-
-    private ArrayList<Boolean> checkForMacros(String input) {
-        ArrayList<Boolean> array = new ArrayList<>();
-        try {
-            String text = new String(Files.readAllBytes(Paths.get(input)), StandardCharsets.UTF_8);
-            String[] noControl = text.split("\\\\\\---", 2);
-            String[] equations = noControl[0].split("\\|");
-            for (int i = 0; i < equations.length; i++) {
-                array.add(equations[i].indexOf(":MACRO:") != -1);
-            }
-            for (int i = 0; i < 4; i++) { // TIME STEP equations
-                array.add(false);
-            }
         } catch (IOException ex) {
             ex.printStackTrace();
+            System.err.println("Error on equations visitor: " + ex.getMessage());
         }
-        return array;
-    }
-
-    private ArrayList<Boolean> checkForNewLines(String input) {
-        ArrayList<Boolean> array = new ArrayList<>();
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(input));
-            String line;
-            while (true) {
-                line = reader.readLine();
-                if (line.indexOf("\t.Control") != -1) {
-                    break;
-                } else if (line.indexOf("|") != -1) {
-                    String nextLine = reader.readLine();
-                    array.add(nextLine.isBlank());
-                }
-            }
-
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return array;
     }
 }

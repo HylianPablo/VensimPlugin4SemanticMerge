@@ -1,15 +1,16 @@
-package es.uva.inf.grammar.parser.visitors;
+package es.uva.inf.tfg.parser.visitors;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
 import org.antlr.v4.runtime.misc.Interval;
-
-import es.uva.inf.grammar.parser.ModelParser;
+import es.uva.inf.tfg.utils.UtilFunctions;
+import es.uva.inf.tfg.parser.ModelParser;
 
 public class SketchesVisitor {
 
@@ -44,7 +45,7 @@ public class SketchesVisitor {
 
             List<ModelParser.ViewInfoContext> viewInfoList = ctx.model().sketchesGraphsAndMetadata().sketches()
                     .viewInfo();
-            int graphsLastLine = linesUntilText(text, "///---\\\\\\");
+            int graphsLastLine = UtilFunctions.linesUntilText(text, "///---\\\\\\");
             fw.write("  - type : sketches\r\n");
             fw.write("    name : sketches\r\n");
             fw.write("    locationSpan : {start: [" + (locationSpanStartEq) + ", 0], end: [" + (graphsLastLine + 1)
@@ -70,9 +71,7 @@ public class SketchesVisitor {
                 fw.write("      headerSpan : [" + initCharEq + ", " + (initCharEq + 67 + 16) + "]\r\n");
                 initCharEq += 16;
                 initCharEq += 68;
-                String[] viewCharsNewLines = viewChars[0].split("\n");
-                String[] singleViewChars = text.split("\\<\\[VIEW END\\]\\>", 2);
-                int indexViewEnd = ordinalIndexOf(text, "<[VIEW END]>", i);
+                int indexViewEnd = UtilFunctions.ordinalIndexOf(text, "<[VIEW END]>", i);
                 fw.write("      footerSpan : [" + (indexViewEnd) + ", " + (indexViewEnd + 13) + "]\r\n");
                 int viewSettingsChars = viewInfoList.get(i).viewName().getText().length() + 2;
                 viewSettingsChars += viewInfoList.get(i).versionCode().getText().length() + 2;
@@ -146,7 +145,7 @@ public class SketchesVisitor {
                             initCharEq += 2;
                             viewVariablesIndex++;
                         } else {
-                            int commaCounter = contarCaracteres(
+                            int commaCounter = UtilFunctions.countCharacters(
                                     viewVariablesList.get(viewVariablesIndex).visualInfo().getText(), ',');
                             if (commaCounter == -1) {
                                 commaCounter = 0;
@@ -179,39 +178,9 @@ public class SketchesVisitor {
             initCharEq += 25;
             fw.flush();
             fw.close();
-        } catch (Exception ex) {
-            System.err.println("Error en el visitor de sketches");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            System.err.println("Error on sketches visitor: " + ex.getMessage());
         }
-    }
-
-    private int linesUntilText(String text, String line) {
-        String[] lines = text.split("\n");
-        for (int i = 0; i < lines.length; i++) {
-            if (lines[i].contains(line)) {
-                return (i + 1);
-            }
-        }
-        return -1;
-    }
-
-    private int ordinalIndexOf(String str, String substr, int n) {
-        int pos = -1;
-        do {
-            pos = str.indexOf(substr, pos + 1);
-        } while (n-- > 0 && pos != -1);
-        return pos;
-    }
-
-    //método para calcular el número de veces que se repite un carácter en un String
-    public static int contarCaracteres(String cadena, char caracter) {
-        int posicion, contador = 0;
-        //se busca la primera vez que aparece
-        posicion = cadena.indexOf(caracter);
-        while (posicion != -1) { //mientras se encuentre el caracter
-            contador++; //se cuenta
-            //se sigue buscando a partir de la posición siguiente a la encontrada                                 
-            posicion = cadena.indexOf(caracter, posicion + 1);
-        }
-        return contador;
     }
 }

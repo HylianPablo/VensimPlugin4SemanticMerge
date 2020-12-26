@@ -1,4 +1,4 @@
-package es.uva.inf.grammar.parser.visitors;
+package es.uva.inf.tfg.parser.visitors;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -8,8 +8,8 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import org.antlr.v4.runtime.misc.Interval;
-
-import es.uva.inf.grammar.parser.ModelParser;
+import es.uva.inf.tfg.utils.UtilFunctions;
+import es.uva.inf.tfg.parser.ModelParser;
 
 public class GraphsMetadataVisitor {
 
@@ -46,7 +46,7 @@ public class GraphsMetadataVisitor {
             boolean graphsExists = false;
             if (!ctx.model().sketchesGraphsAndMetadata().graphsGroup().graphs().isEmpty()) {
                 graphsExists = true;
-                int metadataLastLine = linesUntilText(text, ":L<%^E!@");
+                int metadataLastLine = UtilFunctions.linesUntilText(text, ":L<%^E!@");
                 List<ModelParser.GraphsContext> graphsList = ctx.model().sketchesGraphsAndMetadata().graphsGroup()
                         .graphs();
                 // Divides text in metadata, and then gets number of newlines
@@ -62,7 +62,6 @@ public class GraphsMetadataVisitor {
                 initCharEq += 17;
                 // Divides text in metadata
                 String[] graphChars = text.split(":L\\<%\\^E\\!@", 2);
-                String[] graphCharsNewLines = graphChars[0].split("\n");
                 fw.write("    footerSpan : [" + (graphChars[0].length() - 15) + ", " + (graphChars[0].length() - 1)
                         + "]\r\n"); // \r
                 fw.write("    children:\r\n");
@@ -138,18 +137,9 @@ public class GraphsMetadataVisitor {
             }
             fw.flush();
             fw.close();
-        } catch (Exception e) {
-            System.err.println("Error en graphs y metadata.");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.err.println("Error on graphs and metedata visitor: " + ex.getMessage());
         }
-    }
-
-    private int linesUntilText(String text, String line) {
-        String[] lines = text.split("\n");
-        for (int i = 0; i < lines.length; i++) {
-            if (lines[i].contains(line)) {
-                return (i + 1);
-            }
-        }
-        return -1;
     }
 }

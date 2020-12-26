@@ -13,8 +13,9 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.junit.jupiter.api.Test;
 
-import es.uva.inf.grammar.parser.ModelLexer;
-import es.uva.inf.grammar.parser.ModelParser;
+import es.uva.inf.tfg.parser.ModelLexer;
+import es.uva.inf.tfg.parser.ModelParser;
+import es.uva.inf.tfg.parser.visitors.MainVisitor;
 
 public class TestEvalVisitor {
 
@@ -26,7 +27,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/BunnyFormat.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test1EvalVisitor.yml");
             visitor.visit(tree);
@@ -61,7 +62,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/examplesFormat.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test2EvalVisitor.yml");
             visitor.visit(tree);
@@ -95,7 +96,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/Lookup_multi_Format.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test3EvalVisitor.yml");
             visitor.visit(tree);
@@ -129,7 +130,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/test_lookups_Format.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test4EvalVisitor.yml");
             visitor.visit(tree);
@@ -163,7 +164,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/test_macro_Format.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test5EvalVisitor.yml");
             visitor.visit(tree);
@@ -198,7 +199,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/notTimeStepFormat.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test6EvalVisitor.yml");
             visitor.visit(tree);
@@ -233,7 +234,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/constraintFormat.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test7EvalVisitor.yml");
             visitor.visit(tree);
@@ -267,7 +268,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/unchangeableConstantFormat.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test8EvalVisitor.yml");
             visitor.visit(tree);
@@ -301,7 +302,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/dataEquationFormat.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test9EvalVisitor.yml");
             visitor.visit(tree);
@@ -335,7 +336,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/fallingRockFormat.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test10EvalVisitor.yml");
             visitor.visit(tree);
@@ -370,7 +371,7 @@ public class TestEvalVisitor {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            EvalVisitor visitor = new EvalVisitor();
+            MainVisitor visitor = new MainVisitor();
             visitor.setInput("Formatted/sociologyFormat.mdl");
             visitor.setOutput("outputs/evalVisitorTest/test11EvalVisitor.yml");
             visitor.visit(tree);

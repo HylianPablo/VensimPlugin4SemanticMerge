@@ -1,11 +1,11 @@
-package es.uva.inf.grammar;
-
-import es.uva.inf.grammar.parser.*;
-import es.uva.inf.grammar.parser.visitors.*;
+package es.uva.inf.tfg;
 
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.antlr.v4.runtime.tree.ParseTree;
+
+import es.uva.inf.tfg.parser.*;
+import es.uva.inf.tfg.parser.visitors.*;
 
 //import es.uva.inf.grammar.utilities.JsonSymbolTableBuilder;
 //import es.uva.inf.grammar.utilities.SymbolTableGenerator;
@@ -124,7 +124,7 @@ public class Main {
              * frame.setVisible(true);
              */
 
-            EvalVisitor evalVisitor = new EvalVisitor();
+            MainVisitor evalVisitor = new MainVisitor();
             evalVisitor.setInput(module);
             evalVisitor.setOutput(output);
             evalVisitor.visit(tree);

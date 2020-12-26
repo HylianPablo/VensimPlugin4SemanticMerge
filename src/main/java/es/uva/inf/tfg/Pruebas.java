@@ -1,4 +1,4 @@
-package es.uva.inf.grammar;
+package es.uva.inf.tfg;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -14,8 +14,9 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import es.uva.inf.grammar.parser.*;
-import es.uva.inf.grammar.parser.visitors.EvalVisitor;
+import es.uva.inf.tfg.formatters.*;
+import es.uva.inf.tfg.parser.*;
+import es.uva.inf.tfg.parser.visitors.MainVisitor;
 
 public class Pruebas {
    public static void main(String args[]) {
@@ -41,7 +42,7 @@ public class Pruebas {
          ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
          ParseTree tree = parser.file();
 
-         EvalVisitor visitor = new EvalVisitor();
+         MainVisitor visitor = new MainVisitor();
          visitor.setInput("Formatted/BunnyFormat.mdl");
          visitor.setOutput("OUT.yaml");
          visitor.visit(tree);
