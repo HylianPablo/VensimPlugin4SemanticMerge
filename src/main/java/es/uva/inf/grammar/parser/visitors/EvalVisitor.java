@@ -84,8 +84,13 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             fw.write("    headerSpan : [0, 8]\r\n"); // Assuming file will always start with {UTF-8}
             fw.write("    footerSpan : [" + (equationsFooter - 1) + ", " + (equationsFooter) + "]\r\n"); //antes +2+3
             fw.write("    children :\r\n");
+            fw.flush();
             int locationSpanStartEq = 2; // Assuming there is always an encoding line {UTF-8}
             int initCharEq = 9; // Assuming there is always an encoding line {UTF-8}
+            EquationsVisitor equationsVisitor = new EquationsVisitor(ctx, initCharEq, locationSpanStartEq, input,
+                    output);
+            equationsVisitor.visit();
+            /*
             BufferedReader reader = new BufferedReader(new FileReader(input));
             reader.readLine();// UTF-8
             for (int i = 0; i < (equations.size() + macrosListLen); i++) {
@@ -197,21 +202,21 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     equationNewLines--;
                     endColumnLocationSpan = 4; // \r \n
                 }
-                /* MACRO ADJUSTMENTS */
+                /* MACRO ADJUSTMENTS /
                 if (typeName.equals("macro")) {
                     equationNewLines--;
                     endColumnLocationSpan = equation.split("\r\n")[equationNewLines].length() + 2; // \r \n
                     endCharEq = equation.length() + 1;
                 }
-
+            
                 fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: ["
                         + (locationSpanStartEq + equationNewLines + extraLocationSpan) + ", " + endColumnLocationSpan
                         + "]}\r\n"); // It will always end in '\r \n'
                 locationSpanStartEq = locationSpanStartEq + equationNewLines + 1;
-
+            
                 fw.write("      span : [" + initCharEq + ", " + (endCharEq + initCharEq + extraCharsEq) + "]\r\n");
                 initCharEq = initCharEq + endCharEq + 1; // +1 to get into next line
-
+            
                 locationSpanStartEq += extraLocationSpan;
                 extraLocationSpan = 0;
                 initCharEq += extraCharsEq;
@@ -220,7 +225,17 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             }
             reader.close();
             locationSpanStartEq++; // Because TIMESTEP ends one line earlier due to footerSpan
+            */
 
+            initCharEq = equationsVisitor.getInitCharEq();
+            locationSpanStartEq = equationsVisitor.getLocationSpanStartEq();
+
+            SketchesVisitor sketchesVisitor = new SketchesVisitor(ctx, initCharEq, locationSpanStartEq, input, output);
+            sketchesVisitor.visit();
+            initCharEq = sketchesVisitor.getInitCharEq();
+            locationSpanStartEq = sketchesVisitor.getLocationSpanStartEq();
+
+            /*
             List<ModelParser.ViewInfoContext> viewInfoList = ctx.model().sketchesGraphsAndMetadata().sketches()
                     .viewInfo();
             int graphsLastLine = linesUntilText(text, "///---\\\\\\");
@@ -265,7 +280,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 locationSpanStartEq += 3;
                 fw.write("        span : [" + initCharEq + ", " + (initCharEq + viewSettingsChars - 1) + "]\r\n");
                 initCharEq += viewSettingsChars;
-
+            
                 List<ModelParser.ViewVariableContext> viewVariablesList = viewInfoList.get(i).viewVariables()
                         .viewVariable();
                 List<ModelParser.ArrowContext> arrowsList = viewInfoList.get(i).viewVariables().arrow();
@@ -345,7 +360,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                             initCharEq += 2;
                             initCharEq += commaCounter;
                             viewVariablesIndex++;
-
+            
                         }
                     }
                 }
@@ -356,6 +371,15 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
             }
             locationSpanStartEq += 3;
             initCharEq += 25;
+            */
+
+            GraphsMetadataVisitor graphsMetadataVisitor = new GraphsMetadataVisitor(ctx, initCharEq,
+                    locationSpanStartEq, input, output, lastLine);
+            graphsMetadataVisitor.visit();
+            initCharEq = graphsMetadataVisitor.getInitCharEq();
+            locationSpanStartEq = graphsMetadataVisitor.getLocationSpanStartEq();
+
+            /*
             boolean graphsExists = false;
             if (!ctx.model().sketchesGraphsAndMetadata().graphsGroup().graphs().isEmpty()) {
                 graphsExists = true;
@@ -413,14 +437,14 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                     if (i == graphsList.size() - 1) {
                         initCharEq += 15; //GRAPH END
                     }
-
+            
                 }
             }
             int metadataHeaderPlus = 10;
             if (!graphsExists) {
                 metadataHeaderPlus = 42; //chars from graphs delimiter
             }
-
+            
             locationSpanStartEq += 2;
             fw.write("  - type : metadata\r\n");
             fw.write("    name : metadata\r\n");
@@ -449,7 +473,7 @@ public class EvalVisitor extends ModelBaseVisitor<String> {
                 initCharEq += metadataLines.get(i).getText().length();
                 initCharEq += 2;
             }
-
+            */
             fw.close();
         } catch (IOException ex) {
             ex.printStackTrace();

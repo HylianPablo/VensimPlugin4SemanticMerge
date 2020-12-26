@@ -3,10 +3,7 @@ package es.uva.inf.grammar.parser.visitors;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.MessageFormat;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
