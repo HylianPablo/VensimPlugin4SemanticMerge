@@ -1,4 +1,4 @@
-package es.uva.inf.grammar.comment;
+package es.uva.inf.tfg.comment;
 
 import static org.junit.jupiter.api.Assertions.*;
 
