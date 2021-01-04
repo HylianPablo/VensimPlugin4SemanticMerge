@@ -42,8 +42,7 @@ public class TestEvalVisitor {
             br.close();
             assertEquals("", result);
 
-            /*
-            Process process = Runtime.getRuntime()
+            /*Process process = Runtime.getRuntime()
                     .exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"
                             + " --source=Formatted/BunnyFormat.mdl --destination=Formatted/BunnyFormat.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""
                             + " --virtualmachine=\"C:\\Program Files\\Java\\jdk-11.0.8\\bin\\java.exe\"");

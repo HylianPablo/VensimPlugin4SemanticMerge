@@ -86,7 +86,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>es.uva.inf.grammar.Main</mainClass>
+            <mainClass>es.uva.inf.tfg.Main</mainClass>
           </manifest>
         </archive>
       </configuration>
@@ -120,7 +120,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                       <manifest>
-                        <mainClass>es.uva.inf.grammar.Main</mainClass>
+                        <mainClass>es.uva.inf.tfg.Main</mainClass>
                       </manifest>
                     </archive>
 
@@ -141,11 +141,11 @@
           <artifactId>antlr4-maven-plugin</artifactId>
           <version>4.8</version>
           <configuration>
-                <sourceDirectory>${basedir}/src/main/antlr4/es/uva/inf/grammar/</sourceDirectory>
-                <outputDirectory>src/main/java/es/uva/inf/grammar/parser/</outputDirectory>
+                <sourceDirectory>${basedir}/src/main/antlr4/es/uva/inf/tfg/</sourceDirectory>
+                <outputDirectory>src/main/java/es/uva/inf/tfg/parser/</outputDirectory>
                 <arguments>
                   <argument>-package</argument>
-                  <argument>es.uva.inf.grammar.parser</argument>
+                  <argument>es.uva.inf.tfg.parser</argument>
                   <argument>-no-listener</argument>
                   <argument>-visitor</argument>
                 </arguments>
