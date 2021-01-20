@@ -73,6 +73,8 @@ TIME STEP  = 0.25
 	~	The time step for the simulation.
 	|
 
+<[VIEWS START]>
+<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *View 1
@@ -109,7 +111,10 @@ G3
 10,30,TIME STEP,393,478,70,12,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,31,init h,481,144,15,8,8,3,0,0,0,0,0,0
 1,32,31,1,0,0,0,0,0,64,1,-1--1--1,,1|(456,143)|
+<[VIEW END]>
 ///---\\\
+<[VIEWS END]>
+<[GRAPH START]>
 :GRAPH G1
 :TITLE Falling Body (m)
 :X-AXIS Time
@@ -143,6 +148,7 @@ G3
 :Y-MIN -100
 :Y-MAX 100
 :LINE-WIDTH 2
+<[GRAPH END]>
 :L<%^E!@
 9:Current
 23:0
