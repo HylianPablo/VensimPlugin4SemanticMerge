@@ -6,9 +6,11 @@ import javax.swing.*;
 
 import java.awt.Dimension;
 import java.awt.event.*;
+import java.awt.Color;
+
 import javax.swing.filechooser.*;
 
-public class GUI extends JFrame implements ActionListener {
+public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
     /**
      *
@@ -20,7 +22,7 @@ public class GUI extends JFrame implements ActionListener {
     private String filePath;
 
     // a default constructor 
-    GUI() {
+    DelimiterEraserGUI() {
         filePath = "";
     }
 
@@ -43,7 +45,7 @@ public class GUI extends JFrame implements ActionListener {
         JButton openButton = new JButton("Open file");
 
         // make an object of the class filechooser 
-        GUI f1 = new GUI();
+        DelimiterEraserGUI f1 = new DelimiterEraserGUI();
 
         // add action listener to the button to capture user 
         // response on buttons 
@@ -81,8 +83,9 @@ public class GUI extends JFrame implements ActionListener {
         if (com.equals("Process")) {
             String[] arg = new String[2];
             arg[0] = filePath;
-            arg[1] = filePath + "GUI";
             NoDelimiters.main(arg);
+            l.setForeground(Color.green);
+            l.setText("Operation successful.");
         }
 
         // if the user presses the open dialog show the open dialog 
@@ -98,13 +101,21 @@ public class GUI extends JFrame implements ActionListener {
 
             {
                 // set the label to the path of the selected file
-                String path[] = j.getSelectedFile().getAbsolutePath().split("\\\\");
-                l.setText(path[path.length - 1]);
-                filePath = j.getSelectedFile().getAbsolutePath();
+                if (j.getSelectedFile().getAbsolutePath().contains(".mdl")) {
+                    String path[] = j.getSelectedFile().getAbsolutePath().split("\\\\");
+                    l.setForeground(Color.black);
+                    l.setText(path[path.length - 1]);
+                    filePath = j.getSelectedFile().getAbsolutePath();
+                } else {
+                    l.setForeground(Color.red);
+                    l.setText("File selected is not a Vensim file.");
+                }
             }
             // if the user cancelled the operation 
-            else
+            else {
+                l.setForeground(Color.red);
                 l.setText("The user cancelled the operation");
+            }
         }
     }
 }

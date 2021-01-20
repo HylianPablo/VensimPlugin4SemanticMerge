@@ -34,7 +34,7 @@ public class Delimiter {
         String[] viewsSeparated = views.split(viewDelimiter);
 
         try {
-            FileWriter writer = new FileWriter(outputName);
+            FileWriter writer = new FileWriter(outputName, false);
             writer.write(equation);
             writer.write("<[VIEWS START]>\r\n");
             //writer.write(viewDelimiter);

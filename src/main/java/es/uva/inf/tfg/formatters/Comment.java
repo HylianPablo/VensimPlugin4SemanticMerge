@@ -16,6 +16,11 @@ public class Comment {
     public static void main(String args[]) throws IOException {
         try {
             String text = new String(Files.readAllBytes(Paths.get(args[0])), StandardCharsets.UTF_8);
+            String[] fileName = args[0].split("\\.");
+            String backUpName = fileName[0] + "backup.2mdl";
+            FileWriter writerBackup = new FileWriter(backUpName, false);
+            writerBackup.write(text);
+            writerBackup.close();
             String viewsDelimiter = "aaa---///";
             viewsDelimiter = viewsDelimiter.replaceAll("a", "\\\\");
             String[] p1 = text.split(viewsDelimiter, 2);
@@ -149,7 +154,7 @@ public class Comment {
 
     public static void writeFile(String commentModified, String viewDelimiter, String lastPart, String outputName) {
         try {
-            FileWriter writer = new FileWriter(outputName);
+            FileWriter writer = new FileWriter(outputName, false);
             writer.write(commentModified);
             writer.write(viewDelimiter);
             writer.write(lastPart);

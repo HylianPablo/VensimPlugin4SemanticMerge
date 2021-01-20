@@ -12,9 +12,14 @@ public class NoDelimiters {
         try {
             String text = new String(Files.readAllBytes(Paths.get(args[0])), StandardCharsets.UTF_8);
             String[] newlines = text.split("\r\n");
-            String outputName = args[1];
+            String[] fileName = args[0].split("\\.");
+            String backUpName = fileName[0] + ".2mdl";
+            FileWriter writerBackup = new FileWriter(backUpName, false);
+            writerBackup.write(text);
+            writerBackup.close();
+            String outputName = args[0];
             //String outputName = "out.txt";
-            FileWriter writer = new FileWriter(outputName);
+            FileWriter writer = new FileWriter(outputName, false);
             for (int i = 0; i < newlines.length; i++) {
                 if (!newlines[i].contains("<[VIEWS START]>") && !newlines[i].contains("<[VIEW START]>")
                         && !newlines[i].contains("<[VIEW END]>") && !newlines[i].contains("<[VIEWS END]>")

@@ -41,10 +41,13 @@ competition=
 	~	 [0.0002,0.0003,1e-05]
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
-pprofilePopulation:
-	ptypePop, ppriorityPop, pwidthPop, pextraPop
-	~	
-	~		|
+Afforestation_program_2020_W:INTERPOLATE::=
+	GET_DIRECT_DATA('/model_parameters/land_and_water/land_and_water.xlsx', 'World_land'\
+		, 'time_afforestation_index', 'Afforestation_program')
+	~	MtC/Year
+	~	Annual carbon uptake from global afforestation program to be started in \
+		2020 following [Nilsson 1995].
+	|
 
 ********************************************************
 	.Control
