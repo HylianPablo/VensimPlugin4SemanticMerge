@@ -83,11 +83,16 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
         String com = evt.getActionCommand();
 
         if (com.equals("Process")) {
-            String[] arg = new String[2];
-            arg[0] = filePath;
-            ComDel.main(arg);
-            l.setForeground(Color.green);
-            l.setText("Operation successful.");
+            if (!filePath.equals("")) {
+                String[] arg = new String[2];
+                arg[0] = filePath;
+                ComDel.main(arg);
+                l.setForeground(Color.green);
+                l.setText("Operation successful.");
+            } else {
+                l.setForeground(Color.red);
+                l.setText("Please, select a file.");
+            }
         }
 
         // if the user presses the open dialog show the open dialog 

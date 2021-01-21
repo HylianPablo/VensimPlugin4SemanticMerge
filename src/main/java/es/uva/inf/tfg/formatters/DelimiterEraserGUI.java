@@ -57,7 +57,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         //p.setLayout(null);
 
         // set the label to its initial value 
-        l = new JLabel("no file selected", SwingConstants.CENTER);
+        l = new JLabel("No file selected.", SwingConstants.CENTER);
         Dimension size = l.getPreferredSize();
         l.setBounds(50, 80, 300, size.height);
 
@@ -81,11 +81,17 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         String com = evt.getActionCommand();
 
         if (com.equals("Process")) {
-            String[] arg = new String[2];
-            arg[0] = filePath;
-            NoDelimiters.main(arg);
-            l.setForeground(Color.green);
-            l.setText("Operation successful.");
+            if (!filePath.equals("")) {
+                String[] arg = new String[2];
+                arg[0] = filePath;
+                NoDelimiters.main(arg);
+                l.setForeground(Color.green);
+                l.setText("Operation successful.");
+            } else {
+                l.setForeground(Color.red);
+                l.setText("Please, select a file.");
+
+            }
         }
 
         // if the user presses the open dialog show the open dialog 

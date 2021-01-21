@@ -14,9 +14,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import org.antlr.v4.gui.TreeViewer;
 
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -25,9 +22,6 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -61,51 +55,8 @@ public class Main {
 
     private static void parseFile(String input, String output, int n) {
         try {
-            /*
-            String commentFile;
-            if (n == 1) {
-                commentFile = "modFile1.mdl";
-            } else {
-                commentFile = "modFile2.mdl";
-            }
-            String[] argsComment = new String[2];
-            argsComment[0] = input;
-            argsComment[1] = commentFile;
-            Comment.main(argsComment);
-            
-            String delimitedFile;
-            if (n == 1) {
-                delimitedFile = "modDelFile1.mdl";
-            } else {
-                delimitedFile = "modDelFile2.mdl";
-            }
-            String[] argsDelimiter = new String[2];
-            argsDelimiter[0] = commentFile;
-            argsDelimiter[1] = delimitedFile;
-            Delimiter.main(argsDelimiter);
-            
-            String module = delimitedFile;
-            */
             String module = input;
             String content = new String(Files.readAllBytes(Paths.get(module)), StandardCharsets.UTF_8);
-            /*
-             * JsonSymbolTableBuilder jsonBuilder = new JsonSymbolTableBuilder();
-             * 
-             * ModelParser.FileContext root = getParseTree(content);
-             * 
-             * SymbolTable table = SymbolTableGenerator.getSymbolTable(root);
-             * jsonBuilder.addSymbolTable(module, table);
-             * 
-             * SymbolTable dbTable = null;
-             * 
-             * VensimVisitorContext visitorContext = new VensimVisitorContext(root, table,
-             * dbTable);
-             * 
-             * generateJsonOutput(jsonBuilder);
-             */
-            /*
-             * for(Symbol symbol:table.getSymbols()){ System.out.println(symbol); }
-             */
 
             CharStream charstream = CharStreams.fromFileName(module);
             ModelLexer lexer = new ModelLexer(charstream);
@@ -134,21 +85,6 @@ public class Main {
             ex.printStackTrace();
         }
     }
-    /*
-    protected static void generateJsonOutput(JsonSymbolTableBuilder jsonBuilder) {
-        JsonArray symbolTable = jsonBuilder.build();
-    
-        try {
-    
-            File file = new File("symbolTable.json");
-            JsonWriter writer = Json.createWriter(new FileOutputStream(file));
-            writer.writeArray(symbolTable);
-            writer.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    
-    }^*/
 
     protected static ModelParser.FileContext getParseTree(String file_content) {
         ModelLexer lexer = new ModelLexer(CharStreams.fromString(file_content));
