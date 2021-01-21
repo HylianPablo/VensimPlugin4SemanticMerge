@@ -9,7 +9,7 @@ birf rate 0=
 	~	 [0,1,0.001]
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
-bunnies= INTEG (
+bunniesChanged= INTEG (
 	bunnification,
 		2)
 	~	
