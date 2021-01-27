@@ -7,9 +7,6 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import es.uva.inf.tfg.parser.*;
 import es.uva.inf.tfg.parser.visitors.*;
 
-//import es.uva.inf.grammar.utilities.JsonSymbolTableBuilder;
-//import es.uva.inf.grammar.utilities.SymbolTableGenerator;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import org.antlr.v4.gui.TreeViewer;
@@ -56,7 +53,6 @@ public class Main {
     private static void parseFile(String input, String output, int n) {
         try {
             String module = input;
-            String content = new String(Files.readAllBytes(Paths.get(module)), StandardCharsets.UTF_8);
 
             CharStream charstream = CharStreams.fromFileName(module);
             ModelLexer lexer = new ModelLexer(charstream);
@@ -86,14 +82,4 @@ public class Main {
         }
     }
 
-    protected static ModelParser.FileContext getParseTree(String file_content) {
-        ModelLexer lexer = new ModelLexer(CharStreams.fromString(file_content));
-
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        ModelParser parser = new ModelParser(tokens);
-        parser.removeErrorListeners();
-        parser.addErrorListener(new VensimErrorListener());
-
-        return parser.file();
-    }
 }
