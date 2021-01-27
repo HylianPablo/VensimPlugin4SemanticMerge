@@ -2,44 +2,44 @@
 birf rate=
 	0.5
 	~	 [0,1,0.001]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 birf rate 0=
 	0.5
 	~	 [0,1,0.001]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 bunnies= INTEG (
 	bunnification,
 		2)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 bunnies 0= INTEG (
 	bunnification 0,
 		2)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 bunnification=
 	birf rate*bunnies*(1-bunnies/carrying capacity)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 bunnification 0=
 	birf rate 0*bunnies 0 - competition*bunnies 0*(bunnies 0-1)/2
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 carrying capacity=
 	1000
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 competition=
 	0.0002
 	~	 [0.0002,0.0003,1e-05]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~		|
 
 pprofilePopulation:
 	ptypePop, ppriorityPop, pwidthPop, pextraPop
@@ -73,8 +73,6 @@ TIME STEP  = 0.25
 	~	The time step for the simulation.
 	|
 
-<[VIEWS START]>
-<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *View 1
@@ -103,10 +101,7 @@ Money
 1,21,13,18,1,0,0,0,0,64,0,-1--1--1,,1|(-11,77)|
 10,22,competition,10,124,62,11,8,131,0,0,0,0,0,0
 1,23,22,18,1,0,0,0,0,64,0,-1--1--1,,1|(-50,97)|
-<[VIEW END]>
 ///---\\\
-<[VIEWS END]>
-<[GRAPH START]>
 :GRAPH Money
 :TITLE population
 :X-AXIS Time
@@ -117,7 +112,6 @@ Money
 :LINE-WIDTH 2
 :VAR bunnies 0
 :LINE-WIDTH 2
-<[GRAPH END]>
 :L<%^E!@
 1:Current.vdf
 9:Current

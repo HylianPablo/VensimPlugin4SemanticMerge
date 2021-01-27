@@ -15,7 +15,6 @@ import org.junit.jupiter.api.Test;
 
 import es.uva.inf.tfg.parser.ModelLexer;
 import es.uva.inf.tfg.parser.ModelParser;
-import es.uva.inf.tfg.parser.visitors.MainVisitor;
 
 public class TestEvalVisitor {
 

@@ -17,7 +17,7 @@ public class Comment {
         try {
             String text = new String(Files.readAllBytes(Paths.get(args[0])), StandardCharsets.UTF_8);
             String[] fileName = args[0].split("\\.");
-            String backUpName = fileName[0] + "backup.2mdl";
+            String backUpName = fileName[0] + ".2mdl";
             FileWriter writerBackup = new FileWriter(backUpName, false);
             writerBackup.write(text);
             writerBackup.close();

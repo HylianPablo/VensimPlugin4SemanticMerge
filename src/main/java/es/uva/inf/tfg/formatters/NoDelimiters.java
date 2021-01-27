@@ -13,7 +13,7 @@ public class NoDelimiters {
             String text = new String(Files.readAllBytes(Paths.get(args[0])), StandardCharsets.UTF_8);
             String[] newlines = text.split("\r\n");
             String[] fileName = args[0].split("\\.");
-            String backUpName = fileName[0] + ".2mdl";
+            String backUpName = fileName[0] + "Delimiter.2mdl";
             FileWriter writerBackup = new FileWriter(backUpName, false);
             writerBackup.write(text);
             writerBackup.close();

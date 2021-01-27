@@ -41,10 +41,7 @@ competition=
 	~	 [0.0002,0.0003,1e-05]
 	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
-pprofilePopulation:
-	ptypePop, ppriorityPop, pwidthPop, pextraPop
-	~	
-	~		|
+productivity_is_positive :THE CONDITION: firstVariable[subscript]>100 :IMPLIES: secondVariable<100 ~~|
 
 ********************************************************
 	.Control

@@ -35,12 +35,12 @@ bunnification 0=
 	~	
 	~		|
 
-carrying capacity=
+carrying capacity[example]=
 	1000
 	~	
 	~		|
 
-competition mod=
+competition_mod=
 	0.0002
 	~	 [0.0002,0.0003,1e-05]
 	~		|
@@ -123,7 +123,7 @@ Money
 72:0
 73:0
 4:Time
-5:birf rate
+5:competition mod
 76:0
 77:0
 78:0
