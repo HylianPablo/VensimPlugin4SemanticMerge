@@ -1,45 +1,59 @@
 {UTF-8}
+Nueva  = A FUNCTION OF( competition)
+	~	
+	~<[VIEW]>: View 2 <[DESCRIPTION]>:		|
+
+bunnification 0  = A FUNCTION OF( birf rate 0,bunnies 0) ~~<[VIEW]>: View 1 <[DESCRIPTION]>:|
+bunnification 0=
+	birf rate 0*bunnies 0 - competition*bunnies 0*(bunnies 0-1)/2
+	~	
+	~	<[VIEW]>: View 1 <[DESCRIPTION]>:
+	|
+
+competition  = A FUNCTION OF( Nueva) ~~<[VIEW]>: View 2 <[DESCRIPTION]>:|
+competition=
+	0.0002
+	~	 [0.0002,0.0003,1e-05]
+	~	<[VIEW]>: View 1 <[DESCRIPTION]>:
+	|
+
 birf rate=
 	0.5
 	~	 [0,1,0.001]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 1 <[DESCRIPTION]>:
+	|
 
 birf rate 0=
 	0.5
 	~	 [0,1,0.001]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 1 <[DESCRIPTION]>:
+	|
 
-bunnies= INTEG (
+bunniesChanged= INTEG (
 	bunnification,
-		2)
+		29999)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 1 <[DESCRIPTION]>: esto es una descripcion
+	|
 
 bunnies 0= INTEG (
 	bunnification 0,
 		2)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 1 <[DESCRIPTION]>:
+	|
 
 bunnification=
-	birf rate*bunnies*(1-bunnies/carrying capacity)
+	birf rate*bunniesChanged*(1-bunniesChanged/carrying capacity)
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
-
-bunnification 0=
-	birf rate 0*bunnies 0 - competition*bunnies 0*(bunnies 0-1)/2
-	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 1 <[DESCRIPTION]>:
+	|
 
 carrying capacity=
 	1000
 	~	
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
-
-competition=
-	0.0002
-	~	 [0.0002,0.0003,1e-05]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 1 <[DESCRIPTION]>:
+	|
 
 ********************************************************
 	.Control
@@ -74,16 +88,16 @@ TIME STEP  = 0.25
 V300  Do not put anything below this section - it will be ignored
 *View 1
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,150,0
-10,1,bunnies,204,56,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,1,bunniesChanged,204,56,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
 12,2,48,33,59,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(137,59)|
-1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(70,59)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(69,59)|
 11,5,48,103,59,7,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,6,bunnification,103,77,72,11,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
 10,7,birf rate,61,196,27,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,8,7,6,0,0,0,0,0,64,0,-1--1--1,,1|(80,144)|
+1,8,7,6,0,0,0,0,0,64,0,-1--1--1,,1|(79,143)|
 1,9,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(169,108)|
-12,10,0,413,129,107,103,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+12,10,0,492,108,186,82,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Money
 10,11,carrying capacity,195,176,76,20,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,12,11,6,1,0,0,0,0,64,0,-1--1--1,,1|(117,135)|
@@ -94,10 +108,19 @@ Money
 11,17,48,112,245,7,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,18,bunnification 0,112,264,75,11,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
 10,19,birf rate 0,71,383,32,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,20,19,18,0,0,0,0,0,64,0,-1--1--1,,1|(90,330)|
+1,20,19,18,0,0,0,0,0,64,0,-1--1--1,,1|(88,330)|
 1,21,13,18,1,0,0,0,0,64,0,-1--1--1,,1|(177,295)|
-10,22,competition,205,357,83,15,8,131,0,0,0,0,0,0,0,0,0,0,0,0
-1,23,22,18,1,0,0,0,0,64,0,-1--1--1,,1|(125,321)|
+<[VIEW END]>
+<[VIEW START]>
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,150,0
+10,1,Nueva,196,163,22,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,competition,205,357,37,11,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,3,2,1,0,0,0,0,0,64,0,-1--1--1,,1|(200,266)|
+10,4,Nueva,298,204,31,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
+1,5,4,2,0,0,0,0,0,64,0,-1--1--1,,1|(255,274)|
 <[VIEW END]>
 ///---\\\
 <[VIEWS END]>
@@ -117,14 +140,14 @@ Money
 9:Current
 23:0
 15:0,0,0,0,0,0
-19:150,0
+19:150,1
 27:2,
 34:0,
 42:0
 72:0
 73:0
 4:Time
-5:carrying capacity
+5:competition
 76:0
 77:0
 78:0
