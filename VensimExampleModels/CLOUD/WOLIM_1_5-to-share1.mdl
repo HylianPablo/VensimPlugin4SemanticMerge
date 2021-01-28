@@ -12124,7 +12124,6 @@ Average_TPESpc_(without_trad_biomass)
 :Y-MIN 0
 :Y-MAX 1
 :L<%^E!@
-1:default-scenarios.vdf
 9:default-scenarios
 22:$,Dollar,Dollars,$s
 22:Hour,Hours
@@ -12139,6 +12138,9 @@ Average_TPESpc_(without_trad_biomass)
 19:5,63
 27:2,
 34:0,
+42:0
+72:0
+73:0
 4:Time
 5:'a' historical I-ELEC
 35:Date
@@ -12148,14 +12150,14 @@ Average_TPESpc_(without_trad_biomass)
 39:1
 40:0
 41:0
-42:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
 24:1990
 25:2050
 26:2050
-6:BAU
-6:GtC A2
-6:GtCO2e A1
-6:SCEN1
-6:SCEN2
-6:SCEN3
-6:SCEN4
+75:
+43:
