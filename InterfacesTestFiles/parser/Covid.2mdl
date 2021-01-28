@@ -482,7 +482,7 @@ INITIAL TIME  = 0
 	|
 
 SAVEPER  = 
-        TIME STEP 
+        TIME STEP
 	~	Month [0,?]
 	~	The frequency with which output is stored.
 	|
@@ -515,7 +515,7 @@ Dead frac of confirmed cases data:RAW::=
 
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
-*Main view
+*Main view changed
 $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 10,1,Susceptible,451,481,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
 10,2,Infected asympto,700,482,47,33,3,131,0,0,0,0,0,0,0,0,0,0,0,0
