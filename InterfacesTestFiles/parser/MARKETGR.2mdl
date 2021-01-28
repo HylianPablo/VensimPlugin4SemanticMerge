@@ -18,13 +18,13 @@ Backlog= INTEG (
 	Order Rate-Shipment Rate,
 		Initial Backlog)
 	~	Units
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The backlog of unfilled orders.
+	~	The backlog of unfilled orders.
 	|
 
 Book to Bill Ratio=
 	Order Rate/Shipment Rate
 	~	Dimensionless
-	~<[VIEW]>: Market <[DESCRIPTION]>:	The book to bill ratio is a common measure of the health of high-tech \
+	~	The book to bill ratio is a common measure of the health of high-tech \
 		companies.
 	|
 
@@ -32,7 +32,7 @@ Pressure to Expand Capacity=
 	Switch for Endogenous Pressure*(Delivery Delay Perceived by Company/Company Goal for Delivery Delay\
 		) + (1-Switch for Endogenous Pressure)*Exogenous Pressure for Expansion
 	~	Dimensionless
-	~<[VIEW]>: Capacity Acquisition <[DESCRIPTION]>:	Pressure to expand capacity arises when the perceived delivery delay is \
+	~	Pressure to expand capacity arises when the perceived delivery delay is \
 		greater than the firm's goal for delivery delay.  The Switch for \
 		Endogenous Pressure allows expansion pressure to be made exogenous for \
 		testing purposes.
@@ -42,34 +42,34 @@ Exogenous Delivery Delay=
 	Normal Delivery Delay*(1+STEP(0.5, 6) + STEP(-0.5, 18) + STEP(-0.5,60) + STEP(0.5,72\
 		))
 	~	Months
-	~<[VIEW]>: Market <[DESCRIPTION]>:	Exogenous delivery delay for model testing purposes.  Inclues a variety of \
+	~	Exogenous delivery delay for model testing purposes.  Inclues a variety of \
 		step inputs.
 	|
 
 Exogenous Order Rate=
 	600
 	~	Units/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Exogenous order rate for model testring.
+	~	Exogenous order rate for model testring.
 	|
 
 Exogenous Pressure for Expansion=
 	Normal Expansion Pressure*(1+STEP(0.25, 6) + STEP(-0.25, 30) + STEP(-0.25,60) + STEP\
 		(0.25,84))
 	~	Dimensionless
-	~<[VIEW]>: Capacity Acquisition <[DESCRIPTION]>:	Exogenous pressure for expansion is based on the normal value and adjusted \
+	~	Exogenous pressure for expansion is based on the normal value and adjusted \
 		by avariety of step functions for testing purposes.
 	|
 
 Exogenous Sales Effectiveness=
 	Normal Sales Effectiveness*(1+ STEP(-0.75, 60))
 	~	Units/(Month*Person)
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Exogenous sales effectiveness for model testing.  Includes a step input.
+	~	Exogenous sales effectiveness for model testing.  Includes a step input.
 	|
 
 Switch for Endogenous Sales Effectiveness=
 	1
 	~	Dimensionless
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	1 = Sales Effectiveness determined by delivery delay.
+	~	1 = Sales Effectiveness determined by delivery delay.
 		0 = Sales Effectiveness is exogenous for testing purposes.
 	|
 
@@ -77,20 +77,20 @@ Delivery Delay=
 	Switch for Endogenous Delivery Delay*(Backlog/Shipment Rate) +  (1-Switch for Endogenous Delivery Delay\
 		)*Exogenous Delivery Delay
 	~	Month
-	~<[VIEW]>: Market <[DESCRIPTION]>:	Delivery delay is the rato of backlog to shipments.  For model testing \
+	~	Delivery delay is the rato of backlog to shipments.  For model testing \
 		purposes, delivery delay can be set to an exogenous value.
 	|
 
 Initial Capacity=
 	500
 	~	Units/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Initial capacity is 500 units/month.
+	~	Initial capacity is 500 units/month.
 	|
 
 Switch for Capacity Constraint=
 	1
 	~	Dimensionless
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	1 = shipments determined by capacity and capacity utilization.  0 = \
+	~	1 = shipments determined by capacity and capacity utilization.  0 = \
 		shipments always equal desired production, which keeps the delivery delay \
 		constant at the normal value.
 	|
@@ -98,7 +98,7 @@ Switch for Capacity Constraint=
 Switch for Endogenous Delivery Delay=
 	1
 	~	Dimensionless
-	~<[VIEW]>: Market <[DESCRIPTION]>:	1 = delivery delay determined by backlog and shipments.   0 = delivery \
+	~	1 = delivery delay determined by backlog and shipments.   0 = delivery \
 		delay determined exogenously.
 	|
 
@@ -106,7 +106,7 @@ Shipment Rate=
 	Switch for Capacity Constraint*Capacity*Capacity Utilization+(1-Switch for Capacity Constraint\
 		)*Desired Production
 	~	Units/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Shipments can be constrained by capacity or set equal to the desired rate.  \
+	~	Shipments can be constrained by capacity or set equal to the desired rate.  \
 		Setting the Switch for Capacity Constraint to 1 means shipments are \
 		determined by capacity and capacity utilization.  When the switch is zero, \
 		shipments always equal the rate that keeps the delivery delay constant at \
@@ -117,7 +117,7 @@ Sales Effectiveness=
 	Switch for Endogenous Sales Effectiveness*(Normal Sales Effectiveness*Effect of Delivery Delay on Sales Effectiveness\
 		) + (1-Switch for Endogenous Sales Effectiveness)*Exogenous Sales Effectiveness
 	~	Units/Month/Person
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Sales effectiveness is determined by the delivery delay for the product \
+	~	Sales effectiveness is determined by the delivery delay for the product \
 		(when theSwitch for Endogenous Sales Effectiveness = 1).  Otherwise it is \
 		exogenous for model testing.
 	|
@@ -125,20 +125,20 @@ Sales Effectiveness=
 Switch for Endogenous Pressure=
 	1
 	~	Dimensionless
-	~<[VIEW]>: Capacity Acquisition <[DESCRIPTION]>:	1 = Expansion pressure determined by perceived delivery delay and the \
+	~	1 = Expansion pressure determined by perceived delivery delay and the \
 		delivery delay goal.  0 = exogenous expansion pressure.
 	|
 
 Initial Backlog=
 	1
 	~	Units
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The initial backlog is one unit.
+	~	The initial backlog is one unit.
 	|
 
 Switch for Endogenous Orders=
 	1
 	~	Dimensionless
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	1 = orders determined by sales force and sales effectiveness.  0 = orders \
+	~	1 = orders determined by sales force and sales effectiveness.  0 = orders \
 		are exogenous.
 	|
 
@@ -146,7 +146,7 @@ Order Rate=
 	Switch for Endogenous Orders*Sales Force*Sales Effectiveness+(1-Switch for Endogenous Orders\
 		)*Exogenous Order Rate
 	~	Units/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Orders are determined by the sales force and sales force effetiveness when \
+	~	Orders are determined by the sales force and sales force effetiveness when \
 		the Switch for Endogenous Orders = 1.  Setting the switch to 0 cuts the \
 		sales growth feedback for partial model testing purposes.
 	|
@@ -154,14 +154,14 @@ Order Rate=
 Normal Expansion Pressure=
 	1
 	~	Dimensionless
-	~<[VIEW]>: Capacity Acquisition <[DESCRIPTION]>:	Normal expansion pressure is one, indicating that current capacity is \
+	~	Normal expansion pressure is one, indicating that current capacity is \
 		adequate.
 	|
 
 Capacity=
 	SMOOTH3I(Desired Capacity,Capacity Acquisition Delay,Initial Capacity)
 	~	Units/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Production capacity adjusts to target capacity with an average lage given \
+	~	Production capacity adjusts to target capacity with an average lage given \
 		by the capacity acquisition time.  A third-order delay is assumed.  \
 		Expansion and contraction are symmetric, for simplicity.
 	|
@@ -169,21 +169,21 @@ Capacity=
 Capacity Acquisition Delay=
 	18
 	~	Months
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The average time required to alter capacity.  Symmetric for increases and \
+	~	The average time required to alter capacity.  Symmetric for increases and \
 		decreases.
 	|
 
 Capacity Utilization=
 	Table for Capacity Utilization(Desired Production/Capacity)
 	~	Dimensionless
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Capacity utilization is a function of the ratio of desired production to \
+	~	Capacity utilization is a function of the ratio of desired production to \
 		capacity.
 	|
 
 Change in Recent Revenue=
 	(Revenue - Recent Revenue)/Revenue Reporting Delay
 	~	$/Month/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Recent revenue adjusts via first-order smoothing to actual revenue.  The \
+	~	Recent revenue adjusts via first-order smoothing to actual revenue.  The \
 		reporting delay includes the time required for reporting and budget \
 		decision-making.
 	|
@@ -191,19 +191,19 @@ Change in Recent Revenue=
 Company Goal for Delivery Delay=
 	2
 	~	Months
-	~<[VIEW]>: Capacity Acquisition <[DESCRIPTION]>:	Senior management's goal for delivery delay.
+	~	Senior management's goal for delivery delay.
 	|
 
 Cost per Sales Representative=
 	8000
 	~	$/Month/Person
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The fully loaded cost per sales representative is $8000/month.
+	~	The fully loaded cost per sales representative is $8000/month.
 	|
 
 Delivery Delay Perceived by Company=
 	SMOOTH(Delivery Delay,Time for Company to Perceive Delivery Delay)
 	~	Month
-	~<[VIEW]>: Market <[DESCRIPTION]>:	The delivery delay recognized by the company lags behind true \
+	~	The delivery delay recognized by the company lags behind true \
 		availability.  First order smoothing is assumed.
 	|
 
@@ -211,7 +211,7 @@ Delivery Delay Perceived by Market=
 	SMOOTH(Delivery Delay Perceived by Company,Time for Market to Perceive Delivery Delay\
 		)
 	~	Months
-	~<[VIEW]>: Market <[DESCRIPTION]>:	The delivery delay perceived by the market lags behind the quotes given by \
+	~	The delivery delay perceived by the market lags behind the quotes given by \
 		the company, which in turn lag the true availability of the product.  \
 		First-order smoothing is assumed.
 	|
@@ -219,14 +219,14 @@ Delivery Delay Perceived by Market=
 Desired Capacity=
 	Capacity*Effect of Expansion Pressure on Desired Capacity
 	~	Units/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Desired capacity is anchored on current capacity, then adjusted up or down \
+	~	Desired capacity is anchored on current capacity, then adjusted up or down \
 		based on the pressure for expansion the firm recognizes.
 	|
 
 Desired Production=
 	Backlog/Normal Delivery Delay
 	~	Units/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Desired production (desired shipments) is the rate of shipments that keeps \
+	~	Desired production (desired shipments) is the rate of shipments that keeps \
 		delivery delay constant at the normal value.
 	|
 
@@ -234,7 +234,7 @@ Effect of Delivery Delay on Sales Effectiveness=
 	Table for Effect of Delivery Delay on Sales Effectiveness(Delivery Delay Perceived by Market\
 		/Market Target Delivery Delay)
 	~	Dimensionless
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The attractiveness of the firm's products depends on their availability.  \
+	~	The attractiveness of the firm's products depends on their availability.  \
 		Long delivery delays relative to the market norm erodes attractiveness.  \
 		Market norms for delivery delay represent the delivery delay available \
 		from other suppliers.
@@ -243,80 +243,80 @@ Effect of Delivery Delay on Sales Effectiveness=
 Effect of Expansion Pressure on Desired Capacity=
 	Table for Effect of Pressure on Desired Capacity(Pressure to Expand Capacity)
 	~	Dimensionless
-	~<[VIEW]>: Capacity Acquisition <[DESCRIPTION]>:	The effect of expansion pressure on desired capacity is a nonlinear \
+	~	The effect of expansion pressure on desired capacity is a nonlinear \
 		function of the pressure to expand capacity.
 	|
 
 Fraction of Revenue to Sales=
 	0.2
 	~	Dimensionless
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Twenty percent of the organization's budget is allocated to the sales \
+	~	Twenty percent of the organization's budget is allocated to the sales \
 		organization.
 	|
 
 Market Target Delivery Delay=
 	2
 	~	Months
-	~<[VIEW]>: Market <[DESCRIPTION]>:	The market norm for delivery delay, representing the lead time offered by \
+	~	The market norm for delivery delay, representing the lead time offered by \
 		competitors.
 	|
 
 Normal Sales Effectiveness=
 	10
 	~	Units/(Month*Person)
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The rate of sales booked per sales person per month when the availability \
+	~	The rate of sales booked per sales person per month when the availability \
 		of the product is normal.
 	|
 
 Price=
 	10000
 	~	$/Unit
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Average product price, assumed constant.
+	~	Average product price, assumed constant.
 	|
 
 Recent Revenue= INTEG (
 	Change in Recent Revenue,
 		Revenue)
 	~	$/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Recent revenue represents the firm's budgeting process.
+	~	Recent revenue represents the firm's budgeting process.
 	|
 
 Revenue=
 	Price*Shipment Rate
 	~	$/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Revenue is recognized when product is shipped.
+	~	Revenue is recognized when product is shipped.
 	|
 
 Revenue Reporting Delay=
 	3
 	~	Months
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	A one quarter-year delay is assumed in the budgeting process.
+	~	A one quarter-year delay is assumed in the budgeting process.
 	|
 
 Sales Budget=
 	Recent Revenue*Fraction of Revenue to Sales
 	~	$/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The sales organization gets a fraction of recent revenue.
+	~	The sales organization gets a fraction of recent revenue.
 	|
 
 Sales Force= INTEG (
 	Sales Force Net Hiring Rate,
 		10)
 	~	People
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The firm's sales force is increased by net hiring.
+	~	The firm's sales force is increased by net hiring.
 	|
 
 Sales Force Adjustment Time=
 	18
 	~	Months
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	An average delay of 18 months is required to adjust the sales force to \
+	~	An average delay of 18 months is required to adjust the sales force to \
 		target levels.
 	|
 
 Sales Force Net Hiring Rate=
 	(Target Sales Force - Sales Force)/Sales Force Adjustment Time
 	~	People/Month
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Net hiring is modeled as a first-order adjustment to the target sales \
+	~	Net hiring is modeled as a first-order adjustment to the target sales \
 		force.  The sales force adjustment time represents the average time \
 		required to alter the sales force, including hiring and training delays.
 	|
@@ -325,7 +325,7 @@ Table for Capacity Utilization(
 	[(0,0)-(2,1.5)],(0,0),(0.25,0.35),(0.5,0.65),(0.75,0.85),(1,1),(1.25,1.1),(1.5,1.17)\
 		,(1.75,1.23),(2,1.25))
 	~	Dimensionless
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	Capacity utilization saturates 25% above normal, implying normal \
+	~	Capacity utilization saturates 25% above normal, implying normal \
 		utilization yields 80% of maximum output.
 	|
 
@@ -333,7 +333,7 @@ Table for Effect of Delivery Delay on Sales Effectiveness(
 	[(0,0)-(6,1.5)],(0,1.1),(0.5,1.07),(1,1),(1.5,0.9),(2,0.7),(2.5,0.4),(3,0.2),(3.5,0.1\
 		),(4,0.05),(4.5,0.02),(5,0))
 	~	Dimensionless
-	~<[VIEW]>: Market <[DESCRIPTION]>:	This function defines the attractiveness of the firm's products, and hence \
+	~	This function defines the attractiveness of the firm's products, and hence \
 		slaes effectiveness, as a function of the perceived delivery delay \
 		relative to the market norm for delivery delay.
 	|
@@ -342,7 +342,7 @@ Table for Effect of Pressure on Desired Capacity(
 	[(0,0)-(6,2.5)],(0,0.3),(0.5,0.75),(1,1),(1.5,1.2),(2,1.4),(2.5,1.6),(3,1.8),(3.5,2)\
 		,(4,2.1),(4.5,2.17),(5,2.2))
 	~	Dimensionless
-	~<[VIEW]>: Capacity Acquisition <[DESCRIPTION]>:	This function defines how desired capacity varies relative to current \
+	~	This function defines how desired capacity varies relative to current \
 		capacity.  High pressure increases desired capacity above current levels, \
 		but eventually saturates.
 	|
@@ -350,13 +350,13 @@ Table for Effect of Pressure on Desired Capacity(
 Normal Delivery Delay=
 	2
 	~	Months
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The normal time required to process, produce, and deliver an order.
+	~	The normal time required to process, produce, and deliver an order.
 	|
 
 Target Sales Force=
 	Sales Budget/Cost per Sales Representative
 	~	People
-	~<[VIEW]>: Sales Force <[DESCRIPTION]>:	The target sales force is determined by the sales organization's budget \
+	~	The target sales force is determined by the sales organization's budget \
 		and the cost per sales representative, including all overhead, benefits, \
 		and other administrative costs.
 	|
@@ -364,14 +364,14 @@ Target Sales Force=
 Time for Company to Perceive Delivery Delay=
 	3
 	~	Months
-	~<[VIEW]>: Market <[DESCRIPTION]>:	The average delay for the company to perceive the delivery delay for the \
+	~	The average delay for the company to perceive the delivery delay for the \
 		product.
 	|
 
 Time for Market to Perceive Delivery Delay=
 	12
 	~	Months
-	~<[VIEW]>: Market <[DESCRIPTION]>:	The time required for the market to perceive the delivery delay for the \
+	~	The time required for the market to perceive the delivery delay for the \
 		firm's products.
 	|
 
@@ -402,8 +402,6 @@ TIME STEP  = 0.25
 	~	The time step for the simulation.
 	|
 
-<[VIEWS START]>
-<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Sales Force
@@ -493,8 +491,6 @@ Sales Growth
 1,81,80,18,0,1,0,0,0,0,0,-1--1--1,,1|(904,158)|
 10,82,Switch for Endogenous Sales Effectiveness,822,202,59,28,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
 1,83,82,18,0,1,0,0,0,0,0,-1--1--1,,1|(843,162)|
-<[VIEW END]>
-<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Market
@@ -564,8 +560,6 @@ Availability
 10,61,Exogenous Sales Effectiveness,355,45,58,22,8,3,0,0,0,0,0,0
 1,62,61,12,1,0,0,0,0,64,0,-1--1--1,,1|(433,132)|
 1,63,40,61,1,0,0,0,0,0,0,-1--1--1,,1|(418,39)|
-<[VIEW END]>
-<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Production
@@ -634,8 +628,6 @@ Order Fulfillment
 1,60,59,22,0,1,0,0,0,0,0,-1--1--1,,1|(595,126)|
 10,61,Switch for Endogenous Sales Effectiveness,673,39,65,30,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12|B|128-128-128
 1,62,61,22,0,1,0,0,0,0,0,-1--1--1,,1|(576,73)|
-<[VIEW END]>
-<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Capacity Acquisition
@@ -710,11 +702,7 @@ Capacity Goal
 1,64,61,28,1,0,0,0,0,64,0,-1--1--1,,1|(814,408)|
 10,65,Normal Expansion Pressure,921,504,41,31,8,3,0,0,-1,0,0,0
 1,66,65,62,0,0,0,0,0,0,0,-1--1--1,,1|(869,487)|
-<[VIEW END]>
 ///---\\\
-<[VIEWS END]>
-<[GRAPH START]>
-<[GRAPH END]>
 :L<%^E!@
 9:current
 22:Month,Months
