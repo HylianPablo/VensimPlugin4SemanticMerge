@@ -1,7 +1,7 @@
 {UTF-8}
 Avg time on ventilator
 	~	 [0,300000,10000]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Ability of ventilator to reduce fatality CAMBIOS=
@@ -13,73 +13,73 @@ Ability of ventilator to reduce fatality CAMBIOS=
 Adult ventilator capacity=
 	120000
 	~	popn [0,300000,10000]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:	60k active + some frac of 100k storage
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:	60k active + some frac of 100k storage
 	|
 
 Assessment time for containment=
 	3
 	~	months [0,12,0.5]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Basic reproduction number=
 	ZIDZ(New infections,Infected) * (Incubation period+Time to recovery or death)
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Becoming symptomatic=
 	Infected asympto/Incubation period
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Confirmed current cases=
 	Infected asympto*Testing of asymptos + Infected sympto*Testing of symptos
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Confirmed frac of past infections=
 	XIDZ(Confirmed past cases,Past infections,Testing of symptos)
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Confirmed new cases=
 	Confirmed current cases/(Incubation period+Time to recovery or death)
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Confirmed past cases=
 	Dead + Recovered*Testing of symptos
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Contacts per asympto infected=
 	Contacts per asympto no soc dist * (1-Social distancing)
 	~	1/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Contacts per asympto no soc dist=
 	120
 	~	1/Month [50,150,5]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 100
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:	V1: 100
 	|
 
 Contacts per sympto infected=
 	Contacts per sympto no soc dist * (1-Social distancing)
 	~	1/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Contacts per sympto no soc dist=
 	Contacts per asympto no soc dist * Reltv contacts per sympto
 	~	1/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Containment measures=
@@ -88,82 +88,82 @@ Containment measures=
 	Recent cases for 50pct containment measures
 	), 0)
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Cumul infect from overseas= INTEG (
 	Infections picked up overseas,
 		0)
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Cumulative cases for max testing=
 	45000
 	~	popn [0,100000,5000]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Cumulative confirmed cases=
 	Confirmed current cases + Confirmed past cases
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Cumulative hospitalized= INTEG (
 	Hospital admissions,
 		0)
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Current cases for 50pct social distancing=
 	200000
 	~	popn [0,1e+06,100000]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Dead= INTEG (
 	Fatalities,
 		0)
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Dead frac of confirmed cases=
 	ZIDZ(Dead, Cumulative confirmed cases)
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Dead frac of past infections=
 	ZIDZ(Dead, Past infections)
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Delay time in social distancing=
 	0.25
 	~	Month [0,1,0.125]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Delay time in testing=
 	0.25
 	~	Month [0,1,0.125]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Effect of vaccine on infection=
 	0.2
 	~	dmnl [0,1,0.05]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Effect of vaccine on infection probability=
 	IF THEN ELSE(Time<Time of vaccine availability, 1, Effect of vaccine on infection)
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Fatal frac of sympto=
@@ -171,248 +171,248 @@ Fatal frac of sympto=
 		*Frac of hospitalized needing ventilator*(1 - Ability of ventilator to reduce fatality\
 		*Ventilator relative availability))
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Fatalities=
 	Recovery or death * Fatal frac of sympto
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Frac of hospitalized needing ventilator=
 	0.2
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Hospital admissions=
 	Becoming symptomatic * Severe frac of infected sympto * Hospitalized frac of severe
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Hospital bed capacity=
 	900000
 	~	popn [0,300000,10000]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Hospital bed utilization=
 	MIN(1, Hospitalized/Hospital bed capacity)
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Hospitalized=
 	Severe * Hospitalized frac of severe
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Hospitalized frac of severe=
 	1
 	~	dmnl [0,1,0.05]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Hospitalized needing ventilator=
 	Hospitalized * Frac of hospitalized needing ventilator * (Avg time on ventilator/Time to recovery or death\
 		)
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Incubation period=
 	0.25
 	~	months
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Infected=
 	Infected asympto + Infected sympto
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Infected asympto= INTEG (
 	New infections-Becoming symptomatic,
 		0)
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Infected sympto= INTEG (
 	Becoming symptomatic-Fatalities-Recoveries,
 		0)
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Infection probability per contact=
 	Infection probability per contact initial * Effect of vaccine on infection probability
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Infection probability per contact initial=
 	0.215
 	~	dmnl [0.1,0.3,0.005]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:	v1: .22
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:	v1: .22
 	|
 
 Infections picked up overseas=
 	Input series for infections picked up overseas(Time/unit month)
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Infectious contacts=
 	Infected sympto*Contacts per sympto infected + Infected asympto*Infectious frac of asymptos\
 		*Contacts per asympto infected
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Infectious contacts with susceptibles=
 	Infectious contacts * Susceptible fraction of popn * (1-Containment measures)
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Infectious frac of asymptos=
 	0.2
 	~	dmnl [0,100,5]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Input series for infections picked up overseas(
 	[(0,0)-(4,300)],(0,0),(0.5,0),(1.75,220),(3,0),(4,0))
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Lookup for containment measures(
 	[(0,0)-(3,1)],(0,0),(0.5,0.27),(1,0.5),(1.5,0.67),(2,0.8),(2.5,0.87),(3,0.9))
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Lookup for social distancing(
 	[(0,0)-(3,1)],(0,0),(0.5,0.27),(1,0.5),(1.5,0.67),(2,0.8),(2.5,0.87),(3,0.9))
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Lookup for testing(
 	[(0,0)-(1,1)],(0,0),(0.2,0.3),(0.4,0.55),(0.6,0.75),(0.8,0.9),(1,1))
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Max testing of symptos=
 	0.9
 	~	dmnl [0.3,1,0.05]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 New infections=
 	Infections picked up overseas + New infections domestic
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 New infections domestic=
 	Infectious contacts with susceptibles * Infection probability per contact
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Past infections=
 	Dead+Recovered
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Recent cases affecting containment=
 	SMOOTH(Confirmed new cases,Assessment time for containment) * Assessment time for containment
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Recent cases for 50pct containment measures=
 	400000
 	~	popn [0,2e+06,100000]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 300000
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:	V1: 300000
 	|
 
 Recovered= INTEG (
 	Recoveries,
 		0)
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Recoveries=
 	Recovery or death * (1-Fatal frac of sympto)
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Recovery or death=
 	Infected sympto/Time to recovery or death
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Reltv contacts per sympto=
 	0.5
 	~	dmnl [0,1,0.05]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Reltv testing of asymptos=
 	0.15
 	~	dmnl [0,1,0.05]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Severe=
 	Infected sympto * Severe frac of infected sympto
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Severe frac of infected sympto=
 	0.145
 	~	dmnl [0,0.3,0.005]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Social distancing=
 	Lookup for social distancing(SMOOTH(Confirmed current cases/Current cases for 50pct social distancing\
 		,Delay time in social distancing))
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Susceptible= INTEG (
 	-New infections,
 		Total popn initial)
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Susceptible fraction of popn=
 	Susceptible/Total popn
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Testing of asymptos=
 	Reltv testing of asymptos * Testing of symptos
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Testing of symptos=
@@ -420,49 +420,49 @@ Testing of symptos=
 		(SMOOTHI(Cumulative confirmed cases
 	/Cumulative cases for max testing,Delay time in testing, 0))
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Testing of symptos initial=
 	0.18
 	~	dmnl [0,0.4,0.01]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 0.4
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:	V1: 0.4
 	|
 
 Time of vaccine availability=
 	15
 	~	Month [0,24,1]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Time to recovery or death=
 	0.25
 	~	months
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Total popn=
 	Total popn initial - Dead
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Total popn initial=
 	3.3e+08
 	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Ventilator relative availability=
 	MIN(1, XIDZ(Adult ventilator capacity,Hospitalized needing ventilator,1))
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 Ventilator utilization=
 	MIN(1, Hospitalized needing ventilator/Adult ventilator capacity)
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	~	<[VIEW]>: Main view changed <[DESCRIPTION]>:
 	|
 
 ********************************************************
@@ -482,7 +482,7 @@ INITIAL TIME  = 0
 	|
 
 SAVEPER  = 
-        TIME STEP 
+        TIME STEP
 	~	Month [0,?]
 	~	The frequency with which output is stored.
 	|
@@ -517,7 +517,7 @@ Dead frac of confirmed cases data:RAW::=
 <[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
-*Main view
+*Main view changed
 $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 10,1,Susceptible,451,481,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
 10,2,Infected asympto,700,482,47,33,3,131,0,0,0,0,0,0,0,0,0,0,0,0
