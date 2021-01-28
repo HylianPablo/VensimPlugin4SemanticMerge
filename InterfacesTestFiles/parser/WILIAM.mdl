@@ -1,5 +1,5 @@
 {UTF-8}
-"%_PHS_overcapacity_vs_potential"[REGIONS_I]=
+"%_PHS_overcapacity_vs_potential_CAMBIO"[REGIONS_I]=
 	IF_THEN_ELSE(-1+ZIDZ(Available_FE_elec_stored_PHS_TWh[REGIONS_I]*100 , max_potential_PHS_TWh\
 		[REGIONS_I])<100,100,-1+ZIDZ(Available_FE_elec_stored_PHS_TWh[REGIONS_I]*100 , max_potential_PHS_TWh\
 		[REGIONS_I]))
