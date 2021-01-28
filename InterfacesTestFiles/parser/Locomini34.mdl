@@ -23,12 +23,12 @@
 	~		|
 
 "Diet from income(R,d)"[Regions,Diet products]=
-	IF THEN ELSE(  "income to food per person (R)"[Regions]<Income diet1[Regions], Diet 1\
+	IF THEN ELSE(  "income to food per person (R)"[Regions]<Income diet1[Regions], Diet 11\
 		[Regions,Diet products],
 	
 	IF THEN ELSE( "income to food per person (R)"[Regions],
 	
-	Diet 1[Regions,Diet products]*(1-(("income to food per person (R)"[Regions]-Income diet1\
+	Diet 11[Regions,Diet products]*(1-(("income to food per person (R)"[Regions]-Income diet1\
 		[Regions])/(Income diet 2[Regions
 	]-Income diet1[Regions])))+   
 	
@@ -43,13 +43,15 @@
 vegetables to RES=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 cereals percent on arable= INTEG (
 	-cereals to pulses-cereals to RES-cereals to vegetables,
 		0)
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 "Land arable irrigated (R)"= INTEG (
 	arable to irrigated,
@@ -79,12 +81,14 @@ cereals percent on arable= INTEG (
 cereals to RES=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 cereals to vegetables=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 "Agrofood System Matrix(R,fr,d)"[Regions,Final Resources,Diet products]=
 	"Agrofood System Matrix Policy(R,fr,d)"[Regions,Final Resources,Diet products]*Share of change to Policy diet\
@@ -98,23 +102,27 @@ cereals to vegetables=
 arable to degraded=
 	0
 	~	
-	~<[VIEW]>: Land allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 arable to irrigated=
 	0
 	~	
-	~<[VIEW]>: Land allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 Arable to Urban Land=
 	0
 	~	Ha/Year
-	~<[VIEW]>: Land allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 RES electric percent on arable= INTEG (
 	cereals to RES+pulses to RES+vegetables to RES,
 		0)
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 "Land Urban (R)"[Regions]= INTEG (
 	Arable to Urban Land,
@@ -125,7 +133,8 @@ RES electric percent on arable= INTEG (
 Labor compensation[Regions]=
 	0.5
 	~	
-	~<[VIEW]>: Economy and Intensities <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Economy and Intensities <[DESCRIPTION]>:
+	|
 
 "Diet (R,d)"[Regions,Diet products]=
 	"Diet Policy(R,d)"[Regions,Diet products]*Share of change to Policy diet[Regions]+"Diet from income(R,d)"\
@@ -137,7 +146,8 @@ other percent on arable= INTEG (
 	0,
 		0)
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 "Land degraded (R)"= INTEG (
 	arable to degraded+forest to degraded+grassland to degraded,
@@ -148,7 +158,8 @@ other percent on arable= INTEG (
 cereals to pulses=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 "Land grassland (R)"[Regions]= INTEG (
 	Forest to Pastures Land-grassland to degraded,
@@ -160,37 +171,44 @@ pulses percent on arable= INTEG (
 	cereals to pulses-pulses to RES-pulses to vegetables,
 		0)
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 forest to degraded=
 	0
 	~	
-	~<[VIEW]>: Land allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 Forest to Pastures Land=
 	0
 	~	Ha/Year
-	~<[VIEW]>: Land allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 max percent cereals on arable=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 max percent pulses on arable=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 max percent vegetables on arable=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 decrement of quality of lands=
 	0
 	~	
-	~<[VIEW]>: Land allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 "growth Econ Demand expected (R,s)"[Regions,Sectors]=
 	0.002*"Econ Final Demand expected (R,s)"[Regions,Sectors]
@@ -204,13 +222,15 @@ Income diet 2[R1]=
 Income diet 2[R2]=
 	13
 	~	
-	~<[VIEW]>: Economy and Intensities <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Economy and Intensities <[DESCRIPTION]>:
+	|
 
 grassland to degraded= INTEG (
 	grassland to degraded,
 		0)
 	~	
-	~<[VIEW]>: Land allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 "Food Demand(R,d)"[Regions,Diet products]=
 	"Diet (R,d)"[Regions,Diet products]*"Population (R)"[Regions]*(1-"Food from Subsistence Agriculture(R)"\
@@ -222,14 +242,16 @@ grassland to degraded= INTEG (
 shortage of electricity=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 Income diet1[R1]=
 	20 ~~<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:|
 Income diet1[R2]=
 	8
 	~	
-	~<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:
+	|
 
 "Econ Final Demand expected (R,s)"[Regions,Sectors]= INTEG (
 	"growth Econ Demand expected (R,s)"[Regions,Sectors],
@@ -268,39 +290,46 @@ vegetables percent on arable= INTEG (
 	cereals to vegetables+pulses to vegetables-vegetables to RES,
 		0)
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 shortage of vegetables=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 shortage of cereals=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 Forest to Arable Land= INTEG (
 	Forest to Arable Land,
 		0)
 	~	Ha/Year
-	~<[VIEW]>: Land allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 pulses to vegetables=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 shortage of pulses=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 quatity of lands= INTEG (
 	-decrement of quality of lands,
 		0)
 	~	
-	~<[VIEW]>: Land allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 income of households[R1]=
 	Labor compensation[R1]*("Econ Final Demand expected (R,s)"[R1,s1industry]+"Econ Final Demand expected (R,s)"\
@@ -313,18 +342,21 @@ income of households[R2]=
 	[R2,s3agriculture]+"Econ Final Demand expected (R,s)"[R2,s4petrol]+"Econ Final Demand expected (R,s)"\
 		[R2,s5electric])
 	~	T$
-	~		|
+	~	<[VIEW]>: Economy and Intensities <[DESCRIPTION]>:
+	|
 
 pulses to RES=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 y[Primary Resources]= INTEG (
 	dydt[Primary Resources],
 		0)
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 "percention of shortage of primary resources for R1 (pr)"[Primary Resources]= INTEG (
 	increment perception shortage primaries[Primary Resources]
@@ -336,14 +368,16 @@ y[Primary Resources]= INTEG (
 dydt[Primary Resources]=
 	(1/0.5)*(u[Primary Resources]-y[Primary Resources])
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:	esto es para resolver el lazo algebraico es un sistema de primer orden de \
-		constante de tiempo (1/2) (a?os)
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:	esto es para resolver el \
+		lazo algebraico es un sistema de primer orden de constante de tiempo (1/2) \
+		(a?os)
 	|
 
 decrement perception shortage primaries[Primary Resources]=
 	"percention of shortage of primary resources for R1 (pr)"[Primary Resources]*(1/6)
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 "shortage of primary resources (pr)"[Primary Resources]=
 	ZIDZ( (primary resources demanded to global market[R1,Primary Resources]+primary resources demanded to global market\
@@ -366,20 +400,23 @@ decrement perception shortage primaries[Primary Resources]=
 increment perception shortage primaries[Primary Resources]=
 	"shortage of primary resources (pr)"[Primary Resources]*coefp0
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 u[Primary Resources]=
 	IF THEN ELSE( "abundance of primary resources(pr)"[Primary Resources]>0 , "abundance of primary resources(pr)"\
 		[Primary Resources
 	] , -"shortage of primary resources (pr)"[Primary Resources] )
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 y 0[Regions,Final Resources,Primary Resources]= INTEG (
 	dydt 0[Regions,Final Resources,Primary Resources],
 		0)
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 "abundance of primary resources(pr)"[Primary Resources]=
 	ZIDZ ("Primary Resources Available to Global Market(pr)"[Primary Resources]-primary resources demanded to global market regions agregated\
@@ -407,8 +444,9 @@ cereals to biomass shares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[cereals biomass,Final Resources]*(IF THEN \
-		ELSE( "excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[cereals biomass,Final Resources]*(IF THEN ELSE( \
+		"excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
 		annual share exchange*shares finals from p4cereals in R1[Final Resources]*(1-shares \
 		finals from p7biomass in R1[Final Resources
 		]),
@@ -444,8 +482,9 @@ cereals to pulses shares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[cereals pulses,Final Resources]*(IF THEN \
-		ELSE( "excedent of primary resources in R1 (pr)"[p5pulses]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[cereals pulses,Final Resources]*(IF THEN ELSE( "excedent \
+		of primary resources in R1 (pr)"[p5pulses]>0 ,
 		annual share exchange*shares finals from p4cereals in R1[Final Resources]*(1-shares \
 		finals from p5pulses in R1[Final Resources
 		]),
@@ -481,8 +520,9 @@ oil to biomass shares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[oil biomass,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[oil biomass,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p7biomass]>0 ,
 		annual share exchange*shares finals from p1oil in R1[Final Resources]*(1-shares \
 		finals from p7biomass in R1[Final Resources
 		]),
@@ -505,7 +545,8 @@ oil to biomass shares R2[Final Resources]=
 coeff share exchange R2=
 	0.02
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:
+	|
 
 oil to cereals shares R2[Final Resources]=
 	IF THEN ELSE( "posibility of share exchange R2 (ex,fr)"[oil cereals,Final Resources]\
@@ -523,8 +564,9 @@ oil to cereals shares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[oil cereals,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p4cereals]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[oil cereals,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p4cereals]>0 ,
 		annual share exchange*shares finals from p1oil in R1[Final Resources]*(1-shares \
 		finals from p4cereals in R1[Final Resources
 		]),
@@ -549,7 +591,8 @@ shares finals from p1oil in R2[Final Resources]= INTEG (
 		-oil to gas shares R2[Final Resources]-oil to pulses shares R2[Final Resources],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr) 0"[R2,p1oil,Final Resources])
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:
+	|
 
 "INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr) 0"[R1,Primary Resources,Final Resources\
 		]=
@@ -591,8 +634,9 @@ oil to pulses shares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[oil pulses,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p5pulses]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[oil pulses,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p5pulses]>0 ,
 		annual share exchange*shares finals from p1oil in R1[Final Resources]*(1-shares \
 		finals from p5pulses in R1[Final Resources
 		]),
@@ -618,7 +662,8 @@ shares finals from p4cereals in R2[Final Resources]= INTEG (
 		],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr) 0"[R2,p4cereals,Final Resources])
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:
+	|
 
 shares finals from p5pulses in R2[Final Resources]= INTEG (
 	cereals to pulses shares R2[Final Resources]+gas to pulses shares R2[Final Resources\
@@ -626,14 +671,16 @@ shares finals from p5pulses in R2[Final Resources]= INTEG (
 		],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr) 0"[R2,p5pulses,Final Resources])
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:
+	|
 
 dydt 0[Regions,Final Resources,Primary Resources]=
 	(1/0.5)*(u 0[Regions,Final Resources,Primary Resources]-y 0[Regions,Final Resources,\
 		Primary Resources])
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:	esto es para resolver el lazo algebraico es un sistema de primer orden de \
-		constante de tiempo (1/2) (a?os)
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:	esto es para resolver el \
+		lazo algebraico es un sistema de primer orden de constante de tiempo (1/2) \
+		(a?os)
 	|
 
 "shortage of primary resources by region (R,pr)"[R1,Primary Resources]=
@@ -665,8 +712,9 @@ gas to cereals shares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[gas cereals,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p4cereals]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[gas cereals,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p4cereals]>0 ,
 		annual share exchange*shares finals from p2gas in R1[Final Resources]*(1-shares \
 		finals from p4cereals in R1[Final Resources
 		]),
@@ -702,8 +750,9 @@ pulses to biomass shares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[pulses biomass,Final Resources]*(IF THEN \
-		ELSE( "excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[pulses biomass,Final Resources]*(IF THEN ELSE( "excedent \
+		of primary resources in R1 (pr)"[p7biomass]>0 ,
 		annual share exchange*shares finals from p5pulses in R1[Final Resources]*(1-shares \
 		finals from p7biomass in R1[Final Resources
 		]),
@@ -947,8 +996,9 @@ oil to gas shares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[oil gas,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p2gas]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[oil gas,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p2gas]>0 ,
 		annual share exchange*shares finals from p1oil in R1[Final Resources]*(1-shares \
 		finals from p2gas in R1[Final Resources
 		]),
@@ -1162,8 +1212,9 @@ gas to pulses shares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[gas pulses,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p5pulses]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[gas pulses,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p5pulses]>0 ,
 		annual share exchange*shares finals from p2gas in R1[Final Resources]*(1-shares \
 		finals from p5pulses in R1[Final Resources
 		]),
@@ -1199,8 +1250,9 @@ gas to biomass hares R2[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[gas biomass,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[gas biomass,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p7biomass]>0 ,
 		annual share exchange*shares finals from p2gas in R1[Final Resources]*(1-shares \
 		finals from p7biomass in R1[Final Resources
 		]),
@@ -1225,7 +1277,8 @@ shares finals from p2gas in R2[Final Resources]= INTEG (
 		[Final Resources]-gas to pulses shares R2[Final Resources],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr) 0"[R2,p2gas,Final Resources])
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:
+	|
 
 shares finals from p7biomass in R2[Final Resources]= INTEG (
 	cereals to biomass shares R2[Final Resources]+gas to biomass hares R2[Final Resources\
@@ -1233,19 +1286,14 @@ shares finals from p7biomass in R2[Final Resources]= INTEG (
 		],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr) 0"[R2,p7biomass,Final Resources])
 	~	
-	~<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:		|
-
-"cereals consumed by final in R2 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "cereals demanded by final in R2 (fr)"[Final Resources], "priorities for finals (fr)"\
-		[R2,Final Resources
-	] , ELMCOUNT(Final Resources) , 2, cereals allocated to R2)
-	~	
-	~		|
+	~	<[VIEW]>: Increments of shares F from P in R2 <[DESCRIPTION]>:
+	|
 
 increment perception shortage final resources R1[Regions,Final Resources]=
 	"shortage of final resources in global market (R,fr)"[Regions,Final Resources]
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 "cereals demanded by final in R2 (fr)"[Final Resources]=
 	"Final Resources Demanded to Global Market (R,fr)"[R2,Final Resources]*"shares final from primary resources (R,pr,fr)"\
@@ -1263,12 +1311,6 @@ increment perception shortage final resources R1[Regions,Final Resources]=
 	"final resources consumed from global market in R1 (fr)"[Final Resources] ~~|
 "final resources consumed from global market (R,fr)"[R2,Final Resources]=
 	"final resources consumed from global market in R2 (fr)"[Final Resources]
-	~	
-	~		|
-
-"oil consumed by final in R2 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "oil demanded by final in R2(fr)"[Final Resources] , "priorities for finals (fr)"\
-		[R2,Final Resources] , ELMCOUNT(Final Resources) , 2, oil allocated to R2 )
 	~	
 	~		|
 
@@ -1338,13 +1380,15 @@ increment perception shortage final resources R1[Regions,Final Resources]=
 priority of cereals food[Regions]=
 	1,1
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 INITIAL PERCEPTION SHORTAGE FINALS[Regions,Final Resources]=
 	0,0,0,0,0,0,0,0;
 	0,0,0,0,0,0,0,0;
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 "final resources demanded regions agregated (fr)"[Final Resources]=
 	"Final Resources Demanded (R,f)"[R1,Final Resources]+"Final Resources Demanded (R,f)"\
@@ -1355,42 +1399,18 @@ INITIAL PERCEPTION SHORTAGE FINALS[Regions,Final Resources]=
 priority of liquids[Regions]=
 	1,1
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 priority of pulses food[Regions]=
 	5,1
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
-
-"biomass consumed by final in R1 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "biomass demanded by final in R1(fr)"[Final Resources], "priorities for finals (fr)"\
-		[R1,Final Resources] , ELMCOUNT(Final Resources) , 2, biomass allocated to R1)
-	~	
-	~		|
-
-"biomass consumed by final in R2 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "biomass demanded by final in R2(fr)"[Final Resources], "priorities for finals (fr)"\
-		[R2,Final Resources
-	] , ELMCOUNT(Final Resources) , 2, biomass allocated to R2)
-	~	
-	~		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 "biomass demanded by final in R2(fr)"[Final Resources]=
 	"Final Resources Demanded to Global Market (R,fr)"[R2,Final Resources]*"shares final from primary resources (R,pr,fr)"\
 		[R2,p7biomass,Final Resources]
-	~	
-	~		|
-
-"pulses consumed by final in R1 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "pulses demanded by final in R1 (fr)"[Final Resources], "priorities for finals (fr)"\
-		[R1,Final Resources] , ELMCOUNT(Final Resources) , 2, pulses allocated to R1)
-	~	
-	~		|
-
-"pulses consumed by final in R2 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "pulses demanded by final in R2 (fr)"[Final Resources], "priorities for finals (fr)"\
-		[R2,Final Resources
-	] , ELMCOUNT(Final Resources) , 2, pulses allocated to R2)
 	~	
 	~		|
 
@@ -1406,35 +1426,11 @@ priority of pulses food[Regions]=
 	~	
 	~		|
 
-"cereals consumed by final in R1 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "cereals demanded by final in R1 (fr)"[Final Resources], "priorities for finals (fr)"\
-		[R1,Final Resources] , ELMCOUNT(Final Resources) , 2, cereals allocated to R1)
-	~	
-	~		|
-
 priority of gases[Regions]=
 	3,1
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
-
-"gas consumed by final in R1 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "gas demanded by final in R1(fr)"[Final Resources], "priorities for finals (fr)"\
-		[R1,Final Resources] , ELMCOUNT(Final Resources) , 2, gas allocated to R1 )
-	~	
-	~		|
-
-"gas consumed by final in R2 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "gas demanded by final in R2(fr)"[Final Resources], "priorities for finals (fr)"\
-		[R2,Final Resources
-	] , ELMCOUNT(Final Resources) , 2, gas allocated to R2 )
-	~	
-	~		|
-
-"oil consumed by final in R1 (fr)"[Final Resources]=
-	ALLOCATE BY PRIORITY( "oil demanded by final in R1(fr)"[Final Resources] , "priorities for finals (fr)"\
-		[R1,Final Resources] , ELMCOUNT(Final Resources) , 2, oil allocated to R1 )
-	~	
-	~		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 "gas demanded by final in R2(fr)"[Final Resources]=
 	"Final Resources Demanded to Global Market (R,fr)"[R2,Final Resources]*"shares final from primary resources (R,pr,fr)"\
@@ -1454,17 +1450,20 @@ priority of gases[Regions]=
 decrement perception shortage fnal resources R1[Regions,Final Resources]=
 	"perception of shortage final resources for R1(fr)"[Regions,Final Resources]*(1/6)
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 priority of wood[Regions]=
 	4,1
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 priority of electricity[Regions]=
 	1,1
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 "perception of shortage final resources for R1(fr)"[Regions,Final Resources]= INTEG (
 	increment perception shortage final resources R1[Regions,Final Resources]-decrement perception shortage fnal resources R1\
@@ -1476,27 +1475,32 @@ priority of electricity[Regions]=
 biomass allocated to R2=
 	"primary resources allocated to R2 (pr)"[p7biomass]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 oil allocated to R2=
 	"primary resources allocated to R2 (pr)"[p1oil]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 cereals allocated to R2=
 	"primary resources allocated to R2 (pr)"[p4cereals]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 pulses allocated to R2=
 	"primary resources allocated to R2 (pr)"[p5pulses]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 gas allocated to R2=
 	"primary resources allocated to R2 (pr)"[p2gas]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 oil to gas shares R1[Final Resources]=
 	IF THEN ELSE( "posibility of share exchange R1 (ex,fr)"[oil gas,Final Resources]=1 ,\
@@ -1514,8 +1518,9 @@ oil to gas shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[oil gas,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p2gas]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[oil gas,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p2gas]>0 ,
 		annual share exchange*shares finals from p1oil in R1[Final Resources]*(1-shares \
 		finals from p2gas in R1[Final Resources
 		]),
@@ -1550,8 +1555,9 @@ cereals to biomass shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[cereals biomass,Final Resources]*(IF THEN \
-		ELSE( "excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[cereals biomass,Final Resources]*(IF THEN ELSE( \
+		"excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
 		annual share exchange*shares finals from p4cereals in R1[Final Resources]*(1-shares \
 		finals from p7biomass in R1[Final Resources
 		]),
@@ -1587,8 +1593,9 @@ cereals to pulses shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[cereals pulses,Final Resources]*(IF THEN \
-		ELSE( "excedent of primary resources in R1 (pr)"[p5pulses]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[cereals pulses,Final Resources]*(IF THEN ELSE( "excedent \
+		of primary resources in R1 (pr)"[p5pulses]>0 ,
 		annual share exchange*shares finals from p4cereals in R1[Final Resources]*(1-shares \
 		finals from p5pulses in R1[Final Resources
 		]),
@@ -1624,8 +1631,9 @@ gas to pulses shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[gas pulses,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p5pulses]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[gas pulses,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p5pulses]>0 ,
 		annual share exchange*shares finals from p2gas in R1[Final Resources]*(1-shares \
 		finals from p5pulses in R1[Final Resources
 		]),
@@ -1661,8 +1669,9 @@ gas to cereals shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[gas cereals,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p4cereals]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[gas cereals,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p4cereals]>0 ,
 		annual share exchange*shares finals from p2gas in R1[Final Resources]*(1-shares \
 		finals from p4cereals in R1[Final Resources
 		]),
@@ -1701,14 +1710,16 @@ gas to cereals shares R1[Final Resources]=
 	"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)"[R2,Primary Resources,Final Resources\
 		]
 	~	
-	~		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 shares finals from p1oil in R1[Final Resources]= INTEG (
 	-oil to biomass shares R1[Final Resources]-oil to cereals shares R1[Final Resources]\
 		-oil to gas shares R1[Final Resources]-oil to pulses shares R1[Final Resources],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)"[R1,p1oil,Final Resources])
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 oil to biomass shares R1[Final Resources]=
 	IF THEN ELSE( "posibility of share exchange R1 (ex,fr)"[oil biomass,Final Resources]\
@@ -1726,8 +1737,9 @@ oil to biomass shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[oil biomass,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[oil biomass,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p7biomass]>0 ,
 		annual share exchange*shares finals from p1oil in R1[Final Resources]*(1-shares \
 		finals from p7biomass in R1[Final Resources
 		]),
@@ -1763,8 +1775,9 @@ oil to cereals shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[oil cereals,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p4cereals]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[oil cereals,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p4cereals]>0 ,
 		annual share exchange*shares finals from p1oil in R1[Final Resources]*(1-shares \
 		finals from p4cereals in R1[Final Resources
 		]),
@@ -1800,8 +1813,9 @@ oil to pulses shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[oil pulses,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p5pulses]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[oil pulses,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p5pulses]>0 ,
 		annual share exchange*shares finals from p1oil in R1[Final Resources]*(1-shares \
 		finals from p5pulses in R1[Final Resources
 		]),
@@ -1846,8 +1860,9 @@ gas to biomass shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[gas biomass,Final Resources]*(IF THEN ELSE( \
-		"excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[gas biomass,Final Resources]*(IF THEN ELSE( "excedent of \
+		primary resources in R1 (pr)"[p7biomass]>0 ,
 		annual share exchange*shares finals from p2gas in R1[Final Resources]*(1-shares \
 		finals from p7biomass in R1[Final Resources
 		]),
@@ -1883,8 +1898,9 @@ pulses to biomass shares R1[Final Resources]=
 	[Final Resources])
 	 )
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share exchange (ex,fr)"[pulses biomass,Final Resources]*(IF THEN \
-		ELSE( "excedent of primary resources in R1 (pr)"[p7biomass]>0 ,
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:	"posibility of share \
+		exchange (ex,fr)"[pulses biomass,Final Resources]*(IF THEN ELSE( "excedent \
+		of primary resources in R1 (pr)"[p7biomass]>0 ,
 		annual share exchange*shares finals from p5pulses in R1[Final Resources]*(1-shares \
 		finals from p7biomass in R1[Final Resources
 		]),
@@ -1909,7 +1925,8 @@ shares finals from p2gas in R1[Final Resources]= INTEG (
 		[Final Resources]-gas to pulses shares R1[Final Resources],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)"[R1,p2gas,Final Resources])
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:
+	|
 
 shares finals from p4cereals in R1[Final Resources]= INTEG (
 	gas to cereals shares R1[Final Resources]+oil to cereals shares R1[Final Resources]-\
@@ -1917,7 +1934,8 @@ shares finals from p4cereals in R1[Final Resources]= INTEG (
 		],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)"[R1,p4cereals,Final Resources])
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:
+	|
 
 shares finals from p5pulses in R1[Final Resources]= INTEG (
 	cereals to pulses shares R1[Final Resources]+gas to pulses shares R1[Final Resources\
@@ -1925,7 +1943,8 @@ shares finals from p5pulses in R1[Final Resources]= INTEG (
 		],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)"[R1,p5pulses,Final Resources])
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:
+	|
 
 shares finals from p7biomass in R1[Final Resources]= INTEG (
 	cereals to biomass shares R1[Final Resources]+gas to biomass shares R1[Final Resources\
@@ -1933,13 +1952,8 @@ shares finals from p7biomass in R1[Final Resources]= INTEG (
 		],
 		"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)"[R1,p7biomass,Final Resources])
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:		|
-
-exchanges:
-	oil gas,oil cereals,oil pulses,oil biomass,gas cereals, gas pulses, gas biomass, cereals pulses\
-		, cereals biomass, pulses biomass
-	~	
-	~		|
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:
+	|
 
 "primary resources allocated to R1 (pr)"[Primary Resources]=
 	"Primary Resources Allocated by country(R,pr)"[R1,Primary Resources]+"Primary Resources Available to Global Market(pr)"\
@@ -1950,17 +1964,20 @@ exchanges:
 coeff share exchange R1=
 	0.02
 	~	
-	~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:
+	|
 
 coefp0=
 	10
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 INITIAL PERCEPTION SHORTAGE PRIMARIES[Primary Resources]=
 	0,0,0,0,0,0,0
 	~	
-	~<[VIEW]>: Perception of shortage <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Perception of shortage <[DESCRIPTION]>:
+	|
 
 "added value of energy sectors expected (R)"[Regions]=
 	0
@@ -1983,21 +2000,11 @@ INITIAL PERCEPTION SHORTAGE PRIMARIES[Primary Resources]=
 	~	
 	~		|
 
-"Biomass Allocated in Global Market(R)"[Regions]=
-	ALLOCATE BY PRIORITY( "Biomass Demanded to Global Market(R)"[Regions], "Priorities of Resource Allocation by country (R)"
-	[Regions] , ELMCOUNT(Regions) , 1 , "Primary Resources Available to Global Market(pr)"\
-		[p7biomass] )
-	~	
-	~	ALLOCATE BY PRIORITY( "Biomass Demanded to Global Market(R)"[Regions], "Priorities \
-		of Resource Allocation in Global Market(R)"[Regions] , 4 , 1 , biomass \
-		available to global market )
-		ELMCOUNT
-	|
-
 biomass allocated to R1=
 	"primary resources allocated to R1 (pr)"[p7biomass]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 "biomass demanded by final in R1(fr)"[Final Resources]=
 	"Final Resources Demanded to Global Market (R,fr)"[R1,Final Resources]*"shares final from primary resources (R,pr,fr)"\
@@ -2014,7 +2021,8 @@ biomass allocated to R1=
 cereals allocated to R1=
 	"primary resources allocated to R1 (pr)"[p4cereals]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 "cereals demanded by final in R1 (fr)"[Final Resources]=
 	"Final Resources Demanded to Global Market (R,fr)"[R1,Final Resources]*"shares final from primary resources (R,pr,fr)"\
@@ -2049,7 +2057,8 @@ cereals allocated to R1=
 oil allocated to R1=
 	"primary resources allocated to R1 (pr)"[p1oil]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 "oil demanded by final in R1(fr)"[Final Resources]=
 	"Final Resources Demanded to Global Market (R,fr)"[R1,Final Resources]*"shares final from primary resources (R,pr,fr)"\
@@ -2061,12 +2070,14 @@ oil demanded by R1 all finals=
 	"oil demanded by final in R1(fr)"[f1liquids]+"oil demanded by final in R1(fr)"[f2gases\
 		]+"oil demanded by final in R1(fr)"[f3electricity]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 pulses allocated to R1=
 	"primary resources allocated to R1 (pr)"[p5pulses]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 primary resources demanded to global market[Regions,p1oil]=
 	"shares final from primary resources (R,pr,fr)"[Regions,p1oil, f1liquids]*"Final Resources Demanded to Global Market (R,fr)"\
@@ -2107,18 +2118,21 @@ primary resources demanded to global market[Regions,p4cereals]=
 	"shares final from primary resources (R,pr,fr)"[Regions,p4cereals,f4cereals food]*"Final Resources Demanded to Global Market (R,fr)"\
 		[Regions,f4cereals food]
 	~	
-	~		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 primary resources demanded to global market regions agregated[Primary Resources]=
 	primary resources demanded to global market[R1,Primary Resources]+primary resources demanded to global market\
 		[R2,Primary Resources]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 gas allocated to R1=
 	"primary resources allocated to R1 (pr)"[p2gas]
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 "final resources consumed from global market in R1 (fr)"[f1liquids]=
 	"oil consumed by final in R1 (fr)"[f1liquids]+"gas consumed by final in R1 (fr)"[f1liquids\
@@ -2210,21 +2224,16 @@ gas allocated to R1=
 "Final Resources from Local Sources (R,f)"[Regions,f8wood]=
 	0
 	~	
-	~<[VIEW]>: Population <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Population <[DESCRIPTION]>:
+	|
 
 SUITABILITY OF FINAL TO PRIMARY RESOURCES[R1,Primary Resources,Final Resources]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Shares' , 'B28' ) ~~<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:|
 SUITABILITY OF FINAL TO PRIMARY RESOURCES[R2,Primary Resources,Final Resources]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Shares' , 'B28' )
 	~	
-	~		|
-
-"Cereals Allocated in Global Market(R)"[Regions]=
-	ALLOCATE BY PRIORITY( "Cereals Demanded to Global Market(R)"[Regions] , "Priorities of Resource Allocation by country (R)"\
-		[Regions] ,  ELMCOUNT(Regions) , 4 , "Primary Resources Available to Global Market(pr)"\
-		[p4cereals] )
-	~	
-	~		|
+	~	<[VIEW]>: Increments of shares F from P in R1 <[DESCRIPTION]>:
+	|
 
 "Primary Resources Allocated by country(R,pr)"[Regions,p1oil]=
 	"Oil Allocated in Global Market(R)"[Regions] ~~|
@@ -2241,35 +2250,8 @@ SUITABILITY OF FINAL TO PRIMARY RESOURCES[R2,Primary Resources,Final Resources]=
 "Primary Resources Allocated by country(R,pr)"[Regions,p3renew]=
 	0
 	~	
-	~<[VIEW]>: Resource allocation <[DESCRIPTION]>:		|
-
-"Pulses Allocated in Global Market(R)"[Regions]=
-	ALLOCATE BY PRIORITY( "Pulses Demanded to Global Market(R)"[Regions], "Priorities of Resource Allocation by country (R)"\
-		[Regions] ,  ELMCOUNT(Regions) , 4 , "Primary Resources Available to Global Market(pr)"\
-		[p5pulses] )
-	~	
-	~		|
-
-"Gas Allocated in Global Market(R)"[Regions]=
-	ALLOCATE BY PRIORITY( "Gas Demanded to Global Market(R)"[Regions] , "Priorities of Resource Allocation by country (R)"\
-		[Regions] ,  ELMCOUNT(Regions) , 4 , "Primary Resources Available to Global Market(pr)"\
-		[p2gas] )
-	~	
-	~		|
-
-"Oil Allocated in Global Market(R)"[Regions]=
-	ALLOCATE BY PRIORITY( "Oil Demanded to Global Market(R)"[Regions] , "Priorities of Resource Allocation by country (R)"\
-		[Regions] ,  ELMCOUNT(Regions), 4 , "Primary Resources Available to Global Market(pr)"\
-		[p1oil] )
-	~	
-	~		|
-
-"Vegetables Allocated in Global Market(R)"[Regions]=
-	ALLOCATE BY PRIORITY( "Vegetables Demanded to Global Market(R)"[Regions] , "Priorities of Resource Allocation by country (R)"\
-		[Regions] ,  ELMCOUNT(Regions), 4 , "Primary Resources Available to Global Market(pr)"\
-		[p6vegetables] )
-	~	
-	~		|
+	~	<[VIEW]>: Resource allocation <[DESCRIPTION]>:
+	|
 
 "Primary Resources Available to Global Market(pr)"[Primary Resources]=
 	100,150,200,100,100,2,80
@@ -2327,7 +2309,8 @@ SUITABILITY OF FINAL TO PRIMARY RESOURCES[R2,Primary Resources,Final Resources]=
 	increase Infraestructures of Renewable Electricity[R2],
 		0.2)
 	~	
-	~<[VIEW]>: Resources from Local Sources <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Resources from Local Sources <[DESCRIPTION]>:
+	|
 
 "Heat Renewable Share Substitution Households(R,fr)"[R1,Final Resources]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Economic' , 'B95' ) ~~|
@@ -2413,8 +2396,9 @@ increase Share of Diet Change to Policy[Regions]=
 	Share of change to Policy diet[Regions]*parameter Diet Policy[Regions]*(1-(Share of change to Policy diet\
 		[Regions]/1))
 	~	kg/(Year*people)
-	~<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:	es simplemente un valor que evoluciona entre 0 y 1 logisticamente, luego \
-		multiplicamos las dietas por el
+	~	<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:	es simplemente un \
+		valor que evoluciona entre 0 y 1 logisticamente, luego multiplicamos las \
+		dietas por el
 	|
 
 "Final Resources for Food and Fibers Demanded(R,fr)"[Regions,f1liquids]=
@@ -2442,27 +2426,30 @@ initial Share Diet change[R1]=
 initial Share Diet change[R2]=
 	0.05
 	~	
-	~		|
+	~	<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:
+	|
 
 Share of change to Policy diet[Regions]= INTEG (
 	increase Share of Diet Change to Policy[Regions],
 		initial Share Diet change[Regions])
 	~	
-	~<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:
+	|
 
 parameter Diet Policy[R1]=
 	0.02 ~~<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:|
 parameter Diet Policy[R2]=
 	0.05*0
 	~	
-	~		|
+	~	<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:
+	|
 
-Diet 1[R1,Diet products]=
+Diet 11=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Pop and diet' , 'C12' ) ~~<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:|
-Diet 1[R2,Diet products]=
+Diet 11[R2,Diet products]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Pop and diet' , 'N12' )
 	~	kg/(people*Year)
-	~	kg to feed 1 person during 1 year
+	~	<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:
 	|
 
 "Diet Policy(R,d)"[R1,Diet products]=
@@ -2478,7 +2465,7 @@ Diet 2[R1,Diet products]=
 Diet 2[R2,Diet products]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Pop and diet' , 'N11' )
 	~	kg/(people*Year)
-	~	kg to feed 1 person during 1 year
+	~	<[VIEW]>: Bio Resources and Human Diet <[DESCRIPTION]>:
 	|
 
 "Final Resources Demanded (R,f)"[Regions,f1liquids]=
@@ -2523,26 +2510,22 @@ Population Initial[R1]=
 Population Initial[R2]=
 	GET XLS CONSTANTS('inputs Locomini.xlsx', 'Pop and diet' , 'M2')
 	~	
-	~		|
+	~	<[VIEW]>: Population <[DESCRIPTION]>:
+	|
 
 Population R1= INTEG (
 	net growth Population R1,
 		Population Initial[R1])
 	~	people
-	~<[VIEW]>: Population <[DESCRIPTION]>:	Total population in the region
+	~	<[VIEW]>: Population <[DESCRIPTION]>:	Total population in the region
 	|
 
 Population R2= INTEG (
 	net growth Population R2,
 		Population Initial[R2])
 	~	people
-	~<[VIEW]>: Population <[DESCRIPTION]>:	Total population in the region
+	~	<[VIEW]>: Population <[DESCRIPTION]>:	Total population in the region
 	|
-
-Diet products:
-	d1meat,d2vegetal proteins,d3carbohydrates,d4vitamins
-	~	
-	~		|
 
 "Final Energy Demanded by Households (H,f)"[Regions,f1liquids]=
 	income of households[Regions]*"Intensity Final Resources (R,H)"[Regions,f1liquids] ~~|
@@ -2562,7 +2545,8 @@ Diet products:
 "Final Energy Demanded by Households (H,f)"[Regions,f8wood]=
 	0
 	~	
-	~<[VIEW]>: View allocate <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View allocate <[DESCRIPTION]>:
+	|
 
 "Intensity of wood (R,fr)"[R1]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Economic' , 'I69' ) ~~|
@@ -2574,17 +2558,20 @@ Diet products:
 Emigration intensification R2 to R1=
 	IF THEN ELSE( Impacts Climate Change=2 , (50*0.01/200)*Population R2, 0)
 	~	
-	~<[VIEW]>: Population <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Population <[DESCRIPTION]>:
+	|
 
 Emigration Trends R2 to R1=
 	(0.01/200)*Population R2
 	~	
-	~<[VIEW]>: Population <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Population <[DESCRIPTION]>:
+	|
 
 Impacts Climate Change=
 	0
 	~	
-	~<[VIEW]>: Population <[DESCRIPTION]>:	2 for strong impacts that lead to migrations
+	~	<[VIEW]>: Population <[DESCRIPTION]>:	2 for strong impacts that lead to \
+		migrations
 	|
 
 "Final Energy Demanded by Sectors (R,s,f)"[Regions,Sectors,f1liquids]=
@@ -2607,38 +2594,36 @@ Impacts Climate Change=
 "Final Energy Demanded by Sectors (R,s,f)"[Regions,Sectors,f8wood]=
 	0
 	~	
-	~<[VIEW]>: View 11 <[DESCRIPTION]>:		|
+	~	<[VIEW]>: View 11 <[DESCRIPTION]>:
+	|
 
 Share Arable to Cereals[R1]=
 	0.5 ~~<[VIEW]>: Land allocation <[DESCRIPTION]>:|
 Share Arable to Cereals[R2]=
 	0.5
 	~	
-	~		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 Share Arable to Pulses[R1]=
 	0.5 ~~<[VIEW]>: Land allocation <[DESCRIPTION]>:|
 Share Arable to Pulses[R2]=
 	0.5
 	~	
-	~		|
+	~	<[VIEW]>: Land allocation <[DESCRIPTION]>:
+	|
 
 net growth Population R2=
 	Population R2*birth rate R2-Emigration intensification R2 to R1-Emigration Trends R2 to R1
 	~	people
-	~<[VIEW]>: Population <[DESCRIPTION]>:	Total births in the region
+	~	<[VIEW]>: Population <[DESCRIPTION]>:	Total births in the region
 	|
 
 net growth Population R1=
 	Population R1*birth rate R1+Emigration Trends R2 to R1+Emigration intensification R2 to R1
 	~	people
-	~<[VIEW]>: Population <[DESCRIPTION]>:	Total births in the region
+	~	<[VIEW]>: Population <[DESCRIPTION]>:	Total births in the region
 	|
-
-Lands:
-	l1arable,l2forest, l3grassland, l4urban
-	~	
-	~		|
 
 "initial Intensity of Final Resources (R,H)"[R1,Final Resources]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Economic' , 'B74' ) ~~|
@@ -2672,19 +2657,16 @@ Lands:
 birth rate R1=
 	0.001
 	~	births/(people*Year)
-	~<[VIEW]>: Population <[DESCRIPTION]>:	Birth rate in the region. Births / total population (per-unit percentage)
+	~	<[VIEW]>: Population <[DESCRIPTION]>:	Birth rate in the region. Births / \
+		total population (per-unit percentage)
 	|
 
 birth rate R2=
 	0.005
 	~	births/(Year*people)
-	~<[VIEW]>: Population <[DESCRIPTION]>:	Birth rate in the region. Births / total population (per-unit percentage)
+	~	<[VIEW]>: Population <[DESCRIPTION]>:	Birth rate in the region. Births / \
+		total population (per-unit percentage)
 	|
-
-pprofilePopulation:
-	ptypePop, ppriorityPop, pwidthPop, pextraPop
-	~	
-	~		|
 
 "Population (R)"[R1]=
 	Population R1 ~~|
@@ -2696,7 +2678,8 @@ pprofilePopulation:
 I matrix[Sectors,Sectors1]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Economic' , 'B22' )
 	~	Dmnl
-	~<[VIEW]>: Economy and Intensities <[DESCRIPTION]>:		|
+	~	<[VIEW]>: Economy and Intensities <[DESCRIPTION]>:
+	|
 
 "historical growth Intensities Final Resources(R,s)"[R1,Sectors,Final Resources]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Economic' , 'B78' ) ~~|
@@ -2770,31 +2753,6 @@ I matrix[Sectors,Sectors1]=
 "A matrix (R)"[R2,Sectors,Sectors1]=
 	GET XLS CONSTANTS( 'inputs Locomini.xlsx', 'Economic' , 'I15' )
 	~	Dmnl
-	~		|
-
-Sectors1:
-	s1industry,s2transport,s3agriculture,s4petrol,s5electric
-	~	
-	~		|
-
-Final Resources:
-	f1liquids,f2gases,f3electricity,f4cereals food,f5pulses food,f6vegetables,f7grass,f8wood
-	~	
-	~		|
-
-Primary Resources:
-	p1oil, p2gas, p3renew,p4cereals,p5pulses,p6vegetables,p7biomass
-	~	
-	~		|
-
-Regions:
-	R1,R2
-	~	
-	~		|
-
-Sectors:
-	s1industry,s2transport,s3agriculture,s4petrol,s5electric
-	~	
 	~		|
 
 ********************************************************
@@ -3078,30 +3036,30 @@ TIME STEP  = 0.0078125
 V300  Do not put anything below this section - it will be ignored
 *Population
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,Population R1,463,125,40,20,3,3,0,0,0,0,0,0
-12,2,48,185,126,10,8,0,3,0,0,-1,0,0,0
+10,1,Population R1,463,125,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,2,48,185,126,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(369,126)|
 1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(249,126)|
-11,5,48,309,126,6,8,34,3,0,0,1,0,0,0
-10,6,net growth Population R1,309,145,46,19,40,3,0,0,-1,0,0,0
-10,7,birth rate R1,207,62,40,11,8,3,0,0,0,0,0,0
+11,5,48,309,126,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,net growth Population R1,309,145,46,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,7,birth rate R1,207,62,40,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,8,7,6,1,0,0,0,0,128,0,-1--1--1,,1|(266,95)|
 1,9,1,6,1,0,0,0,0,128,0,-1--1--1,,1|(399,168)|
-10,10,Population R2,427,486,40,20,3,3,0,0,0,0,0,0
-12,11,48,183,479,10,8,0,3,0,0,-1,0,0,0
+10,10,Population R2,427,486,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,11,48,183,479,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,12,14,10,4,0,0,22,0,0,0,-1--1--1,,1|(341,479)|
 1,13,14,11,100,0,0,22,0,0,0,-1--1--1,,1|(238,479)|
-11,14,48,290,479,6,8,34,3,0,0,1,0,0,0
-10,15,net growth Population R2,290,498,46,19,40,3,0,0,-1,0,0,0
-10,16,birth rate R2,181,570,40,11,8,3,0,0,0,0,0,0
+11,14,48,290,479,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,15,net growth Population R2,290,498,46,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,16,birth rate R2,181,570,40,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,17,10,15,1,0,0,0,0,128,0,-1--1--1,,1|(355,526)|
 1,18,16,15,0,0,0,0,0,128,0,-1--1--1,,1|(223,541)|
-10,19,"Population (R)",843,297,46,11,8,3,0,0,0,0,0,0
+10,19,"Population (R)",843,297,46,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,20,1,19,1,0,0,0,0,128,0,-1--1--1,,1|(660,172)|
 1,21,10,19,1,0,0,0,0,128,0,-1--1--1,,1|(660,426)|
-10,22,Emigration Trends R2 to R1,241,280,58,19,8,3,0,0,0,0,0,0
-10,23,Emigration intensification R2 to R1,426,283,74,19,8,3,0,0,0,0,0,0
-12,24,0,609,300,99,28,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-128-0
+10,22,Emigration Trends R2 to R1,241,280,58,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,23,Emigration intensification R2 to R1,426,283,74,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,24,0,609,300,99,28,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-128-0,0,0,0,0,0,0
 Intensification of the emigration due to climate change and food shortage
 1,25,22,6,0,0,0,0,0,128,0,-1--1--1,,1|(271,218)|
 1,26,23,6,0,0,0,0,0,128,0,-1--1--1,,1|(372,219)|
@@ -3109,9 +3067,9 @@ Intensification of the emigration due to climate change and food shortage
 1,28,10,23,0,0,0,0,0,128,0,-1--1--1,,1|(426,390)|
 1,29,22,15,0,0,0,0,0,128,0,-1--1--1,,1|(263,382)|
 1,30,23,15,0,0,0,0,0,128,0,-1--1--1,,1|(361,384)|
-10,31,Impacts Climate Change,600,369,52,19,8,3,0,0,0,0,0,0
+10,31,Impacts Climate Change,600,369,52,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,32,31,23,0,0,0,0,0,128,0,-1--1--1,,1|(519,329)|
-10,33,Population Initial,559,196,52,11,8,3,0,0,0,0,0,0
+10,33,Population Initial,559,196,52,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,34,33,1,0,0,0,0,0,128,1,-1--1--1,,1|(523,169)|
 1,35,33,10,0,0,0,0,0,128,1,-1--1--1,,1|(497,330)|
 <[VIEW END]>
@@ -3120,143 +3078,143 @@ Intensification of the emigration due to climate change and food shortage
 V300  Do not put anything below this section - it will be ignored
 *Bio Resources and Human Diet
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,Diet 2,393,127,21,11,8,131,0,0,0,0,0,0
-10,2,"Food Demand(R,d)",683,218,44,19,8,131,0,0,0,0,0,0
-10,3,"Population (R)",649,83,42,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,1,Diet 2,393,127,21,11,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,"Food Demand(R,d)",683,218,44,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,"Population (R)",649,83,42,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,4,3,2,0,0,0,0,0,128,0,-1--1--1,,1|(663,143)|
-10,5,"Intensity of wood (R,fr)",1193,127,56,19,8,3,0,0,0,0,0,0
-10,6,"Diet from income(R,d)",417,220,40,19,8,3,0,0,0,0,0,0
+10,5,"Intensity of wood (R,fr)",1193,127,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,"Diet from income(R,d)",417,220,40,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,7,1,6,1,0,0,0,0,128,0,-1--1--1,,1|(401,166)|
-10,8,"Econ Production expected (R,s)",1222,339,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,9,"Final Resources for Food and Fibers Demanded(R,fr)",1205,221,88,19,8,3,0,0,0,0,0,0
+10,8,"Econ Production expected (R,s)",1222,339,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,9,"Final Resources for Food and Fibers Demanded(R,fr)",1205,221,88,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,10,8,9,0,0,0,0,0,128,0,-1--1--1,,1|(1214,286)|
 1,11,5,9,0,0,0,0,0,128,0,-1--1--1,,1|(1197,167)|
-10,12,"Final Resources Demand for Food (R,fr)",1008,280,77,19,8,3,0,0,0,0,0,0
+10,12,"Final Resources Demand for Food (R,fr)",1008,280,77,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,13,2,12,1,0,0,0,0,128,0,-1--1--1,,1|(834,214)|
 1,14,12,9,1,0,0,0,0,128,0,-1--1--1,,1|(1098,286)|
-10,15,Diet 1,260,163,21,11,8,131,0,0,0,0,0,0
-10,16,"Diet Policy(R,d)",563,124,51,11,8,131,0,0,0,0,0,0
+10,15,Diet 11,260,163,21,11,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,16,"Diet Policy(R,d)",563,124,51,11,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,17,15,6,0,0,0,0,0,128,0,-1--1--1,,1|(322,185)|
-10,18,Share of change to Policy diet,405,449,63,24,3,131,0,0,0,0,0,0
-12,19,48,155,459,10,8,0,3,0,0,-1,0,0,0
+10,18,Share of change to Policy diet,405,449,63,24,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,19,48,155,459,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,20,22,18,4,0,0,22,0,0,0,-1--1--1,,1|(302,459)|
 1,21,22,19,100,0,0,22,0,0,0,-1--1--1,,1|(207,459)|
-11,22,48,256,459,6,8,34,3,0,0,1,0,0,0
-10,23,increase Share of Diet Change to Policy,256,486,70,19,40,3,0,0,-1,0,0,0
+11,22,48,256,459,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,23,increase Share of Diet Change to Policy,256,486,70,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,24,18,23,1,0,0,0,0,128,0,-1--1--1,,1|(339,526)|
-10,25,parameter Diet Policy,189,400,48,19,8,131,0,0,0,0,0,0
+10,25,parameter Diet Policy,189,400,48,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,26,25,23,1,0,0,0,0,128,0,-1--1--1,,1|(206,423)|
-10,27,initial Share Diet change,334,365,52,19,8,131,0,0,0,0,0,0
+10,27,initial Share Diet change,334,365,52,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,28,27,18,0,0,0,0,0,128,1,-1--1--1,,1|(362,399)|
-10,29,"Agrofood System Matrix(R,fr,d)",858,330,57,19,8,3,0,0,0,0,0,0
-10,30,"Agrofood System Matrix 2 (R,fr,d)",565,435,57,19,8,3,0,0,0,0,0,0
-10,31,"Agrofood System Matrix 1 GDP(R,fr,d)",681,474,70,19,8,3,0,0,0,0,0,0
-10,32,"Agrofood System Matrix Policy(R,fr,d)",778,421,67,19,8,3,0,0,0,0,0,0
+10,29,"Agrofood System Matrix(R,fr,d)",858,330,57,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,30,"Agrofood System Matrix 2 (R,fr,d)",565,435,57,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,31,"Agrofood System Matrix 1 GDP(R,fr,d)",681,474,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,32,"Agrofood System Matrix Policy(R,fr,d)",778,421,67,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,33,18,29,1,0,0,0,0,128,0,-1--1--1,,1|(788,566)|
 1,34,32,29,0,0,0,0,0,128,0,-1--1--1,,1|(812,380)|
-10,35,"Food from Subsistence Agriculture(R)",751,75,46,28,8,3,0,0,0,0,0,0
+10,35,"Food from Subsistence Agriculture(R)",751,75,46,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,36,35,2,0,0,0,0,0,128,0,-1--1--1,,1|(718,144)|
-10,37,"Fish from Sea Available (R,d)",854,127,49,19,8,3,0,0,0,0,0,0
+10,37,"Fish from Sea Available (R,d)",854,127,49,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,38,37,2,0,0,0,0,0,128,0,-1--1--1,,1|(774,169)|
-10,39,"income of households to food (R)",128,190,73,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,40,Income diet1,368,280,42,11,8,3,0,0,0,0,0,0
-10,41,Income diet 2,568,276,44,11,8,3,0,0,0,0,0,0
+10,39,"income of households to food (R)",128,190,73,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,40,Income diet1,368,280,42,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,41,Income diet 2,568,276,44,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,42,40,6,0,0,0,0,0,128,0,-1--1--1,,1|(384,259)|
 1,43,41,6,0,0,0,0,0,128,0,-1--1--1,,1|(504,251)|
-10,44,"Diet (R,d)",550,223,33,11,8,3,0,0,0,0,0,0
+10,44,"Diet (R,d)",550,223,33,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,45,16,44,0,0,0,0,0,128,0,-1--1--1,,1|(557,166)|
 1,46,18,44,1,0,0,0,0,128,0,-1--1--1,,1|(443,316)|
 1,47,6,44,0,0,0,0,0,128,0,-1--1--1,,1|(480,220)|
 1,48,44,2,0,0,0,0,0,128,0,-1--1--1,,1|(604,220)|
-10,49,"Afroffod System matrix from imncome (R,d) 0",630,346,74,19,8,3,0,0,0,0,0,0
+10,49,"Afroffod System matrix from imncome (R,d) 0",630,346,74,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,50,30,49,0,0,0,0,0,128,0,-1--1--1,,1|(592,396)|
 1,51,31,49,0,0,0,0,0,128,0,-1--1--1,,1|(658,416)|
-1,54,41,49,0,0,0,0,0,128,0,-1--1--1,,1|(590,301)|
-1,55,40,49,0,0,0,0,0,128,0,-1--1--1,,1|(476,306)|
-10,56,"income of households to food (R)",612,554,73,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-1,58,49,29,0,0,0,0,0,128,0,-1--1--1,,1|(745,338)|
-1,59,29,12,0,0,0,0,0,128,0,-1--1--1,,1|(926,307)|
-10,60,"income to food per person (R)",164,296,61,19,8,3,0,0,0,0,0,0
-1,61,39,60,0,0,0,0,0,128,0,-1--1--1,,1|(143,236)|
-1,62,3,60,1,0,0,0,0,128,0,-1--1--1,,1|(299,98)|
-1,63,60,6,0,0,0,0,0,128,0,-1--1--1,,1|(294,257)|
-1,64,60,49,0,0,0,0,0,128,0,-1--1--1,,1|(383,319)|
+1,52,41,49,0,0,0,0,0,128,0,-1--1--1,,1|(590,301)|
+1,53,40,49,0,0,0,0,0,128,0,-1--1--1,,1|(476,306)|
+10,54,"income of households to food (R)",612,554,73,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,55,49,29,0,0,0,0,0,128,0,-1--1--1,,1|(745,338)|
+1,56,29,12,0,0,0,0,0,128,0,-1--1--1,,1|(926,307)|
+10,57,"income to food per person (R)",164,296,61,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,58,39,57,0,0,0,0,0,128,0,-1--1--1,,1|(143,236)|
+1,59,3,57,1,0,0,0,0,128,0,-1--1--1,,1|(299,98)|
+1,60,57,6,0,0,0,0,0,128,0,-1--1--1,,1|(294,257)|
+1,61,57,49,0,0,0,0,0,128,0,-1--1--1,,1|(383,319)|
 <[VIEW END]>
 <[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Economy and Intensities
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,"Econ Final Demand expected (R,s)",350,-123,66,31,3,131,0,0,0,0,0,0
-12,2,48,92,-127,10,8,0,3,0,0,-1,0,0,0
+10,1,"Econ Final Demand expected (R,s)",350,-123,66,31,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,2,48,92,-127,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(241,-127)|
 1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(144,-127)|
-11,5,48,193,-127,6,8,34,3,0,0,1,0,0,0
-10,6,"growth Econ Demand expected (R,s)",193,-88,70,19,40,131,0,0,-1,0,0,0
-10,7,"initial Intensities of Final Resources (R,s)",384,77,75,19,8,131,0,0,0,0,0,0
-10,8,"Intensities of Final Resources (R,s)",405,176,65,39,3,131,0,0,0,0,0,0
+11,5,48,193,-127,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,"growth Econ Demand expected (R,s)",193,-88,70,19,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,7,"initial Intensities of Final Resources (R,s)",384,77,75,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,"Intensities of Final Resources (R,s)",405,176,65,39,3,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,9,7,8,1,0,0,0,0,128,1,-1--1--1,,1|(389,112)|
-12,10,48,58,177,10,8,0,3,0,0,-1,0,0,0
+12,10,48,58,177,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,11,13,8,4,0,0,22,0,0,0,-1--1--1,,1|(270,177)|
 1,12,13,10,100,0,0,22,0,0,0,-1--1--1,,1|(128,177)|
-11,13,48,194,177,6,8,34,3,0,0,1,0,0,0
-10,14,"growth Intensities Final Resources (R,s)",194,213,73,19,40,3,0,0,-1,0,0,0
-10,15,"historical growth Intensities Final Resources(R,s)",172,81,53,28,8,3,0,0,0,0,0,0
+11,13,48,194,177,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,14,"growth Intensities Final Resources (R,s)",194,213,73,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,15,"historical growth Intensities Final Resources(R,s)",172,81,53,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,16,15,14,0,0,0,0,0,128,0,-1--1--1,,1|(181,144)|
-10,17,"A matrix (R)",605,-206,40,11,8,3,0,0,0,0,0,0
-10,18,"initial Final Demand (R,s)",330,-27,45,19,8,131,0,0,0,0,0,0
+10,17,"A matrix (R)",605,-206,40,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,18,"initial Final Demand (R,s)",330,-27,45,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,19,18,1,0,0,0,0,0,128,1,-1--1--1,,1|(336,-62)|
-10,20,I matrix,840,-200,25,11,8,3,0,0,0,0,0,0
-10,21,"I minus A matrix(R,s)",740,-168,36,19,8,131,0,0,0,0,0,0
+10,20,I matrix,840,-200,25,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,21,"I minus A matrix(R,s)",740,-168,36,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,22,17,21,0,0,0,0,0,128,0,-1--1--1,,1|(667,-188)|
 1,23,20,21,0,0,0,0,0,128,0,-1--1--1,,1|(802,-187)|
-10,24,"Leontief Matrix(R,s)",608,-148,37,19,8,131,0,0,0,0,0,0
+10,24,"Leontief Matrix(R,s)",608,-148,37,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,25,21,24,0,0,0,0,0,128,0,-1--1--1,,1|(681,-159)|
-10,26,"Econ Production expected (R,s)",556,-90,54,19,8,131,0,0,0,0,0,0
+10,26,"Econ Production expected (R,s)",556,-90,54,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,27,24,26,0,0,0,0,0,128,0,-1--1--1,,1|(586,-124)|
 1,28,1,26,1,0,0,0,0,128,0,-1--1--1,,1|(452,-119)|
-10,29,"Intensity Final Resources (R,H)",498,535,71,32,3,131,0,0,0,0,0,0
-12,30,48,142,534,10,8,0,3,0,0,-1,0,0,0
+10,29,"Intensity Final Resources (R,H)",498,535,71,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,30,48,142,534,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,31,33,29,4,0,0,22,0,0,0,-1--1--1,,1|(359,534)|
 1,32,33,30,100,0,0,22,0,0,0,-1--1--1,,1|(215,534)|
-11,33,48,285,534,6,8,34,3,0,0,1,0,0,0
-10,34,"growth Intensities Final Resources (R,H)",285,570,73,19,40,3,0,0,-1,0,0,0
-10,35,"historical growth Intensities Final Resources (R,H)",187,434,54,28,8,3,0,0,0,0,0,0
+11,33,48,285,534,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,34,"growth Intensities Final Resources (R,H)",285,570,73,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,35,"historical growth Intensities Final Resources (R,H)",187,434,54,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,36,35,34,1,0,0,0,0,128,0,-1--1--1,,1|(206,498)|
-10,37,"initial Intensity of Final Resources (R,H)",381,421,70,19,8,131,0,0,0,0,0,0
+10,37,"initial Intensity of Final Resources (R,H)",381,421,70,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,38,37,29,0,0,0,0,0,128,1,-1--1--1,,1|(427,466)|
-10,39,income of households,594,350,36,19,8,3,0,0,0,0,0,0
-10,40,"Econ Final Demand expected (R,s)",415,323,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,39,income of households,594,350,36,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,40,"Econ Final Demand expected (R,s)",415,323,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,41,40,39,1,0,0,0,0,128,0,-1--1--1,,1|(517,328)|
-10,42,"Final Energy Demanded by Sectors (R,s,f)",648,44,77,19,8,3,0,0,0,0,0,0
+10,42,"Final Energy Demanded by Sectors (R,s,f)",648,44,77,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,43,26,42,1,0,0,0,0,128,0,-1--1--1,,1|(614,-29)|
 1,44,8,42,1,0,0,0,0,128,0,-1--1--1,,1|(567,107)|
-10,45,"Final Energy Demanded by Households (H,f)",704,426,77,19,8,3,0,0,0,0,0,0
+10,45,"Final Energy Demanded by Households (H,f)",704,426,77,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,46,39,45,0,0,0,0,0,128,0,-1--1--1,,1|(642,384)|
 1,47,29,45,0,0,0,0,0,128,0,-1--1--1,,1|(606,477)|
-10,48,"Final Resources Demanded (R,f)",794,176,52,19,8,3,0,0,0,0,0,0
+10,48,"Final Resources Demanded (R,f)",794,176,52,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,49,42,48,0,0,0,0,0,128,0,-1--1--1,,1|(715,105)|
 1,50,45,48,1,0,0,0,0,128,0,-1--1--1,,1|(756,306)|
-10,51,"Final Resources for Food and Fibers Demanded(R,fr)",896,297,73,19,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,52,"Final Resources for Food and Fibers Demanded(R,fr)",1032,181,93,29,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,51,"Final Resources for Food and Fibers Demanded(R,fr)",896,297,73,19,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,52,"Final Resources for Food and Fibers Demanded(R,fr)",1032,181,93,29,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,53,52,48,0,0,0,0,0,128,0,-1--1--1,,1|(899,178)|
 1,54,1,6,1,0,0,0,0,128,0,-1--1--1,,1|(215,-160)|
-10,55,"Final Energy Demanded by Sectors agregated by energy(R,s)",862,49,86,28,8,3,0,0,0,0,0,0
+10,55,"Final Energy Demanded by Sectors agregated by energy(R,s)",862,49,86,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,56,42,55,0,0,0,0,0,128,0,-1--1--1,,1|(743,45)|
-10,57,"Final Energy Demanded Households Energy Agregated(R)",885,340,77,28,8,3,0,0,0,0,0,0
+10,57,"Final Energy Demanded Households Energy Agregated(R)",885,340,77,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,58,45,57,0,0,0,0,0,128,0,-1--1--1,,1|(778,390)|
-10,59,"share income of households to food (R)",1294,376,105,31,3,131,0,2,0,0,0,0,-1--1--1,0-0-0,|12||0-0-255
-12,60,48,1001,382,10,8,0,3,0,0,-1,0,0,0
+10,59,"share income of households to food (R)",1294,376,105,31,3,131,0,2,0,0,0,0,-1--1--1,0-0-0,|12||0-0-255,0,0,0,0,0,0
+12,60,48,1001,382,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,61,63,59,4,0,0,22,0,0,0,-1--1--1,,1|(1131,382)|
 1,62,63,60,100,0,0,22,0,0,0,-1--1--1,,1|(1036,382)|
-11,63,48,1068,382,6,8,34,3,0,0,1,0,0,0
-10,64,increase share rent of households to food,1068,409,68,19,40,3,0,0,-1,0,0,0
-10,65,"income of households to food (R)",1086,293,69,19,8,3,0,0,0,0,0,0
+11,63,48,1068,382,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,64,increase share rent of households to food,1068,409,68,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,65,"income of households to food (R)",1086,293,69,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,66,39,65,1,0,0,0,0,128,0,-1--1--1,,1|(1019,268)|
 1,67,59,65,0,0,0,0,0,128,0,-1--1--1,,1|(1181,331)|
-10,68,"added value of industrial sector expected(R)",977,-135,77,19,8,3,0,2,0,0,0,0,-1--1--1,0-0-0,|12||0-0-255
-10,69,"added value of energy sectors expected (R)",975,-83,70,19,8,3,0,2,0,0,0,0,-1--1--1,0-0-0,|12||0-0-255
-10,70,Labor compensation,580,223,44,19,8,3,0,0,0,0,0,0
+10,68,"added value of industrial sector expected(R)",977,-135,77,19,8,3,0,2,0,0,0,0,-1--1--1,0-0-0,|12||0-0-255,0,0,0,0,0,0
+10,69,"added value of energy sectors expected (R)",975,-83,70,19,8,3,0,2,0,0,0,0,-1--1--1,0-0-0,|12||0-0-255,0,0,0,0,0,0
+10,70,Labor compensation,580,223,44,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,71,70,39,0,0,0,0,0,128,0,-1--1--1,,1|(585,279)|
 <[VIEW END]>
 <[VIEW START]>
@@ -3264,50 +3222,50 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 V300  Do not put anything below this section - it will be ignored
 *Resources from Local Sources
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,"Final Resources Demanded (R,f)",1021,126,84,24,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,2,"Final Resources from Local Sources (R,f)",713,186,68,19,8,3,0,0,0,0,0,0
-10,3,"Final Resources Demanded to Global Market (R,fr)",1011,244,67,28,8,3,0,0,0,0,0,0
+10,1,"Final Resources Demanded (R,f)",1021,126,84,24,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,2,"Final Resources from Local Sources (R,f)",713,186,68,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,"Final Resources Demanded to Global Market (R,fr)",1011,244,67,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,4,2,3,0,0,0,0,0,128,0,-1--1--1,,1|(855,213)|
 1,5,1,3,0,0,0,0,0,128,0,-1--1--1,,1|(1016,176)|
-10,6,"Infraestructures of Renewable Heat of Sectors(R,s)",345,168,76,32,3,131,0,0,0,0,0,0
-10,7,"Infrastructures of Renewable Electricity(R)",343,530,79,27,3,131,0,0,0,0,0,0
-12,8,48,107,523,10,8,0,3,0,0,-1,0,0,0
+10,6,"Infraestructures of Renewable Heat of Sectors(R,s)",345,168,76,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,7,"Infrastructures of Renewable Electricity(R)",343,530,79,27,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,8,48,107,523,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,9,11,7,4,0,0,22,0,0,0,-1--1--1,,1|(216,523)|
 1,10,11,8,100,0,0,22,0,0,0,-1--1--1,,1|(137,523)|
-11,11,48,163,523,6,8,34,3,0,0,1,0,0,0
-10,12,increase Infraestructures of Renewable Electricity,163,550,77,19,40,3,0,0,-1,0,0,0
+11,11,48,163,523,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,12,increase Infraestructures of Renewable Electricity,163,550,77,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,13,7,12,1,0,0,0,0,128,0,-1--1--1,,1|(234,589)|
-12,14,48,107,166,10,8,0,3,0,0,-1,0,0,0
+12,14,48,107,166,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,15,17,6,4,0,0,22,0,0,0,-1--1--1,,1|(213,162)|
 1,16,17,14,100,0,0,22,0,0,0,-1--1--1,,1|(131,162)|
-11,17,48,151,162,6,8,34,3,0,0,1,0,0,0
-10,18,"increase of Infrastructures Renewable Heat of Sectors (R,s)",151,198,87,28,40,3,0,0,-1,0,0,0
+11,17,48,151,162,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,18,"increase of Infrastructures Renewable Heat of Sectors (R,s)",151,198,87,28,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,19,6,18,1,0,0,0,0,128,0,-1--1--1,,1|(245,230)|
-10,20,"Infrastructures of Renewable Heat of Households (R)",330,395,79,27,3,131,0,0,0,0,0,0
-12,21,48,94,388,10,8,0,3,0,0,-1,0,0,0
+10,20,"Infrastructures of Renewable Heat of Households (R)",330,395,79,27,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,21,48,94,388,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,22,24,20,4,0,0,22,0,0,0,-1--1--1,,1|(203,388)|
 1,23,24,21,100,0,0,22,0,0,0,-1--1--1,,1|(124,388)|
-11,24,48,150,388,6,8,34,3,0,0,1,0,0,0
-10,25,"increase Infrastructures of Renewable Heat of Households (R)",150,415,82,28,40,3,0,0,-1,0,0,0
+11,24,48,150,388,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,25,"increase Infrastructures of Renewable Heat of Households (R)",150,415,82,28,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,26,20,25,1,0,0,0,0,128,0,-1--1--1,,1|(221,454)|
 1,27,7,2,1,0,0,0,0,128,0,-1--1--1,,1|(564,414)|
-10,28,"Heat Renewable Maximum Share Sectors (R,s)",127,74,79,28,8,3,0,0,0,0,0,0
-10,29,"Heat Renewable Maximum Share Households(R)",94,324,53,28,8,3,0,0,0,0,0,0
+10,28,"Heat Renewable Maximum Share Sectors (R,s)",127,74,79,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,29,"Heat Renewable Maximum Share Households(R)",94,324,53,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,30,28,18,1,0,0,0,0,128,0,-1--1--1,,1|(119,130)|
 1,31,29,25,0,0,0,0,0,128,0,-1--1--1,,1|(117,363)|
-10,32,"Final Energy Demanded by Households (H,f)",150,462,73,19,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,33,"Final Energy Demanded Households Energy Agregated(R)",330,295,81,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,34,"Final Energy Demanded by Sectors agregated by energy(R,s)",340,65,81,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,32,"Final Energy Demanded by Households (H,f)",150,462,73,19,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,33,"Final Energy Demanded Households Energy Agregated(R)",330,295,81,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,34,"Final Energy Demanded by Sectors agregated by energy(R,s)",340,65,81,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,35,34,18,0,0,0,0,0,128,0,-1--1--1,,1|(251,127)|
 1,36,33,25,0,0,0,0,0,128,0,-1--1--1,,1|(245,351)|
 1,37,20,2,0,0,0,0,0,128,0,-1--1--1,,1|(522,289)|
 1,38,6,2,1,0,0,0,0,128,0,-1--1--1,,1|(516,205)|
-10,39,"Heat Renewable Share Substitution Sectors(R,fr)",541,136,81,19,8,3,0,0,0,0,0,0
-10,40,"Heat Renewable Share Substitution Households(R,fr)",515,369,73,28,8,3,0,0,0,0,0,0
+10,39,"Heat Renewable Share Substitution Sectors(R,fr)",541,136,81,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,40,"Heat Renewable Share Substitution Households(R,fr)",515,369,73,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,41,39,2,0,0,0,0,0,128,0,-1--1--1,,1|(619,159)|
 1,42,40,2,0,0,0,0,0,128,0,-1--1--1,,1|(613,277)|
-10,43,"Final Resources Demand for Food (R,fr)",815,60,82,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,44,"Food Demand Share Protected from Market(R)",623,56,84,19,8,3,0,0,0,0,0,0
+10,43,"Final Resources Demand for Food (R,fr)",815,60,82,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,44,"Food Demand Share Protected from Market(R)",623,56,84,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,45,44,2,0,0,0,0,0,128,0,-1--1--1,,1|(663,115)|
 1,46,43,2,0,0,0,0,0,128,0,-1--1--1,,1|(768,117)|
 <[VIEW END]>
@@ -3316,22 +3274,22 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 V300  Do not put anything below this section - it will be ignored
 *Resource allocation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,"shares final from primary resources (R,pr,fr)",564,427,134,11,0,131,0,0,0,0,0,0
-10,2,"Primary Resources Available to Global Market(pr)",1462,350,61,28,8,3,0,0,0,0,0,0
-10,3,"Priorities of Resource Allocation by country (R)",1021,138,81,19,8,3,0,0,0,0,0,0
-10,4,"Oil Demanded to Global Market(R)",965,239,58,19,8,3,0,0,0,0,0,0
-10,5,"Gas Demanded to Global Market(R)",962,305,58,19,8,3,0,0,0,0,0,0
-10,6,"Cereals Demanded to Global Market(R)",959,372,70,19,8,3,0,0,0,0,0,0
-10,7,"Pulses Demanded to Global Market(R)",961,431,66,19,8,3,0,0,0,0,0,0
-10,8,"Vegetables Demanded to Global Market(R)",964,501,72,19,8,3,0,0,0,0,0,0
-10,9,"Biomass Demanded to Global Market(R)",962,560,72,19,8,3,0,0,0,0,0,0
-10,10,"Oil Allocated in Global Market(R)",1217,239,58,19,8,3,0,0,0,0,0,0
-10,11,"Gas Allocated in Global Market(R)",1215,307,58,19,8,3,0,0,0,0,0,0
-10,12,"Cereals Allocated in Global Market(R)",1214,373,65,19,8,3,0,0,0,0,0,0
-10,13,"Pulses Allocated in Global Market(R)",1217,427,60,19,8,3,0,0,0,0,0,0
-10,14,"Vegetables Allocated in Global Market(R)",1221,499,75,19,8,3,0,0,0,0,0,0
-10,15,"Biomass Allocated in Global Market(R)",1211,557,67,19,8,3,0,0,0,0,0,0
-10,16,"Primary Resources Allocated by country(R,pr)",981,663,60,28,8,3,0,0,0,0,0,0
+10,1,"shares final from primary resources (R,pr,fr)",564,427,134,11,0,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,"Primary Resources Available to Global Market(pr)",1462,350,61,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,"Priorities of Resource Allocation by country (R)",1021,138,81,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,"Oil Demanded to Global Market(R)",965,239,58,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,"Gas Demanded to Global Market(R)",962,305,58,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,"Cereals Demanded to Global Market(R)",959,372,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,7,"Pulses Demanded to Global Market(R)",961,431,66,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,"Vegetables Demanded to Global Market(R)",964,501,72,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,9,"Biomass Demanded to Global Market(R)",962,560,72,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,10,"Oil Allocated in Global Market(R)",1217,239,58,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,11,"Gas Allocated in Global Market(R)",1215,307,58,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,12,"Cereals Allocated in Global Market(R)",1214,373,65,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,13,"Pulses Allocated in Global Market(R)",1217,427,60,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,14,"Vegetables Allocated in Global Market(R)",1221,499,75,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,15,"Biomass Allocated in Global Market(R)",1211,557,67,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,16,"Primary Resources Allocated by country(R,pr)",981,663,60,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,17,10,16,0,0,0,0,0,128,0,-1--1--1,,1|(1104,440)|
 1,18,11,16,0,0,0,0,2,128,0,-1--1--1,|12||0-0-0,1|(1104,474)|
 1,19,12,16,0,0,0,0,0,128,0,-1--1--1,,1|(1105,508)|
@@ -3355,7 +3313,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 1,37,3,13,0,0,0,0,0,128,0,-1--1--1,,1|(1114,277)|
 1,38,3,14,0,0,0,0,0,128,0,-1--1--1,,1|(1117,313)|
 1,39,3,15,0,0,0,0,0,128,0,-1--1--1,,1|(1112,342)|
-10,40,"Final Resources Demanded to Global Market (R,fr)",736,320,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,40,"Final Resources Demanded to Global Market (R,fr)",736,320,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,41,40,4,0,0,0,0,0,128,0,-1--1--1,,1|(850,280)|
 1,42,1,4,0,0,0,0,0,128,0,-1--1--1,,1|(749,340)|
 1,43,1,5,0,0,0,0,0,128,0,-1--1--1,,1|(744,372)|
@@ -3368,70 +3326,70 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 1,50,1,8,0,0,0,0,0,128,0,-1--1--1,,1|(750,461)|
 1,51,40,9,0,0,0,0,0,128,0,-1--1--1,,1|(848,439)|
 1,52,1,9,0,0,0,0,0,128,0,-1--1--1,,1|(743,487)|
-10,53,"added value of energy sectors expected (R)",1045,29,75,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,54,"added value of industrial sector expected(R)",867,37,52,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,55,"income of households to food (R)",769,87,63,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,53,"added value of energy sectors expected (R)",1045,29,75,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,54,"added value of industrial sector expected(R)",867,37,52,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,55,"income of households to food (R)",769,87,63,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,56,53,3,0,0,0,0,0,128,0,-1--1--1,,1|(1034,77)|
 1,57,54,3,0,0,0,0,0,128,0,-1--1--1,,1|(944,89)|
 1,58,55,3,0,0,0,0,0,128,0,-1--1--1,,1|(879,110)|
-10,59,"primary resources allocated to R1 (pr)",879,776,63,19,8,3,0,0,0,0,0,0
-10,60,"primary resources allocated to R2 (pr)",1328,719,63,19,8,3,0,0,0,0,0,0
+10,59,"primary resources allocated to R1 (pr)",879,776,63,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,60,"primary resources allocated to R2 (pr)",1328,719,63,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,61,16,59,0,0,0,0,0,128,0,-1--1--1,,1|(930,718)|
 1,62,16,60,0,0,0,0,0,128,0,-1--1--1,,1|(1146,688)|
-10,63,oil allocated to R1,710,712,57,11,8,3,0,0,0,0,0,0
+10,63,oil allocated to R1,710,712,57,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,64,59,63,0,0,0,0,0,128,0,-1--1--1,,1|(790,742)|
-10,65,"oil consumed by final in R1 (fr)",539,666,52,19,8,3,0,0,0,0,0,0
+10,65,"oil consumed by final in R1 (fr)",539,666,52,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,66,63,65,0,0,0,0,0,128,0,-1--1--1,,1|(637,691)|
-10,67,"oil demanded by final in R1(fr)",365,635,53,19,8,3,0,0,0,0,0,0
+10,67,"oil demanded by final in R1(fr)",365,635,53,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,68,1,67,1,0,0,0,0,128,0,-1--1--1,,1|(481,555)|
 1,69,67,65,0,0,0,0,0,128,0,-1--1--1,,1|(445,648)|
-10,70,gas allocated to R1,720,824,50,19,8,3,0,0,0,0,0,0
-10,71,cereals allocated to R1,708,924,53,19,8,3,0,0,0,0,0,0
-10,72,pulses allocated to R1,715,1058,50,19,8,3,0,0,0,0,0,0
-10,73,biomass allocated to R1,722,1165,57,19,8,3,0,0,0,0,0,0
+10,70,gas allocated to R1,720,824,50,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,71,cereals allocated to R1,708,924,53,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,72,pulses allocated to R1,715,1058,50,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,73,biomass allocated to R1,722,1165,57,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,74,59,70,1,0,0,0,0,128,0,-1--1--1,,1|(798,808)|
 1,75,59,71,1,0,0,0,0,128,0,-1--1--1,,1|(809,863)|
 1,76,59,72,1,0,0,0,0,128,0,-1--1--1,,1|(829,929)|
 1,77,59,73,1,0,0,0,0,128,0,-1--1--1,,1|(842,982)|
-10,78,"Final Resources Demanded to Global Market (R,fr)",141,715,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,78,"Final Resources Demanded to Global Market (R,fr)",141,715,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,79,78,67,0,0,0,0,0,128,0,-1--1--1,,1|(253,674)|
-10,80,"gas consumed by final in R1 (fr)",505,785,55,19,8,3,0,0,0,0,0,0
-10,81,"cereals consumed by final in R1 (fr)",494,924,67,19,8,3,0,0,0,0,0,0
-10,82,"pulses consumed by final in R1 (fr)",488,1077,64,19,8,3,0,0,0,0,0,0
-10,83,"biomass consumed by final in R1 (fr)",502,1162,70,19,8,3,0,0,0,0,0,0
+10,80,"gas consumed by final in R1 (fr)",505,785,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,81,"cereals consumed by final in R1 (fr)",494,924,67,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,82,"pulses consumed by final in R1 (fr)",488,1077,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,83,"biomass consumed by final in R1 (fr)",502,1162,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,84,70,80,0,0,0,0,0,128,0,-1--1--1,,1|(621,805)|
 1,85,71,81,0,0,0,0,0,128,0,-1--1--1,,1|(615,924)|
 1,86,72,82,0,0,0,0,0,128,0,-1--1--1,,1|(615,1065)|
 1,87,73,83,0,0,0,0,0,128,0,-1--1--1,,1|(625,1163)|
-10,88,"final resources consumed from global market in R1 (fr)",113,870,80,28,8,3,0,0,0,0,0,0
+10,88,"final resources consumed from global market in R1 (fr)",113,870,80,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,89,65,88,1,0,0,0,0,128,0,-1--1--1,,1|(319,730)|
 1,90,80,88,1,0,0,0,0,128,0,-1--1--1,,1|(317,780)|
 1,91,81,88,0,0,0,0,0,128,0,-1--1--1,,1|(316,899)|
 1,92,82,88,1,0,0,0,0,128,0,-1--1--1,,1|(289,985)|
 1,93,83,88,1,0,0,0,0,128,0,-1--1--1,,1|(282,1040)|
-10,94,"final resources consumed in R1 (R,fr)",85,978,71,19,8,3,0,0,0,0,0,0
+10,94,"final resources consumed in R1 (R,fr)",85,978,71,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,95,88,94,0,0,0,0,0,128,0,-1--1--1,,1|(99,921)|
-10,96,"Final Resources from Local Sources (R,f)",-7,1037,73,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,96,"Final Resources from Local Sources (R,f)",-7,1037,73,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,97,96,94,0,0,0,0,0,128,0,-1--1--1,,1|(32,1011)|
-10,98,primary resources demanded to global market,547,201,63,28,8,3,0,0,0,0,0,0
+10,98,primary resources demanded to global market,547,201,63,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,99,40,98,0,0,0,0,0,128,0,-1--1--1,,1|(647,265)|
 1,100,1,98,0,0,0,0,0,128,0,-1--1--1,,1|(557,330)|
 1,101,2,15,1,0,0,0,0,128,0,-1--1--1,,1|(1344,478)|
-12,102,0,1076,459,54,19,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-0-255
+12,102,0,1076,459,54,19,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-0-255,0,0,0,0,0,0
 allocate between regions
-12,103,0,741,776,64,19,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-0-255
+12,103,0,741,776,64,19,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-0-255,0,0,0,0,0,0
 allocate of primaries between finals
-10,104,"gas demanded by final in R1(fr)",345,720,56,19,8,3,0,0,0,0,0,0
+10,104,"gas demanded by final in R1(fr)",345,720,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,105,78,104,0,0,0,0,0,128,0,-1--1--1,,1|(241,716)|
 1,106,1,104,0,0,0,0,0,128,0,-1--1--1,,1|(461,563)|
 1,107,104,80,0,0,0,0,0,128,0,-1--1--1,,1|(418,749)|
-10,108,"cereals demanded by final in R1 (fr)",377,855,68,19,8,3,0,0,0,0,0,0
+10,108,"cereals demanded by final in R1 (fr)",377,855,68,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,109,78,108,0,0,0,0,0,128,0,-1--1--1,,1|(259,785)|
 1,110,1,108,0,0,0,0,0,128,0,-1--1--1,,1|(475,630)|
 1,111,108,81,0,0,0,0,0,128,0,-1--1--1,,1|(428,885)|
-10,112,"shares final from primary resources (R,pr,fr)",207,1072,57,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,113,"pulses demanded by final in R1 (fr)",352,968,65,19,8,3,0,0,0,0,0,0
-10,114,"biomass demanded by final in R1(fr)",341,1154,71,19,8,3,0,0,0,0,0,0
+10,112,"shares final from primary resources (R,pr,fr)",207,1072,57,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,113,"pulses demanded by final in R1 (fr)",352,968,65,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,114,"biomass demanded by final in R1(fr)",341,1154,71,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,115,112,113,0,0,0,0,0,128,0,-1--1--1,,1|(279,1019)|
 1,116,112,114,0,0,0,0,0,128,0,-1--1--1,,1|(274,1113)|
 1,117,78,113,0,0,0,0,0,128,0,-1--1--1,,1|(245,840)|
@@ -3439,82 +3397,82 @@ allocate of primaries between finals
 1,119,113,82,0,0,0,0,0,128,0,-1--1--1,,1|(414,1018)|
 1,120,114,83,0,0,0,0,0,128,0,-1--1--1,,1|(415,1157)|
 1,121,59,88,1,0,0,0,0,128,0,-1--1--1,,1|(685,1246)|
-10,122,primary resources demanded to global market regions agregated,1292,78,92,28,8,3,0,0,0,0,0,0
+10,122,primary resources demanded to global market regions agregated,1292,78,92,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,123,98,122,0,0,0,0,0,128,0,-1--1--1,,1|(898,144)|
-10,124,oil demanded by R1 all finals,111,597,53,19,8,3,0,0,0,0,0,0
+10,124,oil demanded by R1 all finals,111,597,53,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,125,67,124,0,0,0,0,0,128,0,-1--1--1,,1|(244,617)|
-10,126,"resources demand matrix g m (R,fr,pr)",405,262,62,19,8,3,0,0,0,0,0,0
-10,127,"Final Resources Demanded to Global Market (R,fr)",278,213,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,126,"resources demand matrix g m (R,fr,pr)",405,262,62,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,127,"Final Resources Demanded to Global Market (R,fr)",278,213,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,128,127,126,0,0,0,0,0,64,0,-1--1--1,,1|(343,238)|
 1,129,1,126,0,0,0,0,0,64,0,-1--1--1,,1|(493,354)|
-10,130,"resources consum matrix global market (R,fr,pr)",1133,846,79,19,8,3,0,0,0,0,0,0
-10,131,"oil consumed by final in R1 (fr)",973,929,57,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,132,"gas consumed by final in R1 (fr)",973,1005,60,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,133,"cereals consumed by final in R1 (fr)",962,1065,71,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,134,"pulses consumed by final in R1 (fr)",970,1123,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,135,"biomass consumed by final in R1 (fr)",969,1178,65,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,130,"resources consum matrix global market (R,fr,pr)",1133,846,79,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,131,"oil consumed by final in R1 (fr)",973,929,57,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,132,"gas consumed by final in R1 (fr)",973,1005,60,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,133,"cereals consumed by final in R1 (fr)",962,1065,71,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,134,"pulses consumed by final in R1 (fr)",970,1123,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,135,"biomass consumed by final in R1 (fr)",969,1178,65,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,136,131,130,0,0,0,0,0,128,0,-1--1--1,,1|(1046,890)|
 1,137,132,130,0,0,0,0,0,128,0,-1--1--1,,1|(1047,930)|
 1,138,133,130,0,0,0,0,0,128,0,-1--1--1,,1|(1042,961)|
 1,139,134,130,0,0,0,0,0,128,0,-1--1--1,,1|(1047,990)|
 1,140,135,130,0,0,0,0,0,128,0,-1--1--1,,1|(1047,1018)|
 1,141,59,130,0,0,0,0,0,128,0,-1--1--1,,1|(996,808)|
-10,142,"perception of shortage final resources for R1(fr)",715,574,83,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,143,"priorities for finals (fr)",539,704,60,19,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,144,"priorities for finals (fr)",552,991,60,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,142,"perception of shortage final resources for R1(fr)",715,574,83,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,143,"priorities for finals (fr)",539,704,60,19,8,2,1,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,144,"priorities for finals (fr)",552,991,60,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,145,144,65,0,0,0,0,0,128,0,-1--1--1,,1|(545,835)|
-10,146,AA,816,212,13,11,8,3,0,0,0,0,0,0
+10,146,AA,816,212,13,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,147,146,4,0,0,0,0,0,128,0,-1--1--1,,1|(861,221)|
 1,148,146,5,0,0,0,0,0,128,0,-1--1--1,,1|(874,250)|
 1,149,146,6,0,0,0,0,0,128,0,-1--1--1,,1|(878,283)|
 1,150,146,7,0,0,0,0,0,128,0,-1--1--1,,1|(881,312)|
 1,151,146,8,0,0,0,0,0,128,0,-1--1--1,,1|(884,347)|
 1,152,146,9,0,0,0,0,0,128,0,-1--1--1,,1|(884,376)|
-10,153,"abundance of primary resources(pr)",690,151,74,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,154,shares finals from p1oil in R1,268,325,66,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,155,shares finals from p2gas in R1,255,383,55,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,156,shares finals from p4cereals in R1,199,423,66,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,157,shares finals from p5pulses in R1,196,467,64,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,158,shares finals from p7biomass in R1,327,480,70,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,153,"abundance of primary resources(pr)",690,151,74,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,154,shares finals from p1oil in R1,268,325,66,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,155,shares finals from p2gas in R1,255,383,55,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,156,shares finals from p4cereals in R1,199,423,66,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,157,shares finals from p5pulses in R1,196,467,64,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,158,shares finals from p7biomass in R1,327,480,70,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,159,155,1,0,0,0,0,0,128,0,-1--1--1,,1|(391,402)|
 1,160,156,1,0,0,0,0,0,128,0,-1--1--1,,1|(340,423)|
 1,161,157,1,0,0,0,0,0,128,0,-1--1--1,,1|(354,450)|
 1,162,158,1,0,0,0,0,0,128,0,-1--1--1,,1|(448,453)|
 1,163,154,1,0,0,0,0,0,128,0,-1--1--1,,1|(420,378)|
 1,164,2,59,0,0,0,0,0,128,0,-1--1--1,,1|(1170,563)|
-10,165,"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)",617,515,77,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,165,"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)",617,515,77,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,166,165,1,0,0,0,0,0,128,0,-1--1--1,,1|(589,468)|
 1,167,144,80,0,0,0,0,0,128,0,-1--1--1,,1|(530,894)|
 1,168,144,81,0,0,0,0,0,128,0,-1--1--1,,1|(527,962)|
 1,169,144,82,0,0,0,0,0,128,0,-1--1--1,,1|(524,1028)|
 1,170,144,83,0,0,0,0,0,128,0,-1--1--1,,1|(529,1069)|
-10,171,oil allocated to R2,1504,793,57,11,8,3,0,0,0,0,0,0
-10,172,gas allocated to R2,1514,882,50,19,8,3,0,0,0,0,0,0
-10,173,cereals allocated to R2,1511,976,53,19,8,3,0,0,0,0,0,0
-10,174,pulses allocated to R2,1513,1070,50,19,8,3,0,0,0,0,0,0
-10,175,biomass allocated to R2,1511,1170,57,19,8,3,0,0,0,0,0,0
+10,171,oil allocated to R2,1504,793,57,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,172,gas allocated to R2,1514,882,50,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,173,cereals allocated to R2,1511,976,53,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,174,pulses allocated to R2,1513,1070,50,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,175,biomass allocated to R2,1511,1170,57,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,176,60,171,0,0,0,0,0,128,0,-1--1--1,,1|(1418,757)|
 1,177,60,172,0,0,0,0,0,128,0,-1--1--1,,1|(1415,795)|
 1,178,60,173,0,0,0,0,0,128,0,-1--1--1,,1|(1414,841)|
 1,179,60,174,0,0,0,0,0,128,0,-1--1--1,,1|(1416,888)|
 1,180,60,175,0,0,0,0,0,128,0,-1--1--1,,1|(1416,938)|
-10,181,"oil consumed by final in R2 (fr)",1665,784,52,19,8,3,0,0,0,0,0,0
-10,182,"oil demanded by final in R2(fr)",1814,771,53,19,8,3,0,0,0,0,0,0
-10,183,"shares final from primary resources (R,pr,fr)",2010,804,57,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,181,"oil consumed by final in R2 (fr)",1665,784,52,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,182,"oil demanded by final in R2(fr)",1814,771,53,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,183,"shares final from primary resources (R,pr,fr)",2010,804,57,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,184,183,182,0,0,0,0,0,128,0,-1--1--1,,1|(1916,788)|
-10,185,"priorities for finals (fr)",1577,707,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,185,"priorities for finals (fr)",1577,707,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,186,185,181,0,0,0,0,0,128,0,-1--1--1,,1|(1615,740)|
 1,187,182,181,0,0,0,0,0,128,0,-1--1--1,,1|(1745,776)|
 1,188,171,181,0,0,0,0,0,64,0,-1--1--1,,1|(1580,788)|
-10,189,"gas consumed by final in R2 (fr)",1659,892,55,19,8,3,0,0,0,0,0,0
-10,190,"cereals consumed by final in R2 (fr)",1665,963,67,19,8,3,0,0,0,0,0,0
-10,191,"pulses consumed by final in R2 (fr)",1667,1064,64,19,8,3,0,0,0,0,0,0
-10,192,"biomass consumed by final in R2 (fr)",1667,1150,70,19,8,3,0,0,0,0,0,0
-10,193,"gas demanded by final in R2(fr)",1799,873,56,19,8,3,0,0,0,0,0,0
-10,194,"cereals demanded by final in R2 (fr)",1836,964,68,19,8,3,0,0,0,0,0,0
-10,195,"pulses demanded by final in R2 (fr)",1824,1075,65,19,8,3,0,0,0,0,0,0
-10,196,"biomass demanded by final in R2(fr)",1864,1164,71,19,8,3,0,0,0,0,0,0
-10,197,"Final Resources Demanded to Global Market (R,fr)",2014,1122,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,189,"gas consumed by final in R2 (fr)",1659,892,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,190,"cereals consumed by final in R2 (fr)",1665,963,67,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,191,"pulses consumed by final in R2 (fr)",1667,1064,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,192,"biomass consumed by final in R2 (fr)",1667,1150,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,193,"gas demanded by final in R2(fr)",1799,873,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,194,"cereals demanded by final in R2 (fr)",1836,964,68,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,195,"pulses demanded by final in R2 (fr)",1824,1075,65,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,196,"biomass demanded by final in R2(fr)",1864,1164,71,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,197,"Final Resources Demanded to Global Market (R,fr)",2014,1122,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,198,197,196,0,0,0,0,0,64,0,-1--1--1,,1|(1945,1140)|
 1,199,197,195,0,0,0,0,0,128,0,-1--1--1,,1|(1924,1100)|
 1,200,197,194,0,0,0,0,0,128,0,-1--1--1,,1|(1925,1043)|
@@ -3536,7 +3494,7 @@ allocate of primaries between finals
 1,216,194,190,0,0,0,0,0,128,0,-1--1--1,,1|(1756,963)|
 1,217,195,191,0,0,0,0,0,128,0,-1--1--1,,1|(1751,1070)|
 1,218,196,192,0,0,0,0,0,128,0,-1--1--1,,1|(1771,1157)|
-10,219,"final resources consumed from global market in R2 (fr)",2105,952,80,28,8,3,0,0,0,0,0,0
+10,219,"final resources consumed from global market in R2 (fr)",2105,952,80,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,220,192,219,0,0,0,0,0,64,0,-1--1--1,,1|(1869,1058)|
 1,221,190,219,0,0,0,0,0,64,0,-1--1--1,,1|(1871,958)|
 1,222,189,219,0,0,0,0,0,64,0,-1--1--1,,1|(1862,919)|
@@ -3555,111 +3513,111 @@ allocate of primaries between finals
 V300  Do not put anything below this section - it will be ignored
 *Perception of shortage
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,"perception of shortage final resources for R1(fr)",350,26,105,38,3,131,0,0,0,0,0,0
-12,2,48,60,21,10,8,0,3,0,0,-1,0,0,0
+10,1,"perception of shortage final resources for R1(fr)",350,26,105,38,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,2,48,60,21,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(204,21)|
 1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(110,21)|
-11,5,48,157,21,6,8,34,3,0,0,1,0,0,0
-10,6,increment perception shortage final resources R1,157,48,86,19,40,3,0,0,-1,0,0,0
-12,7,48,597,16,10,8,0,3,0,0,-1,0,0,0
+11,5,48,157,21,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,increment perception shortage final resources R1,157,48,86,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,597,16,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,8,10,7,4,0,0,22,0,0,0,-1--1--1,,1|(568,19)|
 1,9,10,1,100,0,0,22,0,0,0,-1--1--1,,1|(496,19)|
-11,10,48,543,19,6,8,34,3,0,0,1,0,0,0
-10,11,decrement perception shortage fnal resources R1,543,46,84,19,40,3,0,0,-1,0,0,0
+11,10,48,543,19,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,decrement perception shortage fnal resources R1,543,46,84,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,12,1,11,1,0,0,0,0,128,0,-1--1--1,,1|(436,87)|
-10,13,INITIAL PERCEPTION SHORTAGE FINALS,258,-85,82,19,8,3,0,0,0,0,0,0
+10,13,INITIAL PERCEPTION SHORTAGE FINALS,258,-85,82,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,14,13,1,0,0,0,0,0,128,1,-1--1--1,,1|(291,-44)|
-10,15,"priorities for finals (fr)",647,-97,39,19,8,3,0,0,0,0,0,0
+10,15,"priorities for finals (fr)",647,-97,39,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,16,1,15,0,0,0,0,0,64,0,-1--1--1,,1|(518,-43)|
-10,17,"percention of shortage of primary resources for R1 (pr)",1133,51,96,28,3,131,0,0,0,0,0,0
-12,18,48,905,36,10,8,0,3,0,0,-1,0,0,0
+10,17,"percention of shortage of primary resources for R1 (pr)",1133,51,96,28,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,18,48,905,36,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,19,21,17,4,0,0,22,0,0,0,-1--1--1,,1|(1011,36)|
 1,20,21,18,100,0,0,22,0,0,0,-1--1--1,,1|(944,36)|
-11,21,48,980,36,6,8,34,3,0,0,1,0,0,0
-10,22,increment perception shortage primaries,980,63,67,19,40,3,0,0,-1,0,0,0
-12,23,48,1389,28,10,8,0,3,0,0,-1,0,0,0
+11,21,48,980,36,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,22,increment perception shortage primaries,980,63,67,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,23,48,1389,28,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,24,26,23,4,0,0,22,0,0,0,-1--1--1,,1|(1348,25)|
 1,25,26,17,100,0,0,22,0,0,0,-1--1--1,,1|(1267,25)|
-11,26,48,1312,25,6,8,34,3,0,0,1,0,0,0
-10,27,decrement perception shortage primaries,1312,52,69,19,40,3,0,0,-1,0,0,0
-10,28,INITIAL PERCEPTION SHORTAGE PRIMARIES,1112,-64,89,19,8,3,0,0,0,0,0,0
+11,26,48,1312,25,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,27,decrement perception shortage primaries,1312,52,69,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,28,INITIAL PERCEPTION SHORTAGE PRIMARIES,1112,-64,89,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,29,28,17,0,0,0,0,0,128,1,-1--1--1,,1|(1119,-17)|
 1,30,17,27,1,0,0,0,0,128,0,-1--1--1,,1|(1228,100)|
-10,31,coefp0,1031,123,23,11,8,3,0,0,0,0,0,0
+10,31,coefp0,1031,123,23,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,32,31,22,0,0,0,0,0,128,0,-1--1--1,,1|(1013,102)|
-10,33,"abundance of primary resources(pr)",1354,537,69,19,8,3,0,0,0,0,0,0
-10,34,"Primary Resources Available to Global Market(pr)",1453,294,65,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,33,"abundance of primary resources(pr)",1354,537,69,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,34,"Primary Resources Available to Global Market(pr)",1453,294,65,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,35,34,33,0,0,0,0,0,64,0,-1--1--1,,1|(1404,413)|
-10,36,primary resources demanded to global market regions agregated,1346,166,87,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,36,primary resources demanded to global market regions agregated,1346,166,87,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,37,36,33,0,0,0,0,0,64,0,-1--1--1,,1|(1349,349)|
-10,38,"shortage of primary resources by region (R,pr)",1053,299,62,28,8,3,0,0,0,0,0,0
-10,39,"primary resources allocated to R1 (pr)",863,280,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,38,"shortage of primary resources by region (R,pr)",1053,299,62,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,39,"primary resources allocated to R1 (pr)",863,280,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,40,39,38,0,0,0,0,0,128,0,-1--1--1,,1|(954,288)|
-10,41,primary resources demanded to global market,1139,169,63,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,41,primary resources demanded to global market,1139,169,63,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,42,41,38,0,0,0,0,0,128,0,-1--1--1,,1|(1099,228)|
-10,43,"excedent of primary resources (pr)",942,543,64,19,8,3,0,0,0,0,0,0
-10,44,"infrastructures of finals from primaries transformation (R,fr,pr)",170,542,87,28,8,3,0,0,0,0,0,0
-10,45,"available infrastructure finals from primaries (R,pr,fr)",582,557,71,28,8,3,0,0,0,0,0,0
+10,43,"excedent of primary resources (pr)",942,543,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,44,"infrastructures of finals from primaries transformation (R,fr,pr)",170,542,87,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,45,"available infrastructure finals from primaries (R,pr,fr)",582,557,71,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,46,44,45,0,0,0,0,0,128,0,-1--1--1,,1|(377,549)|
-10,47,u,1172,475,6,11,8,3,0,0,0,0,0,0
+10,47,u,1172,475,6,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,48,33,47,0,0,0,0,0,64,0,-1--1--1,,1|(1245,499)|
-10,49,y,1000,654,40,20,3,3,0,0,0,0,0,0
-12,50,48,840,654,10,8,0,3,0,0,-1,0,0,0
+10,49,y,1000,654,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,50,48,840,654,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,51,53,49,4,0,0,22,0,0,0,-1--1--1,,1|(935,654)|
 1,52,53,50,100,0,0,22,0,0,0,-1--1--1,,1|(874,654)|
-11,53,48,905,654,6,8,34,3,0,0,1,0,0,0
-10,54,dydt,905,673,16,11,40,3,0,0,-1,0,0,0
+11,53,48,905,654,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,54,dydt,905,673,16,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,55,49,54,1,0,0,0,0,128,0,-1--1--1,,1|(948,694)|
 1,56,47,54,1,0,0,0,0,128,0,-1--1--1,,1|(1143,686)|
 1,57,49,43,0,0,0,0,0,128,0,-1--1--1,,1|(973,604)|
-10,58,u 0,564,647,12,11,8,3,0,0,0,0,0,0
-10,59,y 0,433,681,40,20,3,3,0,0,0,0,0,0
-12,60,48,273,681,10,8,0,3,0,0,-1,0,0,0
+10,58,u 0,564,647,12,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,59,y 0,433,681,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,60,48,273,681,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,61,63,59,4,0,0,22,0,0,0,-1--1--1,,1|(368,681)|
 1,62,63,60,100,0,0,22,0,0,0,-1--1--1,,1|(307,681)|
-11,63,48,338,681,6,8,34,3,0,0,1,0,0,0
-10,64,dydt 0,338,700,22,11,40,3,0,0,-1,0,0,0
+11,63,48,338,681,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,64,dydt 0,338,700,22,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,65,59,64,1,0,0,0,0,128,0,-1--1--1,,1|(381,721)|
 1,66,58,64,1,0,0,0,0,128,0,-1--1--1,,1|(480,743)|
 1,67,44,58,0,0,0,0,0,64,0,-1--1--1,,1|(397,602)|
-10,68,"resources consum matrix global market (R,fr,pr)",136,610,82,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,68,"resources consum matrix global market (R,fr,pr)",136,610,82,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,69,68,58,0,0,0,0,0,64,0,-1--1--1,,1|(378,630)|
 1,70,59,45,0,0,0,0,0,128,0,-1--1--1,,1|(497,627)|
-10,71,priority of liquids,766,-165,53,11,8,3,0,0,0,0,0,0
-10,72,priority of gases,766,-136,50,11,8,3,0,0,0,0,0,0
-10,73,priority of electricity,776,-109,68,19,8,131,0,0,0,0,0,0
-10,74,priority of cereals food,789,-76,103,19,8,131,0,0,0,0,0,0
-10,75,priority of pulses food,792,-41,83,18,8,131,0,0,0,0,0,0
-10,76,priority of wood,772,-14,51,11,8,3,0,0,0,0,0,0
+10,71,priority of liquids,766,-165,53,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,72,priority of gases,766,-136,50,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,73,priority of electricity,776,-109,68,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,74,priority of cereals food,789,-76,103,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,75,priority of pulses food,792,-41,83,18,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,76,priority of wood,772,-14,51,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,77,71,15,0,0,0,0,0,128,0,-1--1--1,,1|(719,-138)|
 1,78,72,15,0,0,0,0,0,128,0,-1--1--1,,1|(716,-119)|
 1,79,73,15,0,0,0,0,0,128,0,-1--1--1,,1|(703,-102)|
 1,80,74,15,0,0,0,0,0,128,0,-1--1--1,,1|(692,-89)|
 1,81,75,15,0,0,0,0,0,128,0,-1--1--1,,1|(722,-67)|
 1,82,76,15,0,0,0,0,0,128,0,-1--1--1,,1|(721,-47)|
-10,83,"shortage of final resources in global market (R,fr)",204,153,59,28,8,3,0,0,0,0,0,0
-10,84,"final resources consumed from global market in R2 (fr)",418,210,84,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,83,"shortage of final resources in global market (R,fr)",204,153,59,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,84,"final resources consumed from global market in R2 (fr)",418,210,84,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,85,84,83,0,0,0,0,0,128,0,-1--1--1,,1|(305,179)|
-10,86,"final resources consumed from global market (R,fr)",569,278,80,19,8,3,0,0,0,0,0,0
-10,87,"final resources consumed (R,fr)",371,298,52,19,8,3,0,0,0,0,0,0
+10,86,"final resources consumed from global market (R,fr)",569,278,80,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,87,"final resources consumed (R,fr)",371,298,52,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,88,84,86,0,0,0,0,0,128,0,-1--1--1,,1|(496,245)|
 1,89,86,87,0,0,0,0,0,128,0,-1--1--1,,1|(462,288)|
-10,90,"final resources consumed regions agregated (fr)",519,386,80,19,8,3,0,0,0,0,0,0
+10,90,"final resources consumed regions agregated (fr)",519,386,80,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,91,87,90,0,0,0,0,0,128,0,-1--1--1,,1|(438,338)|
-10,92,"Final Resources Demanded (R,f)",160,447,57,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,93,"final resources demanded regions agregated (fr)",344,448,81,19,8,3,0,0,0,0,0,0
+10,92,"Final Resources Demanded (R,f)",160,447,57,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,93,"final resources demanded regions agregated (fr)",344,448,81,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,94,92,93,0,0,0,0,0,128,0,-1--1--1,,1|(233,447)|
-10,95,"Final Resources Demanded to Global Market (R,fr)",144,254,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,95,"Final Resources Demanded to Global Market (R,fr)",144,254,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,96,95,83,0,0,0,0,0,64,0,-1--1--1,,1|(169,209)|
-10,97,"final resources consumed from global market in R1 (fr)",660,163,84,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,97,"final resources consumed from global market in R1 (fr)",660,163,84,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,98,97,86,0,0,0,0,0,64,0,-1--1--1,,1|(615,219)|
-10,99,"Final Resources from Local Sources (R,f)",172,355,72,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,99,"Final Resources from Local Sources (R,f)",172,355,72,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,100,99,87,0,0,0,0,0,64,0,-1--1--1,,1|(271,325)|
 1,101,97,83,0,0,0,0,0,128,0,-1--1--1,,1|(426,158)|
 1,102,83,6,0,0,0,0,0,128,0,-1--1--1,,1|(181,102)|
-10,103,"primary resources allocated to R2 (pr)",852,339,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,103,"primary resources allocated to R2 (pr)",852,339,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,104,103,38,0,0,0,0,0,128,0,-1--1--1,,1|(948,319)|
-10,105,"shortage of primary resources (pr)",1144,412,62,19,8,3,0,0,0,0,0,0
+10,105,"shortage of primary resources (pr)",1144,412,62,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,106,105,47,0,0,0,0,0,128,0,-1--1--1,,1|(1156,441)|
 1,107,39,105,0,0,0,0,0,128,0,-1--1--1,,1|(996,343)|
 1,108,103,105,0,0,0,0,0,128,0,-1--1--1,,1|(994,374)|
@@ -3671,54 +3629,54 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 V300  Do not put anything below this section - it will be ignored
 *Increments of shares F from P in R1
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
-10,1,coeff share exchange R1,169,181,42,19,8,3,0,0,0,0,0,0
-10,2,shares finals from p1oil in R1,631,283,69,23,3,131,0,0,0,0,0,0
-10,3,SUITABILITY OF FINAL TO PRIMARY RESOURCES,493,155,77,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,4,shares finals from p2gas in R1,259,454,65,28,3,131,0,0,0,0,0,0
-10,5,shares finals from p4cereals in R1,453,593,73,29,3,131,0,0,0,0,0,0
-10,6,shares finals from p5pulses in R1,973,408,60,28,3,131,0,0,0,0,0,0
-10,7,shares finals from p7biomass in R1,845,627,68,22,3,131,0,0,0,0,0,0
+10,1,coeff share exchange R1,169,181,42,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,shares finals from p1oil in R1,631,283,69,23,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,SUITABILITY OF FINAL TO PRIMARY RESOURCES,493,155,77,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,4,shares finals from p2gas in R1,259,454,65,28,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,shares finals from p4cereals in R1,453,593,73,29,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,shares finals from p5pulses in R1,973,408,60,28,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,7,shares finals from p7biomass in R1,845,627,68,22,3,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,8,10,4,4,0,0,22,0,0,0,-1--1--1,,1|(259,366)|
 1,9,10,2,100,0,0,22,0,0,0,-1--1--1,,1|(413,298)|
-11,10,3548,259,298,6,8,34,3,0,0,1,0,0,0
-10,11,oil to gas shares R1,259,317,51,19,40,3,0,0,-1,0,0,0
+11,10,4776,259,298,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,oil to gas shares R1,259,317,51,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,12,14,5,4,0,0,22,0,0,0,-1--1--1,,1|(453,372)|
 1,13,14,2,100,0,0,22,0,0,0,-1--1--1,,1|(595,335)|
-11,14,3452,595,372,6,8,34,3,0,0,1,0,0,0
-10,15,oil to cereals shares R1,595,399,41,19,40,3,0,0,-1,0,0,0
+11,14,4644,595,372,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,15,oil to cereals shares R1,595,399,41,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,16,18,6,4,0,0,22,0,0,0,-1--1--1,,1|(967,305)|
 1,17,18,2,100,0,0,22,0,0,0,-1--1--1,,1|(631,225)|
-11,18,3676,967,225,8,6,33,3,0,0,4,0,0,0
-10,19,oil to pulses shares R1,1034,225,38,19,40,3,0,0,-1,0,0,0
+11,18,4952,967,225,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,19,oil to pulses shares R1,1034,225,38,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,20,22,7,4,0,0,22,0,0,0,-1--1--1,,1|(684,627)|
 1,21,22,2,100,0,0,22,0,0,0,-1--1--1,,1|(684,346)|
-11,22,3692,684,393,8,6,33,3,0,0,4,0,0,0
-10,23,oil to biomass shares R1,736,393,44,19,40,3,0,0,-1,0,0,0
+11,22,4974,684,393,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,23,oil to biomass shares R1,736,393,44,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,24,26,5,4,0,0,22,0,0,0,-1--1--1,,1|(303,594)|
 1,25,26,4,100,0,0,22,0,0,0,-1--1--1,,1|(218,535)|
-11,26,3660,218,594,8,6,33,3,0,0,4,0,0,0
-10,27,gas to cereals shares R1,270,594,44,19,40,3,0,0,-1,0,0,0
+11,26,4930,218,594,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,27,gas to cereals shares R1,270,594,44,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,28,30,6,4,0,0,22,0,0,0,-1--1--1,,1|(634,408)|
 1,29,30,4,100,0,0,22,0,0,0,-1--1--1,,1|(476,442)|
-11,30,3612,634,442,6,8,34,3,0,0,1,0,0,0
-10,31,gas to pulses shares R1,634,469,41,19,40,3,0,0,-1,0,0,0
+11,30,4864,634,442,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,31,gas to pulses shares R1,634,469,41,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,32,34,7,4,0,0,22,0,0,0,-1--1--1,,1|(519,627)|
 1,33,34,4,100,0,0,22,0,0,0,-1--1--1,,1|(519,454)|
-11,34,3596,519,492,6,8,34,3,0,0,1,0,0,0
-10,35,gas to biomass shares R1,519,519,47,19,40,3,0,0,-1,0,0,0
+11,34,4842,519,492,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,35,gas to biomass shares R1,519,519,47,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,36,38,7,4,0,0,22,0,0,0,-1--1--1,,1|(599,627)|
 1,37,38,5,100,0,0,22,0,0,0,-1--1--1,,1|(559,586)|
-11,38,3708,599,586,6,8,34,3,0,0,1,0,0,0
-10,39,cereals to biomass shares R1,599,613,59,19,40,3,0,0,-1,0,0,0
+11,38,4996,599,586,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,39,cereals to biomass shares R1,599,613,59,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,40,42,6,4,0,0,22,0,0,0,-1--1--1,,1|(973,721)|
 1,41,42,5,100,0,0,22,0,0,0,-1--1--1,,1|(493,667)|
-11,42,3516,493,721,6,8,34,3,0,0,1,0,0,0
-10,43,cereals to pulses shares R1,493,748,53,19,40,3,0,0,-1,0,0,0
+11,42,4732,493,721,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,43,cereals to pulses shares R1,493,748,53,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,44,2,11,1,0,0,0,0,128,0,-1--1--1,,1|(463,315)|
 1,45,4,11,0,0,0,0,0,128,0,-1--1--1,,1|(259,388)|
 1,46,6,19,0,0,0,0,0,128,0,-1--1--1,,1|(1002,318)|
 1,47,2,19,1,0,0,0,0,128,0,-1--1--1,,1|(794,201)|
-10,48,"excedent of primary resources (pr)",210,719,81,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,48,"excedent of primary resources (pr)",210,719,81,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,49,48,15,0,0,0,0,0,128,0,-1--1--1,,1|(396,563)|
 1,50,48,27,0,0,0,0,0,128,0,-1--1--1,,1|(236,662)|
 1,51,48,43,0,0,0,0,0,128,0,-1--1--1,,1|(358,733)|
@@ -3738,21 +3696,21 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 1,65,48,35,0,0,0,0,0,128,0,-1--1--1,,1|(358,622)|
 1,66,2,23,0,0,0,0,0,128,0,-1--1--1,,1|(679,334)|
 1,67,7,23,0,0,0,0,0,128,0,-1--1--1,,1|(792,514)|
-10,68,"excedent of primary resources (pr)",312,147,81,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,68,"excedent of primary resources (pr)",312,147,81,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,69,68,11,0,0,0,0,0,64,0,-1--1--1,,1|(287,225)|
-10,70,"excedent of primary resources (pr)",906,314,81,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,70,"excedent of primary resources (pr)",906,314,81,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,71,70,19,0,0,0,0,0,64,0,-1--1--1,,1|(963,273)|
-10,72,"excedent of primary resources (pr)",896,545,81,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,72,"excedent of primary resources (pr)",896,545,81,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,73,72,23,0,0,0,0,0,64,0,-1--1--1,,1|(821,473)|
-10,74,"available infrastructure finals from primaries (R,pr,fr)",1349,341,75,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,75,"posibility of share exchange R1 (ex,fr)",1227,273,63,19,8,3,0,0,0,0,0,0
-10,76,"excedent of primary resources (pr)",1024,139,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,74,"available infrastructure finals from primaries (R,pr,fr)",1349,341,75,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,75,"posibility of share exchange R1 (ex,fr)",1227,273,63,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,76,"excedent of primary resources (pr)",1024,139,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,77,74,75,0,0,0,0,0,128,0,-1--1--1,,1|(1286,305)|
 1,78,76,75,0,0,0,0,0,128,0,-1--1--1,,1|(1119,202)|
 1,79,75,19,0,0,0,0,0,128,0,-1--1--1,,1|(1124,247)|
 1,80,75,23,0,0,0,0,0,128,0,-1--1--1,,1|(978,333)|
 1,81,75,31,0,0,0,0,0,128,0,-1--1--1,,1|(929,371)|
-10,82,"posibility of share exchange R1 (ex,fr)",105,304,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,82,"posibility of share exchange R1 (ex,fr)",105,304,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,83,82,31,0,0,0,0,0,128,0,-1--1--1,,1|(372,387)|
 1,84,82,39,0,0,0,0,0,128,0,-1--1--1,,1|(345,454)|
 1,85,82,35,0,0,0,0,0,128,0,-1--1--1,,1|(305,408)|
@@ -3767,20 +3725,20 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 1,94,1,35,0,0,0,0,0,64,0,-1--1--1,,1|(338,345)|
 1,95,97,7,4,0,0,22,0,0,0,-1--1--1,,1|(1218,627)|
 1,96,97,6,100,0,0,22,0,0,0,-1--1--1,,1|(1122,425)|
-11,97,2412,1218,425,6,8,34,3,0,0,1,0,0,0
-10,98,pulses to biomass shares R1,1218,452,56,19,40,3,0,0,-1,0,0,0
+11,97,3324,1218,425,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,98,pulses to biomass shares R1,1218,452,56,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,99,1,43,0,0,0,0,0,64,0,-1--1--1,,1|(327,458)|
 1,100,75,43,0,0,0,0,0,64,0,-1--1--1,,1|(865,506)|
 1,101,1,39,0,0,0,0,0,64,0,-1--1--1,,1|(378,392)|
 1,102,1,98,0,0,0,0,0,64,0,-1--1--1,,1|(679,312)|
-10,103,"excedent of primary resources (pr)",1340,538,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,103,"excedent of primary resources (pr)",1340,538,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,104,103,98,0,0,0,0,0,64,0,-1--1--1,,1|(1284,498)|
 1,105,75,98,0,0,0,0,0,64,0,-1--1--1,,1|(1222,355)|
 1,106,6,98,0,0,0,0,0,64,0,-1--1--1,,1|(1090,428)|
 1,107,7,98,0,0,0,0,0,64,0,-1--1--1,,1|(1027,540)|
-10,108,SUITABILITY OF FINAL TO PRIMARY RESOURCES,1253,160,86,28,8,3,0,0,0,0,0,0
+10,108,SUITABILITY OF FINAL TO PRIMARY RESOURCES,1253,160,86,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,109,108,75,0,0,0,0,0,128,0,-1--1--1,,1|(1240,214)|
-10,110,"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)",709,93,83,28,8,3,0,0,0,0,0,0
+10,110,"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr)",709,93,83,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,111,110,2,0,0,0,0,0,128,1,-1--1--1,,1|(671,183)|
 1,112,110,6,0,0,0,0,0,128,1,-1--1--1,,1|(836,245)|
 1,113,110,7,0,0,0,0,0,128,1,-1--1--1,,1|(775,356)|
@@ -3794,53 +3752,53 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 V300  Do not put anything below this section - it will be ignored
 *Increments of shares F from P in R2
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,coeff share exchange R2,169,153,42,19,8,3,0,0,0,0,0,0
-10,2,shares finals from p1oil in R2,631,255,69,23,3,131,0,0,0,0,0,0
-10,3,shares finals from p2gas in R2,259,426,65,28,3,131,0,0,0,0,0,0
-10,4,shares finals from p4cereals in R2,453,565,73,29,3,131,0,0,0,0,0,0
-10,5,shares finals from p5pulses in R2,973,380,60,28,3,131,0,0,0,0,0,0
-10,6,shares finals from p7biomass in R2,845,599,68,22,3,131,0,0,0,0,0,0
+10,1,coeff share exchange R2,169,153,42,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,shares finals from p1oil in R2,631,255,69,23,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,shares finals from p2gas in R2,259,426,65,28,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,shares finals from p4cereals in R2,453,565,73,29,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,shares finals from p5pulses in R2,973,380,60,28,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,shares finals from p7biomass in R2,845,599,68,22,3,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,7,9,3,4,0,0,22,0,0,0,-1--1--1,,1|(259,338)|
 1,8,9,2,100,0,0,22,0,0,0,-1--1--1,,1|(413,270)|
-11,9,1932,259,270,6,8,34,3,0,0,1,0,0,0
-10,10,oil to gas shares R2,259,289,51,19,40,3,0,0,-1,0,0,0
+11,9,2664,259,270,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,10,oil to gas shares R2,259,289,51,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,11,13,4,4,0,0,22,0,0,0,-1--1--1,,1|(453,344)|
 1,12,13,2,100,0,0,22,0,0,0,-1--1--1,,1|(595,307)|
-11,13,2108,595,344,6,8,34,3,0,0,1,0,0,0
-10,14,oil to cereals shares R2,595,371,41,19,40,3,0,0,-1,0,0,0
+11,13,2906,595,344,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,14,oil to cereals shares R2,595,371,41,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,15,17,5,4,0,0,22,0,0,0,-1--1--1,,1|(967,277)|
 1,16,17,2,100,0,0,22,0,0,0,-1--1--1,,1|(631,197)|
-11,17,2076,967,197,8,6,33,3,0,0,4,0,0,0
-10,18,oil to pulses shares R2,1034,197,38,19,40,3,0,0,-1,0,0,0
+11,17,2862,967,197,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,18,oil to pulses shares R2,1034,197,38,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,19,21,6,4,0,0,22,0,0,0,-1--1--1,,1|(684,599)|
 1,20,21,2,100,0,0,22,0,0,0,-1--1--1,,1|(684,318)|
-11,21,2124,684,365,8,6,33,3,0,0,4,0,0,0
-10,22,oil to biomass shares R2,736,365,44,19,40,3,0,0,-1,0,0,0
+11,21,2928,684,365,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,22,oil to biomass shares R2,736,365,44,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,23,25,4,4,0,0,22,0,0,0,-1--1--1,,1|(303,566)|
 1,24,25,3,100,0,0,22,0,0,0,-1--1--1,,1|(218,507)|
-11,25,2012,218,566,8,6,33,3,0,0,4,0,0,0
-10,26,gas to cereals shares R2,270,566,44,19,40,3,0,0,-1,0,0,0
+11,25,2774,218,566,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,26,gas to cereals shares R2,270,566,44,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,27,29,5,4,0,0,22,0,0,0,-1--1--1,,1|(634,380)|
 1,28,29,3,100,0,0,22,0,0,0,-1--1--1,,1|(476,414)|
-11,29,2204,634,414,6,8,34,3,0,0,1,0,0,0
-10,30,gas to pulses shares R2,634,441,41,19,40,3,0,0,-1,0,0,0
+11,29,3038,634,414,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,30,gas to pulses shares R2,634,441,41,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,31,33,6,4,0,0,22,0,0,0,-1--1--1,,1|(519,599)|
 1,32,33,3,100,0,0,22,0,0,0,-1--1--1,,1|(519,426)|
-11,33,2220,519,464,6,8,34,3,0,0,1,0,0,0
-10,34,gas to biomass hares R2,519,491,47,19,40,3,0,0,-1,0,0,0
+11,33,3060,519,464,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,34,gas to biomass hares R2,519,491,47,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,35,37,6,4,0,0,22,0,0,0,-1--1--1,,1|(599,599)|
 1,36,37,4,100,0,0,22,0,0,0,-1--1--1,,1|(559,558)|
-11,37,2428,599,558,6,8,34,3,0,0,1,0,0,0
-10,38,cereals to biomass shares R2,599,585,59,19,40,3,0,0,-1,0,0,0
+11,37,3346,599,558,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,38,cereals to biomass shares R2,599,585,59,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,39,41,5,4,0,0,22,0,0,0,-1--1--1,,1|(973,693)|
 1,40,41,4,100,0,0,22,0,0,0,-1--1--1,,1|(493,639)|
-11,41,1804,493,693,6,8,34,3,0,0,1,0,0,0
-10,42,cereals to pulses shares R2,493,720,53,19,40,3,0,0,-1,0,0,0
+11,41,2488,493,693,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,42,cereals to pulses shares R2,493,720,53,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,43,2,10,1,0,0,0,0,128,0,-1--1--1,,1|(463,287)|
 1,44,3,10,0,0,0,0,0,128,0,-1--1--1,,1|(259,360)|
 1,45,5,18,0,0,0,0,0,128,0,-1--1--1,,1|(1002,290)|
 1,46,2,18,1,0,0,0,0,128,0,-1--1--1,,1|(794,173)|
-10,47,"excedent of primary resources (pr)",210,691,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,47,"excedent of primary resources (pr)",210,691,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,48,47,14,0,0,0,0,0,128,0,-1--1--1,,1|(396,535)|
 1,49,47,26,0,0,0,0,0,128,0,-1--1--1,,1|(236,634)|
 1,50,47,42,0,0,0,0,0,128,0,-1--1--1,,1|(352,705)|
@@ -3860,21 +3818,21 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 1,64,47,34,0,0,0,0,0,128,0,-1--1--1,,1|(358,594)|
 1,65,2,22,0,0,0,0,0,128,0,-1--1--1,,1|(679,306)|
 1,66,6,22,0,0,0,0,0,128,0,-1--1--1,,1|(792,486)|
-10,67,"excedent of primary resources (pr)",312,119,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,67,"excedent of primary resources (pr)",312,119,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,68,67,10,0,0,0,0,0,64,0,-1--1--1,,1|(287,197)|
-10,69,"excedent of primary resources (pr)",906,286,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,69,"excedent of primary resources (pr)",906,286,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,70,69,18,0,0,0,0,0,64,0,-1--1--1,,1|(963,245)|
-10,71,"excedent of primary resources (pr)",896,517,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,71,"excedent of primary resources (pr)",896,517,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,72,71,22,0,0,0,0,0,64,0,-1--1--1,,1|(821,445)|
-10,73,"available infrastructure finals from primaries (R,pr,fr)",1349,313,75,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,74,"posibility of share exchange R2 (ex,fr)",1227,245,63,19,8,3,0,0,0,0,0,0
-10,75,"excedent of primary resources (pr)",1024,111,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,73,"available infrastructure finals from primaries (R,pr,fr)",1349,313,75,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,74,"posibility of share exchange R2 (ex,fr)",1227,245,63,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,75,"excedent of primary resources (pr)",1024,111,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,76,73,74,0,0,0,0,0,128,0,-1--1--1,,1|(1286,277)|
 1,77,75,74,0,0,0,0,0,128,0,-1--1--1,,1|(1119,174)|
 1,78,74,18,0,0,0,0,0,128,0,-1--1--1,,1|(1124,219)|
 1,79,74,22,0,0,0,0,0,128,0,-1--1--1,,1|(978,305)|
 1,80,74,30,0,0,0,0,0,128,0,-1--1--1,,1|(929,343)|
-10,81,"posibility of share exchange R2 (ex,fr)",105,276,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,81,"posibility of share exchange R2 (ex,fr)",105,276,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,82,81,30,0,0,0,0,0,128,0,-1--1--1,,1|(372,359)|
 1,83,81,38,0,0,0,0,0,128,0,-1--1--1,,1|(345,426)|
 1,84,81,34,0,0,0,0,0,128,0,-1--1--1,,1|(305,380)|
@@ -3889,18 +3847,18 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 1,93,1,34,0,0,0,0,0,64,0,-1--1--1,,1|(338,317)|
 1,94,96,6,4,0,0,22,0,0,0,-1--1--1,,1|(1218,599)|
 1,95,96,5,100,0,0,22,0,0,0,-1--1--1,,1|(1122,397)|
-11,96,1820,1218,397,6,8,34,3,0,0,1,0,0,0
-10,97,pulses to biomass shares R2,1218,424,56,19,40,3,0,0,-1,0,0,0
+11,96,2510,1218,397,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,97,pulses to biomass shares R2,1218,424,56,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,98,1,42,0,0,0,0,0,64,0,-1--1--1,,1|(327,430)|
 1,99,74,42,0,0,0,0,0,64,0,-1--1--1,,1|(865,478)|
 1,100,1,38,0,0,0,0,0,64,0,-1--1--1,,1|(378,364)|
 1,101,1,97,0,0,0,0,0,64,0,-1--1--1,,1|(679,284)|
-10,102,"excedent of primary resources (pr)",1340,510,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,102,"excedent of primary resources (pr)",1340,510,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,103,102,97,0,0,0,0,0,64,0,-1--1--1,,1|(1284,470)|
 1,104,74,97,0,0,0,0,0,64,0,-1--1--1,,1|(1222,327)|
 1,105,5,97,0,0,0,0,0,64,0,-1--1--1,,1|(1090,400)|
 1,106,6,97,0,0,0,0,0,64,0,-1--1--1,,1|(1027,512)|
-10,107,"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr) 0",709,65,78,28,8,3,0,0,0,0,0,0
+10,107,"INITIAL SHARES FINALS FROM PRIMARIES (R,pr,fr) 0",709,65,78,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,108,107,2,0,0,0,0,0,128,1,-1--1--1,,1|(671,155)|
 1,109,107,5,0,0,0,0,0,128,1,-1--1--1,,1|(836,217)|
 1,110,107,6,0,0,0,0,0,128,1,-1--1--1,,1|(775,328)|
@@ -3908,7 +3866,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 1,112,107,4,0,0,0,0,0,128,1,-1--1--1,,1|(584,308)|
 1,113,71,30,0,0,0,0,0,128,0,-1--1--1,,1|(759,476)|
 1,114,1,10,0,0,0,0,0,128,0,-1--1--1,,1|(209,215)|
-10,115,SUITABILITY OF FINAL TO PRIMARY RESOURCES,1275,141,77,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,115,SUITABILITY OF FINAL TO PRIMARY RESOURCES,1275,141,77,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,116,115,74,0,0,0,0,0,128,0,-1--1--1,,1|(1252,191)|
 <[VIEW END]>
 <[VIEW START]>
@@ -3916,131 +3874,133 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,1
 V300  Do not put anything below this section - it will be ignored
 *View allocate
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,"resources consum matrix global market (R,fr,pr)",592,133,91,33,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,2,"primary resources allocated to R1 (pr)",155,493,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,3,"Final Resources Demanded to Global Market (R,fr)",678,58,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-12,4,0,200,520,182,18,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-0-255
+10,1,"resources consum matrix global market (R,fr,pr)",592,133,91,33,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,2,"primary resources allocated to R1 (pr)",155,493,68,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,3,"Final Resources Demanded to Global Market (R,fr)",678,58,67,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+12,4,0,200,520,182,18,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-0-255,0,0,0,0,0,0
 By primary, primarias que tiene R1 asignadas y como las distribuye por finales
-12,5,0,175,541,150,15,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-0-255
+12,5,0,175,541,150,15,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-0-255,0,0,0,0,0,0
 graficos sumados unos sobre otros
-10,6,"primary resources graph added for R1 (fr,pr)",207,596,77,19,8,3,0,0,0,0,0,0
+10,6,"primary resources graph added for R1 (fr,pr)",207,596,77,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,7,1,6,1,0,0,0,0,128,0,-1--1--1,,1|(443,372)|
-10,8,"final resources graph added for R1 (fr,pr)",901,602,66,19,8,3,0,0,0,0,0,0
+10,8,"final resources graph added for R1 (fr,pr)",901,602,66,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,9,1,8,1,0,0,0,0,128,0,-1--1--1,,1|(662,374)|
-12,10,0,984,495,70,19,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-0-255
+12,10,0,984,495,70,19,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-0-255,0,0,0,0,0,0
 por finales, voy sumando las primarias
-10,11,"final resources demanded to g m by R1(fr)",1214,442,66,28,8,3,0,0,0,0,0,0
+10,11,"final resources demanded to g m by R1(fr)",1214,442,66,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,12,3,11,0,0,0,0,0,128,0,-1--1--1,,1|(939,245)|
-10,13,"shortage of final resources in global market (R,fr)",454,190,87,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,14,u,577,216,15,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
-10,15,"Primary Resources Allocated by country(R,pr)",467,60,65,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,13,"shortage of final resources in global market (R,fr)",454,190,87,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,14,u,577,216,15,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,15,"Primary Resources Allocated by country(R,pr)",467,60,65,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 <[VIEW END]>
 <[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Land allocation
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-10,1,"Land Forest (R)",763,194,40,20,3,3,0,0,0,0,0,0
-10,2,"Land Arable rainfed (R)",550,271,40,20,3,3,0,0,0,0,0,0
-10,3,"Land grassland (R)",881,380,40,20,3,3,0,0,0,0,0,0
-10,4,"Land Urban (R)",688,386,40,20,3,3,0,0,0,0,0,0
+10,1,"Land Forest (R)",763,194,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,"Land Arable rainfed (R)",550,271,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,"Land grassland (R)",881,380,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,"Land Urban (R)",688,386,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,5,7,2,4,0,0,22,0,0,0,-1--1--1,,1|(560,211)|
 1,6,7,1,100,0,0,22,0,0,0,-1--1--1,,1|(560,194)|
-11,7,764,560,164,6,8,34,3,0,0,1,0,0,0
-10,8,Forest to Arable Land,560,191,53,19,40,3,0,0,-1,0,0,0
+11,7,1058,560,164,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,8,Forest to Arable Land,560,191,53,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,9,11,3,4,0,0,22,0,0,0,-1--1--1,,1|(881,255)|
 1,10,11,1,100,0,0,22,0,0,0,-1--1--1,,1|(763,255)|
-11,11,508,820,255,6,8,34,3,0,0,1,0,0,0
-10,12,Forest to Pastures Land,820,282,58,19,40,3,0,0,-1,0,0,0
+11,11,706,820,255,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,12,Forest to Pastures Land,820,282,58,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,13,15,4,4,0,0,22,0,0,0,-1--1--1,,1|(599,380)|
 1,14,15,2,100,0,0,22,0,0,0,-1--1--1,,1|(545,331)|
-11,15,604,545,380,6,8,34,3,0,0,1,0,0,0
-10,16,Arable to Urban Land,545,407,53,19,40,3,0,0,-1,0,0,0
-10,17,Share Arable to Cereals,1240,40,51,19,8,3,0,0,-1,0,0,0
-10,18,Share Arable to Pulses,1368,37,51,19,8,3,0,0,0,0,0,0
-10,19,"Land arable irrigated (R)",263,349,40,20,3,3,0,0,0,0,0,0
-10,20,"Land degraded (R)",417,108,76,20,3,131,0,0,0,0,0,0
+11,15,838,545,380,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,16,Arable to Urban Land,545,407,53,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,17,Share Arable to Cereals,1240,40,51,19,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,18,Share Arable to Pulses,1368,37,51,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,19,"Land arable irrigated (R)",263,349,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,20,"Land degraded (R)",417,108,76,20,3,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,21,23,19,4,0,0,22,0,0,0,-1--1--1,,1|(435,349)|
 1,22,23,2,100,0,0,22,0,0,0,-1--1--1,,1|(435,271)|
-11,23,844,435,304,6,8,34,3,0,0,1,0,0,0
-10,24,arable to irrigated,435,323,55,11,40,3,0,0,-1,0,0,0
+11,23,1168,435,304,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,24,arable to irrigated,435,323,55,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,25,27,20,4,0,0,22,0,0,0,-1--1--1,,1|(393,149)|
 1,26,27,2,100,0,0,22,0,0,0,-1--1--1,,1|(393,271)|
-11,27,476,393,179,6,8,34,3,0,0,1,0,0,0
-10,28,arable to degraded,393,198,59,11,40,3,0,0,-1,0,0,0
+11,27,662,393,179,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,28,arable to degraded,393,198,59,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,29,31,20,4,0,0,22,0,0,0,-1--1--1,,1|(417,77)|
 1,30,31,1,100,0,0,22,0,0,0,-1--1--1,,1|(759,129)|
-11,31,524,759,77,6,8,34,3,0,0,1,0,0,0
-10,32,forest to degraded,759,96,58,11,40,3,0,0,-1,0,0,0
+11,31,728,759,77,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,32,forest to degraded,759,96,58,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,33,35,20,4,0,0,22,0,0,0,-1--1--1,,1|(417,49)|
 1,34,35,3,100,0,0,22,0,0,0,-1--1--1,,1|(914,208)|
-11,35,588,914,49,6,8,34,3,0,0,1,0,0,0
-10,36,grassland to degraded,914,76,39,19,40,3,0,0,-1,0,0,0
-10,37,quatity of lands,307,476,40,20,3,3,0,0,0,0,0,0
-12,38,48,483,463,10,8,0,3,0,0,-1,0,0,0
+11,35,816,914,49,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,36,grassland to degraded,914,76,39,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,37,quatity of lands,307,476,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,38,48,483,463,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,39,41,38,4,0,0,22,0,0,0,-1--1--1,,1|(444,463)|
 1,40,41,37,100,0,0,22,0,0,0,-1--1--1,,1|(375,463)|
-11,41,48,410,463,6,8,34,3,0,0,1,0,0,0
-10,42,decrement of quality of lands,410,490,48,19,40,3,0,0,-1,0,0,0
+11,41,48,410,463,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,42,decrement of quality of lands,410,490,48,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 <[VIEW END]>
 <[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *View 11
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
-12,1,0,525,66,193,20,8,135,0,10,-1,0,0,0,-1--1--1,0-0-0,|16||0-0-255
+12,1,0,525,66,193,20,8,135,0,10,-1,0,0,0,-1--1--1,0-0-0,|16||0-0-255,0,0,0,0,0,0
 USES OF ARABLE LAND
-10,2,cereals percent on arable,304,246,59,28,3,131,0,0,0,0,0,0
-10,3,pulses percent on arable,300,362,61,22,3,131,0,0,0,0,0,0
-10,4,vegetables percent on arable,723,227,70,24,3,131,0,0,0,0,0,0
-10,5,RES electric percent on arable,720,338,66,21,3,131,0,0,0,0,0,0
-10,6,other percent on arable,545,446,63,23,3,131,0,0,0,0,0,0
+10,2,cereals percent on arable,304,246,59,28,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,pulses percent on arable,300,362,61,22,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,vegetables percent on arable,723,227,70,24,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,RES electric percent on arable,720,338,66,21,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,other percent on arable,545,446,63,23,3,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,7,9,3,4,0,0,22,0,0,0,-1--1--1,,1|(303,326)|
 1,8,9,2,100,0,0,22,0,0,0,-1--1--1,,1|(303,287)|
-11,9,828,303,307,8,6,33,3,0,0,4,0,0,0
-10,10,cereals to pulses,363,307,52,11,40,3,0,0,-1,0,0,0
+11,9,1146,303,307,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,10,cereals to pulses,363,307,52,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,11,13,4,4,0,0,22,0,0,0,-1--1--1,,1|(782,168)|
 1,12,13,2,100,0,0,22,0,0,0,-1--1--1,,1|(304,125)|
-11,13,412,782,125,6,8,34,3,0,0,1,0,0,0
-10,14,cereals to vegetables,782,152,34,19,40,3,0,0,-1,0,0,0
+11,13,574,782,125,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,14,cereals to vegetables,782,152,34,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,15,17,5,4,0,0,22,0,0,0,-1--1--1,,1|(533,338)|
 1,16,17,2,100,0,0,22,0,0,0,-1--1--1,,1|(445,259)|
-11,17,444,533,259,6,8,34,3,0,0,1,0,0,0
-10,18,cereals to RES,533,278,47,11,40,3,0,0,-1,0,0,0
+11,17,618,533,259,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,18,cereals to RES,533,278,47,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,19,21,5,4,0,0,22,0,0,0,-1--1--1,,1|(583,350)|
 1,20,21,3,100,0,0,22,0,0,0,-1--1--1,,1|(430,350)|
-11,21,428,506,350,6,8,34,3,0,0,1,0,0,0
-10,22,pulses to RES,506,369,45,11,40,3,0,0,-1,0,0,0
+11,21,596,506,350,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,22,pulses to RES,506,369,45,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,23,25,4,4,0,0,22,0,0,0,-1--1--1,,1|(723,165)|
 1,24,25,3,100,0,0,22,0,0,0,-1--1--1,,1|(404,362)|
-11,25,748,404,165,6,8,34,3,0,0,1,0,0,0
-10,26,pulses to vegetables,404,192,34,19,40,3,0,0,-1,0,0,0
+11,25,1036,404,165,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,26,pulses to vegetables,404,192,34,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,27,29,5,4,0,0,22,0,0,0,-1--1--1,,1|(720,303)|
 1,28,29,4,100,0,0,22,0,0,0,-1--1--1,,1|(720,264)|
-11,29,908,720,284,8,6,33,3,0,0,4,0,0,0
-10,30,vegetables to RES,786,284,58,11,40,3,0,0,-1,0,0,0
-10,31,max percent cereals on arable,160,240,64,19,8,3,0,0,0,0,0,0
-10,32,max percent pulses on arable,162,357,61,19,8,3,0,0,0,0,0,0
-10,33,max percent vegetables on arable,919,216,65,19,8,3,0,0,0,0,0,0
-10,34,shortage of cereals,198,41,59,11,8,3,0,0,0,0,0,0
-10,35,shortage of pulses,191,66,56,11,8,3,0,0,0,0,0,0
-10,36,shortage of vegetables,200,92,71,18,8,131,0,0,0,0,0,0
-10,37,shortage of electricity,194,120,78,13,8,131,0,0,0,0,0,0
+11,29,1256,720,284,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,30,vegetables to RES,786,284,58,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,31,max percent cereals on arable,160,240,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,32,max percent pulses on arable,162,357,61,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,33,max percent vegetables on arable,919,216,65,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,34,shortage of cereals,198,41,59,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,35,shortage of pulses,191,66,56,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,36,shortage of vegetables,200,92,71,18,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,37,shortage of electricity,194,120,78,13,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 <[VIEW END]>
 ///---\\\
 <[VIEWS END]>
 <[GRAPH START]>
 <[GRAPH END]>
 :L<%^E!@
-1:Loco_35.vdf
-1:Loco_34.vdf
 9:Loco_35
+23:0
 15:0,0,0,0,0,0
 19:100,1
 27:0,
 34:0,
+42:1
+72:0
+73:0
 4:Time
-5:"Intensity of wood (R,fr)"[Regions]
+5:"A matrix (R)"
 35:Date
 36:YYYY-MM-DD
 37:2000
@@ -4048,41 +4008,14 @@ USES OF ARABLE LAND
 39:1
 40:0
 41:0
-42:1
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
 24:0
 25:120
 26:120
-6:cereals biomass
-6:cereals pulses
-6:d1meat
-6:d2vegetal proteins
-6:d3carbohydrates
-6:d4vitamins
-6:f1liquids
-6:f2gases
-6:f3electricity
-6:f4cereals food
-6:f5pulses food
-6:f6vegetables
-6:f7grass
-6:f8wood
-6:gas biomass
-6:gas cereals
-6:gas pulses
-6:l1arable
-6:oil biomass
-6:oil cereals
-6:oil gas
-6:oil pulses
-6:p1oil
-6:p2gas
-6:p3renew
-6:p4cereals
-6:p5pulses
-6:p6vegetables
-6:p7biomass
-6:ptypePop
-6:pulses biomass
-6:R1
-6:R2
-6:s2transport
+75:
+43:
