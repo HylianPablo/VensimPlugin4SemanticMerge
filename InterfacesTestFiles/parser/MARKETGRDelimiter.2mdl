@@ -1,4 +1,19 @@
-{UTF-8}
+********************************************************
+	.MarketGrowth
+********************************************************~
+		
+		Market Growth Model
+		John Sterman (1999) Business Dynamics.  Irwin/McGraw-Hill
+		Copyright (c) 1999 John Sterman
+		
+		This is the version of Forrester's (1968) Market Growth Model
+		developed in chapter 15.  The company goal for delivery delay is
+		fixed, and market potential is unlimited.
+		
+		The model includes switches to decouple the sectors and allow 
+		partial model testing.
+	|
+
 Backlog= INTEG (
 	Order Rate-Shipment Rate,
 		Initial Backlog)
