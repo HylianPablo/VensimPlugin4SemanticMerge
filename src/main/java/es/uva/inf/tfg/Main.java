@@ -30,23 +30,33 @@ public class Main {
 
             Scanner scanner = new Scanner(System.in);
 
-            String firstFile = scanner.nextLine();
-            String firstEncoding = scanner.nextLine();
-            String firstFileOutput = scanner.nextLine();
-            parseFile(firstFile, firstFileOutput);
-            System.out.println("OK");
+            while (scanner.hasNext()) {
+                String firstFile = scanner.nextLine();
+                String firstEncoding = scanner.nextLine();
+                String firstFileOutput = scanner.nextLine();
+                parseFile(firstFile, firstFileOutput);
+                System.out.println("OK");
 
+            }
+            scanner.close();
+            String end = scanner.nextLine();
+            if (end.equals("end")) {
+                return;
+            }
+            /*
             String secondFile = scanner.nextLine();
             String secondEncoding = scanner.nextLine();
             String secondFileOutput = scanner.nextLine();
             parseFile(secondFile, secondFileOutput);
             System.out.println("OK");
-
+            
+            
             String end = scanner.nextLine();
             scanner.close();
             if (end.equals("end")) {
                 return;
             }
+            */
         } catch (IOException ex) {
             ex.printStackTrace();
         }
