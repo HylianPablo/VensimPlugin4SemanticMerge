@@ -23,34 +23,36 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String args[]) {
-        try (PrintWriter out = new PrintWriter(args[1])) {
-            out.println("READY");
+        try (PrintWriter outt = new PrintWriter(args[1])) {
+            outt.println("READY");
+            outt.close();
+            outt.flush();
+
+            Scanner scanner = new Scanner(System.in);
+
+            String firstFile = scanner.nextLine();
+            String firstEncoding = scanner.nextLine();
+            String firstFileOutput = scanner.nextLine();
+            parseFile(firstFile, firstFileOutput);
+            System.out.println("OK");
+
+            String secondFile = scanner.nextLine();
+            String secondEncoding = scanner.nextLine();
+            String secondFileOutput = scanner.nextLine();
+            parseFile(secondFile, secondFileOutput);
+            System.out.println("OK");
+
+            String end = scanner.nextLine();
+            scanner.close();
+            if (end.equals("end")) {
+                return;
+            }
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
-        Scanner scanner = new Scanner(System.in);
-
-        String firstFile = scanner.nextLine();
-        String firstEncoding = scanner.nextLine();
-        String firstFileOutput = scanner.nextLine();
-        parseFile(firstFile, firstFileOutput, 1);
-        System.out.println("OK");
-
-        String secondFile = scanner.nextLine();
-        String secondEncoding = scanner.nextLine();
-        String secondFileOutput = scanner.nextLine();
-        parseFile(secondFile, secondFileOutput, 2);
-        System.out.println("OK");
-
-        String end = scanner.nextLine();
-        scanner.close();
-        if (end.equals("end")) {
-            return;
-        }
     }
 
-    private static void parseFile(String input, String output, int n) {
+    private static void parseFile(String input, String output) {
         try {
             String module = input;
 
