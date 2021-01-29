@@ -505,8 +505,6 @@ Dead frac of confirmed cases data:RAW::=
 	~	dmnl
 	~		|
 
-<[VIEWS START]>
-<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Main view changed
@@ -708,10 +706,7 @@ Jack Homer, PhD, March 20, 2020 v2, via metasd.com
 1,186,185,153,0,0,0,0,0,64,0,-1--1--1,,1|(1172,900)|
 10,187,Dead frac of confirmed cases data,1079,963,61,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
 1,188,187,154,0,0,0,0,0,64,0,-1--1--1,,1|(1079,947)|
-<[VIEW END]>
 ///---\\\
-<[VIEWS END]>
-<[GRAPH START]>
 :GRAPH Infections_picked_up_overseas
 :TITLE Infections picked up overseas
 :X-LABEL Months elapsed since 1-1-20
@@ -1276,7 +1271,6 @@ Jack Homer, PhD, March 20, 2020 v2, via metasd.com
 :VAR Testing of symptos
 :DATASET *2
 :LINE-WIDTH 2
-<[GRAPH END]>
 :L<%^E!@
 9:test
 22:month,months
