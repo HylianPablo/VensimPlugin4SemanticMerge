@@ -3040,7 +3040,6 @@ NGV adapt growth[scenarios]=
 Historical share NGVs=
 	GET XLS LOOKUPS('inputs.xlsx', 'Constants', '25', 'C43')
 	~	Dmnl
-	~<[VIEW]>: TRANSP - Alternative transport <[DESCRIPTION]>:	Historical share of NGVs. Source: IANGV (http://www.iangv.org/current-ngv-stats/).
 		/*only historical data of share from 2005 */
 	|
 
@@ -3669,7 +3668,6 @@ Atmos UOcean Temp[scenarios]= INTEG (
 		[Cowles, pg. 24]
 		
 		Historical data from: \
-		http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land_ocean.txt
 	|
 
 Chg A UO Temp[scenarios]=
@@ -3740,7 +3738,6 @@ init Atmos UOcean Temp=
 	~<[VIEW]>: IMPACTS - Carbon cycle & climate <[DESCRIPTION]>:	Global Annual Temperature Anomaly (Land + Ocean) in 1990 from NASA GISS Surface \
 		Temperature (GISTEMP): +0.43 ?C.
 		5-year average: +0.35 ?C.
-		http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land_ocean.txt
 		
 		[DICE-1994] Initial Temperature of the Atmosphere and Upper Ocean [T] (degrees C) \
 		1965 [Cowles, pg. 24] /0.2 /
@@ -3783,7 +3780,7 @@ Other GHG Rad Forcing:INTERPOLATE::=
 		model uses estimates from the scenarios prepared for the Fifth Assessment \
 		of the IPCC. The estimates in DICE-2013R are drawn from the guidance for \
 		the ?Representative Concentration Pathways" (RCPs, see \
-		http://tntcat.iiasa.ac.at:8787/RcpDb/ dsd?ction=htmlpage&page=compare). \
+		 dsd?ction=htmlpage&page=compare). \
 		The high path has exceptionally high and unreasonable estimates of methane \
 		forcings.
 		The estimates here use the RCP 6.0 W/ m2 representative scenario, which is \
@@ -5608,7 +5605,6 @@ NGV past share growth=
 	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C80')
 	~	1/Year
 	~<[VIEW]>: TRANSP - Alternative transport <[DESCRIPTION]>:	Average 1994-2012 share growth of NGVs (IANGV: \
-		http://www.iangv.org/current-ngv-stats/).
 	|
 
 "BEV/HEV past share growth"=
@@ -5623,7 +5619,6 @@ NGV share[scenarios]= INTEG (
 	~	Dmnl
 	~<[VIEW]>: TRANSP - Alternative transport <[DESCRIPTION]>:	Natural gas vehicles share of motor engines.
 		Despite the strong growth in the past decade, the total number of 16.7 \
-		million NGVs (http://www.iangv.org/current-ngv-stats/) still pales in \
 		comparison to a total worldwide number of around 1,150 million motor \
 		vehicles in 2009 (World Bank database, 2014).  - 1.45% of total.
 	|
@@ -6193,7 +6188,6 @@ GtC historic emissions RCPs[scenarios](
 	[(0,0)-(10,10)],(1990,6.144),(1995,6.4395),(2000,6.735),(2005,7.971))
 	~	GtC
 	~	RCP database:  \
-		http://tntcat.iiasa.ac.at:8787/RcpDb/dsd?Action=htmlpage&page=welcome
 	|
 
 "'a' I-IB projection"[BAU]=
@@ -7762,7 +7756,6 @@ Group of Energy, Economy and System Dynamics of the University of Valladolid, Sp
 12,3,0,766,464,219,57,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||92-92-92
 Implementation of the 5 scenarios (BAU and 1 to 4) simulating for the timeframe 1990-2050 presented in: Capell?n-P?rez, I?igo, Margarita Mediavilla, Carlos de Castro, ?scar Carpintero, and Luis Javier Miguel. ?Fossil Fuel Depletion and Socio-Economic Scenarios: An Integrated Approach.? Energy 77 (December 1, 2014): 641?66. doi:10.1016/j.energy.2014.09.063.
 12,4,0,766,365,175,19,8,7,0,0,-1,0,0,0
-For more information, see: http://www.eis.uva.es/energiasostenible/?page_id=2056
 <[VIEW END]>
 <[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
@@ -11169,7 +11162,6 @@ V300  Do not put anything below this section - it will be ignored
 *IMPACTS - Carbon cycle & climate
 $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
 12,1,0,169,194,151,45,3,135,0,0,-1,0,0,0
-DICE (Nordhaus 1992, 1994) subclimate model as available from (corrected version) FREE model (Fiddaman, 1997) from http://metasd.com/model-library/ 
 10,2,CO2 in Atmos,468,379,40,20,3,3,0,0,0,0,0,0
 10,3,Marginal Atmos Retention,375,465,81,11,0,3,0,0,-1,0,0,0
 10,4,Average Atmos Retention,252,298,80,11,0,3,0,0,-1,0,0,0
