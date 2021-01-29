@@ -5,7 +5,7 @@ TPES Mtoe[scenarios]=
 	~	Total Primary Energy Supply.
 	|
 
-Total FE Elec demand TWh[scenarios]=
+Total FE Elec demandCAMBIOS TWh[scenarios]=
 	(FE demand Elec consum TWh[scenarios]+increase Elec demand for Transp TWh[scenarios]\
 		)*(1+share elec distribution losses
 )
