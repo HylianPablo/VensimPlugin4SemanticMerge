@@ -141,6 +141,7 @@ public class Comment {
     }
 
     private static String updateViewName(String equation, String appendix, int position) {
+        //System.out.println(equation);
         String[] viewpart = equation.split("\\<\\[VIEW\\]\\>:");
         String[] descriptionPart = viewpart[1].split("\\<\\[DESCRIPTION\\]\\>:");
         return viewpart[0] + "<[VIEW]>: " + appendix + " <[DESCRIPTION]>:" + descriptionPart[1];

@@ -1,0 +1,7 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< mvntfg:mvntfg >----------------------------
+[INFO] Building mvntfg 1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ mvntfg ---

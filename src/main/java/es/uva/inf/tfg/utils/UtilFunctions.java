@@ -122,7 +122,7 @@ public class UtilFunctions {
         posicion = str.indexOf(character);
         while (posicion != -1) { //mientras se encuentre el caracter
             contador++; //se cuenta
-            //se sigue buscando a partir de la posición siguiente a la encontrada                                 
+            //se sigue buscando a partir de la posición siguiente a la encontrada
             posicion = str.indexOf(character, posicion + 1);
         }
         return contador;

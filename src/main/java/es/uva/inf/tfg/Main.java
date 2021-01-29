@@ -19,6 +19,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -71,22 +72,26 @@ public class Main {
             ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
             ParseTree tree = parser.file();
 
-            // System.out.println(tree.toStringTree(parser));// USED TO DEBUG
+            //System.out.println(tree.toStringTree(parser));// USED TO DEBUG
 
             // GUI
             /*
-             * JFrame frame = new JFrame("Antlr AST"); JPanel panel = new JPanel();
-             * TreeViewer viewer = new TreeViewer(Arrays.asList(
-             * parser.getRuleNames()),tree); viewer.setScale(0.5); // Scale a little
-             * panel.add(viewer); frame.add(panel);
-             * frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); frame.pack();
-             * frame.setVisible(true);
-             */
+            JFrame frame = new JFrame("Antlr AST");
+            JPanel panel = new JPanel();
+            TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
+            viewer.setScale(0.5); // Scale a little
+            panel.add(viewer);
+            frame.add(panel);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.pack();
+            frame.setVisible(true);
+            */
 
             MainVisitor evalVisitor = new MainVisitor();
             evalVisitor.setInput(module);
             evalVisitor.setOutput(output);
             evalVisitor.visit(tree);
+
         } catch (ParseCancellationException e) {
             e.printStackTrace();
         } catch (IOException ex) {
