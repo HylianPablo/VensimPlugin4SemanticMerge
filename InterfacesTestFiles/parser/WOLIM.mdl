@@ -1,5 +1,5 @@
 {UTF-8}
-TPES Mtoe[scenarios]=
+TPES MtoeCAMBIOS[scenarios]=
 	TPES EJ[scenarios]*MToe per EJ
 	~	MToe/Year
 	~	Total Primary Energy Supply.
@@ -5017,17 +5017,7 @@ Historic nuclear generation TWh(
 	GET XLS LOOKUPS('inputs.xlsx', 'Constants', '25', 'C69'))
 	~	TWh/Year
 	~	Historic data of annual production from nuclear energy in TWh.
-	|
-
-invest cost nuclear:INTERPOLATE::=
-	GET XLS DATA('inputs.xlsx', 'Parameters', '6', 'G15')
-	~	Tdollars/TWe
-	~	Investment cost of nuclear power considering that future reactors would \
-		require the same investment as the recent Hinkley Point C nuclear power \
-		station in UK of 8,000 US$/kW.
-	|
-
-FE nuclear Elec generation TWh[scenarios]=
+	|FE nuclear Elec generation TWh[scenarios]=
 	extraction uranium EJ[scenarios]*efficiency uranium for electricity/EJ per TWh
 	~	TWh/Year
 	~	Final energy electricity generation from uranium (TWh).
@@ -12271,7 +12261,7 @@ Average_TPESpc_(without_trad_biomass)
 27:2,
 34:0,
 4:Time
-5:'a' example
+5:'a' historical I-ELEC
 35:Date
 36:YYYY-MM-DD
 37:1990
