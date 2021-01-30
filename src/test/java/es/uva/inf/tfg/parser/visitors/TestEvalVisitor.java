@@ -78,7 +78,7 @@ public class TestEvalVisitor {
 
             Process process = Runtime.getRuntime()
                     .exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"
-                            + " --source=InterfacesTestFiles/parser/WOLIM.mdl --destination=InterfacesTestFiles/parser/WOLIM.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""
+                            + " --source=InterfacesTestFiles/parser/WILIAM.mdl --destination=InterfacesTestFiles/parser/WILIAM.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""
                             + " --virtualmachine=\"C:\\Program Files\\Java\\jdk-11.0.8\\bin\\java.exe\"");
 
         } catch (Exception ex) {
