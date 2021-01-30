@@ -1,7 +1,7 @@
 ---
 type: file
 name: InterfacesTestFiles/parser/WOLIM.mdl
-locationSpan : {start: [1, 0], end: [656, 2]}
+locationSpan : {start: [1, 0], end: [657, 2]}
 footerSpan : [0,-1]
 parsingErrorsDetected : false
 children:
@@ -33,571 +33,571 @@ children:
       span : [569, 641]
   - type : sketches
     name : sketches
-    locationSpan : {start: [35, 0], end: [54, 15]}
+    locationSpan : {start: [35, 0], end: [55, 15]}
     headerSpan : [644, 660]
-    footerSpan : [1517, 1542]
+    footerSpan : [1578, 1603]
     children:
     - type : view
       name : Intro
-      locationSpan : {start: [36, 0], end: [46, 14]}
+      locationSpan : {start: [36, 0], end: [47, 14]}
       headerSpan : [661, 744]
-      footerSpan : [1232, 1245]
+      footerSpan : [1293, 1306]
       children:
       - type : viewSettings
         name : viewSettings
         locationSpan : {start: [38, 0], end: [40, 8]}
         span : [745, 903]
       - type : variable
-        name : WoLiM 1.5 model, documented in "World Limits Model (WoLiM) 1.5 - Model Documentation. Technical Report"
-        locationSpan : {start: [41, 0], end: [42, 98]}
-        span : [904, 1043]
+        name : WoLiM 1.5 model, documented in 'World Limits Model (WoLiM) 1.5 - Model Documentation. Technical Report'
+        locationSpan : {start: [41, 0], end: [42, 105]}
+        span : [904, 1050]
       - type : variable
         name : Numeric
         locationSpan : {start: [43, 0], end: [43, 70]}
-        span : [1044, 1113]
+        span : [1051, 1120]
       - type : variable
         name : Numeric
         locationSpan : {start: [44, 0], end: [44, 71]}
-        span : [1114, 1184]
+        span : [1121, 1191]
       - type : variable
-        name : Numeric
-        locationSpan : {start: [45, 0], end: [45, 40]}
-        span : [1185, 1224]
+        name : hola: http://www.eis.uva.es/energiasostenible/?page_id=2056
+        locationSpan : {start: [45, 0], end: [46, 61]}
+        span : [1192, 1292]
     - type : view
       name : ---- STRUCTURE ----
-      locationSpan : {start: [47, 0], end: [52, 14]}
-      headerSpan : [1239, 1322]
-      footerSpan : [1503, 1516]
+      locationSpan : {start: [48, 0], end: [53, 14]}
+      headerSpan : [1307, 1390]
+      footerSpan : [1564, 1577]
       children:
       - type : viewSettings
         name : viewSettings
-        locationSpan : {start: [49, 0], end: [51, 22]}
-        span : [1323, 1495]
+        locationSpan : {start: [50, 0], end: [52, 22]}
+        span : [1391, 1563]
   - type : graphs
     name : graphs
-    locationSpan : {start: [55, 0], end: [620, 15]}
-    headerSpan : [1536, 1552]
-    footerSpan : [14252, 14266]
+    locationSpan : {start: [56, 0], end: [621, 15]}
+    headerSpan : [1604, 1620]
+    footerSpan : [14313, 14327]
     children:
     - type : graph
       name : GDPcap
-      locationSpan : {start: [56, 0], end: [60, 2]}
-      span : [1553, 1617]
+      locationSpan : {start: [57, 0], end: [61, 2]}
+      span : [1621, 1685]
     - type : graph
       name : Population
-      locationSpan : {start: [61, 0], end: [66, 2]}
-      span : [1618, 1710]
+      locationSpan : {start: [62, 0], end: [67, 2]}
+      span : [1686, 1778]
     - type : graph
       name : GDP
-      locationSpan : {start: [67, 0], end: [71, 2]}
-      span : [1711, 1765]
+      locationSpan : {start: [68, 0], end: [72, 2]}
+      span : [1779, 1833]
     - type : graph
       name : real TPED intensity
-      locationSpan : {start: [72, 0], end: [77, 2]}
-      span : [1766, 1878]
+      locationSpan : {start: [73, 0], end: [78, 2]}
+      span : [1834, 1946]
     - type : graph
       name : real PED intensity of Industry&Buildings
-      locationSpan : {start: [78, 0], end: [83, 2]}
-      span : [1879, 2035]
+      locationSpan : {start: [79, 0], end: [84, 2]}
+      span : [1947, 2103]
     - type : graph
       name : real PED intensity of Electricity
-      locationSpan : {start: [84, 0], end: [89, 2]}
-      span : [2036, 2190]
+      locationSpan : {start: [85, 0], end: [90, 2]}
+      span : [2104, 2258]
     - type : graph
       name : Annual emissions
-      locationSpan : {start: [90, 0], end: [95, 2]}
-      span : [2191, 2299]
+      locationSpan : {start: [91, 0], end: [96, 2]}
+      span : [2259, 2367]
     - type : graph
       name : CO2 concentrations
-      locationSpan : {start: [96, 0], end: [101, 2]}
-      span : [2300, 2446]
+      locationSpan : {start: [97, 0], end: [102, 2]}
+      span : [2368, 2514]
     - type : graph
       name : Electricity demand
-      locationSpan : {start: [102, 0], end: [107, 2]}
-      span : [2447, 2562]
+      locationSpan : {start: [103, 0], end: [108, 2]}
+      span : [2515, 2630]
     - type : graph
       name : Abundance electricity
-      locationSpan : {start: [108, 0], end: [114, 2]}
-      span : [2563, 2691]
+      locationSpan : {start: [109, 0], end: [115, 2]}
+      span : [2631, 2759]
     - type : graph
       name : Electric generation from RES
-      locationSpan : {start: [115, 0], end: [119, 2]}
-      span : [2692, 2804]
+      locationSpan : {start: [116, 0], end: [120, 2]}
+      span : [2760, 2872]
     - type : graph
       name : Cumulated total investment RES for Electricity
-      locationSpan : {start: [120, 0], end: [124, 2]}
-      span : [2805, 2983]
+      locationSpan : {start: [121, 0], end: [125, 2]}
+      span : [2873, 3051]
     - type : graph
       name : Proportion of var electric gen vs total
-      locationSpan : {start: [125, 0], end: [131, 2]}
-      span : [2984, 3143]
+      locationSpan : {start: [126, 0], end: [132, 2]}
+      span : [3052, 3211]
     - type : graph
       name : Share of GDP of investments for RES for Elec
-      locationSpan : {start: [132, 0], end: [136, 2]}
-      span : [3144, 3315]
+      locationSpan : {start: [133, 0], end: [137, 2]}
+      span : [3212, 3383]
     - type : graph
       name : Biomass land-use(in arable lands)
-      locationSpan : {start: [137, 0], end: [143, 2]}
-      span : [3316, 3524]
+      locationSpan : {start: [138, 0], end: [144, 2]}
+      span : [3384, 3592]
     - type : graph
       name : Renewables land-use
-      locationSpan : {start: [144, 0], end: [149, 2]}
-      span : [3525, 3671]
+      locationSpan : {start: [145, 0], end: [150, 2]}
+      span : [3593, 3739]
     - type : graph
       name : Transport PE demand
-      locationSpan : {start: [150, 0], end: [154, 2]}
-      span : [3672, 3792]
+      locationSpan : {start: [151, 0], end: [155, 2]}
+      span : [3740, 3860]
     - type : graph
       name : Abundance PE for transportation
-      locationSpan : {start: [155, 0], end: [161, 2]}
-      span : [3793, 3939]
+      locationSpan : {start: [156, 0], end: [162, 2]}
+      span : [3861, 4007]
     - type : graph
       name : IB PE demand
-      locationSpan : {start: [162, 0], end: [167, 2]}
-      span : [3940, 4051]
+      locationSpan : {start: [163, 0], end: [168, 2]}
+      span : [4008, 4119]
     - type : graph
       name : Abundance PE for IB
-      locationSpan : {start: [168, 0], end: [174, 2]}
-      span : [4052, 4167]
+      locationSpan : {start: [169, 0], end: [175, 2]}
+      span : [4120, 4235]
     - type : graph
       name : Total renewable extraction(primary energy)
-      locationSpan : {start: [175, 0], end: [181, 2]}
-      span : [4168, 4372]
+      locationSpan : {start: [176, 0], end: [182, 2]}
+      span : [4236, 4440]
     - type : graph
       name : Total primary energy demand
-      locationSpan : {start: [182, 0], end: [186, 2]}
-      span : [4373, 4484]
+      locationSpan : {start: [183, 0], end: [187, 2]}
+      span : [4441, 4552]
     - type : graph
       name : Abundance total energy
-      locationSpan : {start: [187, 0], end: [193, 2]}
-      span : [4485, 4607]
+      locationSpan : {start: [188, 0], end: [194, 2]}
+      span : [4553, 4675]
     - type : graph
       name : Total primary energy supply
-      locationSpan : {start: [194, 0], end: [198, 2]}
-      span : [4608, 4714]
+      locationSpan : {start: [195, 0], end: [199, 2]}
+      span : [4676, 4782]
     - type : graph
       name : Coal demand
-      locationSpan : {start: [199, 0], end: [203, 2]}
-      span : [4715, 4802]
+      locationSpan : {start: [200, 0], end: [204, 2]}
+      span : [4783, 4870]
     - type : graph
       name : Abundance coal
-      locationSpan : {start: [204, 0], end: [210, 2]}
-      span : [4803, 4910]
+      locationSpan : {start: [205, 0], end: [211, 2]}
+      span : [4871, 4978]
     - type : graph
       name : Gas demand
-      locationSpan : {start: [211, 0], end: [215, 2]}
-      span : [4911, 4995]
+      locationSpan : {start: [212, 0], end: [216, 2]}
+      span : [4979, 5063]
     - type : graph
       name : abundance gas
-      locationSpan : {start: [216, 0], end: [222, 2]}
-      span : [4996, 5100]
+      locationSpan : {start: [217, 0], end: [223, 2]}
+      span : [5064, 5168]
     - type : graph
       name : Oil demand
-      locationSpan : {start: [223, 0], end: [229, 2]}
-      span : [5101, 5257]
+      locationSpan : {start: [224, 0], end: [230, 2]}
+      span : [5169, 5325]
     - type : graph
       name : Abundance liquids
-      locationSpan : {start: [230, 0], end: [236, 2]}
-      span : [5258, 5374]
+      locationSpan : {start: [231, 0], end: [237, 2]}
+      span : [5326, 5442]
     - type : graph
       name : Abundance uranium
-      locationSpan : {start: [237, 0], end: [243, 2]}
-      span : [5375, 5491]
+      locationSpan : {start: [238, 0], end: [244, 2]}
+      span : [5443, 5559]
     - type : graph
       name : Coal extraction
-      locationSpan : {start: [244, 0], end: [248, 2]}
-      span : [5492, 5585]
+      locationSpan : {start: [245, 0], end: [249, 2]}
+      span : [5560, 5653]
     - type : graph
       name : Gas extraction
-      locationSpan : {start: [249, 0], end: [253, 2]}
-      span : [5586, 5682]
+      locationSpan : {start: [250, 0], end: [254, 2]}
+      span : [5654, 5750]
     - type : graph
       name : Liquids extraction
-      locationSpan : {start: [254, 0], end: [258, 2]}
-      span : [5683, 5785]
+      locationSpan : {start: [255, 0], end: [259, 2]}
+      span : [5751, 5853]
     - type : graph
       name : Remaining potential solar on land
-      locationSpan : {start: [259, 0], end: [263, 2]}
-      span : [5786, 5930]
+      locationSpan : {start: [260, 0], end: [264, 2]}
+      span : [5854, 5998]
     - type : graph
       name : Remaining potential BioW
-      locationSpan : {start: [264, 0], end: [268, 2]}
-      span : [5931, 6048]
+      locationSpan : {start: [265, 0], end: [269, 2]}
+      span : [5999, 6116]
     - type : graph
       name : Remaining potential geot
-      locationSpan : {start: [269, 0], end: [273, 2]}
-      span : [6049, 6173]
+      locationSpan : {start: [270, 0], end: [274, 2]}
+      span : [6117, 6241]
     - type : graph
       name : Remaining potential hydro
-      locationSpan : {start: [274, 0], end: [280, 2]}
-      span : [6174, 6314]
+      locationSpan : {start: [275, 0], end: [281, 2]}
+      span : [6242, 6382]
     - type : graph
       name : Remaining potential oceanic
-      locationSpan : {start: [281, 0], end: [285, 2]}
-      span : [6315, 6441]
+      locationSpan : {start: [282, 0], end: [286, 2]}
+      span : [6383, 6509]
     - type : graph
       name : Remaining potential onshore wind
-      locationSpan : {start: [286, 0], end: [292, 2]}
-      span : [6442, 6603]
+      locationSpan : {start: [287, 0], end: [293, 2]}
+      span : [6510, 6671]
     - type : graph
       name : GRAPH
-      locationSpan : {start: [293, 0], end: [299, 2]}
-      span : [6604, 6708]
+      locationSpan : {start: [294, 0], end: [300, 2]}
+      span : [6672, 6776]
     - type : graph
       name : Remaining potential offshore wind
-      locationSpan : {start: [300, 0], end: [304, 2]}
-      span : [6709, 6853]
+      locationSpan : {start: [301, 0], end: [305, 2]}
+      span : [6777, 6921]
     - type : graph
       name : Share variable vs base-load Electricity generation
-      locationSpan : {start: [305, 0], end: [311, 2]}
-      span : [6854, 7049]
+      locationSpan : {start: [306, 0], end: [312, 2]}
+      span : [6922, 7117]
     - type : graph
       name : real PED intensity of Transport
-      locationSpan : {start: [312, 0], end: [317, 2]}
-      span : [7050, 7198]
+      locationSpan : {start: [313, 0], end: [318, 2]}
+      span : [7118, 7266]
     - type : graph
       name : Total electricity generation
-      locationSpan : {start: [318, 0], end: [322, 2]}
-      span : [7199, 7328]
+      locationSpan : {start: [319, 0], end: [323, 2]}
+      span : [7267, 7396]
     - type : graph
       name : Transport PE supply
-      locationSpan : {start: [323, 0], end: [327, 2]}
-      span : [7329, 7429]
+      locationSpan : {start: [324, 0], end: [328, 2]}
+      span : [7397, 7497]
     - type : graph
       name : IB PE supply
-      locationSpan : {start: [328, 0], end: [332, 2]}
-      span : [7430, 7512]
+      locationSpan : {start: [329, 0], end: [333, 2]}
+      span : [7498, 7580]
     - type : graph
       name : Conventional_oil_extraction
-      locationSpan : {start: [333, 0], end: [338, 2]}
-      span : [7513, 7644]
+      locationSpan : {start: [334, 0], end: [339, 2]}
+      span : [7581, 7712]
     - type : graph
       name : Unconventional oil extraction
-      locationSpan : {start: [339, 0], end: [343, 2]}
-      span : [7645, 7772]
+      locationSpan : {start: [340, 0], end: [344, 2]}
+      span : [7713, 7840]
     - type : graph
       name : Conventional gas
-      locationSpan : {start: [344, 0], end: [348, 2]}
-      span : [7773, 7872]
+      locationSpan : {start: [345, 0], end: [349, 2]}
+      span : [7841, 7940]
     - type : graph
       name : Unconventional gas
-      locationSpan : {start: [349, 0], end: [353, 2]}
-      span : [7873, 7978]
+      locationSpan : {start: [350, 0], end: [354, 2]}
+      span : [7941, 8046]
     - type : graph
       name : Total demand liquids
-      locationSpan : {start: [354, 0], end: [358, 2]}
-      span : [7979, 8087]
+      locationSpan : {start: [355, 0], end: [359, 2]}
+      span : [8047, 8155]
     - type : graph
       name : CTL production
-      locationSpan : {start: [359, 0], end: [363, 2]}
-      span : [8088, 8175]
+      locationSpan : {start: [360, 0], end: [364, 2]}
+      span : [8156, 8243]
     - type : graph
       name : GTL production
-      locationSpan : {start: [364, 0], end: [368, 2]}
-      span : [8176, 8263]
+      locationSpan : {start: [365, 0], end: [369, 2]}
+      span : [8244, 8331]
     - type : graph
       name : Total biofuels production
-      locationSpan : {start: [369, 0], end: [373, 2]}
-      span : [8264, 8395]
+      locationSpan : {start: [370, 0], end: [374, 2]}
+      span : [8332, 8463]
     - type : graph
       name : Electricity generation from nuclear
-      locationSpan : {start: [374, 0], end: [378, 2]}
-      span : [8396, 8541]
+      locationSpan : {start: [375, 0], end: [379, 2]}
+      span : [8464, 8609]
     - type : graph
       name : Electricity generation from fossil fuels
-      locationSpan : {start: [379, 0], end: [383, 2]}
-      span : [8542, 8707]
+      locationSpan : {start: [380, 0], end: [384, 2]}
+      span : [8610, 8775]
     - type : graph
       name : Uranium extraction
-      locationSpan : {start: [384, 0], end: [388, 2]}
-      span : [8708, 8810]
+      locationSpan : {start: [385, 0], end: [389, 2]}
+      span : [8776, 8878]
     - type : graph
       name : Uranium demand
-      locationSpan : {start: [389, 0], end: [393, 2]}
-      span : [8811, 8904]
+      locationSpan : {start: [390, 0], end: [394, 2]}
+      span : [8879, 8972]
     - type : graph
       name : Abundance total oil
-      locationSpan : {start: [394, 0], end: [400, 2]}
-      span : [8905, 9027]
+      locationSpan : {start: [395, 0], end: [401, 2]}
+      span : [8973, 9095]
     - type : graph
       name : Total demand oil
-      locationSpan : {start: [401, 0], end: [405, 2]}
-      span : [9028, 9124]
+      locationSpan : {start: [402, 0], end: [406, 2]}
+      span : [9096, 9192]
     - type : graph
       name : Total extraction oil
-      locationSpan : {start: [406, 0], end: [410, 2]}
-      span : [9125, 9233]
+      locationSpan : {start: [407, 0], end: [411, 2]}
+      span : [9193, 9301]
     - type : graph
       name : Land for dedicated crops for biofuels
-      locationSpan : {start: [411, 0], end: [420, 2]}
-      span : [9234, 9451]
+      locationSpan : {start: [412, 0], end: [421, 2]}
+      span : [9302, 9519]
     - type : graph
       name : Energy losses for protection against climate change
-      locationSpan : {start: [421, 0], end: [425, 2]}
-      span : [9452, 9650]
+      locationSpan : {start: [422, 0], end: [426, 2]}
+      span : [9520, 9718]
     - type : graph
       name : Electricity generation from RES
-      locationSpan : {start: [426, 0], end: [430, 2]}
-      span : [9651, 9789]
+      locationSpan : {start: [427, 0], end: [431, 2]}
+      span : [9719, 9857]
     - type : graph
       name : Total radiative forcing
-      locationSpan : {start: [431, 0], end: [435, 2]}
-      span : [9790, 9904]
+      locationSpan : {start: [432, 0], end: [436, 2]}
+      span : [9858, 9972]
     - type : graph
       name : Temperature change
-      locationSpan : {start: [436, 0], end: [441, 2]}
-      span : [9905, 10025]
+      locationSpan : {start: [437, 0], end: [442, 2]}
+      span : [9973, 10093]
     - type : graph
       name : PES from RES non-electric(without trad.biomass)
-      locationSpan : {start: [442, 0], end: [447, 2]}
-      span : [10026, 10269]
+      locationSpan : {start: [443, 0], end: [448, 2]}
+      span : [10094, 10337]
     - type : graph
       name : Share of RES vs TPES
-      locationSpan : {start: [448, 0], end: [454, 2]}
-      span : [10270, 10392]
+      locationSpan : {start: [449, 0], end: [455, 2]}
+      span : [10338, 10460]
     - type : graph
       name : Share RES for Elec vs.TPE RES
-      locationSpan : {start: [455, 0], end: [461, 2]}
-      span : [10393, 10547]
+      locationSpan : {start: [456, 0], end: [462, 2]}
+      span : [10461, 10615]
     - type : graph
       name : TPE from RES
-      locationSpan : {start: [462, 0], end: [466, 2]}
-      span : [10548, 10632]
+      locationSpan : {start: [463, 0], end: [467, 2]}
+      span : [10616, 10700]
     - type : graph
       name : Electricity generation(PE)by RES
-      locationSpan : {start: [467, 0], end: [471, 2]}
-      span : [10633, 10776]
+      locationSpan : {start: [468, 0], end: [472, 2]}
+      span : [10701, 10844]
     - type : graph
       name : Share RES+efficiency for Ind
-      locationSpan : {start: [472, 0], end: [478, 2]}
-      span : [10777, 10928]
+      locationSpan : {start: [473, 0], end: [479, 2]}
+      span : [10845, 10996]
     - type : graph
       name : Share RES+efficiency for Buildings
-      locationSpan : {start: [479, 0], end: [485, 2]}
-      span : [10929, 11094]
+      locationSpan : {start: [480, 0], end: [486, 2]}
+      span : [10997, 11162]
     - type : graph
       name : Cumulative carbon emissions
-      locationSpan : {start: [486, 0], end: [491, 2]}
-      span : [11095, 11244]
+      locationSpan : {start: [487, 0], end: [492, 2]}
+      span : [11163, 11312]
     - type : graph
       name : PE traditional biomass
-      locationSpan : {start: [492, 0], end: [496, 2]}
-      span : [11245, 11359]
+      locationSpan : {start: [493, 0], end: [497, 2]}
+      span : [11313, 11427]
     - type : graph
       name : check TPED
-      locationSpan : {start: [497, 0], end: [501, 2]}
-      span : [11360, 11435]
+      locationSpan : {start: [498, 0], end: [502, 2]}
+      span : [11428, 11503]
     - type : graph
       name : check transport
-      locationSpan : {start: [502, 0], end: [506, 2]}
-      span : [11436, 11526]
+      locationSpan : {start: [503, 0], end: [507, 2]}
+      span : [11504, 11594]
     - type : graph
       name : Check emissions vs historic
-      locationSpan : {start: [507, 0], end: [513, 2]}
-      span : [11527, 11661]
+      locationSpan : {start: [508, 0], end: [514, 2]}
+      span : [11595, 11729]
     - type : graph
       name : Check TPES vs historic
-      locationSpan : {start: [514, 0], end: [520, 2]}
-      span : [11662, 11781]
+      locationSpan : {start: [515, 0], end: [521, 2]}
+      span : [11730, 11849]
     - type : graph
       name : check historic fossil fuels & RES
-      locationSpan : {start: [521, 0], end: [531, 2]}
-      span : [11782, 12016]
+      locationSpan : {start: [522, 0], end: [532, 2]}
+      span : [11850, 12084]
     - type : graph
       name : Thermal RES supply
-      locationSpan : {start: [532, 0], end: [536, 2]}
-      span : [12017, 12116]
+      locationSpan : {start: [533, 0], end: [537, 2]}
+      span : [12085, 12184]
     - type : graph
       name : Electricity generation from solar
-      locationSpan : {start: [537, 0], end: [543, 2]}
-      span : [12117, 12271]
+      locationSpan : {start: [538, 0], end: [544, 2]}
+      span : [12185, 12339]
     - type : graph
       name : Annual variation of electric solar production
-      locationSpan : {start: [544, 0], end: [553, 2]}
-      span : [12272, 12481]
+      locationSpan : {start: [545, 0], end: [554, 2]}
+      span : [12340, 12549]
     - type : graph
       name : Remaining potential RES for electricity
-      locationSpan : {start: [554, 0], end: [560, 2]}
-      span : [12482, 12664]
+      locationSpan : {start: [555, 0], end: [561, 2]}
+      span : [12550, 12732]
     - type : graph
       name : Remaining potential thermal RES
-      locationSpan : {start: [561, 0], end: [567, 2]}
-      span : [12665, 12823]
+      locationSpan : {start: [562, 0], end: [568, 2]}
+      span : [12733, 12891]
     - type : graph
       name : Average TPES per capita
-      locationSpan : {start: [568, 0], end: [572, 2]}
-      span : [12824, 12938]
+      locationSpan : {start: [569, 0], end: [573, 2]}
+      span : [12892, 13006]
     - type : graph
       name : Average electricity consumption per capita
-      locationSpan : {start: [573, 0], end: [577, 2]}
-      span : [12939, 13103]
+      locationSpan : {start: [574, 0], end: [578, 2]}
+      span : [13007, 13171]
     - type : graph
       name : Share PE RES for Industry
-      locationSpan : {start: [578, 0], end: [583, 2]}
-      span : [13104, 13234]
+      locationSpan : {start: [579, 0], end: [584, 2]}
+      span : [13172, 13302]
     - type : graph
       name : Share PE RES for Buildings
-      locationSpan : {start: [584, 0], end: [589, 2]}
-      span : [13235, 13368]
+      locationSpan : {start: [585, 0], end: [590, 2]}
+      span : [13303, 13436]
     - type : graph
       name : Population dependent on traditional biomass
-      locationSpan : {start: [590, 0], end: [594, 2]}
-      span : [13369, 13536]
+      locationSpan : {start: [591, 0], end: [595, 2]}
+      span : [13437, 13604]
     - type : graph
       name : Nuclear generation
-      locationSpan : {start: [595, 0], end: [601, 2]}
-      span : [13537, 13729]
+      locationSpan : {start: [596, 0], end: [602, 2]}
+      span : [13605, 13797]
     - type : graph
       name : CO2 emissions per capita
-      locationSpan : {start: [602, 0], end: [606, 2]}
-      span : [13730, 13847]
+      locationSpan : {start: [603, 0], end: [607, 2]}
+      span : [13798, 13915]
     - type : graph
       name : Average TPESpc(without trad biomass)
-      locationSpan : {start: [607, 0], end: [613, 2]}
-      span : [13848, 14084]
+      locationSpan : {start: [608, 0], end: [614, 2]}
+      span : [13916, 14152]
     - type : graph
       name : Share Electricity covered by RES
-      locationSpan : {start: [614, 0], end: [619, 10]}
-      span : [14085, 14244]
+      locationSpan : {start: [615, 0], end: [620, 10]}
+      span : [14153, 14312]
   - type : metadata
     name : metadata
-    locationSpan : {start: [621, 0], end: [656, 2]}
-    headerSpan : [14260, 14270]
-    footerSpan : [14673, 14674]
+    locationSpan : {start: [622, 0], end: [657, 2]}
+    headerSpan : [14328, 14338]
+    footerSpan : [14734, 14735]
     children:
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [622, 0], end: [622, 25]}
-      span : [14271, 14295]
+      locationSpan : {start: [623, 0], end: [623, 25]}
+      span : [14339, 14363]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [623, 0], end: [623, 21]}
-      span : [14296, 14316]
+      locationSpan : {start: [624, 0], end: [624, 21]}
+      span : [14364, 14384]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [624, 0], end: [624, 24]}
-      span : [14317, 14340]
+      locationSpan : {start: [625, 0], end: [625, 24]}
+      span : [14385, 14408]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [625, 0], end: [625, 15]}
-      span : [14341, 14355]
+      locationSpan : {start: [626, 0], end: [626, 15]}
+      span : [14409, 14423]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [626, 0], end: [626, 17]}
-      span : [14356, 14372]
+      locationSpan : {start: [627, 0], end: [627, 17]}
+      span : [14424, 14440]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [627, 0], end: [627, 26]}
-      span : [14373, 14398]
-    - type : metadataLine
-      name : metadataLine
-      locationSpan : {start: [628, 0], end: [628, 15]}
-      span : [14399, 14413]
+      locationSpan : {start: [628, 0], end: [628, 26]}
+      span : [14441, 14466]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [629, 0], end: [629, 15]}
-      span : [14414, 14428]
+      span : [14467, 14481]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [630, 0], end: [630, 15]}
-      span : [14429, 14443]
+      span : [14482, 14496]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [631, 0], end: [631, 13]}
-      span : [14444, 14456]
+      locationSpan : {start: [631, 0], end: [631, 15]}
+      span : [14497, 14511]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [632, 0], end: [632, 6]}
-      span : [14457, 14462]
+      locationSpan : {start: [632, 0], end: [632, 13]}
+      span : [14512, 14524]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [633, 0], end: [633, 16]}
-      span : [14463, 14478]
+      locationSpan : {start: [633, 0], end: [633, 6]}
+      span : [14525, 14530]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [634, 0], end: [634, 9]}
-      span : [14479, 14487]
+      locationSpan : {start: [634, 0], end: [634, 16]}
+      span : [14531, 14546]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [635, 0], end: [635, 7]}
-      span : [14488, 14494]
+      locationSpan : {start: [635, 0], end: [635, 9]}
+      span : [14547, 14555]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [636, 0], end: [636, 7]}
-      span : [14495, 14501]
+      span : [14556, 14562]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [637, 0], end: [637, 8]}
-      span : [14502, 14509]
+      locationSpan : {start: [637, 0], end: [637, 7]}
+      span : [14563, 14569]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [638, 0], end: [638, 9]}
-      span : [14510, 14518]
+      locationSpan : {start: [638, 0], end: [638, 8]}
+      span : [14570, 14577]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [639, 0], end: [639, 15]}
-      span : [14519, 14533]
+      locationSpan : {start: [639, 0], end: [639, 9]}
+      span : [14578, 14586]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [640, 0], end: [640, 9]}
-      span : [14534, 14542]
+      locationSpan : {start: [640, 0], end: [640, 15]}
+      span : [14587, 14601]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [641, 0], end: [641, 6]}
-      span : [14543, 14548]
+      locationSpan : {start: [641, 0], end: [641, 9]}
+      span : [14602, 14610]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [642, 0], end: [642, 6]}
-      span : [14549, 14554]
+      span : [14611, 14616]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [643, 0], end: [643, 6]}
-      span : [14555, 14560]
+      span : [14617, 14622]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [644, 0], end: [644, 6]}
-      span : [14561, 14566]
+      span : [14623, 14628]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [645, 0], end: [645, 6]}
-      span : [14567, 14572]
+      span : [14629, 14634]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [646, 0], end: [646, 9]}
-      span : [14573, 14581]
+      locationSpan : {start: [646, 0], end: [646, 6]}
+      span : [14635, 14640]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [647, 0], end: [647, 9]}
-      span : [14582, 14590]
+      span : [14641, 14649]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [648, 0], end: [648, 9]}
-      span : [14591, 14599]
+      span : [14650, 14658]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [649, 0], end: [649, 7]}
-      span : [14600, 14606]
+      locationSpan : {start: [649, 0], end: [649, 9]}
+      span : [14659, 14667]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [650, 0], end: [650, 10]}
-      span : [14607, 14616]
+      locationSpan : {start: [650, 0], end: [650, 7]}
+      span : [14668, 14674]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [651, 0], end: [651, 13]}
-      span : [14617, 14629]
+      locationSpan : {start: [651, 0], end: [651, 10]}
+      span : [14675, 14684]
     - type : metadataLine
       name : metadataLine
-      locationSpan : {start: [652, 0], end: [652, 9]}
-      span : [14630, 14638]
+      locationSpan : {start: [652, 0], end: [652, 13]}
+      span : [14685, 14697]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [653, 0], end: [653, 9]}
-      span : [14639, 14647]
+      span : [14698, 14706]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [654, 0], end: [654, 9]}
-      span : [14648, 14656]
+      span : [14707, 14715]
     - type : metadataLine
       name : metadataLine
       locationSpan : {start: [655, 0], end: [655, 9]}
-      span : [14657, 14665]
+      span : [14716, 14724]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [656, 0], end: [656, 9]}
+      span : [14725, 14733]

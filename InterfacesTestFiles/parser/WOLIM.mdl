@@ -2,7 +2,3162 @@
 TPES Mtoe[scenarios]=
 	TPES EJ[scenarios]*MToe per EJ
 	~	MToe/Year
-	~<[VIEW]>: TPES <[DESCRIPTION]>:	Total Primary Energy Supply.
+	~	Total Primary Energy Supply.
+	|
+
+Total FE Elec demand TWh[scenarios]=
+	(FE demand Elec consum TWh[scenarios]+increase Elec demand for Transp TWh[scenarios]\
+		)*(1+share elec distribution losses
+)
+	~	TWh/Year
+	~	Total final energy electricity demand (TWh). It includes new electric uses \
+		(e.g. EV & HEV) and electrical distribution losses.
+	|
+
+PE demand for IB initial EJ[scenarios]=
+	"I-IB"[scenarios]*GDP[scenarios]
+	~	EJ
+	~	Primary energy demand of energy for Industry and Buildings sector (without \
+		electricity)..
+	|
+
+PE demand for Transport initial EJ[scenarios]=
+	"I-TRANSP"[scenarios]*GDP[scenarios]
+	~	EJ/Year
+	~	Primary energy demand of energy for the Transportation sector.
+	|
+
+RURR coal[scenarios]= INTEG (
+	-extraction coal EJ[scenarios],
+		URR coal[scenarios]-cumulated coal extraction to 1990)
+	~	EJ
+	~	RURR coal. 4400 EJ extracted before 1990.
+	|
+
+GDP delayed 1yr[scenarios]= DELAY FIXED (
+	GDP[scenarios], 1, 39.435)
+	~	Tdollars/Year
+	~	GDP projection delayed 1 year. Data from World Bank --> GDP(1989)=39.435 T$ US2011.
+		.
+	|
+
+GDP growth rate[scenarios]=
+	-1+GDP[scenarios]/GDP delayed 1yr[scenarios]
+	~	Dmnl
+	~	GDP growth rate.
+	|
+
+abundance coal[scenarios]=
+	IF THEN ELSE(extraction coal EJ[scenarios]>(Total demand coal EJ[scenarios]), 1, 1-(\
+		((Total demand coal EJ[scenarios])-
+extraction coal EJ[scenarios])/Total demand coal EJ[scenarios]))
+	~	Dmnl
+	~	The parameter abundance varies between (1;0). Abundance=1 while the supply \
+		covers the demand; the closest to 0 indicates a higher divergence between \
+		supply and demand.
+	|
+
+real PE intensity Build[scenarios]=
+	"PE demand Build after RES+efficiency EJ"[scenarios]/GDP[scenarios]
+	~	EJ/Tdollars
+	~		|
+
+abundance gas[scenarios]=
+	IF THEN ELSE(Total demand gas EJ[scenarios]<total gas extraction EJ[scenarios], 1, 1\
+		-(Total demand gas EJ[scenarios]-total gas extraction EJ
+[scenarios])/Total demand gas EJ[scenarios])
+	~	Dmnl
+	~	The parameter abundance varies between (1;0). Abundance=1 while the supply \
+		covers the demand; the closest to 0 indicates a higher divergence between \
+		supply and demand.
+	|
+
+check liquids[scenarios]=
+	(Total demand liquids EJ[scenarios]-Liquids extraction EJ[scenarios])/Liquids extraction EJ\
+		[scenarios]
+	~	Dmnl
+	~	If=1, demand=supply. If>1, demand>supply. If<0, demand<supply. Variable to \
+		avoid energy oversupply caused by exogenously driven policies.
+	|
+
+abundance liquids[scenarios]=
+	IF THEN ELSE((Total demand liquids EJ[scenarios])<(Liquids extraction EJ[scenarios])\
+		, 1, 1-((Total demand liquids EJ[scenarios
+]-Liquids extraction EJ[scenarios])/Total demand liquids EJ[scenarios]))
+	~	Dmnl
+	~	The parameter abundance varies between (1;0). Abundance=1 while the supply \
+		covers the demand; the closest to 0 indicates a higher divergence between \
+		supply and demand.
+	|
+
+FE Elec generation from total oil TWh[scenarios]=
+	Liquids extraction EJ[scenarios]*"share liquids/sector for Elec"[scenarios]*efficiency liquids for electricity\
+		/EJ per TWh
+	~	TWh/Year
+	~	Electricity generation (final energy) from total oil.
+	|
+
+Afforestation program 2020 GtCO2[scenarios]=
+	Afforestation program 2020*activate Affores program[scenarios]/(C per CO2*Mt per Gt)
+	~	GtCO2/Year
+	~	Annual emissions captured by the afforestation program.
+	|
+
+share RES vs TPES[scenarios]=
+	TPE from RES EJ[scenarios]/TPES EJ[scenarios]
+	~	Dmnl
+	~	Share of primary energy from RES in the TPES.
+	|
+
+abundance TPE[scenarios]=
+	IF THEN ELSE(TPES EJ[scenarios]>TPED by sector EJ[scenarios], 1, 1-((TPED by sector EJ\
+		[scenarios]-TPES EJ[scenarios])/TPED by sector EJ
+[scenarios]))
+	~	Dmnl
+	~	The parameter abundance varies between (1;0). Abundance=1 while the supply \
+		covers the demand; the closest to 0 indicates a higher divergence between \
+		supply and demand.
+	|
+
+Total Carbon Emisions[scenarios]=
+	CO2 emissions GtCO2[scenarios]*C per CO2*t per Gt
+	~	TonC/Year
+	~	Total annual carbon emissions.
+	|
+
+Total cumulative emissions GtCO2[scenarios]=
+	Total cumulative emissions GtC[scenarios]/C per CO2
+	~	GtCO2
+	~	Total cumulative emissions.
+	|
+
+Carbon emissions GtC[scenarios]=
+	CO2 emissions GtCO2[scenarios]*C per CO2
+	~	GtC/Year
+	~	Total anual carbon emissions.
+	|
+
+Cumulated coal extraction[scenarios]= INTEG (
+	extraction coal EJ[scenarios],
+		cumulated coal extraction to 1990)
+	~	EJ
+	~	Cumulated coal extraction.
+	|
+
+check gas[scenarios]=
+	(Total demand gas EJ[scenarios]-total gas extraction EJ[scenarios])/total gas extraction EJ\
+		[scenarios]
+	~	Dmnl
+	~	Variable to avoid energy oversupply caused by exogenously driven policies.
+	|
+
+Liquids extraction Mtoe[scenarios]=
+	Liquids extraction EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Total liquids extraction.
+	|
+
+real PE intensity Indus[scenarios]=
+	"PE demand Ind after RES+efficiency EJ"[scenarios]/GDP[scenarios]
+	~	EJ/Tdollars
+	~		|
+
+GtCO2 historic emissions RCPs[scenarios]=
+	GtC historic emissions RCPs[scenarios](Time)/C per CO2
+	~	GTCO2e
+	~		|
+
+real PED intensity of Electricity[scenarios]=
+	(Total FE Elec demand EJ[scenarios]+Elec gen related losses EJ[scenarios])/GDP[scenarios\
+		]
+	~	EJ/Tdollars
+	~	Primary energy demand intensity of the electricity sector. Note that the \
+		parameter "'a' I-ELEC projection" refers to final energy while here we \
+		refer to primary energy. The "real PED intensity of electricity" may thus \
+		decrease with the penetration of RES in the electricity generation (see \
+		"share RES vs NRE electricity generation").
+	|
+
+real PED intensity of Transport[scenarios]=
+	PE demand Transport after policies EJ[scenarios]/GDP[scenarios]
+	~	EJ/Tdollars
+	~	Primary energy demand (after policies and without electricity) of the \
+		Transportation sector.
+	|
+
+Total extraction NRE EJ[scenarios]=
+	extraction coal EJ[scenarios]+extraction conv gas without GTL EJ[scenarios]+extraction conv oil EJ\
+		[scenarios]+extraction unconv gas EJ
+[scenarios]+extraction unconv oil EJ[scenarios]+extraction uranium EJ[scenarios]
+	~	EJ/Year
+	~	Annual total extraction of non-renewable energy resources.
+	|
+
+PE liquids production for Transp EJ[scenarios]=
+	Liquids extraction EJ[scenarios]*share liquids for Transp[scenarios]
+	~	EJ/Year
+	~	Total liquids produced for covering the energy requirements of the \
+		Transportation sector.
+	|
+
+real TPED intensity[scenarios]=
+	TPED by sector EJ[scenarios]/GDP[scenarios]
+	~	EJ/Tdollars
+	~	Total primary energy demand intensity after policies.
+	|
+
+real total energy Intensity EJ T$[scenarios]=
+	TPES EJ[scenarios]/GDP[scenarios]
+	~	EJ/Tdollars
+	~	Total energy intensity
+	|
+
+extraction coal Mtoe[scenarios]=
+	extraction coal EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Annual extraction of coal.
+	|
+
+PE losses oil for Elec EJ[scenarios]=
+	Liquids extraction EJ[scenarios]*"share liquids/sector for Elec"[scenarios]*(1-efficiency liquids for electricity\
+		)
+	~	EJ/Year
+	~	Primary energy losses related with oil for electricity generation.
+	|
+
+extraction coal without CTL EJ[scenarios]=
+	MAX(extraction coal EJ[scenarios]-extraction coal for CTL EJ[scenarios], 0)
+	~	EJ/Year
+	~	Extraction of conventional gas excepting the resource used to produce GTL.
+	|
+
+Liquids production for IB EJ[scenarios]=
+	Liquids extraction EJ[scenarios]*share liquids for IB[scenarios]
+	~	EJ/Year
+	~	Annual liquids production for Industrial&Buildings sector.
+	|
+
+Average TPES per capita[scenarios]=
+	TPES EJ[scenarios]*GJ per EJ/Population[scenarios]
+	~	GJ/(Year*people)
+	~	Average Total Primary Energy Supply per capita (GJ per capita).
+	|
+
+CO2 emissions per capita[scenarios]=
+	CO2 emissions GtCO2[scenarios]*t per Gt/Population[scenarios]
+	~	tCO2/person
+	~	CO2 emissions per capita.
+	|
+
+TPES EJ[scenarios]=
+	Total extraction NRE EJ[scenarios]+TPE from RES EJ[scenarios]
+	~	EJ/Year
+	~	Total Primary Energy Supply.
+	|
+
+"TPES (without trad biomass)"[scenarios]=
+	TPES EJ[scenarios]-PE traditional biomass EJ[scenarios]
+	~	EJ
+	~	TPES without accounting for traditional biomass.
+	|
+
+FE demand Elec consum delayed 1yr[scenarios]= DELAY FIXED (
+	FE demand Elec consum TWh[scenarios], 1 , FE demand Elec consum 1989 TWh)
+	~	TWh
+	~	Electricity consumption (TWh) delayed 1 year
+	|
+
+real PED intensity IB[scenarios]=
+	PE demand for IB after RES EJ[scenarios]/GDP[scenarios]
+	~	EJ/Tdollars
+	~	Primary energy demand intensity of the Industry and Buildings sector after \
+		policies.
+	|
+
+FE demand Elec EJ[scenarios]=
+	FE demand Elec consum TWh[scenarios]*EJ per TWh
+	~	EJ
+	~	Electricity consumption (final energy, EJ)
+	|
+
+TPE from RES Mtoe[scenarios]=
+	TPE from RES EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Total primary energy supply from all RES.
+	|
+
+share tot monet invest Elec RES vs GDP[scenarios]=
+	Total monet invest RES for elec Tdolar[scenarios]/GDP[scenarios]
+	~	1/Year
+	~	Annual total monetary investment for RES for electricity as a share of the \
+		annual GDP.
+	|
+
+initial BioW TWh=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C58')
+	~	TWh
+	~	94 TWh generated in 1990 (US EIA database).
+	|
+
+initial offshore wind TWh=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C61')
+	~	TWh
+	~	0 TWh generated in 1990 (IRENA).
+	|
+
+initial onshore wind TWe=
+	initial onshore wind TWh*TWe per TWh
+	~	TWe
+	~	Electricity generated by onshore wind in 1990.
+	|
+
+initial onshore wind TWh=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C60')
+	~	TWh
+	~	3.6 TWh generated in 1990 (BP 2016).
+	|
+
+initial offshore wind TWe=
+	initial offshore wind TWh*TWe per TWh
+	~	TWe
+	~	Electricity generated by offshore wind in 1990 (IRENA).
+	|
+
+"initial geot-elec TWe"=
+	"initial geot-elec TWh"*TWe per TWh
+	~	TWe
+	~	Electricity generated by geothermal in 1990.
+	|
+
+"initial geot-elec TWh"=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C57')
+	~	TWh
+	~	36 TWh generated in 1990 (US EIA database).
+	|
+
+initial oceanic TWh=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C59')
+	~	TWh
+	~	0 TWh generated in 1990 (IRENA).
+	|
+
+initial hydro TWe=
+	initial hydro TWh*TWe per TWh
+	~	TWe
+	~	Electricity generated by hydroelectric power plants in 1990.
+	|
+
+initial hydro TWh=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants',  'C63')
+	~	TWh
+	~	TWh generated by hydro in 1990 (BP, 2016).
+	|
+
+initial solar TWe=
+	initial solar TWh*TWe per TWh
+	~	TWe
+	~	Electricity generated by solar technologies in 1990 (BP 2016)..
+	|
+
+initial solar TWh=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C62')
+	~	TWh
+	~	0.4 TWh generated by solar technologies in 1990 (BP 2016).
+	|
+
+initial oceanic TWe=
+	initial oceanic TWh*TWe per TWh
+	~	TWe
+	~	Electricity generated by oceanic RES in 1990.
+	|
+
+initial BioW TWe=
+	initial BioW TWh*TWe per TWh
+	~	TWe
+	~	Electricity generated by Bio&Waste in 1990.
+	|
+
+CO2 emissions GtCO2[scenarios]=
+	Fossil fuel emissions GtCO2[scenarios]+Land use change emissions GtCO2+BioE CO2 emissions\
+		[scenarios]+GtCO2e electric renewables
+	[scenarios]+(GtCO2e nuclear[scenarios])-Afforestation program 2020 GtCO2[scenarios]
+	~	GTCO2e/Year
+	~	Total annual CO2 emissions. Original unit: "mill Tn CO2"
+	|
+
+Mt per Gt=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C21')
+	~	
+	~	Conversion from Mega to Giga (1000 M = 1 G).
+	|
+
+Policy CTL[scenarios]=
+	IF THEN ELSE(abundance liquids[scenarios]>0.95, Hist growth CTL, P CTL[scenarios])
+	~	1/Year
+	~	If there is not scarcity of liquids, CTL production increases at \
+		historical past rates.
+	|
+
+Policy GTL[scenarios]=
+	IF THEN ELSE(abundance liquids[scenarios]>0.95, Hist growth GTL, P GTL[scenarios])
+	~	1/Year
+	~	If there is not scarcity of liquids, GTL production increases at \
+		historical past rates.
+	|
+
+GTL efficiency=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C50')
+	~	Dmnl
+	~	Efficiency of GTL plants. Source: IEA balances (see Technical Report).
+	|
+
+CTL efficiency=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C49')
+	~	Dmnl
+	~	Efficiency of CTL plants. Source: IEA balances (see Technical Report).
+	|
+
+CTL Gb[scenarios]=
+	CTL production[scenarios]/Gboe per EJ
+	~	Gboe/Year
+	~	Annual CTL production (Gb).
+	|
+
+URR uranium[scenarios]=
+	IF THEN ELSE(Choose extraction uranium curve[scenarios]=1, URR uranium EWG13, IF THEN ELSE\
+		(Choose extraction uranium curve[scenarios]=2, URR uranium Zittel12, URR uranium User defined\
+		))
+	~	EJ
+	~	Ultimately Recoverable Resources (URR) associated to the selected \
+		depletion curve.
+	|
+
+"CTL+GTL Gb"[scenarios]=
+	"CTL+GTL production EJ"[scenarios]/Gboe per EJ
+	~	Gboe/Year
+	~	CTL and GTL production.
+	|
+
+max unconv gas growth extraction[scenarios]=
+	1+IF THEN ELSE(Selection constraint extraction unconv gas[scenarios]=1, (P constraint growth extraction unconv gas\
+		[scenarios])
+	,("User-defined extraction growth unconv gas"(Time)))
+	~	Dmnl
+	~	Constraint to maximum annual unconventional gas extraction (%).
+	|
+
+"Total demand liquids mb/d"[scenarios]=
+	Total demand liquids EJ[scenarios]*"Mb/d per EJ/year"
+	~	Mb/d
+	~	Total demand of liquids.
+	|
+
+"Mb/d per EJ/year"=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C17')
+	~	Mb*Year/(EJ*d)
+	~	Conversion between Mb/d to EJ/year.
+	|
+
+total oil extraction Gb[scenarios]=
+	total oil extraction EJ[scenarios]*Gboe per EJ
+	~	
+	~	Total oil (conventional + unconventional) extraction.
+	|
+
+max extraction uranium EJ[scenarios]=
+	IF THEN ELSE(Choose extraction uranium curve[scenarios]=1, table max extraction uranium EWG13 EJ\
+		(RURR uranium[scenarios
+	]), IF THEN ELSE(Choose extraction uranium curve[scenarios]=2, table max extraction uranium Zittel12\
+		(RURR uranium[scenarios]), table max extraction uranium user defined(RURR uranium[scenarios\
+		])))
+	~	EJ/Year
+	~	Maximum extraction curve selected for the simulations.
+	|
+
+Hist growth CTL=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C89')
+	~	1/Year
+	~	Historic growth of CTL 1990-2014 (IEA Balances).
+	|
+
+"extraction conv oil Mb/d"[scenarios]=
+	extraction conv oil EJ[scenarios]*"Mb/d per EJ/year"
+	~	Mb/d
+	~	Annual extraction of conventional oil.
+	|
+
+GTL Gb[scenarios]=
+	GTL production[scenarios]/Gboe per EJ
+	~	Gboe/Year
+	~	Annual GTL production (Gb).
+	|
+
+Oil liquids saved by EVs kbd[scenarios]=
+	Oil liquids saved by EVs EJ[scenarios]*"Mb/d per EJ/year"*1000
+	~	kboe/d
+	~	Oil liquids saved by electric vehicles (BEV and HEV).
+	|
+
+demand coal for CTL EJ[scenarios]=
+	CTL production[scenarios]/CTL efficiency
+	~	EJ/Year
+	~	Demand of coal for CTL.
+	|
+
+"extraction unconv oil Mb/d"[scenarios]=
+	extraction unconv oil EJ[scenarios]*"Mb/d per EJ/year"
+	~	Mb/d
+	~	Annual extraction of unconventional oil.
+	|
+
+Gboe per EJ=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C18')
+	~	EJ/Gboe
+	~	Unit conversion (1 EJ = 5.582 Gb).
+	|
+
+table max extraction uranium user defined=
+	GET XLS LOOKUPS('inputs.xlsx', 'User defined', '156', 'D157')
+	~	EJ/Year
+	~		|
+
+"User-defined extraction growth unconv gas"(
+	GET XLS LOOKUPS('inputs.xlsx', 'User defined', '163', 'D164'))
+	~	Dmnl
+	~	User-defined annual extraction growth constraint path as a function of \
+		time for unconventional gas.
+	|
+
+"User-defined extraction growth unconv oil"(
+	GET XLS LOOKUPS('inputs.xlsx', 'User defined', '161', 'D162')
+	)
+	~	Dmnl
+	~	User-defined annual extraction growth constraint path as a function of \
+		time for unconventional oil.
+	|
+
+demand gas for GTL EJ[scenarios]=
+	GTL production[scenarios]/GTL efficiency
+	~	EJ/Year
+	~	Demand of gas for CTL.
+	|
+
+Hist growth GTL=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C90')
+	~	1/Year
+	~	Historic growth of GTL 2000-2014 (IEA Balances).
+	|
+
+URR uranium User defined=
+	GET XLS CONSTANTS('inputs.xlsx', 'User defined', 'B156')
+	~	EJ
+	~		|
+
+PE demand Industry EJ[scenarios]=
+	IF THEN ELSE(Time<2015, PE demand for IB initial EJ[scenarios]*"share Industry/IB historic"\
+		, PE demand for IB initial EJ[scenarios]*"share Industry/IB scenario"[scenarios])
+	~	EJ
+	~	Primary energy demand by the Industry sector (without electricity).
+	|
+
+"share Industry/IB historic"=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C37')
+	~	Dmnl
+	~	Round average share of primary energy consumption of the sector Industry \
+		in relation to Industry+Buildings in the last years (75%). See Technical \
+		Report.
+	|
+
+"share Buildings/IB"[scenarios]=
+	IF THEN ELSE(Time<2015, (1-"share Industry/IB historic"), (1-"share Industry/IB scenario"\
+		[scenarios]))
+	~	Dmnl
+	~	Round average share of primary energy consumption of the sector Buildings \
+		in relation to Industry+Buildings in the last years (25%). See Technical \
+		Report.
+	|
+
+"I-IB(t=0), i.e. 2007"=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C103')
+	~	EJ/Tdollars
+	~	Value of the primary energy intensity of the Industry and Buildings sector \
+		in the initial year (2007) to apply Schenk and Moll, 2007 equation.
+	|
+
+"I-IB"[scenarios]=
+	IF THEN ELSE(Time<2008, "'a' historical I-IB"*"I-IB delayed 1yr"[scenarios] ,"I-IB min"\
+		[scenarios]+("I-IB(t=0), i.e. 2007"-"I-IB min"[scenarios])*"Adapt 'a' I-IB"[scenarios\
+		]^"t I-IB"[scenarios] )
+	~	EJ/Tdollars
+	~	Primary energy consumption intensity of the Industry and Buildings sector. Equation \
+		as a physical indicator as proposed by (Schenk and Moll, 2007) \
+		I_t=I_min+(I_(t=0)-I_min )∙a^t
+		Due to the lack of data at the time of the construction of the model, the \
+		parameter "a" was calculated internally in the model for the calibration \
+		period (1990-2010) as the subtraction of Total energy minus Transport and \
+		Electrical sector (generation and losses).
+	|
+
+replacement nuclear demand[scenarios]=
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=1,wear nuclear demand[scenarios\
+		]*replacement rate nuclear,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=2,0,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=3,0,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=4,wear nuclear demand[scenarios\
+		]*replacement rate nuclear,0))))
+	~	GW
+	~	If replacement rate=1, we asume that all the capacity that reaches the end \
+		of its lifetime is replaced.
+	|
+
+replacement rate nuclear=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'D15')
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+replacement nuclear[scenarios]=
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=1,wear nuclear[scenarios]*replacement rate nuclear\
+		,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=2,0,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=3,0,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=4,wear nuclear[scenarios]*replacement rate nuclear\
+		,0))
+	))
+	~	GW/Year
+	~	If replacement rate=1, we asume that all the power that reaches the end of its \
+		lifetime is replaced.
+		
+		IF THEN ELSE(Selection of nuclear scenario[scenarios]=1,wear \
+		nuclear[scenarios]*replacement rate nuclear[scenarios],
+		IF THEN ELSE(Selection of nuclear scenario[scenarios]=2,0,
+		IF THEN ELSE(Selection of nuclear scenario[scenarios]=3,0,
+		IF THEN ELSE(Selection of nuclear scenario[scenarios]=4,wear \
+		nuclear[scenarios]*replacement rate nuclear[scenarios],0))
+		))*effects shortage uranium[scenarios]
+	|
+
+PE demand FF Industry[scenarios]=
+	MAX(PE demand Industry EJ[scenarios]-PE supply thermal RES for Indus[scenarios],1)
+	~	EJ
+	~	Primary energy demand covered by fossil fuels in the Industry sector \
+		(without electricity). We force the maximum to be positive in order to \
+		avoid divisions by zero.
+	|
+
+PE demand liquids for Industry EJ[scenarios]=
+	PE demand FF Industry[scenarios]*"share incr liquids/FF for Ind"[scenarios]/tot shares incr Ind\
+		[scenarios]
+	~	EJ/Year
+	~	Primary energy demand of oil of the Industry sector.
+	|
+
+Total gas extraction for IB EJ[scenarios]=
+	total gas extraction without GTL[scenarios]*share gas for IB[scenarios]
+	~	EJ/Year
+	~	Total gas extraction for the Industtry & Buildings sector.
+	|
+
+total gas extraction without GTL[scenarios]=
+	extraction conv gas without GTL EJ[scenarios]+extraction unconv gas EJ[scenarios]
+	~	EJ/Year
+	~	Total extraction of conventional gas and unconventional (without GTL).
+	|
+
+"share incr coal/FF for Build"[scenarios]=
+	IF THEN ELSE(PE demand FF Buildings[scenarios]>0,(PE demand Buildings EJ[scenarios]/\
+		PE demand FF Buildings[scenarios])*share coal for Build[scenarios], 0)
+	~	Dmnl
+	~	Share increase of coal to cover the fossil fuel demand of the Buildings \
+		sector.
+	|
+
+PE demand gas for Buildings EJ[scenarios]=
+	PE demand FF Buildings[scenarios]*"share incr gas/FF for Build"[scenarios]/tot shares incr Build\
+		[scenarios]
+	~	EJ/Year
+	~	Primary energy demand of gas of the Buildings sector.
+	|
+
+"share incr gas/FF for Build"[scenarios]=
+	IF THEN ELSE(PE demand FF Buildings[scenarios]>0,(PE demand Buildings EJ[scenarios]/\
+		PE demand FF Buildings[scenarios])*share gas for Build[scenarios], 0)
+	~	Dmnl
+	~	Share of gas to cover the fossil fuel demand of the Buildings sector. \
+		Adaptation of shares from WoLiM 1.0 (Ref: WoLiM 1.0 & IEOs (see Technical \
+		Report)). Share constant after 2011.
+	|
+
+share coal for Build[scenarios]=
+	1-share gas for Build[scenarios]-share liquids for Build[scenarios]
+	~	Dmnl
+	~	Share of coal to cover the fossil fuel demand of the Buildings sector. \
+		Adaptation of shares from WoLiM 1.0 (Ref: WoLiM 1.0 & IEOs (see Technical \
+		Report)). Share constant after 2011.
+	|
+
+PE demand gas for Industry EJ[scenarios]=
+	PE demand FF Industry[scenarios]*"share incr gas/FF for Ind"[scenarios]/tot shares incr Ind\
+		[scenarios]
+	~	EJ/Year
+	~	Primary energy demand of gas of the Industry sector.
+	|
+
+share PE RES for Industry[scenarios]=
+	PE supply thermal RES for Indus[scenarios]/(PE supply thermal RES for Indus[scenarios\
+		]+PE demand Industry EJ[scenarios])
+	~	Dmnl
+	~	Share of RES supply in the sector Industry (primary energy).
+	|
+
+PE gas extraction for Transp EJ[scenarios]=
+	total gas extraction without GTL[scenarios]*share gas for Transp[scenarios]
+	~	EJ/Year
+	~	Primary energy gas extraction (excluding GTL) for Transportation.
+	|
+
+PE demand liquids for Buildings EJ[scenarios]=
+	PE demand FF Buildings[scenarios]*"share incr liquids/FF for Build"[scenarios]/tot shares incr Build\
+		[scenarios]
+	~	EJ/Year
+	~	Primary energy demand of oil of the Buildings sector.
+	|
+
+tot shares incr Ind[scenarios]=
+	"share incr coal/FF for Ind"[scenarios]+"share incr gas/FF for Ind"[scenarios]+"share incr liquids/FF for Ind"\
+		[scenarios]
+	~	Dmnl
+	~	Total of shares increase to scale down the shares.
+	|
+
+PE demand FF Buildings[scenarios]=
+	MAX(PE demand Buildings EJ[scenarios]-PE supply thermal RES for Build[scenarios],1)
+	~	EJ
+	~	Primary energy demand covered by fossil fuels in the Buildings sector \
+		(without electricity). We force the maximum to be positive in order to \
+		avoid divisions by zero.
+	|
+
+"share incr gas/FF for Ind"[scenarios]=
+	IF THEN ELSE(PE demand FF Industry[scenarios]>0,(PE demand Industry EJ[scenarios]/PE demand FF Industry\
+		[scenarios])*share gas for Ind[scenarios], 0)
+	~	Dmnl
+	~	Share increase of gas to cover the fossil fuel demand of the Industry \
+		sector. Adaptation of shares from WoLiM 1.0 (Ref: WoLiM 1.0 & IEOs (see \
+		Technical Report)). Share constant after 2011.
+	|
+
+"share incr liquids/FF for Build"[scenarios]=
+	IF THEN ELSE(PE demand FF Buildings[scenarios]>0, (PE demand Buildings EJ[scenarios]\
+		/PE demand FF Buildings[scenarios])*share liquids for Build[scenarios],0)
+	~	Dmnl
+	~	Share increase of liquids to cover the fossil fuel demand of the Buildings \
+		sector. Adaptation of shares from WoLiM 1.0 (Ref: WoLiM 1.0 & IEOs (see \
+		Technical Report)). Share constant after 2011.
+	|
+
+"share incr liquids/FF for Ind"[scenarios]=
+	IF THEN ELSE(PE demand FF Industry[scenarios]>0,(PE demand Industry EJ[scenarios]/PE demand FF Industry\
+		[scenarios])*share liquids for Ind[scenarios], 0)
+	~	Dmnl
+	~	Share increase of liquids to cover the fossil fuel demand of the Industry \
+		sector.
+	|
+
+demand gas for oil refinery gains[scenarios]=
+	Oil refinery gains EJ[scenarios]*Efficiency gas for oil refinery gains
+	~	EJ/Year
+	~	Demand of natural gas to be used as input in the refineries to obtain the \
+		so-called "oil refinery gains".
+	|
+
+"share Industry/IB scenario"[BAU]=
+	GET XLS CONSTANTS('inputs.xlsx', 'BAU', 'C17') ~~|
+"share Industry/IB scenario"[SCEN1]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN1', 'C17') ~~|
+"share Industry/IB scenario"[SCEN2]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN2', 'C17') ~~|
+"share Industry/IB scenario"[SCEN3]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN3', 'C17') ~~|
+"share Industry/IB scenario"[SCEN4]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN4', 'C17') ~~|
+"share Industry/IB scenario"[User defined]=
+	GET XLS CONSTANTS('inputs.xlsx', 'User defined', 'C17')
+	~	Dmnl
+	~	Projected share of primary energy consumption of the sector Industry in \
+		relation to Industry+Buildings (historical rounded value: 75%, see \
+		Technical Report).
+	|
+
+share liquids for Ind[scenarios]=
+	1-share coal for Ind[scenarios]-share gas for Ind[scenarios]
+	~	Dmnl
+	~	Share of liquids to cover the fossil fuel demand of the Industry sector.
+	|
+
+share PE RES for Buildings[scenarios]=
+	PE supply thermal RES for Build[scenarios]/(PE supply thermal RES for Build[scenarios\
+		]+PE demand Buildings EJ[scenarios])
+	~	Dmnl
+	~	Share of RES supply in the sector Buildings (primary energy).
+	|
+
+PE demand coal for Buildings EJ[scenarios]=
+	PE demand FF Buildings[scenarios]*"share incr coal/FF for Build"[scenarios]/tot shares incr Build\
+		[scenarios]
+	~	EJ/Year
+	~	Primary energy demand of coal of the Buildings sector.
+	|
+
+tot shares incr Build[scenarios]=
+	"share incr coal/FF for Build"[scenarios]+"share incr gas/FF for Build"[scenarios]+"share incr liquids/FF for Build"\
+		[scenarios]
+	~	Dmnl
+	~	Total of shares increase to scale down the shares.
+	|
+
+"share incr coal/FF for Ind"[scenarios]=
+	IF THEN ELSE(PE demand FF Industry[scenarios]>0, (PE demand Industry EJ[scenarios]/PE demand FF Industry\
+		[scenarios])*share coal for Ind[scenarios],0)
+	~	Dmnl
+	~	Share increase of coal to cover the fossil fuel demand of the Industry \
+		sector. Adaptation of shares from WoLiM 1.0 (Ref: WoLiM 1.0 & IEOs (see \
+		Technical Report)). Share constant after 2011.
+	|
+
+PE demand coal for Industry EJ[scenarios]=
+	PE demand FF Industry[scenarios]*"share incr coal/FF for Ind"[scenarios]/tot shares incr Ind\
+		[scenarios]
+	~	EJ/Year
+	~	Primary energy demand of coal of the Industry sector.
+	|
+
+Total gen losses demand for Elec EJ[scenarios]=
+	PE demand gas for Elec EJ[scenarios]*(1-efficiency gas for electricity)+PE demand coal for Elec EJ\
+		[scenarios]*(1-efficiency coal for electricity)+PE demand liquids for Elec EJ[scenarios\
+		]*(1-efficiency liquids for electricity)+PE losses uranium for Elec EJ[scenarios]+PE losses BioW for Elec EJ\
+		[scenarios]
+	~	EJ/Year
+	~	Total generation losses associated to electricity demand.
+	|
+
+new nuclear capacity demand[scenarios]=
+	IF THEN ELSE(Time<2012, historic nuclear TWe[scenarios]*1000,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=1,Nuclear capacity demand GW[scenarios\
+		]*P nuclear elec gen[scenarios
+	],
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=2,P nuclear elec gen[scenarios\
+		]*1000,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=3,P nuclear elec gen[scenarios\
+		]*1000,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=4,Nuclear capacity demand GW[scenarios\
+		]*P nuclear elec gen[scenarios
+	],0)
+	))))/Cp nuclear[scenarios]
+	~	GW/Year
+	~	New demand of new nuclear depending on the scenario chosen.
+	|
+
+new nuclear capacity GW[scenarios]=
+	IF THEN ELSE(Time<2012, historic nuclear TWe[scenarios]*1000,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=1,Nuclear capacity GW[scenarios\
+		]*P nuclear elec gen[scenarios],
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=2,P nuclear elec gen[scenarios\
+		]*1000,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=3,P nuclear elec gen[scenarios\
+		]*1000,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=4,Nuclear capacity GW[scenarios\
+		]*P nuclear elec gen[scenarios],0)
+	))))*effects shortage uranium[scenarios]/Cp nuclear[scenarios]
+	~	GW/Year
+	~	New annual capacity installed depending on the scenario selected and the uranium \
+		availability.
+		
+		IF THEN ELSE(Time<2012, historic nuclear TWe[scenarios]*1000,
+		IF THEN ELSE(abundance uranium[scenarios]<1,0,
+		IF THEN ELSE(Selection of nuclear scenario[scenarios]=1,Nuclear capacity \
+		GW[scenarios]*P nuclear elec gen[scenarios],
+		IF THEN ELSE(Selection of nuclear scenario[scenarios]=2,P nuclear elec \
+		gen[scenarios]*1000,
+		IF THEN ELSE(Selection of nuclear scenario[scenarios]=3,P nuclear elec \
+		gen[scenarios]*1000,
+		IF THEN ELSE(Selection of nuclear scenario[scenarios]=4,Nuclear capacity \
+		GW[scenarios]*P nuclear elec gen[scenarios],0)
+		)))))/Cp nuclear[scenarios]
+	|
+
+abundance uranium[scenarios]=
+	IF THEN ELSE(PE demand uranium EJ[scenarios]=0, 1, IF THEN ELSE(extraction uranium EJ\
+		[scenarios]>PE demand uranium EJ[scenarios
+	], 1, 1-((PE demand uranium EJ[scenarios]-extraction uranium EJ[scenarios])/PE demand uranium EJ\
+		[scenarios])))
+	~	Dmnl
+	~	The parameter abundance varies between (1;0). Abundance=1 while the supply \
+		covers the demand; the closest to 0 indicates a higher divergence between \
+		supply and demand.
+	|
+
+PE Elec gen nuclear capacity available EJ[scenarios]=
+	Elec gen nuclear capacity available TWh[scenarios]*EJ per TWh/efficiency uranium for electricity
+	~	EJ
+	~		|
+
+PE demand uranium EJ[scenarios]=
+	demand Nuclear TWh[scenarios]*EJ per TWh/efficiency uranium for electricity
+	~	
+	~	Primary energy demand of uranium for nuclear power generation.
+	|
+
+demand Elec gas and coal TWh[scenarios]=
+	MAX(Demand Elec NRE without liquids TWh[scenarios]-FE nuclear Elec generation TWh[scenarios\
+		], 0)
+	~	TWh/Year
+	~	The model assigns priority to RES, oil (exogenous evolution) and nuclear \
+		generation (depending on the selected nuclear scenario) among the \
+		non-renewable electricity generation.
+	|
+
+extraction uranium EJ[scenarios]=
+	MIN(MIN(PE demand uranium EJ[scenarios], max extraction uranium EJ[scenarios]), PE Elec gen nuclear capacity available EJ\
+		[
+	scenarios])
+	~	EJ/Year
+	~	Annual extraction of uranium.
+	|
+
+FE Elec generation from NRE TWh[scenarios]=
+	FE Elec generation from fossil fuels TWh[scenarios]+FE nuclear Elec generation TWh[scenarios\
+		]
+	~	TWh/Year
+	~	Electricity generation from non-renewable resources (fossil fuels and \
+		uranium).
+	|
+
+TPED by fuel[scenarios]=
+	extraction uranium EJ[scenarios]+"PE supply RES non-Elec EJ"[scenarios]+PE Elec generation from RES EJ\
+		[scenarios]+Total demand oil EJ
+	[scenarios]+Total demand coal EJ[scenarios]+Total demand gas EJ[scenarios]
+	~	EJ/Year
+	~	Total primary energy demand by fuel.
+	|
+
+check Transp[scenarios]=
+	(PE demand Transport after policies EJ[scenarios]-PES for Transp EJ[scenarios])/PES for Transp EJ\
+		[scenarios]
+	~	Dmnl
+	~	If=1: demand=supply. If>0: demand>supply. If<0: demand<supply. Variable to \
+		avoid energy oversupply caused by exogenously driven policies.
+	|
+
+real growth GTL[scenarios]=
+	IF THEN ELSE(abundance gas[scenarios]>=abundance liquids[scenarios],Policy GTL[scenarios\
+		]*effects shortage gas[scenarios
+	]*(1+(abundance gas[scenarios]-abundance liquids[scenarios])),0 )*"abundance liquids CTL+GTL"\
+		[scenarios]
+	~	1/Year
+	~	The real growth of GTL depends on the relative abundance of gas and \
+		liquids, as well as on the scarcity of gas.
+	|
+
+"new BioE residues for heat+elec"[scenarios]=
+	IF THEN ELSE(Time<"start year BioE residues for heat+elec"[scenarios], 0, 
+	IF THEN ELSE(Time<"start year BioE residues for heat+elec"
+	[scenarios]+5, start production biofuels(Time-"start year BioE residues for heat+elec"\
+		[scenarios])*EJ per ktoe, 
+	"P bioE residues for heat+elec"[scenarios]*"PE BioE residues for heat+elec EJ"[scenarios\
+		]*"BioE residues for heat+elec available"[scenarios]))
+	~	EJ/(Year*Year)
+	~	BioE residues used for heat and electricity.
+	|
+
+"abundance liquids CTL+GTL"[scenarios]=
+	SQRT(ABS((Total demand liquids EJ[scenarios]-"CTL+GTL production EJ"[scenarios])/Total demand liquids EJ\
+		[scenarios]))
+	~	Dmnl
+	~	Variable to moderate the growth of GTL and CTL when the come close to \
+		supply all the liquids.
+	|
+
+real growth CTL[scenarios]=
+	IF THEN ELSE(abundance coal[scenarios]>=abundance liquids[scenarios],Policy CTL[scenarios\
+		]*effects shortage coal[scenarios
+	]*(1+(abundance coal[scenarios]-abundance liquids[scenarios])),0 )*"abundance liquids CTL+GTL"\
+		[scenarios]
+	~	1/Year
+	~	The real growth of CTL depends on the relative abundance of coal and \
+		liquids, as well as on the scarcity of coal.
+	|
+
+PEpc consumption people depending on trad biomass=
+	PE consumption trad biomass ref/(People relying trad biomass ref*MToe per EJ)
+	~	MToe/people
+	~	Primary energy per capita consumption of people currently depending on \
+		trad biomass.
+	|
+
+share gas for oil refinery gains[scenarios]=
+	IF THEN ELSE(Total demand gas without GTL[scenarios]>0, demand gas for oil refinery gains\
+		[scenarios]/Total demand gas without GTL[scenarios], 0.5)
+	~	Dmnl
+	~	Share of gas to cover oil refinery gains. Condition to avoid error when \
+		the total demand of gas without GTL falls to zero (0.5 is an arbitrary \
+		value).
+	|
+
+PE demand coal for IB[scenarios]=
+	PE demand coal for Buildings EJ[scenarios]+PE demand coal for Industry EJ[scenarios]
+	~	
+	~		|
+
+People relying trad biomass ref=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C58')
+	~	people
+	~	People relying on traditional biomass in 2008. In 2008, 2.5 billion people \
+		consumed 724 Mtoe of traditional biomass (WEO 2010), i.e. 0.29 toe per \
+		capita.
+	|
+
+PE demand liquids for IB[scenarios]=
+	PE demand liquids for Buildings EJ[scenarios]+PE demand liquids for Industry EJ[scenarios\
+		]
+	~	
+	~		|
+
+PE consumption trad biomass ref=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C57')
+	~	MToe/Year
+	~	Primary energy consumption of ptrad biomass. In 2008, 2.5 billion people \
+		consumed 724 Mtoe of traditional biomass (WEO 2010), i.e. 0.29 toe per \
+		capita.
+	|
+
+TPEFpc threshold high development=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C75')
+	~	GJ/people
+	~	Energy use threshold (in terms of total primary energy footprint) found by \
+		Arto et al., (2016) to reach high development (HDI>0.8).
+	|
+
+share gas for IB[scenarios]=
+	1-"share gas/sector for Elec"[scenarios]-share gas for Transp[scenarios]-share gas for oil refinery gains\
+		[scenarios]
+	~	Dmnl
+	~	Share of gas to cover energy consumption of Industry and Buildings.
+	|
+
+PE demand gas for IB[scenarios]=
+	PE demand gas for Buildings EJ[scenarios]+PE demand gas for Industry EJ[scenarios]
+	~	
+	~		|
+
+PE traditional biomass EJ[scenarios]=
+	Population[scenarios]*share global pop dependent on trad biomass[scenarios]*PEpc consumption people depending on trad biomass
+	~	EJ/Year
+	~	Annual primary energy consumption of traditional biomass.
+	|
+
+TPED acceptable standard living=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C76')
+	~	GJ/people
+	~	Approximative energy use value to fulfill the aceptable standard of living \
+		(in terms of total primary energy use). Source: (Goldemberg, 2011; Rao et \
+		al, 2014, WBGU,2003) cited in Arto et al., (2016).
+	|
+
+Pop not dependent on trad biomass[scenarios]=
+	Population[scenarios]-Population dependent on trad biomass[scenarios]
+	~	people
+	~	Global population not dependent on traditional biomass.
+	|
+
+"Average TPESpc (without trad biomass)"[scenarios]=
+	"TPES (without trad biomass)"[scenarios]*GJ per EJ/Pop not dependent on trad biomass\
+		[scenarios]
+	~	GJ/people
+	~	Average per capita TPES without accounting for the energy supplied by \
+		traditional biomass. The population considered for estimating the average \
+		is not the global population, but the share of the population not relying \
+		on traditional biomass for covering their energy uses.
+	|
+
+Nuclear capacity demand GW[scenarios]= INTEG (
+	new nuclear capacity demand[scenarios]+replacement nuclear demand[scenarios]-wear nuclear demand\
+		[scenarios],
+		initial nuclear capacity GW)
+	~	GW
+	~	Annual nuclear capacity demand depending on the scenario chosen.
+	|
+
+initial nuclear capacity GW=
+	initial Nuclear TWh*TWe per TWh*1000/Cp nuclear initial
+	~	GW
+	~	Installed nuclear plants capacity (GW) in 1990.
+	|
+
+P thermal RES for Build[BAU]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'BAU', 'C59') ~~|
+P thermal RES for Build[SCEN1]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'SCEN1', 'C59') ~~|
+P thermal RES for Build[SCEN2]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'SCEN2', 'C59') ~~|
+P thermal RES for Build[SCEN3]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'SCEN3', 'C59') ~~|
+P thermal RES for Build[SCEN4]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'SCEN4', 'C59') ~~|
+P thermal RES for Build[User defined]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'User defined', 'C59')
+	~	1/Year
+	~	Annual growth in RES thermal supply in the Buildings sector depending on \
+		the policy of the scenario.
+	|
+
+adapt growth thermal RES for Build[scenarios]=
+	IF THEN ELSE(Time<2012, past thermal RES for Build, IF THEN ELSE(Time<2017, past thermal RES for Build\
+		+(P thermal RES for Build
+	[scenarios]-past thermal RES for Build)*(Time dmnl[scenarios](Time)-2012)/5, P thermal RES for Build\
+		[scenarios])*abundance thermal RES[scenarios])
+	~	1/Year
+	~	Modeling of a soft transition from current historic annual growth to reach \
+		the policy-objective 5 years later.
+	|
+
+adapt growth thermal RES for Ind[scenarios]=
+	IF THEN ELSE(Time<2015, past thermal RES for Ind, IF THEN ELSE(Time<2020, past thermal RES for Ind\
+		+(P thermal RES for Ind
+	[scenarios]-past thermal RES for Ind)*(Time dmnl[scenarios](Time)-2015)/5, P thermal RES for Ind\
+		[scenarios])*abundance thermal RES[scenarios])
+	~	1/Year
+	~	Modeling of a soft transition from current historic annual growth to reach \
+		the policy-objective 5 years later.
+	|
+
+abundance thermal RES[scenarios]=
+	SQRT(ABS((PE demand for IB after RES EJ[scenarios]-thermal RES supply[scenarios])/PE demand for IB after RES EJ\
+		[scenarios]))
+	~	
+	~		|
+
+P hydro[scenarios]=
+	past hydro*hydro evol[scenarios]*abundance electricity RES[scenarios]
+	~	1/Year
+	~	Annual growth in energy output demand depending on the policy of the \
+		scenario.
+	|
+
+abundance electricity RES[scenarios]=
+	SQRT(ABS((Total FE Elec demand TWh[scenarios]-FE Elec generation from RES TWh[scenarios\
+		])/Total FE Elec demand TWh[scenarios]))
+	~	
+	~		|
+
+effects shortage uranium[scenarios]=
+	IF THEN ELSE(abundance uranium[scenarios]>0.8, ((abundance uranium[scenarios]-0.8)*5\
+		)^2, 0)
+	~	Dmnl
+	~	The eventual scarcity of coal would likely constrain the development of \
+		CTL. The proposed relationship avoids an abrupt limitation by introducing \
+		a range (1;0.8) in the gas abundance that constrains the development of \
+		CTL.
+	|
+
+wear nuclear[scenarios]=
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=1,Nuclear capacity GW[scenarios\
+		]/life time nuclear,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=2,0,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=3,0,
+	IF THEN ELSE(Selection of nuclear scenario[scenarios]=4,Nuclear capacity GW[scenarios\
+		]/life time nuclear,0))))
+	~	GW/Year
+	~	Decommission of the capacity that reachs the end of its lifetime.
+	|
+
+initial Nuclear TWh=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C69')
+	~	TWh/Year
+	~	TWh generated by nuclear power plants in 1990.
+	|
+
+Elec gen nuclear capacity available TWh[scenarios]=
+	Nuclear capacity GW[scenarios]*Cp nuclear[scenarios]/(TWe per TWh*1000)
+	~	TWh/Year
+	~	Electricity generation compatible with the existing infraestructure.
+	|
+
+"I-IB(1990)"=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C106')
+	~	EJ/Tdollars
+	~	Value of the primary energy intensity of the Industry and Buildings sector \
+		in 1990.
+	|
+
+"I-ELEC(1990)"=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C104')
+	~	EJ/Tdollars
+	~	Value of the primary energy intensity of the Electricity sector in 1990.
+	|
+
+"I-TRANSP min"[scenarios]=
+	"I-TRANSP(1990)"*pct Imin[scenarios]
+	~	EJ/Tdollars
+	~	Horizontal asymptote that represents the minimum value of the future \
+		primary energy intensity of the Transportation sector (following Schenk \
+		and Moll, 2007 equation).
+	|
+
+"I-ELEC min"[scenarios]=
+	"I-ELEC(1990)"*pct Imin[scenarios]
+	~	TWh/Tdollars
+	~	"Ielec min" is a horizontal asymptote that represents the minimum value of \
+		the future electricity energy intensity (Schenk and Moll equation).
+	|
+
+"I-TRANSP(1990)"=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C105')
+	~	EJ/Tdollars
+	~	Value of the primary energy intensity of the Transport sector in 1990.
+	|
+
+"I-IB min"[scenarios]=
+	"I-IB(1990)"*pct Imin[scenarios]
+	~	EJ/Tdollars
+	~	Horizontal asymptote that represents the minimum value of the future \
+		primary energy intensity of the Industry and Buildings sector (following \
+		Schenk and Moll, 2007 equation).
+	|
+
+growth historic GDPpc=
+	IF THEN ELSE(Time<2015, Historic GDP(Time+1)*dollars to Tdollars/Historic pop(Time+1\
+		)-Historic GDP(Time)*dollars to Tdollars/Historic pop(Time), 0)
+	~	1/Year
+	~	Historic GDP growth.
+	|
+
+PE supply thermal RES for Indus[scenarios]=
+	thermal RES supply for Ind[scenarios]
+	~	EJ
+	~	Primary energy supply of thermal RES for sector Industry.
+	|
+
+New thermal RES supply for Ind[scenarios]=
+	IF THEN ELSE(Time<2006, Historic RES thermal for Ind(Time+1)-Historic RES thermal for Ind\
+		(Time), 
+	IF THEN ELSE(check IB[scenarios]<-0.05, "constrain IB exogenous growth?"[scenarios]*\
+		thermal RES supply for Ind[scenarios],
+	adapt growth thermal RES for Ind[scenarios]*thermal RES supply for Ind[scenarios]*remaining potential thermal RES\
+		[scenarios]))
+	~	EJ/Year
+	~	New thermal RES supply for Industry.
+	|
+
+check IB[scenarios]=
+	(PE demand for IB after RES EJ[scenarios]-PES for IB EJ[scenarios])/PES for IB EJ[scenarios\
+		]
+	~	Dmnl
+	~	If=1: demand=supply. If>0: demand>supply. If<0: demand<supply. Variable to \
+		avoid energy oversupply caused by exogenously driven policies.
+	|
+
+PE supply thermal RES for Build[scenarios]=
+	thermal RES supply for Build[scenarios]
+	~	EJ
+	~	Primary energy supply of thermal RES for sector Buildings.
+	|
+
+"constrain IB exogenous growth?"[scenarios]=
+	IF THEN ELSE( check IB[scenarios]>-0.05 ,1 ,check IB[scenarios])
+	~	Dmnl
+	~	If negative, there is oversupply of energy in the IB sector. This variable \
+		is used to constrain the exogenous growth of exogenously-driven policies. \
+		We use the value 0.05 instead of 0 to help to converge the model.
+	|
+
+New thermal RES supply for Build[scenarios]=
+	IF THEN ELSE(Time<2006, Historic RES thermal for Build(Time+1)-Historic RES thermal for Build\
+		(Time),
+	IF THEN ELSE(check IB[scenarios]<-0.05, "constrain IB exogenous growth?"[scenarios]*\
+		thermal RES supply for Build[scenarios], 
+	adapt growth thermal RES for Build[scenarios]*thermal RES supply for Build[scenarios\
+		]*remaining potential thermal RES[scenarios]))
+	~	EJ/Year
+	~	New thermal RES supply for Buildings.
+	|
+
+thermal RES supply[scenarios]=
+	thermal RES supply for Ind[scenarios]+thermal RES supply for Build[scenarios]
+	~	EJ
+	~	Total thermal RES supply (Industry + Buildings).
+	|
+
+thermal RES supply for Build[scenarios]= INTEG (
+	New thermal RES supply for Build[scenarios]+replacement thermal RES for Build[scenarios\
+		]-wear thermal RES for Build[scenarios],
+		initial value thermal RES for Build)
+	~	EJ
+	~	Annual thermal RES supply for Buildings.
+	|
+
+thermal RES supply for Ind[scenarios]= INTEG (
+	New thermal RES supply for Ind[scenarios]+replacement thermal RES for Ind[scenarios]\
+		-wear thermal RES for Ind[scenarios],
+		initial value thermal RES for Ind)
+	~	EJ
+	~	Annual thermal RES supply for Industry.
+	|
+
+remaining potential thermal RES[scenarios]=
+	(Max potential PE thermal RES[scenarios]-thermal RES supply[scenarios])/Max potential PE thermal RES\
+		[scenarios]
+	~	Dmnl
+	~	Remaining potential available as given as a fraction of unity.
+	|
+
+replacement thermal RES for Ind[scenarios]=
+	wear thermal RES for Ind[scenarios]*replacement rate thermal RES for Ind
+	~	EJ
+	~	If replacement rate=1, we asume that all the power that reaches the end of \
+		its lifetime is replaced.
+	|
+
+P thermal RES for Ind[BAU]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'BAU', 'C58') ~~|
+P thermal RES for Ind[SCEN1]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'SCEN1', 'C58') ~~|
+P thermal RES for Ind[SCEN2]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'SCEN2', 'C58') ~~|
+P thermal RES for Ind[SCEN3]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'SCEN3', 'C58') ~~|
+P thermal RES for Ind[SCEN4]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'SCEN4', 'C58') ~~|
+P thermal RES for Ind[User defined]=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'User defined', 'C58')
+	~	1/Year
+	~	Annual growth in RES thermal supply in the Industry sector depending on \
+		the policy of the scenario.
+	|
+
+replacement rate thermal RES for Build=
+	1
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+life time RES thermal Build=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C65')
+	~	Year
+	~	Lifetime RES thermal technologies and plants in the Industry sector.
+	|
+
+life time RES thermal Ind=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C64')
+	~	Year
+	~	Lifetime RES thermal technologies and plants in the Industry sector.
+	|
+
+Historic RES thermal for Build(
+	GET XLS LOOKUPS('inputs.xlsx', 'Constants', '25', 'C67'))
+	~	EJ/Year
+	~	Annual historic primary energy of RES in Buildings sector (1990-2007). \
+		Ref: WoLiM 1.0 & IEOs (see Technical Report).
+	|
+
+past thermal RES for Build=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C92')
+	~	1/Year
+	~	Historic annual average growth (1990-2014).
+	|
+
+PES for IB EJ[scenarios]=
+	PE coal for IB EJ[scenarios]+Total gas extraction for IB EJ[scenarios]+Liquids production for IB EJ\
+		[scenarios]+thermal RES supply[scenarios]
+	~	EJ/Year
+	~	Primary energy supply for Industry and Buildings sector.
+	|
+
+replacement thermal RES for Build[scenarios]=
+	wear thermal RES for Build[scenarios]*replacement rate thermal RES for Build
+	~	EJ
+	~	If replacement rate=1, we asume that all the power that reaches the end of \
+		its lifetime is replaced.
+	|
+
+Historic RES thermal for Ind(
+	GET XLS LOOKUPS('inputs.xlsx', 'Constants', '25', 'C66'))
+	~	EJ/Year
+	~	Annual historic primary energy of RES in Industrial sector (1990-2007). \
+		Ref: WoLiM 1.0 & IEOs (see Technical Report).
+	|
+
+past thermal RES for Ind=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C91')
+	~	1/Year
+	~	Historic annual average growth (1990-2014).
+	|
+
+initial value thermal RES for Ind=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C66')
+	~	EJ/Year
+	~	Thermal RES supply in the Industry sector in the year 1990.
+	|
+
+wear thermal RES for Build[scenarios]=
+	thermal RES supply for Build[scenarios]/life time RES thermal Build
+	~	EJ
+	~	Decommission of the capacity that reachs the end of its lifetime.
+	|
+
+initial value thermal RES for Build=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C67')
+	~	EJ/Year
+	~	Thermal RES supply in the Industry sector in the year 1990.
+	|
+
+replacement rate thermal RES for Ind=
+	1
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+wear thermal RES for Ind[scenarios]=
+	thermal RES supply for Ind[scenarios]/life time RES thermal Ind
+	~	EJ
+	~	Decommission of the capacity that reachs the end of its lifetime.
+	|
+
+Max potential PE thermal RES[scenarios]=
+	Max NPP potential BioE residues for heat[scenarios]+Max potential NPP thermal BioE conventional\
+		[User defined]+Geothermal PE thermal potential[scenarios]+Solar thermal potential[scenarios\
+		]
+	~	EJ/Year
+	~	Maximum potential thermal RES without traditional biomass.
+	|
+
+Max NPP potential BioE residues for heat and elec[scenarios]=
+	Max NPP potential bioE residues[User defined]*(1-share cellulosic biofuels vs BioE residues\
+		[scenarios])
+	~	EJ/Year
+	~	Share of bioE for heat and electricity.
+	|
+
+Max NPP potential BioE residues for cellulosic biofuels[scenarios]=
+	Max NPP potential bioE residues[User defined]*share cellulosic biofuels vs BioE residues\
+		[scenarios]
+	~	EJ/Year
+	~	Potential assigned to the cellulosic biofuels from bioE residues.
+	|
+
+init CO2 in Atmos ppm=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C111')
+	~	ppm
+	~	Initial CO2 in atmosphere.
+		Historical Mauna Loa CO2 Record: Average between 1st and last month of 1990 was: \
+		(353.74+355.12)/2=354.43 ppm
+		ftp://ftp.cmdl.noaa.gov/products/trends/co2/co2_mm_mlo.txt
+		
+		[DICE-1994] Initial Greenhouse Gases in Atmosphere 1965 [M(t)] (tC equivalent). \
+		[Cowles, pg. 21] /6.77e+011 /
+		[DICE-2013R] mat0: Initial concentration in atmosphere 2010 (GtC) /830.4 /
+	|
+
+Transfer coefficient for lower level=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C116')
+	~	1/Year [100,4000]
+	~	[Fiddaman] Heat Transfer Coefficient [tau12] (years). Coefficient of heat transfer \
+		between the atmosphere & upper ocean and the deep ocean. /500 / 
+		[DICE-2013R] 1/c4; c4 Transfer coefficient for lower level /0.025 /
+	|
+
+A UO Heat Cap=
+	1/Climate equation coefficient for upper level
+	~	watt*Year/DegreesC/(meter*meter) [8,400]
+	~	[Fiddaman] Atmosphere & Upper Ocean Heat Capacity per Unit Area [1/R1] \
+		(W-yr/m^2/degrees C). Note: equals 1/0.0226
+		[DICE-2013R] c1 Climate equation coefficient for upper level /0.098 /
+	|
+
+init CO2 in Atmos=
+	init CO2 in Atmos ppm*ppm per GtC*t per Gt
+	~	TonC
+	~	Initial CO2 in atmosphere.
+		
+		[DICE-1994] Initial Greenhouse Gases in Atmosphere 1965 [M(t)] (tC equivalent). \
+		[Cowles, pg. 21] /6.77e+011 /
+		[DICE-2013R] mat0: Initial concentration in atmosphere 2010 (GtC) /830.4 /
+	|
+
+Heat Trans Coeff=
+	1/Transfer coefficient for lower level
+	~	Year [100,4000]
+	~	[Fiddaman] Heat Transfer Coefficient [tau12] (years). Coefficient of heat transfer \
+		between the atmosphere & upper ocean and the deep ocean. /500 / 
+		[DICE-2013R] 1/c4; c4 Transfer coefficient for lower level /0.025 /
+	|
+
+Climate equation coefficient for upper level=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C118')
+	~	 [8,400]
+	~	[Fiddaman] Atmosphere & Upper Ocean Heat Capacity per Unit Area [1/R1] \
+		(W-yr/m^2/degrees C). Note: equals 1/0.0226
+		[DICE-2013R] c1 Climate equation coefficient for upper level /0.098 /
+	|
+
+initial GDP=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'Constants', 'C27')
+	~	billion$
+	~	Initial value from WorldBank in 1990 (2011 UST$).
+	|
+
+initial GDPcap=
+	initial GDP*dollars to Tdollars/initial population
+	~	dollars/people
+	~	GDP per capita in the year 1990.
+	|
+
+Historic unconv oil:INTERPOLATE::=
+	GET XLS DATA( 'inputs.xlsx', 'Constants', '25' , 'C34')
+	~	EJ/Year
+	~	Historic unconventional extraction from Mohr et al (2015).
+	|
+
+"'a' historical I-IB":INTERPOLATE::=
+	GET XLS DATA('inputs.xlsx', 'Constants', '25', 'C32')
+	~	Dmnl
+	~	Historical IB primary energy intensity was calculated internally in the \
+		model for the calibration period (1990-2010) as the subtraction of Total \
+		energy minus Transport energy and Electrical sector (generation and \
+		losses).
+	|
+
+GtCO2 per Mtoe unconv gas=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C94')
+	~	GTCO2e/MToe
+	~	3.53 tCO2/toe [BP2012] y [Farrell and Brandt, 2006]
+	|
+
+GtCO2 per Mtoe unconv oil=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C95')
+	~	GTCO2e/MToe
+	~	3.84 tCO2/toe [BP2012] y [Farrell and Brandt, 2006]
+	|
+
+emissions coal without CTL GtCO2[scenarios]=
+	extraction coal without CTL EJ[scenarios]*GtCO2 per Mtoe coal*MToe per EJ
+	~	GTCO2e/Year
+	~	Emissions from coal withoug accounting for CTL-related emissions.
+	|
+
+"Adapt 'a' I-IB"[scenarios]=
+	IF THEN ELSE(Time<2008, "'a' historical I-IB",IF THEN ELSE(Time<"year 'a-IB' projected reached"\
+		[scenarios],"'a' historical I-IB"+("'a' I-IB projection"[scenarios]-"'a' historical I-IB"\
+		)*(Time-2008)/("year 'a-IB' projected reached"[scenarios]-2008), "'a' I-IB projection"\
+		[scenarios]))
+	~	Dmnl
+	~	Smoothing transition for the parameter "a" between the historical trends \
+		and the projected trend. The projected trend is reached at "year \
+		'a-sector' projected reached".
+	|
+
+emissions conv oil[scenarios]=
+	IF THEN ELSE("separate conv and unconv oil?"[scenarios]=1,extraction conv oil Mtoe[scenarios\
+		]*GtCO2 per Mtoe conv oil,(1-Adapt emissions unconv oil[scenarios])*extraction conv oil Mtoe\
+		[scenarios]*GtCO2 per Mtoe conv oil+Adapt emissions unconv oil
+	[scenarios]*extraction conv oil Mtoe[scenarios]*GtCO2 per Mtoe unconv oil+(GtCO2 per Mtoe unconv oil\
+		+(GtCO2 per Mtoe shale oil-GtCO2 per Mtoe unconv oil)*Adapt emissions shale oil[scenarios\
+		]))
+	~	GTCO2e/Year
+	~	CO2 emissions from conventional oil when the oil extraction is \
+		disaggregated in conventional and unconventional resource, and CO2 \
+		emissions from total oil when the extraction is aggregated.
+	|
+
+emissions CTL GtCO2[scenarios]=
+	GtCO2 per Mtoe CTL*extraction coal for CTL EJ[scenarios]*MToe per EJ
+	~	GTCO2e/Year
+	~	Emissions associated to CTL production.
+	|
+
+emissions GTL GtCO2[scenarios]=
+	extraction conv gas for GTL EJ[scenarios]*GtCO2 per Mtoe GTL*MToe per EJ
+	~	GTCO2e/Year
+	~	Emissions associated to GTL production.
+	|
+
+emissions unconv gas[scenarios]=
+	GtCO2 per Mtoe unconv gas*extraction unconv gas Mtoe[scenarios]
+	~	GTCO2e/Year
+	~	CO2 emissions from unconventional gas when the oil extraction is \
+		disaggregated in conventional and unconventional resource.
+	|
+
+emissions unconv oil[scenarios]=
+	IF THEN ELSE(Time<2013, extraction unconv oil Mtoe[scenarios]*(GtCO2 per Mtoe unconv oil\
+		+(GtCO2 per Mtoe shale oil-GtCO2 per Mtoe unconv oil)*Adapt emissions shale oil[scenarios\
+		]),IF THEN ELSE("separate conv and unconv oil?"[scenarios]=1,
+	extraction unconv oil Mtoe[scenarios]*(GtCO2 per Mtoe unconv oil+(GtCO2 per Mtoe shale oil\
+		-GtCO2 per Mtoe unconv oil)*Adapt emissions shale oil[scenarios]),0))
+	~	GTCO2e/Year
+	~	CO2 emissions from unconventional oil when the oil extraction is \
+		disaggregated in conventional and unconventional resource.
+	|
+
+GtCO2 per Mtoe conv gas=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C92')
+	~	GTCO2e/MToe
+	~	2.35 tCO2/toe [BP2012] y [Farrell and Brandt, 2006]
+	|
+
+extraction unconv gas EJ[scenarios]=
+	IF THEN ELSE(Time<2013, Historic unconv gas, IF THEN ELSE("separate conv and unconv gas?"\
+		[scenarios]=1, MIN(max extraction unconv gas[scenarios],max unconv gas growth extraction EJ
+	[scenarios]), 0))
+	~	EJ/Year
+	~	Annual extraction of unconventional gas.
+		IF THEN ELSE("separate conv and unconv gas?"[scenarios]=1, IF THEN ELSE(Time<2011, \
+		Historic unconv gas[scenarios](Time), MIN(max extraction unconv \
+		gas[scenarios],max unconv gas growth extraction EJ
+		[scenarios])), 0)
+	|
+
+GtCO2 per Mtoe CTL=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C89')
+	~	GTCO2e/MToe
+	~	CO2 emissions coefficient of CTL.
+	|
+
+GtCO2 per Mtoe GTL=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C90')
+	~	GTCO2e/MToe
+	~	CO2 emissions coefficient of GTL.
+	|
+
+new hydro TWe[scenarios]=
+	IF THEN ELSE(Time<2014, (Historic hydro generation(Time+1)-Historic hydro generation\
+		(Time))*TWe per TWh, 
+	IF THEN ELSE(check electricity[scenarios]<-0.01, "constrain electricity exogenous growth?"\
+		[scenarios]*hydro TWe[scenarios
+	],adapt growth hydro[scenarios]*hydro TWe[scenarios]*Remaining potential hydro[scenarios\
+		]))
+	~	TWe
+	~	New annual hydro electric power (TWe) installed.
+		IF THEN ELSE(Time<2014, (Historic hydro generation(Time+1)-Historic hydro \
+		generation(Time))*TWe per TWh, 
+		IF THEN ELSE(check electricity[scenarios]<-0.01, "constrain electricity exogenous \
+		growth?"[scenarios]*hydro TWe[scenarios
+		],adapt growth hydro[scenarios]*hydro TWe[scenarios]*Remaining potential \
+		hydro[scenarios]))
+		
+		IF THEN ELSE(Time<2014, (Historic hydro generation(Time+1)-Historic hydro \
+		generation(Time))*TWe per TWh, 
+		IF THEN ELSE(Total FE Elec demand TWh[scenarios]>FE Elec generation from \
+		RES TWh[scenarios], adapt growth hydro[scenarios]*hydro \
+		TWe[scenarios]*Remaining potential hydro[scenarios],"constrain electricity \
+		exogenous growth?"[scenarios]*hydro TWe[scenarios]))
+	|
+
+Historic unconv gas:INTERPOLATE::=
+	GET XLS DATA( 'inputs.xlsx', 'Constants', '25' , 'C35')
+	~	EJ/Year
+	~	Historic unconventional extraction from Mohr et al (2015).
+	|
+
+GtCO2 per Mtoe coal=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C91')
+	~	GTCO2e/MToe
+	~	3.96 tCO2/toe [BP2012] y [Farrell and Brandt, 2006]
+	|
+
+emissions conv gas without GTL[scenarios]=
+	IF THEN ELSE("separate conv and unconv gas?"[scenarios]=1,
+	extraction conv gas without GTL EJ[scenarios]*GtCO2 per Mtoe conv gas*MToe per EJ,
+	(1-Adapt emissions unconv gas dobro[scenarios])*extraction conv gas without GTL EJ[scenarios\
+		]*GtCO2 per Mtoe conv gas*MToe per EJ+Adapt emissions unconv gas dobro[scenarios]*extraction conv gas without GTL EJ\
+		[scenarios]*GtCO2 per Mtoe unconv gas
+	*MToe per EJ)
+	~	GTCO2e/Year
+	~	CO2 emissions from conventional gas (withouth GTL) when the gas extraction \
+		is disaggregated in conventional and unconventional resource, and CO2 \
+		emissions from total gas when the extraction is aggregated.
+	|
+
+BioE CO2 emissions[scenarios]=
+	GtCO2 per Mtoe conv gas*(Oil saved by biofuels MToe[scenarios]+0*(PE BioW for Elec generation Mtoe\
+		[scenarios
+]+PE traditional biomass EJ[scenarios]*MToe per EJ))
+	~	GTCO2e/Year
+	~	CO2 emissions from biomass. We assume that biofuels have an emission \
+		intensity similar to natural gas (due to ILUCs, see Technical Report), and \
+		for the rest (traditional biomass, biomass for electricity and biomass for \
+		heat) we asssume that the carbon balance is null.
+	|
+
+GtCO2 per Mtoe conv oil=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C93')
+	~	GTCO2e/MToe
+	~	3.07 tCO2/toe [BP2012] y [Farrell and Brandt, 2006]
+	|
+
+GtCO2 per Mtoe shale oil=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C96')
+	~	GTCO2e/MToe
+	~	6.14 tCO2/toe [BP2012] y [Farrell and Brandt, 2006]
+	|
+
+technological max pct of change=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C67')
+	~	Dmnl
+	~	Around 47% of the energy consumption in transportation sector is from LDVs.
+	|
+
+K liquid Elec BEV TWh EJ=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C68')
+	~	TWh/EJ
+	~	Consumption of electricity (TWh) of EV vs. the consumption of liquid fuels \
+		primary energy (EJ) for a LDV. If we compare the energy needs of electric \
+		vehicles with petrol vehicles of equal weight and power, (EABEV, 2008) \
+		gives a relationship of 1:3 favourable to electric vehicles (tank to \
+		wheel). See Technical Report.
+	|
+
+increase Elec demand EVs TWh[scenarios]=
+	Oil liquids saved by EVs EJ[scenarios]*K liquid Elec BEV TWh EJ
+	~	TWh
+	~	Additional electricity demand for electric vehicles (BEVs and HEVs).
+	|
+
+HEV fraction of share available[scenarios]=
+	IF THEN ELSE(technological max pct of change>total share EV[scenarios], (technological max pct of change\
+		-total share EV[scenarios])/technological max pct of change, 0)
+	~	Dmnl
+	~	Fraction of share available to shift to HEV.
+	|
+
+BEV fraction of share available[scenarios]=
+	IF THEN ELSE(technological max pct of change>total share EV[scenarios], (technological max pct of change\
+		-total share EV
+	[scenarios])/technological max pct of change, 0)
+	~	Dmnl
+	~	Fraction of share available to shift to BEV.
+	|
+
+dollars to Tdollars=
+	GET XLS CONSTANTS( 'inputs.xlsx', 'Constants', 'C15')
+	~	Dmnl
+	~	Conversion from dollars to Tdollars (1 T$ = 1e12 $).
+	|
+
+GDP[scenarios]=
+	GDPcap[scenarios]*Population[scenarios]/dollars to Tdollars
+	~	Tdollars/Year
+	~	Global Domestic Product.
+	|
+
+GDPcap variation[scenarios]=
+	IF THEN ELSE(Time>2015,GDPcap[scenarios]*P GDPcap[scenarios], growth historic GDPpc)
+	~	dollars/Year/people
+	~	GDP per capita growth. (Historic data from 1990-2010; projection \
+		2011-2100) 2011 UST$
+	|
+
+Historic GDP(
+	GET XLS LOOKUPS('inputs.xlsx', 'Constants', '25', 'C27'))
+	~	trillion$
+	~	Historic GDP in trillion 2011$ (1990-2015). Estimated from data from World \
+		bank (from current and 2010$ GDP values).
+	|
+
+growth historic pop=
+	IF THEN ELSE(Time<2015, Historic pop(Time+1)-Historic pop(Time), 0)
+	~	people/Year
+	~	Population historic growth.
+	|
+
+Historic pop(
+	GET XLS LOOKUPS('inputs.xlsx', 'Constants', '25', 'C28'))
+	~	people
+	~	Historic population (1990-2015). Ref: World bank.
+	|
+
+Geothermal PE thermal potential[scenarios]=
+	Geothermal PE potential TWth[scenarios]*(1-share geot for elec[scenarios])*EJ per TWh\
+		/TWe per TWh
+	~	EJ/Year
+	~	Geothermal thermal potential (primary energy).
+	|
+
+land compet 2gen vs total land compet[scenarios]=
+	Land compet biofuels 2gen Mha[scenarios]/Land compet required dedicated crops for biofuels\
+		[scenarios]
+	~	
+	~	Land dedicated to 2nd generation biofuels vs total land competition for \
+		biofuels [to prevent stock "Land compet biofuels 2gen Mha" goes negative].
+	|
+
+Efficiency conversion geot PE to Elec=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C42')
+	~	Dmnl
+	~	Efficiency of the transformation from geothermal (primary energy) to \
+		electricity.
+	|
+
+share geot for elec[BAU]=
+	GET XLS CONSTANTS('inputs.xlsx', 'BAU', 'C25') ~~|
+share geot for elec[SCEN1]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN1', 'C25') ~~|
+share geot for elec[SCEN2]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN2', 'C25') ~~|
+share geot for elec[SCEN3]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN3', 'C25') ~~|
+share geot for elec[SCEN4]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN4', 'C25') ~~|
+share geot for elec[User defined]=
+	GET XLS CONSTANTS('inputs.xlsx', 'User defined', 'C25')
+	~	TWe
+	~	Share of geothermal for electricity in relation to the total potential of \
+		geothermal (including thermal uses).
+	|
+
+"max geot-elec TWe"[scenarios]=
+	Geothermal PE potential TWth[scenarios]*share geot for elec[scenarios]*Efficiency conversion geot PE to Elec
+	~	TWe
+	~	Techno-ecological potential of electric geothermal (1 TWe = 8760 TWh in \
+		one year). We assume that the global potential of 0.2 TWe is shared at 50% \
+		for heat and electric purposes. See Technical Report.
+	|
+
+GJ per EJ=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C14')
+	~	Dmnl
+	~	Conversion from GJ to EJ (1 EJ = 1e9 GJ).
+	|
+
+PE demand Buildings EJ[scenarios]=
+	PE demand for IB initial EJ[scenarios]*"share Buildings/IB"[scenarios]
+	~	EJ
+	~	Primary energy demand by the Buildings sector (without electricity).
+	|
+
+Land shifted to biofuels 3gen[scenarios]=
+	IF THEN ELSE(Time<start year 3gen[scenarios],0,IF THEN ELSE(Time<(start year 3gen[scenarios\
+		]+5), Annual shift from 2gen to 3gen[scenarios]*Land compet biofuels 2gen Mha[scenarios\
+		]*Biofuels 3gen land compet available[scenarios]*land compet 2gen vs total land compet\
+		[scenarios], P biofuels 3gen[scenarios]*Land compet biofuels 3gen Mha[scenarios]*Biofuels 3gen land compet available\
+		[scenarios]*land compet 2gen vs total land compet[scenarios]))
+	~	
+	~	New land dedicated to biofuels 3rd generation in land competing with other \
+		uses as a shift of surface previously dedicated to biofuels from the 2nd \
+		generation. We assume that no new land starts directly to produce biofuels \
+		3rd generation biofuels.
+	|
+
+"PE supply RES non-Elec EJ"[scenarios]=
+	"PE supply from RES non-elec without trad bioE EJ"[scenarios]+PE traditional biomass EJ\
+		[scenarios]
+	~	EJ/Year
+	~	Primary energy (non electricity) from RES, including traditional biomass.
+	|
+
+Average elec consumption per capita[scenarios]=
+	Total FE Elec generation TWh[scenarios]*kWh per TWh/Population[scenarios]
+	~	kWh/people
+	~	Electricity consumption per capita (kWh per capita).
+	|
+
+Geothermal PE potential TWth[BAU]=
+	GET XLS CONSTANTS('inputs.xlsx', 'BAU', 'C56') ~~|
+Geothermal PE potential TWth[SCEN1]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN1', 'C56') ~~|
+Geothermal PE potential TWth[SCEN2]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN2', 'C56') ~~|
+Geothermal PE potential TWth[SCEN3]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN3', 'C56') ~~|
+Geothermal PE potential TWth[SCEN4]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN4', 'C56') ~~|
+Geothermal PE potential TWth[User defined]=
+	GET XLS CONSTANTS('inputs.xlsx', 'User defined', 'C56')
+	~	TWth
+	~	Geothermal primary energy potential.
+	|
+
+PE losses uncon gas for Elec EJ[scenarios]=
+	extraction unconv gas EJ[scenarios]*"share gas/sector for Elec"[scenarios]*(1-efficiency gas for electricity\
+		)
+	~	EJ/Year
+	~	(Primary) Energy losses in the generation of electricity in gas power \
+		centrals.
+	|
+
+PE losses uranium for Elec EJ[scenarios]=
+	extraction uranium EJ[scenarios]*(1-efficiency uranium for electricity)
+	~	EJ/Year
+	~	(Primary) Energy losses in the generation of electricity in nuclear power \
+		centrals.
+	|
+
+max extraction conv gas Mtoe[scenarios]=
+	max extraction conv gas EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Maximum extraction curve selected for the simulations.
+	|
+
+extraction conv gas without GTL Mtoe[scenarios]=
+	extraction conv gas without GTL EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Extraction of conventional gas excepting the resource used to produce GTL \
+		(Mtoe).
+	|
+
+Max extraction conv oil Mtoe[scenarios]=
+	max extraction conv oil EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Maximum extraction curve selected for the simulations.
+	|
+
+PE BioW for Elec generation Mtoe[scenarios]=
+	PE BioW for Elec generation EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Annual primary energy to generate electricity (Direct Equivalent Method).
+	|
+
+extraction conv oil Mtoe[scenarios]=
+	extraction conv oil EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Annual extraction of unconventional oil.
+	|
+
+Extraction total oil EJ[scenarios]=
+	Extraction total oil Mtoe[scenarios]/MToe per EJ
+	~	EJ/Year
+	~		|
+
+PE demand Transport after policies Mtoe[scenarios]=
+	PE demand Transport after policies EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Primary energy demand for Transportation after policies (excluding \
+		electricity).
+	|
+
+total oil extraction Mtoe[scenarios]=
+	total oil extraction EJ[scenarios]*MToe per EJ
+	~	
+	~	Total oil (conventional + unconventional) extraction.
+	|
+
+share RES for Elec vs TPE RES[scenarios]=
+	PE Elec generation from RES EJ[scenarios]/("PE supply RES non-Elec EJ"[scenarios]+PE Elec generation from RES EJ\
+		[scenarios])
+	~	Dmnl
+	~	Share of RES for electricity in relation to TPE RES.
+	|
+
+"CTL+GTL Mtoe"[scenarios]=
+	"CTL+GTL production EJ"[scenarios]*MToe per EJ
+	~	MToe
+	~	CTL and GTL production.
+	|
+
+PE Elec generation from RES Mtoe[scenarios]=
+	PE Elec generation from RES EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Primary energy from RES electricity generation.
+	|
+
+PE demand coal for Elec Mtoe[scenarios]=
+	PE demand coal for Elec EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Primary energy demand of coal (EJ) for electricity consumption.
+	|
+
+PE losses BioW for Elec EJ[scenarios]=
+	PE BioW for Elec generation EJ[scenarios]*(1-efficiency conversion bioE residues to Elec\
+		)
+	~	EJ/Year
+	~	(Primary energy) losses due to the production of electricity from BioW.
+	|
+
+"TPES de Castro PhD - Scen 'madcoal' EJ"=
+	"TPES de Castro PhD - Scen 'madcoal'"(Time)/MToe per EJ
+	~	EJ/Year
+	~		|
+
+PE losses conv gas for Elec EJ[scenarios]=
+	extraction conv gas without GTL EJ[scenarios]*"share gas/sector for Elec"[scenarios]\
+		*(1-efficiency gas for electricity)
+	~	EJ/Year
+	~	(Primary) Energy losses in the generation of electricity in gas power \
+		centrals.
+	|
+
+Oil saved by biofuels MToe[scenarios]=
+	Oil liquids saved by biofuels EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Oil saved by biofuels.
+	|
+
+extraction unconv oil Mtoe[scenarios]=
+	extraction unconv oil EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Annual extraction of unconventional oil.
+	|
+
+max extraction coal Mtoe[scenarios]=
+	max extraction coal EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Maximum extraction curve selected for the simulations.
+	|
+
+extraction uranium Mtoe[scenarios]=
+	extraction uranium EJ[scenarios]*MToe per EJ
+	~	MToe/Year
+	~	Annual extraction of uranium (Mtoe).
+	|
+
+TPE from RES EJ[scenarios]=
+	PE Elec generation from RES EJ[scenarios]+"PE supply RES non-Elec EJ"[scenarios]
+	~	EJ/Year
+	~	Total primary energy supply from all RES.
+	|
+
+"TPES de Castro PhD - Scen II EJ"=
+	"TPES de Castro PhD - Scen II"(Time)/MToe per EJ
+	~	EJ/Year
+	~	TPES. (Add "Energia perdida" to the net energy extraction in the original \
+		model).
+	|
+
+Electrical distribution losses EJ[scenarios]=
+	Electrical distribution losses TWh[scenarios]*EJ per TWh
+	~	EJ/Year
+	~	Electical distribution losses (EJ)
+	|
+
+share RES electricity generation[scenarios]=
+	FE Elec generation from RES TWh[scenarios]/Total FE Elec generation TWh[scenarios]
+	~	Dmnl
+	~	Share of RES in the electricity generation.
+	|
+
+PE Elec generation from RES EJ[scenarios]=
+	PE BioW for Elec generation EJ[scenarios]+(PE geot for Elec generation EJ[scenarios]\
+		+PE hydro for Elec generation EJ
+	[scenarios]+PE oceanic for Elec generation EJ[scenarios]+PE solar for Elec generation EJ\
+		[scenarios]+PE onshore wind for Elec generation EJ
+	[scenarios]+PE offshore wind for Elec generation EJ[scenarios])/RES to fossil accounting\
+		[scenarios]
+	~	EJ/Year
+	~	Primary energy from RES electricity generation. For all sources excepting \
+		"Bio" the factor "RES to fossil accounting" is applied for the equivalent \
+		primary energy.
+	|
+
+"'a' historical I-ELEC":INTERPOLATE::=
+	GET XLS DATA('inputs.xlsx', 'Constants', '25', 'C30')
+	~	Dmnl
+	~	Historical annual electricity consumption intensity improvement, "a" \
+		parameter in 1980-2010:  a=I(t)/I(t-1).
+	|
+
+replacement solar[scenarios]=
+	wear solar[scenarios]*replacement rate solar
+	~	TWe
+	~	If replacement rate=1, we asume that all the power that reaches the end of \
+		its lifetime is replaced.
+	|
+
+Efficiency conversion BioE residues to heat=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C43')
+	~	Dmnl
+	~	Efficiency of the transformation from bioenergy to heat.
+	|
+
+"Adapt 'a' I-ELEC"[scenarios]=
+	IF THEN ELSE(Time>2010,IF THEN ELSE( Time<"year 'a-ELEC' projected reached"[scenarios\
+		],1+
+	("'a' I-ELEC projection"[scenarios]-1)*(Time-2010)/("year 'a-ELEC' projected reached"\
+		[scenarios]-2010) , "'a' I-ELEC projection"
+	[scenarios] ) , "'a' historical I-ELEC" )
+	~	Dmnl
+	~	Smoothing transition for the parameter "a" between the historical trends \
+		and the projected trend. The projected trend is reached at "year \
+		'a-sector' projected reached".
+	|
+
+Efficiency improvement biofuels 3gen=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C47')
+	~	
+	~	Efficiency improvements of 3rd generation (cellulosic) in relation to 2nd \
+		generation biofuels.
+	|
+
+PEavail biofuels 2gen land compet EJ[scenarios]=
+	Land compet biofuels 2gen Mha[scenarios]*Land productivity biofuels 2gen EJ MHa
+	~	EJ/Year
+	~	Primary energy available of biofuels from dedicated crops (2nd generation).
+	|
+
+replacement onshore wind[scenarios]=
+	replacement rate onshore wind*wear onshore wind[scenarios]
+	~	TWe
+	~	If replacement rate=1, we asume that all the power that reaches the end of \
+		its lifetime is replaced.
+	|
+
+Annual additional historic land use biofuels 2gen[scenarios]=
+	Annual additional historic product biofuels 2gen*EJ per ktoe/Land productivity biofuels 2gen EJ MHa
+	~	MHa/Year
+	~		|
+
+Max NPP potential bioE residues[User defined]=
+	GET XLS CONSTANTS('inputs.xlsx', 'User defined', 'C55') ~~|
+Max NPP potential bioE residues[BAU]=
+	GET XLS CONSTANTS('inputs.xlsx', 'BAU', 'C55') ~~|
+Max NPP potential bioE residues[SCEN1]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN1', 'C55') ~~|
+Max NPP potential bioE residues[SCEN2]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN2', 'C55') ~~|
+Max NPP potential bioE residues[SCEN3]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN3', 'C55') ~~|
+Max NPP potential bioE residues[SCEN4]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN4', 'C55')
+	~	EJ/Year
+	~	Potencial following WBGU (2009).
+	|
+
+Grid reinforcement costs[scenarios]=
+	Grid reinforcement costs ref/(1000*Cp onshore wind)
+	~	Tdollars/TWe
+	~	Grid reinforcement costs taking as reference the study of Mills et al \
+		(2012) for wind:
+	|
+
+Grid reinforcement costs ref=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C73')
+	~	dollars/kW
+	~	Grid reinforcement costs. We take the median from the study of Mills et al \
+		(2012) for wind: 300 $/kW.
+	|
+
+Balancing costs[scenarios]=
+	(Balancing costs ref(Share variable Elec generation[scenarios]))/1000
+	~	Tdollars/TWh
+	~	Cost adapting data from [Holttinen2011]. 2011 T$ / TWh produced.
+	|
+
+Heat potential from Bio residues EJ[scenarios]=
+	PE bioE residues for heat EJ[scenarios]*Efficiency conversion BioE residues to heat
+	~	EJ/Year
+	~	Thermal energy potential from bioenergy-residues.
+	|
+
+"replacement geot-elec"[scenarios]=
+	"wear geot-elec"[scenarios]*"replacement rate geot-elec"
+	~	TWe
+	~	If replacement rate=1, we asume that all the power that reaches the end of \
+		its lifetime is replaced.
+	|
+
+PE BioW for Elec generation EJ[scenarios]=
+	FE Elec generation from BioW TWh[scenarios]*EJ per TWh/efficiency conversion bioE residues to Elec
+	~	EJ/Year
+	~	Annual primary energy to generate electricity (Direct Equivalent Method).
+	|
+
+replacement oceanic[scenarios]=
+	wear oceanic[scenarios]*replacement rate oceanic
+	~	TWe/Year
+	~	If replacement rate=1, we asume that all the power that reaches the end of \
+		its lifetime is replaced.
+	|
+
+Historic land compet available for biofuels 2gen[scenarios]=
+	74847.7*EJ per ktoe/Land productivity biofuels 2gen EJ MHa
+	~	MHa/Year
+	~	Land occupied by biofuels in 2015. Biofuels production in 2015: 7,4847.7 \
+		ktoe (BP 2016).
+	|
+
+replacement offshore wind[scenarios]=
+	replacement rate offshore wind*wear offshore wind[scenarios]
+	~	TWe
+	~	If replacement rate=1, we asume that all the power that reaches the end of \
+		its lifetime is replaced.
+	|
+
+BioE potential NPP marginal lands=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C60')
+	~	EJ/Year
+	~	Potential in marginal lands, i.e. witout competition with current uses. \
+		(Field et al., 2008) find that 27 EJ of NPP can be extracted from 386 Mha \
+		of marginal lands. We assume that all the production from marginal lands \
+		is used for producing liquids.
+	|
+
+replacement rate hydro=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'D13')
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+Efficiency bioE residues to cellulosic liquids[scenarios]=
+	Conv efficiency from NPP to biofuels
+	~	Dmnl
+	~	Efficiency of the transformation from bioenergy residues to cellulosic \
+		liquids. We assume it is the same efficiency than for the conversion from \
+		biomass to 2nd generation biofuels.
+	|
+
+PE biofuels land marg EJ[scenarios]=
+	PEavail biofuels land marg EJ[scenarios]/Conv efficiency from NPP to biofuels
+	~	
+	~	Total annual primary energy biomass for biofuel production in marginal \
+		lands.
+	|
+
+"PE biofuels prod 2gen+3gen EJ"[scenarios]=
+	(PEavail biofuels prod 3gen EJ[scenarios]+PEavail biofuels 2gen land compet EJ[scenarios\
+		])/Conv efficiency from NPP to biofuels
+	~	EJ/Year
+	~	Total annual primary energy biomass for biofuel production (2nd and 3rd \
+		generation) in marginal lands.
+	|
+
+Land required biofuels land marg[scenarios]=
+	PEavail biofuels land marg EJ[scenarios]*Land occupation ratio biofuels marg land/Conv efficiency from NPP to biofuels
+	~	MHa/Year
+	~	Marginal lands occupied by biofuels.
+	|
+
+Land productivity biofuels 2gen EJ MHa=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C59')
+	~	EJ/MHa
+	~	Energy output per area of biofuels 2nd generation (final energy). Source: \
+		[Mediavilla2013]: 118 Gboe/MHa = 0.047305 EJ/MHa
+	|
+
+Max PEavail potential biofuels marginal lands[scenarios]=
+	BioE potential NPP marginal lands*Conv efficiency from NPP to biofuels
+	~	EJ/Year
+	~	Annual biofuels potential (primary energy) available from marginal lands
+	|
+
+"Max PEavail potential biofuels 2-3gen"[scenarios]=
+	IF THEN ELSE(Time<start year 3gen[scenarios], Max land compet biofuels 2gen[scenarios\
+		]*Land productivity biofuels 2gen EJ MHa, Max land compet biofuels 2gen[scenarios]*\
+		Land productivity biofuels 2gen EJ MHa*(1+Efficiency improvement biofuels 3gen))
+	~	EJ/Year
+	~	Annual biofuels potential (primary energy) available from land competition.
+	|
+
+Balancing costs ref(
+	GET XLS LOOKUPS( 'inputs.xlsx', 'Parameters', '22' , 'B23'))
+	~	Tdollars/TWh
+	~	Balancing costs adapting data from Holttinen et al (2011).
+	|
+
+replacement rate BioW=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'D8')
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+"replacement rate geot-elec"=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'D7')
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+replacement rate offshore wind=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'D12')
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+FE demand liquids for Elec TWh[scenarios]=
+	share liquids for Elec[scenarios]*Total FE Elec demand TWh[scenarios]
+	~	TWh/Year
+	~	Final energy demand of oil to produce electricity.
+	|
+
+replacement hydro[scenarios]=
+	wear hydro[scenarios]*replacement rate hydro
+	~	TWe
+	~	If replacement rate=1, we asume that all the power that reaches the end of \
+		its lifetime is replaced.
+	|
+
+"I-ELEC"[scenarios]=
+	IF THEN ELSE(Time>2010, "I-ELEC min"[scenarios
+	]+("I-ELEC(t=0), i.e. 2010"-"I-ELEC min"[scenarios])*"Adapt 'a' I-ELEC"[scenarios]^"t I-ELEC"\
+		[scenarios],"'a' historical I-ELEC"*"I-ELEC delayed 1yr"[scenarios] )
+	~	TWh/Tdollars
+	~	Electricity consumption intensity. Equation as a physical indicator as \
+		proposed by (Schenk and Moll, 2007) I_t=I_min+(I_(t=0)-I_min )∙a^t
+	|
+
+Land occupation ratio biofuels marg land=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C62')
+	~	MHa/EJ
+	~	Field et al. (2008) found that 27 EJ of NPP can be extracted from 386 MHa \
+		of marginal lands. So, the land occupation ratio would be 386 MHa/27 EJ, \
+		i.e. 14.3 MHa/EJ NPP.
+	|
+
+Conv efficiency from NPP to biofuels=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C61')
+	~	Dmnl
+	~	Conversion efficiency from net primary productivity (NPP) of biomass to \
+		biofuels of 15%. Ref: de Castro & Carpintero (2014).
+	|
+
+Land compet biofuels 2gen Mha[scenarios]= INTEG (
+	new biofuels 2gen land compet[scenarios]-Land shifted to biofuels 3gen[scenarios],
+		initial value land compet biofuels 2gen Mha*Land productivity biofuels 2gen EJ MHa)
+	~	MHa/Year
+	~	Total annual land dedicated to biofuel production in land competing with \
+		other uses.
+	|
+
+efficiency conversion bioE residues to Elec=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C44')
+	~	Dmnl
+	~	Efficiency of the transformation from bioenergy to electricity (de Castro \
+		& Carpintero et al (2014) cite 10-30% range.
+	|
+
+Elec potential from BioE residues EJ[scenarios]=
+	PE bioE residues for Elec EJ[scenarios]*efficiency conversion bioE residues to Elec
+	~	EJ/Year
+	~	Electricity potential from bioenergy-residues.
+	|
+
+PEavail biofuels prod 3gen EJ[scenarios]=
+	Land compet biofuels 3gen Mha[scenarios]*Land productivity biofuels 2gen EJ MHa*(1+Efficiency improvement biofuels 3gen\
+		)
+	~	EJ/Year
+	~	Final Energy production (EJ) of biofuels from dedicated crops (3rd \
+		generation).
+	|
+
+replacement rate solar=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'D11')
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+replacement rate oceanic=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'D9')
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+replacement rate onshore wind=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'D10')
+	~	Dmnl
+	~	If =1, we asume that all the power that reaches the end of its lifetime is \
+		replaced.
+	|
+
+replacement BioW[scenarios]=
+	wear BioW[scenarios]*replacement rate BioW
+	~	TWe
+	~	If replacement rate=1, we asume that all the power that reaches the end of \
+		its lifetime is replaced.
+	|
+
+Max PEavail potential bioE residues for cellulosic biofuels[scenarios]=
+	Max NPP potential BioE residues for cellulosic biofuels[scenarios]*Efficiency bioE residues to cellulosic liquids\
+		[scenarios]
+	~	
+	~		|
+
+real PE demand of liquids for Transp EJ[scenarios]=
+	MAX(Liquid demand transp initial EJ[scenarios]-Oil liquids saved by EVs EJ[scenarios\
+		]-Oil liquids saved by NGVs[scenarios],0)
+	~	EJ/Year
+	~	Energy demand in form of liquids of Transportation sector after applying \
+		policies and technological shift.
+	|
+
+Max NPP potential BioE residues for heat[scenarios]=
+	Max NPP potential BioE residues for heat and elec[scenarios]*"share bioE residues for heat vs heat+elec"\
+		[scenarios]
+	~	EJ/Year
+	~	Sustainable potential NPP residues for bioenergy for heat.
+	|
+
+PEavail cellulosic biofuel EJ[scenarios]=
+	PE cellulosic biofuel EJ[scenarios]*Efficiency bioE residues to cellulosic liquids[scenarios\
+		]
+	~	EJ/Year
+	~	Cellulosic biofuels production from bioenergy-residues.
+	|
+
+share extra monet invest to cope with variable Elec RES[scenarios]=
+	extra monet invest to cope with variable Elec RES[scenarios]/Total monet invest RES for elec Tdolar\
+		[scenarios]
+	~	
+	~	Share of the anual additional monetary investment to cope with the \
+		intermittency of RES (taking wind as a proxy) in relation to the total \
+		investment for RES.
+	|
+
+P biofuels 3gen[BAU]=
+	GET XLS CONSTANTS('inputs.xlsx', 'BAU', 'C42') ~~|
+P biofuels 3gen[SCEN1]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN1', 'C42') ~~|
+P biofuels 3gen[SCEN2]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN2', 'C42') ~~|
+P biofuels 3gen[SCEN3]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN3', 'C42') ~~|
+P biofuels 3gen[SCEN4]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN4', 'C42') ~~|
+P biofuels 3gen[User defined]=
+	GET XLS CONSTANTS('inputs.xlsx', 'User defined', 'C42')
+	~	1/Year
+	~	Annual growth in energy output demand depending on the policy of the \
+		scenario.
+	|
+
+start year nuclear growth scen4[BAU]=
+	GET XLS CONSTANTS('inputs.xlsx', 'BAU', 'F22') ~~|
+start year nuclear growth scen4[SCEN1]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN1', 'F22') ~~|
+start year nuclear growth scen4[SCEN2]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN2', 'F22') ~~|
+start year nuclear growth scen4[SCEN3]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN3', 'F22') ~~|
+start year nuclear growth scen4[SCEN4]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN4', 'F22') ~~|
+start year nuclear growth scen4[User defined]=
+	GET XLS CONSTANTS('inputs.xlsx', 'User defined', 'F22')
+	~	Year
+	~	Start year of growth of nuclear power plants (Nuclear scenario 4).
+	|
+
+P nuclear scen 4N[scenarios]=
+	IF THEN ELSE(Time<start year nuclear growth scen4[scenarios], 0 , P nuclear scen4[scenarios\
+		])
+	~	1/Year
+	~	Annual growth of nuclear power capacity.
+		Scenario 4- Growth of nuclear capacity at "P nuclear scen 4N" rate from \
+		the year 2015.
+	|
+
+Biofuels 3gen land compet available[scenarios]=
+	(Max land compet biofuels 2gen[scenarios]-Land compet biofuels 3gen Mha[scenarios])/\
+		Max land compet biofuels 2gen[scenarios]
+	~	Dmnl
+	~	Remaining potential land available (dedicated to 2nd generation) as given \
+		as a fraction of unity. We assume that no new land starts directly to \
+		produce biofuels 3rd generation biofuels.
+	|
+
+Remaining potential wind[scenarios]=
+	((max onshore wind TWe[scenarios]+max offshore wind TWe[scenarios])-(onshore wind TWe\
+		[scenarios]+offshore wind TWe[scenarios]))/(max onshore wind TWe[scenarios]+max offshore wind TWe\
+		[scenarios])
+	~	
+	~	Total wind remaining potential available as a fraction of unity.
+	|
+
+Time 95pc TS potential wind[scenarios]=
+	IF THEN ELSE(Remaining potential wind[scenarios]>0.05, 0, Time)
+	~	Year
+	~	Time when the remaining resource availability falls bellow 5% of the \
+		techno-ecological potential, i.e. when the 95% of the techno-ecological \
+		potential is reached.
+	|
+
+max total RES for electricity[scenarios]=
+	max BioW TWe[scenarios]+"max geot-elec TWe"[scenarios]+max hydro TWe[scenarios]+max oceanic TWe\
+		[scenarios]+max offshore wind TWe[scenarios]+max onshore wind TWe[scenarios]+max solar on land TWe\
+		[scenarios]
+	~	TWe
+	~		|
+
+remaining potential RES for electricity[scenarios]=
+	(max total RES for electricity[scenarios]-FE Elec generation from RES TWh[scenarios]\
+		*TWe per TWh)/max total RES for electricity[scenarios]
+	~	
+	~	Remaining potential available as a fraction of unity.
+	|
+
+TPED by sector EJ[scenarios]=
+	Total FE Elec demand EJ[scenarios]+Total gen losses demand for Elec EJ[scenarios]+PE traditional biomass EJ\
+		[scenarios]+PE demand Transport after policies EJ
+	[scenarios]+"PE demand Ind after RES+efficiency EJ"[scenarios]+"PE demand Build after RES+efficiency EJ"\
+		[scenarios]+"Additional PE production of CTL+GTL for liquids"
+	[scenarios]
+	~	EJ/Year
+	~	Total primary energy demand by sector after policies.
+	|
+
+PES for Transp EJ[scenarios]=
+	PE gas extraction for Transp EJ[scenarios]+PE liquids production for Transp EJ[scenarios\
+		]+current trends demand Elec for Transp[scenarios]
+	~	EJ/Year
+	~	Primary energy supply extraction for the Transportation sector (excluding \
+		electricity).
+	|
+
+"constrain gas exogenous growth? delayed 1yr"[scenarios]= DELAY FIXED (
+	"constrain gas exogenous growth?"[scenarios], 1, 1)
+	~	Dmnl
+	~		|
+
+"constrain gas exogenous growth?"[scenarios]=
+	IF THEN ELSE(check gas[scenarios]>-0.01 ,1 ,check gas[scenarios])
+	~	Dmnl
+	~	If negative, there is oversupply of gas. This variable is used to \
+		constrain the exogenous growth of exogenously-driven policies.
+	|
+
+"constrain liquids exogenous growth? delayed 1yr"[scenarios]= DELAY FIXED (
+	"constrain liquids exogenous growth?"[scenarios], 1, 1)
+	~	Dmnl
+	~		|
+
+check liquids delayed 1yr[scenarios]= DELAY FIXED (
+	check liquids[scenarios], 1, 1)
+	~	Dmnl
+	~	Variable to avoid energy oversupply caused by exogenously driven policies.
+	|
+
+check gas delayed 1yr[scenarios]= DELAY FIXED (
+	check gas[scenarios], 1, 1)
+	~	Dmnl
+	~	Variable to avoid energy oversupply caused by exogenously driven policies.
+	|
+
+"constrain liquids exogenous growth?"[scenarios]=
+	IF THEN ELSE(check liquids[scenarios]>0 ,1 ,check liquids[scenarios])
+	~	Dmnl
+	~	If negative, there is oversupply of liquids. This variable is used to \
+		constrain the exogenous growth of exogenously-driven policies.
+	|
+
+new solar TWe[scenarios]=
+	IF THEN ELSE(Time<2014, (Historic solar generation(Time+1)-Historic solar generation\
+		(Time))*TWe per TWh, 
+	IF THEN ELSE(check electricity[scenarios]<-0.01, "constrain electricity exogenous growth?"\
+		[scenarios]*solar TWe[scenarios],
+	adapt growth solar[scenarios]*solar TWe[scenarios]*Remaining potential solar on land\
+		[scenarios]))
+	~	TWe
+	~	New annual hydro electric power installed (TWe).
+	|
+
+"constrain electricity exogenous growth?"[scenarios]=
+	IF THEN ELSE( check electricity[scenarios]>-0.01 ,1 ,check electricity[scenarios])
+	~	Dmnl
+	~	If negative, there is oversupply of electricity. This variable is used to \
+		constrain the exogenous growth of exogenously-driven policies.
+	|
+
+check electricity[scenarios]=
+	(Total FE Elec demand TWh[scenarios]-Total FE Elec generation TWh[scenarios])/Total FE Elec generation TWh\
+		[scenarios]
+	~	Dmnl
+	~	If=1: demand=supply. If>0: demand>supply. If<0: demand<supply. Variable to \
+		avoid energy oversupply caused by exogenously driven policies.
+	|
+
+Population dependent on trad biomass[scenarios]=
+	Population[scenarios]*share global pop dependent on trad biomass[scenarios]
+	~	people
+	~	Population dependent on traditional biomass.
+	|
+
+"Max potential PE non-electric RES"[scenarios]=
+	Max potential PE thermal RES[scenarios]+Max PEavail biofuels potential[scenarios]
+	~	EJ/Year
+	~	Techno-ecological sustainable potential (primary energy) of non-electric \
+		RES.
+	|
+
+"PE demand Ind after RES+efficiency EJ"[scenarios]=
+	PE demand coal for Industry EJ[scenarios]+PE demand gas for Industry EJ[scenarios]+PE demand liquids for Industry EJ\
+		[scenarios]+PE supply thermal RES for Indus[scenarios]
+	~	EJ/Year
+	~	Primary energy in the Industry sector after accounting for RES and \
+		efficiency improvements.
+	|
+
+"PE supply from RES non-elec without trad bioE EJ"[scenarios]=
+	PE supply thermal RES for Indus[scenarios]+PE supply thermal RES for Build[scenarios\
+		]+PEavail total biofuels production EJ
+	[scenarios]
+	~	EJ/Year
+	~	Primary energy (non electric) supply from RES without traditional biomass.
+	|
+
+Max potential NPP thermal BioE conventional[User defined]=
+	GET XLS CONSTANTS('inputs.xlsx', 'User defined', 'C54') ~~|
+Max potential NPP thermal BioE conventional[BAU]=
+	GET XLS CONSTANTS('inputs.xlsx', 'BAU', 'C54') ~~|
+Max potential NPP thermal BioE conventional[SCEN1]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN1', 'C54') ~~|
+Max potential NPP thermal BioE conventional[SCEN2]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN2', 'C54') ~~|
+Max potential NPP thermal BioE conventional[SCEN3]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN3', 'C54') ~~|
+Max potential NPP thermal BioE conventional[SCEN4]=
+	GET XLS CONSTANTS('inputs.xlsx', 'SCEN4', 'C54')
+	~	EJ/Year
+	~	Sustainable potential NPP of conventional bioenergy for heat. Source: \
+		Technical Report.
+	|
+
+"Cp geot-elec"[scenarios]=
+	"Cp geot-elec initial"*Cp baseload reduction[scenarios]
+	~	
+	~	Capacity factor of geothermal power plants.
+	|
+
+scen 3N TWe[scenarios]=
+	scen 3N GW*Cp nuclear[scenarios]/1000
+	~	TWe/Year
+	~	Annual growth of nuclear power electricity generation.
+		Scenario 3- PLEX (Plant Life Extension): same than scenario 2 but with a \
+		lifetime of 60 years.
+	|
+
+Invest cost oceanic:INTERPOLATE::=
+	GET XLS DATA('inputs.xlsx', 'Parameters', '6', 'G9')
+	~	Tdollars/TWe
+	~	Investments costs per TWe (without operation & maintenance) from the \
+		scenario "Energy [R]evolution 2010" (Teske et al., 2011).
+	|
+
+capacity BioW[scenarios]=
+	BioW TWe[scenarios]/Cp BioW[scenarios]
+	~	TW
+	~	Installed capacity.
+	|
+
+"capacity geot-elec"[scenarios]=
+	"geot-elec TWe"[scenarios]/"Cp geot-elec"[scenarios]
+	~	TW
+	~	Installed capacity.
+	|
+
+Cp BioW[scenarios]=
+	Cp BioW initial*Cp baseload reduction[scenarios]
+	~	
+	~	Capacity factor of BioW power plants.
+	|
+
+scen 2N TWe[scenarios]=
+	scen 2N GW*Cp nuclear[scenarios]/1000
+	~	TWe/Year
+	~	Annual growth of nuclear power electricity generation.
+		Scenario 2- Lifetime of the existing reactors = 40 years (including the \
+		planned new constructions, but no new constructions thereafter), \
+		progressive shut-down of the reactors in Germany.
+	|
+
+invest hydro Tdolar[scenarios]=
+	(new hydro TWe[scenarios]+replacement hydro[scenarios])*(Invest cost hydro/Cp hydro[\
+		scenarios])
+	~	Tdollars/Year
+	~	Investment costs.
+	|
+
+invest nuclear Tdolar[scenarios]=
+	IF THEN ELSE(new nuclear capacity GW[scenarios]<0,0,(new nuclear capacity GW[scenarios\
+		]+replacement nuclear[scenarios])*invest cost nuclear/1000)
+	~	Tdollars/Year
+	~		|
+
+Cp baseload reduction[scenarios]=
+	MIN(1,-0.6209*(Share variable vs base load Elec generation delayed 1yr[scenarios])^2\
+		 - 0.3998*(Share variable vs base load Elec generation delayed 1yr[scenarios]) + 1.0222\
+		)
+	~	Dmnl
+	~	Reduction of the capacity factor of the baseload plants as a function of \
+		the penetration of variables RES in the electricity generation.
+	|
+
+capacity oceanic[scenarios]=
+	oceanic TWe[scenarios]/Cp oceanic[scenarios]
+	~	TW
+	~	Installed capacity.
+	|
+
+Cp nuclear[scenarios]=
+	Cp nuclear initial*Cp baseload reduction[scenarios]
+	~	
+	~	Capacity factor of nuclear power centrals.
+	|
+
+capacity hydro[scenarios]=
+	hydro TWe[scenarios]/Cp hydro[scenarios]
+	~	TW
+	~	Installed capacity.
+	|
+
+Cp hydro[scenarios]=
+	Cp hydro initial*Cp baseload reduction[scenarios]
+	~	
+	~	Capacity factor of hydroelectric power plants.
+	|
+
+"invest geot-elec Tdolar"[scenarios]=
+	("new geot-elec TWe"[scenarios]+"replacement geot-elec"[scenarios])*("Invest cost geot-elec"\
+		/"Cp geot-elec"[scenarios])
+	~	Tdollars/Year
+	~	Investment costs.
+	|
+
+invest bioW Tdolar[scenarios]=
+	(new BioW TWe[scenarios]+replacement BioW[scenarios])*(Invest cost BioW/Cp BioW[scenarios\
+		])
+	~	Tdollars/Year
+	~	Investment costs.
+	|
+
+invest oceanic Tdolar[scenarios]=
+	(new oceanic TWe[scenarios]+replacement oceanic[scenarios])*(Invest cost oceanic/Cp oceanic\
+		[scenarios])
+	~	Tdollars/Year
+	~	Investment costs.
+	|
+
+Cp oceanic[scenarios]=
+	Cp oceanic initial*Cp baseload reduction[scenarios]
+	~	
+	~	Capacity factor of oceanic power plants devices.
+	|
+
+capacity offshore wind[scenarios]=
+	offshore wind TWe[scenarios]/Cp offshore wind
+	~	TW
+	~	Installed capacity.
+	|
+
+capacity onshore wind[scenarios]=
+	onshore wind TWe[scenarios]/Cp onshore wind
+	~	TW
+	~	Installed capacity.
+	|
+
+capacity solar[scenarios]=
+	solar TWe[scenarios]/Cp solar
+	~	TW
+	~	Installed capacity.
+	|
+
+Share variable vs base load Elec generation delayed 1yr[scenarios]= DELAY FIXED (
+	Share variable Elec generation[scenarios], 1, 0)
+	~	Dmnl
+	~	.
+	|
+
+FE Elec generation from offshore wind TWh[scenarios]=
+	offshore wind TWe[scenarios]/TWe per TWh
+	~	TWh/Year
+	~	Annual electricity generation.
+	|
+
+FE Elec generation from onshore wind TWh[scenarios]=
+	onshore wind TWe[scenarios]/TWe per TWh
+	~	TWh/Year
+	~	Annual electricity generation.
+	|
+
+FE Elec generation from solar TWh[scenarios]=
+	solar TWe[scenarios]/TWe per TWh
+	~	TWh/Year
+	~	Annual electricity generation.
+	|
+
+"overcapacity vs. intermittent RES penetration 0"[scenarios]=
+	MAX(1, 0.9599*EXP(0.8938*Share variable vs base load Elec generation delayed 1yr[scenarios\
+		]))
+	~	Dmnl
+	~	Total overcapacity vs. intermittent RES penetration in electricity \
+		generation.
+	|
+
+share dem trad biomass vs TPED[scenarios]=
+	PE traditional biomass EJ[scenarios]/TPED by sector EJ[scenarios]
+	~	Dmnl
+	~	Share of TPED for traditional biomass.
+	|
+
+share dem Build vs TPED[scenarios]=
+	"PE demand Build after RES+efficiency EJ"[scenarios]/TPED by sector EJ[scenarios]
+	~	Dmnl
+	~	Share of TPED for Buildings.
+	|
+
+share dem Elec losses vs TPED[scenarios]=
+	Total gen losses demand for Elec EJ[scenarios]/TPED by sector EJ[scenarios]
+	~	Dmnl
+	~	Share of TPED for electricity losses (depending from electricity demand).
+	|
+
+share dem Elec vs TPED[scenarios]=
+	Total FE Elec demand EJ[scenarios]/TPED by sector EJ[scenarios]
+	~	Dmnl
+	~	Share of TPED for Electricity.
+	|
+
+share dem Ind vs TPED[scenarios]=
+	"PE demand Ind after RES+efficiency EJ"[scenarios]/TPED by sector EJ[scenarios]
+	~	Dmnl
+	~	Share of TPED for Industry.
+	|
+
+share dem Transp vs TPED[scenarios]=
+	PE demand Transport after policies EJ[scenarios]/TPED by sector EJ[scenarios]
+	~	Dmnl
+	~	Share of TPED for Transportation.
+	|
+
+Elec gen related losses EJ[scenarios]=
+	PE losses coal for Elec EJ[scenarios]+PE losses conv gas for Elec EJ[scenarios]+PE losses uranium for Elec EJ\
+		[scenarios
+	]+PE losses uncon gas for Elec EJ[scenarios]+PE losses oil for Elec EJ[scenarios]+PE losses BioW for Elec EJ\
+		[scenarios]
+	~	EJ/Year
+	~	Electricity generation losses (EJ).
+	|
+
+Total electrical losses EJ[scenarios]=
+	Elec gen related losses EJ[scenarios]+Electrical distribution losses EJ[scenarios]
+	~	EJ/Year
+	~	Total losses from electricity generation (generation + distribution).
+	|
+
+Gen losses vs PE for elec[scenarios]=
+	Elec gen related losses EJ[scenarios]/Total PE for electricity consumption EJ[scenarios\
+		]
+	~	Dmnl
+	~	Generation losses as a share of the total PE for electricity.
+	|
+
+initial GTL production=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C37')
+	~	EJ/Year
+	~	Balances IEA
+	|
+
+FE Elec generation from unconv gas TWh[scenarios]=
+	extraction unconv gas EJ[scenarios]*"share gas/sector for Elec"[scenarios]*efficiency gas for electricity\
+		/EJ per TWh
+	~	TWh/Year
+	~	Final energy electricity generation from unconventional gas (TWh).
+	|
+
+variation CTL[scenarios]=
+	IF THEN ELSE(Time<2013, Historic CTL production(Time+1)-Historic CTL production(Time\
+		),
+	IF THEN ELSE(check liquids[scenarios]<-0.01, "constrain liquids exogenous growth?"[scenarios\
+		]*CTL production[scenarios], 
+	CTL production[scenarios]*real growth CTL[scenarios]))
+	~	EJ/Year
+	~	New annual CTL production.
+	|
+
+FE Elec generation from conv gas TWh[scenarios]=
+	extraction conv gas without GTL EJ[scenarios]*"share gas/sector for Elec"[scenarios]\
+		*efficiency gas for electricity/EJ per TWh
+	~	TWh/Year
+	~	Final energy electricity generation from conventional gas (TWh).
+	|
+
+variation GTL[scenarios]=
+	IF THEN ELSE(Time<2013, Historic GTL production(Time+1)-Historic GTL production(Time\
+		), 
+	IF THEN ELSE(check liquids[scenarios]<-0.01, "constrain liquids exogenous growth?"[scenarios\
+		]*GTL production[scenarios],
+	GTL production[scenarios]*real growth GTL[scenarios]))
+	~	EJ/Year
+	~	New annual GTL production.
+	|
+
+CTL production[scenarios]= INTEG (
+	variation CTL[scenarios],
+		initial CTL production)
+	~	EJ/Year
+	~	Annual CTL production.
+	|
+
+Historic GTL production=
+	GET XLS LOOKUPS( 'inputs.xlsx', 'Constants', '25' , 'C37')
+	~	EJ/Year
+	~	Historic generation of GTL 1990-2014 (IEA Balances).
+	|
+
+initial CTL production=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C36')
+	~	EJ/Year
+	~	Balances IEA
+	|
+
+GTL production[scenarios]= INTEG (
+	variation GTL[scenarios],
+		initial GTL production)
+	~	EJ/Year
+	~	Annual GTL production.
+	|
+
+Historic CTL production=
+	GET XLS LOOKUPS( 'inputs.xlsx', 'Constants', '25' , 'C36')
+	~	EJ/Year
+	~	Historic generation of CTL 1990-2014 (IEA Balances).
+	|
+
+improvement efficiency gas for electricity=
+	IF THEN ELSE(Time<2013, (Historic efficiency gas for electricity(Time+1)-Historic efficiency gas for electricity\
+		(Time))*percent to share, efficiency gas for electricity*remaining efficiency improv gas for electricity\
+		*Efficiency improv gas for electricity)
+	~	Dmnl
+	~	Annual efficiency improvement of the gas power centrals.
+	|
+
+PE demand gas for Elec EJ[scenarios]=
+	(FE demand gas for Elec TWh[scenarios]/efficiency gas for electricity)*EJ per TWh
+	~	EJ/Year
+	~	Primary energy demand of natural gas (EJ) for electricity consumption \
+		(including generation losses).
+	|
+
+PE demand coal for Elec EJ[scenarios]=
+	(FE demand coal for Elec TWh[scenarios]/efficiency coal for electricity)*EJ per TWh
+	~	EJ/Year
+	~	Primary energy demand of coal (EJ) for electricity consumption (including \
+		generation losses).
+	|
+
+Max efficiency gas power plants=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C48')
+	~	Dnml
+	~	Assumed maximum efficiency level for gas power centrals.
+	|
+
+Total PE for electricity consumption EJ[scenarios]=
+	Total FE Elec demand EJ[scenarios]+Elec gen related losses EJ[scenarios]
+	~	EJ/Year
+	~	Total primary energy for electricity consumption (EJ).
+	|
+
+check TPED[scenarios]=
+	(TPED by sector EJ[scenarios]-TPED by fuel[scenarios])*100/TPED by fuel[scenarios]
+	~	percent
+	~	Comparison between TPED by fuel and TPED by sector (they should \
+		correspond).
+	|
+
+PE losses coal for Elec EJ[scenarios]=
+	extraction coal without CTL EJ[scenarios]*"share coal/sector for Elec"[scenarios]*(1\
+		-efficiency coal for electricity)
+	~	EJ/Year
+	~	(Primary) Energy losses in the generation of electricity in coal power \
+		centrals.
+	|
+
+initial efficiency gas for electricity=
+	0.36399
+	~	Dmnl
+	~	(IEA Balances).
+	|
+
+remaining efficiency improv gas for electricity=
+	(Max efficiency gas power plants-efficiency gas for electricity)/Max efficiency gas power plants
+	~	Dmnl
+	~	Remaining efficiency improvement for gas power centrals.
+	|
+
+Efficiency improv gas for electricity=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C52')
+	~	Dmnl
+	~	Annual efficiency improvement in percentage of the gas power centrals for \
+		electricity production.
+	|
+
+efficiency gas for electricity= INTEG (
+	improvement efficiency gas for electricity,
+		initial efficiency gas for electricity)
+	~	Dmnl
+	~	Efficiency of the gas power centrals.
+	|
+
+percent to share=
+	GET XLS CONSTANTS('inputs.xlsx', 'Constants', 'C12')
+	~	Dmnl
+	~	Conversion of percent to share.
+	|
+
+FE Elec generation from coal TWh[scenarios]=
+	extraction coal without CTL EJ[scenarios]*efficiency coal for electricity*"share coal/sector for Elec"\
+		[scenarios]/EJ per TWh
+	~	TWh/Year
+	~	Final energy electricity generation from coal (TWh).
+	|
+
+"Additional PE production of CTL+GTL for liquids"[scenarios]=
+	demand coal for CTL EJ[scenarios]+demand gas for GTL EJ[scenarios]-"CTL+GTL production EJ"\
+		[scenarios]
+	~	EJ/Year
+	~	Additional primary energy production of CTL and GTL for liquids. We need \
+		to account for this difference since the oil replaced by CTL liquids is \
+		accounted for primary energy in WoLiM, while there are additional losses \
+		to process coal to obtain CTL (required to balance the TPES with the TPED).
+	|
+
+Annual additional historic product biofuels 2gen=
+	IF THEN ELSE(Time<2015, Historic produc biofuels 2gen(Time+1)-Historic produc biofuels 2gen\
+		(Time), 0)
+	~	ktoe/Year
+	~	Annual additional historic production of liquids from biofuels ethanol and \
+		biodiesel, ktoe/Year (1990-2015). Ref: BP 2016.
+	|
+
+Historic produc biofuels 2gen(
+	GET XLS LOOKUPS('inputs.xlsx', 'Constants', '25', 'C64'))
+	~	ktoe/Year
+	~	Historic production of biofuels 2nd generation (1990-2015).
+	|
+
+NGV adapt growth[scenarios]=
+	IF THEN ELSE(Time<2015, NGV past share growth,IF THEN ELSE(Time<2020, NGV past share growth\
+		+(P NGV growth[scenarios]*effects shortage gas[scenarios]-NGV past share growth)*(Time dmnl\
+		[scenarios](Time)-2015)/5, P NGV growth[scenarios]*effects shortage gas[scenarios])\
+		)
+	~	1/Year
+	~	Adaptation from historic trends to projected trends.
+	|
+
+Historical share NGVs=
+	GET XLS LOOKUPS('inputs.xlsx', 'Constants', '25', 'C43')
+	~	Dmnl
+	~	Historical share of NGVs. Source: IANGV (http://www.iangv.org/current-ngv-stats/).
+		/*only historical data of share from 2005 */
+	|
+
+variation share NGV[scenarios]=
+	IF THEN ELSE(Time<2011,(Historical share NGVs(Time+1)-Historical share NGVs(Time)), \
+		NGV adapt growth[scenarios]*NGV fraction of change available[scenarios]*NGV share[scenarios\
+		])
+	~	1/Year
+	~	Variation of the share of NGVs in relation to the motor vehicles.
+	|
+
+current trends demand Elec for Transp[scenarios]=
+	PE demand for Transport initial EJ[scenarios]*Current trends electric transport share\
+		[scenarios]
+	~	EJ/Year
+	~	Current trends of Demand of electricity for Transportation (EJ). We assume \
+		that the share of current TPE demand of transport covered by electricity \
+		(excepting alternative policies) is maintained constant in the future. \
+		Since we extrapolate the current trends, the electricity consumption is \
+		not increased assuming that current trends are already included in the \
+		electricity consumption trend.
+	|
+
+Current trends electric transport share[scenarios]= INTEG (
+	variation current trends elec transp share[scenarios],
+		share current trends Elec for Transp)
+	~	
+	~	Electric transport share excluding electric LDVs (currently mainly train).
+	|
+
+share current trends Elec for Transp=
+	GET XLS CONSTANTS('inputs.xlsx', 'Parameters', 'C36')
+	~	Dmnl
+	~	Share of current TPE demand of transport covered by electricity (around \
+		1%, mainly trains).
+	|
+
+PE Elec for Transp EJ[scenarios]=
+	current trends demand Elec for Transp[scenarios]+PE losses related to Elec Transp[scenarios\
+		]+Increase Elec demand for Transp EJ
+	[scenarios]
+	~	EJ/Year
+	~	Primary energy required to cover the electricity demand of Transportation. \
+		It includes current electric transport shares (around 1% dedicated to \
+		train), increase due to alternative modes of transport and the generation \
+		and distribution losses associated to the latter increase.
+	|
+
+Liquid demand transp initial EJ[scenarios]=
+	PE demand for Transport initial EJ[scenarios]*(1-propor gas transp losses)-current trends demand Elec for Transp\
+		[scenarios]
+	~	EJ/Year
+	~	Demand of liquids by the Transportation sector.
+	|
+
+HEV adapt growth[scenarios]=
+	IF THEN ELSE(Time<2015, "BEV/HEV past share growth", IF THEN ELSE(Time<2020, "BEV/HEV past share growth"\
+		+(P HEV growth[scenarios]*"effects shortage elec on BEV/HEV"[scenarios]-"BEV/HEV past share growth"\
+		)*(Time dmnl[scenarios](Time)-2015)/5, P HEV growth[scenarios]*"effects shortage elec on BEV/HEV"\
+		[scenarios]))
+	~	1/Year
+	~	Adaptation from historic trends to projected trends.
+	|
+
+P elec transp share[scenarios]=
+	0
+	~	
+	~	Growth in the share of electric transportation (excluding electric LDVs).
+	|
+
+BEV adapt growth[scenarios]=
+	IF THEN ELSE(Time<2015, "BEV/HEV past share growth",IF THEN ELSE(Time<2020, "BEV/HEV past share growth"\
+		+(P BEV growth[scenarios]*"effects shortage elec on BEV/HEV"[scenarios]-"BEV/HEV past share growth"\
+		)*(Time dmnl[scenarios](Time)-2015)/5, P BEV growth[scenarios]*"effects shortage elec on BEV/HEV"\
+		[scenarios]))
+	~	1/Year
+	~	Adaptation from historic trends to projected trends.
+	|
+
+Savings PE Transport EJ[scenarios]=
+	Total liquid saved by Elec EJ[scenarios]-Additional increase PE demand for Transp Elec EJ\
+		[scenarios]
+	~	EJ/Year
+	~	Savings in primary energy after the shift to EVs vehicles.
+	|
+
+variation current trends elec transp share[scenarios]=
+	Current trends electric transport share[scenarios]*P elec transp share[scenarios]
+	~	
+	~	Annual variation of electric transport share excluding electric LDVs.
+	|
+
+carbon budget=
+	1000
+	~	GtC
+	~	Carbon budget, the amount of carbon dioxide emissions we can emit while \
+		still having a likely chance of limiting global temperature rise to 2 \
+		degrees Celsius above pre-industrial levels (IPCC 2014).
+	|
+
+Adapt emissions unconv gas dobro[scenarios]=
+	IF THEN ELSE( Time<2050, 0.01+(0.22-0.01)*(Time dmnl[scenarios](Time)-2000)/50, IF THEN ELSE\
+		( Time<2100, 0.22+(0.6-0.22)*(Time dmnl[scenarios](Time)-2050)/50, 0.6))
+	~	Dmnl
+	~	Unconventional gas emissions are 3,53 tCO2/toe vs 2,35 for conventional. \
+		Since we have all natural gas modeled in an aggregated manner, this \
+		function corrects these emissions assuming that unconventional gas would \
+		follow the share un relation to natural gas as estimated by \
+		[Mohr&Evans2011](BG) for 2050 and 2100 (linear interpolation).
+	|
+
+Cumulative emissions to 1990=
+	343.82
+	~	GtC
+	~	Cumulative emissions 1751-1990 due to carbon emissions from fossil fuel \
+		consumption, cement production and land-use changes. Data from CDIAC and \
+		World Resources Institute.
 	|
 
 ********************************************************
@@ -43,6 +3198,7 @@ WoLiM 1.5 model, documented in 'World Limits Model (WoLiM) 1.5 - Model Documenta
 12,2,0,766,567,229,25,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-0-255
 12,3,0,766,464,219,57,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||92-92-92
 12,4,0,766,365,175,19,8,7,0,0,-1,0,0,0
+hola@$<>^/*
 <[VIEW END]>
 <[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names

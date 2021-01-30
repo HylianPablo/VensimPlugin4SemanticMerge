@@ -127,12 +127,15 @@ public class GraphsMetadataVisitor {
             for (int i = 0; i < metadataLines.size(); i++) {
                 fw.write("    - type : metadataLine\r\n");
                 fw.write("      name : metadataLine\r\n");
+                int intvMetadata1 = metadataLines.get(i).start.getStartIndex();
+                int intvMetadata2 = metadataLines.get(i).stop.getStopIndex();
+                Interval intervalMetadata = new Interval(intvMetadata1, intvMetadata2);
                 fw.write("      locationSpan : {start: [" + locationSpanStartEq + ", 0], end: [" + locationSpanStartEq
-                        + ", " + (metadataLines.get(i).getText().length() + 2) + "]}\r\n");
+                        + ", " + (ctx.start.getInputStream().getText(intervalMetadata).length() + 2) + "]}\r\n");
                 locationSpanStartEq++;
                 fw.write("      span : [" + initCharEq + ", "
-                        + (initCharEq + metadataLines.get(i).getText().length() + 1) + "]\r\n");
-                initCharEq += metadataLines.get(i).getText().length();
+                        + (initCharEq + ctx.start.getInputStream().getText(intervalMetadata).length() + 1) + "]\r\n");
+                initCharEq += ctx.start.getInputStream().getText(intervalMetadata).length();
                 initCharEq += 2;
             }
             fw.flush();

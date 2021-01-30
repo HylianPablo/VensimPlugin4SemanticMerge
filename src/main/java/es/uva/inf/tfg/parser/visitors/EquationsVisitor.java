@@ -70,41 +70,79 @@ public class EquationsVisitor {
                 String equation;
                 if (!isMacroList.get(i)) {
                     if (equations.get(indexOfEquations).symbolWithDocDefinition().equation() != null) {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().equation().lhs().Id()
-                                .getText();
+                        int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().equation().lhs().start
+                                .getStartIndex();
+                        int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().equation().lhs().stop
+                                .getStopIndex();
+                        Interval intervalEq = new Interval(intvEq1, intvEq2);
+                        equationText = ctx.start.getInputStream().getText(intervalEq);
                         typeName = "equation";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange() != null) {
+                        /*
+                        int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange().start
+                                .getStartIndex();
+                        int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange().stop
+                                .getStopIndex();
+                        Interval intervalEq = new Interval(intvEq1, intvEq2);
+                        int index = ctx.start.getInputStream().getText(intervalEq).indexOf(":");
+                        equationText = ctx.start.getInputStream().getText(intervalEq).substring(0, index);
+                        */
                         equationText = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange().Id()
                                 .getText();
+
                         typeName = "subscriptRange";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().lookupDefinition() != null) {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().lookupDefinition()
-                                .lhs().Id().getText();
+                        int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().lookupDefinition()
+                                .lhs().start.getStartIndex();
+                        int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().lookupDefinition()
+                                .lhs().stop.getStopIndex();
+                        Interval intervalEq = new Interval(intvEq1, intvEq2);
+                        equationText = ctx.start.getInputStream().getText(intervalEq);
                         typeName = "lookupDefinition";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation() != null) {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation().lhs()
-                                .Id().getText();
+                        int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation()
+                                .lhs().start.getStartIndex();
+                        int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation()
+                                .lhs().stop.getStopIndex();
+                        Interval intervalEq = new Interval(intvEq1, intvEq2);
+                        equationText = ctx.start.getInputStream().getText(intervalEq);
                         typeName = "dataEquation";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().constraint() != null) {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().constraint().lhs().Id()
-                                .getText();
+                        int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().constraint().lhs().start
+                                .getStartIndex();
+                        int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().constraint().lhs().stop
+                                .getStopIndex();
+                        Interval intervalEq = new Interval(intvEq1, intvEq2);
+                        equationText = ctx.start.getInputStream().getText(intervalEq);
                         typeName = "constraint";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition()
                             .unchangeableConstant() != null) {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().unchangeableConstant()
-                                .lhs().Id().getText();
+                        int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().unchangeableConstant()
+                                .lhs().start.getStartIndex();
+                        int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().unchangeableConstant()
+                                .lhs().stop.getStopIndex();
+                        Interval intervalEq = new Interval(intvEq1, intvEq2);
+                        equationText = ctx.start.getInputStream().getText(intervalEq);
                         typeName = "unchangeableConstant";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign() != null) {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign().lhs()
-                                .Id().getText();
+                        int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign()
+                                .lhs().start.getStartIndex();
+                        int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().stringAssign()
+                                .lhs().stop.getStopIndex();
+                        Interval intervalEq = new Interval(intvEq1, intvEq2);
+                        equationText = ctx.start.getInputStream().getText(intervalEq);
                         typeName = "stringAssign";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().subscriptCopy() != null) {
                         equationText = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptCopy().copy
                                 .toString();
                         typeName = "subscriptCopy";
                     } else {
-                        equationText = equations.get(indexOfEquations).symbolWithDocDefinition().realityCheck().lhs()
-                                .Id().getText();
+                        int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().realityCheck()
+                                .lhs().start.getStartIndex();
+                        int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().realityCheck()
+                                .lhs().stop.getStopIndex();
+                        Interval intervalEq = new Interval(intvEq1, intvEq2);
+                        equationText = ctx.start.getInputStream().getText(intervalEq);
                         typeName = "realityCheck";
                     }
                     int a = equations.get(indexOfEquations).start.getStartIndex();

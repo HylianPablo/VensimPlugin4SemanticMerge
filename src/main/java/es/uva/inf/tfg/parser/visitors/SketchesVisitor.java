@@ -183,30 +183,6 @@ public class SketchesVisitor {
                                                         viewVariablesIndex++;
                                                 } else {
                                                         int commaCounter = 0;
-                                                        /*
-                                                        int commaCounter = UtilFunctions.countCharacters(
-                                                                        viewVariablesList.get(viewVariablesIndex)
-                                                                                        .visualInfo().getText(),
-                                                                        ',');
-                                                        commaCounter += UtilFunctions.countCharacters(viewVariablesList
-                                                                        .get(viewVariablesIndex).visualInfo().getText(),
-                                                                        '-');
-                                                        commaCounter += UtilFunctions.countCharacters(viewVariablesList
-                                                                        .get(viewVariablesIndex).visualInfo().getText(),
-                                                                        '(');
-                                                        commaCounter += UtilFunctions.countCharacters(viewVariablesList
-                                                                        .get(viewVariablesIndex).visualInfo().getText(),
-                                                                        ')');
-                                                        commaCounter += UtilFunctions.countCharacters(viewVariablesList
-                                                                        .get(viewVariablesIndex).visualInfo().getText(),
-                                                                        '.');
-                                                        commaCounter += UtilFunctions.countCharacters(viewVariablesList
-                                                                        .get(viewVariablesIndex).visualInfo().getText(),
-                                                                        ':');
-                                                        if (commaCounter < 0) {
-                                                                commaCounter = 0;
-                                                        }
-                                                        */
                                                         int intvViewLineName1 = viewVariablesList
                                                                         .get(viewVariablesIndex).visualInfo().start
                                                                                         .getStartIndex();
@@ -227,7 +203,7 @@ public class SketchesVisitor {
                                                                         + (locationSpanStartEq + 1) + ", "
                                                                         + (ctx.start.getInputStream()
                                                                                         .getText(intervalViewLineName)
-                                                                                        .length() + 2 + commaCounter) //It trims space after comma, so it need to be added
+                                                                                        .length() + 2 + commaCounter)
                                                                         + "]}\r\n");
                                                         locationSpanStartEq += 2;
                                                         fw.write("        span : [" + initCharEq + ", " + (initCharEq
