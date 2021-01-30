@@ -75,7 +75,12 @@ public class EquationsVisitor {
                         int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().equation().lhs().stop
                                 .getStopIndex();
                         Interval intervalEq = new Interval(intvEq1, intvEq2);
-                        equationText = ctx.start.getInputStream().getText(intervalEq);
+                        int index = ctx.start.getInputStream().getText(intervalEq).indexOf("[");
+                        if (index == -1) {
+                            equationText = ctx.start.getInputStream().getText(intervalEq);
+                        } else {
+                            equationText = ctx.start.getInputStream().getText(intervalEq).substring(0, index);
+                        }
                         typeName = "equation";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange() != null) {
                         /*
@@ -105,7 +110,8 @@ public class EquationsVisitor {
                         int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation()
                                 .lhs().stop.getStopIndex();
                         Interval intervalEq = new Interval(intvEq1, intvEq2);
-                        equationText = ctx.start.getInputStream().getText(intervalEq);
+                        int index = ctx.start.getInputStream().getText(intervalEq).indexOf(":");
+                        equationText = ctx.start.getInputStream().getText(intervalEq).substring(0, index);
                         typeName = "dataEquation";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().constraint() != null) {
                         int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().constraint().lhs().start

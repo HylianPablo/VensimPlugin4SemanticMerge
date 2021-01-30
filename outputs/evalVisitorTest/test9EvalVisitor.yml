@@ -44,7 +44,7 @@ children:
       locationSpan : {start: [39, 0], end: [43, 2]}
       span : [661, 752]
     - type : dataEquation
-      name : Afforestation_program_2020_W:INTERPOLATE:
+      name : Afforestation_program_2020_W
       locationSpan : {start: [44, 0], end: [57, 2]}
       span : [753, 1241]
     - type : equation

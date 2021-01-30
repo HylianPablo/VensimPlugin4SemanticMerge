@@ -348,7 +348,6 @@ public class TestEvalVisitor {
             String result = br.lines().collect(Collectors.joining("\n"));
             br.close();
             assertEquals("", result);
-
             /*
             Process process = Runtime.getRuntime()
                     .exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"

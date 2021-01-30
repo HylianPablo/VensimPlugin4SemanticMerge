@@ -92,7 +92,7 @@ children:
       locationSpan : {start: [106, 0], end: [109, 40]}
       span : [1525, 1600]
     - type : equation
-      name : max unconv gas growth extraction EJ[scenarios]
+      name : max unconv gas growth extraction EJ
       locationSpan : {start: [110, 0], end: [125, 2]}
       span : [1601, 2243]
     - type : equation
