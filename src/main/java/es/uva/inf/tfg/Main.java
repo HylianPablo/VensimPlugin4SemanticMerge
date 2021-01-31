@@ -31,14 +31,17 @@ public class Main {
 
             Scanner scanner = new Scanner(System.in);
 
-            while (scanner.hasNext()) {
+            do {
                 String firstFile = scanner.nextLine();
+                if (firstFile.equals("end")) {
+                    return;
+                }
                 String firstEncoding = scanner.nextLine();
                 String firstFileOutput = scanner.nextLine();
                 parseFile(firstFile, firstFileOutput);
                 System.out.println("OK");
+            } while (scanner.hasNext());
 
-            }
             scanner.close();
             String end = scanner.nextLine();
             if (end.equals("end")) {

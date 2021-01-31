@@ -75,7 +75,7 @@ public class SketchesVisitor {
                                                 + "\r\n");
                                 fw.write("      locationSpan : {start: [" + (locationSpanStartEq + 1) + ", 0], end: ["
                                                 + (locationSpanStartEq + viewText.split("\n").length) + ", " + (14)
-                                                + "]}\r\n"); //It will end in \\\---/// PROVISIONAL PARA UNA VISTA
+                                                + "]}\r\n"); //It will end in \\\---/// 
                                 fw.write("      headerSpan : [" + initCharEq + ", " + (initCharEq + 67 + 16) + "]\r\n");
                                 initCharEq += 16;
                                 initCharEq += 68;
@@ -104,7 +104,7 @@ public class SketchesVisitor {
                                 List<ModelParser.ArrowContext> arrowsList = viewInfoList.get(i).viewVariables().arrow();
                                 int arrowsIndex = 0;
                                 int viewVariablesIndex = 0;
-                                for (int j = 1; j <= (viewVariablesList.size() + arrowsList.size()); j++) { // ViewSettings is ommited so it starts on 1
+                                for (int j = 1; j <= (viewVariablesList.size() + arrowsList.size()); j++) { // ViewSettings is ommited as it starts on 1
                                         if (!arrowsList.isEmpty() && viewInfoList.get(i).viewVariables().getChild(j)
                                                         .getClass().equals(arrowsList.get(0).getClass())) {
                                                 fw.write("      - type : arrow\r\n");
@@ -182,7 +182,6 @@ public class SketchesVisitor {
                                                         initCharEq += 2;
                                                         viewVariablesIndex++;
                                                 } else {
-                                                        int commaCounter = 0;
                                                         int intvViewLineName1 = viewVariablesList
                                                                         .get(viewVariablesIndex).visualInfo().start
                                                                                         .getStartIndex();
@@ -203,19 +202,18 @@ public class SketchesVisitor {
                                                                         + (locationSpanStartEq + 1) + ", "
                                                                         + (ctx.start.getInputStream()
                                                                                         .getText(intervalViewLineName)
-                                                                                        .length() + 2 + commaCounter)
+                                                                                        .length() + 2)
                                                                         + "]}\r\n");
                                                         locationSpanStartEq += 2;
                                                         fw.write("        span : [" + initCharEq + ", " + (initCharEq
                                                                         + ctx.start.getInputStream().getText(
                                                                                         intervalViewLineNameWhole)
                                                                                         .length()
-                                                                        + 1 + commaCounter) + "]\r\n");
+                                                                        + 1) + "]\r\n");
                                                         initCharEq += ctx.start.getInputStream()
                                                                         .getText(intervalViewLineNameWhole).length();
                                                         //initCharEq += 2; // extra characters of second line
                                                         initCharEq += 2;
-                                                        initCharEq += commaCounter;
                                                         viewVariablesIndex++;
 
                                                 }
