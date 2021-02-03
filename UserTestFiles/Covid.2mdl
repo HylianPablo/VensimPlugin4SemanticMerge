@@ -5,6 +5,96 @@
 		Active equations
 	|
 
+Hospitalized  = A FUNCTION OF( Severe) ~~|
+Hospitalized=
+	Severe * Hospitalized frac of severe
+	~	popn
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Dead frac of confirmed cases  = A FUNCTION OF( Cumulative confirmed cases) ~~|
+Dead frac of confirmed cases=
+	ZIDZ(Dead, Cumulative confirmed cases)
+	~	dmnl
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Infected asympto  = A FUNCTION OF( New infections) ~~|
+Infected asympto= INTEG (
+	New infections-Becoming symptomatic,
+		0)
+	~	popn
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Infected sympto  = A FUNCTION OF( -Fatalities,-Recoveries) ~~|
+Infected sympto= INTEG (
+	Becoming symptomatic-Fatalities-Recoveries,
+		0)
+	~	popn
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Confirmed past cases  = A FUNCTION OF( Recovered) ~~|
+Confirmed past cases=
+	Dead + Recovered*Testing of symptos
+	~	popn
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Severe  = A FUNCTION OF( Infected sympto) ~~|
+Severe=
+	Infected sympto * Severe frac of infected sympto
+	~	popn
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Fatal frac of sympto  = A FUNCTION OF( -Ability of ventilator to reduce fatality,Frac of hospitalized needing ventilator\
+		,-Ventilator relative availability) ~~|
+Fatal frac of sympto=
+	Severe frac of infected sympto*( 1 - Hospitalized frac of severe +  Hospitalized frac of severe\
+		*Frac of hospitalized needing ventilator
+*(1 - Ability of ventilator to reduce fatality*Ventilator relative availability))
+	~	dmnl
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Confirmed current cases  = A FUNCTION OF( Infected asympto,Infected sympto,Testing of asymptos\
+		) ~~|
+Confirmed current cases=
+	Infected asympto*Testing of asymptos + Infected sympto*Testing of symptos
+	~	popn
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Recovery or death  = A FUNCTION OF( Time to recovery or death) ~~|
+Recovery or death=
+	DELAY1I(Becoming symptomatic, Time to recovery or death, 0)
+	~	popn/Month
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Past infections  = A FUNCTION OF( Recovered) ~~|
+Past infections=
+	Dead+Recovered
+	~	popn
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Total popn  = A FUNCTION OF( Total popn reference) ~~|
+Total popn=
+	Total popn reference - Dead
+	~	popn
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
+Testing of asymptos  = A FUNCTION OF( Reltv testing of asymptos) ~~|
+Testing of asymptos=
+	Reltv testing of asymptos * Testing of symptos
+	~	dmnl
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
+
 Restriction loosening at 10pct GDP loss=
 	Lookup for restriction loosening due to GDP loss(0.1/GDP frac loss for 50pct restriction loosening\
 		)
@@ -62,33 +152,9 @@ Basic reproduction number=
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
-Becoming symptomatic=
-	DELAY1I(New infections, Incubation period, 0)
-	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Confirmed current cases=
-	Infected asympto*Testing of asymptos + Infected sympto*Testing of symptos
-	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Confirmed frac of past infections=
-	XIDZ(Confirmed past cases,Past infections,Testing of symptos)
-	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
 Confirmed new cases=
 	Confirmed current cases/(Incubation period+Time to recovery or death)
 	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Confirmed past cases=
-	Dead + Recovered*Testing of symptos
-	~	popn
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
@@ -163,35 +229,9 @@ Cumulative confirmed cases=
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
-Cumulative hospitalized= INTEG (
-	Hospital admissions,
-		0)
-	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
 Current cases for 50pct social distancing=
 	200000
 	~	popn [0,1e+06,100000]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Dead= INTEG (
-	Fatalities,
-		0)
-	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Dead frac of confirmed cases=
-	ZIDZ(Dead, Cumulative confirmed cases)
-	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Dead frac of past infections=
-	ZIDZ(Dead, Past infections)
-	~	dmnl
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
@@ -229,14 +269,6 @@ Extent of restriction=
 	Social distancing + (1-Social distancing)*Containment measures
 	~	dmnl
 	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
-	|
-
-Fatal frac of sympto=
-	Severe frac of infected sympto*( 1 - Hospitalized frac of severe +  Hospitalized frac of severe\
-		*Frac of hospitalized needing ventilator*(1 - Ability of ventilator to reduce fatality\
-		*Ventilator relative availability))
-	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
 Fatalities=
@@ -298,12 +330,6 @@ GDP per capita per yr reference=
 	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
 	|
 
-Hospital admissions=
-	Becoming symptomatic * Severe frac of infected sympto * Hospitalized frac of severe
-	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
 Hospital bed capacity HELLO=
 	900000
 	~	popn [0,300000,10000]
@@ -313,18 +339,6 @@ Hospital bed capacity HELLO=
 Hospital bed utilization=
 	MIN(1, Hospitalized/Hospital bed capacity HELLO)
 	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Hospitalized=
-	Severe * Hospitalized frac of severe
-	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Hospitalized frac of severe=
-	1
-	~	dmnl [0,1,0.05]
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
@@ -343,20 +357,6 @@ Incubation period=
 
 Infected=
 	Infected asympto + Infected sympto
-	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Infected asympto= INTEG (
-	New infections-Becoming symptomatic,
-		0)
-	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Infected sympto= INTEG (
-	Becoming symptomatic-Fatalities-Recoveries,
-		0)
 	~	popn
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
@@ -452,12 +452,6 @@ New infections domestic=
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
-Past infections=
-	Dead+Recovered
-	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
 Recent cases affecting containment=
 	SMOOTH(Confirmed new cases,Assessment time for containment) * Assessment time for containment
 	~	popn
@@ -479,12 +473,6 @@ Recovered= INTEG (
 
 Recoveries=
 	Recovery or death * (1-Fatal frac of sympto)
-	~	popn/Month
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Recovery or death=
-	DELAY1I(Becoming symptomatic, Time to recovery or death, 0)
 	~	popn/Month
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
@@ -514,18 +502,6 @@ Restriction loosening due to GDP loss=
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
-Severe=
-	Infected sympto * Severe frac of infected sympto
-	~	popn
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Severe frac of infected sympto=
-	0.16
-	~	dmnl [0,0.3,0.005]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V2a: 0.14; v2b: .155
-	|
-
 Social distancing=
 	Social distancing before GDP loss * (1-Restriction loosening due to GDP loss)
 	~	dmnl
@@ -552,20 +528,6 @@ Susceptible fraction of popn=
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
-Testing of asymptos=
-	Reltv testing of asymptos * Testing of symptos
-	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Testing of symptos=
-	Testing of symptos initial + (Max testing of symptos - Testing of symptos initial)*Lookup for testing\
-		(SMOOTHI(Cumulative confirmed cases
-	/Cumulative cases for max testing,Delay time in testing, 0))
-	~	dmnl
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
 Testing of symptos initial=
 	0.18
 	~	dmnl [0,0.4,0.01]
@@ -587,12 +549,6 @@ Time to loosen restrictions due to GDP loss=
 Time to recovery or death=
 	0.37
 	~	months [0,1,0.01]
-	~	<[VIEW]>: Main view <[DESCRIPTION]>:
-	|
-
-Total popn=
-	Total popn reference - Dead
-	~	popn
 	~	<[VIEW]>: Main view <[DESCRIPTION]>:
 	|
 
@@ -642,7 +598,7 @@ INITIAL TIME  = 0
 	|
 
 SAVEPER  = 
-        TIME STEP 
+        TIME STEP
 	~	Month [0,?]
 	~	The frequency with which output is stored.
 	|
@@ -676,7 +632,7 @@ Dead frac of confirmed cases data:RAW::=
 
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
-*Main view
+*Main view CHANGED
 $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 10,1,Susceptible,451,413,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
 10,2,Infected asympto,700,414,47,33,3,131,0,0,0,0,0,0,0,0,0,0,0,0
@@ -692,8 +648,6 @@ $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 1,12,13,3,100,0,0,22,0,0,0,-1--1--1,,1|(1009,414)|
 11,13,1080,1045,414,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,14,Recoveries,1045,432,42,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-11,15,2290,808,413,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,16,Becoming symptomatic,808,439,47,18,40,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,17,213,7,1,0,0,0,0,128,0,-1--1--1,,1|(440,319)|
 10,18,New infections domestic,481,510,54,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 10,19,Contacts per asympto infected,556,677,62,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
@@ -705,8 +659,6 @@ $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 1,25,21,39,1,0,0,0,0,128,0,-1--1--1,,1|(441,577)|
 1,26,18,7,0,0,0,0,0,128,0,-1--1--1,,1|(523,471)|
 10,27,Infection probability per contact,305,625,53,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,28,Dead,1157,275,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
-1,29,31,28,4,0,0,22,0,0,0,-1--1--1,,1|(1058,280)|
 1,30,31,3,100,0,0,22,0,0,0,-1--1--1,,1|(928,280)|
 11,31,1058,1005,280,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,32,Fatalities,1005,298,34,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
@@ -723,7 +675,6 @@ $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 10,43,Frac of hospitalized needing ventilator,845,199,72,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
 10,44,Time,291,104,29,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
 10,45,Total popn reference,100,298,46,21,8,3,0,10,0,0,0,0,-1--1--1,0-0-0,|14||255-0-0,0,0,0,0,0,0
-10,46,Dead,115,386,31,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
 1,47,46,22,0,0,0,0,0,128,0,-1--1--1,,1|(170,392)|
 1,48,45,22,0,0,0,0,0,128,0,-1--1--1,,1|(175,351)|
 1,49,35,53,1,0,0,0,0,128,0,-1--1--1,,1|(938,173)|
@@ -763,12 +714,8 @@ $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 10,83,Testing of asymptos,950,669,42,23,8,131,0,0,-1,0,0,0,0,0,0,0,0,0
 1,84,83,80,0,0,0,0,0,128,0,-1--1--1,,1|(962,626)|
 1,85,139,80,0,0,0,0,0,128,0,-1--1--1,,1|(1023,658)|
-10,86,Dead frac of past infections,1329,184,64,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 10,87,Past infections,1303,374,53,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,88,10,87,0,0,0,0,0,128,0,-1--1--1,,1|(1254,394)|
-1,89,28,87,0,0,0,0,0,128,0,-1--1--1,,1|(1240,331)|
-1,90,28,86,0,0,0,0,0,128,0,-1--1--1,,1|(1244,228)|
-1,91,87,86,0,0,0,0,0,128,0,-1--1--1,,1|(1314,289)|
 10,92,Lookup for social distancing,873,937,63,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
 1,93,66,68,0,0,0,0,0,128,0,-1--1--1,,1|(824,960)|
 1,94,92,68,0,0,0,0,0,128,0,-1--1--1,,1|(777,916)|
@@ -785,19 +732,14 @@ $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 10,105,Cumulative confirmed cases,1410,615,61,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 10,106,Confirmed past cases,1423,470,57,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,107,10,106,0,0,0,0,0,128,0,-1--1--1,,1|(1297,442)|
-1,108,28,106,1,0,0,0,0,128,0,-1--1--1,,1|(1369,363)|
 1,109,106,105,1,0,0,0,0,128,0,-1--1--1,,1|(1435,533)|
 1,110,80,105,0,0,0,0,0,128,0,-1--1--1,,1|(1181,593)|
 1,111,139,106,1,0,0,0,0,128,0,-1--1--1,,1|(1264,619)|
 10,112,Dead frac of confirmed cases,1533,421,61,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,113,28,112,1,0,0,0,0,128,0,-1--1--1,,1|(1333,308)|
 1,114,105,112,1,0,0,0,0,128,0,-1--1--1,,1|(1512,546)|
-10,115,Hospitalized frac of severe,1203,145,61,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
 10,116,Hospitalized,763,255,45,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,117,3,174,0,0,0,0,0,128,0,-1--1--1,,1|(873,364)|
-1,118,115,116,1,0,0,0,0,128,0,-1--1--1,,1|(992,220)|
 1,119,116,60,1,0,0,0,0,128,0,-1--1--1,,1|(699,228)|
-1,120,115,53,0,0,0,0,0,128,0,-1--1--1,,1|(1120,246)|
 12,121,0,1831,943,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Dead
 12,122,0,2222,575,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
@@ -823,7 +765,6 @@ Testing_of_symptomatics
 1,136,133,128,0,0,0,0,0,128,0,-1--1--1,,1|(88,947)|
 10,137,Reltv testing of asymptos,897,756,54,18,8,3,0,2,-1,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
 1,138,137,83,1,0,0,0,0,128,0,-1--1--1,,1|(913,711)|
-10,139,Testing of symptos,1065,733,47,23,8,131,0,0,0,0,0,0,0,0,0,0,0,0
 1,140,139,83,1,0,0,0,0,128,0,-1--1--1,,1|(998,711)|
 1,141,67,68,0,0,0,0,2,129,0,-1--1--1,|12||0-0-0,1|(731,976)|
 10,142,Ventilator utilization,724,113,35,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
@@ -857,12 +798,10 @@ Testing_of_symptomatics
 1,170,167,95,0,0,0,0,0,128,0,-1--1--1,,1|(150,698)|
 1,171,96,154,0,0,0,0,0,128,0,-1--1--1,,1|(258,703)|
 1,172,167,154,0,0,0,0,0,128,0,-1--1--1,,1|(239,746)|
-10,173,Severe frac of infected sympto,643,325,58,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
 10,174,Severe,833,327,27,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,175,173,174,1,0,0,0,0,128,0,-1--1--1,,1|(741,310)|
 1,176,174,116,0,0,0,0,0,128,0,-1--1--1,,1|(802,295)|
 1,177,173,53,1,0,0,0,0,128,0,-1--1--1,,1|(875,297)|
-10,178,Severe frac of infected sympto,1492,166,62,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
 10,179,Avg time on ventilator,612,75,44,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
 1,180,179,60,0,0,0,0,0,128,0,-1--1--1,,1|(623,125)|
 10,181,Time to recovery or death,530,128,66,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
@@ -871,21 +810,6 @@ Testing_of_symptomatics
 10,184,Hospital bed utilization,624,260,47,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,185,116,184,0,0,0,0,0,128,0,-1--1--1,,1|(701,256)|
 1,186,183,184,0,0,0,0,0,128,0,-1--1--1,,1|(551,229)|
-10,187,Cumulative hospitalized,1492,84,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
-12,188,48,1307,79,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,189,191,187,4,0,0,22,0,0,0,-1--1--1,,1|(1406,79)|
-1,190,191,188,100,0,0,22,0,0,0,-1--1--1,,1|(1338,79)|
-11,191,48,1366,79,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,192,Hospital admissions,1366,105,43,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,193,Becoming symptomatic,1174,59,52,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-1,194,193,192,0,0,0,0,0,128,0,-1--1--1,,1|(1267,80)|
-1,195,178,192,0,0,0,0,0,128,0,-1--1--1,,1|(1435,138)|
-1,196,115,192,0,0,0,0,0,128,0,-1--1--1,,1|(1286,124)|
-10,197,Confirmed frac of past infections,1484,294,64,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,198,106,197,0,0,0,0,0,128,0,-1--1--1,,1|(1450,388)|
-1,199,87,197,0,0,0,0,0,128,0,-1--1--1,,1|(1377,340)|
-10,200,Testing of symptos,1540,227,41,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-1,201,200,197,1,0,0,0,0,128,0,-1--1--1,,1|(1524,257)|
 10,202,Testing of symptos initial,1167,867,52,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
 10,203,Max testing of symptos,1079,922,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
 1,204,203,139,0,0,0,0,0,128,0,-1--1--1,,1|(1072,836)|
@@ -918,33 +842,6 @@ Testing_of_symptomatics
 A model of Covid-19 in the US with endogenous testing, containment measures, and social distancing
 12,231,0,350,26,210,13,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-128-0,0,0,0,0,0,0
 Jack Homer, PhD, March 24, 2020 v2, via metasd.com
-\\\---/// Sketch information - do not modify anything except names
-V300  Do not put anything below this section - it will be ignored
-*Goodness of fit
-$192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
-10,1,Cumul confirmed cases data,146,113,62,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
-10,2,Dead data,145,267,39,10,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
-10,3,Dead frac of confirmed cases data,323,169,61,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,4,1,3,0,0,0,0,0,128,0,-1--1--1,,1|(225,137)|
-1,5,2,3,0,0,0,0,0,128,0,-1--1--1,,1|(211,229)|
-12,6,0,1310,276,272,228,3,188,0,0,1,0,0,0,0,0,0,0,0,0
-Dead_frac_of_cases_vs_data
-12,7,0,1317,765,257,200,3,188,0,0,1,0,0,0,0,0,0,0,0,0
-Testing_of_symptomatics_hist
-10,8,Ability of ventilator to reduce fatality,158,890,66,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,9,Contacts per asympto no soc dist,157,592,73,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,10,Infection probability per contact initial,163,491,70,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,11,Reltv contacts per sympto,136,686,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-12,12,0,1852,773,235,201,3,188,0,0,1,0,0,0,0,0,0,0,0,0
-Basic_reproduction_number
-10,13,Severe frac of infected sympto,158,782,58,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,14,Cumulative cases for max testing,147,986,85,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,15,Testing of symptos initial,342,893,52,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,16,Max testing of symptos,349,993,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-12,17,0,1858,300,235,201,3,188,0,0,1,0,0,0,0,0,0,0,0,0
-Cumul_infections_from_overseas
-10,18,Dead frac of confirmed cases data,532,189,61,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
-1,19,18,2,0,0,0,0,0,64,0,-1--1--1,,1|(334,228)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Economic effects
@@ -1023,8 +920,8 @@ Restriction_loosening_due_to_GDP_loss
 1,66,43,64,0,0,0,0,0,128,0,-1--1--1,,1|(887,498)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
-*View 4
-$0-0-0,0,|0||0-0-0|0-0-0|0-0-0|0-0-0|0-0-0|96,96,75,0
+*View 3
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 ///---\\\
 :GRAPH Infections_picked_up_overseas
 :TITLE Infections picked up overseas
@@ -1834,7 +1731,7 @@ $0-0-0,0,|0||0-0-0|0-0-0|0-0-0|0-0-0|0-0-0|96,96,75,0
 22:month,months,mos
 23:0
 15:0,0,0,0,0,0
-19:75,3
+19:75,0
 27:0,
 34:0,
 42:1
