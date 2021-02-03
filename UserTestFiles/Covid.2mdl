@@ -9,102 +9,118 @@ Restriction loosening at 10pct GDP loss=
 	Lookup for restriction loosening due to GDP loss(0.1/GDP frac loss for 50pct restriction loosening\
 		)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Cumul combined loss billions=
 	Cumul GDP loss billions + Cumul lost life value billions
 	~	bdollars
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Ability of ventilator to reduce fatality=
 	0.5
 	~	dmnl [0.25,0.75,0.05]
-	~	V1: 0.4
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 0.4
 	|
 
 Adult ventilator capacity=
 	120000
 	~	popn [0,300000,10000]
-	~	60k active + some frac of 100k storage
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:	60k active + some frac of 100k storage
 	|
 
 Assessment time for containment=
 	2
 	~	months [0,12,0.5]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Avg lost life value per fatality=
 	Valuation of year of life lost * Avg yrs of life lost per fatality
 	~	dollars/popn
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Avg time on ventilator=
 	0.5
 	~	months [0,300000,10000]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Avg yrs of life lost per fatality=
 	16
 	~	years
-	~	Zhou et al Lance 3/12/20 finds avg age of non-survivors = 69.  In US, life \
-		expectancy at 69 = 15 yrs male, 17 yrs female.
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:	Zhou et al Lance 3/12/20 finds \
+		avg age of non-survivors = 69.  In US, life expectancy at 69 = 15 yrs \
+		male, 17 yrs female.
 	|
 
 Basic reproduction number=
 	ZIDZ(New infections,Infected) * (Incubation period+Time to recovery or death)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Becoming symptomatic=
 	DELAY1I(New infections, Incubation period, 0)
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Confirmed current cases=
 	Infected asympto*Testing of asymptos + Infected sympto*Testing of symptos
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Confirmed frac of past infections=
 	XIDZ(Confirmed past cases,Past infections,Testing of symptos)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Confirmed new cases=
 	Confirmed current cases/(Incubation period+Time to recovery or death)
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Confirmed past cases=
 	Dead + Recovered*Testing of symptos
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Contacts per asympto infected=
 	Contacts per asympto no soc dist * (1-Social distancing)
 	~	1/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Contacts per asympto no soc dist=
 	120
 	~	1/Month [50,150,5]
-	~	V1: 100
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 100
 	|
 
 Contacts per sympto infected=
 	Contacts per sympto no soc dist * (1-Social distancing)
 	~	1/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Contacts per sympto no soc dist=
 	Contacts per asympto no soc dist * Reltv contacts per sympto
 	~	1/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Containment measures=
 	Containment measures before GDP loss * (1-Restriction loosening due to GDP loss)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Containment measures before GDP loss=
 	IF THEN ELSE(Time<Time of vaccine availability, Lookup for containment measures(Recent cases affecting containment\
@@ -112,131 +128,152 @@ Containment measures before GDP loss=
 	Recent cases for 50pct containment measures
 	), 0)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Cumul GDP loss billions= INTEG (
 	GDP loss billions,
 		0)
 	~	bdollars
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
-Cumul infect from overseas= INTEG (
-	Infections picked up overseas,
-		0)
+Cumul infect from overseas=
+	Infections picked up overseas
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Cumul lost life value billions= INTEG (
 	Lost life value billions,
 		0)
 	~	bdollars
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Cumulative cases for max testing=
 	55000
 	~	popn [0,100000,5000]
-	~	V2a: 50k; v2b: 40k
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V2a: 50k; v2b: 40k
 	|
 
 Cumulative confirmed cases=
 	Confirmed current cases + Confirmed past cases
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Cumulative hospitalized= INTEG (
 	Hospital admissions,
 		0)
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Current cases for 50pct social distancing=
 	200000
 	~	popn [0,1e+06,100000]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Dead= INTEG (
 	Fatalities,
 		0)
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Dead frac of confirmed cases=
 	ZIDZ(Dead, Cumulative confirmed cases)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Dead frac of past infections=
 	ZIDZ(Dead, Past infections)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Delay time in social distancing=
 	0.25
 	~	Month [0,1,0.125]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Delay time in testing=
 	0.25
 	~	Month [0,1,0.125]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Dollars per billion dollars=
 	1e+09
 	~	dollars/bdollars
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Effect of vaccine on infection=
 	0.2
 	~	dmnl [0,1,0.05]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Effect of vaccine on infection probability=
 	IF THEN ELSE(Time<Time of vaccine availability, 1, Effect of vaccine on infection)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Extent of restriction=
 	Social distancing + (1-Social distancing)*Containment measures
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Fatal frac of sympto=
 	Severe frac of infected sympto*( 1 - Hospitalized frac of severe +  Hospitalized frac of severe\
 		*Frac of hospitalized needing ventilator*(1 - Ability of ventilator to reduce fatality\
 		*Ventilator relative availability))
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Fatalities=
 	Recovery or death * Fatal frac of sympto
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Frac of hospitalized needing ventilator=
 	0.2
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 GDP billions per yr reference=
 	Total popn reference * GDP per capita per yr reference / Dollars per billion dollars
 	~	bdollars/year
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 GDP loss fraction=
 	SMOOTHI(GDP loss fraction if full restriction*Extent of restriction, GDP impact time\
 		, 0)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 GDP frac loss for 50pct restriction loosening=
 	0.25
 	~	dmnl [0,0.5,0.05]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 GDP loss fraction if full restriction=
 	0.15
 	~	dmnl
-	~	See: \
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:	See: \
 		https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/\
 		our-insights/safeguarding-our-lives-and-our-livelihoods-the-imperative-of-o\
 		ur-time.  McKinsey estimates 13% loss by 2020Q3 in their "muted recovery" \
@@ -246,291 +283,342 @@ GDP loss fraction if full restriction=
 GDP impact time=
 	1
 	~	Month
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 GDP loss billions=
 	GDP billions per yr reference * GDP loss fraction / Months per year
 	~	bdollars/Month
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 GDP per capita per yr reference=
 	67000
 	~	dollars/popn/year
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Hospital admissions=
 	Becoming symptomatic * Severe frac of infected sympto * Hospitalized frac of severe
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
-Hospital bed capacity=
+Hospital bed capacity HELLO=
 	900000
 	~	popn [0,300000,10000]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Hospital bed utilization=
-	MIN(1, Hospitalized/Hospital bed capacity)
+	MIN(1, Hospitalized/Hospital bed capacity HELLO)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Hospitalized=
 	Severe * Hospitalized frac of severe
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Hospitalized frac of severe=
 	1
 	~	dmnl [0,1,0.05]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Hospitalized needing ventilator=
 	Hospitalized * Frac of hospitalized needing ventilator * (Avg time on ventilator/Time to recovery or death\
 		)
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Incubation period=
 	0.18
 	~	months [0,0.5,0.01]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Infected=
 	Infected asympto + Infected sympto
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Infected asympto= INTEG (
 	New infections-Becoming symptomatic,
 		0)
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Infected sympto= INTEG (
 	Becoming symptomatic-Fatalities-Recoveries,
 		0)
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Infection probability per contact=
 	Infection probability per contact initial * Effect of vaccine on infection probability
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Infection probability per contact initial=
 	0.105
 	~	dmnl [0,0.2,0.005]
-	~	v1: .22, v2: .22
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:	v1: .22, v2: .22
 	|
 
 Infections picked up overseas=
-	Input series for infections picked up overseas(Time)
+	Input series for infections picked up overseas CHANGED(Time)
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Infectious contacts=
 	Infected sympto*Contacts per sympto infected + Infected asympto*Reltv infectiousness of asymptos\
 		*Contacts per asympto infected
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Infectious contacts with susceptibles=
 	Infectious contacts * Susceptible fraction of popn * (1-Containment measures)
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
-Input series for infections picked up overseas(
-	[(0,0)-(4,300)],(0,0),(0.75,0),(2,300),(3.25,0),(4,0))
+Input series for infections picked up overseas CHANGED(
+	[(0,0)-(4,200)],(0,0),(0.75,0),(2,300),(3.25,0),(4,0))
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Lookup for containment measures(
 	[(0,0)-(3,1)],(0,0),(0.5,0.27),(1,0.5),(1.5,0.67),(2,0.8),(2.5,0.87),(3,0.9))
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Lookup for restriction loosening due to GDP loss(
 	[(0,0)-(3,1)],(0,0),(0.5,0.27),(1,0.5),(1.5,0.67),(2,0.8),(2.5,0.87),(3,0.9))
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Lookup for social distancing(
 	[(0,0)-(3,1)],(0,0),(0.5,0.27),(1,0.5),(1.5,0.67),(2,0.8),(2.5,0.87),(3,0.9))
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Lookup for testing(
 	[(0,0)-(1,1)],(0,0),(0.2,0.3),(0.4,0.55),(0.6,0.75),(0.8,0.9),(1,1))
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Lost life value billions=
 	Fatalities * Avg lost life value per fatality / Dollars per billion dollars
 	~	bdollars/Month
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Max testing of symptos=
 	0.8
 	~	dmnl [0.3,1,0.05]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Months per year=
 	12
 	~	months/year
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 New infections=
 	Infections picked up overseas + New infections domestic
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 New infections domestic=
 	Infectious contacts with susceptibles * Infection probability per contact
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Past infections=
 	Dead+Recovered
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Recent cases affecting containment=
 	SMOOTH(Confirmed new cases,Assessment time for containment) * Assessment time for containment
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Recent cases for 50pct containment measures=
 	400000
 	~	popn [0,2e+06,100000]
-	~	V1: 300000
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 300000
 	|
 
 Recovered= INTEG (
 	Recoveries,
 		0)
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Recoveries=
 	Recovery or death * (1-Fatal frac of sympto)
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Recovery or death=
 	DELAY1I(Becoming symptomatic, Time to recovery or death, 0)
 	~	popn/Month
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Reltv contacts per sympto=
 	0.5
 	~	dmnl [0,1,0.05]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Reltv infectiousness of asymptos=
 	0.5
 	~	dmnl [0,100,5]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Reltv testing of asymptos=
 	0.15
 	~	dmnl [0,1,0.05]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Restriction loosening due to GDP loss=
 	Lookup for restriction loosening due to GDP loss(SMOOTH(GDP loss fraction/GDP frac loss for 50pct restriction loosening\
 		, Time to loosen restrictions due to GDP loss))
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Severe=
 	Infected sympto * Severe frac of infected sympto
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Severe frac of infected sympto=
 	0.16
 	~	dmnl [0,0.3,0.005]
-	~	V2a: 0.14; v2b: .155
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V2a: 0.14; v2b: .155
 	|
 
 Social distancing=
 	Social distancing before GDP loss * (1-Restriction loosening due to GDP loss)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Social distancing before GDP loss=
 	Lookup for social distancing(SMOOTH(Confirmed current cases/Current cases for 50pct social distancing\
 		,Delay time in social distancing))
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Susceptible= INTEG (
 	-New infections,
 		Total popn reference)
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Susceptible fraction of popn=
 	Susceptible/Total popn
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Testing of asymptos=
 	Reltv testing of asymptos * Testing of symptos
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Testing of symptos=
 	Testing of symptos initial + (Max testing of symptos - Testing of symptos initial)*Lookup for testing\
 		(SMOOTHI(Cumulative confirmed cases
 	/Cumulative cases for max testing,Delay time in testing, 0))
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Testing of symptos initial=
 	0.18
 	~	dmnl [0,0.4,0.01]
-	~	V1: 0.4
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 0.4
 	|
 
 Time of vaccine availability=
 	15
 	~	Month [0,24,1]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Time to loosen restrictions due to GDP loss=
 	0.5
 	~	Month
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Time to recovery or death=
 	0.37
 	~	months [0,1,0.01]
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Total popn=
 	Total popn reference - Dead
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Total popn reference=
 	3.3e+08
 	~	popn
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Valuation of year of life lost=
 	100000
 	~	dollars/popn/year
-	~		|
+	~	<[VIEW]>: Economic effects <[DESCRIPTION]>:
+	|
 
 Ventilator relative availability=
 	MIN(1, XIDZ(Adult ventilator capacity,Hospitalized needing ventilator,1))
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 Ventilator utilization=
 	MIN(1, Hospitalized needing ventilator/Adult ventilator capacity)
 	~	dmnl
-	~		|
+	~	<[VIEW]>: Main view <[DESCRIPTION]>:
+	|
 
 ********************************************************
 	.Control
@@ -543,7 +631,7 @@ Combined loss billions=
 	~	bdollars/Month
 	~		|
 
-FINAL TIME  = 24
+FINAL TIME  = 30
 	~	Month
 	~	The final time for the simulation.
 	|
@@ -554,7 +642,7 @@ INITIAL TIME  = 0
 	|
 
 SAVEPER  = 
-        TIME STEP
+        TIME STEP 
 	~	Month [0,?]
 	~	The frequency with which output is stored.
 	|
@@ -570,13 +658,14 @@ TIME STEP  = 0.03125
 		Historical data
 	|
 
-Cumul confirmed cases data:RAW::=
-	GET XLS DATA('Covid19US data.xlsx','Data','c','d3')
+Dead data  = A FUNCTION OF( Dead frac of confirmed cases data) ~~|
+Dead data:RAW::=
+	GET XLS DATA('Covid19US data.xlsx','Data','c','e3')
 	~	popn
 	~		|
 
-Dead data:RAW::=
-	GET XLS DATA('Covid19US data.xlsx','Data','c','e3')
+Cumul confirmed cases data:RAW::=
+	GET XLS DATA('Covid19US data.xlsx','Data','c','d3')
 	~	popn
 	~		|
 
@@ -589,275 +678,273 @@ Dead frac of confirmed cases data:RAW::=
 V300  Do not put anything below this section - it will be ignored
 *Main view
 $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
-10,1,Susceptible,451,481,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
-10,2,Infected asympto,700,482,47,33,3,131,0,0,0,0,0,0,0,0,0,0,0,0
-10,3,Infected sympto,928,482,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
-1,4,6,2,4,0,0,22,0,0,0,-1--1--1,,1|(614,481)|
-1,5,6,1,100,0,0,22,0,0,0,-1--1--1,,1|(532,481)|
-11,6,904,569,481,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,7,New infections,569,499,53,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,8,15,3,4,0,0,22,0,0,0,-1--1--1,,1|(845,481)|
-1,9,15,2,100,0,0,22,0,0,0,-1--1--1,,1|(774,481)|
-10,10,Recovered,1191,489,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
-1,11,13,10,4,0,0,22,0,0,0,-1--1--1,,1|(1095,482)|
-1,12,13,3,100,0,0,22,0,0,0,-1--1--1,,1|(1009,482)|
-11,13,1080,1045,482,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,14,Recoveries,1045,500,42,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-11,15,2290,808,481,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,16,Becoming symptomatic,808,507,47,18,40,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,17,213,7,1,0,0,0,0,128,0,-1--1--1,,1|(440,387)|
-10,18,New infections domestic,481,578,54,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,19,Contacts per asympto infected,556,745,62,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,20,Contacts per sympto infected,834,685,58,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,21,Susceptible fraction of popn,338,603,57,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,22,Total popn,248,470,39,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,23,1,21,0,0,0,0,0,128,0,-1--1--1,,1|(392,543)|
-1,24,22,21,1,0,0,0,0,128,0,-1--1--1,,1|(269,532)|
-1,25,21,39,1,0,0,0,0,128,0,-1--1--1,,1|(441,645)|
-1,26,18,7,0,0,0,0,0,128,0,-1--1--1,,1|(523,539)|
-10,27,Infection probability per contact,305,693,53,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,28,Dead,1157,343,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
-1,29,31,28,4,0,0,22,0,0,0,-1--1--1,,1|(1058,348)|
-1,30,31,3,100,0,0,22,0,0,0,-1--1--1,,1|(928,348)|
-11,31,1058,1005,348,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,32,Fatalities,1005,366,34,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,33,Adult ventilator capacity,817,127,54,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,34,Ability of ventilator to reduce fatality,1053,220,66,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,35,Ventilator relative availability,924,181,64,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,36,33,35,0,0,0,0,0,128,0,-1--1--1,,1|(863,150)|
-1,37,34,53,1,0,0,0,0,128,0,-1--1--1,,1|(1055,289)|
-1,38,27,18,1,0,0,0,0,128,0,-1--1--1,,1|(403,643)|
-10,39,Infectious contacts with susceptibles,554,659,67,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,40,39,18,0,0,0,0,0,128,0,-1--1--1,,1|(522,623)|
-10,41,Incubation period,876,586,37,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,42,41,16,1,0,0,0,0,128,0,-1--1--1,,1|(812,531)|
-10,43,Frac of hospitalized needing ventilator,845,267,72,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,44,Time,291,172,29,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-10,45,Total popn reference,218,389,39,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,46,Dead,115,454,31,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-1,47,46,22,0,0,0,0,0,128,0,-1--1--1,,1|(170,460)|
-1,48,45,22,0,0,0,0,0,128,0,-1--1--1,,1|(231,426)|
-1,49,35,53,1,0,0,0,0,128,0,-1--1--1,,1|(938,241)|
-1,50,45,1,0,0,0,0,0,64,1,-1--1--1,,1|(321,429)|
-10,51,Time to recovery or death,1277,562,61,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,52,51,54,0,0,0,0,0,128,0,-1--1--1,,1|(1197,561)|
-10,53,Fatal frac of sympto,1027,428,49,20,8,131,0,0,0,0,0,0,0,0,0,0,0,0
-10,54,Recovery or death,1122,561,44,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,55,53,14,0,0,0,0,0,128,0,-1--1--1,,1|(1035,462)|
-1,56,53,32,0,0,0,0,0,128,0,-1--1--1,,1|(1016,398)|
-1,57,54,14,0,0,0,0,0,128,0,-1--1--1,,1|(1084,530)|
-1,58,54,32,1,0,0,0,0,128,0,-1--1--1,,1|(1084,457)|
-1,59,43,53,1,0,0,0,0,128,0,-1--1--1,,1|(896,324)|
-10,60,Hospitalized needing ventilator,640,258,65,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,61,43,60,0,0,0,0,0,128,0,-1--1--1,,1|(745,262)|
-1,62,60,35,0,0,0,0,0,128,0,-1--1--1,,1|(775,221)|
-10,63,Infected,792,427,29,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,64,2,63,0,0,0,0,0,128,0,-1--1--1,,1|(755,449)|
-1,65,3,63,0,0,0,0,0,128,0,-1--1--1,,1|(852,452)|
-10,66,Current cases for 50pct social distancing,990,1098,63,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,67,Confirmed current cases,787,1117,54,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-10,68,Social distancing before GDP loss,667,961,63,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,69,44,213,0,0,0,0,0,128,0,-1--1--1,,1|(267,224)|
-10,70,Infectious contacts,700,636,35,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,71,2,70,0,0,0,0,0,128,0,-1--1--1,,1|(700,559)|
-1,72,3,70,0,0,0,0,0,128,0,-1--1--1,,1|(809,562)|
-1,73,20,70,0,0,0,0,0,128,0,-1--1--1,,1|(766,659)|
-1,74,19,70,0,0,0,0,0,128,0,-1--1--1,,1|(621,694)|
-1,75,70,39,0,0,0,0,0,128,0,-1--1--1,,1|(649,643)|
-10,76,Contacts per asympto no soc dist,546,880,73,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,77,Contacts per sympto no soc dist,724,747,68,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,78,77,20,0,0,0,0,0,128,0,-1--1--1,,1|(772,719)|
-1,79,76,19,0,0,0,0,0,128,0,-1--1--1,,1|(550,819)|
-10,80,Confirmed current cases,979,644,49,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,81,3,80,1,0,0,0,2,128,0,-1--1--1,|12||0-0-0,1|(965,561)|
-1,82,2,80,1,0,0,0,2,128,0,-1--1--1,|12||0-0-0,1|(820,628)|
-10,83,Testing of asymptos,950,737,42,23,8,131,0,0,-1,0,0,0,0,0,0,0,0,0
-1,84,83,80,0,0,0,0,0,128,0,-1--1--1,,1|(962,694)|
-1,85,139,80,0,0,0,0,0,128,0,-1--1--1,,1|(1023,726)|
-10,86,Dead frac of past infections,1329,252,64,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,87,Past infections,1303,442,53,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,88,10,87,0,0,0,0,0,128,0,-1--1--1,,1|(1254,462)|
-1,89,28,87,0,0,0,0,0,128,0,-1--1--1,,1|(1240,399)|
-1,90,28,86,0,0,0,0,0,128,0,-1--1--1,,1|(1244,296)|
-1,91,87,86,0,0,0,0,0,128,0,-1--1--1,,1|(1314,357)|
-10,92,Lookup for social distancing,873,1005,63,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
-1,93,66,68,0,0,0,0,0,128,0,-1--1--1,,1|(824,1028)|
-1,94,92,68,0,0,0,0,0,128,0,-1--1--1,,1|(777,984)|
-10,95,Effect of vaccine on infection probability,147,695,71,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,96,Time,223,759,29,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-10,97,Infection probability per contact initial,156,586,70,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,98,97,27,1,0,0,0,0,128,0,-1--1--1,,1|(237,629)|
-1,99,95,27,1,0,0,0,0,128,0,-1--1--1,,1|(248,677)|
-10,100,Reltv contacts per sympto,709,827,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,101,76,77,1,0,0,0,0,128,0,-1--1--1,,1|(616,811)|
-1,102,100,77,0,0,0,0,0,128,0,-1--1--1,,1|(714,793)|
-1,103,225,20,1,0,0,0,0,128,0,-1--1--1,,1|(794,837)|
-1,104,225,19,1,0,0,0,0,128,0,-1--1--1,,1|(586,816)|
-10,105,Cumulative confirmed cases,1410,683,61,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,106,Confirmed past cases,1423,538,57,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,107,10,106,0,0,0,0,0,128,0,-1--1--1,,1|(1297,510)|
-1,108,28,106,1,0,0,0,0,128,0,-1--1--1,,1|(1369,431)|
-1,109,106,105,1,0,0,0,0,128,0,-1--1--1,,1|(1435,601)|
-1,110,80,105,0,0,0,0,0,128,0,-1--1--1,,1|(1181,661)|
-1,111,139,106,1,0,0,0,0,128,0,-1--1--1,,1|(1264,687)|
-10,112,Dead frac of confirmed cases,1533,489,61,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,113,28,112,1,0,0,0,0,128,0,-1--1--1,,1|(1333,376)|
-1,114,105,112,1,0,0,0,0,128,0,-1--1--1,,1|(1512,614)|
-10,115,Hospitalized frac of severe,1203,213,61,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,116,Hospitalized,763,323,45,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,117,3,174,0,0,0,0,0,128,0,-1--1--1,,1|(873,432)|
-1,118,115,116,1,0,0,0,0,128,0,-1--1--1,,1|(992,288)|
-1,119,116,60,1,0,0,0,0,128,0,-1--1--1,,1|(699,296)|
-1,120,115,53,0,0,0,0,0,128,0,-1--1--1,,1|(1120,314)|
-12,121,0,1831,1011,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+10,1,Susceptible,451,413,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Infected asympto,700,414,47,33,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,Infected sympto,928,414,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,4,6,2,4,0,0,22,0,0,0,-1--1--1,,1|(614,413)|
+1,5,6,1,100,0,0,22,0,0,0,-1--1--1,,1|(532,413)|
+11,6,904,569,413,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,7,New infections,569,431,53,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,15,3,4,0,0,22,0,0,0,-1--1--1,,1|(845,413)|
+1,9,15,2,100,0,0,22,0,0,0,-1--1--1,,1|(774,413)|
+10,10,Recovered,1191,421,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,11,13,10,4,0,0,22,0,0,0,-1--1--1,,1|(1095,414)|
+1,12,13,3,100,0,0,22,0,0,0,-1--1--1,,1|(1009,414)|
+11,13,1080,1045,414,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,14,Recoveries,1045,432,42,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+11,15,2290,808,413,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,16,Becoming symptomatic,808,439,47,18,40,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,17,213,7,1,0,0,0,0,128,0,-1--1--1,,1|(440,319)|
+10,18,New infections domestic,481,510,54,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,19,Contacts per asympto infected,556,677,62,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,20,Contacts per sympto infected,834,617,58,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,21,Susceptible fraction of popn,338,535,57,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,22,Total popn,248,402,39,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,23,1,21,0,0,0,0,0,128,0,-1--1--1,,1|(392,475)|
+1,24,22,21,1,0,0,0,0,128,0,-1--1--1,,1|(269,464)|
+1,25,21,39,1,0,0,0,0,128,0,-1--1--1,,1|(441,577)|
+1,26,18,7,0,0,0,0,0,128,0,-1--1--1,,1|(523,471)|
+10,27,Infection probability per contact,305,625,53,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,28,Dead,1157,275,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,29,31,28,4,0,0,22,0,0,0,-1--1--1,,1|(1058,280)|
+1,30,31,3,100,0,0,22,0,0,0,-1--1--1,,1|(928,280)|
+11,31,1058,1005,280,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,32,Fatalities,1005,298,34,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,33,Adult ventilator capacity,817,59,54,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,34,Ability of ventilator to reduce fatality,1053,152,66,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,35,Ventilator relative availability,924,113,64,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,36,33,35,0,0,0,0,0,128,0,-1--1--1,,1|(863,82)|
+1,37,34,53,1,0,0,0,0,128,0,-1--1--1,,1|(1055,221)|
+1,38,27,18,1,0,0,0,0,128,0,-1--1--1,,1|(403,575)|
+10,39,Infectious contacts with susceptibles,554,591,67,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,40,39,18,0,0,0,0,0,128,0,-1--1--1,,1|(522,555)|
+10,41,Incubation period,876,518,37,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,42,41,16,1,0,0,0,0,128,0,-1--1--1,,1|(812,463)|
+10,43,Frac of hospitalized needing ventilator,845,199,72,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,44,Time,291,104,29,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+10,45,Total popn reference,100,298,46,21,8,3,0,10,0,0,0,0,-1--1--1,0-0-0,|14||255-0-0,0,0,0,0,0,0
+10,46,Dead,115,386,31,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+1,47,46,22,0,0,0,0,0,128,0,-1--1--1,,1|(170,392)|
+1,48,45,22,0,0,0,0,0,128,0,-1--1--1,,1|(175,351)|
+1,49,35,53,1,0,0,0,0,128,0,-1--1--1,,1|(938,173)|
+1,50,45,1,0,0,0,0,0,64,1,-1--1--1,,1|(266,352)|
+10,51,Time to recovery or death,1277,494,61,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,52,51,54,0,0,0,0,0,128,0,-1--1--1,,1|(1197,493)|
+10,53,Fatal frac of sympto,1027,360,49,20,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,54,Recovery or death,1122,493,44,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,55,53,14,0,0,0,0,0,128,0,-1--1--1,,1|(1035,394)|
+1,56,53,32,0,0,0,0,0,128,0,-1--1--1,,1|(1016,330)|
+1,57,54,14,0,0,0,0,0,128,0,-1--1--1,,1|(1084,462)|
+1,58,54,32,1,0,0,0,0,128,0,-1--1--1,,1|(1084,389)|
+1,59,43,53,1,0,0,0,0,128,0,-1--1--1,,1|(896,256)|
+10,60,Hospitalized needing ventilator,640,190,65,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,61,43,60,0,0,0,0,0,128,0,-1--1--1,,1|(745,194)|
+1,62,60,35,0,0,0,0,0,128,0,-1--1--1,,1|(775,153)|
+10,63,Infected,792,359,29,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,64,2,63,0,0,0,0,0,128,0,-1--1--1,,1|(755,381)|
+1,65,3,63,0,0,0,0,0,128,0,-1--1--1,,1|(852,384)|
+10,66,Current cases for 50pct social distancing,990,1030,63,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,67,Confirmed current cases,787,1049,54,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+10,68,Social distancing before GDP loss,667,893,63,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,69,44,213,0,0,0,0,0,128,0,-1--1--1,,1|(267,156)|
+10,70,Infectious contacts,700,568,35,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,71,2,70,0,0,0,0,0,128,0,-1--1--1,,1|(700,491)|
+1,72,3,70,0,0,0,0,0,128,0,-1--1--1,,1|(809,494)|
+1,73,20,70,0,0,0,0,0,128,0,-1--1--1,,1|(766,591)|
+1,74,19,70,0,0,0,0,0,128,0,-1--1--1,,1|(621,626)|
+1,75,70,39,0,0,0,0,0,128,0,-1--1--1,,1|(649,575)|
+10,76,Contacts per asympto no soc dist,546,812,73,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,77,Contacts per sympto no soc dist,724,679,68,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,78,77,20,0,0,0,0,0,128,0,-1--1--1,,1|(772,651)|
+1,79,76,19,0,0,0,0,0,128,0,-1--1--1,,1|(550,751)|
+10,80,Confirmed current cases,979,576,49,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,81,3,80,1,0,0,0,2,128,0,-1--1--1,|12||0-0-0,1|(965,493)|
+1,82,2,80,1,0,0,0,2,128,0,-1--1--1,|12||0-0-0,1|(820,560)|
+10,83,Testing of asymptos,950,669,42,23,8,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,84,83,80,0,0,0,0,0,128,0,-1--1--1,,1|(962,626)|
+1,85,139,80,0,0,0,0,0,128,0,-1--1--1,,1|(1023,658)|
+10,86,Dead frac of past infections,1329,184,64,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,87,Past infections,1303,374,53,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,88,10,87,0,0,0,0,0,128,0,-1--1--1,,1|(1254,394)|
+1,89,28,87,0,0,0,0,0,128,0,-1--1--1,,1|(1240,331)|
+1,90,28,86,0,0,0,0,0,128,0,-1--1--1,,1|(1244,228)|
+1,91,87,86,0,0,0,0,0,128,0,-1--1--1,,1|(1314,289)|
+10,92,Lookup for social distancing,873,937,63,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
+1,93,66,68,0,0,0,0,0,128,0,-1--1--1,,1|(824,960)|
+1,94,92,68,0,0,0,0,0,128,0,-1--1--1,,1|(777,916)|
+10,95,Effect of vaccine on infection probability,147,627,71,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,96,Time,223,691,29,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+10,97,Infection probability per contact initial,156,518,70,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,98,97,27,1,0,0,0,0,128,0,-1--1--1,,1|(237,561)|
+1,99,95,27,1,0,0,0,0,128,0,-1--1--1,,1|(248,609)|
+10,100,Reltv contacts per sympto,709,759,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,101,76,77,1,0,0,0,0,128,0,-1--1--1,,1|(616,743)|
+1,102,100,77,0,0,0,0,0,128,0,-1--1--1,,1|(714,725)|
+1,103,225,20,1,0,0,0,0,128,0,-1--1--1,,1|(794,769)|
+1,104,225,19,1,0,0,0,0,128,0,-1--1--1,,1|(586,748)|
+10,105,Cumulative confirmed cases,1410,615,61,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,106,Confirmed past cases,1423,470,57,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,107,10,106,0,0,0,0,0,128,0,-1--1--1,,1|(1297,442)|
+1,108,28,106,1,0,0,0,0,128,0,-1--1--1,,1|(1369,363)|
+1,109,106,105,1,0,0,0,0,128,0,-1--1--1,,1|(1435,533)|
+1,110,80,105,0,0,0,0,0,128,0,-1--1--1,,1|(1181,593)|
+1,111,139,106,1,0,0,0,0,128,0,-1--1--1,,1|(1264,619)|
+10,112,Dead frac of confirmed cases,1533,421,61,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,113,28,112,1,0,0,0,0,128,0,-1--1--1,,1|(1333,308)|
+1,114,105,112,1,0,0,0,0,128,0,-1--1--1,,1|(1512,546)|
+10,115,Hospitalized frac of severe,1203,145,61,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,116,Hospitalized,763,255,45,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,117,3,174,0,0,0,0,0,128,0,-1--1--1,,1|(873,364)|
+1,118,115,116,1,0,0,0,0,128,0,-1--1--1,,1|(992,220)|
+1,119,116,60,1,0,0,0,0,128,0,-1--1--1,,1|(699,228)|
+1,120,115,53,0,0,0,0,0,128,0,-1--1--1,,1|(1120,246)|
+12,121,0,1831,943,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Dead
-12,122,0,2222,643,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+12,122,0,2222,575,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Cumulative_confirmed_cases
-12,123,0,1832,284,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+12,123,0,1832,216,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Infected
-12,124,0,1834,647,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+12,124,0,1834,579,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Social_distancing
-12,125,0,2228,1011,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+12,125,0,2228,943,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Dead_frac_of_confirmed_cases
-12,126,0,1444,1011,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+12,126,0,1444,943,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Containment_measures
-12,127,0,2225,282,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+12,127,0,2225,214,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Testing_of_symptomatics
-10,128,Basic reproduction number,125,1054,69,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,129,New infections,70,1148,40,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-10,130,Infected,160,1134,38,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-1,131,130,128,0,0,0,0,0,128,0,-1--1--1,,1|(146,1104)|
-1,132,129,128,0,0,0,0,0,128,0,-1--1--1,,1|(93,1107)|
-10,133,Incubation period,62,987,42,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-10,134,Time to recovery or death,222,982,66,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-1,135,134,128,0,0,0,0,0,128,0,-1--1--1,,1|(179,1013)|
-1,136,133,128,0,0,0,0,0,128,0,-1--1--1,,1|(88,1015)|
-10,137,Reltv testing of asymptos,897,824,54,18,8,3,0,2,-1,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,138,137,83,1,0,0,0,0,128,0,-1--1--1,,1|(913,779)|
-10,139,Testing of symptos,1065,801,47,23,8,131,0,0,0,0,0,0,0,0,0,0,0,0
-1,140,139,83,1,0,0,0,0,128,0,-1--1--1,,1|(998,779)|
-1,141,67,68,0,0,0,0,2,129,0,-1--1--1,|12||0-0-0,1|(731,1044)|
-10,142,Ventilator utilization,724,181,35,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,143,33,142,0,0,0,0,0,128,0,-1--1--1,,1|(776,150)|
-1,144,60,142,0,0,0,0,0,128,0,-1--1--1,,1|(676,224)|
-10,145,Reltv infectiousness of asymptos,620,563,61,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,146,145,70,1,0,0,0,0,128,0,-1--1--1,,1|(648,604)|
-10,147,Delay time in social distancing,827,1062,61,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,148,147,68,0,0,0,0,0,128,0,-1--1--1,,1|(752,1015)|
-1,149,105,139,1,0,0,0,2,129,0,-1--1--1,|12||0-0-0,1|(1230,768)|
-10,150,Cumulative cases for max testing,969,927,65,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,151,150,139,0,0,0,0,0,128,0,-1--1--1,,1|(1010,872)|
-10,152,Delay time in testing,878,892,48,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,153,152,139,0,0,0,0,0,128,0,-1--1--1,,1|(959,851)|
-10,154,Containment measures before GDP loss,343,802,62,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,155,154,223,1,0,0,0,0,128,0,-1--1--1,,1|(416,760)|
-10,156,Recent cases for 50pct containment measures,163,890,67,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,157,Assessment time for containment,458,1096,64,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,158,Lookup for containment measures,315,922,45,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
-1,159,156,154,0,0,0,0,0,128,0,-1--1--1,,1|(246,849)|
-1,160,158,154,0,0,0,0,0,128,0,-1--1--1,,1|(326,868)|
-10,161,Confirmed new cases,1113,610,56,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,162,80,161,0,0,0,0,0,128,0,-1--1--1,,1|(1035,629)|
-1,163,51,161,1,0,0,0,0,128,0,-1--1--1,,1|(1203,604)|
-1,164,41,161,0,0,0,0,0,128,0,-1--1--1,,1|(978,595)|
-10,165,Confirmed new cases,307,1105,60,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-1,166,96,95,1,0,0,0,0,128,0,-1--1--1,,1|(196,740)|
-10,167,Time of vaccine availability,153,824,58,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,168,Effect of vaccine on infection,72,770,60,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,169,168,95,0,0,0,0,0,128,0,-1--1--1,,1|(104,737)|
-1,170,167,95,0,0,0,0,0,128,0,-1--1--1,,1|(150,766)|
-1,171,96,154,0,0,0,0,0,128,0,-1--1--1,,1|(258,771)|
-1,172,167,154,0,0,0,0,0,128,0,-1--1--1,,1|(239,814)|
-10,173,Severe frac of infected sympto,643,393,58,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,174,Severe,833,395,27,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,175,173,174,1,0,0,0,0,128,0,-1--1--1,,1|(741,378)|
-1,176,174,116,0,0,0,0,0,128,0,-1--1--1,,1|(802,363)|
-1,177,173,53,1,0,0,0,0,128,0,-1--1--1,,1|(875,365)|
-10,178,Severe frac of infected sympto,1492,234,62,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,179,Avg time on ventilator,612,143,44,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,180,179,60,0,0,0,0,0,128,0,-1--1--1,,1|(623,193)|
-10,181,Time to recovery or death,530,196,66,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,182,181,60,0,0,0,0,0,128,0,-1--1--1,,1|(578,223)|
-10,183,Hospital bed capacity,493,272,47,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,184,Hospital bed utilization,624,328,47,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,185,116,184,0,0,0,0,0,128,0,-1--1--1,,1|(701,324)|
-1,186,183,184,0,0,0,0,0,128,0,-1--1--1,,1|(551,297)|
-10,187,Cumulative hospitalized,1492,152,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
-12,188,48,1307,147,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,189,191,187,4,0,0,22,0,0,0,-1--1--1,,1|(1406,147)|
-1,190,191,188,100,0,0,22,0,0,0,-1--1--1,,1|(1338,147)|
-11,191,48,1366,147,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,192,Hospital admissions,1366,173,43,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,193,Becoming symptomatic,1174,127,52,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-1,194,193,192,0,0,0,0,0,128,0,-1--1--1,,1|(1267,148)|
-1,195,178,192,0,0,0,0,0,128,0,-1--1--1,,1|(1435,206)|
-1,196,115,192,0,0,0,0,0,128,0,-1--1--1,,1|(1286,192)|
-10,197,Confirmed frac of past infections,1484,362,64,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,198,106,197,0,0,0,0,0,128,0,-1--1--1,,1|(1450,456)|
-1,199,87,197,0,0,0,0,0,128,0,-1--1--1,,1|(1377,408)|
-10,200,Testing of symptos,1540,295,41,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-1,201,200,197,1,0,0,0,0,128,0,-1--1--1,,1|(1524,325)|
-10,202,Testing of symptos initial,1167,935,52,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,203,Max testing of symptos,1079,990,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-1,204,203,139,0,0,0,0,0,128,0,-1--1--1,,1|(1072,904)|
-1,205,202,139,0,0,0,0,0,128,0,-1--1--1,,1|(1122,876)|
-10,206,Cumul infect from overseas,368,270,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
-12,207,48,155,273,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,208,212,207,100,0,0,22,0,0,0,-1--1--1,,1|(197,271)|
-1,209,212,206,4,0,0,22,0,0,0,-1--1--1,,1|(279,271)|
-10,210,Input series for infections picked up overseas,153,168,73,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||128-0-0,0,0,0,0,0,0
-1,211,210,213,1,0,0,0,0,128,0,-1--1--1,,1|(178,235)|
-11,212,2356,236,271,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,213,Infections picked up overseas,236,297,61,18,40,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,214,Lookup for testing,1180,881,40,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
-1,215,214,139,0,0,0,0,0,128,0,-1--1--1,,1|(1132,847)|
-10,216,Recent cases affecting containment,379,1007,50,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,217,157,216,0,0,0,0,0,128,0,-1--1--1,,1|(427,1061)|
-1,218,165,216,0,0,0,0,0,128,0,-1--1--1,,1|(335,1066)|
-1,219,216,154,1,0,0,0,0,128,0,-1--1--1,,1|(386,914)|
-1,220,7,16,1,0,0,0,0,128,0,-1--1--1,,1|(673,532)|
-1,221,16,54,1,0,0,0,0,128,0,-1--1--1,,1|(993,556)|
-10,222,Restriction loosening due to GDP loss,560,1036,60,27,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-10,223,Containment measures,444,734,47,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,224,223,39,0,0,0,0,0,128,0,-1--1--1,,1|(492,700)|
-10,225,Social distancing,691,874,38,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,226,68,225,0,0,0,0,0,128,0,-1--1--1,,1|(676,924)|
-1,227,222,225,1,0,0,0,0,128,0,-1--1--1,,1|(577,962)|
-1,228,222,223,1,0,0,0,0,128,0,-1--1--1,,1|(443,864)|
-10,229,GDP frac loss for 50pct restriction loosening,629,1135,68,27,8,2,0,3,0,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
-12,230,0,447,58,403,22,8,135,0,18,-1,0,0,0,-1--1--1,0-0-0,|12|B|0-128-0,0,0,0,0,0,0
+10,128,Basic reproduction number,125,986,69,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,129,New infections,70,1080,40,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+10,130,Infected,160,1066,38,10,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+1,131,130,128,0,0,0,0,0,128,0,-1--1--1,,1|(146,1036)|
+1,132,129,128,0,0,0,0,0,128,0,-1--1--1,,1|(93,1039)|
+10,133,Incubation period,62,919,42,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+10,134,Time to recovery or death,222,914,66,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+1,135,134,128,0,0,0,0,0,128,0,-1--1--1,,1|(179,945)|
+1,136,133,128,0,0,0,0,0,128,0,-1--1--1,,1|(88,947)|
+10,137,Reltv testing of asymptos,897,756,54,18,8,3,0,2,-1,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,138,137,83,1,0,0,0,0,128,0,-1--1--1,,1|(913,711)|
+10,139,Testing of symptos,1065,733,47,23,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,140,139,83,1,0,0,0,0,128,0,-1--1--1,,1|(998,711)|
+1,141,67,68,0,0,0,0,2,129,0,-1--1--1,|12||0-0-0,1|(731,976)|
+10,142,Ventilator utilization,724,113,35,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,143,33,142,0,0,0,0,0,128,0,-1--1--1,,1|(776,82)|
+1,144,60,142,0,0,0,0,0,128,0,-1--1--1,,1|(676,156)|
+10,145,Reltv infectiousness of asymptos,620,495,61,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,146,145,70,1,0,0,0,0,128,0,-1--1--1,,1|(648,536)|
+10,147,Delay time in social distancing,827,994,61,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,148,147,68,0,0,0,0,0,128,0,-1--1--1,,1|(752,947)|
+1,149,105,139,1,0,0,0,2,129,0,-1--1--1,|12||0-0-0,1|(1230,700)|
+10,150,Cumulative cases for max testing,969,859,65,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,151,150,139,0,0,0,0,0,128,0,-1--1--1,,1|(1010,804)|
+10,152,Delay time in testing,878,824,48,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,153,152,139,0,0,0,0,0,128,0,-1--1--1,,1|(959,783)|
+10,154,Containment measures before GDP loss,343,734,62,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,155,154,223,1,0,0,0,0,128,0,-1--1--1,,1|(416,692)|
+10,156,Recent cases for 50pct containment measures,163,822,67,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,157,Assessment time for containment,458,1028,64,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,158,Lookup for containment measures,315,854,45,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
+1,159,156,154,0,0,0,0,0,128,0,-1--1--1,,1|(246,781)|
+1,160,158,154,0,0,0,0,0,128,0,-1--1--1,,1|(326,800)|
+10,161,Confirmed new cases,1113,542,56,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,162,80,161,0,0,0,0,0,128,0,-1--1--1,,1|(1035,561)|
+1,163,51,161,1,0,0,0,0,128,0,-1--1--1,,1|(1203,536)|
+1,164,41,161,0,0,0,0,0,128,0,-1--1--1,,1|(978,527)|
+10,165,Confirmed new cases,307,1037,60,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+1,166,96,95,1,0,0,0,0,128,0,-1--1--1,,1|(196,672)|
+10,167,Time of vaccine availability,153,756,58,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,168,Effect of vaccine on infection,72,702,60,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,169,168,95,0,0,0,0,0,128,0,-1--1--1,,1|(104,669)|
+1,170,167,95,0,0,0,0,0,128,0,-1--1--1,,1|(150,698)|
+1,171,96,154,0,0,0,0,0,128,0,-1--1--1,,1|(258,703)|
+1,172,167,154,0,0,0,0,0,128,0,-1--1--1,,1|(239,746)|
+10,173,Severe frac of infected sympto,643,325,58,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,174,Severe,833,327,27,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,175,173,174,1,0,0,0,0,128,0,-1--1--1,,1|(741,310)|
+1,176,174,116,0,0,0,0,0,128,0,-1--1--1,,1|(802,295)|
+1,177,173,53,1,0,0,0,0,128,0,-1--1--1,,1|(875,297)|
+10,178,Severe frac of infected sympto,1492,166,62,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,179,Avg time on ventilator,612,75,44,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,180,179,60,0,0,0,0,0,128,0,-1--1--1,,1|(623,125)|
+10,181,Time to recovery or death,530,128,66,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,182,181,60,0,0,0,0,0,128,0,-1--1--1,,1|(578,155)|
+10,183,Hospital bed capacity HELLO,493,204,47,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,184,Hospital bed utilization,624,260,47,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,185,116,184,0,0,0,0,0,128,0,-1--1--1,,1|(701,256)|
+1,186,183,184,0,0,0,0,0,128,0,-1--1--1,,1|(551,229)|
+10,187,Cumulative hospitalized,1492,84,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,188,48,1307,79,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,189,191,187,4,0,0,22,0,0,0,-1--1--1,,1|(1406,79)|
+1,190,191,188,100,0,0,22,0,0,0,-1--1--1,,1|(1338,79)|
+11,191,48,1366,79,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,192,Hospital admissions,1366,105,43,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,193,Becoming symptomatic,1174,59,52,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+1,194,193,192,0,0,0,0,0,128,0,-1--1--1,,1|(1267,80)|
+1,195,178,192,0,0,0,0,0,128,0,-1--1--1,,1|(1435,138)|
+1,196,115,192,0,0,0,0,0,128,0,-1--1--1,,1|(1286,124)|
+10,197,Confirmed frac of past infections,1484,294,64,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,198,106,197,0,0,0,0,0,128,0,-1--1--1,,1|(1450,388)|
+1,199,87,197,0,0,0,0,0,128,0,-1--1--1,,1|(1377,340)|
+10,200,Testing of symptos,1540,227,41,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+1,201,200,197,1,0,0,0,0,128,0,-1--1--1,,1|(1524,257)|
+10,202,Testing of symptos initial,1167,867,52,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,203,Max testing of symptos,1079,922,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,204,203,139,0,0,0,0,0,128,0,-1--1--1,,1|(1072,836)|
+1,205,202,139,0,0,0,0,0,128,0,-1--1--1,,1|(1122,808)|
+10,206,Cumul infect from overseas,368,202,51,32,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,207,48,155,205,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,208,212,207,100,0,0,22,0,0,0,-1--1--1,,1|(197,203)|
+1,209,212,206,4,0,0,22,0,0,0,-1--1--1,,1|(279,203)|
+10,210,Input series for infections picked up overseas CHANGED,153,100,73,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||128-0-0,0,0,0,0,0,0
+1,211,210,213,1,0,0,0,0,128,0,-1--1--1,,1|(178,167)|
+11,212,2356,236,203,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,213,Infections picked up overseas,236,229,61,18,40,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,214,Lookup for testing,1180,813,40,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
+1,215,214,139,0,0,0,0,0,128,0,-1--1--1,,1|(1132,779)|
+10,216,Recent cases affecting containment,379,939,50,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,217,157,216,0,0,0,0,0,128,0,-1--1--1,,1|(427,993)|
+1,218,165,216,0,0,0,0,0,128,0,-1--1--1,,1|(335,998)|
+1,219,216,154,1,0,0,0,0,128,0,-1--1--1,,1|(386,846)|
+1,220,7,16,1,0,0,0,0,128,0,-1--1--1,,1|(673,464)|
+1,221,16,54,1,0,0,0,0,128,0,-1--1--1,,1|(993,488)|
+10,222,Restriction loosening due to GDP loss,560,968,60,27,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+10,223,Containment measures,444,666,47,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,224,223,39,0,0,0,0,0,128,0,-1--1--1,,1|(492,632)|
+10,225,Social distancing,691,806,38,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,226,68,225,0,0,0,0,0,128,0,-1--1--1,,1|(676,856)|
+1,227,222,225,1,0,0,0,0,128,0,-1--1--1,,1|(577,894)|
+1,228,222,223,1,0,0,0,0,128,0,-1--1--1,,1|(443,796)|
+10,229,GDP frac loss for 50pct restriction loosening,629,1067,68,27,8,2,0,3,0,0,0,0,64-128-128,0-0-0,|12||255-0-0,0,0,0,0,0,0
+12,230,0,447,-10,403,22,8,135,0,18,-1,0,0,0,-1--1--1,0-0-0,|12|B|0-128-0,0,0,0,0,0,0
 A model of Covid-19 in the US with endogenous testing, containment measures, and social distancing
-12,231,0,350,94,210,13,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-128-0,0,0,0,0,0,0
+12,231,0,350,26,210,13,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-128-0,0,0,0,0,0,0
 Jack Homer, PhD, March 24, 2020 v2, via metasd.com
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Goodness of fit
 $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
-12,1,2035062,747,272,270,234,3,188,0,0,1,0,0,0,0,0,0,0,0,0
-Cumul_confirmed_cases_vs_data
-12,2,2295426,747,760,272,228,3,188,0,0,1,0,0,0,0,0,0,0,0,0
-Dead_vs_data
-10,3,Cumul confirmed cases data,146,113,62,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
-10,4,Dead data,145,267,39,10,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
-10,5,Dead frac of confirmed cases data,323,169,61,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,6,3,5,0,0,0,0,0,128,0,-1--1--1,,1|(225,137)|
-1,7,4,5,0,0,0,0,0,128,0,-1--1--1,,1|(211,229)|
-12,8,6032520,1310,276,272,228,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+10,1,Cumul confirmed cases data,146,113,62,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
+10,2,Dead data,145,267,39,10,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||0-0-255,0,0,0,0,0,0
+10,3,Dead frac of confirmed cases data,323,169,61,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,4,1,3,0,0,0,0,0,128,0,-1--1--1,,1|(225,137)|
+1,5,2,3,0,0,0,0,0,128,0,-1--1--1,,1|(211,229)|
+12,6,0,1310,276,272,228,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Dead_frac_of_cases_vs_data
-12,9,11208116,1317,765,257,200,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+12,7,0,1317,765,257,200,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Testing_of_symptomatics_hist
-10,10,Ability of ventilator to reduce fatality,158,890,66,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,11,Contacts per asympto no soc dist,157,592,73,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,12,Infection probability per contact initial,163,491,70,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,13,Reltv contacts per sympto,136,686,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-12,14,4263078,1852,773,235,201,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+10,8,Ability of ventilator to reduce fatality,158,890,66,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,9,Contacts per asympto no soc dist,157,592,73,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,10,Infection probability per contact initial,163,491,70,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,11,Reltv contacts per sympto,136,686,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+12,12,0,1852,773,235,201,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Basic_reproduction_number
-10,15,Severe frac of infected sympto,158,782,58,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,16,Cumulative cases for max testing,147,986,85,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,17,Testing of symptos initial,342,893,52,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-10,18,Max testing of symptos,349,993,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
-12,19,2887024,1858,300,235,201,3,188,0,0,1,0,0,0,0,0,0,0,0,0
+10,13,Severe frac of infected sympto,158,782,58,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,14,Cumulative cases for max testing,147,986,85,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,15,Testing of symptos initial,342,893,52,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+10,16,Max testing of symptos,349,993,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+12,17,0,1858,300,235,201,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Cumul_infections_from_overseas
+10,18,Dead frac of confirmed cases data,532,189,61,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
+1,19,18,2,0,0,0,0,0,64,0,-1--1--1,,1|(334,228)|
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Economic effects
@@ -934,6 +1021,10 @@ Restriction_loosening_due_to_GDP_loss
 10,64,Restriction loosening at 10pct GDP loss,874,604,77,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,65,44,64,0,0,0,0,0,128,0,-1--1--1,,1|(816,563)|
 1,66,43,64,0,0,0,0,0,128,0,-1--1--1,,1|(887,498)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 4
+$0-0-0,0,|0||0-0-0|0-0-0|0-0-0|0-0-0|0-0-0|96,96,75,0
 ///---\\\
 :GRAPH Infections_picked_up_overseas
 :TITLE Infections picked up overseas
@@ -1739,19 +1830,18 @@ Restriction_loosening_due_to_GDP_loss
 :DATASET *5
 :LINE-WIDTH 2
 :L<%^E!@
-1:base+data.vdfx
-1:test.vdfx
 9:base+data
 22:month,months,mos
+23:0
 15:0,0,0,0,0,0
-19:75,0
+19:75,3
 27:0,
 34:0,
 42:1
 72:0
 73:0
 4:Time
-5:Cumul combined loss billions
+5:Cumul infect from overseas
 35:Date
 36:YYYY-MM-DD
 37:2000
