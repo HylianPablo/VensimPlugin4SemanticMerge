@@ -1,0 +1,791 @@
+{UTF-8}
+Matrices Leontief Regionales[EU,EU,Sectores,Sectores1]=
+	Leontief Matrix def[SubEU, SubEU1] ~~|
+Matrices Leontief Regionales[EU,USMCA,Sectores,Sectores1]=
+	Leontief Matrix def[SubEU, SubUSMCA1] ~~|
+Matrices Leontief Regionales[EU,LA,Sectores,Sectores1]=
+	Leontief Matrix def[SubEU, SubLA1] ~~|
+Matrices Leontief Regionales[EU,China,Sectores,Sectores1]=
+	Leontief Matrix def[SubEU, SubChina1] ~~|
+Matrices Leontief Regionales[EU,India,Sectores,Sectores1]=
+	Leontief Matrix def[SubEU, SubIndia1] ~~|
+Matrices Leontief Regionales[EU,Russia,Sectores,Sectores1]=
+	Leontief Matrix def[SubEU, SubRussia1] ~~|
+Matrices Leontief Regionales[EU,EAaO,Sectores,Sectores1]=
+	Leontief Matrix def[SubEU, SubEAaO1] ~~|
+Matrices Leontief Regionales[EU,RoW,Sectores,Sectores1]=
+	Leontief Matrix def[SubEU, SubRoW1] ~~|
+Matrices Leontief Regionales[USMCA,EU,Sectores,Sectores1]=
+	Leontief Matrix def[SubUSMCA, SubEU1] ~~|
+Matrices Leontief Regionales[USMCA,USMCA,Sectores,Sectores1]=
+	Leontief Matrix def[SubUSMCA, SubUSMCA1] ~~|
+Matrices Leontief Regionales[USMCA,LA,Sectores,Sectores1]=
+	Leontief Matrix def[SubUSMCA, SubLA1] ~~|
+Matrices Leontief Regionales[USMCA,China,Sectores,Sectores1]=
+	Leontief Matrix def[SubUSMCA, SubChina1] ~~|
+Matrices Leontief Regionales[USMCA,India,Sectores,Sectores1]=
+	Leontief Matrix def[SubUSMCA, SubIndia1] ~~|
+Matrices Leontief Regionales[USMCA,Russia,Sectores,Sectores1]=
+	Leontief Matrix def[SubUSMCA, SubRussia1] ~~|
+Matrices Leontief Regionales[USMCA,EAaO,Sectores,Sectores1]=
+	Leontief Matrix def[SubUSMCA, SubEAaO1] ~~|
+Matrices Leontief Regionales[USMCA,RoW,Sectores,Sectores1]=
+	Leontief Matrix def[SubUSMCA, SubRoW1] ~~|
+Matrices Leontief Regionales[LA,EU,Sectores,Sectores1]=
+	Leontief Matrix def[SubLA, SubEU1] ~~|
+Matrices Leontief Regionales[LA,USMCA,Sectores,Sectores1]=
+	Leontief Matrix def[SubLA, SubUSMCA1] ~~|
+Matrices Leontief Regionales[LA,LA,Sectores,Sectores1]=
+	Leontief Matrix def[SubLA, SubLA1] ~~|
+Matrices Leontief Regionales[LA,China,Sectores,Sectores1]=
+	Leontief Matrix def[SubLA, SubChina1] ~~|
+Matrices Leontief Regionales[LA,India,Sectores,Sectores1]=
+	Leontief Matrix def[SubLA, SubIndia1] ~~|
+Matrices Leontief Regionales[LA,Russia,Sectores,Sectores1]=
+	Leontief Matrix def[SubLA, SubRussia1] ~~|
+Matrices Leontief Regionales[LA,EAaO,Sectores,Sectores1]=
+	Leontief Matrix def[SubLA, SubEAaO1] ~~|
+Matrices Leontief Regionales[LA,RoW,Sectores,Sectores1]=
+	Leontief Matrix def[SubLA, SubRoW1] ~~|
+Matrices Leontief Regionales[China,EU,Sectores,Sectores1]=
+	Leontief Matrix def[SubChina, SubEU1] ~~|
+Matrices Leontief Regionales[China,USMCA,Sectores,Sectores1]=
+	Leontief Matrix def[SubChina, SubUSMCA1] ~~|
+Matrices Leontief Regionales[China,LA,Sectores,Sectores1]=
+	Leontief Matrix def[SubChina, SubLA1] ~~|
+Matrices Leontief Regionales[China,China,Sectores,Sectores1]=
+	Leontief Matrix def[SubChina, SubChina1] ~~|
+Matrices Leontief Regionales[China,India,Sectores,Sectores1]=
+	Leontief Matrix def[SubChina, SubIndia1] ~~|
+Matrices Leontief Regionales[China,Russia,Sectores,Sectores1]=
+	Leontief Matrix def[SubChina, SubRussia1] ~~|
+Matrices Leontief Regionales[China,EAaO,Sectores,Sectores1]=
+	Leontief Matrix def[SubChina, SubEAaO1] ~~|
+Matrices Leontief Regionales[China,RoW,Sectores,Sectores1]=
+	Leontief Matrix def[SubChina, SubRoW1] ~~|
+Matrices Leontief Regionales[India,EU,Sectores,Sectores1]=
+	Leontief Matrix def[SubIndia, SubEU1] ~~|
+Matrices Leontief Regionales[India,USMCA,Sectores,Sectores1]=
+	Leontief Matrix def[SubIndia, SubUSMCA1] ~~|
+Matrices Leontief Regionales[India,LA,Sectores,Sectores1]=
+	Leontief Matrix def[SubIndia, SubLA1] ~~|
+Matrices Leontief Regionales[India,China,Sectores,Sectores1]=
+	Leontief Matrix def[SubIndia, SubChina1] ~~|
+Matrices Leontief Regionales[India,India,Sectores,Sectores1]=
+	Leontief Matrix def[SubIndia, SubIndia1] ~~|
+Matrices Leontief Regionales[India,Russia,Sectores,Sectores1]=
+	Leontief Matrix def[SubIndia, SubRussia1] ~~|
+Matrices Leontief Regionales[India,EAaO,Sectores,Sectores1]=
+	Leontief Matrix def[SubIndia, SubEAaO1] ~~|
+Matrices Leontief Regionales[India,RoW,Sectores,Sectores1]=
+	Leontief Matrix def[SubIndia, SubRoW1] ~~|
+Matrices Leontief Regionales[Russia,EU,Sectores,Sectores1]=
+	Leontief Matrix def[SubRussia, SubEU1] ~~|
+Matrices Leontief Regionales[Russia,USMCA,Sectores,Sectores1]=
+	Leontief Matrix def[SubRussia, SubUSMCA1] ~~|
+Matrices Leontief Regionales[Russia,LA,Sectores,Sectores1]=
+	Leontief Matrix def[SubRussia, SubLA1] ~~|
+Matrices Leontief Regionales[Russia,China,Sectores,Sectores1]=
+	Leontief Matrix def[SubRussia, SubChina1] ~~|
+Matrices Leontief Regionales[Russia,India,Sectores,Sectores1]=
+	Leontief Matrix def[SubRussia, SubIndia1] ~~|
+Matrices Leontief Regionales[Russia,Russia,Sectores,Sectores1]=
+	Leontief Matrix def[SubRussia, SubRussia1] ~~|
+Matrices Leontief Regionales[Russia,EAaO,Sectores,Sectores1]=
+	Leontief Matrix def[SubRussia, SubEAaO1] ~~|
+Matrices Leontief Regionales[Russia,RoW,Sectores,Sectores1]=
+	Leontief Matrix def[SubRussia, SubRoW1] ~~|
+Matrices Leontief Regionales[EAaO,EU,Sectores,Sectores1]=
+	Leontief Matrix def[SubEAaO, SubEU1] ~~|
+Matrices Leontief Regionales[EAaO,USMCA,Sectores,Sectores1]=
+	Leontief Matrix def[SubEAaO, SubUSMCA1] ~~|
+Matrices Leontief Regionales[EAaO,LA,Sectores,Sectores1]=
+	Leontief Matrix def[SubEAaO, SubLA1] ~~|
+Matrices Leontief Regionales[EAaO,China,Sectores,Sectores1]=
+	Leontief Matrix def[SubEAaO, SubChina1] ~~|
+Matrices Leontief Regionales[EAaO,India,Sectores,Sectores1]=
+	Leontief Matrix def[SubEAaO, SubIndia1] ~~|
+Matrices Leontief Regionales[EAaO,Russia,Sectores,Sectores1]=
+	Leontief Matrix def[SubEAaO, SubRussia1] ~~|
+Matrices Leontief Regionales[EAaO,EAaO,Sectores,Sectores1]=
+	Leontief Matrix def[SubEAaO, SubEAaO1] ~~|
+Matrices Leontief Regionales[EAaO,RoW,Sectores,Sectores1]=
+	Leontief Matrix def[SubEAaO, SubRoW1] ~~|
+Matrices Leontief Regionales[RoW,EU,Sectores,Sectores1]=
+	Leontief Matrix def[SubRoW, SubEU1] ~~|
+Matrices Leontief Regionales[RoW,USMCA,Sectores,Sectores1]=
+	Leontief Matrix def[SubRoW, SubUSMCA1] ~~|
+Matrices Leontief Regionales[RoW,LA,Sectores,Sectores1]=
+	Leontief Matrix def[SubRoW, SubLA1] ~~|
+Matrices Leontief Regionales[RoW,China,Sectores,Sectores1]=
+	Leontief Matrix def[SubRoW, SubChina1] ~~|
+Matrices Leontief Regionales[RoW,India,Sectores,Sectores1]=
+	Leontief Matrix def[SubRoW, SubIndia1] ~~|
+Matrices Leontief Regionales[RoW,Russia,Sectores,Sectores1]=
+	Leontief Matrix def[SubRoW, SubRussia1] ~~|
+Matrices Leontief Regionales[RoW,EAaO,Sectores,Sectores1]=
+	Leontief Matrix def[SubRoW, SubEAaO1] ~~|
+Matrices Leontief Regionales[RoW,RoW,Sectores,Sectores1]=
+	Leontief Matrix def[SubRoW, SubRoW1]
+	~	
+	~		|
+
+Matrices IA Regionales[EU,EU,Sectores,Sectores1]=
+	Matriz IA def[SubEU, SubEU1] ~~|
+Matrices IA Regionales[EU,USMCA,Sectores,Sectores1]=
+	Matriz IA def[SubEU, SubUSMCA1] ~~|
+Matrices IA Regionales[EU,LA,Sectores,Sectores1]=
+	Matriz IA def[SubEU, SubLA1] ~~|
+Matrices IA Regionales[EU,China,Sectores,Sectores1]=
+	Matriz IA def[SubEU, SubChina1] ~~|
+Matrices IA Regionales[EU,India,Sectores,Sectores1]=
+	Matriz IA def[SubEU, SubIndia1] ~~|
+Matrices IA Regionales[EU,Russia,Sectores,Sectores1]=
+	Matriz IA def[SubEU, SubRussia1] ~~|
+Matrices IA Regionales[EU,EAaO,Sectores,Sectores1]=
+	Matriz IA def[SubEU, SubEAaO1] ~~|
+Matrices IA Regionales[EU,RoW,Sectores,Sectores1]=
+	Matriz IA def[SubEU, SubRoW1] ~~|
+Matrices IA Regionales[USMCA,EU,Sectores,Sectores1]=
+	Matriz IA def[SubUSMCA, SubEU1] ~~|
+Matrices IA Regionales[USMCA,USMCA,Sectores,Sectores1]=
+	Matriz IA def[SubUSMCA, SubUSMCA1] ~~|
+Matrices IA Regionales[USMCA,LA,Sectores,Sectores1]=
+	Matriz IA def[SubUSMCA, SubLA1] ~~|
+Matrices IA Regionales[USMCA,China,Sectores,Sectores1]=
+	Matriz IA def[SubUSMCA, SubChina1] ~~|
+Matrices IA Regionales[USMCA,India,Sectores,Sectores1]=
+	Matriz IA def[SubUSMCA, SubIndia1] ~~|
+Matrices IA Regionales[USMCA,Russia,Sectores,Sectores1]=
+	Matriz IA def[SubUSMCA, SubRussia1] ~~|
+Matrices IA Regionales[USMCA,EAaO,Sectores,Sectores1]=
+	Matriz IA def[SubUSMCA, SubEAaO1] ~~|
+Matrices IA Regionales[USMCA,RoW,Sectores,Sectores1]=
+	Matriz IA def[SubUSMCA, SubRoW1] ~~|
+Matrices IA Regionales[LA,EU,Sectores,Sectores1]=
+	Matriz IA def[SubLA, SubEU1] ~~|
+Matrices IA Regionales[LA,USMCA,Sectores,Sectores1]=
+	Matriz IA def[SubLA, SubUSMCA1] ~~|
+Matrices IA Regionales[LA,LA,Sectores,Sectores1]=
+	Matriz IA def[SubLA, SubLA1] ~~|
+Matrices IA Regionales[LA,China,Sectores,Sectores1]=
+	Matriz IA def[SubLA, SubChina1] ~~|
+Matrices IA Regionales[LA,India,Sectores,Sectores1]=
+	Matriz IA def[SubLA, SubIndia1] ~~|
+Matrices IA Regionales[LA,Russia,Sectores,Sectores1]=
+	Matriz IA def[SubLA, SubRussia1] ~~|
+Matrices IA Regionales[LA,EAaO,Sectores,Sectores1]=
+	Matriz IA def[SubLA, SubEAaO1] ~~|
+Matrices IA Regionales[LA,RoW,Sectores,Sectores1]=
+	Matriz IA def[SubLA, SubRoW1] ~~|
+Matrices IA Regionales[China,EU,Sectores,Sectores1]=
+	Matriz IA def[SubChina, SubEU1] ~~|
+Matrices IA Regionales[China,USMCA,Sectores,Sectores1]=
+	Matriz IA def[SubChina, SubUSMCA1] ~~|
+Matrices IA Regionales[China,LA,Sectores,Sectores1]=
+	Matriz IA def[SubChina, SubLA1] ~~|
+Matrices IA Regionales[China,China,Sectores,Sectores1]=
+	Matriz IA def[SubChina, SubChina1] ~~|
+Matrices IA Regionales[China,India,Sectores,Sectores1]=
+	Matriz IA def[SubChina, SubIndia1] ~~|
+Matrices IA Regionales[China,Russia,Sectores,Sectores1]=
+	Matriz IA def[SubChina, SubRussia1] ~~|
+Matrices IA Regionales[China,EAaO,Sectores,Sectores1]=
+	Matriz IA def[SubChina, SubEAaO1] ~~|
+Matrices IA Regionales[China,RoW,Sectores,Sectores1]=
+	Matriz IA def[SubChina, SubRoW1] ~~|
+Matrices IA Regionales[India,EU,Sectores,Sectores1]=
+	Matriz IA def[SubIndia, SubEU1] ~~|
+Matrices IA Regionales[India,USMCA,Sectores,Sectores1]=
+	Matriz IA def[SubIndia, SubUSMCA1] ~~|
+Matrices IA Regionales[India,LA,Sectores,Sectores1]=
+	Matriz IA def[SubIndia, SubLA1] ~~|
+Matrices IA Regionales[India,China,Sectores,Sectores1]=
+	Matriz IA def[SubIndia, SubChina1] ~~|
+Matrices IA Regionales[India,India,Sectores,Sectores1]=
+	Matriz IA def[SubIndia, SubIndia1] ~~|
+Matrices IA Regionales[India,Russia,Sectores,Sectores1]=
+	Matriz IA def[SubIndia, SubRussia1] ~~|
+Matrices IA Regionales[India,EAaO,Sectores,Sectores1]=
+	Matriz IA def[SubIndia, SubEAaO1] ~~|
+Matrices IA Regionales[India,RoW,Sectores,Sectores1]=
+	Matriz IA def[SubIndia, SubRoW1] ~~|
+Matrices IA Regionales[Russia,EU,Sectores,Sectores1]=
+	Matriz IA def[SubRussia, SubEU1] ~~|
+Matrices IA Regionales[Russia,USMCA,Sectores,Sectores1]=
+	Matriz IA def[SubRussia, SubUSMCA1] ~~|
+Matrices IA Regionales[Russia,LA,Sectores,Sectores1]=
+	Matriz IA def[SubRussia, SubLA1] ~~|
+Matrices IA Regionales[Russia,China,Sectores,Sectores1]=
+	Matriz IA def[SubRussia, SubChina1] ~~|
+Matrices IA Regionales[Russia,India,Sectores,Sectores1]=
+	Matriz IA def[SubRussia, SubIndia1] ~~|
+Matrices IA Regionales[Russia,Russia,Sectores,Sectores1]=
+	Matriz IA def[SubRussia, SubRussia1] ~~|
+Matrices IA Regionales[Russia,EAaO,Sectores,Sectores1]=
+	Matriz IA def[SubRussia, SubEAaO1] ~~|
+Matrices IA Regionales[Russia,RoW,Sectores,Sectores1]=
+	Matriz IA def[SubRussia, SubRoW1] ~~|
+Matrices IA Regionales[EAaO,EU,Sectores,Sectores1]=
+	Matriz IA def[SubEAaO, SubEU1] ~~|
+Matrices IA Regionales[EAaO,USMCA,Sectores,Sectores1]=
+	Matriz IA def[SubEAaO, SubUSMCA1] ~~|
+Matrices IA Regionales[EAaO,LA,Sectores,Sectores1]=
+	Matriz IA def[SubEAaO, SubLA1] ~~|
+Matrices IA Regionales[EAaO,China,Sectores,Sectores1]=
+	Matriz IA def[SubEAaO, SubChina1] ~~|
+Matrices IA Regionales[EAaO,India,Sectores,Sectores1]=
+	Matriz IA def[SubEAaO, SubIndia1] ~~|
+Matrices IA Regionales[EAaO,Russia,Sectores,Sectores1]=
+	Matriz IA def[SubEAaO, SubRussia1] ~~|
+Matrices IA Regionales[EAaO,EAaO,Sectores,Sectores1]=
+	Matriz IA def[SubEAaO, SubEAaO1] ~~|
+Matrices IA Regionales[EAaO,RoW,Sectores,Sectores1]=
+	Matriz IA def[SubEAaO, SubRoW1] ~~|
+Matrices IA Regionales[RoW,EU,Sectores,Sectores1]=
+	Matriz IA def[SubRoW, SubEU1] ~~|
+Matrices IA Regionales[RoW,USMCA,Sectores,Sectores1]=
+	Matriz IA def[SubRoW, SubUSMCA1] ~~|
+Matrices IA Regionales[RoW,LA,Sectores,Sectores1]=
+	Matriz IA def[SubRoW, SubLA1] ~~|
+Matrices IA Regionales[RoW,China,Sectores,Sectores1]=
+	Matriz IA def[SubRoW, SubChina1] ~~|
+Matrices IA Regionales[RoW,India,Sectores,Sectores1]=
+	Matriz IA def[SubRoW, SubIndia1] ~~|
+Matrices IA Regionales[RoW,Russia,Sectores,Sectores1]=
+	Matriz IA def[SubRoW, SubRussia1] ~~|
+Matrices IA Regionales[RoW,EAaO,Sectores,Sectores1]=
+	Matriz IA def[SubRoW, SubEAaO1] ~~|
+Matrices IA Regionales[RoW,RoW,Sectores,Sectores1]=
+	Matriz IA def[SubRoW, SubRoW1]
+	~	
+	~		|
+
+Matrices A Regionales[EU,EU,Sectores,Sectores1]=
+	Matriz A2[SubEU, SubEU1] ~~|
+Matrices A Regionales[EU,USMCA,Sectores,Sectores1]=
+	Matriz A2[SubEU, SubUSMCA1] ~~|
+Matrices A Regionales[EU,LA,Sectores,Sectores1]=
+	Matriz A2[SubEU, SubLA1] ~~|
+Matrices A Regionales[EU,China,Sectores,Sectores1]=
+	Matriz A2[SubEU, SubChina1] ~~|
+Matrices A Regionales[EU,India,Sectores,Sectores1]=
+	Matriz A2[SubEU, SubIndia1] ~~|
+Matrices A Regionales[EU,Russia,Sectores,Sectores1]=
+	Matriz A2[SubEU, SubRussia1] ~~|
+Matrices A Regionales[EU,EAaO,Sectores,Sectores1]=
+	Matriz A2[SubEU, SubEAaO1] ~~|
+Matrices A Regionales[EU,RoW,Sectores,Sectores1]=
+	Matriz A2[SubEU, SubRoW1] ~~|
+Matrices A Regionales[USMCA,EU,Sectores,Sectores1]=
+	Matriz A2[SubUSMCA, SubEU1] ~~|
+Matrices A Regionales[USMCA,USMCA,Sectores,Sectores1]=
+	Matriz A2[SubUSMCA, SubUSMCA1] ~~|
+Matrices A Regionales[USMCA,LA,Sectores,Sectores1]=
+	Matriz A2[SubUSMCA, SubLA1] ~~|
+Matrices A Regionales[USMCA,China,Sectores,Sectores1]=
+	Matriz A2[SubUSMCA, SubChina1] ~~|
+Matrices A Regionales[USMCA,India,Sectores,Sectores1]=
+	Matriz A2[SubUSMCA, SubIndia1] ~~|
+Matrices A Regionales[USMCA,Russia,Sectores,Sectores1]=
+	Matriz A2[SubUSMCA, SubRussia1] ~~|
+Matrices A Regionales[USMCA,EAaO,Sectores,Sectores1]=
+	Matriz A2[SubUSMCA, SubEAaO1] ~~|
+Matrices A Regionales[USMCA,RoW,Sectores,Sectores1]=
+	Matriz A2[SubUSMCA, SubRoW1] ~~|
+Matrices A Regionales[LA,EU,Sectores,Sectores1]=
+	Matriz A2[SubLA, SubEU1] ~~|
+Matrices A Regionales[LA,USMCA,Sectores,Sectores1]=
+	Matriz A2[SubLA, SubUSMCA1] ~~|
+Matrices A Regionales[LA,LA,Sectores,Sectores1]=
+	Matriz A2[SubLA, SubLA1] ~~|
+Matrices A Regionales[LA,China,Sectores,Sectores1]=
+	Matriz A2[SubLA, SubChina1] ~~|
+Matrices A Regionales[LA,India,Sectores,Sectores1]=
+	Matriz A2[SubLA, SubIndia1] ~~|
+Matrices A Regionales[LA,Russia,Sectores,Sectores1]=
+	Matriz A2[SubLA, SubRussia1] ~~|
+Matrices A Regionales[LA,EAaO,Sectores,Sectores1]=
+	Matriz A2[SubLA, SubEAaO1] ~~|
+Matrices A Regionales[LA,RoW,Sectores,Sectores1]=
+	Matriz A2[SubLA, SubRoW1] ~~|
+Matrices A Regionales[China,EU,Sectores,Sectores1]=
+	Matriz A2[SubChina, SubEU1] ~~|
+Matrices A Regionales[China,USMCA,Sectores,Sectores1]=
+	Matriz A2[SubChina, SubUSMCA1] ~~|
+Matrices A Regionales[China,LA,Sectores,Sectores1]=
+	Matriz A2[SubChina, SubLA1] ~~|
+Matrices A Regionales[China,China,Sectores,Sectores1]=
+	Matriz A2[SubChina, SubChina1] ~~|
+Matrices A Regionales[China,India,Sectores,Sectores1]=
+	Matriz A2[SubChina, SubIndia1] ~~|
+Matrices A Regionales[China,Russia,Sectores,Sectores1]=
+	Matriz A2[SubChina, SubRussia1] ~~|
+Matrices A Regionales[China,EAaO,Sectores,Sectores1]=
+	Matriz A2[SubChina, SubEAaO1] ~~|
+Matrices A Regionales[China,RoW,Sectores,Sectores1]=
+	Matriz A2[SubChina, SubRoW1] ~~|
+Matrices A Regionales[India,EU,Sectores,Sectores1]=
+	Matriz A2[SubIndia, SubEU1] ~~|
+Matrices A Regionales[India,USMCA,Sectores,Sectores1]=
+	Matriz A2[SubIndia, SubUSMCA1] ~~|
+Matrices A Regionales[India,LA,Sectores,Sectores1]=
+	Matriz A2[SubIndia, SubLA1] ~~|
+Matrices A Regionales[India,China,Sectores,Sectores1]=
+	Matriz A2[SubIndia, SubChina1] ~~|
+Matrices A Regionales[India,India,Sectores,Sectores1]=
+	Matriz A2[SubIndia, SubIndia1] ~~|
+Matrices A Regionales[India,Russia,Sectores,Sectores1]=
+	Matriz A2[SubIndia, SubRussia1] ~~|
+Matrices A Regionales[India,EAaO,Sectores,Sectores1]=
+	Matriz A2[SubIndia, SubEAaO1] ~~|
+Matrices A Regionales[India,RoW,Sectores,Sectores1]=
+	Matriz A2[SubIndia, SubRoW1] ~~|
+Matrices A Regionales[Russia,EU,Sectores,Sectores1]=
+	Matriz A2[SubRussia, SubEU1] ~~|
+Matrices A Regionales[Russia,USMCA,Sectores,Sectores1]=
+	Matriz A2[SubRussia, SubUSMCA1] ~~|
+Matrices A Regionales[Russia,LA,Sectores,Sectores1]=
+	Matriz A2[SubRussia, SubLA1] ~~|
+Matrices A Regionales[Russia,China,Sectores,Sectores1]=
+	Matriz A2[SubRussia, SubChina1] ~~|
+Matrices A Regionales[Russia,India,Sectores,Sectores1]=
+	Matriz A2[SubRussia, SubIndia1] ~~|
+Matrices A Regionales[Russia,Russia,Sectores,Sectores1]=
+	Matriz A2[SubRussia, SubRussia1] ~~|
+Matrices A Regionales[Russia,EAaO,Sectores,Sectores1]=
+	Matriz A2[SubRussia, SubEAaO1] ~~|
+Matrices A Regionales[Russia,RoW,Sectores,Sectores1]=
+	Matriz A2[SubRussia, SubRoW1] ~~|
+Matrices A Regionales[EAaO,EU,Sectores,Sectores1]=
+	Matriz A2[SubEAaO, SubEU1] ~~|
+Matrices A Regionales[EAaO,USMCA,Sectores,Sectores1]=
+	Matriz A2[SubEAaO, SubUSMCA1] ~~|
+Matrices A Regionales[EAaO,LA,Sectores,Sectores1]=
+	Matriz A2[SubEAaO, SubLA1] ~~|
+Matrices A Regionales[EAaO,China,Sectores,Sectores1]=
+	Matriz A2[SubEAaO, SubChina1] ~~|
+Matrices A Regionales[EAaO,India,Sectores,Sectores1]=
+	Matriz A2[SubEAaO, SubIndia1] ~~|
+Matrices A Regionales[EAaO,Russia,Sectores,Sectores1]=
+	Matriz A2[SubEAaO, SubRussia1] ~~|
+Matrices A Regionales[EAaO,EAaO,Sectores,Sectores1]=
+	Matriz A2[SubEAaO, SubEAaO1] ~~|
+Matrices A Regionales[EAaO,RoW,Sectores,Sectores1]=
+	Matriz A2[SubEAaO, SubRoW1] ~~|
+Matrices A Regionales[RoW,EU,Sectores,Sectores1]=
+	Matriz A2[SubRoW, SubEU1] ~~|
+Matrices A Regionales[RoW,USMCA,Sectores,Sectores1]=
+	Matriz A2[SubRoW, SubUSMCA1] ~~|
+Matrices A Regionales[RoW,LA,Sectores,Sectores1]=
+	Matriz A2[SubRoW, SubLA1] ~~|
+Matrices A Regionales[RoW,China,Sectores,Sectores1]=
+	Matriz A2[SubRoW, SubChina1] ~~|
+Matrices A Regionales[RoW,India,Sectores,Sectores1]=
+	Matriz A2[SubRoW, SubIndia1] ~~|
+Matrices A Regionales[RoW,Russia,Sectores,Sectores1]=
+	Matriz A2[SubRoW, SubRussia1] ~~|
+Matrices A Regionales[RoW,EAaO,Sectores,Sectores1]=
+	Matriz A2[SubRoW, SubEAaO1] ~~|
+Matrices A Regionales[RoW,RoW,Sectores,Sectores1]=
+	Matriz A2[SubRoW, SubRoW1]
+	~	
+	~		|
+
+Matriz Leontief EUEU[Sectores,Sectores1]=
+	Matrices Leontief Regionales[EU,EU,Sectores,Sectores1]
+	~	
+	~		|
+
+Leontief Matrix def[SecReg,SecReg1]=
+	INVERT MATRIX(Matriz IA def[SecReg,SecReg1], 280 )
+	~	
+	~		|
+
+Compute all steps=
+	1
+	~	
+	~		|
+
+Matriz IA def[SecReg,SecReg1]=
+	IF THEN ELSE(Compute all steps=1:OR:Time/5=INTEGER(Time/5),MatrizI[SecReg,SecReg1]-Matriz A2\
+		[SecReg,SecReg1],0)
+	~	
+	~		|
+
+SubChina1:
+	Sec1Reg4,Sec2Reg4,Sec3Reg4,Sec4Reg4,Sec5Reg4,Sec6Reg4,Sec7Reg4,Sec8Reg4,Sec9Reg4,Sec10Reg4\
+		,Sec11Reg4,Sec12Reg4,Sec13Reg4,Sec14Reg4,Sec15Reg4,Sec16Reg4,Sec17Reg4,Sec18Reg4,Sec19Reg4\
+		,Sec20Reg4,Sec21Reg4,Sec22Reg4,Sec23Reg4,Sec24Reg4,Sec25Reg4,Sec26Reg4,Sec27Reg4,Sec28Reg4\
+		,Sec29Reg4,Sec30Reg4,Sec31Reg4,Sec32Reg4,Sec33Reg4,Sec34Reg4,Sec35Reg4->Sectores1
+	~	
+	~		|
+
+SubLA1:
+	Sec1Reg3,Sec2Reg3,Sec3Reg3,Sec4Reg3,Sec5Reg3,Sec6Reg3,Sec7Reg3,Sec8Reg3,Sec9Reg3,Sec10Reg3\
+		,Sec11Reg3,Sec12Reg3,Sec13Reg3,Sec14Reg3,Sec15Reg3,Sec16Reg3,Sec17Reg3,Sec18Reg3,Sec19Reg3\
+		,Sec20Reg3,Sec21Reg3,Sec22Reg3,Sec23Reg3,Sec24Reg3,Sec25Reg3,Sec26Reg3,Sec27Reg3,Sec28Reg3\
+		,Sec29Reg3,Sec30Reg3,Sec31Reg3,Sec32Reg3,Sec33Reg3,Sec34Reg3,Sec35Reg3->Sectores1
+	~	
+	~		|
+
+SubEAaO1:
+	Sec1Reg7,Sec2Reg7,Sec3Reg7,Sec4Reg7,Sec5Reg7,Sec6Reg7,Sec7Reg7,Sec8Reg7,Sec9Reg7,Sec10Reg7\
+		,Sec11Reg7,Sec12Reg7,Sec13Reg7,Sec14Reg7,Sec15Reg7,Sec16Reg7,Sec17Reg7,Sec18Reg7,Sec19Reg7\
+		,Sec20Reg7,Sec21Reg7,Sec22Reg7,Sec23Reg7,Sec24Reg7,Sec25Reg7,Sec26Reg7,Sec27Reg7,Sec28Reg7\
+		,Sec29Reg7,Sec30Reg7,Sec31Reg7,Sec32Reg7,Sec33Reg7,Sec34Reg7,Sec35Reg7->Sectores1
+	~	
+	~		|
+
+SubEU:
+	Sec1Reg1,Sec2Reg1,Sec3Reg1,Sec4Reg1,Sec5Reg1,Sec6Reg1,Sec7Reg1,Sec8Reg1,Sec9Reg1,Sec10Reg1\
+		,Sec11Reg1,Sec12Reg1,Sec13Reg1,Sec14Reg1,Sec15Reg1,Sec16Reg1,Sec17Reg1,Sec18Reg1,Sec19Reg1\
+		,Sec20Reg1,Sec21Reg1,Sec22Reg1,Sec23Reg1,Sec24Reg1,Sec25Reg1,Sec26Reg1,Sec27Reg1,Sec28Reg1\
+		,Sec29Reg1,Sec30Reg1,Sec31Reg1,Sec32Reg1,Sec33Reg1,Sec34Reg1,Sec35Reg1->Sectores
+	~	
+	~		|
+
+SubEU1:
+	Sec1Reg1,Sec2Reg1,Sec3Reg1,Sec4Reg1,Sec5Reg1,Sec6Reg1,Sec7Reg1,Sec8Reg1,Sec9Reg1,Sec10Reg1\
+		,Sec11Reg1,Sec12Reg1,Sec13Reg1,Sec14Reg1,Sec15Reg1,Sec16Reg1,Sec17Reg1,Sec18Reg1,Sec19Reg1\
+		,Sec20Reg1,Sec21Reg1,Sec22Reg1,Sec23Reg1,Sec24Reg1,Sec25Reg1,Sec26Reg1,Sec27Reg1,Sec28Reg1\
+		,Sec29Reg1,Sec30Reg1,Sec31Reg1,Sec32Reg1,Sec33Reg1,Sec34Reg1,Sec35Reg1->Sectores1
+	~	
+	~		|
+
+SubUSMCA1:
+	Sec1Reg2,Sec2Reg2,Sec3Reg2,Sec4Reg2,Sec5Reg2,Sec6Reg2,Sec7Reg2,Sec8Reg2,Sec9Reg2,Sec10Reg2\
+		,Sec11Reg2,Sec12Reg2,Sec13Reg2,Sec14Reg2,Sec15Reg2,Sec16Reg2,Sec17Reg2,Sec18Reg2,Sec19Reg2\
+		,Sec20Reg2,Sec21Reg2,Sec22Reg2,Sec23Reg2,Sec24Reg2,Sec25Reg2,Sec26Reg2,Sec27Reg2,Sec28Reg2\
+		,Sec29Reg2,Sec30Reg2,Sec31Reg2,Sec32Reg2,Sec33Reg2,Sec34Reg2,Sec35Reg2->Sectores1
+	~	
+	~		|
+
+SubIndia1:
+	Sec1Reg5,Sec2Reg5,Sec3Reg5,Sec4Reg5,Sec5Reg5,Sec6Reg5,Sec7Reg5,Sec8Reg5,Sec9Reg5,Sec10Reg5\
+		,Sec11Reg5,Sec12Reg5,Sec13Reg5,Sec14Reg5,Sec15Reg5,Sec16Reg5,Sec17Reg5,Sec18Reg5,Sec19Reg5\
+		,Sec20Reg5,Sec21Reg5,Sec22Reg5,Sec23Reg5,Sec24Reg5,Sec25Reg5,Sec26Reg5,Sec27Reg5,Sec28Reg5\
+		,Sec29Reg5,Sec30Reg5,Sec31Reg5,Sec32Reg5,Sec33Reg5,Sec34Reg5,Sec35Reg5->Sectores1
+	~	
+	~		|
+
+SubRussia1:
+	Sec1Reg6,Sec2Reg6,Sec3Reg6,Sec4Reg6,Sec5Reg6,Sec6Reg6,Sec7Reg6,Sec8Reg6,Sec9Reg6,Sec10Reg6\
+		,Sec11Reg6,Sec12Reg6,Sec13Reg6,Sec14Reg6,Sec15Reg6,Sec16Reg6,Sec17Reg6,Sec18Reg6,Sec19Reg6\
+		,Sec20Reg6,Sec21Reg6,Sec22Reg6,Sec23Reg6,Sec24Reg6,Sec25Reg6,Sec26Reg6,Sec27Reg6,Sec28Reg6\
+		,Sec29Reg6,Sec30Reg6,Sec31Reg6,Sec32Reg6,Sec33Reg6,Sec34Reg6,Sec35Reg6->Sectores1
+	~	
+	~		|
+
+SubRoW1:
+	Sec1Reg8,Sec2Reg8,Sec3Reg8,Sec4Reg8,Sec5Reg8,Sec6Reg8,Sec7Reg8,Sec8Reg8,Sec9Reg8,Sec10Reg8\
+		,Sec11Reg8,Sec12Reg8,Sec13Reg8,Sec14Reg8,Sec15Reg8,Sec16Reg8,Sec17Reg8,Sec18Reg8,Sec19Reg8\
+		,Sec20Reg8,Sec21Reg8,Sec22Reg8,Sec23Reg8,Sec24Reg8,Sec25Reg8,Sec26Reg8,Sec27Reg8,Sec28Reg8\
+		,Sec29Reg8,Sec30Reg8,Sec31Reg8,Sec32Reg8,Sec33Reg8,Sec34Reg8,Sec35Reg8->Sectores1
+	~	
+	~		|
+
+SubIndia:
+	Sec1Reg5,Sec2Reg5,Sec3Reg5,Sec4Reg5,Sec5Reg5,Sec6Reg5,Sec7Reg5,Sec8Reg5,Sec9Reg5,Sec10Reg5\
+		,Sec11Reg5,Sec12Reg5,Sec13Reg5,Sec14Reg5,Sec15Reg5,Sec16Reg5,Sec17Reg5,Sec18Reg5,Sec19Reg5\
+		,Sec20Reg5,Sec21Reg5,Sec22Reg5,Sec23Reg5,Sec24Reg5,Sec25Reg5,Sec26Reg5,Sec27Reg5,Sec28Reg5\
+		,Sec29Reg5,Sec30Reg5,Sec31Reg5,Sec32Reg5,Sec33Reg5,Sec34Reg5,Sec35Reg5->Sectores
+	~	
+	~		|
+
+SubLA:
+	Sec1Reg3,Sec2Reg3,Sec3Reg3,Sec4Reg3,Sec5Reg3,Sec6Reg3,Sec7Reg3,Sec8Reg3,Sec9Reg3,Sec10Reg3\
+		,Sec11Reg3,Sec12Reg3,Sec13Reg3,Sec14Reg3,Sec15Reg3,Sec16Reg3,Sec17Reg3,Sec18Reg3,Sec19Reg3\
+		,Sec20Reg3,Sec21Reg3,Sec22Reg3,Sec23Reg3,Sec24Reg3,Sec25Reg3,Sec26Reg3,Sec27Reg3,Sec28Reg3\
+		,Sec29Reg3,Sec30Reg3,Sec31Reg3,Sec32Reg3,Sec33Reg3,Sec34Reg3,Sec35Reg3->Sectores
+	~	
+	~		|
+
+SubRussia:
+	Sec1Reg6,Sec2Reg6,Sec3Reg6,Sec4Reg6,Sec5Reg6,Sec6Reg6,Sec7Reg6,Sec8Reg6,Sec9Reg6,Sec10Reg6\
+		,Sec11Reg6,Sec12Reg6,Sec13Reg6,Sec14Reg6,Sec15Reg6,Sec16Reg6,Sec17Reg6,Sec18Reg6,Sec19Reg6\
+		,Sec20Reg6,Sec21Reg6,Sec22Reg6,Sec23Reg6,Sec24Reg6,Sec25Reg6,Sec26Reg6,Sec27Reg6,Sec28Reg6\
+		,Sec29Reg6,Sec30Reg6,Sec31Reg6,Sec32Reg6,Sec33Reg6,Sec34Reg6,Sec35Reg6->Sectores
+	~	
+	~		|
+
+SubChina:
+	Sec1Reg4,Sec2Reg4,Sec3Reg4,Sec4Reg4,Sec5Reg4,Sec6Reg4,Sec7Reg4,Sec8Reg4,Sec9Reg4,Sec10Reg4\
+		,Sec11Reg4,Sec12Reg4,Sec13Reg4,Sec14Reg4,Sec15Reg4,Sec16Reg4,Sec17Reg4,Sec18Reg4,Sec19Reg4\
+		,Sec20Reg4,Sec21Reg4,Sec22Reg4,Sec23Reg4,Sec24Reg4,Sec25Reg4,Sec26Reg4,Sec27Reg4,Sec28Reg4\
+		,Sec29Reg4,Sec30Reg4,Sec31Reg4,Sec32Reg4,Sec33Reg4,Sec34Reg4,Sec35Reg4->Sectores
+	~	
+	~		|
+
+SubEAaO:
+	Sec1Reg7,Sec2Reg7,Sec3Reg7,Sec4Reg7,Sec5Reg7,Sec6Reg7,Sec7Reg7,Sec8Reg7,Sec9Reg7,Sec10Reg7\
+		,Sec11Reg7,Sec12Reg7,Sec13Reg7,Sec14Reg7,Sec15Reg7,Sec16Reg7,Sec17Reg7,Sec18Reg7,Sec19Reg7\
+		,Sec20Reg7,Sec21Reg7,Sec22Reg7,Sec23Reg7,Sec24Reg7,Sec25Reg7,Sec26Reg7,Sec27Reg7,Sec28Reg7\
+		,Sec29Reg7,Sec30Reg7,Sec31Reg7,Sec32Reg7,Sec33Reg7,Sec34Reg7,Sec35Reg7->Sectores
+	~	
+	~		|
+
+SubRoW:
+	Sec1Reg8,Sec2Reg8,Sec3Reg8,Sec4Reg8,Sec5Reg8,Sec6Reg8,Sec7Reg8,Sec8Reg8,Sec9Reg8,Sec10Reg8\
+		,Sec11Reg8,Sec12Reg8,Sec13Reg8,Sec14Reg8,Sec15Reg8,Sec16Reg8,Sec17Reg8,Sec18Reg8,Sec19Reg8\
+		,Sec20Reg8,Sec21Reg8,Sec22Reg8,Sec23Reg8,Sec24Reg8,Sec25Reg8,Sec26Reg8,Sec27Reg8,Sec28Reg8\
+		,Sec29Reg8,Sec30Reg8,Sec31Reg8,Sec32Reg8,Sec33Reg8,Sec34Reg8,Sec35Reg8->Sectores
+	~	
+	~		|
+
+SubUSMCA:
+	Sec1Reg2,Sec2Reg2,Sec3Reg2,Sec4Reg2,Sec5Reg2,Sec6Reg2,Sec7Reg2,Sec8Reg2,Sec9Reg2,Sec10Reg2\
+		,Sec11Reg2,Sec12Reg2,Sec13Reg2,Sec14Reg2,Sec15Reg2,Sec16Reg2,Sec17Reg2,Sec18Reg2,Sec19Reg2\
+		,Sec20Reg2,Sec21Reg2,Sec22Reg2,Sec23Reg2,Sec24Reg2,Sec25Reg2,Sec26Reg2,Sec27Reg2,Sec28Reg2\
+		,Sec29Reg2,Sec30Reg2,Sec31Reg2,Sec32Reg2,Sec33Reg2,Sec34Reg2,Sec35Reg2->Sectores
+	~	
+	~		|
+
+MatrizA mul constante[SecReg,SecReg1]=
+	Random*MatrizA[SecReg,SecReg1]
+	~	
+	~		|
+
+MatrizA[SecReg,SecReg1]=
+	GET XLS CONSTANTS( 'MatrizA.xlsx' , 'Hoja1' , 'A1' )
+	~	
+	~		|
+
+MatrizI[SecReg,SecReg1]=
+	GET XLS CONSTANTS( 'MatrizI.xlsx' , 'Hoja1' , 'A1' )
+	~	
+	~		|
+
+SecReg:
+	Sec1Reg1, Sec1Reg2, Sec1Reg3, Sec1Reg4, Sec1Reg5, Sec1Reg6, Sec1Reg7, Sec1Reg8, Sec2Reg1\
+		, Sec2Reg2, Sec2Reg3, Sec2Reg4, Sec2Reg5, Sec2Reg6, Sec2Reg7, Sec2Reg8, Sec3Reg1, Sec3Reg2\
+		, Sec3Reg3, Sec3Reg4, Sec3Reg5, Sec3Reg6, Sec3Reg7, Sec3Reg8, Sec4Reg1, Sec4Reg2, Sec4Reg3\
+		, Sec4Reg4, Sec4Reg5, Sec4Reg6, Sec4Reg7, Sec4Reg8, Sec5Reg1, Sec5Reg2, Sec5Reg3, Sec5Reg4\
+		, Sec5Reg5, Sec5Reg6, Sec5Reg7, Sec5Reg8, Sec6Reg1, Sec6Reg2, Sec6Reg3, Sec6Reg4, Sec6Reg5\
+		, Sec6Reg6, Sec6Reg7, Sec6Reg8, Sec7Reg1, Sec7Reg2, Sec7Reg3, Sec7Reg4, Sec7Reg5, Sec7Reg6\
+		, Sec7Reg7, Sec7Reg8, Sec8Reg1, Sec8Reg2, Sec8Reg3, Sec8Reg4, Sec8Reg5, Sec8Reg6, Sec8Reg7\
+		, Sec8Reg8, Sec9Reg1, Sec9Reg2, Sec9Reg3, Sec9Reg4, Sec9Reg5, Sec9Reg6, Sec9Reg7, Sec9Reg8\
+		, Sec10Reg1, Sec10Reg2, Sec10Reg3, Sec10Reg4, Sec10Reg5, Sec10Reg6, Sec10Reg7, Sec10Reg8\
+		, Sec11Reg1, Sec11Reg2, Sec11Reg3, Sec11Reg4, Sec11Reg5, Sec11Reg6, Sec11Reg7, Sec11Reg8\
+		, Sec12Reg1, Sec12Reg2, Sec12Reg3, Sec12Reg4, Sec12Reg5, Sec12Reg6, Sec12Reg7, Sec12Reg8\
+		, Sec13Reg1, Sec13Reg2, Sec13Reg3, Sec13Reg4, Sec13Reg5, Sec13Reg6, Sec13Reg7, Sec13Reg8\
+		, Sec14Reg1, Sec14Reg2, Sec14Reg3, Sec14Reg4, Sec14Reg5, Sec14Reg6, Sec14Reg7, Sec14Reg8\
+		, Sec15Reg1, Sec15Reg2, Sec15Reg3, Sec15Reg4, Sec15Reg5, Sec15Reg6, Sec15Reg7, Sec15Reg8\
+		, Sec16Reg1, Sec16Reg2, Sec16Reg3, Sec16Reg4, Sec16Reg5, Sec16Reg6, Sec16Reg7, Sec16Reg8\
+		, Sec17Reg1, Sec17Reg2, Sec17Reg3, Sec17Reg4, Sec17Reg5, Sec17Reg6, Sec17Reg7, Sec17Reg8\
+		, Sec18Reg1, Sec18Reg2, Sec18Reg3, Sec18Reg4, Sec18Reg5, Sec18Reg6, Sec18Reg7, Sec18Reg8\
+		, Sec19Reg1, Sec19Reg2, Sec19Reg3, Sec19Reg4, Sec19Reg5, Sec19Reg6, Sec19Reg7, Sec19Reg8\
+		, Sec20Reg1, Sec20Reg2, Sec20Reg3, Sec20Reg4, Sec20Reg5, Sec20Reg6, Sec20Reg7, Sec20Reg8\
+		, Sec21Reg1, Sec21Reg2, Sec21Reg3, Sec21Reg4, Sec21Reg5, Sec21Reg6, Sec21Reg7, Sec21Reg8\
+		, Sec22Reg1, Sec22Reg2, Sec22Reg3, Sec22Reg4, Sec22Reg5, Sec22Reg6, Sec22Reg7, Sec22Reg8\
+		, Sec23Reg1, Sec23Reg2, Sec23Reg3, Sec23Reg4, Sec23Reg5, Sec23Reg6, Sec23Reg7, Sec23Reg8\
+		, Sec24Reg1, Sec24Reg2, Sec24Reg3, Sec24Reg4, Sec24Reg5, Sec24Reg6, Sec24Reg7, Sec24Reg8\
+		, Sec25Reg1, Sec25Reg2, Sec25Reg3, Sec25Reg4, Sec25Reg5, Sec25Reg6, Sec25Reg7, Sec25Reg8\
+		, Sec26Reg1, Sec26Reg2, Sec26Reg3, Sec26Reg4, Sec26Reg5, Sec26Reg6, Sec26Reg7, Sec26Reg8\
+		, Sec27Reg1, Sec27Reg2, Sec27Reg3, Sec27Reg4, Sec27Reg5, Sec27Reg6, Sec27Reg7, Sec27Reg8\
+		, Sec28Reg1, Sec28Reg2, Sec28Reg3, Sec28Reg4, Sec28Reg5, Sec28Reg6, Sec28Reg7, Sec28Reg8\
+		, Sec29Reg1, Sec29Reg2, Sec29Reg3, Sec29Reg4, Sec29Reg5, Sec29Reg6, Sec29Reg7, Sec29Reg8\
+		, Sec30Reg1, Sec30Reg2, Sec30Reg3, Sec30Reg4, Sec30Reg5, Sec30Reg6, Sec30Reg7, Sec30Reg8\
+		, Sec31Reg1, Sec31Reg2, Sec31Reg3, Sec31Reg4, Sec31Reg5, Sec31Reg6, Sec31Reg7, Sec31Reg8\
+		, Sec32Reg1, Sec32Reg2, Sec32Reg3, Sec32Reg4, Sec32Reg5, Sec32Reg6, Sec32Reg7, Sec32Reg8\
+		, Sec33Reg1, Sec33Reg2, Sec33Reg3, Sec33Reg4, Sec33Reg5, Sec33Reg6, Sec33Reg7, Sec33Reg8\
+		, Sec34Reg1, Sec34Reg2, Sec34Reg3, Sec34Reg4, Sec34Reg5, Sec34Reg6, Sec34Reg7, Sec34Reg8\
+		, Sec35Reg1, Sec35Reg2, Sec35Reg3, Sec35Reg4, Sec35Reg5, Sec35Reg6, Sec35Reg7, Sec35Reg8
+	~	
+	~		|
+
+SecReg1:
+	Sec1Reg1, Sec1Reg2, Sec1Reg3, Sec1Reg4, Sec1Reg5, Sec1Reg6, Sec1Reg7, Sec1Reg8, Sec2Reg1\
+		, Sec2Reg2, Sec2Reg3, Sec2Reg4, Sec2Reg5, Sec2Reg6, Sec2Reg7, Sec2Reg8, Sec3Reg1, Sec3Reg2\
+		, Sec3Reg3, Sec3Reg4, Sec3Reg5, Sec3Reg6, Sec3Reg7, Sec3Reg8, Sec4Reg1, Sec4Reg2, Sec4Reg3\
+		, Sec4Reg4, Sec4Reg5, Sec4Reg6, Sec4Reg7, Sec4Reg8, Sec5Reg1, Sec5Reg2, Sec5Reg3, Sec5Reg4\
+		, Sec5Reg5, Sec5Reg6, Sec5Reg7, Sec5Reg8, Sec6Reg1, Sec6Reg2, Sec6Reg3, Sec6Reg4, Sec6Reg5\
+		, Sec6Reg6, Sec6Reg7, Sec6Reg8, Sec7Reg1, Sec7Reg2, Sec7Reg3, Sec7Reg4, Sec7Reg5, Sec7Reg6\
+		, Sec7Reg7, Sec7Reg8, Sec8Reg1, Sec8Reg2, Sec8Reg3, Sec8Reg4, Sec8Reg5, Sec8Reg6, Sec8Reg7\
+		, Sec8Reg8, Sec9Reg1, Sec9Reg2, Sec9Reg3, Sec9Reg4, Sec9Reg5, Sec9Reg6, Sec9Reg7, Sec9Reg8\
+		, Sec10Reg1, Sec10Reg2, Sec10Reg3, Sec10Reg4, Sec10Reg5, Sec10Reg6, Sec10Reg7, Sec10Reg8\
+		, Sec11Reg1, Sec11Reg2, Sec11Reg3, Sec11Reg4, Sec11Reg5, Sec11Reg6, Sec11Reg7, Sec11Reg8\
+		, Sec12Reg1, Sec12Reg2, Sec12Reg3, Sec12Reg4, Sec12Reg5, Sec12Reg6, Sec12Reg7, Sec12Reg8\
+		, Sec13Reg1, Sec13Reg2, Sec13Reg3, Sec13Reg4, Sec13Reg5, Sec13Reg6, Sec13Reg7, Sec13Reg8\
+		, Sec14Reg1, Sec14Reg2, Sec14Reg3, Sec14Reg4, Sec14Reg5, Sec14Reg6, Sec14Reg7, Sec14Reg8\
+		, Sec15Reg1, Sec15Reg2, Sec15Reg3, Sec15Reg4, Sec15Reg5, Sec15Reg6, Sec15Reg7, Sec15Reg8\
+		, Sec16Reg1, Sec16Reg2, Sec16Reg3, Sec16Reg4, Sec16Reg5, Sec16Reg6, Sec16Reg7, Sec16Reg8\
+		, Sec17Reg1, Sec17Reg2, Sec17Reg3, Sec17Reg4, Sec17Reg5, Sec17Reg6, Sec17Reg7, Sec17Reg8\
+		, Sec18Reg1, Sec18Reg2, Sec18Reg3, Sec18Reg4, Sec18Reg5, Sec18Reg6, Sec18Reg7, Sec18Reg8\
+		, Sec19Reg1, Sec19Reg2, Sec19Reg3, Sec19Reg4, Sec19Reg5, Sec19Reg6, Sec19Reg7, Sec19Reg8\
+		, Sec20Reg1, Sec20Reg2, Sec20Reg3, Sec20Reg4, Sec20Reg5, Sec20Reg6, Sec20Reg7, Sec20Reg8\
+		, Sec21Reg1, Sec21Reg2, Sec21Reg3, Sec21Reg4, Sec21Reg5, Sec21Reg6, Sec21Reg7, Sec21Reg8\
+		, Sec22Reg1, Sec22Reg2, Sec22Reg3, Sec22Reg4, Sec22Reg5, Sec22Reg6, Sec22Reg7, Sec22Reg8\
+		, Sec23Reg1, Sec23Reg2, Sec23Reg3, Sec23Reg4, Sec23Reg5, Sec23Reg6, Sec23Reg7, Sec23Reg8\
+		, Sec24Reg1, Sec24Reg2, Sec24Reg3, Sec24Reg4, Sec24Reg5, Sec24Reg6, Sec24Reg7, Sec24Reg8\
+		, Sec25Reg1, Sec25Reg2, Sec25Reg3, Sec25Reg4, Sec25Reg5, Sec25Reg6, Sec25Reg7, Sec25Reg8\
+		, Sec26Reg1, Sec26Reg2, Sec26Reg3, Sec26Reg4, Sec26Reg5, Sec26Reg6, Sec26Reg7, Sec26Reg8\
+		, Sec27Reg1, Sec27Reg2, Sec27Reg3, Sec27Reg4, Sec27Reg5, Sec27Reg6, Sec27Reg7, Sec27Reg8\
+		, Sec28Reg1, Sec28Reg2, Sec28Reg3, Sec28Reg4, Sec28Reg5, Sec28Reg6, Sec28Reg7, Sec28Reg8\
+		, Sec29Reg1, Sec29Reg2, Sec29Reg3, Sec29Reg4, Sec29Reg5, Sec29Reg6, Sec29Reg7, Sec29Reg8\
+		, Sec30Reg1, Sec30Reg2, Sec30Reg3, Sec30Reg4, Sec30Reg5, Sec30Reg6, Sec30Reg7, Sec30Reg8\
+		, Sec31Reg1, Sec31Reg2, Sec31Reg3, Sec31Reg4, Sec31Reg5, Sec31Reg6, Sec31Reg7, Sec31Reg8\
+		, Sec32Reg1, Sec32Reg2, Sec32Reg3, Sec32Reg4, Sec32Reg5, Sec32Reg6, Sec32Reg7, Sec32Reg8\
+		, Sec33Reg1, Sec33Reg2, Sec33Reg3, Sec33Reg4, Sec33Reg5, Sec33Reg6, Sec33Reg7, Sec33Reg8\
+		, Sec34Reg1, Sec34Reg2, Sec34Reg3, Sec34Reg4, Sec34Reg5, Sec34Reg6, Sec34Reg7, Sec34Reg8\
+		, Sec35Reg1, Sec35Reg2, Sec35Reg3, Sec35Reg4, Sec35Reg5, Sec35Reg6, Sec35Reg7, Sec35Reg8
+	~	
+	~		|
+
+Regiones:
+	EU,USMCA,LA,China,India,Russia,EAaO,RoW
+	~	
+	~		|
+
+Matriz A2[SecReg,SecReg1]=
+	MatrizA mul constante[SecReg,SecReg1]*MatrizA mul constante[SecReg,SecReg1]
+	~	
+	~		|
+
+Regiones1:
+	EU,USMCA,LA,China,India,Russia,EAaO,RoW
+	~	
+	~		|
+
+Sectores:
+	sec1,sec2,sec3,sec4,sec5,sec6,sec7,sec8,sec9,sec10,sec11,sec12,sec13,sec14,sec15,sec16\
+		,sec17,sec18,sec19,sec20,sec21,sec22,sec23,sec24,sec25,sec26,sec27,sec28,sec29,sec30\
+		,sec31,sec32,sec33,sec34,sec35
+	~	
+	~		|
+
+Sectores1:
+	sec1,sec2,sec3,sec4,sec5,sec6,sec7,sec8,sec9,sec10,sec11,sec12,sec13,sec14,sec15,sec16\
+		,sec17,sec18,sec19,sec20,sec21,sec22,sec23,sec24,sec25,sec26,sec27,sec28,sec29,sec30\
+		,sec31,sec32,sec33,sec34,sec35
+	~	
+	~		|
+
+Random=
+	RANDOM UNIFORM(0.9, 1.1 , 0 )
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 1
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.03125
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Random,413,1,33,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,MatrizA mul constante,463,77,40,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,3,1,2,1,0,0,0,0,128,0,-1--1--1,,1|(452,48)|
+10,4,Matriz A2,541,163,33,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,5,2,4,0,0,0,0,0,128,0,-1--1--1,,1|(500,118)|
+10,6,Matriz IA def,567,260,43,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,7,4,6,0,0,0,0,0,128,0,-1--1--1,,1|(551,204)|
+10,8,Leontief Matrix def,630,429,49,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,9,MatrizA,257,89,27,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,10,MatrizI,281,250,24,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,11,9,2,0,0,0,0,0,128,0,-1--1--1,,1|(346,83)|
+1,12,10,6,0,0,0,0,0,128,0,-1--1--1,,1|(407,253)|
+10,13,Matrices Leontief Regionales,957,446,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,14,Compute all steps,388,418,56,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,15,Time,374,328,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,16,15,6,0,0,0,0,0,64,0,-1--1--1,,1|(460,297)|
+1,17,14,6,0,0,0,0,0,128,0,-1--1--1,,1|(471,343)|
+1,18,6,8,0,0,0,0,0,128,0,-1--1--1,,1|(594,333)|
+10,19,Matriz Leontief EUEU,1134,321,49,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,20,Matrices IA Regionales,900,222,39,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,21,Matrices A Regionales,670,102,36,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,22,13,19,1,0,0,0,0,64,0,-1--1--1,,1|(1011,363)|
+1,23,4,21,0,0,0,0,0,64,0,-1--1--1,,1|(592,138)|
+1,24,6,20,1,0,0,0,0,128,0,-1--1--1,,1|(703,233)|
+1,25,8,13,1,0,0,0,0,128,0,-1--1--1,,1|(739,448)|
+///---\\\
+:L<%^E!@
+1:sec35reg8_v_03 Compute.vdfx
+9:sec35reg8_v_03 Compute
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+4:Time
+5:Matrices IA Regionales[Regiones,Regiones,Sectores,Sectores]
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+42:1
+72:0
+73:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:0
+25:17
+26:17
+75:
+43:
+6:EU
+6:sec1
+6:sec10
+6:sec11
+6:sec12
+6:sec13
+6:sec14
+6:sec15
+6:sec16
+6:sec17
+6:sec18
+6:sec19
+6:Sec1Reg1
+6:sec2
+6:sec20
+6:sec21
+6:sec22
+6:sec23
+6:sec24
+6:sec25
+6:sec26
+6:sec27
+6:sec28
+6:sec29
+6:sec3
+6:sec30
+6:sec31
+6:sec32
+6:sec33
+6:sec34
+6:sec35
+6:sec4
+6:sec5
+6:sec6
+6:sec7
+6:sec8
+6:sec9
