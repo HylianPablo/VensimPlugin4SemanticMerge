@@ -1,0 +1,529 @@
+{UTF-8}
+matriculaciones vehiculos[VEHICULOS,COMBUSTIBLE]= ACTIVE INITIAL (
+	IF THEN ELSE( Vehiculos[VEHICULOS,COMBUSTIBLE]>0 , Vehiculos
+	[VEHICULOS,COMBUSTIBLE]*("%de matriculacion 0")*Selector tecnologia[COMBUSTIBLE]* tasa variacion hogares\
+		,0),
+		"%de matriculacion 0"*Vehiculos[VEHICULOS,COMBUSTIBLE])
+	~	vehiculos
+	~	la percepcion de cada medio aumenta o disminuye el numero de matriculaciones, \
+		indicando la atraccion por cada medio y como eso se traduce en compras.
+		el coste influye sobre el total de vehiculos del mismo medio, de forma que \
+		si el coste de determinada tecnologia es menor que el resto es la que mas \
+		fraccion de matriculaciones lleva
+	|
+
+Coste percibido por medio[MEDIOS,LIQ]=
+	Coste vehiculos inicial[MEDIOS,LIQ]*Cambio precios liq ~~|
+Coste percibido por medio[MEDIOS,HEV]=
+	Coste vehiculos inicial[MEDIOS,HEV]*Cambio precios baterias*Cambio precios liq ~~|
+Coste percibido por medio[MEDIOS,BEV]=
+	Coste vehiculos inicial[MEDIOS,BEV]*Cambio precios baterias
+	~	eur
+	~		|
+
+num HH=
+	num HH0*tasa variacion hogares
+	~	hogares
+	~		|
+
+Cambio precios baterias= WITH LOOKUP (
+	Time,
+		([(0,0)-(2050,10)],(2000,1),(2020,0.9),(2050,0.6)))
+	~	Dmnl
+	~	cambio anual de precios tecnologias electricas
+	|
+
+Cambio precios liq= WITH LOOKUP (
+	Time,
+		([(1990,0)-(2050,10)],(2000,1),(2013.85,1.00877),(2018.07,1.00877),(2023.03,1.22807\
+		),(2033.85,1.66667),(2050,1.3) ))
+	~	Dmnl
+	~	cambio anual de precios de tecnologias fosiles
+	|
+
+num HH0=
+	GET XLS CONSTANTS('datos.xlsx', 'calculadorVLD' , 'C6' )
+	~	hogares
+	~		|
+
+congestion redes viarias[VEHICULO PRIVADO]= ACTIVE INITIAL (
+	IF THEN ELSE( SUM(Reparto modal por motivo[MOTIVO!,VEHICULO PRIVADO])>0.5 , IF THEN ELSE\
+		( SUM(Reparto modal por motivo[MOTIVO!,VEHICULO PRIVADO])>1 , 0.6 , 0.8 ), 1 ),
+		1) ~~|
+congestion redes viarias[MEDIOS] :EXCEPT:  [VEHICULO PRIVADO]=
+	1
+	~	Dmnl
+	~	congestion es un indice: si el reparto modal del vehiculo privado de \
+		todos los modos suma 0.5 (mas de 0.15 de media) hace bajar la velocidad \
+		de los modos viarios en 0.8. Si supera 1 (mas de 0,3 en promedio de todos \
+		los modos) hace bajar 0,6. Sino es 1.
+	|
+
+Consumo energetico por motivo y medio[MEDIOS,MOTIVO,COMBUSTIBLE,ENERGIA]=
+	Eficiencia tecnica por medio[MEDIOS,COMBUSTIBLE,ENERGIA]*Movilidad por motivo y medio\
+		[MOTIVO,MEDIOS]
+	~	kwhfinal
+	~		|
+
+tasa variacion hogares=
+	1.05
+	~	Dmnl
+	~		|
+
+ENERGIA:
+	Eterm, Eelec
+	~	
+	~	energia final termica o electrica
+	|
+
+Disponibilidad por medio[A PIE]=
+	0.9 ~~|
+Disponibilidad por medio[VEHICULO PRIVADO]=
+	SUM(Vehiculos[LDV4w,COMBUSTIBLE!])/300000 ~~|
+Disponibilidad por medio[OTRO]=
+	0.1 ~~|
+Disponibilidad por medio[TRANSPORTE PuBLICO]=
+	SUM(Vehiculos[BUS,COMBUSTIBLE!])*50/500000
+	~	vehiculos/persona
+	~	disponibilidad e vehiculos por persona.
+		-suposiciones: el 90% de las personas pueden ir peatonalmente
+		-el ratio de vehiculos es por habitante
+		-el ratio para el transporte publico es entre plazas para toda la poblacion de la \
+		provincia
+		-Otro, en tanto bicicleta se supone como que el 10% de la poblacion
+	|
+
+Eficiencia tecnica por medio[VEHICULO PRIVADO,COMBUSTIBLE,ENERGIA]=
+	Eficiencia tecnica vehiculos[LDV4w,COMBUSTIBLE,ENERGIA]/ocupacion vehiculo[LDV4w,\
+		COMBUSTIBLE]/plazas vehiculo[LDV4w,COMBUSTIBLE]*Vehiculos[LDV4w,COMBUSTIBLE]/SUM(\
+		Vehiculos[LDV4w,COMBUSTIBLE!]) ~~|
+Eficiencia tecnica por medio[TRANSPORTE PuBLICO,COMBUSTIBLE,ENERGIA]=
+	Eficiencia tecnica vehiculos[BUS,COMBUSTIBLE,ENERGIA]/ocupacion vehiculo[BUS,COMBUSTIBLE\
+		]/plazas vehiculo[BUS,COMBUSTIBLE]*Vehiculos[BUS,COMBUSTIBLE]/SUM(Vehiculos[BUS,\
+		COMBUSTIBLE!]) ~~|
+Eficiencia tecnica por medio[A PIE,COMBUSTIBLE,ENERGIA]=
+	0 ~~|
+Eficiencia tecnica por medio[OTRO,COMBUSTIBLE,ENERGIA]=
+	0
+	~	kwhfinal/personaskm
+	~	La eficiencia de cada MODO es:
+		eficiencia de cada modo es el promedio de cada \
+		(efinal/km/ocupacion/plazas*nºvehiculos tecnologia i/total vehiculos)
+		Se obtiene la energia final -termica o electrica- / pasajero y km para \
+		cada modo
+	|
+
+bajas vehiculos[VEHICULOS,COMBUSTIBLE]=
+	Vehiculos[VEHICULOS,COMBUSTIBLE]*"%de bajas 0"
+	~	vehiculos
+	~		|
+
+VEHICULOS:
+	LDV4w,  BUS
+	~	
+	~		|
+
+Vehiculos[VEHICULOS,COMBUSTIBLE]= INTEG (
+	matriculaciones vehiculos[VEHICULOS,COMBUSTIBLE]-bajas vehiculos[VEHICULOS,COMBUSTIBLE\
+		],
+		veh inicial[VEHICULOS,COMBUSTIBLE])
+	~	vehiculos
+	~		|
+
+Selector tecnologia[LIQ]=
+	EXP(-SUM(Coste percibido por medio[MEDIOS!,LIQ]))/(EXP(-SUM(Coste percibido por medio\
+		[MEDIOS!,LIQ]))+EXP(-SUM(Coste percibido por medio[MEDIOS!,BEV]))+EXP(-SUM(Coste percibido por medio\
+		[MEDIOS!,HEV]))) ~~|
+Selector tecnologia[BEV]=
+	EXP(-SUM(Coste percibido por medio[MEDIOS!,BEV]))/(EXP(-SUM(Coste percibido por medio\
+		[MEDIOS!,LIQ]))+EXP(-SUM(Coste percibido por medio[MEDIOS!,BEV]))+EXP(-SUM(Coste percibido por medio\
+		[MEDIOS!,HEV]))) ~~|
+Selector tecnologia[HEV]=
+	EXP(-SUM(Coste percibido por medio[MEDIOS!,HEV]))/(EXP(-SUM(Coste percibido por medio\
+		[MEDIOS!,LIQ]))+EXP(-SUM(Coste percibido por medio[MEDIOS!,BEV]))+EXP(-SUM(Coste percibido por medio\
+		[MEDIOS!,HEV])))
+	~	Dmnl
+	~	la tecnologia de los vehiculos se compra en funcion de su coste con una \
+		funcion LOGIT (exponencial con coeficiente negativo (-1), dado que a \
+		menor coste mayor proporcion).
+	|
+
+Velocidad percibida por medio inicial[MEDIOS]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'vRM')
+	~	km/h
+	~		|
+
+Coste vehiculos inicial[VEHICULO PRIVADO,LIQ]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AG8') ~~|
+Coste vehiculos inicial[VEHICULO PRIVADO,BEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AG9') ~~|
+Coste vehiculos inicial[VEHICULO PRIVADO,HEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AG10') ~~|
+Coste vehiculos inicial[TRANSPORTE PuBLICO,LIQ]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AG11') ~~|
+Coste vehiculos inicial[TRANSPORTE PuBLICO,BEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AG12') ~~|
+Coste vehiculos inicial[TRANSPORTE PuBLICO,HEV]=
+	0 ~~|
+Coste vehiculos inicial[A PIE,COMBUSTIBLE]=
+	0 ~~|
+Coste vehiculos inicial[OTRO,COMBUSTIBLE]=
+	0
+	~	eur
+	~	LCOM de vehiculos privados por tecnologia y de TP
+	|
+
+Velocidad percibida por medio[A PIE]=
+	Velocidad percibida por medio inicial[A PIE] ~~|
+Velocidad percibida por medio[VEHICULO PRIVADO]=
+	Velocidad percibida por medio inicial[VEHICULO PRIVADO]*DELAY1(congestion redes viarias\
+		[VEHICULO PRIVADO], 1 ) ~~|
+Velocidad percibida por medio[TRANSPORTE PuBLICO]=
+	Velocidad percibida por medio inicial[TRANSPORTE PuBLICO]*DELAY1(congestion redes viarias\
+		[VEHICULO PRIVADO], 1 ) ~~|
+Velocidad percibida por medio[OTRO]=
+	Velocidad percibida por medio inicial[OTRO]
+	~	km/h
+	~	Velocidades percibidas iniciales
+		-por el aumento en % del parque de vehiculos respecto a los 5 años \
+		anteriories(representa el peso de cada modo en la velocidad)
+		-menos el aumento del reparto modal del ukltimo año, representando la \
+		congestion
+	|
+
+"%de bajas 0"=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AQ6')
+	~	Dmnl
+	~		|
+
+"%de matriculacion 0"=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AM6')
+	~	Dmnl
+	~		|
+
+alfa[MEDIOS,TRABAJO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'alfatrab') ~~|
+alfa[MEDIOS,ESTUDIO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'alfaestud') ~~|
+alfa[MEDIOS,CONSUMO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'alfaconsum') ~~|
+alfa[MEDIOS,OCIO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'alfaocio') ~~|
+alfa[MEDIOS,CUIDADOS]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'alfacuid')
+	~	1/kmvehiculos/persona
+	~		|
+
+beta[MEDIOS,TRABAJO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'betatrab') ~~|
+beta[MEDIOS,ESTUDIO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'betaestud') ~~|
+beta[MEDIOS,CONSUMO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'betaconsum') ~~|
+beta[MEDIOS,OCIO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'betaocio') ~~|
+beta[MEDIOS,CUIDADOS]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'betacuid')
+	~	1/eurkm/h
+	~		|
+
+COMBUSTIBLE:
+	LIQ, HEV, BEV
+	~	
+	~		|
+
+Distancia por viaje y motivo[MOTIVO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'DISTPORMOTIV')
+	~	km
+	~		|
+
+Eficiencia tecnica vehiculos[LDV4w,LIQ,Eterm]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AD8') ~~|
+Eficiencia tecnica vehiculos[LDV4w,BEV,Eelec]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AD9') ~~|
+Eficiencia tecnica vehiculos[LDV4w,HEV,Eterm]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AG68') ~~|
+Eficiencia tecnica vehiculos[BUS,LIQ,Eterm]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AD11') ~~|
+Eficiencia tecnica vehiculos[BUS,BEV,Eelec]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AD12') ~~|
+Eficiencia tecnica vehiculos[BUS,HEV,ENERGIA]=
+	0 ~~|
+Eficiencia tecnica vehiculos[LDV4w,LIQ,Eelec]=
+	0 ~~|
+Eficiencia tecnica vehiculos[LDV4w,BEV,Eterm]=
+	0 ~~|
+Eficiencia tecnica vehiculos[LDV4w,HEV,Eelec]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AG69') ~~|
+Eficiencia tecnica vehiculos[BUS,LIQ,Eelec]=
+	0 ~~|
+Eficiencia tecnica vehiculos[BUS,BEV,Eterm]=
+	0
+	~	kwhfinal/kmvehiculo
+	~		|
+
+Habitos por motivo[MEDIOS,MOTIVO]=
+	Disponibilidad por medio[MEDIOS]+Distancia por viaje y motivo[MOTIVO]
+	~	kmvehiculos/persona
+	~		|
+
+MEDIOS:
+	A PIE,  TRANSPORTE PuBLICO, VEHICULO PRIVADO,OTRO
+	~	
+	~		|
+
+MOTIVO:
+	TRABAJO, ESTUDIO, CONSUMO, OCIO, CUIDADOS
+	~	
+	~		|
+
+Movilidad por motivo y medio[MOTIVO,MEDIOS]=
+	Reparto modal por motivo[MOTIVO,MEDIOS]*num HH*Distancia por viaje y motivo[MOTIVO]*\
+		Viajes por motivo y dia[MOTIVO]*2.16
+	~	personaskm
+	~	2.16 personas por hogar en2015
+	|
+
+ocupacion vehiculo[LDV4w,LIQ]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AF8') ~~|
+ocupacion vehiculo[LDV4w,BEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AF9') ~~|
+ocupacion vehiculo[LDV4w,HEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AF10') ~~|
+ocupacion vehiculo[BUS,LIQ]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AF11') ~~|
+ocupacion vehiculo[BUS,BEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AF12') ~~|
+ocupacion vehiculo[BUS,HEV]=
+	1
+	~	personas/plaza
+	~		|
+
+Percepcion por motivo[MEDIOS]=
+	-SUM(Coste percibido por medio[MEDIOS,COMBUSTIBLE!])+Velocidad percibida por medio[MEDIOS\
+		]
+	~	eurkm/h
+	~		|
+
+plazas vehiculo[LDV4w,LIQ]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AE8') ~~|
+plazas vehiculo[LDV4w,BEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AE9') ~~|
+plazas vehiculo[LDV4w,HEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AE10') ~~|
+plazas vehiculo[BUS,LIQ]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AE11') ~~|
+plazas vehiculo[BUS,BEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'AE12') ~~|
+plazas vehiculo[BUS,HEV]=
+	1
+	~	plazas/vehiculo
+	~		|
+
+Reparto modal por motivo[MOTIVO,A PIE]=
+	EXP(alfa[A PIE,MOTIVO]*Habitos por motivo[A PIE,MOTIVO]+Percepcion por motivo[A PIE\
+		]*beta[A PIE,MOTIVO])/
+	(EXP(alfa[A PIE,MOTIVO]*Habitos por motivo[A PIE,MOTIVO]+Percepcion por motivo[A PIE\
+		]*beta[A PIE,MOTIVO])+
+	EXP(alfa[VEHICULO PRIVADO,MOTIVO]*Habitos por motivo[VEHICULO PRIVADO,MOTIVO]+Percepcion por motivo\
+		[VEHICULO PRIVADO]*beta[VEHICULO PRIVADO,MOTIVO])+
+	EXP(alfa[TRANSPORTE PuBLICO,MOTIVO]*Habitos por motivo[TRANSPORTE PuBLICO,MOTIVO]+\
+		Percepcion por motivo[TRANSPORTE PuBLICO]*beta[TRANSPORTE PuBLICO,MOTIVO])+
+	EXP(alfa[OTRO,MOTIVO]*Habitos por motivo[OTRO,MOTIVO]+Percepcion por motivo[OTRO]*beta\
+		[OTRO,MOTIVO])) ~~|
+Reparto modal por motivo[MOTIVO,VEHICULO PRIVADO]=
+	EXP(alfa[VEHICULO PRIVADO,MOTIVO]*Habitos por motivo[VEHICULO PRIVADO,MOTIVO]+Percepcion por motivo\
+		[VEHICULO PRIVADO]*beta[VEHICULO PRIVADO,MOTIVO])/
+	(EXP(alfa[A PIE,MOTIVO]*Habitos por motivo[A PIE,MOTIVO]+Percepcion por motivo[A PIE\
+		]*beta[A PIE,MOTIVO])+
+	EXP(alfa[VEHICULO PRIVADO,MOTIVO]*Habitos por motivo[VEHICULO PRIVADO,MOTIVO]+Percepcion por motivo\
+		[VEHICULO PRIVADO]*beta[VEHICULO PRIVADO,MOTIVO])+
+	EXP(alfa[TRANSPORTE PuBLICO,MOTIVO]*Habitos por motivo[TRANSPORTE PuBLICO,MOTIVO]+\
+		Percepcion por motivo[TRANSPORTE PuBLICO]*beta[TRANSPORTE PuBLICO,MOTIVO])+
+	EXP(alfa[OTRO,MOTIVO]*Habitos por motivo[OTRO,MOTIVO]+Percepcion por motivo[OTRO]*beta\
+		[OTRO,MOTIVO])) ~~|
+Reparto modal por motivo[MOTIVO,TRANSPORTE PuBLICO]=
+	EXP(alfa[TRANSPORTE PuBLICO,MOTIVO]*Habitos por motivo[TRANSPORTE PuBLICO,MOTIVO]+\
+		Percepcion por motivo[TRANSPORTE PuBLICO]*beta[TRANSPORTE PuBLICO,MOTIVO])/
+	(EXP(alfa[A PIE,MOTIVO]*Habitos por motivo[A PIE,MOTIVO]+Percepcion por motivo[A PIE\
+		]*beta[A PIE,MOTIVO])+
+	EXP(alfa[VEHICULO PRIVADO,MOTIVO]*Habitos por motivo[VEHICULO PRIVADO,MOTIVO]+Percepcion por motivo\
+		[VEHICULO PRIVADO]*beta[VEHICULO PRIVADO,MOTIVO])+
+	EXP(alfa[TRANSPORTE PuBLICO,MOTIVO]*Habitos por motivo[TRANSPORTE PuBLICO,MOTIVO]+\
+		Percepcion por motivo[TRANSPORTE PuBLICO]*beta[TRANSPORTE PuBLICO,MOTIVO])+
+	EXP(alfa[OTRO,MOTIVO]*Habitos por motivo[OTRO,MOTIVO]+Percepcion por motivo[OTRO]*beta\
+		[OTRO,MOTIVO])) ~~|
+Reparto modal por motivo[MOTIVO,OTRO]=
+	EXP(alfa[OTRO,MOTIVO]*Habitos por motivo[OTRO,MOTIVO]+Percepcion por motivo[OTRO]*beta\
+		[OTRO,MOTIVO])/
+	(EXP(alfa[A PIE,MOTIVO]*Habitos por motivo[A PIE,MOTIVO]+Percepcion por motivo[A PIE\
+		]*beta[A PIE,MOTIVO])+
+	EXP(alfa[VEHICULO PRIVADO,MOTIVO]*Habitos por motivo[VEHICULO PRIVADO,MOTIVO]+Percepcion por motivo\
+		[VEHICULO PRIVADO]*beta[VEHICULO PRIVADO,MOTIVO])+
+	EXP(alfa[TRANSPORTE PuBLICO,MOTIVO]*Habitos por motivo[TRANSPORTE PuBLICO,MOTIVO]+\
+		Percepcion por motivo[TRANSPORTE PuBLICO]*beta[TRANSPORTE PuBLICO,MOTIVO])+
+	EXP(alfa[OTRO,MOTIVO]*Habitos por motivo[OTRO,MOTIVO]+Percepcion por motivo[OTRO]*beta\
+		[OTRO,MOTIVO]))
+	~	Dmnl
+	~		|
+
+veh inicial[LDV4w,LIQ]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'Z8') ~~|
+veh inicial[LDV4w,BEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'Z9') ~~|
+veh inicial[LDV4w,HEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'Z10') ~~|
+veh inicial[BUS,LIQ]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'Z11') ~~|
+veh inicial[BUS,BEV]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'Z12') ~~|
+veh inicial[BUS,HEV]=
+	0
+	~	vehiculos
+	~		|
+
+Viajes por motivo y dia[MOTIVO]=
+	GET DIRECT CONSTANTS('datos.xlsx', 'calculadorVLD', 'VIAJPORMOTIV')
+	~	viajespersona/hogardia
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 2050
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 2015
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,60,0
+10,1,num HH,1183,1213,28,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Viajes por motivo y dia,1104,1118,57,19,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-192-128,0,0,0,0,0,0
+10,3,Distancia por viaje y motivo,1196,1050,59,19,8,3,0,3,0,0,0,0,92-92-92,0-0-0,|12||92-92-92,0,0,0,0,0,0
+10,4,Disponibilidad por medio,949,697,59,19,8,3,0,3,0,0,0,0,128-0-128,0-0-0,|12||128-0-128,0,0,0,0,0,0
+10,5,Coste percibido por medio,788,779,52,19,8,3,0,3,0,0,0,0,128-0-128,0-0-0,|12||128-0-128,0,0,0,0,0,0
+10,6,Velocidad percibida por medio,747,874,65,19,8,3,0,3,0,0,0,0,128-0-128,0-0-0,|12||128-0-128,0,0,0,0,0,0
+10,7,Habitos por motivo,1156,758,39,19,8,3,0,3,0,0,0,0,128-0-128,0-0-0,|12||128-0-128,0,0,0,0,0,0
+10,8,Percepcion por motivo,1035,853,49,19,8,3,0,3,0,0,0,0,128-0-128,0-0-0,|12||128-0-128,0,0,0,0,0,0
+10,9,Reparto modal por motivo,1341,830,61,19,8,3,0,3,0,0,0,0,128-0-128,0-0-0,|12||128-0-128,0,0,0,0,0,0
+10,10,alfa,1328,944,13,11,8,3,0,3,0,0,0,0,128-0-128,0-0-0,|12||128-0-128,0,0,0,0,0,0
+10,11,Vehiculos,1164,338,40,20,3,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-128-0,0,0,0,0,0,0
+12,12,48,718,336,10,8,0,3,0,2,-1,0,0,0,0-0-0,0-0-0,|12||255-128-0,0,0,0,0,0,0
+1,13,15,11,4,0,0,22,1,0,0,255-128-0,|12||0-0-0,1|(1050,334)|
+1,14,15,12,100,0,0,22,1,0,0,255-128-0,|12||0-0-0,1|(846,334)|
+11,15,48,970,334,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,16,matriculaciones vehiculos,970,361,49,19,40,3,0,2,-1,0,0,0,0-0-0,0-0-0,|12||255-128-0,0,0,0,0,0,0
+12,17,48,1478,336,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,18,20,17,4,0,0,22,1,0,0,255-128-0,|12||0-0-0,1|(1405,336)|
+1,19,20,11,100,0,0,22,1,0,0,255-128-0,|12||0-0-0,1|(1267,336)|
+11,20,48,1336,336,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,21,bajas vehiculos,1336,355,48,11,40,3,0,2,-1,0,0,0,0-0-0,0-0-0,|12||255-128-0,0,0,0,0,0,0
+10,22,Movilidad por motivo y medio,1737,953,49,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,23,Eficiencia tecnica por medio,1618,325,55,19,8,3,0,3,0,0,0,0,0-128-255,0-0-0,|12||0-128-255,0,0,0,0,0,0
+10,24,Consumo energetico por motivo y medio,1959,565,66,19,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
+1,25,11,4,1,0,0,0,0,128,0,-1--1--1,,1|(1022,602)|
+1,26,4,7,0,0,0,0,1,128,0,128-0-128,|12||0-0-0,1|(1055,728)|
+1,27,3,7,0,0,0,0,1,128,0,128-128-128,|12||0-0-0,1|(1176,910)|
+1,28,5,8,0,0,0,0,1,128,0,128-0-128,|12||0-0-0,1|(906,813)|
+1,29,6,8,0,0,0,0,1,128,0,128-0-128,|12||0-0-0,1|(892,863)|
+10,30,"%de matriculacion 0",816,435,48,19,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-128-0,0,0,0,0,0,0
+10,31,"%de bajas 0",1303,410,40,11,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-128-0,0,0,0,0,0,0
+1,32,30,16,0,0,0,0,1,128,0,255-128-0,|12||0-0-0,1|(886,401)|
+1,33,31,21,0,0,0,0,1,128,0,255-128-0,|12||0-0-0,1|(1315,388)|
+1,34,11,16,1,0,0,0,1,128,0,255-128-0,|12||0-0-0,1|(1074,378)|
+1,35,11,21,1,0,0,0,1,128,0,255-128-0,|12||0-0-0,1|(1225,363)|
+10,36,veh inicial,1025,276,31,11,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-128-0,0,0,0,0,0,0
+1,37,36,11,0,0,0,0,1,128,1,255-128-0,|12||0-0-0,1|(1080,300)|
+10,38,Eficiencia tecnica vehiculos,1200,222,55,19,8,3,0,3,0,0,0,0,0-128-255,0-0-0,|12||0-128-255,0,0,0,0,0,0
+10,39,plazas vehiculo,1471,216,47,11,8,3,0,3,0,0,0,0,0-128-255,0-0-0,|12||0-128-255,0,0,0,0,0,0
+10,40,ocupacion vehiculo,1628,219,60,11,8,3,0,3,0,0,0,0,0-128-255,0-0-0,|12||0-128-255,0,0,0,0,0,0
+10,41,beta,1383,944,25,11,8,131,0,3,0,0,0,0,128-0-128,0-0-0,|12||128-0-128,0,0,0,0,0,0
+1,42,10,9,0,0,0,0,1,128,0,128-0-128,|12||0-0-0,1|(1332,897)|
+1,43,41,9,0,0,0,0,1,128,0,128-0-128,|12||0-0-0,1|(1365,897)|
+1,44,7,9,0,0,0,0,1,128,0,128-0-128,|12||0-0-0,1|(1236,789)|
+1,45,8,9,0,0,0,0,1,128,0,128-0-128,|12||0-0-0,1|(1174,842)|
+1,46,9,22,0,0,0,0,1,128,0,0-0-0,|12||0-0-0,1|(1538,890)|
+1,47,2,22,0,0,0,0,1,128,0,0-0-0,|12||0-0-0,1|(1417,1036)|
+1,48,1,22,0,0,0,0,1,128,0,0-0-0,|12||0-0-0,1|(1444,1089)|
+1,49,3,22,0,0,0,0,1,128,0,0-0-0,|12||0-0-0,1|(1464,1001)|
+1,50,38,23,0,0,0,0,1,128,0,0-192-255,|12||0-0-0,1|(1402,271)|
+1,51,39,23,0,0,0,0,1,128,0,0-192-255,|12||0-0-0,1|(1532,263)|
+1,52,40,23,0,0,0,0,1,128,0,0-192-255,|12||0-0-0,1|(1623,262)|
+1,53,22,24,0,0,0,0,1,128,0,255-0-0,|12||0-0-0,1|(1844,765)|
+1,54,23,24,0,0,0,0,1,128,0,255-0-0,|12||0-0-0,1|(1782,440)|
+10,55,Velocidad percibida por medio inicial,593,940,65,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,56,55,6,0,0,0,0,0,128,0,-1--1--1,,1|(663,909)|
+10,57,congestion redes viarias,867,999,54,19,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||128-0-128,0,0,0,0,0,0
+1,58,9,57,1,0,0,0,1,128,0,128-0-128,|12||0-0-0,1|(1143,991)|
+1,59,57,6,1,0,0,0,1,128,0,128-0-128,|12||0-0-0,1|(776,940)|
+10,60,Coste vehiculos inicial,641,706,59,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,61,60,5,0,0,0,0,0,128,0,-1--1--1,,1|(707,739)|
+10,62,Cambio precios liq,578,774,59,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,63,Cambio precios baterias,580,842,51,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,64,62,5,0,0,0,0,0,128,0,-1--1--1,,1|(679,775)|
+1,65,63,5,0,0,0,0,0,128,0,-1--1--1,,1|(676,812)|
+1,66,11,23,1,0,0,0,0,128,0,-1--1--1,,1|(1428,597)|
+10,67,Selector tecnologia,876,504,60,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,68,5,67,0,0,0,0,0,128,0,-1--1--1,,1|(830,644)|
+1,69,67,16,0,0,0,0,1,128,0,255-128-0,|12||0-0-0,1|(916,442)|
+10,70,num HH0,1032,1222,32,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,71,70,1,0,0,0,0,0,128,0,-1--1--1,,1|(1102,1218)|
+10,72,tasa variacion hogares,1211,1268,44,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,73,72,1,0,0,0,0,0,128,0,-1--1--1,,1|(1198,1242)|
+1,74,72,16,1,0,0,0,0,128,0,-1--1--1,,1|(493,802)|
+10,75,TIME STEP,788,817,50,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,76,Time,609,800,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,77,76,62,0,0,0,0,0,128,0,-1--1--1,,1|(598,791)|
+1,78,76,63,0,0,0,0,0,128,0,-1--1--1,,1|(601,811)|
+///---\\\
+:L<%^E!@
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:60,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+4:Time
+5:Eficiencia tecnica por medio
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:2015
+25:2050
+26:2050
+75:
+43:

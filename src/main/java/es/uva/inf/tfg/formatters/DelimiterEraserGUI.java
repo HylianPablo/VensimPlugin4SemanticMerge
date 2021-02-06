@@ -5,6 +5,7 @@ package es.uva.inf.tfg.formatters;
 import javax.swing.*;
 
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -90,6 +91,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
         // set the label to its initial value 
         l = new JLabel("No file selected.", SwingConstants.CENTER);
+        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
         auxL = new JLabel("", SwingConstants.CENTER);
         infoProcess = new JLabel("This will erase all the delimiters used to parse the file.", SwingConstants.CENTER);
 
@@ -136,7 +138,8 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
             String[] arg = new String[2];
             arg[0] = filePath;
             NoDelimiters.main(arg);
-            l.setForeground(Color.green);
+            Color greenColor = new Color(26, 110, 16);
+            l.setForeground(greenColor);
             l.setText("Operation successful.");
             auxL.setText("");
 
