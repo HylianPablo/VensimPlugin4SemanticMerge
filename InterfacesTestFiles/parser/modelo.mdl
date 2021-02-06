@@ -1,5 +1,5 @@
 {UTF-8}
-matriculaciones vehiculos[VEHICULOS,COMBUSTIBLE]= ACTIVE INITIAL (
+matriculaciones vehiculosCAMBIO[VEHICULOS,COMBUSTIBLE]= ACTIVE INITIAL (
 	IF THEN ELSE( Vehiculos[VEHICULOS,COMBUSTIBLE]>0 , Vehiculos
 	[VEHICULOS,COMBUSTIBLE]*("%de matriculacion 0")*Selector tecnologia[COMBUSTIBLE]* tasa variacion hogares\
 		,0),
