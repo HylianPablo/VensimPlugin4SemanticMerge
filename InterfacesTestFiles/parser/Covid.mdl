@@ -16,11 +16,6 @@ Cumul combined loss billions=
 	~	bdollars
 	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
-Ability of ventilator to reduce fatality=
-	0.5
-	~	dmnl [0.25,0.75,0.05]
-	~<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 0.4
-	|
 
 Adult ventilator capacity=
 	120000
