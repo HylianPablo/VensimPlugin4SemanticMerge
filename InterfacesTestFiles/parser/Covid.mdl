@@ -5,7 +5,7 @@
 		Active equations
 	|
 
-Restriction loosening at 10pct GDP loss=
+Restriction loosening at 10pct GDP lossHOLA=
 	Lookup for restriction loosening due to GDP loss(0.1/GDP frac loss for 50pct restriction loosening\
 		)
 	~	dmnl
