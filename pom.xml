@@ -86,7 +86,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>es.uva.inf.tfg.Main</mainClass>
+            <mainClass>es.uva.inf.vensimparserforsemanticmerge.Main</mainClass>
           </manifest>
         </archive>
       </configuration>

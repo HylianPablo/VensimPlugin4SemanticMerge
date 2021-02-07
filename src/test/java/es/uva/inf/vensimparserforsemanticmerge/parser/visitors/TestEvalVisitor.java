@@ -41,12 +41,12 @@ public class TestEvalVisitor {
             String result = br.lines().collect(Collectors.joining("\n"));
             br.close();
             assertEquals("", result);
-            /*
+
             Process process = Runtime.getRuntime()
                     .exec("C:\\Users\\Propietario\\AppData\\Local\\semanticmerge.\\semanticmergetool.exe"
                             + " --source=Formatted/BunnyFormat.mdl --destination=Formatted/BunnyFormat.mdl --externalparser=\"-jar target/mvntfg-1.0-jar-with-dependencies.jar\""
                             + " --virtualmachine=\"C:\\Program Files\\Java\\jdk-11.0.8\\bin\\java.exe\"");
-            */
+
         } catch (Exception ex) {
             System.err.println("Error en el proceso de diff: " + ex.getMessage());
         }
