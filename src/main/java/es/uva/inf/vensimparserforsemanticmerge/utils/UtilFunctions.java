@@ -43,7 +43,7 @@ public class UtilFunctions {
                     break;
                 } else if (line.indexOf("|") != -1) {
                     String nextLine = reader.readLine();
-                    array.add(nextLine.isBlank());
+                    array.add(nextLine.trim().isEmpty());
                 }
             }
 
