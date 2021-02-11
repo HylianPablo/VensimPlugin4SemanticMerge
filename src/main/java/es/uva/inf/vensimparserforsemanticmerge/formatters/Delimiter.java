@@ -26,7 +26,7 @@ public class Delimiter {
         }
     }
 
-    public static void writeFile(String equation, String viewDelimiter, String views, String graphDelimiter,
+    private static void writeFile(String equation, String viewDelimiter, String views, String graphDelimiter,
             String graphs, String metadata, String outputName) {
 
         String viewsDelimiter = "aaa---///";

@@ -153,7 +153,7 @@ public class Comment {
         return newString;
     }
 
-    public static void writeFile(String commentModified, String viewDelimiter, String lastPart, String outputName) {
+    private static void writeFile(String commentModified, String viewDelimiter, String lastPart, String outputName) {
         try {
             FileWriter writer = new FileWriter(outputName, false);
             writer.write(commentModified);

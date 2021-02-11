@@ -1,5 +1,6 @@
 package es.uva.inf.vensimparserforsemanticmerge.formatters;
 
+import javax.imageio.ImageIO;
 // Java program to create open or 
 // save dialog using JFileChooser 
 import javax.swing.*;
@@ -7,7 +8,9 @@ import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.*;
+import java.io.File;
 import java.io.IOException;
+import java.awt.image.BufferedImage;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -70,6 +73,17 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         // set the size of the frame 
         f.setSize(600, 400);
 
+        // set favicon
+        try {
+            File here = new File(".");
+            String pathHere = here.getAbsolutePath();
+            File imageFile = new File(pathHere.substring(0, pathHere.length() - 1) + "resources/faviconEraser.png");
+            BufferedImage image = ImageIO.read(imageFile);
+            f.setIconImage(image);
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+
         // set the frame's visibility 
         f.setVisible(true);
 
@@ -93,7 +107,8 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         l = new JLabel("No file selected.", SwingConstants.CENTER);
         l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
         auxL = new JLabel("", SwingConstants.CENTER);
-        infoProcess = new JLabel("This will erase all the delimiters used to parse the file.", SwingConstants.CENTER);
+        infoProcess = new JLabel("The process button will erase all the delimiters used to parse the file.",
+                SwingConstants.CENTER);
 
         Dimension size = l.getPreferredSize();
         l.setBounds(50, 80, 500, size.height);
@@ -137,7 +152,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         if (com.equals("Process")) {
             String[] arg = new String[2];
             arg[0] = filePath;
-            NoDelimiters.main(arg);
+            NoComDel.main(arg);
             Color greenColor = new Color(26, 110, 16);
             l.setForeground(greenColor);
             l.setText("Operation successful.");

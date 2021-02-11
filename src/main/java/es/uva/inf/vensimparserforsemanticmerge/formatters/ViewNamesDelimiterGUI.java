@@ -1,12 +1,14 @@
 package es.uva.inf.vensimparserforsemanticmerge.formatters;
 
+import javax.imageio.ImageIO;
 // Java program to create open or 
 // save dialog using JFileChooser 
 import javax.swing.*;
-
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -70,6 +72,17 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
         // set the size of the frame 
         f.setSize(600, 400);
 
+        // set favicon
+        try {
+            File here = new File(".");
+            String pathHere = here.getAbsolutePath();
+            File imageFile = new File(pathHere.substring(0, pathHere.length() - 1) + "faviconAdder.png");
+            BufferedImage image = ImageIO.read(imageFile);
+            f.setIconImage(image);
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+
         // set the frame's visibility 
         f.setVisible(true);
 
@@ -87,15 +100,14 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
 
         // make a panel to add the buttons and labels 
         JPanel p = new JPanel();
-        Color panelColor = new Color(224, 227, 152);
-        p.setBackground(panelColor);
         //p.setLayout(null);
 
         // set the label to its initial value 
         l = new JLabel("no file selected", SwingConstants.CENTER);
         l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
         auxL = new JLabel("", SwingConstants.CENTER);
-        infoProcess = new JLabel("This will add both delimiters used to parse the file and view names to equations.",
+        infoProcess = new JLabel(
+                "The process button will add both delimiters used to parse the file and view names to equations.",
                 SwingConstants.CENTER);
 
         Dimension size = l.getPreferredSize();
