@@ -40,7 +40,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
     static JButton cancelButton = new JButton("Cancel");
 
     //button to show absolute path
-    static JButton pathButton = new JButton("Absolute path");
+    static JButton pathButton = new JButton("Show absolute path");
 
     private String filePath;
     private String shortPath;
@@ -68,7 +68,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
     public static void main(String args[]) {
         // frame to contains GUI elements 
-        JFrame f = new JFrame("Delimiter eraser");
+        JFrame f = new JFrame("Erase view names and delimiters");
 
         // set the size of the frame 
         f.setSize(600, 400);
@@ -107,12 +107,13 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         l = new JLabel("No file selected.", SwingConstants.CENTER);
         l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
         auxL = new JLabel("", SwingConstants.CENTER);
+        auxL.setFont(new Font("Sans Serif", Font.PLAIN, 12));
         infoProcess = new JLabel("The process button will erase all the delimiters used to parse the file.",
                 SwingConstants.CENTER);
 
         Dimension size = l.getPreferredSize();
-        l.setBounds(50, 80, 500, size.height);
-        auxL.setBounds(50, 100, 500, size.height);
+        l.setBounds(50, 50, 500, size.height);
+        auxL.setBounds(50, 70, 500, size.height);
         auxL.setForeground(Color.black);
         infoProcess.setBounds(20, 120, 540, size.height);
 
@@ -124,7 +125,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         cancelButton.setBounds(320, 170, 90, 50);
         cancelButton.setVisible(false);
 
-        pathButton.setBounds(240, 260, 140, 20);
+        pathButton.setBounds(220, 260, 180, 20);
         pathButton.setVisible(false);
 
         p.setLayout(null);
@@ -150,6 +151,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         String com = evt.getActionCommand();
 
         if (com.equals("Process")) {
+            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
             String[] arg = new String[2];
             arg[0] = filePath;
             NoComDel.main(arg);
@@ -162,6 +164,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
         // if the user presses the open dialog show the open dialog 
         else if (com.equals("Open file")) {
+            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
             // create an object of JFileChooser class 
             JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 
@@ -173,6 +176,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
             {
                 // set the label to the path of the selected file
+                l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
                 if (j.getSelectedFile().getAbsolutePath().contains(".mdl")) {
                     filePath = j.getSelectedFile().getAbsolutePath();
                     if (checkFile(filePath)) {
@@ -204,6 +208,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
                 auxL.setText("");
             }
         } else if (com.equals("Cancel")) {
+            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
             l.setForeground(Color.black);
             l.setText("No file selected.");
             auxL.setText("");
@@ -214,19 +219,24 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
             openButton.setVisible(true);
             infoProcess.setVisible(false);
 
-        } else if (com.equals("Absolute path")) {
+        } else if (com.equals("Show absolute path") || com.equals("Show name without name")) {
             if (!absolutePathState) {
                 if (filePath.length() > 70) {
+                    l.setFont(new Font("Sans Serif", Font.PLAIN, 12));
+                    pathButton.setText("Show name without name");
                     String part1 = filePath.substring(0, 70);
                     String part2 = filePath.substring(70, filePath.length());
                     l.setText(part1);
                     auxL.setText(part2);
                 } else {
+                    l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+                    pathButton.setText("Show absolute path");
                     l.setText(filePath);
                     auxL.setText("");
                 }
                 absolutePathState = true;
             } else {
+                l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
                 l.setText(shortPath);
                 auxL.setText("");
                 absolutePathState = false;
