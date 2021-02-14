@@ -76,7 +76,7 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
         try {
             File here = new File(".");
             String pathHere = here.getAbsolutePath();
-            File imageFile = new File(pathHere.substring(0, pathHere.length() - 1) + "faviconAdder.png");
+            File imageFile = new File(pathHere.substring(0, pathHere.length() - 1) + "resources/faviconAdder.png");
             BufferedImage image = ImageIO.read(imageFile);
             f.setIconImage(image);
         } catch (IOException ex) {
@@ -114,7 +114,7 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
         l.setBounds(50, 80, 500, size.height);
         auxL.setBounds(50, 100, 500, size.height);
         auxL.setForeground(Color.black);
-        infoProcess.setBounds(50, 320, 500, size.height);
+        infoProcess.setBounds(20, 120, 540, size.height);
 
         processButton.setBounds(190, 170, 90, 50);
         processButton.setVisible(false);

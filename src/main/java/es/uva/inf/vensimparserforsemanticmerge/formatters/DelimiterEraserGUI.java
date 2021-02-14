@@ -114,7 +114,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         l.setBounds(50, 80, 500, size.height);
         auxL.setBounds(50, 100, 500, size.height);
         auxL.setForeground(Color.black);
-        infoProcess.setBounds(50, 320, 500, size.height);
+        infoProcess.setBounds(20, 120, 540, size.height);
 
         processButton.setBounds(190, 170, 90, 50);
         processButton.setVisible(false);
