@@ -45,10 +45,13 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
     private String shortPath;
     private boolean absolutePathState = false;
 
+    private AdderController controller;
+
     // a default constructor 
     ViewNamesDelimiterGUI() {
         filePath = "";
         shortPath = "";
+        controller = new AdderController(this);
     }
 
     private boolean checkFile(String filepath) {
@@ -146,100 +149,103 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
         f.setVisible(true);
     }
 
+    public void openAction() {
+        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+        // create an object of JFileChooser class 
+        JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+
+        // invoke the showsOpenDialog function to show the save dialog 
+        int r = j.showOpenDialog(null);
+
+        // if the user selects a file 
+        if (r == JFileChooser.APPROVE_OPTION)
+
+        {
+            // set the label to the path of the selected file
+            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+            if (j.getSelectedFile().getAbsolutePath().contains(".mdl")) {
+                filePath = j.getSelectedFile().getAbsolutePath();
+                if (checkFile(filePath)) {
+                    String path[] = j.getSelectedFile().getAbsolutePath().split("\\\\");
+                    shortPath = path[path.length - 1];
+                    l.setForeground(Color.black);
+                    l.setText(path[path.length - 1]);
+                    auxL.setText("");
+                    openButton.setVisible(false);
+                    processButton.setVisible(true);
+                    cancelButton.setVisible(true);
+                    pathButton.setVisible(true);
+                    infoProcess.setVisible(true);
+                } else {
+                    l.setForeground(Color.red);
+                    l.setText("Vensim file is not valid.");
+                    auxL.setText("");
+                }
+            } else {
+                l.setForeground(Color.red);
+                l.setText("File selected is not a Vensim file.");
+                auxL.setText("");
+            }
+        }
+        // if the user cancelled the operation 
+        else {
+            l.setForeground(Color.red);
+            l.setText("The user cancelled the operation");
+            auxL.setText("");
+        }
+    }
+
+    public void processAction() {
+        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+        String[] arg = new String[2];
+        arg[0] = filePath;
+        controller.processFile(arg);
+        Color greenColor = new Color(26, 110, 16);
+        l.setForeground(greenColor);
+        l.setText("Operation successful.");
+        auxL.setText("");
+    }
+
+    public void cancelAction() {
+        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+        l.setForeground(Color.black);
+        l.setText("No file selected.");
+        auxL.setText("");
+        absolutePathState = false;
+        processButton.setVisible(false);
+        cancelButton.setVisible(false);
+        pathButton.setVisible(false);
+        openButton.setVisible(true);
+        infoProcess.setVisible(false);
+    }
+
+    public void pathAction() {
+        if (!absolutePathState) {
+            if (filePath.length() > 70) {
+                l.setFont(new Font("Sans Serif", Font.PLAIN, 12));
+                pathButton.setText("Show name without name");
+                String part1 = filePath.substring(0, 70);
+                String part2 = filePath.substring(70, filePath.length());
+                l.setText(part1);
+                auxL.setText(part2);
+            } else {
+                l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+                pathButton.setText("Show absolute path");
+                l.setText(filePath);
+                auxL.setText("");
+            }
+            absolutePathState = true;
+        } else {
+            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+            l.setText(shortPath);
+            auxL.setText("");
+            absolutePathState = false;
+        }
+    }
+
     public void actionPerformed(ActionEvent evt) {
         // if the user presses the save button show the save dialog 
         String com = evt.getActionCommand();
-
-        if (com.equals("Process")) {
-            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-            String[] arg = new String[2];
-            arg[0] = filePath;
-            ComDel.main(arg);
-            Color greenColor = new Color(26, 110, 16);
-            l.setForeground(greenColor);
-            l.setText("Operation successful.");
-            auxL.setText("");
-        }
-
-        // if the user presses the open dialog show the open dialog 
-        else if (com.equals("Open file")) {
-            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-            // create an object of JFileChooser class 
-            JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-
-            // invoke the showsOpenDialog function to show the save dialog 
-            int r = j.showOpenDialog(null);
-
-            // if the user selects a file 
-            if (r == JFileChooser.APPROVE_OPTION)
-
-            {
-                // set the label to the path of the selected file
-                l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-                if (j.getSelectedFile().getAbsolutePath().contains(".mdl")) {
-                    filePath = j.getSelectedFile().getAbsolutePath();
-                    if (checkFile(filePath)) {
-                        String path[] = j.getSelectedFile().getAbsolutePath().split("\\\\");
-                        shortPath = path[path.length - 1];
-                        l.setForeground(Color.black);
-                        l.setText(path[path.length - 1]);
-                        auxL.setText("");
-                        openButton.setVisible(false);
-                        processButton.setVisible(true);
-                        cancelButton.setVisible(true);
-                        pathButton.setVisible(true);
-                        infoProcess.setVisible(true);
-                    } else {
-                        l.setForeground(Color.red);
-                        l.setText("Vensim file is not valid.");
-                        auxL.setText("");
-                    }
-                } else {
-                    l.setForeground(Color.red);
-                    l.setText("File selected is not a Vensim file.");
-                    auxL.setText("");
-                }
-            }
-            // if the user cancelled the operation 
-            else {
-                l.setForeground(Color.red);
-                l.setText("The user cancelled the operation");
-                auxL.setText("");
-            }
-        } else if (com.equals("Cancel")) {
-            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-            l.setForeground(Color.black);
-            l.setText("No file selected.");
-            auxL.setText("");
-            absolutePathState = false;
-            processButton.setVisible(false);
-            cancelButton.setVisible(false);
-            pathButton.setVisible(false);
-            openButton.setVisible(true);
-            infoProcess.setVisible(false);
-
-        } else if (com.equals("Show absolute path") || com.equals("Show name without name")) {
-            if (!absolutePathState) {
-                if (filePath.length() > 70) {
-                    l.setFont(new Font("Sans Serif", Font.PLAIN, 12));
-                    pathButton.setText("Show name without name");
-                    String part1 = filePath.substring(0, 70);
-                    String part2 = filePath.substring(70, filePath.length());
-                    l.setText(part1);
-                    auxL.setText(part2);
-                } else {
-                    l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-                    pathButton.setText("Show absolute path");
-                    l.setText(filePath);
-                    auxL.setText("");
-                }
-                absolutePathState = true;
-            } else {
-                l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-                l.setText(shortPath);
-                auxL.setText("");
-                absolutePathState = false;
-            }
-        }
+        controller.checkAction(com);
     }
 }

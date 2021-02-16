@@ -13,7 +13,7 @@ import org.apache.commons.lang.StringUtils;
 
 public class Comment {
 
-    public static void main(String args[]) throws IOException {
+    public static void addComments(String args[]) throws IOException {
         try {
             String text = new String(Files.readAllBytes(Paths.get(args[0])), StandardCharsets.UTF_8);
             String[] fileName = args[0].split("\\.");

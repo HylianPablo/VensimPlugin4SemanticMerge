@@ -20,7 +20,7 @@ import es.uva.inf.vensimparserforsemanticmerge.parser.visitors.MainVisitor;
 
 public class Pruebas {
    public static void main(String args[]) {
-
+      /*
       try {
          String[] arg1 = new String[2];
          arg1[0] = "VensimExampleModels/SHODOR/Bunny.mdl";
@@ -29,19 +29,19 @@ public class Pruebas {
       } catch (IOException ex) {
          System.err.println(ex.getMessage());
       }
-
+      
       String[] arg2 = new String[2];
       arg2[0] = "Formatted/BunnyComment.mdl";
       arg2[1] = "Formatted/BunnyFormat.mdl";
       Delimiter.main(arg2);
-
+      
       try {
-
+      
          CharStream charstream = CharStreams.fromFileName("Formatted/BunnyFormat.mdl", StandardCharsets.UTF_8);
          ModelLexer lexer = new ModelLexer(charstream);
          ModelParser parser = new ModelParser(new CommonTokenStream(lexer));
          ParseTree tree = parser.file();
-
+      
          MainVisitor visitor = new MainVisitor();
          visitor.setInput("Formatted/BunnyFormat.mdl");
          visitor.setOutput("OUT.yaml");
@@ -56,17 +56,17 @@ public class Pruebas {
          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          frame.pack();
          frame.setVisible(true);
-         */
-
+         
+      
       } catch (Exception ex) {
          ex.printStackTrace();
          System.err.println(ex.getMessage());
       }
-
+      
       String[] arg3 = new String[2];
       arg3[0] = "Formatted/BunnyFormat.mdl";
       arg3[1] = "Formatted/RestoredBunny.mdl";
       NoDelimiters.main(arg3);
-
+      */
    }
 }

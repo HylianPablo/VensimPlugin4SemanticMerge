@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class Delimiter {
 
-    public static void main(String args[]) {
+    public static void addDelimiters(String args[]) {
         try {
             String text = new String(Files.readAllBytes(Paths.get(args[0])), StandardCharsets.UTF_8);
             String viewsDelimiter = "aaa---///";
