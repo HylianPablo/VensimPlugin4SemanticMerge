@@ -22,7 +22,7 @@ public class CommentTest {
         args[1] = "outputs/comment/test1.mdl";
         BufferedReader reader;
         try {
-            Comment.main(args);
+            Comment.addComments(args);
             reader = new BufferedReader(new FileReader("VensimExampleModels/SHODOR/Bunny.mdl"));
             int lines = 0;
             while (reader.readLine() != null)
@@ -53,7 +53,7 @@ public class CommentTest {
         args[1] = "outputs/comment/test2.mdl";
         BufferedReader reader;
         try {
-            Comment.main(args);
+            Comment.addComments(args);
             reader = new BufferedReader(new FileReader("VensimExampleModels/SHODOR/examples.mdl"));
             int lines = 0;
             while (reader.readLine() != null)
@@ -87,7 +87,7 @@ public class CommentTest {
         args[1] = "outputs/comment/test3.mdl";
         BufferedReader reader;
         try {
-            Comment.main(args);
+            Comment.addComments(args);
             reader = new BufferedReader(new FileReader("VensimExampleModels/SHODOR/examplesComments.mdl"));
             int lines = 0;
             while (reader.readLine() != null)
@@ -128,7 +128,7 @@ public class CommentTest {
         args[1] = "outputs/comment/test4.mdl";
         BufferedReader reader;
         try {
-            Comment.main(args);
+            Comment.addComments(args);
             reader = new BufferedReader(new FileReader("VensimExampleModels/SHODOR/sociology101_mod.mdl"));
             int lines = 0;
             while (reader.readLine() != null)
@@ -162,7 +162,7 @@ public class CommentTest {
         args[1] = "outputs/comment/test5.mdl";
         BufferedReader reader;
         try {
-            Comment.main(args);
+            Comment.addComments(args);
             reader = new BufferedReader(new FileReader("VensimExampleModels/SHODOR/BunnyUnderscores.mdl"));
             int lines = 0;
             while (reader.readLine() != null)
@@ -192,7 +192,7 @@ public class CommentTest {
         args[1] = "outputs/comment/test6.mdl";
         BufferedReader reader;
         try {
-            Comment.main(args);
+            Comment.addComments(args);
             reader = new BufferedReader(new FileReader("VensimExampleModels/SHODOR/alreadyCommented.mdl"));
             int lines = 0;
             while (reader.readLine() != null)
@@ -222,7 +222,7 @@ public class CommentTest {
         args[0] = "VensimExampleModels/SHODOR/jeokdfjf.mdl";
         args[1] = "outputs/comment/testFail.mdl";
         assertThrows(IOException.class, () -> {
-            Comment.main(args);
+            Comment.addComments(args);
         });
 
     }

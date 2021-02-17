@@ -128,7 +128,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
         cancelButton.setBounds(320, 170, 90, 50);
         cancelButton.setVisible(false);
 
-        pathButton.setBounds(220, 260, 180, 20);
+        pathButton.setBounds(200, 260, 200, 20);
         pathButton.setVisible(false);
 
         p.setLayout(null);
@@ -221,22 +221,21 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
     public void pathAction() {
         if (!absolutePathState) {
+            l.setFont(new Font("Sans Serif", Font.PLAIN, 12));
+            pathButton.setText("Show name without name");
             if (filePath.length() > 70) {
-                l.setFont(new Font("Sans Serif", Font.PLAIN, 12));
-                pathButton.setText("Show name without name");
                 String part1 = filePath.substring(0, 70);
                 String part2 = filePath.substring(70, filePath.length());
                 l.setText(part1);
                 auxL.setText(part2);
             } else {
-                l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-                pathButton.setText("Show absolute path");
                 l.setText(filePath);
                 auxL.setText("");
             }
             absolutePathState = true;
         } else {
             l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+            pathButton.setText("Show absolute path");
             l.setText(shortPath);
             auxL.setText("");
             absolutePathState = false;

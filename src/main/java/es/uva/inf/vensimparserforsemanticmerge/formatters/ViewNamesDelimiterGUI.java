@@ -23,22 +23,22 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
      *
      */
     private static final long serialVersionUID = 1L;
-    // Jlabel to show the files user selects 
+    // Jlabel to show the files user selects
     static JLabel l;
     static JLabel auxL;
 
     static JLabel infoProcess;
 
-    // button to open save dialog 
+    // button to open save dialog
     static JButton processButton = new JButton("Process");
 
-    // button to open open dialog 
+    // button to open open dialog
     static JButton openButton = new JButton("Open file");
 
-    //button to return to initial state
+    // button to return to initial state
     static JButton cancelButton = new JButton("Cancel");
 
-    //button to show absolute path
+    // button to show absolute path
     static JButton pathButton = new JButton("Show absolute path");
 
     private String filePath;
@@ -47,7 +47,7 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
 
     private AdderController controller;
 
-    // a default constructor 
+    // a default constructor
     ViewNamesDelimiterGUI() {
         filePath = "";
         shortPath = "";
@@ -69,10 +69,10 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
     }
 
     public static void main(String args[]) {
-        // frame to contains GUI elements 
+        // frame to contains GUI elements
         JFrame f = new JFrame("Add view names and delimiters");
 
-        // set the size of the frame 
+        // set the size of the frame
         f.setSize(600, 400);
 
         // set favicon
@@ -86,26 +86,26 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
             System.err.println(ex.getMessage());
         }
 
-        // set the frame's visibility 
+        // set the frame's visibility
         f.setVisible(true);
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // make an object of the class filechooser 
+        // make an object of the class filechooser
         ViewNamesDelimiterGUI f1 = new ViewNamesDelimiterGUI();
 
-        // add action listener to the button to capture user 
-        // response on buttons 
+        // add action listener to the button to capture user
+        // response on buttons
         processButton.addActionListener(f1);
         openButton.addActionListener(f1);
         cancelButton.addActionListener(f1);
         pathButton.addActionListener(f1);
 
-        // make a panel to add the buttons and labels 
+        // make a panel to add the buttons and labels
         JPanel p = new JPanel();
-        //p.setLayout(null);
+        // p.setLayout(null);
 
-        // set the label to its initial value 
+        // set the label to its initial value
         l = new JLabel("no file selected", SwingConstants.CENTER);
         l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
         auxL = new JLabel("", SwingConstants.CENTER);
@@ -128,18 +128,18 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
         cancelButton.setBounds(320, 170, 90, 50);
         cancelButton.setVisible(false);
 
-        pathButton.setBounds(220, 260, 180, 20);
+        pathButton.setBounds(200, 260, 200, 20);
         pathButton.setVisible(false);
 
         p.setLayout(null);
 
-        // add buttons to the frame 
+        // add buttons to the frame
         p.add(processButton);
         p.add(openButton);
         p.add(cancelButton);
         p.add(pathButton);
 
-        // add panel to the frame 
+        // add panel to the frame
         p.add(l);
         p.add(auxL);
         p.add(infoProcess);
@@ -151,13 +151,13 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
 
     public void openAction() {
         l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-        // create an object of JFileChooser class 
+        // create an object of JFileChooser class
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 
-        // invoke the showsOpenDialog function to show the save dialog 
+        // invoke the showsOpenDialog function to show the save dialog
         int r = j.showOpenDialog(null);
 
-        // if the user selects a file 
+        // if the user selects a file
         if (r == JFileChooser.APPROVE_OPTION)
 
         {
@@ -187,7 +187,7 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
                 auxL.setText("");
             }
         }
-        // if the user cancelled the operation 
+        // if the user cancelled the operation
         else {
             l.setForeground(Color.red);
             l.setText("The user cancelled the operation");
@@ -221,22 +221,21 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
 
     public void pathAction() {
         if (!absolutePathState) {
+            l.setFont(new Font("Sans Serif", Font.PLAIN, 12));
+            pathButton.setText("Show name without name");
             if (filePath.length() > 70) {
-                l.setFont(new Font("Sans Serif", Font.PLAIN, 12));
-                pathButton.setText("Show name without name");
                 String part1 = filePath.substring(0, 70);
                 String part2 = filePath.substring(70, filePath.length());
                 l.setText(part1);
                 auxL.setText(part2);
             } else {
-                l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-                pathButton.setText("Show absolute path");
                 l.setText(filePath);
                 auxL.setText("");
             }
             absolutePathState = true;
         } else {
             l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+            pathButton.setText("Show absolute path");
             l.setText(shortPath);
             auxL.setText("");
             absolutePathState = false;
@@ -244,7 +243,7 @@ public class ViewNamesDelimiterGUI extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent evt) {
-        // if the user presses the save button show the save dialog 
+        // if the user presses the save button show the save dialog
         String com = evt.getActionCommand();
         controller.checkAction(com);
     }
