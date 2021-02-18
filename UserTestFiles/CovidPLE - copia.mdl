@@ -3,108 +3,108 @@
 	.Active
 ********************************************************~
 		Active equations
-	
+	|
 
 Restriction loosening at 10pct GDP loss=
 	Lookup for restriction loosening due to GDP loss(0.1/GDP frac loss for 50pct restriction loosening\
 		)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Cumul combined loss billions=
 	Cumul GDP loss billions + Cumul lost life value billions
 	~	bdollars
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Ability of ventilator to reduce fatality=
 	0.5
 	~	dmnl [0.25,0.75,0.05]
-	~	V1: 0.4
+	~<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 0.4
 	|
 
 Adult ventilator capacity=
 	120000
 	~	popn [0,300000,10000]
-	~	60k active + some frac of 100k storage
+	~<[VIEW]>: Main view <[DESCRIPTION]>:	60k active + some frac of 100k storage
 	|
 
 Assessment time for containment=
 	2
 	~	months [0,12,0.5]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Avg lost life value per fatality=
 	Valuation of year of life lost * Avg yrs of life lost per fatality
 	~	dollars/popn
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Avg time on ventilator=
 	0.5
 	~	months [0,300000,10000]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Avg yrs of life lost per fatality=
 	16
 	~	years
-	~	Zhou et al Lance 3/12/20 finds avg age of non-survivors = 69.  In US, life \
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:	Zhou et al Lance 3/12/20 finds avg age of non-survivors = 69.  In US, life \
 		expectancy at 69 = 15 yrs male, 17 yrs female.
 	|
 
 Basic reproduction number=
 	ZIDZ(New infections,Infected) * (Incubation period+Time to recovery or death)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Becoming symptomatic=
 	DELAY1I(New infections, Incubation period, 0)
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Confirmed current cases=
 	Infected asympto*Testing of asymptos + Infected sympto*Testing of symptos
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Confirmed frac of past infections=
 	XIDZ(Confirmed past cases,Past infections,Testing of symptos)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Confirmed new cases=
 	Confirmed current cases/(Incubation period+Time to recovery or death)
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Confirmed past cases=
 	Dead + Recovered*Testing of symptos
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Contacts per asympto infected=
 	Contacts per asympto no soc dist * (1-Social distancing)
 	~	1/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Contacts per asympto no soc dist=
 	120
 	~	1/Month [50,150,5]
-	~	V1: 100
+	~<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 100
 	|
 
 Contacts per sympto infected=
 	Contacts per sympto no soc dist * (1-Social distancing)
 	~	1/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Contacts per sympto no soc dist=
 	Contacts per asympto no soc dist * Reltv contacts per sympto
 	~	1/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Containment measures=
 	Containment measures before GDP loss * (1-Restriction loosening due to GDP loss)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Containment measures before GDP loss=
 	IF THEN ELSE(Time<Time of vaccine availability, Lookup for containment measures(Recent cases affecting containment\
@@ -112,131 +112,131 @@ Containment measures before GDP loss=
 	Recent cases for 50pct containment measures
 	), 0)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Cumul GDP loss billions= INTEG (
 	GDP loss billions,
 		0)
 	~	bdollars
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Cumul infect from overseas= INTEG (
 	Infections picked up overseas,
 		0)
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Cumul lost life value billions= INTEG (
 	Lost life value billions,
 		0)
 	~	bdollars
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Cumulative cases for max testing=
 	55000
 	~	popn [0,100000,5000]
-	~	V2a: 50k; v2b: 40k
+	~<[VIEW]>: Main view <[DESCRIPTION]>:	V2a: 50k; v2b: 40k
 	|
 
 Cumulative confirmed cases=
 	Confirmed current cases + Confirmed past cases
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Cumulative hospitalized= INTEG (
 	Hospital admissions,
 		0)
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Current cases for 50pct social distancing=
 	200000
 	~	popn [0,1e+06,100000]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Dead= INTEG (
 	Fatalities,
 		0)
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Dead frac of confirmed cases=
 	ZIDZ(Dead, Cumulative confirmed cases)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Dead frac of past infections=
 	ZIDZ(Dead, Past infections)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Delay time in social distancing=
 	0.25
 	~	Month [0,1,0.125]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Delay time in testing=
 	0.25
 	~	Month [0,1,0.125]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Dollars per billion dollars=
 	1e+09
 	~	dollars/bdollars
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Effect of vaccine on infection=
 	0.2
 	~	dmnl [0,1,0.05]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Effect of vaccine on infection probability=
 	IF THEN ELSE(Time<Time of vaccine availability, 1, Effect of vaccine on infection)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Extent of restriction=
 	Social distancing + (1-Social distancing)*Containment measures
 	~	dmnl
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Fatal frac of sympto=
 	Severe frac of infected sympto*( 1 - Hospitalized frac of severe +  Hospitalized frac of severe\
 		*Frac of hospitalized needing ventilator*(1 - Ability of ventilator to reduce fatality\
 		*Ventilator relative availability))
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Fatalities=
 	Recovery or death * Fatal frac of sympto
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Frac of hospitalized needing ventilator=
 	0.2
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 GDP billions per yr reference=
 	Total popn reference * GDP per capita per yr reference / Dollars per billion dollars
 	~	bdollars/year
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 GDP loss fraction=
 	SMOOTHI(GDP loss fraction if full restriction*Extent of restriction, GDP impact time\
 		, 0)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 GDP frac loss for 50pct restriction loosening=
 	0.25
 	~	dmnl [0,0.5,0.05]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 GDP loss fraction if full restriction=
 	0.15
 	~	dmnl
-	~	See: \
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:	See: \
 		https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/\
 		our-insights/safeguarding-our-lives-and-our-livelihoods-the-imperative-of-o\
 		ur-time.  McKinsey estimates 13% loss by 2020Q3 in their "muted recovery" \
@@ -246,291 +246,291 @@ GDP loss fraction if full restriction=
 GDP impact time=
 	1
 	~	Month
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 GDP loss billions=
 	GDP billions per yr reference * GDP loss fraction / Months per year
 	~	bdollars/Month
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 GDP per capita per yr reference=
 	67000
 	~	dollars/popn/year
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Hospital admissions=
 	Becoming symptomatic * Severe frac of infected sympto * Hospitalized frac of severe
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Hospital bed capacity=
 	900000
 	~	popn [0,300000,10000]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Hospital bed utilization=
 	MIN(1, Hospitalized/Hospital bed capacity)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Hospitalized=
 	Severe * Hospitalized frac of severe
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Hospitalized frac of severe=
 	1
 	~	dmnl [0,1,0.05]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Hospitalized needing ventilator=
 	Hospitalized * Frac of hospitalized needing ventilator * (Avg time on ventilator/Time to recovery or death\
 		)
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Incubation period=
 	0.18
 	~	months [0,0.5,0.01]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Infected=
 	Infected asympto + Infected sympto
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Infected asympto= INTEG (
 	New infections-Becoming symptomatic,
 		0)
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Infected sympto= INTEG (
 	Becoming symptomatic-Fatalities-Recoveries,
 		0)
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Infection probability per contact=
 	Infection probability per contact initial * Effect of vaccine on infection probability
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Infection probability per contact initial=
 	0.105
 	~	dmnl [0,0.2,0.005]
-	~	v1: .22, v2: .22
+	~<[VIEW]>: Main view <[DESCRIPTION]>:	v1: .22, v2: .22
 	|
 
 Infections picked up overseas=
 	Input series for infections picked up overseas(Time)
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Infectious contacts=
 	Infected sympto*Contacts per sympto infected + Infected asympto*Reltv infectiousness of asymptos\
 		*Contacts per asympto infected
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Infectious contacts with susceptibles=
 	Infectious contacts * Susceptible fraction of popn * (1-Containment measures)
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Input series for infections picked up overseas(
 	[(0,0)-(4,300)],(0,0),(0.75,0),(2,300),(3.25,0),(4,0))
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Lookup for containment measures(
 	[(0,0)-(3,1)],(0,0),(0.5,0.27),(1,0.5),(1.5,0.67),(2,0.8),(2.5,0.87),(3,0.9))
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Lookup for restriction loosening due to GDP loss(
 	[(0,0)-(3,1)],(0,0),(0.5,0.27),(1,0.5),(1.5,0.67),(2,0.8),(2.5,0.87),(3,0.9))
 	~	dmnl
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Lookup for social distancing(
 	[(0,0)-(3,1)],(0,0),(0.5,0.27),(1,0.5),(1.5,0.67),(2,0.8),(2.5,0.87),(3,0.9))
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Lookup for testing(
 	[(0,0)-(1,1)],(0,0),(0.2,0.3),(0.4,0.55),(0.6,0.75),(0.8,0.9),(1,1))
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Lost life value billions=
 	Fatalities * Avg lost life value per fatality / Dollars per billion dollars
 	~	bdollars/Month
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Max testing of symptos=
 	0.8
 	~	dmnl [0.3,1,0.05]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Months per year=
 	12
 	~	months/year
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 New infections=
 	Infections picked up overseas + New infections domestic
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 New infections domestic=
 	Infectious contacts with susceptibles * Infection probability per contact
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Past infections=
 	Dead+Recovered
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Recent cases affecting containment=
 	SMOOTH(Confirmed new cases,Assessment time for containment) * Assessment time for containment
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Recent cases for 50pct containment measures=
 	400000
 	~	popn [0,2e+06,100000]
-	~	V1: 300000
+	~<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 300000
 	|
 
 Recovered= INTEG (
 	Recoveries,
 		0)
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Recoveries=
 	Recovery or death * (1-Fatal frac of sympto)
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Recovery or death=
 	DELAY1I(Becoming symptomatic, Time to recovery or death, 0)
 	~	popn/Month
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Reltv contacts per sympto=
 	0.5
 	~	dmnl [0,1,0.05]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Reltv infectiousness of asymptos=
 	0.5
 	~	dmnl [0,100,5]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Reltv testing of asymptos=
 	0.15
 	~	dmnl [0,1,0.05]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Restriction loosening due to GDP loss=
 	Lookup for restriction loosening due to GDP loss(SMOOTH(GDP loss fraction/GDP frac loss for 50pct restriction loosening\
 		, Time to loosen restrictions due to GDP loss))
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Severe=
 	Infected sympto * Severe frac of infected sympto
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Severe frac of infected sympto=
 	0.16
 	~	dmnl [0,0.3,0.005]
-	~	V2a: 0.14; v2b: .155
+	~<[VIEW]>: Main view <[DESCRIPTION]>:	V2a: 0.14; v2b: .155
 	|
 
 Social distancing=
 	Social distancing before GDP loss * (1-Restriction loosening due to GDP loss)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Social distancing before GDP loss=
 	Lookup for social distancing(SMOOTH(Confirmed current cases/Current cases for 50pct social distancing\
 		,Delay time in social distancing))
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Susceptible= INTEG (
 	-New infections,
 		Total popn reference)
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Susceptible fraction of popn=
 	Susceptible/Total popn
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Testing of asymptos=
 	Reltv testing of asymptos * Testing of symptos
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Testing of symptos=
 	Testing of symptos initial + (Max testing of symptos - Testing of symptos initial)*Lookup for testing\
 		(SMOOTHI(Cumulative confirmed cases
 	/Cumulative cases for max testing,Delay time in testing, 0))
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Testing of symptos initial=
 	0.18
 	~	dmnl [0,0.4,0.01]
-	~	V1: 0.4
+	~<[VIEW]>: Main view <[DESCRIPTION]>:	V1: 0.4
 	|
 
 Time of vaccine availability=
 	15
 	~	Month [0,24,1]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Time to loosen restrictions due to GDP loss=
 	0.5
 	~	Month
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Time to recovery or death=
 	0.37
 	~	months [0,1,0.01]
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Total popn=
 	Total popn reference - Dead
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Total popn reference=
 	3.3e+08
 	~	popn
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Valuation of year of life lost=
 	100000
 	~	dollars/popn/year
-	~		|
+	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Ventilator relative availability=
 	MIN(1, XIDZ(Adult ventilator capacity,Hospitalized needing ventilator,1))
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Ventilator utilization=
 	MIN(1, Hospitalized needing ventilator/Adult ventilator capacity)
 	~	dmnl
-	~		|
+	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 ********************************************************
 	.Control
@@ -570,6 +570,8 @@ TIME STEP  = 0.03125
 		Historical data
 	|
 
+<[VIEWS START]>
+<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Main view
@@ -814,6 +816,8 @@ Testing_of_symptomatics
 A model of Covid-19 in the US with endogenous testing, containment measures, and social distancing
 12,231,0,350,94,210,13,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-128-0,0,0,0,0,0,0
 Jack Homer, PhD, March 24, 2020 v2, via metasd.com
+<[VIEW END]>
+<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Goodness of fit
@@ -840,6 +844,8 @@ Basic_reproduction_number
 10,18,Max testing of symptos,349,993,51,18,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||255-0-0,0,0,0,0,0,0
 12,19,2887024,1858,300,235,201,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Cumul_infections_from_overseas
+<[VIEW END]>
+<[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *Economic effects
@@ -916,7 +922,10 @@ Restriction_loosening_due_to_GDP_loss
 10,64,Restriction loosening at 10pct GDP loss,874,604,77,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,65,44,64,0,0,0,0,0,128,0,-1--1--1,,1|(816,563)|
 1,66,43,64,0,0,0,0,0,128,0,-1--1--1,,1|(887,498)|
+<[VIEW END]>
 ///---\\\
+<[VIEWS END]>
+<[GRAPH START]>
 :GRAPH Infections_picked_up_overseas
 :TITLE Infections picked up overseas
 :X-LABEL Months elapsed since 1-1-20
@@ -1720,6 +1729,7 @@ Restriction_loosening_due_to_GDP_loss
 :VAR Cumul combined loss billions
 :DATASET *5
 :LINE-WIDTH 2
+<[GRAPH END]>
 :L<%^E!@
 1:test.vdfx
 9:test
