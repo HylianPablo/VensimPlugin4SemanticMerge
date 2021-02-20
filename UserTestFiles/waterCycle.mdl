@@ -1,16 +1,14 @@
 {UTF-8}
-k 2  = A FUNCTION OF( precipitation) ~~<[VIEW]>: View 1 <[DESCRIPTION]>:|
-k 2=
-	0.5
-	~	 [0,1,0.1]
-	~		|
+k 2  = A FUNCTION OF( precipitation)
+	~	
+	~	<[VIEW]>: View 1 <[DESCRIPTION]>:
+	|
 
 water on cover= INTEG (
 	condensation-precipitation,
 		0)
 	~	
-	~	<[VIEW]>: View 1 <[DESCRIPTION]>:
-	|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
 
 water in air= INTEG (
 	evaporation-condensation-water vapor leak,
@@ -70,18 +68,18 @@ water temperature=
 		Simulation Control Parameters
 	|
 
-FINAL TIME  = 10
+FINAL TIME  = 20
 	~	Minute
 	~	The final time for the simulation.
 	|
 
-INITIAL TIME  = 0
+INITIAL TIME  = 5
 	~	Minute
 	~	The initial time for the simulation.
 	|
 
 SAVEPER  = 
-        TIME STEP
+        TIME STEP 
 	~	Minute [0,?]
 	~	The frequency with which output is stored.
 	|
@@ -106,11 +104,11 @@ $192-192-192,0,Comic Sans MS|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100
 10,7,condensation,191,148,48,13,40,3,0,32,-1,0,0,0,0-0-0,0-0-0,Comic Sans MS|12||0-0-0,0,0,0,0,0,0
 1,8,10,3,4,0,0,22,0,0,0,-1--1--1,,1|(394,282)|
 1,9,10,2,100,0,0,22,0,0,0,-1--1--1,,1|(394,190)|
-11,10,222,394,236,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+11,10,266,394,236,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
 10,11,precipitation,452,236,50,13,40,3,0,32,-1,0,0,0,0-0-0,0-0-0,Comic Sans MS|12||0-0-0,0,0,0,0,0,0
 1,12,14,1,4,0,0,22,0,0,0,-1--1--1,,1|(192,291)|
 1,13,14,3,100,0,0,22,0,0,0,-1--1--1,,1|(276,342)|
-11,14,244,192,342,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+11,14,222,192,342,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,15,evaporation,192,363,45,13,40,3,0,32,-1,0,0,0,0-0-0,0-0-0,Comic Sans MS|12||0-0-0,0,0,0,0,0,0
 10,16,total water,311,237,32,32,2,131,0,33,0,3,0,0,128-128-128,0-0-0,Comic Sans MS|12||0-0-0,0,0,0,0,0,0
 1,17,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(150,146)|
@@ -135,7 +133,7 @@ PAN WATER CYCLE
 1,35,36,1,100,0,0,22,0,0,0,-1--1--1,,1|(120,242)|
 11,36,48,84,242,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,37,water vapor leak,84,262,68,12,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
-10,38,precipitation,677,228,56,13,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
+10,38,precipitation,677,228,56,13,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
 1,39,38,28,0,0,0,0,0,64,0,-1--1--1,,1|(568,260)|
 <[VIEW END]>
 ///---\\\
@@ -176,6 +174,13 @@ PAN WATER CYCLE
 73:0
 4:Time
 5:water on cover
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
 76:0
 77:0
 78:0
