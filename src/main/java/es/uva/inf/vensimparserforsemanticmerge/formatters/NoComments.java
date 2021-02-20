@@ -17,7 +17,8 @@ public class NoComments {
             String[] equations = noControl[0].split("\\|");
             String newEquations[] = new String[equations.length];
             String modEquationsText = "";
-            modEquationsText+=equations[0];
+            modEquationsText += equations[0];
+            modEquationsText += "|";
             for (int i = 1; i < equations.length; i++) {
                 String[] first = equations[i].split("\\<\\[DESCRIPTION\\]\\>:", 2);
                 if (first.length == 1) {

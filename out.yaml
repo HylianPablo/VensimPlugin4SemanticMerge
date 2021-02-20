@@ -1,0 +1,1997 @@
+---
+type: file
+name: VensimExampleModels/UAT/Covid1.mdl
+locationSpan : {start: [1, 0], end: [1764, 2]}
+footerSpan : [0,-1]
+parsingErrorsDetected : false
+children:
+  - type : SymbolWithDocs
+    name: {UTF-8}
+    locationSpan : {start: [1, 0], end: [572, 2]}
+    headerSpan : [0, 8]
+    footerSpan : [15033, 15034]
+    children :
+    - type : equation
+      name : Restriction loosening at 10pct GDP loss
+      locationSpan : {start: [2, 0], end: [7, 2]}
+      span : [9, 218]
+    - type : equation
+      name : Cumul combined loss billions
+      locationSpan : {start: [8, 0], end: [12, 2]}
+      span : [219, 373]
+    - type : equation
+      name : Ability of ventilator to reduce fatality
+      locationSpan : {start: [13, 0], end: [18, 2]}
+      span : [374, 502]
+    - type : equation
+      name : Adult ventilator capacity
+      locationSpan : {start: [19, 0], end: [24, 2]}
+      span : [503, 650]
+    - type : equation
+      name : Assessment time for containment
+      locationSpan : {start: [25, 0], end: [29, 2]}
+      span : [651, 755]
+    - type : equation
+      name : Avg lost life value per fatality
+      locationSpan : {start: [30, 0], end: [34, 2]}
+      span : [756, 928]
+    - type : equation
+      name : Avg time on ventilator
+      locationSpan : {start: [35, 0], end: [39, 2]}
+      span : [929, 1032]
+    - type : equation
+      name : Avg yrs of life lost per fatality
+      locationSpan : {start: [40, 0], end: [46, 2]}
+      span : [1033, 1263]
+    - type : equation
+      name : Basic reproduction number
+      locationSpan : {start: [47, 0], end: [51, 2]}
+      span : [1264, 1425]
+    - type : equation
+      name : Becoming symptomatic
+      locationSpan : {start: [52, 0], end: [56, 2]}
+      span : [1426, 1556]
+    - type : equation
+      name : Confirmed current cases
+      locationSpan : {start: [57, 0], end: [61, 2]}
+      span : [1557, 1712]
+    - type : equation
+      name : Confirmed frac of past infections
+      locationSpan : {start: [62, 0], end: [66, 2]}
+      span : [1713, 1866]
+    - type : equation
+      name : Confirmed new cases
+      locationSpan : {start: [67, 0], end: [71, 2]}
+      span : [1867, 2020]
+    - type : equation
+      name : Confirmed past cases
+      locationSpan : {start: [72, 0], end: [76, 2]}
+      span : [2021, 2135]
+    - type : equation
+      name : Contacts per asympto infected
+      locationSpan : {start: [77, 0], end: [81, 2]}
+      span : [2136, 2283]
+    - type : equation
+      name : Contacts per asympto no soc dist
+      locationSpan : {start: [82, 0], end: [87, 2]}
+      span : [2284, 2401]
+    - type : equation
+      name : Contacts per sympto infected
+      locationSpan : {start: [88, 0], end: [92, 2]}
+      span : [2402, 2547]
+    - type : equation
+      name : Contacts per sympto no soc dist
+      locationSpan : {start: [93, 0], end: [97, 2]}
+      span : [2548, 2701]
+    - type : equation
+      name : Containment measures
+      locationSpan : {start: [98, 0], end: [102, 2]}
+      span : [2702, 2861]
+    - type : equation
+      name : Containment measures before GDP loss
+      locationSpan : {start: [103, 0], end: [110, 2]}
+      span : [2862, 3131]
+    - type : equation
+      name : Cumul GDP loss billions
+      locationSpan : {start: [111, 0], end: [116, 2]}
+      span : [3132, 3257]
+    - type : equation
+      name : Cumul infect from overseas
+      locationSpan : {start: [117, 0], end: [122, 2]}
+      span : [3258, 3387]
+    - type : equation
+      name : Cumul lost life value billions
+      locationSpan : {start: [123, 0], end: [128, 2]}
+      span : [3388, 3527]
+    - type : equation
+      name : Cumulative cases for max testing
+      locationSpan : {start: [129, 0], end: [134, 2]}
+      span : [3528, 3660]
+    - type : equation
+      name : Cumulative confirmed cases
+      locationSpan : {start: [135, 0], end: [139, 2]}
+      span : [3661, 3792]
+    - type : equation
+      name : Cumulative hospitalized
+      locationSpan : {start: [140, 0], end: [145, 2]}
+      span : [3793, 3909]
+    - type : equation
+      name : Current cases for 50pct social distancing
+      locationSpan : {start: [146, 0], end: [150, 2]}
+      span : [3910, 4033]
+    - type : equation
+      name : Dead
+      locationSpan : {start: [151, 0], end: [156, 2]}
+      span : [4034, 4122]
+    - type : equation
+      name : Dead frac of confirmed cases
+      locationSpan : {start: [157, 0], end: [161, 2]}
+      span : [4123, 4248]
+    - type : equation
+      name : Dead frac of past infections
+      locationSpan : {start: [162, 0], end: [166, 2]}
+      span : [4249, 4363]
+    - type : equation
+      name : Delay time in social distancing
+      locationSpan : {start: [167, 0], end: [171, 2]}
+      span : [4364, 4471]
+    - type : equation
+      name : Delay time in testing
+      locationSpan : {start: [172, 0], end: [176, 2]}
+      span : [4472, 4569]
+    - type : equation
+      name : Dollars per billion dollars
+      locationSpan : {start: [177, 0], end: [181, 2]}
+      span : [4570, 4680]
+    - type : equation
+      name : Effect of vaccine on infection
+      locationSpan : {start: [182, 0], end: [186, 2]}
+      span : [4681, 4784]
+    - type : equation
+      name : Effect of vaccine on infection probability
+      locationSpan : {start: [187, 0], end: [191, 2]}
+      span : [4785, 4968]
+    - type : equation
+      name : Extent of restriction
+      locationSpan : {start: [192, 0], end: [196, 2]}
+      span : [4969, 5118]
+    - type : equation
+      name : Fatal frac of sympto
+      locationSpan : {start: [197, 0], end: [203, 2]}
+      span : [5119, 5424]
+    - type : equation
+      name : Fatalities
+      locationSpan : {start: [204, 0], end: [208, 2]}
+      span : [5425, 5540]
+    - type : equation
+      name : Frac of hospitalized needing ventilator
+      locationSpan : {start: [209, 0], end: [213, 2]}
+      span : [5541, 5642]
+    - type : equation
+      name : GDP billions per yr reference
+      locationSpan : {start: [214, 0], end: [218, 2]}
+      span : [5643, 5831]
+    - type : equation
+      name : GDP loss fraction
+      locationSpan : {start: [219, 0], end: [224, 2]}
+      span : [5832, 6008]
+    - type : equation
+      name : GDP frac loss for 50pct restriction loosening
+      locationSpan : {start: [225, 0], end: [229, 2]}
+      span : [6009, 6130]
+    - type : equation
+      name : GDP loss fraction if full restriction
+      locationSpan : {start: [230, 0], end: [239, 2]}
+      span : [6131, 6498]
+    - type : equation
+      name : GDP impact time
+      locationSpan : {start: [240, 0], end: [244, 2]}
+      span : [6499, 6582]
+    - type : equation
+      name : GDP loss billions
+      locationSpan : {start: [245, 0], end: [249, 2]}
+      span : [6583, 6743]
+    - type : equation
+      name : GDP per capita per yr reference
+      locationSpan : {start: [250, 0], end: [254, 2]}
+      span : [6744, 6859]
+    - type : equation
+      name : Hospital admissions
+      locationSpan : {start: [255, 0], end: [259, 2]}
+      span : [6860, 7027]
+    - type : equation
+      name : Hospital bed capacity
+      locationSpan : {start: [260, 0], end: [264, 2]}
+      span : [7028, 7131]
+    - type : equation
+      name : Hospital bed utilization
+      locationSpan : {start: [265, 0], end: [269, 2]}
+      span : [7132, 7257]
+    - type : equation
+      name : Hospitalized
+      locationSpan : {start: [270, 0], end: [274, 2]}
+      span : [7258, 7365]
+    - type : equation
+      name : Hospitalized frac of severe
+      locationSpan : {start: [275, 0], end: [279, 2]}
+      span : [7366, 7464]
+    - type : equation
+      name : Hospitalized needing ventilator
+      locationSpan : {start: [280, 0], end: [285, 2]}
+      span : [7465, 7667]
+    - type : equation
+      name : Incubation period
+      locationSpan : {start: [286, 0], end: [290, 2]}
+      span : [7668, 7763]
+    - type : equation
+      name : Infected
+      locationSpan : {start: [291, 0], end: [295, 2]}
+      span : [7764, 7865]
+    - type : equation
+      name : Infected asympto
+      locationSpan : {start: [296, 0], end: [301, 2]}
+      span : [7866, 7991]
+    - type : equation
+      name : Infected sympto
+      locationSpan : {start: [302, 0], end: [307, 2]}
+      span : [7992, 8123]
+    - type : equation
+      name : Infection probability per contact
+      locationSpan : {start: [308, 0], end: [312, 2]}
+      span : [8124, 8302]
+    - type : equation
+      name : Infection probability per contact initial
+      locationSpan : {start: [313, 0], end: [318, 2]}
+      span : [8303, 8440]
+    - type : equation
+      name : Infections picked up overseas
+      locationSpan : {start: [319, 0], end: [323, 2]}
+      span : [8441, 8587]
+    - type : equation
+      name : Infectious contacts
+      locationSpan : {start: [324, 0], end: [329, 2]}
+      span : [8588, 8803]
+    - type : equation
+      name : Infectious contacts with susceptibles
+      locationSpan : {start: [330, 0], end: [334, 2]}
+      span : [8804, 8983]
+    - type : lookupDefinition
+      name : Input series for infections picked up overseas
+      locationSpan : {start: [335, 0], end: [339, 2]}
+      span : [8984, 9149]
+    - type : lookupDefinition
+      name : Lookup for containment measures
+      locationSpan : {start: [340, 0], end: [344, 2]}
+      span : [9150, 9317]
+    - type : lookupDefinition
+      name : Lookup for restriction loosening due to GDP loss
+      locationSpan : {start: [345, 0], end: [349, 2]}
+      span : [9318, 9509]
+    - type : lookupDefinition
+      name : Lookup for social distancing
+      locationSpan : {start: [350, 0], end: [354, 2]}
+      span : [9510, 9674]
+    - type : lookupDefinition
+      name : Lookup for testing
+      locationSpan : {start: [355, 0], end: [359, 2]}
+      span : [9675, 9820]
+    - type : equation
+      name : Lost life value billions
+      locationSpan : {start: [360, 0], end: [364, 2]}
+      span : [9821, 9996]
+    - type : equation
+      name : Max testing of symptos
+      locationSpan : {start: [365, 0], end: [369, 2]}
+      span : [9997, 10094]
+    - type : equation
+      name : Months per year
+      locationSpan : {start: [370, 0], end: [374, 2]}
+      span : [10095, 10185]
+    - type : equation
+      name : New infections
+      locationSpan : {start: [375, 0], end: [379, 2]}
+      span : [10186, 10320]
+    - type : equation
+      name : New infections domestic
+      locationSpan : {start: [380, 0], end: [384, 2]}
+      span : [10321, 10482]
+    - type : equation
+      name : Past infections
+      locationSpan : {start: [385, 0], end: [389, 2]}
+      span : [10483, 10571]
+    - type : equation
+      name : Recent cases affecting containment
+      locationSpan : {start: [390, 0], end: [394, 2]}
+      span : [10572, 10758]
+    - type : equation
+      name : Recent cases for 50pct containment measures
+      locationSpan : {start: [395, 0], end: [400, 2]}
+      span : [10759, 10896]
+    - type : equation
+      name : Recovered
+      locationSpan : {start: [401, 0], end: [406, 2]}
+      span : [10897, 10990]
+    - type : equation
+      name : Recoveries
+      locationSpan : {start: [407, 0], end: [411, 2]}
+      span : [10991, 11110]
+    - type : equation
+      name : Recovery or death
+      locationSpan : {start: [412, 0], end: [416, 2]}
+      span : [11111, 11252]
+    - type : equation
+      name : Reltv contacts per sympto
+      locationSpan : {start: [417, 0], end: [421, 2]}
+      span : [11253, 11351]
+    - type : equation
+      name : Reltv infectiousness of asymptos
+      locationSpan : {start: [422, 0], end: [426, 2]}
+      span : [11352, 11456]
+    - type : equation
+      name : Reltv testing of asymptos
+      locationSpan : {start: [427, 0], end: [431, 2]}
+      span : [11457, 11556]
+    - type : equation
+      name : Restriction loosening due to GDP loss
+      locationSpan : {start: [432, 0], end: [437, 2]}
+      span : [11557, 11824]
+    - type : equation
+      name : Severe
+      locationSpan : {start: [438, 0], end: [442, 2]}
+      span : [11825, 11938]
+    - type : equation
+      name : Severe frac of infected sympto
+      locationSpan : {start: [443, 0], end: [448, 2]}
+      span : [11939, 12068]
+    - type : equation
+      name : Social distancing
+      locationSpan : {start: [449, 0], end: [453, 2]}
+      span : [12069, 12222]
+    - type : equation
+      name : Social distancing before GDP loss
+      locationSpan : {start: [454, 0], end: [459, 2]}
+      span : [12223, 12455]
+    - type : equation
+      name : Susceptible
+      locationSpan : {start: [460, 0], end: [465, 2]}
+      span : [12456, 12575]
+    - type : equation
+      name : Susceptible fraction of popn
+      locationSpan : {start: [466, 0], end: [470, 2]}
+      span : [12576, 12685]
+    - type : equation
+      name : Testing of asymptos
+      locationSpan : {start: [471, 0], end: [475, 2]}
+      span : [12686, 12810]
+    - type : equation
+      name : Testing of symptos
+      locationSpan : {start: [476, 0], end: [482, 2]}
+      span : [12811, 13092]
+    - type : equation
+      name : Testing of symptos initial
+      locationSpan : {start: [483, 0], end: [488, 2]}
+      span : [13093, 13204]
+    - type : equation
+      name : Time of vaccine availability
+      locationSpan : {start: [489, 0], end: [493, 2]}
+      span : [13205, 13304]
+    - type : equation
+      name : Time to loosen restrictions due to GDP loss
+      locationSpan : {start: [494, 0], end: [498, 2]}
+      span : [13305, 13418]
+    - type : equation
+      name : Time to recovery or death
+      locationSpan : {start: [499, 0], end: [503, 2]}
+      span : [13419, 13520]
+    - type : equation
+      name : Total popn
+      locationSpan : {start: [504, 0], end: [508, 2]}
+      span : [13521, 13617]
+    - type : equation
+      name : Total popn reference
+      locationSpan : {start: [509, 0], end: [513, 2]}
+      span : [13618, 13704]
+    - type : equation
+      name : Valuation of year of life lost
+      locationSpan : {start: [514, 0], end: [518, 2]}
+      span : [13705, 13820]
+    - type : equation
+      name : Ventilator relative availability
+      locationSpan : {start: [519, 0], end: [523, 2]}
+      span : [13821, 13985]
+    - type : equation
+      name : Ventilator utilization
+      locationSpan : {start: [524, 0], end: [528, 2]}
+      span : [13986, 14132]
+    - type : equation
+      name : Combined loss billions
+      locationSpan : {start: [529, 0], end: [533, 2]}
+      span : [14133, 14232]
+    - type : equation
+      name : FINAL TIME
+      locationSpan : {start: [534, 0], end: [538, 2]}
+      span : [14233, 14305]
+    - type : equation
+      name : INITIAL TIME
+      locationSpan : {start: [539, 0], end: [543, 2]}
+      span : [14306, 14381]
+    - type : equation
+      name : SAVEPER
+      locationSpan : {start: [544, 0], end: [549, 2]}
+      span : [14382, 14482]
+    - type : equation
+      name : TIME STEP
+      locationSpan : {start: [550, 0], end: [553, 4]}
+      span : [14483, 14562]
+  - type : sketches
+    name : sketches
+    locationSpan : {start: [555, 0], end: [927, 15]}
+    headerSpan : [14565, 14581]
+    footerSpan : [37811, 37836]
+    children:
+    - type : view
+      name : Main view
+      locationSpan : {start: [556, 0], end: [801, 14]}
+      headerSpan : [14582, 14665]
+      footerSpan : [31169, 31182]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [558, 0], end: [560, 12]}
+        span : [14666, 14819]
+      - type : variable
+        name : Susceptible
+        locationSpan : {start: [561, 0], end: [561, 62]}
+        span : [14820, 14881]
+      - type : variable
+        name : Infected asympto
+        locationSpan : {start: [562, 0], end: [562, 67]}
+        span : [14882, 14948]
+      - type : variable
+        name : Infected sympto
+        locationSpan : {start: [563, 0], end: [563, 66]}
+        span : [14949, 15014]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [564, 0], end: [564, 47]}
+        span : [15015, 15061]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [565, 0], end: [565, 49]}
+        span : [15062, 15110]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [566, 0], end: [566, 51]}
+        span : [15111, 15161]
+      - type : variable
+        name : New infections
+        locationSpan : {start: [567, 0], end: [567, 65]}
+        span : [15162, 15226]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [568, 0], end: [568, 48]}
+        span : [15227, 15274]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [569, 0], end: [569, 50]}
+        span : [15275, 15324]
+      - type : variable
+        name : Recovered
+        locationSpan : {start: [570, 0], end: [570, 62]}
+        span : [15325, 15386]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [571, 0], end: [571, 51]}
+        span : [15387, 15437]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [572, 0], end: [572, 52]}
+        span : [15438, 15489]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [573, 0], end: [573, 54]}
+        span : [15490, 15543]
+      - type : variable
+        name : Recoveries
+        locationSpan : {start: [574, 0], end: [574, 63]}
+        span : [15544, 15606]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [575, 0], end: [575, 53]}
+        span : [15607, 15659]
+      - type : variable
+        name : Becoming symptomatic
+        locationSpan : {start: [576, 0], end: [576, 71]}
+        span : [15660, 15730]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [577, 0], end: [577, 51]}
+        span : [15731, 15781]
+      - type : variable
+        name : New infections domestic
+        locationSpan : {start: [578, 0], end: [578, 73]}
+        span : [15782, 15854]
+      - type : variable
+        name : Contacts per asympto infected
+        locationSpan : {start: [579, 0], end: [579, 79]}
+        span : [15855, 15933]
+      - type : variable
+        name : Contacts per sympto infected
+        locationSpan : {start: [580, 0], end: [580, 78]}
+        span : [15934, 16011]
+      - type : variable
+        name : Susceptible fraction of popn
+        locationSpan : {start: [581, 0], end: [581, 78]}
+        span : [16012, 16089]
+      - type : variable
+        name : Total popn
+        locationSpan : {start: [582, 0], end: [582, 60]}
+        span : [16090, 16149]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [583, 0], end: [583, 50]}
+        span : [16150, 16199]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [584, 0], end: [584, 51]}
+        span : [16200, 16250]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [585, 0], end: [585, 51]}
+        span : [16251, 16301]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [586, 0], end: [586, 50]}
+        span : [16302, 16351]
+      - type : variable
+        name : Infection probability per contact
+        locationSpan : {start: [587, 0], end: [587, 83]}
+        span : [16352, 16434]
+      - type : variable
+        name : Dead
+        locationSpan : {start: [588, 0], end: [588, 57]}
+        span : [16435, 16491]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [589, 0], end: [589, 51]}
+        span : [16492, 16542]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [590, 0], end: [590, 51]}
+        span : [16543, 16593]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [591, 0], end: [591, 54]}
+        span : [16594, 16647]
+      - type : variable
+        name : Fatalities
+        locationSpan : {start: [592, 0], end: [592, 63]}
+        span : [16648, 16710]
+      - type : variable
+        name : Adult ventilator capacity
+        locationSpan : {start: [593, 0], end: [593, 100]}
+        span : [16711, 16810]
+      - type : variable
+        name : Ability of ventilator to reduce fatality
+        locationSpan : {start: [594, 0], end: [594, 116]}
+        span : [16811, 16926]
+      - type : variable
+        name : Ventilator relative availability
+        locationSpan : {start: [595, 0], end: [595, 82]}
+        span : [16927, 17008]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [596, 0], end: [596, 51]}
+        span : [17009, 17059]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [597, 0], end: [597, 52]}
+        span : [17060, 17111]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [598, 0], end: [598, 51]}
+        span : [17112, 17162]
+      - type : variable
+        name : Infectious contacts with susceptibles
+        locationSpan : {start: [599, 0], end: [599, 87]}
+        span : [17163, 17249]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [600, 0], end: [600, 51]}
+        span : [17250, 17300]
+      - type : variable
+        name : Incubation period
+        locationSpan : {start: [601, 0], end: [601, 92]}
+        span : [17301, 17392]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [602, 0], end: [602, 51]}
+        span : [17393, 17443]
+      - type : variable
+        name : Frac of hospitalized needing ventilator
+        locationSpan : {start: [603, 0], end: [603, 114]}
+        span : [17444, 17557]
+      - type : shadow variable
+        name : Time
+        locationSpan : {start: [604, 0], end: [604, 88]}
+        span : [17558, 17645]
+      - type : variable
+        name : Total popn reference
+        locationSpan : {start: [605, 0], end: [605, 95]}
+        span : [17646, 17740]
+      - type : shadow variable
+        name : Dead
+        locationSpan : {start: [606, 0], end: [606, 88]}
+        span : [17741, 17828]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [607, 0], end: [607, 51]}
+        span : [17829, 17879]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [608, 0], end: [608, 51]}
+        span : [17880, 17930]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [609, 0], end: [609, 51]}
+        span : [17931, 17981]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [610, 0], end: [610, 49]}
+        span : [17982, 18030]
+      - type : variable
+        name : Time to recovery or death
+        locationSpan : {start: [611, 0], end: [611, 101]}
+        span : [18031, 18131]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [612, 0], end: [612, 52]}
+        span : [18132, 18183]
+      - type : variable
+        name : Fatal frac of sympto
+        locationSpan : {start: [613, 0], end: [613, 73]}
+        span : [18184, 18256]
+      - type : variable
+        name : Recovery or death
+        locationSpan : {start: [614, 0], end: [614, 68]}
+        span : [18257, 18324]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [615, 0], end: [615, 52]}
+        span : [18325, 18376]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [616, 0], end: [616, 52]}
+        span : [18377, 18428]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [617, 0], end: [617, 52]}
+        span : [18429, 18480]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [618, 0], end: [618, 52]}
+        span : [18481, 18532]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [619, 0], end: [619, 51]}
+        span : [18533, 18583]
+      - type : variable
+        name : Hospitalized needing ventilator
+        locationSpan : {start: [620, 0], end: [620, 81]}
+        span : [18584, 18664]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [621, 0], end: [621, 51]}
+        span : [18665, 18715]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [622, 0], end: [622, 51]}
+        span : [18716, 18766]
+      - type : variable
+        name : Infected
+        locationSpan : {start: [623, 0], end: [623, 58]}
+        span : [18767, 18824]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [624, 0], end: [624, 50]}
+        span : [18825, 18874]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [625, 0], end: [625, 50]}
+        span : [18875, 18924]
+      - type : variable
+        name : Current cases for 50pct social distancing
+        locationSpan : {start: [626, 0], end: [626, 117]}
+        span : [18925, 19041]
+      - type : shadow variable
+        name : Confirmed current cases
+        locationSpan : {start: [627, 0], end: [627, 108]}
+        span : [19042, 19149]
+      - type : variable
+        name : Social distancing before GDP loss
+        locationSpan : {start: [628, 0], end: [628, 83]}
+        span : [19150, 19232]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [629, 0], end: [629, 52]}
+        span : [19233, 19284]
+      - type : variable
+        name : Infectious contacts
+        locationSpan : {start: [630, 0], end: [630, 69]}
+        span : [19285, 19353]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [631, 0], end: [631, 50]}
+        span : [19354, 19403]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [632, 0], end: [632, 50]}
+        span : [19404, 19453]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [633, 0], end: [633, 51]}
+        span : [19454, 19504]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [634, 0], end: [634, 51]}
+        span : [19505, 19555]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [635, 0], end: [635, 51]}
+        span : [19556, 19606]
+      - type : variable
+        name : Contacts per asympto no soc dist
+        locationSpan : {start: [636, 0], end: [636, 107]}
+        span : [19607, 19713]
+      - type : variable
+        name : Contacts per sympto no soc dist
+        locationSpan : {start: [637, 0], end: [637, 81]}
+        span : [19714, 19794]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [638, 0], end: [638, 51]}
+        span : [19795, 19845]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [639, 0], end: [639, 51]}
+        span : [19846, 19896]
+      - type : variable
+        name : Confirmed current cases
+        locationSpan : {start: [640, 0], end: [640, 73]}
+        span : [19897, 19969]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [641, 0], end: [641, 60]}
+        span : [19970, 20029]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [642, 0], end: [642, 60]}
+        span : [20030, 20089]
+      - type : variable
+        name : Testing of asymptos
+        locationSpan : {start: [643, 0], end: [643, 72]}
+        span : [20090, 20161]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [644, 0], end: [644, 51]}
+        span : [20162, 20212]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [645, 0], end: [645, 53]}
+        span : [20213, 20265]
+      - type : variable
+        name : Dead frac of past infections
+        locationSpan : {start: [646, 0], end: [646, 79]}
+        span : [20266, 20344]
+      - type : variable
+        name : Past infections
+        locationSpan : {start: [647, 0], end: [647, 66]}
+        span : [20345, 20410]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [648, 0], end: [648, 52]}
+        span : [20411, 20462]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [649, 0], end: [649, 52]}
+        span : [20463, 20514]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [650, 0], end: [650, 52]}
+        span : [20515, 20566]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [651, 0], end: [651, 52]}
+        span : [20567, 20618]
+      - type : variable
+        name : Lookup for social distancing
+        locationSpan : {start: [652, 0], end: [652, 104]}
+        span : [20619, 20722]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [653, 0], end: [653, 52]}
+        span : [20723, 20774]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [654, 0], end: [654, 51]}
+        span : [20775, 20825]
+      - type : variable
+        name : Effect of vaccine on infection probability
+        locationSpan : {start: [655, 0], end: [655, 92]}
+        span : [20826, 20917]
+      - type : shadow variable
+        name : Time
+        locationSpan : {start: [656, 0], end: [656, 88]}
+        span : [20918, 21005]
+      - type : variable
+        name : Infection probability per contact initial
+        locationSpan : {start: [657, 0], end: [657, 116]}
+        span : [21006, 21121]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [658, 0], end: [658, 51]}
+        span : [21122, 21172]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [659, 0], end: [659, 51]}
+        span : [21173, 21223]
+      - type : variable
+        name : Reltv contacts per sympto
+        locationSpan : {start: [660, 0], end: [660, 101]}
+        span : [21224, 21324]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [661, 0], end: [661, 52]}
+        span : [21325, 21376]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [662, 0], end: [662, 53]}
+        span : [21377, 21429]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [663, 0], end: [663, 53]}
+        span : [21430, 21482]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [664, 0], end: [664, 53]}
+        span : [21483, 21535]
+      - type : variable
+        name : Cumulative confirmed cases
+        locationSpan : {start: [665, 0], end: [665, 78]}
+        span : [21536, 21613]
+      - type : variable
+        name : Confirmed past cases
+        locationSpan : {start: [666, 0], end: [666, 72]}
+        span : [21614, 21685]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [667, 0], end: [667, 54]}
+        span : [21686, 21739]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [668, 0], end: [668, 54]}
+        span : [21740, 21793]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [669, 0], end: [669, 55]}
+        span : [21794, 21848]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [670, 0], end: [670, 54]}
+        span : [21849, 21902]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [671, 0], end: [671, 55]}
+        span : [21903, 21957]
+      - type : variable
+        name : Dead frac of confirmed cases
+        locationSpan : {start: [672, 0], end: [672, 80]}
+        span : [21958, 22037]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [673, 0], end: [673, 54]}
+        span : [22038, 22091]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [674, 0], end: [674, 55]}
+        span : [22092, 22146]
+      - type : variable
+        name : Hospitalized frac of severe
+        locationSpan : {start: [675, 0], end: [675, 104]}
+        span : [22147, 22250]
+      - type : variable
+        name : Hospitalized
+        locationSpan : {start: [676, 0], end: [676, 63]}
+        span : [22251, 22313]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [677, 0], end: [677, 52]}
+        span : [22314, 22365]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [678, 0], end: [678, 54]}
+        span : [22366, 22419]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [679, 0], end: [679, 53]}
+        span : [22420, 22472]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [680, 0], end: [680, 54]}
+        span : [22473, 22526]
+      - type : graph variable
+        name : Dead
+        locationSpan : {start: [681, 0], end: [682, 6]}
+        span : [22527, 22590]
+      - type : graph variable
+        name : Cumulative_confirmed_cases
+        locationSpan : {start: [683, 0], end: [684, 28]}
+        span : [22591, 22675]
+      - type : graph variable
+        name : Infected
+        locationSpan : {start: [685, 0], end: [686, 10]}
+        span : [22676, 22742]
+      - type : graph variable
+        name : Social_distancing
+        locationSpan : {start: [687, 0], end: [688, 19]}
+        span : [22743, 22818]
+      - type : graph variable
+        name : Dead_frac_of_confirmed_cases
+        locationSpan : {start: [689, 0], end: [690, 30]}
+        span : [22819, 22906]
+      - type : graph variable
+        name : Containment_measures
+        locationSpan : {start: [691, 0], end: [692, 22]}
+        span : [22907, 22986]
+      - type : graph variable
+        name : Testing_of_symptomatics
+        locationSpan : {start: [693, 0], end: [694, 25]}
+        span : [22987, 23068]
+      - type : variable
+        name : Basic reproduction number
+        locationSpan : {start: [695, 0], end: [695, 77]}
+        span : [23069, 23145]
+      - type : shadow variable
+        name : New infections
+        locationSpan : {start: [696, 0], end: [696, 99]}
+        span : [23146, 23244]
+      - type : shadow variable
+        name : Infected
+        locationSpan : {start: [697, 0], end: [697, 94]}
+        span : [23245, 23338]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [698, 0], end: [698, 55]}
+        span : [23339, 23393]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [699, 0], end: [699, 54]}
+        span : [23394, 23447]
+      - type : shadow variable
+        name : Incubation period
+        locationSpan : {start: [700, 0], end: [700, 101]}
+        span : [23448, 23548]
+      - type : shadow variable
+        name : Time to recovery or death
+        locationSpan : {start: [701, 0], end: [701, 110]}
+        span : [23549, 23658]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [702, 0], end: [702, 55]}
+        span : [23659, 23713]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [703, 0], end: [703, 54]}
+        span : [23714, 23767]
+      - type : variable
+        name : Reltv testing of asymptos
+        locationSpan : {start: [704, 0], end: [704, 107]}
+        span : [23768, 23874]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [705, 0], end: [705, 53]}
+        span : [23875, 23927]
+      - type : variable
+        name : Testing of symptos
+        locationSpan : {start: [706, 0], end: [706, 72]}
+        span : [23928, 23999]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [707, 0], end: [707, 53]}
+        span : [24000, 24052]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [708, 0], end: [708, 63]}
+        span : [24053, 24115]
+      - type : variable
+        name : Ventilator utilization
+        locationSpan : {start: [709, 0], end: [709, 73]}
+        span : [24116, 24188]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [710, 0], end: [710, 53]}
+        span : [24189, 24241]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [711, 0], end: [711, 53]}
+        span : [24242, 24294]
+      - type : variable
+        name : Reltv infectiousness of asymptos
+        locationSpan : {start: [712, 0], end: [712, 108]}
+        span : [24295, 24402]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [713, 0], end: [713, 53]}
+        span : [24403, 24455]
+      - type : variable
+        name : Delay time in social distancing
+        locationSpan : {start: [714, 0], end: [714, 108]}
+        span : [24456, 24563]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [715, 0], end: [715, 54]}
+        span : [24564, 24617]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [716, 0], end: [716, 65]}
+        span : [24618, 24682]
+      - type : variable
+        name : Cumulative cases for max testing
+        locationSpan : {start: [717, 0], end: [717, 108]}
+        span : [24683, 24790]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [718, 0], end: [718, 55]}
+        span : [24791, 24845]
+      - type : variable
+        name : Delay time in testing
+        locationSpan : {start: [719, 0], end: [719, 97]}
+        span : [24846, 24942]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [720, 0], end: [720, 54]}
+        span : [24943, 24996]
+      - type : variable
+        name : Containment measures before GDP loss
+        locationSpan : {start: [721, 0], end: [721, 87]}
+        span : [24997, 25083]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [722, 0], end: [722, 54]}
+        span : [25084, 25137]
+      - type : variable
+        name : Recent cases for 50pct containment measures
+        locationSpan : {start: [723, 0], end: [723, 119]}
+        span : [25138, 25256]
+      - type : variable
+        name : Assessment time for containment
+        locationSpan : {start: [724, 0], end: [724, 108]}
+        span : [25257, 25364]
+      - type : variable
+        name : Lookup for containment measures
+        locationSpan : {start: [725, 0], end: [725, 107]}
+        span : [25365, 25471]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [726, 0], end: [726, 54]}
+        span : [25472, 25525]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [727, 0], end: [727, 54]}
+        span : [25526, 25579]
+      - type : variable
+        name : Confirmed new cases
+        locationSpan : {start: [728, 0], end: [728, 71]}
+        span : [25580, 25650]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [729, 0], end: [729, 54]}
+        span : [25651, 25704]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [730, 0], end: [730, 54]}
+        span : [25705, 25758]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [731, 0], end: [731, 53]}
+        span : [25759, 25811]
+      - type : shadow variable
+        name : Confirmed new cases
+        locationSpan : {start: [732, 0], end: [732, 105]}
+        span : [25812, 25916]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [733, 0], end: [733, 52]}
+        span : [25917, 25968]
+      - type : variable
+        name : Time of vaccine availability
+        locationSpan : {start: [734, 0], end: [734, 104]}
+        span : [25969, 26072]
+      - type : variable
+        name : Effect of vaccine on infection
+        locationSpan : {start: [735, 0], end: [735, 105]}
+        span : [26073, 26177]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [736, 0], end: [736, 53]}
+        span : [26178, 26230]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [737, 0], end: [737, 53]}
+        span : [26231, 26283]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [738, 0], end: [738, 53]}
+        span : [26284, 26336]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [739, 0], end: [739, 54]}
+        span : [26337, 26390]
+      - type : variable
+        name : Severe frac of infected sympto
+        locationSpan : {start: [740, 0], end: [740, 106]}
+        span : [26391, 26496]
+      - type : variable
+        name : Severe
+        locationSpan : {start: [741, 0], end: [741, 57]}
+        span : [26497, 26553]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [742, 0], end: [742, 54]}
+        span : [26554, 26607]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [743, 0], end: [743, 54]}
+        span : [26608, 26661]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [744, 0], end: [744, 53]}
+        span : [26662, 26714]
+      - type : shadow variable
+        name : Severe frac of infected sympto
+        locationSpan : {start: [745, 0], end: [745, 113]}
+        span : [26715, 26827]
+      - type : variable
+        name : Avg time on ventilator
+        locationSpan : {start: [746, 0], end: [746, 98]}
+        span : [26828, 26925]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [747, 0], end: [747, 53]}
+        span : [26926, 26978]
+      - type : shadow variable
+        name : Time to recovery or death
+        locationSpan : {start: [748, 0], end: [748, 107]}
+        span : [26979, 27085]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [749, 0], end: [749, 53]}
+        span : [27086, 27138]
+      - type : variable
+        name : Hospital bed capacity
+        locationSpan : {start: [750, 0], end: [750, 97]}
+        span : [27139, 27235]
+      - type : variable
+        name : Hospital bed utilization
+        locationSpan : {start: [751, 0], end: [751, 75]}
+        span : [27236, 27310]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [752, 0], end: [752, 54]}
+        span : [27311, 27364]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [753, 0], end: [753, 54]}
+        span : [27365, 27418]
+      - type : variable
+        name : Cumulative hospitalized
+        locationSpan : {start: [754, 0], end: [754, 77]}
+        span : [27419, 27495]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [755, 0], end: [755, 54]}
+        span : [27496, 27549]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [756, 0], end: [756, 54]}
+        span : [27550, 27603]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [757, 0], end: [757, 56]}
+        span : [27604, 27659]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [758, 0], end: [758, 53]}
+        span : [27660, 27712]
+      - type : variable
+        name : Hospital admissions
+        locationSpan : {start: [759, 0], end: [759, 73]}
+        span : [27713, 27785]
+      - type : shadow variable
+        name : Becoming symptomatic
+        locationSpan : {start: [760, 0], end: [760, 106]}
+        span : [27786, 27891]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [761, 0], end: [761, 55]}
+        span : [27892, 27946]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [762, 0], end: [762, 55]}
+        span : [27947, 28001]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [763, 0], end: [763, 55]}
+        span : [28002, 28056]
+      - type : variable
+        name : Confirmed frac of past infections
+        locationSpan : {start: [764, 0], end: [764, 85]}
+        span : [28057, 28141]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [765, 0], end: [765, 55]}
+        span : [28142, 28196]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [766, 0], end: [766, 54]}
+        span : [28197, 28250]
+      - type : shadow variable
+        name : Testing of symptos
+        locationSpan : {start: [767, 0], end: [767, 104]}
+        span : [28251, 28354]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [768, 0], end: [768, 55]}
+        span : [28355, 28409]
+      - type : variable
+        name : Testing of symptos initial
+        locationSpan : {start: [769, 0], end: [769, 103]}
+        span : [28410, 28512]
+      - type : variable
+        name : Max testing of symptos
+        locationSpan : {start: [770, 0], end: [770, 99]}
+        span : [28513, 28611]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [771, 0], end: [771, 55]}
+        span : [28612, 28666]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [772, 0], end: [772, 55]}
+        span : [28667, 28721]
+      - type : variable
+        name : Cumul infect from overseas
+        locationSpan : {start: [773, 0], end: [773, 79]}
+        span : [28722, 28800]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [774, 0], end: [774, 53]}
+        span : [28801, 28853]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [775, 0], end: [775, 55]}
+        span : [28854, 28908]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [776, 0], end: [776, 53]}
+        span : [28909, 28961]
+      - type : variable
+        name : Input series for infections picked up overseas
+        locationSpan : {start: [777, 0], end: [777, 122]}
+        span : [28962, 29083]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [778, 0], end: [778, 54]}
+        span : [29084, 29137]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [779, 0], end: [779, 54]}
+        span : [29138, 29191]
+      - type : variable
+        name : Infections picked up overseas
+        locationSpan : {start: [780, 0], end: [780, 81]}
+        span : [29192, 29272]
+      - type : variable
+        name : Lookup for testing
+        locationSpan : {start: [781, 0], end: [781, 95]}
+        span : [29273, 29367]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [782, 0], end: [782, 55]}
+        span : [29368, 29422]
+      - type : variable
+        name : Recent cases affecting containment
+        locationSpan : {start: [783, 0], end: [783, 86]}
+        span : [29423, 29508]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [784, 0], end: [784, 55]}
+        span : [29509, 29563]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [785, 0], end: [785, 55]}
+        span : [29564, 29618]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [786, 0], end: [786, 54]}
+        span : [29619, 29672]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [787, 0], end: [787, 51]}
+        span : [29673, 29723]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [788, 0], end: [788, 52]}
+        span : [29724, 29775]
+      - type : shadow variable
+        name : Restriction loosening due to GDP loss
+        locationSpan : {start: [789, 0], end: [789, 123]}
+        span : [29776, 29898]
+      - type : variable
+        name : Containment measures
+        locationSpan : {start: [790, 0], end: [790, 71]}
+        span : [29899, 29969]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [791, 0], end: [791, 53]}
+        span : [29970, 30022]
+      - type : variable
+        name : Social distancing
+        locationSpan : {start: [792, 0], end: [792, 68]}
+        span : [30023, 30090]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [793, 0], end: [793, 53]}
+        span : [30091, 30143]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [794, 0], end: [794, 54]}
+        span : [30144, 30197]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [795, 0], end: [795, 54]}
+        span : [30198, 30251]
+      - type : shadow variable
+        name : GDP frac loss for 50pct restriction loosening
+        locationSpan : {start: [796, 0], end: [796, 127]}
+        span : [30252, 30378]
+      - type : variable
+        name : A model of Covid-19 in the US with endogenous testing, containment measures, and social distancing
+        locationSpan : {start: [797, 0], end: [798, 100]}
+        span : [30379, 30563]
+      - type : variable
+        name : Jack Homer, PhD, March 24, 2020 v2, via metasd.com
+        locationSpan : {start: [799, 0], end: [800, 52]}
+        span : [30564, 30698]
+    - type : view
+      name : Goodness of fit
+      locationSpan : {start: [802, 0], end: [829, 14]}
+      headerSpan : [30713, 30796]
+      footerSpan : [32900, 32913]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [804, 0], end: [806, 18]}
+        span : [30797, 30956]
+      - type : graph variable
+        name : Cumul_confirmed_cases_vs_data
+        locationSpan : {start: [807, 0], end: [808, 31]}
+        span : [30957, 31047]
+      - type : graph variable
+        name : Dead_vs_data
+        locationSpan : {start: [809, 0], end: [810, 14]}
+        span : [31048, 31121]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [811, 0], end: [811, 48]}
+        span : [31122, 31169]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [812, 0], end: [812, 48]}
+        span : [31170, 31217]
+      - type : graph variable
+        name : Dead_frac_of_cases_vs_data
+        locationSpan : {start: [813, 0], end: [814, 28]}
+        span : [31218, 31306]
+      - type : graph variable
+        name : Testing_of_symptomatics_hist
+        locationSpan : {start: [815, 0], end: [816, 30]}
+        span : [31307, 31398]
+      - type : variable
+        name : Ability of ventilator to reduce fatality
+        locationSpan : {start: [817, 0], end: [817, 115]}
+        span : [31399, 31513]
+      - type : variable
+        name : Contacts per asympto no soc dist
+        locationSpan : {start: [818, 0], end: [818, 107]}
+        span : [31514, 31620]
+      - type : variable
+        name : Infection probability per contact initial
+        locationSpan : {start: [819, 0], end: [819, 116]}
+        span : [31621, 31736]
+      - type : variable
+        name : Reltv contacts per sympto
+        locationSpan : {start: [820, 0], end: [820, 100]}
+        span : [31737, 31836]
+      - type : graph variable
+        name : Basic_reproduction_number
+        locationSpan : {start: [821, 0], end: [822, 27]}
+        span : [31837, 31925]
+      - type : variable
+        name : Severe frac of infected sympto
+        locationSpan : {start: [823, 0], end: [823, 105]}
+        span : [31926, 32030]
+      - type : variable
+        name : Cumulative cases for max testing
+        locationSpan : {start: [824, 0], end: [824, 107]}
+        span : [32031, 32137]
+      - type : variable
+        name : Testing of symptos initial
+        locationSpan : {start: [825, 0], end: [825, 101]}
+        span : [32138, 32238]
+      - type : variable
+        name : Max testing of symptos
+        locationSpan : {start: [826, 0], end: [826, 97]}
+        span : [32239, 32335]
+      - type : graph variable
+        name : Cumul_infections_from_overseas
+        locationSpan : {start: [827, 0], end: [828, 32]}
+        span : [32336, 32429]
+    - type : view
+      name : Economic effects
+      locationSpan : {start: [830, 0], end: [907, 14]}
+      headerSpan : [32444, 32527]
+      footerSpan : [37797, 37810]
+      children:
+      - type : viewSettings
+        name : viewSettings
+        locationSpan : {start: [832, 0], end: [834, 19]}
+        span : [32528, 32688]
+      - type : variable
+        name : GDP per capita per yr reference
+        locationSpan : {start: [835, 0], end: [835, 105]}
+        span : [32689, 32793]
+      - type : variable
+        name : GDP billions per yr reference
+        locationSpan : {start: [836, 0], end: [836, 78]}
+        span : [32794, 32871]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [837, 0], end: [837, 48]}
+        span : [32872, 32919]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [838, 0], end: [838, 48]}
+        span : [32920, 32967]
+      - type : shadow variable
+        name : Total popn reference
+        locationSpan : {start: [839, 0], end: [839, 100]}
+        span : [32968, 33067]
+      - type : variable
+        name : Dollars per billion dollars
+        locationSpan : {start: [840, 0], end: [840, 101]}
+        span : [33068, 33168]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [841, 0], end: [841, 48]}
+        span : [33169, 33216]
+      - type : variable
+        name : GDP loss fraction if full restriction
+        locationSpan : {start: [842, 0], end: [842, 111]}
+        span : [33217, 33327]
+      - type : variable
+        name : Extent of restriction
+        locationSpan : {start: [843, 0], end: [843, 70]}
+        span : [33328, 33397]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [844, 0], end: [844, 50]}
+        span : [33398, 33447]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [845, 0], end: [845, 50]}
+        span : [33448, 33497]
+      - type : variable
+        name : GDP loss fraction
+        locationSpan : {start: [846, 0], end: [846, 67]}
+        span : [33498, 33564]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [847, 0], end: [847, 60]}
+        span : [33565, 33624]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [848, 0], end: [848, 50]}
+        span : [33625, 33674]
+      - type : variable
+        name : GDP impact time
+        locationSpan : {start: [849, 0], end: [849, 90]}
+        span : [33675, 33764]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [850, 0], end: [850, 51]}
+        span : [33765, 33815]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [851, 0], end: [851, 51]}
+        span : [33816, 33866]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [852, 0], end: [852, 50]}
+        span : [33867, 33916]
+      - type : variable
+        name : Avg yrs of life lost per fatality
+        locationSpan : {start: [853, 0], end: [853, 108]}
+        span : [33917, 34024]
+      - type : shadow variable
+        name : Fatalities
+        locationSpan : {start: [854, 0], end: [854, 94]}
+        span : [34025, 34118]
+      - type : variable
+        name : Valuation of year of life lost
+        locationSpan : {start: [855, 0], end: [855, 105]}
+        span : [34119, 34223]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [856, 0], end: [856, 51]}
+        span : [34224, 34274]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [857, 0], end: [857, 51]}
+        span : [34275, 34325]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [858, 0], end: [858, 51]}
+        span : [34326, 34376]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [859, 0], end: [859, 50]}
+        span : [34377, 34426]
+      - type : variable
+        name : Avg lost life value per fatality
+        locationSpan : {start: [860, 0], end: [860, 82]}
+        span : [34427, 34508]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [861, 0], end: [861, 51]}
+        span : [34509, 34559]
+      - type : variable
+        name : Cumul lost life value billions
+        locationSpan : {start: [862, 0], end: [862, 82]}
+        span : [34560, 34641]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [863, 0], end: [863, 52]}
+        span : [34642, 34693]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [864, 0], end: [864, 50]}
+        span : [34694, 34743]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [865, 0], end: [865, 52]}
+        span : [34744, 34795]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [866, 0], end: [866, 51]}
+        span : [34796, 34846]
+      - type : variable
+        name : Lost life value billions
+        locationSpan : {start: [867, 0], end: [867, 75]}
+        span : [34847, 34921]
+      - type : variable
+        name : Cumul GDP loss billions
+        locationSpan : {start: [868, 0], end: [868, 75]}
+        span : [34922, 34996]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [869, 0], end: [869, 52]}
+        span : [34997, 35048]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [870, 0], end: [870, 50]}
+        span : [35049, 35098]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [871, 0], end: [871, 52]}
+        span : [35099, 35150]
+      - type : variable
+        name : Numeric
+        locationSpan : {start: [872, 0], end: [872, 51]}
+        span : [35151, 35201]
+      - type : variable
+        name : GDP loss billions
+        locationSpan : {start: [873, 0], end: [873, 70]}
+        span : [35202, 35271]
+      - type : variable
+        name : Months per year
+        locationSpan : {start: [874, 0], end: [874, 90]}
+        span : [35272, 35361]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [875, 0], end: [875, 51]}
+        span : [35362, 35412]
+      - type : variable
+        name : Time to loosen restrictions due to GDP loss
+        locationSpan : {start: [876, 0], end: [876, 118]}
+        span : [35413, 35530]
+      - type : variable
+        name : GDP frac loss for 50pct restriction loosening
+        locationSpan : {start: [877, 0], end: [877, 120]}
+        span : [35531, 35650]
+      - type : variable
+        name : Lookup for restriction loosening due to GDP loss
+        locationSpan : {start: [878, 0], end: [878, 123]}
+        span : [35651, 35773]
+      - type : variable
+        name : Restriction loosening due to GDP loss
+        locationSpan : {start: [879, 0], end: [879, 87]}
+        span : [35774, 35860]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [880, 0], end: [880, 61]}
+        span : [35861, 35921]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [881, 0], end: [881, 51]}
+        span : [35922, 35972]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [882, 0], end: [882, 51]}
+        span : [35973, 36023]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [883, 0], end: [883, 51]}
+        span : [36024, 36074]
+      - type : shadow variable
+        name : Containment measures
+        locationSpan : {start: [884, 0], end: [884, 103]}
+        span : [36075, 36177]
+      - type : shadow variable
+        name : Social distancing
+        locationSpan : {start: [885, 0], end: [885, 100]}
+        span : [36178, 36277]
+      - type : variable
+        name : Combined loss billions
+        locationSpan : {start: [886, 0], end: [886, 72]}
+        span : [36278, 36349]
+      - type : variable
+        name : Cumul combined loss billions
+        locationSpan : {start: [887, 0], end: [887, 78]}
+        span : [36350, 36427]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [888, 0], end: [888, 51]}
+        span : [36428, 36478]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [889, 0], end: [889, 51]}
+        span : [36479, 36529]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [890, 0], end: [890, 51]}
+        span : [36530, 36580]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [891, 0], end: [891, 51]}
+        span : [36581, 36631]
+      - type : graph variable
+        name : Cumul_combined_loss_billions
+        locationSpan : {start: [892, 0], end: [893, 30]}
+        span : [36632, 36717]
+      - type : graph variable
+        name : GDP_loss_fraction
+        locationSpan : {start: [894, 0], end: [895, 19]}
+        span : [36718, 36792]
+      - type : graph variable
+        name : Extent_of_restriction
+        locationSpan : {start: [896, 0], end: [897, 23]}
+        span : [36793, 36871]
+      - type : graph variable
+        name : Cumul_GDP_loss_billions
+        locationSpan : {start: [898, 0], end: [899, 25]}
+        span : [36872, 36952]
+      - type : graph variable
+        name : Cumul_lost_life_value_billions
+        locationSpan : {start: [900, 0], end: [901, 32]}
+        span : [36953, 37040]
+      - type : graph variable
+        name : Restriction_loosening_due_to_GDP_loss
+        locationSpan : {start: [902, 0], end: [903, 39]}
+        span : [37041, 37135]
+      - type : variable
+        name : Restriction loosening at 10pct GDP loss
+        locationSpan : {start: [904, 0], end: [904, 89]}
+        span : [37136, 37224]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [905, 0], end: [905, 51]}
+        span : [37225, 37275]
+      - type : arrow
+        name : arrow
+        locationSpan : {start: [906, 0], end: [906, 51]}
+        span : [37276, 37326]
+  - type : graphs
+    name : graphs
+    locationSpan : {start: [910, 0], end: [1732, 15]}
+    headerSpan : [37367, 37383]
+    footerSpan : [53105, 53119]
+    children:
+    - type : graph
+      name : Infections picked up overseas:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [911, 0], end: [929, 2]}
+      span : [37384, 37814]
+    - type : graph
+      name : Basic reproduction number:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [930, 0], end: [951, 2]}
+      span : [37815, 38247]
+    - type : graph
+      name : Infected:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [952, 0], end: [970, 2]}
+      span : [38248, 38531]
+    - type : graph
+      name : Symptomatic:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [971, 0], end: [989, 2]}
+      span : [38532, 38856]
+    - type : graph
+      name : Testing of symptomatics:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [990, 0], end: [1011, 2]}
+      span : [38857, 39250]
+    - type : graph
+      name : Confirmed frac of past infections:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1012, 0], end: [1033, 2]}
+      span : [39251, 39739]
+    - type : graph
+      name : Confirmed new cases(monthly rate):X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1034, 0], end: [1052, 2]}
+      span : [39740, 40115]
+    - type : graph
+      name : Confirmed current cases:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1053, 0], end: [1071, 2]}
+      span : [40116, 40504]
+    - type : graph
+      name : Social distancing:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1072, 0], end: [1093, 2]}
+      span : [40505, 40881]
+    - type : graph
+      name : Containment measures:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1094, 0], end: [1115, 2]}
+      span : [40882, 41279]
+    - type : graph
+      name : Hospitalized:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1116, 0], end: [1134, 2]}
+      span : [41280, 41591]
+    - type : graph
+      name : Hospital bed utilization by Covid19 pts:X-LABELMonths elapsed since 1-1-20:SOFT-BOUNDS
+      locationSpan : {start: [1135, 0], end: [1156, 2]}
+      span : [41592, 42038]
+    - type : graph
+      name : Hospitalized needing ventilator:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1157, 0], end: [1175, 2]}
+      span : [42039, 42483]
+    - type : graph
+      name : Ventilator relative availability:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1176, 0], end: [1201, 2]}
+      span : [42484, 43005]
+    - type : graph
+      name : Ventilator utilization by Covid19 pts:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1202, 0], end: [1227, 2]}
+      span : [43006, 43472]
+    - type : graph
+      name : Fatal frac of sympto:X-LABELMonths elapsed since 1-1-20:SOFT-BOUNDS
+      locationSpan : {start: [1228, 0], end: [1254, 2]}
+      span : [43473, 43927]
+    - type : graph
+      name : Past infections:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1255, 0], end: [1273, 2]}
+      span : [43928, 44260]
+    - type : graph
+      name : Cumulative hospitalized:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1274, 0], end: [1292, 2]}
+      span : [44261, 44649]
+    - type : graph
+      name : Cumulative confirmed cases:X-LABELMonths elapsed since 1-1-20:SOFT-BOUNDS
+      locationSpan : {start: [1293, 0], end: [1314, 2]}
+      span : [44650, 45097]
+    - type : graph
+      name : Cumul infections from overseas:X-LABELMonths elapsed since 1-1-20:SOFT-BOUNDS
+      locationSpan : {start: [1315, 0], end: [1335, 2]}
+      span : [45098, 45541]
+    - type : graph
+      name : Fatalities per month:X-LABELMonths elapsed since 1-1-20:SOFT-BOUNDS
+      locationSpan : {start: [1336, 0], end: [1356, 2]}
+      span : [45542, 45883]
+    - type : graph
+      name : Dead:X-LABELMonths elapsed since 1-1-20:SOFT-BOUNDS
+      locationSpan : {start: [1357, 0], end: [1377, 2]}
+      span : [45884, 46163]
+    - type : graph
+      name : Dead frac of confirmed cases:X-LABELMonths elapsed since 1-1-20:SOFT-BOUNDS
+      locationSpan : {start: [1378, 0], end: [1404, 2]}
+      span : [46164, 46674]
+    - type : graph
+      name : Dead frac of past infections:X-LABELMonths elapsed since 1-1-20:SOFT-BOUNDS
+      locationSpan : {start: [1405, 0], end: [1431, 2]}
+      span : [46675, 47185]
+    - type : graph
+      name : Cumul confirmed cases vs data:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1432, 0], end: [1448, 2]}
+      span : [47186, 47520]
+    - type : graph
+      name : Dead vs data:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1449, 0], end: [1465, 2]}
+      span : [47521, 47758]
+    - type : graph
+      name : Dead frac of cases vs data:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1466, 0], end: [1483, 2]}
+      span : [47759, 48108]
+    - type : graph
+      name : Identified frac of past infections hist:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1484, 0], end: [1499, 2]}
+      span : [48109, 48435]
+    - type : graph
+      name : Testing of symptomatics:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1500, 0], end: [1515, 2]}
+      span : [48436, 48705]
+    - type : graph
+      name : Net extent of restriction:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1516, 0], end: [1541, 2]}
+      span : [48706, 49154]
+    - type : graph
+      name : Restrict back-pressure due to GDP:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1542, 0], end: [1567, 2]}
+      span : [49155, 49707]
+    - type : graph
+      name : GDP loss fraction:X-LABELMonths elapsed since 1-1-20:SOFT-BOUNDS
+      locationSpan : {start: [1568, 0], end: [1594, 2]}
+      span : [49708, 50140]
+    - type : graph
+      name : GDP loss billions per month:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1595, 0], end: [1614, 2]}
+      span : [50141, 50517]
+    - type : graph
+      name : Cumul GDP loss billions:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1615, 0], end: [1634, 2]}
+      span : [50518, 50916]
+    - type : graph
+      name : Lost life value billions per month:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1635, 0], end: [1654, 2]}
+      span : [50917, 51342]
+    - type : graph
+      name : Cumul lost life value billions:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1655, 0], end: [1674, 2]}
+      span : [51343, 51790]
+    - type : graph
+      name : Combined loss billions per month:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1675, 0], end: [1694, 2]}
+      span : [51791, 52202]
+    - type : graph
+      name : Cumul combined loss billions:X-LABELMonths elapsed since 1-1-20
+      locationSpan : {start: [1695, 0], end: [1713, 15]}
+      span : [52203, 52634]
+  - type : metadata
+    name : metadata
+    locationSpan : {start: [1715, 0], end: [1764, 2]}
+    headerSpan : [52650, 52660]
+    footerSpan : [53393, 53394]
+    children:
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1716, 0], end: [1716, 13]}
+      span : [52661, 52673]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1717, 0], end: [1717, 8]}
+      span : [52674, 52681]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1718, 0], end: [1718, 21]}
+      span : [52682, 52702]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1719, 0], end: [1719, 16]}
+      span : [52703, 52718]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1720, 0], end: [1720, 9]}
+      span : [52719, 52727]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1721, 0], end: [1721, 7]}
+      span : [52728, 52734]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1722, 0], end: [1722, 7]}
+      span : [52735, 52741]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1723, 0], end: [1723, 6]}
+      span : [52742, 52747]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1724, 0], end: [1724, 6]}
+      span : [52748, 52753]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1725, 0], end: [1725, 6]}
+      span : [52754, 52759]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1726, 0], end: [1726, 8]}
+      span : [52760, 52767]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1727, 0], end: [1727, 32]}
+      span : [52768, 52799]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1728, 0], end: [1728, 9]}
+      span : [52800, 52808]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1729, 0], end: [1729, 15]}
+      span : [52809, 52823]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1730, 0], end: [1730, 9]}
+      span : [52824, 52832]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1731, 0], end: [1731, 6]}
+      span : [52833, 52838]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1732, 0], end: [1732, 6]}
+      span : [52839, 52844]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1733, 0], end: [1733, 6]}
+      span : [52845, 52850]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1734, 0], end: [1734, 6]}
+      span : [52851, 52856]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1735, 0], end: [1735, 6]}
+      span : [52857, 52862]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1736, 0], end: [1736, 6]}
+      span : [52863, 52868]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1737, 0], end: [1737, 6]}
+      span : [52869, 52874]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1738, 0], end: [1738, 6]}
+      span : [52875, 52880]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1739, 0], end: [1739, 6]}
+      span : [52881, 52886]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1740, 0], end: [1740, 6]}
+      span : [52887, 52892]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1741, 0], end: [1741, 6]}
+      span : [52893, 52898]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1742, 0], end: [1742, 7]}
+      span : [52899, 52905]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1743, 0], end: [1743, 7]}
+      span : [52906, 52912]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1744, 0], end: [1744, 5]}
+      span : [52913, 52917]
+    - type : metadataLine
+      name : metadataLine
+      locationSpan : {start: [1745, 0], end: [1745, 5]}
+      span : [52918, 52922]
