@@ -150,20 +150,43 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
     }
 
     public void processAction() {
-        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
-        String[] arg = new String[2];
-        arg[0] = filePath;
-        controller.processFile(arg);
-        Color greenColor = new Color(26, 110, 16);
-        l.setForeground(greenColor);
-        l.setText("Operation successful.");
-        auxL.setText("");
+        if (checkFile(filePath)) {
+            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+            String[] arg = new String[2];
+            arg[0] = filePath;
+            controller.processFile(arg);
+            Color greenColor = new Color(26, 110, 16);
+            l.setForeground(greenColor);
+            l.setText("Operation successful.");
+            auxL.setText("");
+
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    try {
+                        Thread.sleep(3000);
+                        l.setText(shortPath);
+                        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+                        l.setForeground(Color.black);
+                    } catch (InterruptedException e) {
+                        System.err.println(e.getMessage());
+                    }
+                    return;
+                }
+            });
+
+        } else {
+            l.setForeground(Color.red);
+            l.setText("Vensim file is not valid.");
+            auxL.setText("");
+        }
     }
 
     public void openAction() {
         l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
         // create an object of JFileChooser class 
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("VENSIM FILES", "mdl");
+        j.setFileFilter(filter);
 
         // invoke the showsOpenDialog function to show the save dialog 
         int r = j.showOpenDialog(null);
@@ -220,6 +243,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
     }
 
     public void pathAction() {
+        l.setForeground(Color.black);
         if (!absolutePathState) {
             l.setFont(new Font("Sans Serif", Font.PLAIN, 12));
             pathButton.setText("Show name without name");
