@@ -83,7 +83,7 @@ children:
         name : bunnies
         locationSpan : {start: [79, 0], end: [79, 43]}
         span : [1618, 1660]
-      - type : variable
+      - type : comment
         name : Numeric
         locationSpan : {start: [80, 0], end: [80, 41]}
         span : [1661, 1701]
@@ -95,7 +95,7 @@ children:
         name : arrow
         locationSpan : {start: [82, 0], end: [82, 50]}
         span : [1750, 1799]
-      - type : variable
+      - type : valve
         name : Numeric
         locationSpan : {start: [83, 0], end: [83, 39]}
         span : [1800, 1838]
@@ -131,7 +131,7 @@ children:
         name : bunnies 0
         locationSpan : {start: [92, 0], end: [92, 45]}
         span : [2181, 2225]
-      - type : variable
+      - type : comment
         name : Numeric
         locationSpan : {start: [93, 0], end: [93, 40]}
         span : [2226, 2265]
@@ -143,7 +143,7 @@ children:
         name : arrow
         locationSpan : {start: [95, 0], end: [95, 51]}
         span : [2315, 2365]
-      - type : variable
+      - type : valve
         name : Numeric
         locationSpan : {start: [96, 0], end: [96, 38]}
         span : [2366, 2403]

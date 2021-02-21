@@ -87,7 +87,7 @@ children:
         name : Level multi lookups
         locationSpan : {start: [70, 0], end: [70, 70]}
         span : [1681, 1750]
-      - type : variable
+      - type : comment
         name : Numeric
         locationSpan : {start: [71, 0], end: [71, 52]}
         span : [1751, 1802]
@@ -99,7 +99,7 @@ children:
         name : arrow
         locationSpan : {start: [73, 0], end: [73, 49]}
         span : [1850, 1898]
-      - type : variable
+      - type : valve
         name : Numeric
         locationSpan : {start: [74, 0], end: [74, 50]}
         span : [1899, 1948]

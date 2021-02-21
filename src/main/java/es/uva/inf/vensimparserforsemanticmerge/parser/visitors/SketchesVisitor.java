@@ -133,7 +133,17 @@ public class SketchesVisitor {
                                                                 fw.write("      - type : graph variable\r\n");
                                                         }
                                                 } else {
-                                                        fw.write("      - type : variable\r\n");
+                                                        if (Integer.parseInt(viewVariablesList
+                                                                        .get(viewVariablesIndex).internalId
+                                                                                        .getText()) == 11) {
+                                                                fw.write("      - type : valve\r\n");
+                                                        } else if (Integer.parseInt(viewVariablesList
+                                                                        .get(viewVariablesIndex).internalId
+                                                                                        .getText()) == 12) {
+                                                                fw.write("      - type : comment\r\n");
+                                                        } else {
+                                                                fw.write("      - type : variable\r\n");
+                                                        }
                                                 }
                                                 if (viewVariablesList.get(viewVariablesIndex).name != null) { // Third field of variable is not
                                                                                                               // null
@@ -163,6 +173,7 @@ public class SketchesVisitor {
                                                                 // changed
                                                         } else {
                                                                 fw.write("        name : Numeric\r\n");
+
                                                         }
                                                 }
                                                 if (!nameNextLine) {

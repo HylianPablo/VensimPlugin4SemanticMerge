@@ -87,7 +87,7 @@ children:
         name : accumulation
         locationSpan : {start: [77, 0], end: [77, 49]}
         span : [1673, 1721]
-      - type : variable
+      - type : comment
         name : Numeric
         locationSpan : {start: [78, 0], end: [78, 39]}
         span : [1722, 1760]
@@ -99,7 +99,7 @@ children:
         name : arrow
         locationSpan : {start: [80, 0], end: [80, 49]}
         span : [1808, 1856]
-      - type : variable
+      - type : valve
         name : Numeric
         locationSpan : {start: [81, 0], end: [81, 38]}
         span : [1857, 1894]
