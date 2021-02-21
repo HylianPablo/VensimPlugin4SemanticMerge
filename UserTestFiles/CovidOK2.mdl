@@ -3,7 +3,7 @@ Restriction loosening at 10pct GDP losss=
 	Lookup for restriction loosening due to GDP loss(0.1/GDP frac loss for 50pct restriction loosening\
 		)
 	~	dmnl
-	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
+	~		|
 
 Cumul combined loss billions=
 	Cumul GDP loss billions + Cumul lost life value billions
@@ -49,7 +49,7 @@ Basic reproduction number=
 	~	dmnl
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
-Becoming symptomatic=
+Becoming symptomatic CHANGED=
 	DELAY1I(New infections, Incubation period, 0)
 	~	popn/Month
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
@@ -253,7 +253,7 @@ GDP per capita per yr reference=
 	~<[VIEW]>: Economic effects <[DESCRIPTION]>:		|
 
 Hospital admissions=
-	Becoming symptomatic * Severe frac of infected sympto * Hospitalized frac of severe
+	Becoming symptomatic CHANGED * Severe frac of infected sympto * Hospitalized frac of severe
 	~	popn/Month
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
@@ -294,13 +294,13 @@ Infected=
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Infected asympto= INTEG (
-	New infections-Becoming symptomatic,
+	New infections-Becoming symptomatic CHANGED,
 		0)
 	~	popn
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Infected sympto= INTEG (
-	Becoming symptomatic-Fatalities-Recoveries,
+	Becoming symptomatic CHANGED-Fatalities-Recoveries,
 		0)
 	~	popn
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
@@ -410,7 +410,7 @@ Recoveries=
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Recovery or death=
-	DELAY1I(Becoming symptomatic, Time to recovery or death, 0)
+	DELAY1I(Becoming symptomatic CHANGED, Time to recovery or death, 0)
 	~	popn/Month
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
@@ -579,7 +579,7 @@ $192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
 11,13,1058,1045,482,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,14,Recoveries,1045,500,42,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
 11,15,2268,808,481,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,16,Becoming symptomatic,808,507,47,18,40,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,16,Becoming symptomatic CHANGED,808,507,47,18,40,3,0,0,0,0,0,0,0,0,0,0,0,0
 1,17,213,7,1,0,0,0,0,128,0,-1--1--1,,1|(440,387)|
 10,18,New infections domestic,481,578,54,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
 10,19,Contacts per asympto infected,556,745,62,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
@@ -763,8 +763,8 @@ Testing_of_symptomatics
 1,190,191,188,100,0,0,22,0,0,0,-1--1--1,,1|(1338,147)|
 11,191,48,1366,147,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,192,Hospital admissions,1366,173,43,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,193,Becoming symptomatic,1174,127,52,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
-1,194,193,192,0,0,0,0,0,128,0,-1--1--1,,1|(1267,148)|
+10,193,Becoming symptomatic CHANGED,990,48,52,18,8,2,0,3,-1,0,0,0,64-128-128,0-0-0,|12||64-128-128,0,0,0,0,0,0
+1,194,193,192,0,0,0,0,0,128,0,-1--1--1,,1|(1175,109)|
 1,195,178,192,0,0,0,0,0,128,0,-1--1--1,,1|(1435,206)|
 1,196,115,192,0,0,0,0,0,128,0,-1--1--1,,1|(1286,192)|
 10,197,Confirmed frac of past infections,1484,362,64,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
@@ -905,9 +905,6 @@ Cumul_GDP_loss_billions
 Cumul_lost_life_value_billions
 12,63,0,1604,191,187,176,3,188,0,0,1,0,0,0,0,0,0,0,0,0
 Restriction_loosening_due_to_GDP_loss
-10,64,Restriction loosening at 10pct GDP loss,874,604,77,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,65,44,64,0,0,0,0,0,128,0,-1--1--1,,1|(816,563)|
-1,66,43,64,0,0,0,0,0,128,0,-1--1--1,,1|(887,498)|
 <[VIEW END]>
 ///---\\\
 <[VIEWS END]>
@@ -1728,7 +1725,7 @@ Restriction_loosening_due_to_GDP_loss
 72:0
 73:0
 4:Time
-5:Effect of vaccine on infection
+5:Ability of ventilator to reduce fatality
 35:Date
 36:YYYY-MM-DD
 37:2000
