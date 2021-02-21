@@ -9,3 +9,4 @@ target/
 */.antlr
 flag.txt
 out.yaml
+*.2mdl
