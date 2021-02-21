@@ -68,7 +68,7 @@ water temperature=
 		Simulation Control Parameters
 	|
 
-FINAL TIME  = 10
+FINAL TIME  = 100
 	~	Minute
 	~	The final time for the simulation.
 	|
@@ -79,7 +79,7 @@ INITIAL TIME  = 0
 	|
 
 SAVEPER  = 
-        TIME STEP
+        TIME STEP 
 	~	Minute [0,?]
 	~	The frequency with which output is stored.
 	|
@@ -131,6 +131,10 @@ PAN WATER CYCLE
 1,35,36,1,100,0,0,22,0,0,0,-1--1--1,,1|(120,242)|
 11,36,48,84,242,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,37,water vapor leak,84,262,68,12,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$0-0-0,0,|0||0-0-0|0-0-0|0-0-0|0-0-0|0-0-0|96,96,100,0
 ///---\\\
 :GRAPH GRAPH
 :TITLE PAN-COVER-AIR Content over time
@@ -158,7 +162,7 @@ PAN WATER CYCLE
 9:Current
 23:0
 15:0,0,0,0,0,0
-19:100,0
+19:100,1
 27:2,
 34:0,
 42:0
@@ -166,6 +170,13 @@ PAN WATER CYCLE
 73:0
 4:Time
 5:water on cover
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
 76:0
 77:0
 78:0
