@@ -79,95 +79,95 @@ children:
         name : viewSettings
         locationSpan : {start: [79, 0], end: [81, 9]}
         span : [1432, 1593]
-      - type : variable
+      - type : variable in sketch
         name : bunnies
         locationSpan : {start: [82, 0], end: [82, 43]}
         span : [1594, 1636]
-      - type : comment
-        name : Numeric
+      - type : comment in sketch
+        name : Trivial
         locationSpan : {start: [83, 0], end: [83, 41]}
         span : [1637, 1677]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [84, 0], end: [84, 48]}
         span : [1678, 1725]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [85, 0], end: [85, 50]}
         span : [1726, 1775]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [86, 0], end: [86, 39]}
         span : [1776, 1814]
-      - type : variable
+      - type : variable in sketch
         name : bunnification
         locationSpan : {start: [87, 0], end: [87, 53]}
         span : [1815, 1867]
-      - type : variable
+      - type : variable in sketch
         name : birf rate
         locationSpan : {start: [88, 0], end: [88, 43]}
         span : [1868, 1910]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [89, 0], end: [89, 47]}
         span : [1911, 1957]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [90, 0], end: [90, 47]}
         span : [1958, 2004]
-      - type : graph variable
+      - type : graph variable in sketch
         name : Money
         locationSpan : {start: [91, 0], end: [92, 7]}
         span : [2005, 2052]
-      - type : variable
+      - type : variable in sketch
         name : carrying capacity
         locationSpan : {start: [93, 0], end: [93, 55]}
         span : [2053, 2107]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [94, 0], end: [94, 49]}
         span : [2108, 2156]
-      - type : variable
+      - type : variable in sketch
         name : bunnies 0
         locationSpan : {start: [95, 0], end: [95, 45]}
         span : [2157, 2201]
-      - type : comment
-        name : Numeric
+      - type : comment in sketch
+        name : Trivial
         locationSpan : {start: [96, 0], end: [96, 40]}
         span : [2202, 2241]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [97, 0], end: [97, 49]}
         span : [2242, 2290]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [98, 0], end: [98, 51]}
         span : [2291, 2341]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [99, 0], end: [99, 38]}
         span : [2342, 2379]
-      - type : variable
+      - type : variable in sketch
         name : bunnification 0
         locationSpan : {start: [100, 0], end: [100, 55]}
         span : [2380, 2434]
-      - type : variable
+      - type : variable in sketch
         name : birf rate 0
         locationSpan : {start: [101, 0], end: [101, 48]}
         span : [2435, 2482]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [102, 0], end: [102, 50]}
         span : [2483, 2532]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [103, 0], end: [103, 49]}
         span : [2533, 2581]
-      - type : variable
+      - type : variable in sketch
         name : competition
         locationSpan : {start: [104, 0], end: [104, 50]}
         span : [2582, 2631]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [105, 0], end: [105, 49]}
         span : [2632, 2680]

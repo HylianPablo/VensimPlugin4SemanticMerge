@@ -79,119 +79,119 @@ children:
         name : viewSettings
         locationSpan : {start: [79, 0], end: [81, 9]}
         span : [1309, 1468]
-      - type : variable
+      - type : variable in sketch
         name : x
         locationSpan : {start: [82, 0], end: [82, 40]}
         span : [1469, 1508]
-      - type : comment
-        name : Numeric
+      - type : comment in sketch
+        name : Trivial
         locationSpan : {start: [83, 0], end: [83, 39]}
         span : [1509, 1547]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [84, 0], end: [84, 47]}
         span : [1548, 1594]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [85, 0], end: [85, 49]}
         span : [1595, 1643]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [86, 0], end: [86, 38]}
         span : [1644, 1681]
-      - type : variable
+      - type : variable in sketch
         name : "dx/dt"
         locationSpan : {start: [87, 0], end: [87, 46]}
         span : [1682, 1727]
-      - type : variable
+      - type : variable in sketch
         name : p
         locationSpan : {start: [88, 0], end: [88, 40]}
         span : [1728, 1767]
-      - type : variable
+      - type : variable in sketch
         name : g
         locationSpan : {start: [89, 0], end: [89, 40]}
         span : [1768, 1807]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [90, 0], end: [90, 47]}
         span : [1808, 1854]
-      - type : graph variable
+      - type : graph variable in sketch
         name : G1
         locationSpan : {start: [91, 0], end: [92, 4]}
         span : [1855, 1899]
-      - type : variable
+      - type : variable in sketch
         name : m
         locationSpan : {start: [93, 0], end: [93, 41]}
         span : [1900, 1940]
-      - type : variable
+      - type : variable in sketch
         name : Net Force
         locationSpan : {start: [94, 0], end: [94, 47]}
         span : [1941, 1987]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [95, 0], end: [95, 50]}
         span : [1988, 2037]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [96, 0], end: [96, 49]}
         span : [2038, 2086]
-      - type : comment
-        name : Numeric
+      - type : comment in sketch
+        name : Trivial
         locationSpan : {start: [97, 0], end: [97, 40]}
         span : [2087, 2126]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [98, 0], end: [98, 49]}
         span : [2127, 2175]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [99, 0], end: [99, 52]}
         span : [2176, 2227]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [100, 0], end: [100, 39]}
         span : [2228, 2266]
-      - type : variable
+      - type : variable in sketch
         name : "dp/dt"
         locationSpan : {start: [101, 0], end: [101, 47]}
         span : [2267, 2313]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [102, 0], end: [102, 50]}
         span : [2314, 2363]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [103, 0], end: [103, 49]}
         span : [2364, 2412]
-      - type : variable
+      - type : variable in sketch
         name : drag
         locationSpan : {start: [104, 0], end: [104, 44]}
         span : [2413, 2456]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [105, 0], end: [105, 50]}
         span : [2457, 2506]
-      - type : graph variable
+      - type : graph variable in sketch
         name : G2
         locationSpan : {start: [106, 0], end: [107, 4]}
         span : [2507, 2551]
-      - type : graph variable
+      - type : graph variable in sketch
         name : G3
         locationSpan : {start: [108, 0], end: [109, 4]}
         span : [2552, 2596]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [110, 0], end: [110, 49]}
         span : [2597, 2645]
-      - type : shadow variable
+      - type : shadow variable in sketch
         name : TIME STEP
         locationSpan : {start: [111, 0], end: [111, 85]}
         span : [2646, 2730]
-      - type : variable
+      - type : variable in sketch
         name : init h
         locationSpan : {start: [112, 0], end: [112, 43]}
         span : [2731, 2773]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [113, 0], end: [113, 49]}
         span : [2774, 2822]

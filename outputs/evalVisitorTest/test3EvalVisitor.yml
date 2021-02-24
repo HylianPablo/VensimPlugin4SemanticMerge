@@ -79,47 +79,47 @@ children:
         name : viewSettings
         locationSpan : {start: [66, 0], end: [68, 9]}
         span : [1451, 1612]
-      - type : variable
+      - type : variable in sketch
         name : Read multi lookups
         locationSpan : {start: [69, 0], end: [69, 68]}
         span : [1613, 1680]
-      - type : variable
+      - type : variable in sketch
         name : Level multi lookups
         locationSpan : {start: [70, 0], end: [70, 70]}
         span : [1681, 1750]
-      - type : comment
-        name : Numeric
+      - type : comment in sketch
+        name : Trivial
         locationSpan : {start: [71, 0], end: [71, 52]}
         span : [1751, 1802]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [72, 0], end: [72, 47]}
         span : [1803, 1849]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [73, 0], end: [73, 49]}
         span : [1850, 1898]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [74, 0], end: [74, 50]}
         span : [1899, 1948]
-      - type : variable
+      - type : variable in sketch
         name : flow multi lookups
         locationSpan : {start: [75, 0], end: [75, 68]}
         span : [1949, 2016]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [76, 0], end: [76, 48]}
         span : [2017, 2064]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [77, 0], end: [77, 48]}
         span : [2065, 2112]
-      - type : shadow variable
+      - type : shadow variable in sketch
         name : Time
         locationSpan : {start: [78, 0], end: [78, 90]}
         span : [2113, 2202]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [79, 0], end: [79, 49]}
         span : [2203, 2251]

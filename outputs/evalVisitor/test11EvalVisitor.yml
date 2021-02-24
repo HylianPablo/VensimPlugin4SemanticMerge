@@ -79,83 +79,83 @@ children:
         name : viewSettings
         locationSpan : {start: [81, 0], end: [83, 9]}
         span : [1518, 1679]
-      - type : variable
+      - type : variable in sketch
         name : Passive
         locationSpan : {start: [84, 0], end: [84, 56]}
         span : [1680, 1735]
-      - type : variable
+      - type : variable in sketch
         name : Aggressive
         locationSpan : {start: [85, 0], end: [85, 59]}
         span : [1736, 1794]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [86, 0], end: [86, 50]}
         span : [1795, 1844]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [87, 0], end: [87, 48]}
         span : [1845, 1892]
-      - type : variable
+      - type : variable in sketch
         name : calming influence
         locationSpan : {start: [88, 0], end: [88, 66]}
         span : [1893, 1958]
-      - type : variable
+      - type : variable in sketch
         name : coping factor
         locationSpan : {start: [89, 0], end: [89, 62]}
         span : [1959, 2020]
-      - type : variable
+      - type : variable in sketch
         name : provocation
         locationSpan : {start: [90, 0], end: [90, 60]}
         span : [2021, 2080]
-      - type : variable
+      - type : variable in sketch
         name : stewing
         locationSpan : {start: [91, 0], end: [91, 56]}
         span : [2081, 2136]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [92, 0], end: [92, 47]}
         span : [2137, 2183]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [93, 0], end: [93, 48]}
         span : [2184, 2231]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [94, 0], end: [94, 48]}
         span : [2232, 2279]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [95, 0], end: [95, 48]}
         span : [2280, 2327]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [96, 0], end: [96, 48]}
         span : [2328, 2375]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [97, 0], end: [97, 48]}
         span : [2376, 2423]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [98, 0], end: [98, 48]}
         span : [2424, 2471]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [99, 0], end: [99, 48]}
         span : [2472, 2519]
-      - type : graph variable
+      - type : graph variable in sketch
         name : Population
         locationSpan : {start: [100, 0], end: [101, 12]}
         span : [2520, 2585]
-      - type : variable
+      - type : variable in sketch
         name : outlook
         locationSpan : {start: [102, 0], end: [102, 56]}
         span : [2586, 2641]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [103, 0], end: [103, 48]}
         span : [2642, 2689]
-      - type : shadow variable
+      - type : shadow variable in sketch
         name : Time
         locationSpan : {start: [104, 0], end: [104, 89]}
         span : [2690, 2778]
@@ -169,15 +169,15 @@ children:
         name : viewSettings
         locationSpan : {start: [108, 0], end: [110, 9]}
         span : [2877, 3038]
-      - type : variable
+      - type : variable in sketch
         name : Passive 0
         locationSpan : {start: [111, 0], end: [111, 58]}
         span : [3039, 3096]
-      - type : variable
+      - type : variable in sketch
         name : DUMMY
         locationSpan : {start: [112, 0], end: [112, 54]}
         span : [3097, 3150]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [113, 0], end: [113, 47]}
         span : [3151, 3197]

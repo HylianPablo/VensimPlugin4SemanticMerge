@@ -108,7 +108,7 @@ public class SketchesVisitor {
                                 for (int j = 1; j <= (viewVariablesList.size() + arrowsList.size()); j++) { // ViewSettings is ommited as it starts on 1
                                         if (!arrowsList.isEmpty() && viewInfoList.get(i).viewVariables().getChild(j)
                                                         .getClass().equals(arrowsList.get(0).getClass())) {
-                                                fw.write("      - type : arrow\r\n");
+                                                fw.write("      - type : arrow in sketch\r\n");
                                                 fw.write("        name : arrow\r\n");
                                                 fw.write("        locationSpan : {start: [" + locationSpanStartEq
                                                                 + ", 0], end: [" + locationSpanStartEq + ", "
@@ -128,21 +128,21 @@ public class SketchesVisitor {
                                                         if (Integer.parseInt(viewVariablesList
                                                                         .get(viewVariablesIndex).internalId
                                                                                         .getText()) == 10) {
-                                                                fw.write("      - type : shadow variable\r\n");
+                                                                fw.write("      - type : shadow variable in sketch\r\n");
                                                         } else {
-                                                                fw.write("      - type : graph variable\r\n");
+                                                                fw.write("      - type : graph variable in sketch\r\n");
                                                         }
                                                 } else {
                                                         if (Integer.parseInt(viewVariablesList
                                                                         .get(viewVariablesIndex).internalId
                                                                                         .getText()) == 11) {
-                                                                fw.write("      - type : valve\r\n");
+                                                                fw.write("      - type : valve in sketch\r\n");
                                                         } else if (Integer.parseInt(viewVariablesList
                                                                         .get(viewVariablesIndex).internalId
                                                                                         .getText()) == 12) {
-                                                                fw.write("      - type : comment\r\n");
+                                                                fw.write("      - type : comment in sketch\r\n");
                                                         } else {
-                                                                fw.write("      - type : variable\r\n");
+                                                                fw.write("      - type : variable in sketch\r\n");
                                                         }
                                                 }
                                                 if (viewVariablesList.get(viewVariablesIndex).name != null) { // Third field of variable is not
@@ -172,7 +172,7 @@ public class SketchesVisitor {
                                                                 // It just has an irrelevant variable on third field. Name is trivial, must be
                                                                 // changed
                                                         } else {
-                                                                fw.write("        name : Numeric\r\n");
+                                                                fw.write("        name : Trivial\r\n");
 
                                                         }
                                                 }

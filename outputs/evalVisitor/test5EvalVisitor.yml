@@ -63,31 +63,31 @@ children:
         name : viewSettings
         locationSpan : {start: [61, 0], end: [63, 9]}
         span : [1156, 1317]
-      - type : variable
+      - type : variable in sketch
         name : macro input
         locationSpan : {start: [64, 0], end: [64, 47]}
         span : [1318, 1364]
-      - type : variable
+      - type : variable in sketch
         name : macro output
         locationSpan : {start: [65, 0], end: [65, 48]}
         span : [1365, 1412]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [66, 0], end: [66, 48]}
         span : [1413, 1460]
-      - type : variable
+      - type : variable in sketch
         name : macro parameter
         locationSpan : {start: [67, 0], end: [67, 50]}
         span : [1461, 1510]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [68, 0], end: [68, 47]}
         span : [1511, 1557]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [69, 0], end: [69, 47]}
         span : [1558, 1604]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [70, 0], end: [70, 47]}
         span : [1605, 1651]

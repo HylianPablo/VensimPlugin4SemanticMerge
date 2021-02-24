@@ -83,95 +83,95 @@ children:
         name : viewSettings
         locationSpan : {start: [85, 0], end: [87, 9]}
         span : [1578, 1739]
-      - type : variable
+      - type : variable in sketch
         name : bunnies
         locationSpan : {start: [88, 0], end: [88, 43]}
         span : [1740, 1782]
-      - type : comment
-        name : Numeric
+      - type : comment in sketch
+        name : Trivial
         locationSpan : {start: [89, 0], end: [89, 41]}
         span : [1783, 1823]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [90, 0], end: [90, 48]}
         span : [1824, 1871]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [91, 0], end: [91, 50]}
         span : [1872, 1921]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [92, 0], end: [92, 39]}
         span : [1922, 1960]
-      - type : variable
+      - type : variable in sketch
         name : bunnification
         locationSpan : {start: [93, 0], end: [93, 53]}
         span : [1961, 2013]
-      - type : variable
+      - type : variable in sketch
         name : birf rate
         locationSpan : {start: [94, 0], end: [94, 43]}
         span : [2014, 2056]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [95, 0], end: [95, 47]}
         span : [2057, 2103]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [96, 0], end: [96, 47]}
         span : [2104, 2150]
-      - type : graph variable
+      - type : graph variable in sketch
         name : Money
         locationSpan : {start: [97, 0], end: [98, 7]}
         span : [2151, 2198]
-      - type : variable
+      - type : variable in sketch
         name : carrying capacity
         locationSpan : {start: [99, 0], end: [99, 55]}
         span : [2199, 2253]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [100, 0], end: [100, 49]}
         span : [2254, 2302]
-      - type : variable
+      - type : variable in sketch
         name : bunnies 0
         locationSpan : {start: [101, 0], end: [101, 45]}
         span : [2303, 2347]
-      - type : comment
-        name : Numeric
+      - type : comment in sketch
+        name : Trivial
         locationSpan : {start: [102, 0], end: [102, 40]}
         span : [2348, 2387]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [103, 0], end: [103, 49]}
         span : [2388, 2436]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [104, 0], end: [104, 51]}
         span : [2437, 2487]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [105, 0], end: [105, 38]}
         span : [2488, 2525]
-      - type : variable
+      - type : variable in sketch
         name : bunnification 0
         locationSpan : {start: [106, 0], end: [106, 55]}
         span : [2526, 2580]
-      - type : variable
+      - type : variable in sketch
         name : birf rate 0
         locationSpan : {start: [107, 0], end: [107, 48]}
         span : [2581, 2628]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [108, 0], end: [108, 50]}
         span : [2629, 2678]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [109, 0], end: [109, 49]}
         span : [2679, 2727]
-      - type : variable
+      - type : variable in sketch
         name : competition
         locationSpan : {start: [110, 0], end: [110, 50]}
         span : [2728, 2777]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [111, 0], end: [111, 49]}
         span : [2778, 2826]

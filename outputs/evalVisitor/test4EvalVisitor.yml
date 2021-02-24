@@ -71,67 +71,67 @@ children:
         name : viewSettings
         locationSpan : {start: [71, 0], end: [73, 9]}
         span : [1359, 1520]
-      - type : variable
+      - type : variable in sketch
         name : expname table
         locationSpan : {start: [74, 0], end: [74, 49]}
         span : [1521, 1569]
-      - type : variable
+      - type : variable in sketch
         name : lookup function call
         locationSpan : {start: [75, 0], end: [75, 56]}
         span : [1570, 1625]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [76, 0], end: [76, 47]}
         span : [1626, 1672]
-      - type : variable
+      - type : variable in sketch
         name : accumulation
         locationSpan : {start: [77, 0], end: [77, 49]}
         span : [1673, 1721]
-      - type : comment
-        name : Numeric
+      - type : comment in sketch
+        name : Trivial
         locationSpan : {start: [78, 0], end: [78, 39]}
         span : [1722, 1760]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [79, 0], end: [79, 47]}
         span : [1761, 1807]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [80, 0], end: [80, 49]}
         span : [1808, 1856]
-      - type : valve
-        name : Numeric
+      - type : valve in sketch
+        name : Trivial
         locationSpan : {start: [81, 0], end: [81, 38]}
         span : [1857, 1894]
-      - type : variable
+      - type : variable in sketch
         name : rate
         locationSpan : {start: [82, 0], end: [82, 42]}
         span : [1895, 1936]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [83, 0], end: [83, 48]}
         span : [1937, 1984]
-      - type : shadow variable
+      - type : shadow variable in sketch
         name : Time
         locationSpan : {start: [84, 0], end: [84, 77]}
         span : [1985, 2061]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [85, 0], end: [85, 49]}
         span : [2062, 2110]
-      - type : variable
+      - type : variable in sketch
         name : mod
         locationSpan : {start: [86, 0], end: [86, 40]}
         span : [2111, 2150]
-      - type : variable
+      - type : variable in sketch
         name : using the mod variable
         locationSpan : {start: [87, 0], end: [87, 59]}
         span : [2151, 2209]
-      - type : arrow
+      - type : arrow in sketch
         name : arrow
         locationSpan : {start: [88, 0], end: [88, 51]}
         span : [2210, 2260]
-      - type : variable
+      - type : variable in sketch
         name : using a modulo function
         locationSpan : {start: [89, 0], end: [89, 61]}
         span : [2261, 2321]
