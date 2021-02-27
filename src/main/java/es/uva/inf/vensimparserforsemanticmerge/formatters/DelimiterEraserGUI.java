@@ -48,6 +48,8 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
     private EraserController controller;
 
+    private static String FONT = "Sans Serif";
+
     // a default constructor 
     DelimiterEraserGUI() {
         filePath = "";
@@ -108,9 +110,9 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
         // set the label to its initial value 
         l = new JLabel("No file selected.", SwingConstants.CENTER);
-        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+        l.setFont(new Font(FONT, Font.PLAIN, 28));
         auxL = new JLabel("", SwingConstants.CENTER);
-        auxL.setFont(new Font("Sans Serif", Font.PLAIN, 12));
+        auxL.setFont(new Font(FONT, Font.PLAIN, 12));
         infoProcess = new JLabel("The process button will erase all the delimiters used to parse the file.",
                 SwingConstants.CENTER);
 
@@ -151,7 +153,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
     public void processAction() {
         if (checkFile(filePath)) {
-            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+            l.setFont(new Font(FONT, Font.PLAIN, 28));
             String[] arg = new String[2];
             arg[0] = filePath;
             controller.processFile(arg);
@@ -165,7 +167,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
                     try {
                         Thread.sleep(3000);
                         l.setText(shortPath);
-                        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+                        l.setFont(new Font(FONT, Font.PLAIN, 28));
                         l.setForeground(Color.black);
                     } catch (InterruptedException e) {
                         System.err.println(e.getMessage());
@@ -182,7 +184,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
     }
 
     public void openAction() {
-        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+        l.setFont(new Font(FONT, Font.PLAIN, 28));
         // create an object of JFileChooser class 
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         FileNameExtensionFilter filter = new FileNameExtensionFilter("VENSIM FILES", "mdl");
@@ -196,7 +198,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
 
         {
             // set the label to the path of the selected file
-            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+            l.setFont(new Font(FONT, Font.PLAIN, 28));
             if (j.getSelectedFile().getAbsolutePath().contains(".mdl")) {
                 filePath = j.getSelectedFile().getAbsolutePath();
                 if (checkFile(filePath)) {
@@ -230,7 +232,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
     }
 
     public void cancelAction() {
-        l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+        l.setFont(new Font(FONT, Font.PLAIN, 28));
         l.setForeground(Color.black);
         l.setText("No file selected.");
         auxL.setText("");
@@ -245,7 +247,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
     public void pathAction() {
         l.setForeground(Color.black);
         if (!absolutePathState) {
-            l.setFont(new Font("Sans Serif", Font.PLAIN, 12));
+            l.setFont(new Font(FONT, Font.PLAIN, 12));
             pathButton.setText("Show name without name");
             if (filePath.length() > 70) {
                 String part1 = filePath.substring(0, 70);
@@ -258,7 +260,7 @@ public class DelimiterEraserGUI extends JFrame implements ActionListener {
             }
             absolutePathState = true;
         } else {
-            l.setFont(new Font("Sans Serif", Font.PLAIN, 28));
+            l.setFont(new Font(FONT, Font.PLAIN, 28));
             pathButton.setText("Show absolute path");
             l.setText(shortPath);
             auxL.setText("");
