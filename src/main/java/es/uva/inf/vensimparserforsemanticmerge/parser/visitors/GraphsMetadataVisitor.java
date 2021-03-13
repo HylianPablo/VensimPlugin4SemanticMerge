@@ -43,7 +43,7 @@ public class GraphsMetadataVisitor {
         try {
             String text = new String(Files.readAllBytes(Paths.get(input)), StandardCharsets.UTF_8);
             File outF = new File(output);
-            FileWriter fw = new FileWriter(outF, true);//True is used to append text instead of overwritting it
+            FileWriter fw = new FileWriter(outF, StandardCharsets.UTF_8, true);//True is used to append text instead of overwritting it
             boolean graphsExists = false;
             if (!ctx.model().sketchesGraphsAndMetadata().graphsGroup().graphs().isEmpty()) {
                 graphsExists = true;

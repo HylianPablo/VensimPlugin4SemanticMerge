@@ -27,11 +27,13 @@ public class Main {
         try (PrintWriter outt = new PrintWriter(args[1])) {
             outt.println("READY");
             outt.close();
-            outt.flush();
+        } catch (IOException ex) {
 
-            Scanner scanner = new Scanner(System.in);
+        }
+        Scanner scanner = new Scanner(System.in);
 
-            do {
+        do {
+            try {
                 String firstFile = scanner.nextLine();
                 if (firstFile.equals("end")) {
                     return;
@@ -40,29 +42,17 @@ public class Main {
                 String firstFileOutput = scanner.nextLine();
                 parseFile(firstFile, firstFileOutput);
                 System.out.println("OK");
-            } while (scanner.hasNext());
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.err.println(e.getMessage());
+                System.out.println("KO");
+            }
+        } while (scanner.hasNext());
 
-            scanner.close();
-            String end = scanner.nextLine();
-            if (end.equals("end")) {
-                return;
-            }
-            /*
-            String secondFile = scanner.nextLine();
-            String secondEncoding = scanner.nextLine();
-            String secondFileOutput = scanner.nextLine();
-            parseFile(secondFile, secondFileOutput);
-            System.out.println("OK");
-            
-            
-            String end = scanner.nextLine();
-            scanner.close();
-            if (end.equals("end")) {
-                return;
-            }
-            */
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        scanner.close();
+        String end = scanner.nextLine();
+        if (end.equals("end")) {
+            return;
         }
     }
 

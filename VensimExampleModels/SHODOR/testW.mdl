@@ -1,0 +1,130 @@
+{UTF-8}
+"%_PHS_overcapacity_vs_potential"[REGIONS_I]=
+	IF_THEN_ELSE(-1+ZIDZ(Available_FE_elec_stored_PHS_TWh[REGIONS_I]*100 , max_potential_PHS_TWh\
+		[REGIONS_I])<100,100,-1+ZIDZ(Available_FE_elec_stored_PHS_TWh[REGIONS_I]*100 , max_potential_PHS_TWh\
+		[REGIONS_I]))
+	~	percent
+	~<[VIEW]>: energy-electricity-PHS_generation <[DESCRIPTION]>:	Overcapacity as a percentage of the total installed capacity over the \
+		maximum potential. If no overcapacity, then =100%.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+URR_unconv_oil=
+	IF_THEN_ELSE("separate_conv_and_unconv_oil"[REGIONS_I]=1,
+	IF_THEN_ELSE(SWITCH_EXTRACTION_CURVE_UNCONVENTIONAL_OIL_SP[REGIONS_I]=1, URR_unconv_oil_BG_Mohr15\
+		,
+	IF_THEN_ELSE(SWITCH_EXTRACTION_CURVE_UNCONVENTIONAL_OIL_SP[REGIONS_I]=2, URR_unconv_oil_Low_Mohr15\
+		,
+	IF_THEN_ELSE(SWITCH_EXTRACTION_CURVE_UNCONVENTIONAL_OIL_SP[REGIONS_I]=3, URR_unconv_oil_High_Mohr15\
+		,
+	IF_THEN_ELSE(SWITCH_EXTRACTION_CURVE_UNCONVENTIONAL_OIL_SP[REGIONS_I]=4, URR_unconv_oil_User_defined\
+		, URR_unconv_oil_Laherrre2018
+	)))), 0)/NUMBER_OF_REGIONS
+	~	EJ
+	~	URR unconventional oil.
+	|
+
+<[VIEWS START]>
+<[VIEW START]>
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Intro
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,2
+12,1,0,928,357,182,44,3,135,0,10,-1,0,0,0,-1--1--1,0-0-0,|20||255-0-0
+WILIAM 0.1
+12,2,0,928,516,182,26,8,135,0,0,-1,0,0,0
+Comment:increasing the TIMESTEP reduces the accuracy of the model (Recommended value=0.03125)
+12,3,0,928,469,46,19,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-0-0
+v0.1 (15-07-2020)
+12,4,0,1385,241,56,11,8,135,0,16,-1,0,0,0,-1--1--1,0-0-0,|12|B|0-0-0
+Model structure
+12,5,0,1356,351,30,11,8,7,0,0,-1,0,0,0
+economy
+12,6,0,1348,377,23,11,8,7,0,0,-1,0,0,0
+finance
+12,7,0,1369,448,40,11,8,135,0,0,-1,0,0,0
+demography
+12,8,0,1355,474,23,11,8,7,0,0,-1,0,0,0
+society
+12,9,0,1366,410,37,19,8,135,0,0,-1,0,0,0
+intermodule consistency
+12,10,0,1384,549,47,11,8,135,0,0,-1,0,0,0
+land and water
+12,11,0,1359,579,23,11,8,7,0,0,-1,0,0,0
+climate
+12,12,0,1365,520,29,11,8,7,0,0,-1,0,0,0
+materials
+12,13,0,1356,496,22,11,8,7,0,0,-1,0,0,0
+energy
+12,14,0,1382,296,106,23,3,135,0,0,-1,0,0,0
+Historical and exogenous inputs
+12,15,0,928,432,116,19,8,7,0,2,-1,0,0,0,0-0-0,0-0-0,|12||255-0-0
+LOCOMOTION project
+12,16,0,819,252,40,20,8,131,0,0,-1,0,0,0
+12,17,0,1384,468,83,134,3,131,0,0,-1,0,0,0
+12,18,0,1449,649,147,23,3,135,0,0,-1,0,0,0
+CP:Control panel and results visualization
+12,19,0,466,274,43,11,8,7,0,0,-1,0,0,0
+legend colour
+12,20,0,439,330,161,19,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||128-0-128
+purple:comments for WILIAM development 
+12,21,0,454,374,158,14,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-128-0
+orange:world variables modified for regionalization
+12,22,0,350,415,48,11,8,7,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||64-160-98
+green:switches
+12,23,0,395,454,93,19,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-192-192
+blue:check with historical data
+12,24,0,455,500,165,23,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||255-0-0
+red:output variable for a module which are inputs for another module
+12,25,0,476,421,193,109,3,131,0,0,-1,0,0,0
+<[VIEW END]>
+<[VIEW START]>
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*constants
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,92,0
+12,1,0,704,28,92,23,3,135,0,0,-1,0,0,0
+UNIT CONVERSION
+10,2,C PER CO2,692,648,73,22,8,131,0,0,-1,0,0,0
+10,3,DAYS PER YEAR,706,133,62,20,8,131,0,0,-1,0,0,0
+10,4,PERCENT TO SHARE,955,323,50,19,8,131,0,0,-1,0,0,0
+10,5,TWh/Mha PER We/m2,965,403,50,19,8,131,0,0,-1,0,0,0
+10,6,MW IN 1 YEAR TO MJ,697,533,74,24,8,131,0,0,-1,0,0,0
+12,7,0,718,-50,171,25,8,135,0,8,-1,0,0,0,-1--1--1,0-0-0,|16||0-0-0
+Constants and units conversion
+10,8,I MATRIX,385,127,37,11,8,131,0,0,0,0,0,0
+10,9,MATRIX UNIT PREFIXES,383,205,54,19,8,3,0,0,0,0,0,0
+10,10,WATT PER J s,693,755,62,16,8,131,0,0,-1,0,0,0
+10,11,SECONDS PER YEAR,706,189,82,24,8,131,0,0,-1,0,0,0
+10,12,WATER DENSITY,707,809,47,27,8,131,0,0,-1,0,0,0
+10,13,SPECIFIC HEAT CAPACITY WATER,707,883,80,26,8,131,0,0,-1,0,0,0
+10,14,GtC PER ppm,699,596,65,16,8,131,0,0,-1,0,0,0
+10,15,CH4 PER C,698,707,61,17,8,131,0,0,-1,0,0,0
+10,16,J PER Wh,716,247,67,14,8,131,0,0,0,0,0,0
+10,17,Wh PER We,716,306,69,13,8,131,0,0,0,0,0,0
+10,18,J PER TOE,706,368,58,15,8,131,0,0,0,0,0,0
+10,19,J PER boe,702,414,57,9,8,131,0,0,0,0,0,0
+10,20,kt URANIUM PER EJ,707,473,73,24,8,131,0,0,-1,0,0,0
+10,21,ppt PER MOL,980,465,62,10,8,131,0,0,-1,0,0,0
+10,22,ppt PER ppb,981,495,61,10,8,131,0,0,-1,0,0,0
+10,23,NUMBER OF REGIONS,395,278,48,19,8,131,0,0,-1,0,0,0
+10,24,CORRESPONDENCE MATRIX SECTOR TO UNIFIED SECTORS,372,353,120,26,8,131,0,0,-1,0,0,0
+10,25,INITIAL SIMULATION YEAR,385,446,82,26,8,131,0,0,0,0,0,0
+<[VIEW END]>
+///---\\\
+<[VIEWS END]>
+<[GRAPH START]>
+:GRAPH Population
+:TITLE Population
+:SCALE
+:VAR population[REGIONS I]
+:Y-MAX 1.2e+10
+<[GRAPH END]>
+:L<%^E!@
+1:WILIAM.vdf
+9:WILIAM

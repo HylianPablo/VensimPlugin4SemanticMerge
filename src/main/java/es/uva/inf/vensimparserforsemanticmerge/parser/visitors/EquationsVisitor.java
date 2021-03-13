@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +52,7 @@ public class EquationsVisitor {
             }
 
             File outF = new File(output);
-            FileWriter fw = new FileWriter(outF, true);//True is used to append text instead of overwritting it
+            FileWriter fw = new FileWriter(outF, StandardCharsets.UTF_8, true);//True is used to append text instead of overwritting it
             fw.flush();
             BufferedReader reader = new BufferedReader(new FileReader(input));
             reader.readLine();// UTF-8
@@ -111,8 +112,20 @@ public class EquationsVisitor {
                         int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().dataEquation()
                                 .lhs().stop.getStopIndex();
                         Interval intervalEq = new Interval(intvEq1, intvEq2);
-                        int index = ctx.start.getInputStream().getText(intervalEq).indexOf(":");
-                        equationText = ctx.start.getInputStream().getText(intervalEq).substring(0, index);
+                        if (ctx.start.getInputStream().getText(intervalEq).indexOf(":") != -1) {
+                            int index = ctx.start.getInputStream().getText(intervalEq).indexOf(":");
+                            if (ctx.start.getInputStream().getText(intervalEq).indexOf("[") != -1) {
+                                int index2 = ctx.start.getInputStream().getText(intervalEq).indexOf("[");
+                                equationText = ctx.start.getInputStream().getText(intervalEq).substring(0, index2);
+                            } else {
+                                equationText = ctx.start.getInputStream().getText(intervalEq).substring(0, index);
+                            }
+                        } else if (ctx.start.getInputStream().getText(intervalEq).indexOf("[") != -1) {
+                            int index = ctx.start.getInputStream().getText(intervalEq).indexOf("[");
+                            equationText = ctx.start.getInputStream().getText(intervalEq).substring(0, index);
+                        } else {
+                            equationText = ctx.start.getInputStream().getText(intervalEq);
+                        }
                         typeName = "dataEquation";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().constraint() != null) {
                         int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().constraint().lhs().start

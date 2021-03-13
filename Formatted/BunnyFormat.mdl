@@ -2,7 +2,7 @@
 birf rate=
 	0.5
 	~	 [0,1,0.001]
-	~<[VIEW]>: View 1 <[DESCRIPTION]>:		|
+	~<[VIEW]>: View 1 <[DESCRIPTION]>:á		|
 
 birf rate 0=
 	0.5
