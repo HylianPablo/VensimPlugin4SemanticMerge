@@ -317,7 +317,7 @@ Infection probability per contact initial=
 	|
 
 Infections picked up overseas=
-	Input series for infections picked up overseas(Time)
+	Input series for infections picked up overseas CAMBIO(Time)
 	~	popn/Month
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
@@ -332,7 +332,7 @@ Infectious contacts with susceptibles=
 	~	popn/Month
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
-Input series for infections picked up overseas(
+Input series for infections picked up overseas CAMBIO(
 	[(0,0)-(4,300)],(0,0),(0.75,0),(2,300),(3.25,0),(4,0))
 	~	popn/Month
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
@@ -507,7 +507,7 @@ Total popn=
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
 Total popn reference=
-	3.3e+08
+	3.4e+08
 	~	popn
 	~<[VIEW]>: Main view <[DESCRIPTION]>:		|
 
@@ -780,7 +780,7 @@ Testing_of_symptomatics
 12,207,48,155,273,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
 1,208,212,207,100,0,0,22,0,0,0,-1--1--1,,1|(197,271)|
 1,209,212,206,4,0,0,22,0,0,0,-1--1--1,,1|(279,271)|
-10,210,Input series for infections picked up overseas,153,168,73,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||128-0-0,0,0,0,0,0,0
+10,210,Input series for infections picked up overseas CAMBIO,153,168,73,27,8,3,0,2,0,0,0,0,0-0-0,0-0-0,|12||128-0-0,0,0,0,0,0,0
 1,211,210,213,1,0,0,0,0,128,0,-1--1--1,,1|(178,235)|
 11,212,2334,236,271,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
 10,213,Infections picked up overseas,236,297,61,18,40,3,0,0,0,0,0,0,0,0,0,0,0,0
@@ -804,6 +804,8 @@ Testing_of_symptomatics
 A model of Covid-19 in the US with endogenous testing, containment measures, and social distancing
 12,231,0,350,94,210,13,8,135,0,2,-1,0,0,0,-1--1--1,0-0-0,|12||0-128-0,0,0,0,0,0,0
 Jack Homer, PhD, March 24, 2020 v2, via metasd.com
+12,232,0,961,49,24,10,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+HOLA
 <[VIEW END]>
 <[VIEW START]>
 \\\---/// Sketch information - do not modify anything except names
@@ -1702,7 +1704,7 @@ Restriction_loosening_due_to_GDP_loss
 72:0
 73:0
 4:Time
-5:Cumul combined loss billions
+5:Total popn reference
 35:Date
 36:YYYY-MM-DD
 37:2000
