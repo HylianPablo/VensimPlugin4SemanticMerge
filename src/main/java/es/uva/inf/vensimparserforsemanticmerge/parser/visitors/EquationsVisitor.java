@@ -85,15 +85,6 @@ public class EquationsVisitor {
                         }
                         typeName = "equation";
                     } else if (equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange() != null) {
-                        /*
-                        int intvEq1 = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange().start
-                                .getStartIndex();
-                        int intvEq2 = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange().stop
-                                .getStopIndex();
-                        Interval intervalEq = new Interval(intvEq1, intvEq2);
-                        int index = ctx.start.getInputStream().getText(intervalEq).indexOf(":");
-                        equationText = ctx.start.getInputStream().getText(intervalEq).substring(0, index);
-                        */
                         equationText = equations.get(indexOfEquations).symbolWithDocDefinition().subscriptRange().Id()
                                 .getText();
 
@@ -212,7 +203,6 @@ public class EquationsVisitor {
                         endCharEq = equation.length() + 1;
                         endColumnLocationSpan = equation.split("\n")[equationNewLines - 1].length() + 2; // \r \n
                         equationNewLines--;
-                        // locationSpanStartEq--;
                     }
                 } else {
                     if ((equationLines[equationLines.length - 1].contains("~~|")
